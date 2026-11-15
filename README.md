@@ -37,6 +37,12 @@ bash scripts/setup_environment.sh
 
 **验证范围：**原本机完整任务已通过；上传副本仅将活动 Franka XML 的资源路径相对化，并带上67个原始网格，模型数值与网格字节内容的554项核对通过。另验证了导出环境导入和模型加载。没有声称已经在另一台干净机器上完成安装或完整重跑。
 
+## 四个初始视角
+
+同一 full40 初始状态（t=0）的1600×1200原生渲染。仅移动相机，布袋、熊和双臂关节与已保存初始状态的最大数值误差均为0；相机参数和输入哈希见[渲染记录](docs/initial_images/render_manifest.json)。
+
+[斜视全景](docs/initial_images/initial_01_oblique.png) · [正面近景](docs/initial_images/initial_02_front_close.png) · [俯视](docs/initial_images/initial_03_top.png) · [对侧正面](docs/initial_images/initial_04_opposite_front.png)
+
 ## 当前结果与材料
 
 原验收 [20/20](teddy_bag_scene/runs/two_panel_full_40/validation.json) 与独立核对 [41/41](teddy_bag_scene/runs/two_panel_full_40/independent-gravity-execution-review.json) 均通过。实际仿真86.760秒，完整视频约87秒，本机计算约57分钟。松爪前与最终的全部1450个熊节点及其质心在分析袋身内部，撤手后自然稳定4秒。
