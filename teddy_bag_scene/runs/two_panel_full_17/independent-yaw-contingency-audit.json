@@ -1,0 +1,396 @@
+{
+  "kind": "independent_read_only_full17_yaw_audit",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "full18_untouched": true,
+  "input_sha256": {
+    "runs/two_panel_full_17/config.json": "20b6cbbd9489f1853260249f401f6709afb20bb37e6f7a4b4483117064fcb9cd",
+    "runs/two_panel_full_17/rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "runs/two_panel_full_17/lower_teddy_to_rim.npz": "755f02cac671f22826b834364508920f786c438ffb5993dd65da9a7fc956547d",
+    "runs/two_panel_full_17/guarded_contact_candidate.json": "7c1a074f2889d57d40800208b7f61df685966116f24280818a22be5ea63cf22c",
+    "runs/two_panel_full_17/source/motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "runs/two_panel_full_17/source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "runs/two_panel_full_17/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "runtime_ipc/full17_yaw_contingency.py": "0ab19591154c7b2a4d1cb343aee4557a75c8577ee84dd9400d245d1a8132e55a",
+    "runs/two_panel_full_17/independent-yaw-contingency-review.json": "4d27c07d36d558c7c938803a0c54012cd9a7db4ee8b3299fcaf719ae14cf9d5c"
+  },
+  "rotation_convention": {
+    "target_world_left_multiply_xyzw": [
+      0.9238801373648086,
+      0.3826818560878049,
+      -8.110733797291744e-05,
+      -0.0002867500214786806
+    ],
+    "wrong_local_right_multiply_xyzw": [
+      0.9238788456109565,
+      -0.38268497465747386,
+      -8.110733797291744e-05,
+      -0.0002867500214786806
+    ],
+    "world_vs_local_target_difference_rad": 1.570796253227274,
+    "original_command_vs_actual_fk_difference_rad": 0.00047266884003890355,
+    "measured_tcp_vs_joint_fk_tcp_difference_m": 5.101384946613274e-16,
+    "actual_fk_tcp_m": [
+      -0.09920657997715437,
+      0.05803429760139224,
+      1.1946997711079612
+    ],
+    "exact_rigid_grasp_endpoint_vs_report_pure_yaw_max_vertex_difference_m": 0.00010873676677908163,
+    "interpretation": "World Z left multiplication is correct. Frozen certificate uses commanded-baseline yaw, not the exact rigid-grasp transform implied by actual FK to commanded target. This discrepancy is not included in its reported bound."
+  },
+  "proof": [
+    "Every point of each undeformed tetrahedron is a convex combination of its four input vertices. At either endpoint rotation it therefore lies in the convex hull of all endpoint vertices.",
+    "For a fixed world-Z axis through TCP and a segment angle delta <= pi, each point arc lies within r*(1-cos(delta/2)) of its endpoint chord. The closest chord point may use a different interpolation fraction, which is allowed by the hull.",
+    "Distance to the fixed axis is convex, so all tetrahedral interior points have radius <= the maximum vertex XY radius. The single maximum sagitta therefore covers every face, edge, interior and time.",
+    "A normalized separating projection gap of two full convex solids is a Euclidean distance lower bound. Subtracting numerical_guard and the sagitta inflation yields a conservative lower bound for the continuous frozen arc.",
+    "Missing separating axes only causes inconclusive rejection, never false acceptance. MuJoCo closest distance only proposes an axis; final accepted gap is recomputed on double-precision hull vertices."
+  ],
+  "independent_arc_certificate": {
+    "segment_count": 9,
+    "left_nonbase_geom_count": 22,
+    "checked_pairs": 198,
+    "bear_vertices": 1450,
+    "tetrahedra": 5486,
+    "all_tetra_indices_valid": true,
+    "maximum_axis_radius_m": 0.16934970954308698,
+    "sagitta_m": 0.00016118339866176066,
+    "minimum": {
+      "segment": 0,
+      "geom_id": 67,
+      "body": "left_hand",
+      "raw_gap_m": 0.053714099925451064,
+      "continuous_frozen_arc_lower_bound_m": 0.0535528165267893,
+      "axis_world": [
+        -0.4167412404703341,
+        -0.07458443392023875,
+        0.9059602092299887
+      ]
+    },
+    "difference_from_reported_lower_bound_m": 0.0,
+    "every_pair_passes_5mm": true,
+    "segments": [
+      {
+        "segment": 0,
+        "geom_id": 67,
+        "body": "left_hand",
+        "raw_gap_m": 0.053714099925451064,
+        "continuous_frozen_arc_lower_bound_m": 0.0535528165267893,
+        "axis_world": [
+          -0.4167412404703341,
+          -0.07458443392023875,
+          0.9059602092299887
+        ]
+      },
+      {
+        "segment": 1,
+        "geom_id": 67,
+        "body": "left_hand",
+        "raw_gap_m": 0.05781957207086408,
+        "continuous_frozen_arc_lower_bound_m": 0.05765828867220232,
+        "axis_world": [
+          -0.6570980302650599,
+          -0.037834945126987526,
+          0.7528550295701135
+        ]
+      },
+      {
+        "segment": 2,
+        "geom_id": 67,
+        "body": "left_hand",
+        "raw_gap_m": 0.06297344644876779,
+        "continuous_frozen_arc_lower_bound_m": 0.06281216305010602,
+        "axis_world": [
+          -0.6513000411322244,
+          -0.09496083862387117,
+          0.7528550295701119
+        ]
+      },
+      {
+        "segment": 3,
+        "geom_id": 67,
+        "body": "left_hand",
+        "raw_gap_m": 0.06793811069943334,
+        "continuous_frozen_arc_lower_bound_m": 0.06777682730077157,
+        "axis_world": [
+          -0.6789788031457316,
+          -0.1494286402363535,
+          0.7187898624465319
+        ]
+      },
+      {
+        "segment": 4,
+        "geom_id": 67,
+        "body": "left_hand",
+        "raw_gap_m": 0.07255244161704333,
+        "continuous_frozen_arc_lower_bound_m": 0.07239115821838156,
+        "axis_world": [
+          -0.6633715196828832,
+          -0.2080369210445965,
+          0.7187898624465335
+        ]
+      },
+      {
+        "segment": 5,
+        "geom_id": 79,
+        "body": "left_right_finger",
+        "raw_gap_m": 0.07641881923822558,
+        "continuous_frozen_arc_lower_bound_m": 0.07625753583956381,
+        "axis_world": [
+          0.412041235032815,
+          0.5223344277507691,
+          -0.7465847347882952
+        ]
+      },
+      {
+        "segment": 6,
+        "geom_id": 67,
+        "body": "left_hand",
+        "raw_gap_m": 0.08113708010600018,
+        "continuous_frozen_arc_lower_bound_m": 0.08097579670733841,
+        "axis_world": [
+          -0.8134034485278198,
+          -0.32475112175408644,
+          0.482609095275372
+        ]
+      },
+      {
+        "segment": 7,
+        "geom_id": 67,
+        "body": "left_hand",
+        "raw_gap_m": 0.08557442424101547,
+        "continuous_frozen_arc_lower_bound_m": 0.0854131408423537,
+        "axis_world": [
+          -0.7820042776083432,
+          -0.39440812740071657,
+          0.4826090952753725
+        ]
+      },
+      {
+        "segment": 8,
+        "geom_id": 67,
+        "body": "left_hand",
+        "raw_gap_m": 0.08925110171402606,
+        "continuous_frozen_arc_lower_bound_m": 0.08908981831536429,
+        "axis_world": [
+          -0.7446535819491747,
+          -0.46106344904768864,
+          0.4826090952753721
+        ]
+      }
+    ]
+  },
+  "arc_sanity": {
+    "points": 6936,
+    "one_random_interior_per_tetra": true,
+    "samples_per_arc": 21,
+    "max_chord_distance_m": 0.00016118339866180237,
+    "sagitta_m": 0.00016118339866176066,
+    "passes": true,
+    "note": "Numerical corroboration only; whole-interior and continuous-time coverage follows from proof."
+  },
+  "robot_solids": {
+    "nonbase_count": 22,
+    "bodies": [
+      "left_hand",
+      "left_left_finger",
+      "left_link1",
+      "left_link2",
+      "left_link3",
+      "left_link4",
+      "left_link5",
+      "left_link6",
+      "left_link7",
+      "left_right_finger"
+    ],
+    "individual_observed_left_fingers_m": [
+      0.0011208467564260936,
+      0.0011183859503530104
+    ],
+    "excluded_left_base_collision_geoms": [
+      {
+        "geom_id": 14,
+        "body": "left_link0"
+      }
+    ],
+    "geometry": "Original collision meshes convexified, and ten finger-pad boxes; no visual meshes are substituted. Raw mesh vertices independently transformed using original body frame agree with compiled geom transforms within float storage precision.",
+    "all_raw_meshes_within_1e_minus7_guard": true,
+    "checks": [
+      {
+        "body": "left_link1",
+        "geom_id": 16,
+        "mesh": "link1_c",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link1.stl",
+        "asset_sha256": "e41a39a94108fcf56aacff603fc91ec80541f4c1af17b51a0de5617f5566e6d2",
+        "original_vertex_count": 900,
+        "compiled_vertex_count": 152,
+        "max_original_to_compiled_nearest_vertex_distance_m": 6.584152832208914e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 5.721203510944406e-09
+      },
+      {
+        "body": "left_link2",
+        "geom_id": 18,
+        "mesh": "link2_c",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link2.stl",
+        "asset_sha256": "370f7605a0fae3529db169ded50f52f171024aa792d4d773bc84197301f6a039",
+        "original_vertex_count": 900,
+        "compiled_vertex_count": 152,
+        "max_original_to_compiled_nearest_vertex_distance_m": 7.340414863807118e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 6.630726301359857e-09
+      },
+      {
+        "body": "left_link3",
+        "geom_id": 23,
+        "mesh": "link3_c",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link3.stl",
+        "asset_sha256": "0a8d638b9349c6c0eefc4e888636ac4838c4b27170f18a51699321118af709c1",
+        "original_vertex_count": 900,
+        "compiled_vertex_count": 152,
+        "max_original_to_compiled_nearest_vertex_distance_m": 5.118233468785859e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 3.6342695519664403e-09
+      },
+      {
+        "body": "left_link4",
+        "geom_id": 28,
+        "mesh": "link4_c",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link4.stl",
+        "asset_sha256": "0180ebb5772ec9840cb049750cffb29a9ddc90311752a16ea34757782ef9e48d",
+        "original_vertex_count": 900,
+        "compiled_vertex_count": 152,
+        "max_original_to_compiled_nearest_vertex_distance_m": 5.56389031994967e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 4.247675794433192e-09
+      },
+      {
+        "body": "left_link5",
+        "geom_id": 32,
+        "mesh": "link5_c0",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_collision_0.obj",
+        "asset_sha256": "3e5aa75fb13f193555c3dfb999df91d81df25006a5c3af5338297d78137c129b",
+        "original_vertex_count": 64,
+        "compiled_vertex_count": 64,
+        "max_original_to_compiled_nearest_vertex_distance_m": 1.6137974919266005e-08,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 1.558581996796704e-08
+      },
+      {
+        "body": "left_link5",
+        "geom_id": 33,
+        "mesh": "link5_c1",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_collision_1.obj",
+        "asset_sha256": "87cd8f621071df010f774cbde789282b8463840dfe704f8bdfa2e29be0142e15",
+        "original_vertex_count": 41,
+        "compiled_vertex_count": 41,
+        "max_original_to_compiled_nearest_vertex_distance_m": 7.528278191619022e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 4.69633976152295e-09
+      },
+      {
+        "body": "left_link5",
+        "geom_id": 34,
+        "mesh": "link5_c2",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_collision_2.obj",
+        "asset_sha256": "823ab6c8f7b1d79e0844fa071d82a03499ff68e34fddb1ba3451032c22736040",
+        "original_vertex_count": 64,
+        "compiled_vertex_count": 64,
+        "max_original_to_compiled_nearest_vertex_distance_m": 8.494975770600648e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 4.154665833588922e-09
+      },
+      {
+        "body": "left_link6",
+        "geom_id": 52,
+        "mesh": "link6_c",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6.stl",
+        "asset_sha256": "20b768e99a0e0440b5754dcca108016434e57937cc356acd9c352ccd3cb27f77",
+        "original_vertex_count": 600,
+        "compiled_vertex_count": 102,
+        "max_original_to_compiled_nearest_vertex_distance_m": 4.0817977260390325e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 3.9056365919165614e-09
+      },
+      {
+        "body": "left_link7",
+        "geom_id": 61,
+        "mesh": "link7_c",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7.stl",
+        "asset_sha256": "92ac6afcf7574c034d3170d8a68e95ac9048ab9d0dd5bbd8311b86e551b9ab1c",
+        "original_vertex_count": 600,
+        "compiled_vertex_count": 102,
+        "max_original_to_compiled_nearest_vertex_distance_m": 3.92913378935851e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 3.502564745183623e-09
+      },
+      {
+        "body": "left_hand",
+        "geom_id": 67,
+        "mesh": "hand_c",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/hand.stl",
+        "asset_sha256": "94493e94f30fe940f2c8ca2f155c3bbe67bbff406d3edf5e261670d2f0f6e2ed",
+        "original_vertex_count": 600,
+        "compiled_vertex_count": 102,
+        "max_original_to_compiled_nearest_vertex_distance_m": 3.8397866136137275e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 3.481600396870732e-09
+      },
+      {
+        "body": "left_left_finger",
+        "geom_id": 70,
+        "mesh": "finger_0",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/finger_0.obj",
+        "asset_sha256": "215098c0fcdf7192f6c503a37cf49e3efecf8a9e1320f02b17c5584d89cc5b2c",
+        "original_vertex_count": 1062,
+        "compiled_vertex_count": 1062,
+        "max_original_to_compiled_nearest_vertex_distance_m": 2.8824703940200677e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 2.26811058823273e-09
+      },
+      {
+        "body": "left_right_finger",
+        "geom_id": 79,
+        "mesh": "finger_0",
+        "original_asset": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/finger_0.obj",
+        "asset_sha256": "215098c0fcdf7192f6c503a37cf49e3efecf8a9e1320f02b17c5584d89cc5b2c",
+        "original_vertex_count": 1062,
+        "compiled_vertex_count": 1062,
+        "max_original_to_compiled_nearest_vertex_distance_m": 2.88247038665501e-09,
+        "max_original_vertex_outside_convex_hull_halfspace_m": 2.26811058823273e-09
+      }
+    ],
+    "limits": "Nonbase left collision solids only. Left base/mount, table, other scene objects and cloth are not in frozen arc certificate. Native affine compliance/deformation is not represented."
+  },
+  "rigid_route_scope": {
+    "selected_delta_m": [
+      -0.025,
+      -0.05,
+      0
+    ],
+    "selected": {
+      "com_contact_envelope": {
+        "planned_frozen_com_m": [
+          -0.11982789967923504,
+          0.005717377763604772,
+          1.097734761543783
+        ],
+        "inside_contact_envelope": true,
+        "boundary_distance_m": 0.012953797453333336,
+        "at_least_2mm_inside": true,
+        "is_actual_opening": false
+      },
+      "whole_frozen_bear_below_lowest_rim_by_2mm": true,
+      "all_frozen_geometric_gates_pass": true
+    },
+    "sampled_rigid_clearance_only": true,
+    "rigid_path_sample_count": 401,
+    "release_opening_samples": 21,
+    "individual_fingers_are_averaged_for_robot_route": true,
+    "observed_fingers_m": {
+      "left": [
+        0.0011208467564260936,
+        0.0011183859503530104
+      ],
+      "right": [
+        0.02748259389868524,
+        0.027495184790869855
+      ]
+    },
+    "max_finger_displacement_from_mean_m": {
+      "left": 1.2304030365416002e-06,
+      "right": 6.295446092307103e-06
+    },
+    "release_left_fixed": true,
+    "note": "The 17.178 mm is a sampled minimum on hypothetical full17-based joint trajectories, not a certified continuous robot clearance. Analytic position extrema are checked, velocity/acceleration retiming is sampled. Frozen sweeps are against actual left individual fingers; rigid trajectory clearance uses averaged finger positions. Reobserve and rerun actual state gates after physical yaw; COM convex envelope and below-rim height do not prove insertion/containment."
+  },
+  "conclusion": "Mathematics and world-left transform valid within explicit frozen pure-yaw scope. Independently reproduces continuous frozen bear-vs-nonbase-left-solid bound. No authorization or guarantee for real yaw/insertion/release; staged fresh observation, original physical gates and final settled containment remain necessary."
+}

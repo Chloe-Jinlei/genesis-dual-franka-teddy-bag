@@ -1,0 +1,705 @@
+{
+  "kind": "optional_postlift_yaw_independent_auditor_regression",
+  "physical_success": false,
+  "synthetic_fixture_is_not_native_execution": true,
+  "all_checks_passed": true,
+  "check_count": 72,
+  "failed_checks": [],
+  "checks": [
+    {
+      "name": "synthetic_complete_yaw_contract",
+      "passed": true,
+      "expected_audit_passed": true,
+      "actual_status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "name": "bad_frozen_angle",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [],
+      "error": "ValueError: Frozen yaw config outside frozen source policy bounds"
+    },
+    {
+      "name": "nan_frozen_angle",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [],
+      "error": "ValueError: Expected finite numeric yaw scalar"
+    },
+    {
+      "name": "boolean_duration",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [],
+      "error": "ValueError: Expected finite numeric yaw scalar"
+    },
+    {
+      "name": "hidden_nonfinite_candidate",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "accepted_candidate_has_full_finite_check_set"
+      ],
+      "error": null
+    },
+    {
+      "name": "missing_required_check",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "accepted_candidate_has_full_finite_check_set"
+      ],
+      "error": null
+    },
+    {
+      "name": "changed_check_value",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "accepted_candidate_has_full_finite_check_set"
+      ],
+      "error": null
+    },
+    {
+      "name": "forged_planning_success",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "planning_record_does_not_claim_physical_execution"
+      ],
+      "error": null
+    },
+    {
+      "name": "future_route_rotation_substituted",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "target_is_world_yaw_of_actual_source_with_fixed_tcp"
+      ],
+      "error": null
+    },
+    {
+      "name": "tcp_target_moved",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "target_is_world_yaw_of_actual_source_with_fixed_tcp"
+      ],
+      "error": null
+    },
+    {
+      "name": "source_actual_q_forged",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "right_source_matches_saved_actual_fk"
+      ],
+      "error": null
+    },
+    {
+      "name": "source_soft_measure_forged",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "source_physical_record_matches_saved_geometry"
+      ],
+      "error": null
+    },
+    {
+      "name": "source_missing_rigid_class",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "actual_source_raw_rigid_record_complete_and_valid",
+        "source_actual_rigid_record_matches_recomputed_distances"
+      ],
+      "error": null
+    },
+    {
+      "name": "source_nan_rigid_hidden",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "candidate_json_matches_report",
+        "accepted_candidate_has_full_finite_check_set",
+        "actual_source_raw_rigid_record_complete_and_valid",
+        "source_actual_rigid_record_matches_recomputed_distances"
+      ],
+      "error": null
+    },
+    {
+      "name": "duration_too_short",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "duration_respects_config",
+        "execution_times_and_step_count_match_plan",
+        "one_yaw_event_at_actual_source",
+        "archive_clock_matches_candidate",
+        "right_reported_rate_bounds_cover_independent_bounds"
+      ],
+      "error": null
+    },
+    {
+      "name": "integer_step_count_tampered",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "execution_times_and_step_count_match_plan"
+      ],
+      "error": null
+    },
+    {
+      "name": "boolean_step_count",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "execution_times_and_step_count_match_plan"
+      ],
+      "error": null
+    },
+    {
+      "name": "baseline_reset_claim",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "execution_evidence_finite_and_same_plan"
+      ],
+      "error": null
+    },
+    {
+      "name": "final_baseline_reset",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "single_guard_baseline_starts_before_yaw_and_is_never_reset"
+      ],
+      "error": null
+    },
+    {
+      "name": "baseline_starts_at_prep",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "single_guard_baseline_starts_before_yaw_and_is_never_reset"
+      ],
+      "error": null
+    },
+    {
+      "name": "guard_missing_start",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "single_guard_baseline_starts_before_yaw_and_is_never_reset",
+        "native_guard_covers_every_yaw_step"
+      ],
+      "error": null
+    },
+    {
+      "name": "guard_missing_interior",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "native_guard_covers_every_yaw_step"
+      ],
+      "error": null
+    },
+    {
+      "name": "guard_teddy_hold_disabled",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "native_guard_keeps_right_grasp_required_through_yaw"
+      ],
+      "error": null
+    },
+    {
+      "name": "duplicate_yaw_event",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "one_yaw_event_at_actual_source"
+      ],
+      "error": "ValueError: Missing or duplicate native yaw event"
+    },
+    {
+      "name": "event_before_lift",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "yaw_follows_lift_before_any_contact_transport"
+      ],
+      "error": null
+    },
+    {
+      "name": "changed_event_duration",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "one_yaw_event_at_actual_source"
+      ],
+      "error": null
+    },
+    {
+      "name": "successful_endpoint_past_simulated_end",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "reported_run_reaches_claimed_successful_yaw_endpoint"
+      ],
+      "error": null
+    },
+    {
+      "name": "curve_position_jump",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "right_cubic_c0_c1_c2_continuity"
+      ],
+      "error": null
+    },
+    {
+      "name": "curve_derivative_jump",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "right_cubic_c0_c1_c2_continuity"
+      ],
+      "error": null
+    },
+    {
+      "name": "curve_acceleration_jump",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "right_cubic_c0_c1_c2_continuity"
+      ],
+      "error": null
+    },
+    {
+      "name": "finger_right_opens",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "right_archived_motor_target_preserves_prior_grasp"
+      ],
+      "error": null
+    },
+    {
+      "name": "finger_left_changes_grasp",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "left_archived_motor_target_preserves_prior_grasp"
+      ],
+      "error": null
+    },
+    {
+      "name": "actual_trace_endpoint_q_disagrees",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "actual_trace_joint_values_match_all_saved_yaw_frames"
+      ],
+      "error": null
+    },
+    {
+      "name": "actual_trace_has_one_column",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [],
+      "error": "ValueError: Actual joint trace must have 19 finite columns"
+    },
+    {
+      "name": "nested_prep_original_lift_rotation",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "preparation_predicted_full_rotation_comes_from_actual_endpoint"
+      ],
+      "error": null
+    },
+    {
+      "name": "route_prep_original_lift_rotation",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "accepted_preparation_route_is_fresh_actual_endpoint"
+      ],
+      "error": null
+    },
+    {
+      "name": "nested_prep_clock_stale",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "preparation_nested_observation_matches_actual_endpoint"
+      ],
+      "error": null
+    },
+    {
+      "name": "route_prep_clock_stale",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "accepted_preparation_route_is_fresh_actual_endpoint"
+      ],
+      "error": null
+    },
+    {
+      "name": "nested_prep_tcp_stale",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "preparation_nested_observation_matches_actual_endpoint"
+      ],
+      "error": null
+    },
+    {
+      "name": "nested_prep_com_stale",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "preparation_com_matches_actual_rest_mass_com"
+      ],
+      "error": null
+    },
+    {
+      "name": "nested_prep_physical_clock_stale",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "preparation_physical_record_matches_saved_geometry"
+      ],
+      "error": null
+    },
+    {
+      "name": "nested_prep_physical_rigid_stale",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "preparation_actual_rigid_record_matches_recomputed_distances"
+      ],
+      "error": null
+    },
+    {
+      "name": "nan_curve",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [],
+      "error": "ValueError: Malformed/nonfinite exact curve archive"
+    },
+    {
+      "name": "truncated_curve_domain",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [],
+      "error": "ValueError: Curve must cover [0,1] exactly with 7 joints"
+    },
+    {
+      "name": "left_curve_moves_between_endpoints",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "left_cubic_c0_c1_c2_continuity",
+        "left_reported_rate_bounds_cover_independent_bounds",
+        "left_command_entire_cubic_is_constant"
+      ],
+      "error": null
+    },
+    {
+      "name": "curve_endpoint_tamper",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "right_cubic_c0_c1_c2_continuity",
+        "right_archive_exact_command_endpoints"
+      ],
+      "error": null
+    },
+    {
+      "name": "reported_rate_understates_curve",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "right_reported_rate_bounds_cover_independent_bounds"
+      ],
+      "error": null
+    },
+    {
+      "name": "frozen_arc_missing_geom",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "independent_frozen_left_arc_axes_certify_complete_5mm_scope"
+      ],
+      "error": null
+    },
+    {
+      "name": "frozen_arc_wrong_axis",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "independent_frozen_left_arc_axes_certify_complete_5mm_scope"
+      ],
+      "error": null
+    },
+    {
+      "name": "frozen_arc_sagitta_omitted",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "independent_frozen_left_arc_axes_certify_complete_5mm_scope"
+      ],
+      "error": null
+    },
+    {
+      "name": "frozen_arc_missing_pose",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "independent_frozen_left_arc_axes_certify_complete_5mm_scope"
+      ],
+      "error": null
+    },
+    {
+      "name": "frozen_arc_lower_forged",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "independent_frozen_left_arc_axes_certify_complete_5mm_scope"
+      ],
+      "error": null
+    },
+    {
+      "name": "endpoint_time_not_integer_step",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "fresh_native_endpoint_clock_matches_integer_steps"
+      ],
+      "error": null
+    },
+    {
+      "name": "endpoint_record_wrong_position",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "native_endpoint_record_matches_saved_fk_and_tcp"
+      ],
+      "error": null
+    },
+    {
+      "name": "endpoint_actual_q_forged",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "native_endpoint_record_matches_saved_fk_and_tcp",
+        "actual_endpoint_within_2mm_15mrad_and_bear_lifted",
+        "endpoint_actual_joints_fingers_and_tcp_valid",
+        "preparation_actual_joints_fingers_and_tcp_valid",
+        "accepted_preparation_route_is_fresh_actual_endpoint",
+        "preparation_predicted_full_rotation_comes_from_actual_endpoint",
+        "actual_trace_joint_values_match_all_saved_yaw_frames"
+      ],
+      "error": null
+    },
+    {
+      "name": "endpoint_soft_claim_forged",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "endpoint_physical_record_matches_saved_geometry"
+      ],
+      "error": null
+    },
+    {
+      "name": "endpoint_compressed_tet",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "endpoint_independent_soft_and_grasp_limits",
+        "endpoint_physical_record_matches_saved_geometry",
+        "preparation_independent_soft_and_grasp_limits",
+        "preparation_physical_record_matches_saved_geometry",
+        "preparation_com_matches_actual_rest_mass_com"
+      ],
+      "error": null
+    },
+    {
+      "name": "prep_before_yaw_end",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "contact_preparation_observes_fresh_postyaw_native_state"
+      ],
+      "error": null
+    },
+    {
+      "name": "prep_stale_one_step",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "contact_preparation_observes_fresh_postyaw_native_state"
+      ],
+      "error": null
+    },
+    {
+      "name": "missing_actual_endpoint_frame",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [],
+      "error": "ValueError: Missing complete native endpoint at 35.06999999999851"
+    },
+    {
+      "name": "actual_trace_step_missing",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "actual_joint_trace_covers_yaw_integration_steps"
+      ],
+      "error": null
+    },
+    {
+      "name": "unconfigured_yaw_evidence",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "no_unconfigured_yaw_evidence"
+      ],
+      "error": null
+    },
+    {
+      "name": "native_yaw_execution_rejected",
+      "passed": true,
+      "expected_audit_passed": false,
+      "actual_status": "failed",
+      "failed_checks": [
+        "failed_yaw_does_not_prepare_contact"
+      ],
+      "error": null
+    },
+    {
+      "name": "fresh_rejected_preparation_still_proves_yaw_observed",
+      "passed": true,
+      "expected_audit_passed": true,
+      "actual_status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "name": "candidate_file_differs_from_report",
+      "passed": true,
+      "actual_status": "failed",
+      "failed_checks": [
+        "candidate_json_matches_report"
+      ],
+      "error": null
+    },
+    {
+      "name": "execution_file_differs_from_report",
+      "passed": true,
+      "actual_status": "failed",
+      "failed_checks": [
+        "execution_file_matches_report"
+      ],
+      "error": null
+    },
+    {
+      "name": "manifest_missing_helper",
+      "passed": true,
+      "actual_status": "failed",
+      "failed_checks": [
+        "yaw_sources_and_config_match_frozen_manifest"
+      ],
+      "error": null
+    },
+    {
+      "name": "frozen_helper_hash_mismatch",
+      "passed": true,
+      "actual_status": "failed",
+      "failed_checks": [],
+      "error": "ValueError: Unrecognized frozen postlift helper definition"
+    },
+    {
+      "name": "legacy_full17_exact_disabled_contract",
+      "passed": true
+    },
+    {
+      "name": "legacy_full18_exact_disabled_contract",
+      "passed": true
+    },
+    {
+      "name": "legacy_full19_exact_disabled_contract",
+      "passed": true
+    },
+    {
+      "name": "runtime_and_helper_not_changed",
+      "passed": true
+    }
+  ],
+  "auditor_sha256": "e2023e4c811ab482c9ab4172846c2229d1c22622fee7fc414267eef670de847a"
+}

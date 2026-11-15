@@ -1,0 +1,99 @@
+{
+  "kind": "shape_only_comparison_actual_right_handle_hold",
+  "dynamic_task_success": false,
+  "robot_route_proven": false,
+  "actual_state_preserved": true,
+  "actual_task_failure": "Left handle slipped; right hand holds bag; teddy is still on table. No left/right state swap is performed.",
+  "observed_time_s": 3.0299999999999576,
+  "mouth": {
+    "center": [
+      -0.06226112944103583,
+      0.1066973117847867,
+      1.0128662465883866
+    ],
+    "normal_up": [
+      0.6087601463226501,
+      -0.34107116187576425,
+      0.7162971079000264
+    ],
+    "plane_dimensions": [
+      0.30636034464905826,
+      0.2174826777010216
+    ],
+    "area": 0.043619474238023793,
+    "crossings": 0,
+    "max_nonplanarity": 0.025091090790471126
+  },
+  "finite_runtime_orientation_library": {
+    "candidate_count": 48,
+    "shape_compression_matches_ignoring_invalid_hold_state": 0,
+    "accepted_actual_routes": 0,
+    "warnings": [
+      "Left gripper is farther than 30 mm from every bag vertex; this state does not demonstrate a held bag."
+    ]
+  },
+  "hypothetical_long_axis_aligned_with_mouth_normal": {
+    "meaning": "Rotate observed teddy long principal axis toward observed mouth normal, and wide principal axis toward mouth long axis. This is an object-shape comparison only; no grip or robot kinematics is asserted.",
+    "object_delta_rotation_xyzw": [
+      -0.5823245610428506,
+      0.3502731298908388,
+      0.1623952330192854,
+      0.7154261865317335
+    ],
+    "projected_dimensions": [
+      0.24023728552134288,
+      0.09943655865543237
+    ],
+    "entire_convex_projection_fits_with_2mm_margin": false,
+    "boundary_separation": 0.0009747550636395111,
+    "maximum_outside_distance": 0.007682515170094446,
+    "required_predicted_compression": null
+  },
+  "limitations": [
+    "The nearly planar rim exceeds the current 25 mm runtime nonplanarity bound; helper correctly rejects without a new observed valid state.",
+    "The teddy remains on the tabletop in this snapshot, not held by the right arm.",
+    "Physical holding, wrist reach, cloth contact, insertion and final containment still require an actual full sequence."
+  ],
+  "shape_only_offset_and_spin_search": {
+    "description": "Same hypothetical long-axis-to-normal teddy orientation, plus +/-20 deg spin and area-centroid +/-20mm in-plane translations. This does not mutate real state or assert a robot grasp.",
+    "mouth_area_centroid_in_plane_m": [
+      -0.002075998166634319,
+      -0.0017553619661590926
+    ],
+    "best_by_compression": [
+      {
+        "compression": 0.0,
+        "spin_about_mouth_normal_deg": 10.0,
+        "plane_offset_from_vertex_mean_m": [
+          -0.012075998166634318,
+          0.008244638033840906
+        ],
+        "whole_projection_fits_2mm_margin": true,
+        "boundary_separation_m": 0.019170871793111763,
+        "max_outside_m": 0.0
+      },
+      {
+        "compression": 0.04,
+        "spin_about_mouth_normal_deg": 10.0,
+        "plane_offset_from_vertex_mean_m": [
+          -0.012075998166634318,
+          0.008244638033840906
+        ],
+        "whole_projection_fits_2mm_margin": true,
+        "boundary_separation_m": 0.02244283809881198,
+        "max_outside_m": 0.0
+      },
+      {
+        "compression": 0.08,
+        "spin_about_mouth_normal_deg": 10.0,
+        "plane_offset_from_vertex_mean_m": [
+          -0.012075998166634318,
+          0.008244638033840906
+        ],
+        "whole_projection_fits_2mm_margin": true,
+        "boundary_separation_m": 0.02571480440451218,
+        "max_outside_m": 0.0
+      }
+    ]
+  }
+}

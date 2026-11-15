@@ -1,0 +1,30 @@
+{
+  "kind": "independent_spatial_loop_contact_envelope_boundary_review",
+  "status": "no_blocking_static_issue_found",
+  "source_sha256": "edafa37ebf53d034c8af3a07658fd26ea5584d659073f05d0c7513ccc775420d",
+  "config_sha256": "faf99acab7c84def39215d2cd4c21228757fe3c078ed84cef334923fa4f91e45",
+  "config_only_adds_explicit_low_rim_geometry": true,
+  "unchanged_physics_and_runtime_modules": {
+    "run.py": true,
+    "scene.py": true,
+    "contact_guard.py": true,
+    "staged_hand_monitor.py": true,
+    "validate.py": true,
+    "physics_config.py": true,
+    "contact_insertion.py": true,
+    "contact_robot_geometry.py": true
+  },
+  "findings": [
+    "Default and entry keep the original ordered vertical projection check; the new representation requires the explicit spatial-loop policy and applies only at low center/insert phases.",
+    "The ordered physical body boundary comes from verified U-seamed two-panel topology. Matching actual/reference finite vertices and positive edge lengths are required. All nonadjacent 3D segment pairs are checked, including interior and endpoint cases.",
+    "Available nonstretch length remains the smaller of measured actual and rest spatial arc lengths. The declared maximum 1 percent planning allowance changes no cloth rest geometry or material.",
+    "The XY convex hull is labeled contact_envelope, is_actual_opening is false, and COM/section overlap records avoid calling it actual aperture containment.",
+    "The actual state/rigid clearance/frozen whole-bear sweep, strict phase chronology, original orientation, cumulative XY limits and unchanged runtime force/strain/hold guards remain in place.",
+    "Final complete-containment validation remains unchanged; the new planning envelope cannot declare final success or override an invalid virtual closure."
+  ],
+  "physical_limits": [
+    "3D nonadjacent rim-edge separation is a geometric boundary check, not proof of an unobstructed fabric aperture or collision-free teddy passage.",
+    "Frozen envelopes remain finite planning heuristics. Native soft contacts must determine deformation; full13 evidence must not be relabeled successful insertion.",
+    "No native runtime or GPU test was performed by this review; motion owner is completing the already planned actual-state checkpoint regression."
+  ]
+}

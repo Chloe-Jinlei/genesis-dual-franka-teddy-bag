@@ -1,0 +1,148 @@
+{
+  "scope": "Independent offline mathematical/synthetic review, not an executed insertion or replacement validator",
+  "runtime_changed": false,
+  "cases": [
+    {
+      "name": "closed_cup_low_queries_equal_for_three_high_caps",
+      "pass": true,
+      "query_winding": [
+        [
+          1.0,
+          -2.208718528794109e-17,
+          -2.208718528794109e-18,
+          1.0
+        ],
+        [
+          1.0000000000000002,
+          -2.6504622345529306e-17,
+          -5.5217963219852725e-18,
+          1.0
+        ],
+        [
+          1.0000000000000002,
+          -2.208718528794109e-17,
+          0.0,
+          1.0
+        ]
+      ],
+      "maximum_difference": 2.220446049250313e-16,
+      "all_queries_below_rim": true
+    },
+    {
+      "name": "simple_spatial_rim_with_crossed_svd_projection",
+      "pass": true,
+      "svd_projection_crossings": 1,
+      "minimum_nonadjacent_3d_edge_separation": 0.10000000000000009,
+      "cap_only_winding": [
+        [
+          0.0,
+          -0.14525253718818185,
+          -0.007784969072592799,
+          0.0018499964317384775
+        ],
+        [
+          8.834874115176436e-18,
+          -0.14525253718818187,
+          -0.00778496907259279,
+          0.0018499964317384796
+        ],
+        [
+          1.1043592643970545e-17,
+          -0.1452525371881817,
+          -0.007784969072592768,
+          0.0018499964317384775
+        ]
+      ],
+      "maximum_difference": 1.3877787807814457e-16,
+      "body_embedding_not_claimed": true
+    },
+    {
+      "name": "counterexample_query_above_lowest_rim",
+      "pass": true,
+      "flat_cap_winding": [
+        0.0
+      ],
+      "high_cap_winding": [
+        1.0000000000000002
+      ],
+      "conclusion": "Cap choice can change membership when the query-height condition fails"
+    },
+    {
+      "name": "counterexample_cap_dips_below_rim",
+      "pass": true,
+      "high_cap_winding": [
+        1.0
+      ],
+      "low_apex_cap_winding": [
+        0.0
+      ],
+      "conclusion": "Both caps, including every triangle interior, must remain above the separating plane"
+    },
+    {
+      "name": "counterexample_reversed_single_cap_face",
+      "pass": true,
+      "is_watertight": true,
+      "is_winding_consistent": false,
+      "query_winding": 0.9103767464170269
+    },
+    {
+      "name": "counterexample_combinatorial_closedness_does_not_prove_embedding",
+      "pass": true,
+      "is_watertight": true,
+      "is_winding_consistent": true,
+      "query_winding": 2.0,
+      "fixture_components": 2,
+      "conclusion": "A closed coherently oriented but geometrically crossing surface may have degree two; abs(w)>0.5 alone is insufficient evidence of a simple physical interior"
+    },
+    {
+      "name": "numerical_low_plane_gaps_on_small_fixture",
+      "pass": true,
+      "gaps": [
+        0.002,
+        1e-06,
+        1e-09
+      ],
+      "maximum_difference": 0.0,
+      "production_tolerance_not_established_by_fixture": true
+    }
+  ],
+  "actual_full14_applicability": {
+    "time_s": 54.08500000000922,
+    "bear_vertex_count": 1450,
+    "rim_min_z_m": 1.0071950580330271,
+    "bear_max_z_m": 1.22223828422746,
+    "minimum_whole_bear_height_gap_m": -0.21504322619443283,
+    "all_bear_queries_below_rim": false,
+    "svd_projection_crossings": 2,
+    "queries_at_least_2mm_below_rim": 67,
+    "maximum_cap_contribution_difference_on_low_subset": 4.423544863740858e-17,
+    "maximum_cap_contribution_difference_on_all_bear_vertices": 1.0000000000000497,
+    "theorem_certifies_full14_containment": false,
+    "topology": {
+      "actual_open_body_boundary": true,
+      "body_boundary_loop_count": 1,
+      "complete_bag_boundary_loop_count": 3,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "body_triangle_count": 2960,
+      "rim_rest_z": 1.1315683174918918,
+      "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+      "independent_flat_bottom_triangles": 0,
+      "independent_flat_side_triangles": 0,
+      "body_boundary_only_at_top": true,
+      "two_panels_directly_sewn_along_u": true,
+      "analysis_cap_is_not_simulated": true
+    },
+    "not_an_insertion_success": true,
+    "input_sha256": {
+      "validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+      "runs/two_panel_full_14/rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+      "runs/two_panel_full_14/lower_teddy_to_rim.npz": "da8d638bcfc7a0cd8cdd6fcb1459056a14986a363145e09ba89b6b18b4c2c188",
+      "runs/two_panel_full_14/config.json": "b9225e4edc8fb2b70b18984a308a1cf8ac1b9a8c6fe4e5b7059f2853ce6b1e58"
+    }
+  },
+  "all_synthetic_cases_passed": true,
+  "synthetic_case_count": 7,
+  "physical_runtime_tests_performed": 0,
+  "theorem_scope": "Pointwise cap independence strictly below all cap vertices; physical interior requires additional embedding/orientation and separation conditions."
+}

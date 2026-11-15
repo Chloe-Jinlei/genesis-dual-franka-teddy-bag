@@ -1,0 +1,90 @@
+{
+  "kind": "bounded_read_only_full26_contact_trial_admission_review",
+  "physical_success": false,
+  "native_execution_performed": false,
+  "status": "stated_1mm_prerim_clear_condition_not_satisfied",
+  "known_original_gate_failure_identified": false,
+  "condition_was": {
+    "required": "If complete1mm both-handle pre-rim check passes",
+    "satisfied": false
+  },
+  "checks": {
+    "exact_candidate_config": true,
+    "exact_unmodified_runner": true,
+    "exact_unmodified_gravity_helper": true,
+    "hybrid_inputs_still_match": true,
+    "all_existing_original_helper_stages_candidate": true,
+    "yaw_original_checks_all_true": true,
+    "original_gravity_release_policy_unchanged": true,
+    "handoff_scope_native_independently_passed": true
+  },
+  "diagnostic_config_differences": [
+    {
+      "path": "/bag/metadata",
+      "old": "metadata_two_panel_wide_tall_long_handles_coarse.json",
+      "new": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/source/assets/metadata_two_panel_wide_tall_long_handles_coarse.json"
+    },
+    {
+      "path": "/bag/npz_file",
+      "old": "two_panel_bag_wide_tall_long_handles_coarse.npz",
+      "new": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz"
+    },
+    {
+      "path": "/robots/mjcf_path",
+      "old": null,
+      "new": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/source/assets/panda_tactile.xml"
+    }
+  ],
+  "source_sha256": {
+    "config_long_handles_gravity_trial.json": "c8a3a0c01b1cc107cbf3f9317b0cd9d5b956dde21c7e4d9fa28cb9c950fc40c4",
+    "run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "gravity_release.py": "d88f4a7cd34853fb8f07eb34d42e137007cd553f69ddc920a0856a0710c96dee",
+    "contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "runs/two_panel_long_handles_handoff_01/independent-handoff-final-review.json": "460ee808f08cf92f8205313a440e1cff486892de23280694ad96f75ff1c09edf",
+    "runtime_ipc/long-handles-hybrid-downstream-review/review.json": "af16ee9c06fbd082f974cb2ee3cd2cd0eb8a8d4c654b08946409d201534186bd",
+    "runtime_ipc/long-handles-hybrid-downstream-review/yaw_candidate.json": "9491c46e6abc47272f6c4fc4d75e6bdfe542c0a0a42c5f1b0e9626b9d183e1de",
+    "runtime_ipc/long-handles-hybrid-downstream-review/preparation.json": "0a0aa868508c87c5f29e9772ca50c2e269f4276d463919cf8a35fbfbd6d2a0f9",
+    "runtime_ipc/long-handles-hybrid-downstream-review/hypothetical_fresh_full_depth.json": "33d167a749609f16b146d0ab27ee6677ad93f6f4567970e7878d911b1d33a41f",
+    "runtime_ipc/long-handles-hybrid-downstream-review/gravity_candidate.json": "81aeb70d3400230035ff4817ca6c1d861a16d4492be11931ed8cc111d42b5a6b",
+    "runtime_ipc/long-handles-hybrid-handle-review/both-prerim.json": "139a1e1059168df57af289136b61e2882d2d3ce97970b1df72a140aebd03b917",
+    "runtime_ipc/long-handles-hybrid-handle-1mm-review/held-front-short.json": "5405ced33edc6996924d11d8b286339dafc38830087bb958d2a6a661887a5f7d",
+    "runtime_ipc/long-handles-hybrid-handle-1mm-review/both-prerim.json": "b7c9cfcbadaacd87f96c7f8d36f304415cbbbdecfccf15ee5c691522546c6ed3"
+  },
+  "hybrid_input_mismatches": [],
+  "latest_additional_screen": {
+    "path": "runtime_ipc/long-handles-hybrid-handle-1mm-review/both-prerim.json",
+    "status": "rejected",
+    "required_gap_m": 0.001,
+    "complete_pair_coverage": false,
+    "selected_handles": [
+      "front",
+      "back"
+    ],
+    "handle_triangles": 1152,
+    "first_examined_failing_pair": {
+      "handle": "front",
+      "tetrahedron_index": 32,
+      "face_index": 3438,
+      "distance_witness_m": 0.000896301398820916,
+      "separating_lower_bound_m": 0.0008962013988209229,
+      "strict_intersection_proven": false,
+      "prefix_fraction": 0.9119264511104803,
+      "bear_min_z_at_witness_m": 1.1306920793382174,
+      "actual_frozen_rim_max_z_m": 1.1242412789089309,
+      "bear_min_above_highest_rim_m": 0.006450800429286474,
+      "event_scope": "First failing pair encountered by enumeration, not earliest physical or geometric event"
+    }
+  },
+  "conclusion": [
+    "No additional failed original planning or native handoff gate was found in the existing bounded records. This does not certify new full-run reachability or execution.",
+    "The explicit premise of complete1mm pre-rim clearance is false: the stable all-face checker stops at held-front near contact0.896301mm before the whole bear reaches highest rim height. Original2mm and whole-short-held-front1mm failures also remain unchanged.",
+    "Positive frozen separation with no strict intersection on the examined pair is not penetration. Incomplete pair coverage is not evidence that remaining pairs are clear.",
+    "A native contact experiment can investigate such interactions without changing physical law, but its scope must explicitly permit possible held-front contact before entry; the earlier free-back-after-entry reasoning does not justify describing this as a clear approach.",
+    "The held front strap transmits load to the left hand; friction can rotate the teddy, pull the bag or concentrate strain at the right grasp. Near1mm geometry is comparable to configured IPC contact distance and is not a zero-force prediction.",
+    "The hybrid starts from10s-settled probe cloth and a separately observed full25 lift. A fresh full run does not pause10s after clear; teddy pickup/lift and the actual new cloth/teddy shape are not jointly observed in these records. Existing online rigid/soft/contact preflights and all per-step guards must still pass.",
+    "Release still requires stopped actual endpoint at1.085m, actual\u226550%all-node fraction and3D COM inside with valid cap, original two-sided grip through intent, then unchanged full ALL-node/COM retention after release. None of these future conditions is established by the hybrid."
+  ],
+  "recommendation": "Do not label the current candidate admitted under the stated1mm pre-rim-clear condition. If the parent chooses a contact trial, record the materially broader possible held-front pre-entry contact scope and all failed/incomplete offline screens; preserve every original online and final physical gate. No production edit, threshold waiver or additional candidate is proposed."
+}

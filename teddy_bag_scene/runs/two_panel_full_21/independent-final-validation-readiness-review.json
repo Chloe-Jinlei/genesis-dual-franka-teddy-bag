@@ -1,0 +1,143 @@
+{
+  "kind": "read_only_final_validation_readiness_review",
+  "created_utc": "2026-11-13T19:08:07.976204+00:00",
+  "physical_success": false,
+  "runtime_execution_performed_by_review": false,
+  "final_run_audited": false,
+  "production_files_modified": false,
+  "input_and_process_checks": {
+    "all_frozen_manifest_hashes_match": true,
+    "all_snapshot_files_manifested": true,
+    "frozen_and_live_launch_sources_match": true,
+    "launch_config_hash_matches": true,
+    "frozen_config_semantically_matches_launch": true,
+    "native_process_command_matches_launch": true
+  },
+  "all_input_and_process_checks_passed": true,
+  "manifest_entry_count": 30,
+  "launch_source_matches": {
+    "run.py": true,
+    "scene.py": true,
+    "postlift_yaw.py": true,
+    "staged_contact_insertion.py": true,
+    "contact_insertion.py": true,
+    "assets/bear_uniform_coarse_s85.obj": true
+  },
+  "process_snapshot": {
+    "pid": 80469,
+    "exists": true,
+    "cmdline": "/home/chloe/Desktop/genesis-local/.venv/bin/python /home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py --task full --config /home/chloe/Desktop/genesis-local/teddy_bag_scene/config_guarded_small_teddy_vertical_trial.json --output two_panel_full_21 ",
+    "cwd": "/home/chloe/Desktop/genesis-local/teddy_bag_scene"
+  },
+  "finish_readiness": {
+    "required_saved_files": [
+      "report.json",
+      "validation.json",
+      "events.json",
+      "states.npz",
+      "rest.npz",
+      "joint_trace.npy",
+      "soft_metrics.npy",
+      "soft_metrics_columns.json",
+      "handle_grip_trace.json",
+      "contact_guard_trace.json",
+      "coupling_trace.json",
+      "postlift_yaw_candidate.json",
+      "postlift_yaw_execution.json",
+      "postlift_yaw_plan.npz"
+    ],
+    "readiness_rule": "Wait for root to report finish and all files saved; report.json alone is insufficient because coupling_trace.json is written afterward at frozen run.py:840. Confirm OUTPUT or native exit and parse complete files. No waiting/polling is performed by this review.",
+    "failure_geometry": "If failed_soft_state.npz exists, compare its time/metrics to last per-step summary and q trace; do not substitute an earlier 50 ms visualization frame for the failing state.",
+    "vertical_trial_expected_absence": "staged_hand_trace.json is not required for this vertical trial, where no staged hand monitor was instantiated; absence is not a measured 5 mm violation."
+  },
+  "final_evidence_checklist": [
+    {
+      "item": "Configuration and actual model",
+      "evidence": "30 frozen manifest entries, launch config/source hashes, native initial/rest topology and actual shell_conversion readback",
+      "criteria": "Same two-panel zero-bottom-width bag; original body/handles effective shear 50/250 N/m; .85 initial teddy scale and rho=100 remain unchanged. Native material readback is still required from report, not inferred from config."
+    },
+    {
+      "item": "Sequence and actual endpoint times",
+      "evidence": "report/events, phase endpoint NPZs, full states and joint trace",
+      "criteria": "Actual insert -> release -> withdrawal -> final settle, unique ordered events and ceil(duration/dt) endpoints. Complete .5 s release, actual withdrawal and 2 s final settle before sequence_completed; phase-start event alone is insufficient. No runtime error/validation_error and task/requested flags agree with independent audit."
+    },
+    {
+      "item": "Every-step soft and grasp integrity",
+      "evidence": "soft_metrics at dt=.005, independent recomputation from frames and failed state if present; handle trace; named left material",
+      "criteria": "Finite consecutive coverage; no inverted tet; original runtime J>=.05, cloth edge ratio<=1.15, table penetration<=.002 m, left named material<=.018 m, right nearest teddy<=.045 m until release. Final validator uses strict J>.05, so exact boundary is a reporting discrepancy to disclose rather than alter."
+    },
+    {
+      "item": "Native reactions and baseline",
+      "evidence": "guard baseline before yaw, contact_guard_trace through end, coupling_trace per-link origins/axes and exact raw force reconstruction",
+      "criteria": "Baseline never reset; every 5 ms step present; raw limits remain 8 N net, .15 Nm TCP, 8 N per right finger, positive .1 N opening projections while required. Right-hold flag changes only after actual insertion endpoint/release boundary; left-hold evidence continues through final settle."
+    },
+    {
+      "item": "Motion and release",
+      "evidence": "exact archived yaw spline plus actual trace, fresh preparation/reobservations/corrections, final fingers and right-arm endpoint",
+      "criteria": "Complete yaw audit pending guard/trace; fresh actual state drives insert. Corrections <=2, individual30/cumulative50 mm. Final both right fingers>=.038 m. Existing actual joint audit defaults1.5 rad/s and10 rad/s\u00b2 differ from guarded reference .35/.5; do not claim the final global check proves the tighter command bound or continuous clearance."
+    },
+    {
+      "item": "Containment, contact and retention",
+      "evidence": "Actual post-release bag body/rim/bear coordinates and rest-tet-volume COM; final/hold samples and last full2s of settle",
+      "criteria": "Run frozen validator as written, then report valid-domain checks, actual-body geometry and ambiguity separately. Inspect post-release actual frames; never apply a frozen preflight hypothesis as final containment. Preserve original task gates; supplementary diagnostics explain classification without silently changing them."
+    }
+  ],
+  "concrete_source_findings": [
+    {
+      "type": "confirmed_report_semantic_pitfall",
+      "source": "source/validate.py:173-179",
+      "finding": "Invalid virtual cap returns inside_fraction=0 and COM_inside=false without evaluating winding. This is failed/unknown classification, not measured outside.",
+      "existing_actual_example": {
+        "run": "two_panel_full_19",
+        "virtual_closed_body_valid": false,
+        "mouth_projected_crossings": 2,
+        "bear_vertex_inside_fraction": 0.0,
+        "bear_center_of_mass_inside": false
+      },
+      "final_response_rule": "If invalid, retain raw fail-closed result but describe containment as unestablished; independently query the admissible below-lowest-rim domain with two caps and physical-body distances."
+    },
+    {
+      "type": "confirmed_coverage_limitation_not_current_failure",
+      "source": "source/validate.py:160-185",
+      "finding": "Cap is a center fan and validity is topological closure/winding consistency plus a 2D proper-crossing/area test; it does not establish 3D embeddedness, absence of cap/body intersections, integer-unit winding, or distance from the physical body. abs(w)>0.5 also admits multiple winding.",
+      "final_response_rule": "Inspect raw winding, unit/integer residual, coherent physical orientation, self-intersection/near-boundary ambiguity and two analysis caps. A planar projection crossing can invalidate this cap even if the spatial rim is simple. Empty low-region queries remain unknown, not 0% contained."
+    },
+    {
+      "type": "confirmed_discrete_sampling_scope",
+      "source": "source/validate.py:175,188-203",
+      "finding": "All teddy nodes plus rest-mass COM are point tests. Final contact only samples bag vertices, edge midpoints and face centroids against bear volume. These are not whole-tetra containment or continuous triangle-intersection proofs.",
+      "final_response_rule": "A pass is a pass of sampled criteria. If raw geometry suggests folded-body/triangle crossings, use physical body triangles and bear boundary/tetra geometry to resolve the specific intersection and its depth; never infer volume fraction from node fraction."
+    },
+    {
+      "type": "confirmed_retention_sampling_scope",
+      "source": "source/validate.py:524-530,535-558",
+      "finding": "Retention checks only first/middle/last saved sample in the final .5 s; phase order uses names and final finger check uses only final q. It does not by itself prove all2s settling retention or absence of regrasp between samples.",
+      "final_response_rule": "Cross-check actual phase durations/endpoints and all saved final-settle frames, with per-step grip/force flags; report the sampling scope."
+    },
+    {
+      "type": "confirmed_exact_threshold_mismatch",
+      "source": "source/run.py:178 and source/validate.py:563",
+      "finding": "Runtime rejects J<.05; frozen final validator requires J>.05. An exact J=.05 is allowed by runtime but rejected by final validation. No evidence this run reaches exact boundary.",
+      "final_response_rule": "Preserve frozen result and disclose exact equality if encountered; do not change threshold."
+    },
+    {
+      "type": "audit_scope_gap_to_cross_check_manually",
+      "source": "runtime_ipc/audit_guarded_run.py:audit_reactions",
+      "finding": "Reaction audit takes limits from report.contact_guard.limits; check values independently against frozen original8N/.15Nm/8N rather than treating report thresholds alone as immutable. No evidence of changed limits in this run.",
+      "final_response_rule": "Explicitly compare final reported limit values and frozen source constants before interpreting reaction pass."
+    }
+  ],
+  "no_current_geometry_failure_claim": "Only source/readiness and current input/process consistency were reviewed. Terminal native geometry does not yet exist in this task context and no terminal verdict is inferred.",
+  "source_hashes": {
+    "run.py": "37a8fe37bdd065dfc415273f3a1764a11b113ff6618ad6d8b262eddabe64b3b0",
+    "validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "postlift_yaw.py": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c",
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc"
+  },
+  "limitations": [
+    "On-disk input consistency and expected PID command/cwd are verified; this is not an in-memory Python bytecode attestation.",
+    "No active simulation source, configuration, asset or default entrypoint is modified."
+  ]
+}

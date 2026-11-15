@@ -1,0 +1,932 @@
+{
+  "kind": "full07_actual_transport_xy_rigid_route_review",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "observed_time_s": 25.329999999999245,
+  "input_sha256": {
+    "transport_teddy.npz": "a8d4794027425c44e264b85352493a83f4563d6f14449c5c3cd1cc4150c56cff",
+    "rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "config.json": "778c171a495884013b8f5093299fd6ac3713e674667926c249b51ca078e89322"
+  },
+  "source_sha256": {
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "contact_insertion.py": "4f9ecaa624b7cc2fc466deec7684f3a5874e55f78b0583f1ecba24c68be91225"
+  },
+  "actual_tcp_m": [
+    -0.11261320462937077,
+    0.0685425713493221,
+    1.3694831548884414
+  ],
+  "actual_com_m": [
+    -0.10761758202721364,
+    0.06813722146779169,
+    1.2789479251448201
+  ],
+  "fixed_rotation_xyzw": [
+    0.9999998547155503,
+    5.696253553150179e-05,
+    0.0003120439205868949,
+    -0.0004358356795151233
+  ],
+  "individual_measured_fingers_m": {
+    "left": [
+      0.0011175933017604387,
+      0.0011221244721643057
+    ],
+    "right": [
+      0.03063661526462615,
+      0.03063325341286375
+    ]
+  },
+  "planned_outside_tcp_z_m": 1.3694831548884414,
+  "planned_insert_tcp_z_m": 0.9537619533795318,
+  "actual_bear_clearance_above_highest_rim_m": 0.055215553886779345,
+  "method": {
+    "path": "Sequential raise at current XY, translate at outside height, insert, 11-point release opening, withdraw with both right fingers at .04 m. Every stage begins at previous stage end_q; left actual arm held.",
+    "ik_samples_per_stage": 45,
+    "rigid_clearance_samples_per_stage": 101,
+    "required_rigid_clearance_m": 0.008,
+    "joint_limits": "Analytic full cubic extrema via MotionPlan.validate_joint_limits",
+    "finger_geometry": "Each actual measured finger maintained separately; release independently interpolates both right fingers to .04. In-process Planner.set_fingers override only; no source changes."
+  },
+  "limitations": [
+    "Sampled rigid clearance is not continuous collision proof.",
+    "No soft bag/strap swept collision, teddy fit, contact, force, grasp retention or physical success certified.",
+    "Rigid translation of observed teddy only sets endpoint height; actual deformation requires fresh observation."
+  ],
+  "attempts": [
+    {
+      "correction_xy_m": [
+        -0.005,
+        0.0
+      ],
+      "target_tcp_outside_m": [
+        -0.11761320462937078,
+        0.0685425713493221,
+        1.3694831548884414
+      ],
+      "target_tcp_insert_m": [
+        -0.11761320462937078,
+        0.0685425713493221,
+        0.9537619533795318
+      ],
+      "target_com_xy_m": [
+        -0.11261758202721364,
+        0.06813722146779169
+      ],
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "duration_s": 2.505,
+          "right_tcp_target_m": [
+            -0.11261320462937077,
+            0.0685425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.04475634923578223,
+            0.11424376524031035,
+            -0.25253399725761444,
+            -1.1908067457623086,
+            0.029022235114045076,
+            1.300625992282798,
+            -1.902706988998307
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.022055201993773532,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.994593011001693
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "translate_outside_mouth",
+          "duration_s": 3.0060000000000002,
+          "right_tcp_target_m": [
+            -0.11761320462937078,
+            0.0685425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.05044053954879988,
+            0.13331903463064243,
+            -0.256113121623845,
+            -1.165887824892926,
+            0.03446476290891424,
+            1.2941283225911533,
+            -1.909707277520735
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.022055201993773532,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.9875927224792649
+          },
+          "rigid_check_count": 101
+        }
+      ],
+      "passed": false,
+      "failure": "insert_candidate: Rigid clearance violation at 2.398s: {'arms': {'distance': 0.007230113071228588, 'bodies': ['left_hand', 'right_hand'], 'geoms': ['', '']}}",
+      "first_failure_check": {
+        "category": "arms",
+        "distance": 0.007230113071228588,
+        "bodies": [
+          "left_hand",
+          "right_hand"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "wall_seconds": 0.5501964700015378
+    },
+    {
+      "correction_xy_m": [
+        -0.005,
+        0.01
+      ],
+      "target_tcp_outside_m": [
+        -0.11761320462937078,
+        0.07854257134932209,
+        1.3694831548884414
+      ],
+      "target_tcp_insert_m": [
+        -0.11761320462937078,
+        0.07854257134932209,
+        0.9537619533795318
+      ],
+      "target_com_xy_m": [
+        -0.11261758202721364,
+        0.07813722146779169
+      ],
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "duration_s": 2.505,
+          "right_tcp_target_m": [
+            -0.11261320462937077,
+            0.0685425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.04475634923578223,
+            0.11424376524031035,
+            -0.25253399725761444,
+            -1.1908067457623086,
+            0.029022235114045076,
+            1.300625992282798,
+            -1.902706988998307
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.022055201993773532,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.994593011001693
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "translate_outside_mouth",
+          "duration_s": 3.0060000000000002,
+          "right_tcp_target_m": [
+            -0.11761320462937078,
+            0.07854257134932209,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.05639234956435171,
+            0.11457646541530836,
+            -0.2622366625878858,
+            -1.1907068929620932,
+            0.030201283887113083,
+            1.3005879907397004,
+            -1.9236657135231687
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.022000497662206884,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.9736342864768313
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "insert_candidate",
+          "duration_s": 7.251531544725619,
+          "right_tcp_target_m": [
+            -0.11761320462937078,
+            0.07854257134932209,
+            0.9537619533795318
+          ],
+          "right_q_end": [
+            -0.046828586772076485,
+            0.2010532369524557,
+            -0.24567442168545311,
+            -2.191592348737344,
+            0.0700400511127662,
+            2.3845935856541374,
+            -1.9534582497710076
+          ],
+          "minimum_clearance": {
+            "category": "arms",
+            "distance": 0.013206723917274914,
+            "bodies": [
+              "left_hand",
+              "right_hand"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.8802076512626562
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "withdraw_after_release",
+          "duration_s": 7.344125584851174,
+          "right_tcp_target_m": [
+            -0.11761320462937078,
+            0.07854257134932209,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.05186462243560099,
+            0.11471795740998303,
+            -0.2673540501339905,
+            -1.1907026563796794,
+            0.03082562428939239,
+            1.3005732970543298,
+            -1.9240555603818694
+          ],
+          "minimum_clearance": {
+            "category": "arms",
+            "distance": 0.013206711811659918,
+            "bodies": [
+              "left_hand",
+              "right_hand"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.8802076512626562
+          },
+          "rigid_check_count": 101
+        }
+      ],
+      "passed": true,
+      "release": {
+        "samples": 11,
+        "minimum": {
+          "category": "right_self",
+          "distance": 0.024647220864603435,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        }
+      },
+      "wall_seconds": 0.8808301300014136
+    },
+    {
+      "correction_xy_m": [
+        -0.005,
+        0.02
+      ],
+      "target_tcp_outside_m": [
+        -0.11761320462937078,
+        0.0885425713493221,
+        1.3694831548884414
+      ],
+      "target_tcp_insert_m": [
+        -0.11761320462937078,
+        0.0885425713493221,
+        0.9537619533795318
+      ],
+      "target_com_xy_m": [
+        -0.11261758202721364,
+        0.0881372214677917
+      ],
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "duration_s": 2.505,
+          "right_tcp_target_m": [
+            -0.11261320462937077,
+            0.0685425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.04475634923578223,
+            0.11424376524031035,
+            -0.25253399725761444,
+            -1.1908067457623086,
+            0.029022235114045076,
+            1.300625992282798,
+            -1.902706988998307
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.022055201993773532,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.994593011001693
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "translate_outside_mouth",
+          "duration_s": 3.0060000000000002,
+          "right_tcp_target_m": [
+            -0.11761320462937078,
+            0.0885425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.06264703587866544,
+            0.0968266661544091,
+            -0.26838360537569445,
+            -1.2138462246837616,
+            0.025992941225312247,
+            1.3063912479417283,
+            -1.937777493336853
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.0219202531415313,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.959522506663147
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "insert_candidate",
+          "duration_s": 7.362830681877272,
+          "right_tcp_target_m": [
+            -0.11761320462937078,
+            0.0885425713493221,
+            0.9537619533795318
+          ],
+          "right_q_end": [
+            -0.053379776482826616,
+            0.1902458120249129,
+            -0.25510787957296827,
+            -2.2073131301437154,
+            0.06913090112116173,
+            2.3894138188534013,
+            -1.9693542889825613
+          ],
+          "minimum_clearance": {
+            "category": "arms",
+            "distance": 0.02165171196653484,
+            "bodies": [
+              "left_hand",
+              "right_hand"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.8644868698562846
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "withdraw_after_release",
+          "duration_s": 6.7721961860873465,
+          "right_tcp_target_m": [
+            -0.11761320462937078,
+            0.0885425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.05718866065277875,
+            0.09697451557646518,
+            -0.27443127522110844,
+            -1.213842543340581,
+            0.026617576100543147,
+            1.3063783220962442,
+            -1.9381756435529502
+          ],
+          "minimum_clearance": {
+            "category": "arms",
+            "distance": 0.021651733860780384,
+            "bodies": [
+              "left_hand",
+              "right_hand"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.8644868698562846
+          },
+          "rigid_check_count": 101
+        }
+      ],
+      "passed": true,
+      "release": {
+        "samples": 11,
+        "minimum": {
+          "category": "right_self",
+          "distance": 0.024611125120568837,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        }
+      },
+      "wall_seconds": 0.8808454079990042
+    },
+    {
+      "correction_xy_m": [
+        -0.01,
+        0.02
+      ],
+      "parent_identified_geometry_qualified": true,
+      "target_tcp_outside_m": [
+        -0.12261320462937077,
+        0.0885425713493221,
+        1.3694831548884414
+      ],
+      "target_tcp_insert_m": [
+        -0.12261320462937077,
+        0.0885425713493221,
+        0.9537619533795318
+      ],
+      "target_com_xy_m": [
+        -0.11761758202721363,
+        0.0881372214677917
+      ],
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "duration_s": 2.505,
+          "right_tcp_target_m": [
+            -0.11261320462937077,
+            0.0685425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.04475634923578223,
+            0.11424376524031035,
+            -0.25253399725761444,
+            -1.1908067457623086,
+            0.029022235114045076,
+            1.300625992282798,
+            -1.902706988998307
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.022055201993773532,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.994593011001693
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "translate_outside_mouth",
+          "duration_s": 3.0060000000000002,
+          "right_tcp_target_m": [
+            -0.12261320462937077,
+            0.0885425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.06789687720984725,
+            0.115886776505166,
+            -0.2723719207966922,
+            -1.1893661405783684,
+            0.03170756329019346,
+            1.3002300390128267,
+            -1.9447967819770424
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.021933272395824713,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.9525032180229576
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "insert_candidate",
+          "duration_s": 7.234250259709565,
+          "right_tcp_target_m": [
+            -0.12261320462937077,
+            0.0885425713493221,
+            0.9537619533795318
+          ],
+          "right_q_end": [
+            -0.058163037920120945,
+            0.20215822709014558,
+            -0.2546800845342726,
+            -2.190659655944157,
+            0.0729243399510733,
+            2.3842028492805762,
+            -1.9756679682013423
+          ],
+          "minimum_clearance": {
+            "category": "arms",
+            "distance": 0.01976257685318192,
+            "bodies": [
+              "left_hand",
+              "right_hand"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.8811403440558432
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "withdraw_after_release",
+          "duration_s": 7.435461664469925,
+          "right_tcp_target_m": [
+            -0.12261320462937077,
+            0.0885425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.06348361413973408,
+            0.11603185952870922,
+            -0.2773688987110612,
+            -1.1893617420973095,
+            0.03232554700315725,
+            1.300214795913759,
+            -1.9451821796729492
+          ],
+          "minimum_clearance": {
+            "category": "arms",
+            "distance": 0.019762586863958723,
+            "bodies": [
+              "left_hand",
+              "right_hand"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.8811403440558432
+          },
+          "rigid_check_count": 101
+        }
+      ],
+      "passed": true,
+      "release": {
+        "samples": 11,
+        "minimum": {
+          "category": "right_self",
+          "distance": 0.024583026665871387,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        }
+      },
+      "wall_seconds": 0.8824549510027282
+    },
+    {
+      "correction_xy_m": [
+        -0.015,
+        0.02
+      ],
+      "parent_identified_geometry_qualified": true,
+      "target_tcp_outside_m": [
+        -0.12761320462937076,
+        0.0885425713493221,
+        1.3694831548884414
+      ],
+      "target_tcp_insert_m": [
+        -0.12761320462937076,
+        0.0885425713493221,
+        0.9537619533795318
+      ],
+      "target_com_xy_m": [
+        -0.12261758202721364,
+        0.0881372214677917
+      ],
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "duration_s": 2.505,
+          "right_tcp_target_m": [
+            -0.11261320462937077,
+            0.0685425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.04475634923578223,
+            0.11424376524031035,
+            -0.25253399725761444,
+            -1.1908067457623086,
+            0.029022235114045076,
+            1.300625992282798,
+            -1.902706988998307
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.022055201993773532,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.994593011001693
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "translate_outside_mouth",
+          "duration_s": 3.0060000000000002,
+          "right_tcp_target_m": [
+            -0.12761320462937076,
+            0.0885425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.07325825344212948,
+            0.13547437434472653,
+            -0.2765272339517916,
+            -1.163883822006097,
+            0.037759493036146397,
+            1.293546892021324,
+            -1.9517867465410326
+          ],
+          "minimum_clearance": {
+            "category": "right_self",
+            "distance": 0.021950393798744777,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.9455132534589674
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "insert_candidate",
+          "duration_s": 6.279684467435437,
+          "right_tcp_target_m": [
+            -0.12761320462937076,
+            0.0885425713493221,
+            0.9537619533795318
+          ],
+          "right_q_end": [
+            -0.06020381646072533,
+            0.2142508889062319,
+            -0.2570190794759414,
+            -2.173843059943887,
+            0.07753197172945715,
+            2.3788249800627606,
+            -1.9824630162042793
+          ],
+          "minimum_clearance": {
+            "category": "arms",
+            "distance": 0.01873675878593533,
+            "bodies": [
+              "left_hand",
+              "right_hand"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.8979569400561132
+          },
+          "rigid_check_count": 101
+        },
+        {
+          "name": "withdraw_after_release",
+          "duration_s": 3.9541800509557303,
+          "right_tcp_target_m": [
+            -0.12761320462937076,
+            0.0885425713493221,
+            1.3694831548884414
+          ],
+          "right_q_end": [
+            -0.07011884543159384,
+            0.13559670029929585,
+            -0.28016423037007976,
+            -1.1638794135279895,
+            0.038285513491936825,
+            1.2935318216048686,
+            -1.9521073077129225
+          ],
+          "minimum_clearance": {
+            "category": "arms",
+            "distance": 0.018736837421278622,
+            "bodies": [
+              "left_hand",
+              "right_hand"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "analytic_joint_margin_rad": {
+            "left": 0.7099868335680419,
+            "right": 0.8979569400561132
+          },
+          "rigid_check_count": 101
+        }
+      ],
+      "passed": true,
+      "release": {
+        "samples": 11,
+        "minimum": {
+          "category": "right_self",
+          "distance": 0.024555750447228106,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        }
+      },
+      "wall_seconds": 0.9156771099951584
+    }
+  ],
+  "passed_corrections": [
+    [
+      -0.005,
+      0.01
+    ],
+    [
+      -0.005,
+      0.02
+    ],
+    [
+      -0.01,
+      0.02
+    ],
+    [
+      -0.015,
+      0.02
+    ]
+  ],
+  "stopped_after_two_passes": true,
+  "geometry_qualified_priority_requested_xy_m": [
+    [
+      -0.01,
+      0.02
+    ],
+    [
+      -0.015,
+      0.02
+    ],
+    [
+      -0.01,
+      0.01
+    ],
+    [
+      -0.015,
+      0.01
+    ]
+  ],
+  "geometry_qualified_passed_corrections": [
+    [
+      -0.01,
+      0.02
+    ],
+    [
+      -0.015,
+      0.02
+    ]
+  ],
+  "stopped_after_two_geometry_qualified_passes": true
+}

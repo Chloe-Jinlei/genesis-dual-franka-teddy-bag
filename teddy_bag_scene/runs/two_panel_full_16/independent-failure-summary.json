@@ -1,0 +1,270 @@
+{
+  "kind": "full16_independent_failure_summary",
+  "independent_task_success": false,
+  "runtime_error": "GateFailure: Cloth edge stretch exceeded 15 percent: ratio 1.1503",
+  "failure_time_s": 61.235000000012874,
+  "wall_seconds": 1986.4072607699998,
+  "actual_progress": [
+    {
+      "phase": "lower_teddy_to_rim",
+      "start_s": 42.81500000000345,
+      "expected_end_s": 53.935000000003456,
+      "observed_end_s": 53.935000000003456,
+      "completed": true,
+      "minimum_J": 0.2657960650015439,
+      "maximum_cloth_edge_stretch_ratio": 1.090986269415244,
+      "maximum_right_net_force_n": 2.2636973774968645,
+      "maximum_right_tcp_torque_nm": 0.08453832612978159,
+      "minimum_native_hand_gap_m": 0.014633497127169548
+    },
+    {
+      "phase": "center_teddy_at_rim",
+      "start_s": 53.93500000000914,
+      "expected_end_s": 57.95500000000914,
+      "observed_end_s": 57.95500000000914,
+      "completed": true,
+      "minimum_J": 0.29783825549903503,
+      "maximum_cloth_edge_stretch_ratio": 1.0885596397796058,
+      "maximum_right_net_force_n": 1.3550587318245535,
+      "maximum_right_tcp_torque_nm": 0.08294159354427667,
+      "minimum_native_hand_gap_m": 0.014633497127169548
+    },
+    {
+      "phase": "insert_teddy",
+      "start_s": 57.9550000000112,
+      "expected_end_s": 63.980000000011195,
+      "observed_end_s": 61.235000000012874,
+      "completed": false,
+      "minimum_J": 0.2440503057761619,
+      "maximum_cloth_edge_stretch_ratio": 1.150289553040751,
+      "maximum_right_net_force_n": 1.82086780237158,
+      "maximum_right_tcp_torque_nm": 0.09484535648545127,
+      "minimum_native_hand_gap_m": 0.01625932022844112
+    }
+  ],
+  "release_executed": false,
+  "soft": {
+    "rows": 12248,
+    "integration_dt_s": 0.005,
+    "minimum_J": 0.23070257365227467,
+    "maximum_bag_table_penetration_m": 0.0,
+    "maximum_bear_table_penetration_m": 0.0,
+    "maximum_cloth_edge_stretch_ratio": 1.150289553040751,
+    "stretch_limit": 1.15,
+    "violation_times_s": [
+      61.235000000012874
+    ],
+    "all_finite": true,
+    "failed_full_state_recomputed_metrics": [
+      61.235000000012874,
+      0.2440503057761619,
+      0.0,
+      0.0,
+      1.150289553040751,
+      1.0
+    ],
+    "maximum_recorded_vs_recomputed_failed_metric_error": 0.0,
+    "number_of_edges_exceeding_stretch_limit_at_failure": 1,
+    "maximum_stretch_edge_vertex_indices": [
+      1628,
+      1638
+    ],
+    "maximum_stretch_edge_rest_endpoints_m": [
+      [
+        -0.09042996693,
+        -0.08117260073,
+        1.2797866434
+      ],
+      [
+        -0.07465248159000001,
+        -0.07704260151,
+        1.2669335849999999
+      ]
+    ],
+    "maximum_stretch_edge_failed_endpoints_m": [
+      [
+        -0.11818968200782402,
+        -0.11474742052900291,
+        1.2570245963394675
+      ],
+      [
+        -0.12246092085359073,
+        -0.10910544913265173,
+        1.234211075296457
+      ]
+    ]
+  },
+  "guard": {
+    "status": "passed",
+    "passed": true,
+    "rows": 6439,
+    "start_time_s": 29.044999999998506,
+    "end_time_s": 61.235000000012874,
+    "checks": {
+      "all_required_raw_values_finite": true,
+      "strictly_increasing_consecutive_steps": true,
+      "timestamps_match_fixed_integration_step": true,
+      "covers_every_step_from_guard_entry_to_run_end": true,
+      "last_time_matches_report": true,
+      "right_hold_flag_agrees_with_release_event": true,
+      "summed_raw_link_force_matches_net_force": true,
+      "stored_force_norms_match_raw_vectors": true,
+      "stored_torque_norms_match_raw_vectors": true,
+      "stored_finger_norms_match_raw_vectors": true,
+      "baseline_differences_are_only_recorded_subtractions": true,
+      "raw_net_force_below_limit": true,
+      "raw_tcp_torque_below_limit": true,
+      "raw_each_right_finger_force_below_limit": true,
+      "left_both_soft_opening_reactions_above_minimum": true,
+      "right_both_soft_opening_reactions_above_minimum_until_release": true,
+      "designated_left_material_within_18mm": true,
+      "right_teddy_vertex_within_45mm_until_release": true,
+      "no_recorded_stop_reason": true
+    },
+    "first_physical_violation": null,
+    "raw_limits": {
+      "max_net_force_n": 8.0,
+      "max_tcp_torque_nm": 0.15,
+      "max_finger_force_n": 8.0,
+      "minimum_left_opening_reaction_n": 0.1
+    },
+    "maximum_net_force_n": 2.3937861944924013,
+    "maximum_tcp_torque_nm": 0.09484535648545127,
+    "maximum_right_finger_force_n": [
+      4.381952977796332,
+      4.789995136567681
+    ],
+    "minimum_right_opening_reaction_until_release_n": [
+      3.426392990413893,
+      3.7675413709946186
+    ],
+    "minimum_left_opening_reaction_n": [
+      8.864578414776807,
+      8.897750837616236
+    ],
+    "maximum_designated_left_material_distance_m": 0.0009932527245620397,
+    "maximum_right_nearest_material_distance_until_release_m": 0.008507676973908964,
+    "maximum_saved_baseline_subtraction_error": 0.0,
+    "scope": "IPC soft-coupling STC feedback; excludes native Genesis rigid-contact force",
+    "limitations": [
+      "Positive finger-axis projections plus material proximity are grip evidence, not force-closure proof.",
+      "Saved per-link origins and aim axes are independently checked by the richer contact trace audit.",
+      "Raw engineering force and moment limits are uncalibrated; baseline subtraction never waives them."
+    ]
+  },
+  "native_hand_height": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "exact_three_native_reference_links": true,
+      "reference_vertices_match_recorded_hashes": true,
+      "reference_bounds_match_recorded_geometry": true,
+      "link7_reference_is_true_palm_subset_not_arm_link7": true,
+      "all_native_rows_finite_and_shapes_valid": true,
+      "stable_native_link_order": true,
+      "native_affine_homogeneous_rows_valid": true,
+      "native_affine_bodies_noninverted": true,
+      "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+      "whole_hand_minimum_matches_three_components": true,
+      "reported_vertical_gaps_reconstruct": true,
+      "minimum_threshold_is_5mm": true,
+      "all_recorded_vertical_gaps_at_least_5mm": true,
+      "whole_bear_counts_and_max_vertex_indices_valid": true,
+      "covers_every_step_from_center_entry_through_insert_endpoint": true,
+      "strictly_increasing_consecutive_steps": true,
+      "timestamps_match_fixed_step": true,
+      "no_native_height_stop_reason": true,
+      "all_full_bear_frames_in_monitored_window_matched": true,
+      "full_frame_bear_maxima_and_argmax_reconstruct": true,
+      "failed_full_bear_frame_matches_height_row": true,
+      "saved_coupling_finger_transforms_match_height_trace": true
+    },
+    "limitations": [
+      "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+      "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+      "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+    ],
+    "rows": 1461,
+    "start_time_s": 53.93500000000914,
+    "end_time_s": 61.235000000012874,
+    "minimum_gap_m": 0.014633497127169548,
+    "maximum_hand_reconstruction_error_m": 2.220446049250313e-16,
+    "full_bear_frame_crosschecks": 147,
+    "failed_full_bear_frame_crosschecked": true,
+    "bear_summary_only_rows_without_matching_full_frame": 1314,
+    "finger_transform_crosschecks": 294
+  },
+  "maximum_left_tcp_displacement_after_handoff_m": 0.00017353278345383775,
+  "staged_sequence_status": "incomplete",
+  "staged_incomplete_evidence": [
+    "No actual full-state frame at staged endpoint 63.980000000011195"
+  ],
+  "all_failed_checks": {
+    "failed_geometry_or_soft_checks": [
+      "cloth_edge_stretch_below_15_percent",
+      "bear_fully_inside_bag_final",
+      "bear_remains_inside_during_final_hold_samples",
+      "requested_phases_recorded_in_order",
+      "right_fingers_open_after_release",
+      "controller_explicitly_reports_task_complete"
+    ],
+    "failed_guard_checks": [],
+    "failed_staged_checks": []
+  },
+  "last_regular_full_geometry_time_s": 61.20500000001286,
+  "last_regular_frame_containment": {
+    "mouth_projected_area_m2": 0.020232855077213382,
+    "mouth_projected_crossings": 0,
+    "mouth_projected_dimensions_m": [
+      0.29343133483342854,
+      0.13413756168500046
+    ],
+    "mouth_nonplanarity_max_m": 0.05744289467372308,
+    "virtual_closed_body_valid": true,
+    "bear_vertex_inside_fraction": 0.06620689655172414,
+    "bear_center_of_mass_m": [
+      -0.12609029860142343,
+      0.02962038142164213,
+      0.9679275348713822
+    ],
+    "bear_center_of_mass_inside": false,
+    "all_bear_vertices_inside": false
+  },
+  "failed_full_state_containment": {
+    "mouth_projected_area_m2": 0.020037294843261323,
+    "mouth_projected_crossings": 0,
+    "mouth_projected_dimensions_m": [
+      0.29250860371361287,
+      0.13520526216501014
+    ],
+    "mouth_nonplanarity_max_m": 0.056595381876866406,
+    "virtual_closed_body_valid": true,
+    "bear_vertex_inside_fraction": 0.06620689655172414,
+    "bear_center_of_mass_m": [
+      -0.1257826327233135,
+      0.02899415012190876,
+      0.9661121392373136
+    ],
+    "bear_center_of_mass_inside": false,
+    "all_bear_vertices_inside": false
+  },
+  "final_sampled_contact_scope": {
+    "time_s": 61.20500000001286,
+    "method": "Discrete bag vertex, edge-midpoint and triangle-centroid winding/distance samples",
+    "sample_count": 11121,
+    "near_bear_samples": 2527,
+    "inside_samples": 0,
+    "penetration_over_tolerance": 0,
+    "maximum_sampled_penetration_m": 0.0,
+    "tolerance_m": 0.001,
+    "continuous_collision_guarantee": false
+  },
+  "interpretation": "Low entry and centering completed. Downward insertion stopped because one actual cloth edge exceeded the unchanged 15% elongation limit. Native contact force, torque, grip, volume ratio, table penetration and monitored left-hand clearance passed their recorded scopes. Most bear vertices were still outside the valid virtual bag volume. No release or final hold occurred.",
+  "limits": [
+    "No runtime or config files were changed.",
+    "Native wrench audit covers IPC soft-coupling feedback, not identified material contact pairs.",
+    "Hand geometry is reconstructed every row; full bear geometry only at saved frames and the failure frame.",
+    "The hand monitor begins at center; the entry phase hand value is only its final boundary sample.",
+    "Discrete sampled contact/containment evidence is not a continuous-time certificate."
+  ]
+}

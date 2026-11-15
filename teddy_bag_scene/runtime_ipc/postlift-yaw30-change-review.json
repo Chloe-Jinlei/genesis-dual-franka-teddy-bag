@@ -1,0 +1,486 @@
+{
+  "kind": "minimal_optional_postlift_yaw_30_degree_policy_extension",
+  "physical_success": false,
+  "native_run_started": false,
+  "production_change_only_expected_helper": true,
+  "helper_exact_inverse_of_only_authorized_edits_matches_previous": true,
+  "changed_preexisting_production_paths": [
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py"
+  ],
+  "all_reported_tests_passed": true,
+  "tests": [
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-frozen-policy-regression.json",
+      "sha256": "ffe3f4e052b3f62c17967b97445579d39dd1a4c5a0284c4d1759425a5a2d8416",
+      "passed": true,
+      "check_count": 51
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-regression.json",
+      "sha256": "e469290f67c1228c747bb8d2c896e395b6b2eda6847de4538f77fe0dd2ac06d3",
+      "passed": true,
+      "check_count": 59
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-audit-regression.json",
+      "sha256": "b40144bbd546f0e4e56a49ddbb6dc7e3c3be21431c9f700782cc6023bd608b47",
+      "passed": true,
+      "check_count": 72
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw-flow-audit.json",
+      "sha256": "62dcd221dddf0e5751e79bee362be56146a7b33ae9c8ae1d7e8f96a0981e18c8",
+      "passed": true,
+      "check_count": 36
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-boundary-execution-30.json",
+      "sha256": "f5f048effd6db5710e1a19482318853f9ea398b63a6723e79d907e493125b3ad",
+      "passed": true,
+      "check_count": 1
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-boundary-execution+30.json",
+      "sha256": "75c61020e3cbb63d13219df123a41458833586f60bf2cc12ffd6c7e0ac28efba",
+      "passed": true,
+      "check_count": 1
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-historical-native-audit.json",
+      "sha256": "3846c7eb6e7845710fb458d8f7ae1ea0a696325d0b4c9d524be4eee13f1823db",
+      "passed": true,
+      "check_count": 2
+    }
+  ],
+  "new_policy": {
+    "maximum_absolute_world_z_degrees": 30,
+    "minimum_duration_s": 6
+  },
+  "frozen_policy_audit": {
+    "old_archives": "Recognized literal <=15 remains <=15, so +/-15.1 is rejected even with current live helper permitting30.",
+    "new_archives": "One module constant MAX_POSTLIFT_YAW_DEGREES=30 and same direct rejection guard. Unknown/reassigned/weak-duration guard shapes fail closed.",
+    "method": "Static AST, no frozen helper import or execution; shared by final and prefix auditors."
+  },
+  "unchanged_gates": [
+    "original actual physics and named material/teddy holding",
+    "actual lift above table+40mm",
+    "command q finite seven per side and actual FK match2mm/15mrad",
+    "fixed measured TCP and world-left full actual FK rotation",
+    "left command unchanged",
+    "analytic joint positions and continuous reference .35rad/s/.5rad/s2",
+    "401 raw finite original seven-category rigid >=8mm at actual and commanded left poses",
+    "sampled TCP/Slerp tracking .5mm/2mrad",
+    "continuous ideal frozen whole-bear left arc >=5mm with sagitta",
+    "native finite force, torque,grip,J,stretch,table and final containment remain mandatory"
+  ],
+  "notes": [
+    "Only the permitted rotation magnitude is enlarged; the candidate still must pass all unchanged preflight/native gates.",
+    "Historical command-prefix tests reconstruct their own frozen old motion code after the independent continuous-rate fix; they do not relabel a new reference as an old executed command.",
+    "Two +/-30 execution fixtures are explicitly synthetic auditor tests, not native physics evidence.",
+    "No run.py, motion.py, existing config or asset was edited. No new physical-success conclusion follows."
+  ],
+  "source_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": "e2023e4c811ab482c9ab4172846c2229d1c22622fee7fc414267eef670de847a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift_yaw_prefix_review.py": "20d4b3302f41e47b88ff9ebe4a8a9bfcbd077ba86446853ab466efa9323b076a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift_yaw_regression.py": "9d09880725e4c135d9b5a59a44ae68ac644320d7ff4ebcb21ccbef65b438f0ca",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift_yaw_audit_regression.py": "81f8cca4cc4fc80b5b7efe7046c1105032215d3cfb65b72e25cfe8cff92cd974",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift_yaw_frozen_policy_regression.py": "0283672d680fe5c3c371eb0c3c1ee01ca388454b8109ba34752f31ae5b251fcd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-change.patch": "a7fbf29fc0c4f8a41c8e26b2645ea37ef5cb88bec97c80daa2a9b4699e6844bf"
+  },
+  "before_helper_sha256": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c",
+  "independent_review": {
+    "reviewer": "strap_material",
+    "status": "passed",
+    "physical_success": false,
+    "production_edited": false,
+    "native_started": false,
+    "pre_review_summary_sha256": "ab9a69ae146ea9aba38b33a4eec6ecbf634f8fd1ae78b2a3bd1ff53148fe354d",
+    "checks": [
+      {
+        "name": "only_preexisting_production_helper_changed",
+        "passed": true,
+        "evidence": [
+          "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py"
+        ]
+      },
+      {
+        "name": "inverse_of_only_angle_constant_guard_message_and_doc_matches_old_helper_exactly",
+        "passed": true,
+        "evidence": null
+      },
+      {
+        "name": "all_soft_geometry_and_grasp_gates_unchanged_by_exact_inverse",
+        "passed": true,
+        "evidence": null
+      },
+      {
+        "name": "old_frozen_policy_exact",
+        "passed": true,
+        "evidence": {
+          "maximum_absolute_world_z_degrees": 15.0,
+          "minimum_duration_s": 6.0,
+          "source_form": "legacy_literal_15",
+          "source_path": "/tmp/independent-yaw30-policy-u4vkzznb/source/postlift_yaw.py",
+          "source_sha256": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c",
+          "extraction": "Static AST recognition; frozen helper is not imported or executed"
+        }
+      },
+      {
+        "name": "new_frozen_policy_exact",
+        "passed": true,
+        "evidence": {
+          "maximum_absolute_world_z_degrees": 30.0,
+          "minimum_duration_s": 6.0,
+          "source_form": "module_constant_30",
+          "source_path": "/tmp/independent-yaw30-policy-u4vkzznb/source/postlift_yaw.py",
+          "source_sha256": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+          "extraction": "Static AST recognition; frozen helper is not imported or executed"
+        }
+      },
+      {
+        "name": "archived_full20_still15",
+        "passed": true,
+        "evidence": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c"
+      },
+      {
+        "name": "archived_full21_still15",
+        "passed": true,
+        "evidence": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c"
+      },
+      {
+        "name": "independent_real_helper_boundary_minus30",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": true,
+          "observed_policy_admitted": true,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "command_qs needs exactly left and right"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_plus30",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": true,
+          "observed_policy_admitted": true,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "command_qs needs exactly left and right"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_minus15",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": true,
+          "observed_policy_admitted": true,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "command_qs needs exactly left and right"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_plus15",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": true,
+          "observed_policy_admitted": true,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "command_qs needs exactly left and right"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_just_above_plus30",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "postlift yaw requires nonzero |degrees|<=30 and duration>=6s"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_just_below_minus30",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "postlift yaw requires nonzero |degrees|<=30 and duration>=6s"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_zero",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "postlift yaw requires nonzero |degrees|<=30 and duration>=6s"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_angle_nan",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "world_z_degrees must be a finite numeric scalar"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_angle_inf",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "world_z_degrees must be a finite numeric scalar"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_angle_bool",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "world_z_degrees must be a finite numeric scalar"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_angle_string",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "world_z_degrees must be a finite numeric scalar"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_duration_just_below6",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "postlift yaw requires nonzero |degrees|<=30 and duration>=6s"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_duration6",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": true,
+          "observed_policy_admitted": true,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "command_qs needs exactly left and right"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_duration_inf",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "duration_s must be a finite numeric scalar"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_duration_nan",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "duration_s must be a finite numeric scalar"
+          ]
+        }
+      },
+      {
+        "name": "independent_real_helper_boundary_duration_bool",
+        "passed": true,
+        "evidence": {
+          "expected_policy_admitted": false,
+          "observed_policy_admitted": false,
+          "no_state_or_geometry_attempted": true,
+          "rejections": [
+            "duration_s must be a finite numeric scalar"
+          ]
+        }
+      },
+      {
+        "name": "reported_checks_and_source_provenance_postlift-yaw30-frozen-policy-regression.json",
+        "passed": true,
+        "evidence": {
+          "source_match": {
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py": true,
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": true,
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift_yaw_prefix_review.py": true,
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift_yaw_frozen_policy_regression.py": true
+          }
+        }
+      },
+      {
+        "name": "reported_checks_and_source_provenance_postlift-yaw30-regression.json",
+        "passed": true,
+        "evidence": {
+          "source_match": {
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py": true
+          }
+        }
+      },
+      {
+        "name": "reported_checks_and_source_provenance_postlift-yaw30-audit-regression.json",
+        "passed": true,
+        "evidence": {
+          "source_match": {
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": true
+          }
+        }
+      },
+      {
+        "name": "reported_checks_and_source_provenance_postlift-yaw-flow-audit.json",
+        "passed": true,
+        "evidence": {
+          "source_match": {
+            "run.py": true
+          }
+        }
+      },
+      {
+        "name": "reported_checks_and_source_provenance_postlift-yaw30-boundary-execution+30.json",
+        "passed": true,
+        "evidence": {
+          "source_match": {
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py": true,
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": true
+          }
+        }
+      },
+      {
+        "name": "reported_checks_and_source_provenance_postlift-yaw30-boundary-execution-30.json",
+        "passed": true,
+        "evidence": {
+          "source_match": {
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py": true,
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": true
+          }
+        }
+      },
+      {
+        "name": "reported_checks_and_source_provenance_postlift-yaw30-historical-native-audit.json",
+        "passed": true,
+        "evidence": {
+          "source_match": {
+            "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": true
+          }
+        }
+      },
+      {
+        "name": "existing_patch_exactly_matches_independently_recomputed_five_before_after_files",
+        "passed": true,
+        "evidence": null
+      }
+    ],
+    "check_count": 31,
+    "all_checks_passed": true,
+    "failed_checks": [],
+    "reported_test_evidence_verified": [
+      {
+        "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-frozen-policy-regression.json",
+        "sha256": "ffe3f4e052b3f62c17967b97445579d39dd1a4c5a0284c4d1759425a5a2d8416",
+        "passed": true,
+        "check_count": 51
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-regression.json",
+        "sha256": "e469290f67c1228c747bb8d2c896e395b6b2eda6847de4538f77fe0dd2ac06d3",
+        "passed": true,
+        "check_count": 59
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-audit-regression.json",
+        "sha256": "b40144bbd546f0e4e56a49ddbb6dc7e3c3be21431c9f700782cc6023bd608b47",
+        "passed": true,
+        "check_count": 72
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw-flow-audit.json",
+        "sha256": "62dcd221dddf0e5751e79bee362be56146a7b33ae9c8ae1d7e8f96a0981e18c8",
+        "passed": true,
+        "check_count": 36
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-boundary-execution+30.json",
+        "sha256": "75c61020e3cbb63d13219df123a41458833586f60bf2cc12ffd6c7e0ac28efba",
+        "passed": true,
+        "check_count": 1
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-boundary-execution-30.json",
+        "sha256": "f5f048effd6db5710e1a19482318853f9ea398b63a6723e79d907e493125b3ad",
+        "passed": true,
+        "check_count": 1
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw30-historical-native-audit.json",
+        "sha256": "3846c7eb6e7845710fb458d8f7ae1ea0a696325d0b4c9d524be4eee13f1823db",
+        "passed": true,
+        "check_count": 0
+      }
+    ],
+    "runtime_gate_assessment": {
+      "only_admitted_worldZ_magnitude_changed": "nonzero abs(angle)<=15 to<=30",
+      "minimum_duration_s": 6.0,
+      "world_axis_and_actual_fullR_multiplication_unchanged": true,
+      "fixed_TCP_and_actual_plus_commanded_left_sweep_unchanged": true,
+      "minimum_rigid_clearance_m": 0.008,
+      "minimum_frozen_left_sweep_m": 0.005,
+      "maximum_joint_speed_rad_s": 0.35,
+      "maximum_joint_acceleration_rad_s2": 0.5,
+      "lift_minimum_table_clearance_m": 0.04,
+      "FK_position_tolerance_m": 0.0005,
+      "FK_rotation_tolerance_rad": 0.002,
+      "native_force_torque_material_grip_and_table_guards_unchanged": true
+    },
+    "patch_scope": "Exactly the five preexisting files with supplied before snapshots; the new standalone frozen_policy regression script is separately hashed and reviewed but has no supplied pre-change snapshot.",
+    "limitations": [
+      "No native+/-30 physical execution or insertion success is claimed.",
+      "Boundary sentinel probes only the real argument guard and deliberately stop before state/geometry planning; fullhelper and synthetic execution evidence are separately provenance-verified.",
+      "Static frozen-policy recognizer checks the supported15/30 guard forms and never executes frozen helper Python; it is not an arbitrary-Python semantic verifier.",
+      "The enlargement changes candidate eligibility; every geometric and native runtime gate must still independently pass."
+    ]
+  }
+}

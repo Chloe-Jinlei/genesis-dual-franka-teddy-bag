@@ -1,0 +1,241 @@
+--- before/postlift_yaw.py
++++ after/postlift_yaw.py
+@@ -16,6 +16,7 @@
+ from contact_robot_geometry import _convex, convex_clearance_certificate, left_collision_solids
+ 
+ SIDES = ("left", "right")
++MAX_POSTLIFT_YAW_DEGREES = 30
+ RIGID_CATEGORIES = {"left_self", "left_table", "left_mounts", "right_self", "right_table", "right_mounts", "arms"}
+ 
+ 
+@@ -59,7 +60,7 @@
+ 
+     q_s is quadratic (check endpoints and its vertex); q_ss is linear.
+     max s_u=15/8 and max |s_uu|=10/sqrt(3), so the chain rule bounds
+-    every time, independently of the 501-point retiming procedure.
++    every time, independently of MotionPlan's continuous-extrema retiming.
+     """
+     duration = _number(plan.duration, "plan duration")
+     if duration <= 0: raise ValueError("plan duration must be positive")
+@@ -155,8 +156,8 @@
+             raise ValueError("postlift_yaw requires exactly world_z_degrees and duration_s")
+         degrees = _number(option["world_z_degrees"], "world_z_degrees")
+         duration = _number(option["duration_s"], "duration_s")
+-        if not 0 < abs(degrees) <= 15 or duration < 6:
+-            raise ValueError("postlift yaw requires nonzero |degrees|<=15 and duration>=6s")
++        if not 0 < abs(degrees) <= MAX_POSTLIFT_YAW_DEGREES or duration < 6:
++            raise ValueError(f"postlift yaw requires nonzero |degrees|<={MAX_POSTLIFT_YAW_DEGREES} and duration>=6s")
+         report["parameters"] = dict(world_z_degrees=degrees, duration_s=duration)
+         if set(command_qs) != set(SIDES): raise ValueError("command_qs needs exactly left and right")
+         commanded = {s:np.asarray(command_qs[s],float).copy() for s in SIDES}
+--- before/runtime_ipc/audit_guarded_run.py
++++ after/runtime_ipc/audit_guarded_run.py
+@@ -7,6 +7,7 @@
+ from __future__ import annotations
+ 
+ import argparse
++import ast
+ import hashlib
+ import importlib.util
+ import json
+@@ -708,6 +709,49 @@
+     return bool(all_gaps and abs(sweep['minimum_continuous_gap_lower_bound_m']-min(all_gaps))<=1e-9)
+ 
+ 
++def frozen_postlift_yaw_policy(run):
++    """Read the recognized angle guard from frozen Python AST; never execute it.
++
++    Historical helpers have the literal 15-degree guard. New helpers have one
++    immutable module constant (30) and use it in the same guard. Unknown source
++    policy shapes fail closed instead of inheriting the current live policy.
++    """
++    path=Path(run)/'source/postlift_yaw.py'
++    raw=path.read_bytes();tree=ast.parse(raw,filename=str(path))
++    functions=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='plan_postlift_yaw']
++    if len(functions)!=1:raise ValueError('Unrecognized frozen postlift helper definition')
++    name='MAX_POSTLIFT_YAW_DEGREES'
++    stores=[n for n in ast.walk(tree) if isinstance(n,ast.Name) and n.id==name and isinstance(n.ctx,ast.Store)]
++    assignments=[n for n in tree.body if isinstance(n,ast.Assign) and len(n.targets)==1 and
++                 isinstance(n.targets[0],ast.Name) and n.targets[0].id==name]
++    if stores:
++        if len(stores)!=1 or len(assignments)!=1 or not isinstance(assignments[0].value,ast.Constant) \
++                or type(assignments[0].value.value) not in (int,float) or assignments[0].value.value!=30:
++            raise ValueError('Unrecognized or reassigned frozen postlift angle constant')
++        if tree.body.index(assignments[0])>tree.body.index(functions[0]):
++            raise ValueError('Frozen postlift angle constant must precede helper definition')
++        limit=30.;expression=f'not 0 < abs(degrees) <= {name} or duration < 6'
++        mode='module_constant_30'
++    else:
++        limit=15.;expression='not 0 < abs(degrees) <= 15 or duration < 6'
++        mode='legacy_literal_15'
++    expected=ast.dump(ast.parse(expression,mode='eval').body,include_attributes=False)
++    guards=[n for n in ast.walk(functions[0]) if isinstance(n,ast.If) and
++            ast.dump(n.test,include_attributes=False)==expected]
++    if len(guards)!=1 or len(guards[0].body)!=1 or not isinstance(guards[0].body[0],ast.Raise):
++        raise ValueError('Unrecognized frozen postlift angle/duration rejection guard')
++    # The known guard is an unconditional statement within the helper's outer
++    # try body, not a nested/dead branch that merely happens to contain it.
++    outer=[n for n in functions[0].body if isinstance(n,ast.Try)]
++    if len(outer)!=1 or guards[0] not in outer[0].body:
++        raise ValueError('Frozen postlift policy guard is not on the direct validation path')
++    if any(isinstance(n,(ast.Global,ast.Nonlocal)) and name in n.names for n in ast.walk(functions[0])):
++        raise ValueError('Frozen postlift policy constant may not be rebound')
++    return dict(maximum_absolute_world_z_degrees=limit,minimum_duration_s=6.,source_form=mode,
++                source_path=str(path),source_sha256=hashlib.sha256(raw).hexdigest(),
++                extraction='Static AST recognition; frozen helper is not imported or executed')
++
++
+ def audit_postlift_yaw(run,report,states,trace,config,reactions):
+     """Read saved native evidence; never plan/execute or import the yaw helper.
+ 
+@@ -733,7 +777,9 @@
+         option=config['task']['contact_trial']['postlift_yaw']
+         if not isinstance(option,dict) or set(option)!={'world_z_degrees','duration_s'}:raise ValueError('Invalid frozen yaw config structure')
+         angle=_yaw_number(option['world_z_degrees']);minimum_duration=_yaw_number(option['duration_s'])
+-        if not 0<abs(angle)<=15 or minimum_duration<6:raise ValueError('Frozen yaw config outside original bounds')
++        policy=frozen_postlift_yaw_policy(run);result['frozen_angle_policy']=policy
++        if not 0<abs(angle)<=policy['maximum_absolute_world_z_degrees'] or minimum_duration<policy['minimum_duration_s']:
++            raise ValueError('Frozen yaw config outside frozen source policy bounds')
+         dt=_yaw_number(config['simulation']['dt'])
+         if dt<=0:raise ValueError('Invalid integration step')
+         checks['frozen_optional_config_valid']=True
+--- before/runtime_ipc/postlift_yaw_prefix_review.py
++++ after/runtime_ipc/postlift_yaw_prefix_review.py
+@@ -42,12 +42,14 @@
+ 
+ option = cfg["task"]["contact_trial"]["postlift_yaw"]
+ angle = audit._yaw_number(option["world_z_degrees"])
++minimum_duration = audit._yaw_number(option["duration_s"])
++frozen_policy = audit.frozen_postlift_yaw_policy(run)
+ dt = audit._yaw_number(cfg["simulation"]["dt"])
+ observed = audit._yaw_number(plan["observed_time_s"])
+ duration = audit._yaw_number(plan["duration_s"])
+ steps = int(np.ceil(duration / dt))
+ expected_end = observed + steps * dt
+-check("original_optional_config_bounds", set(option) == {"world_z_degrees", "duration_s"} and 0 < abs(angle) <= 15 and option["duration_s"] >= 6 and dt > 0)
++check("original_optional_config_bounds", set(option) == {"world_z_degrees", "duration_s"} and 0 < abs(angle) <= frozen_policy["maximum_absolute_world_z_degrees"] and minimum_duration >= frozen_policy["minimum_duration_s"] and dt > 0)
+ required = ["source/postlift_yaw.py", "source/motion.py", "source/run.py", "config.json",
+             "source/assets/panda_tactile.xml", "source/assets/" + Path(cfg["bag"]["npz_file"]).name]
+ check("frozen_sources_assets_and_config_match_manifest", all(name in manifest and sha(run / name) == manifest[name] for name in required))
+@@ -149,6 +151,7 @@
+ check("frozen_runner_yaw_baseline_and_sampling_contract_matches_audited_full20", all(contract.values()))
+ check("immutable_prefix_inputs_unchanged_during_review", all(sha(run / name) == digest for name, digest in hashes.items()))
+ result = dict(kind="independent_actual_postlift_yaw_prefix_review", status="incomplete_pending_native_trace", passed=False,
++    frozen_angle_policy=frozen_policy,
+     physical_success=False, complete_run_audited=False, complete_native_guard_trace_audited=False,
+     all_available_prefix_checks_passed=all(checks.values()), checks=checks, failed_available_checks=[k for k,v in checks.items() if not v],
+     actual_measurements=measurements, actual_endpoint_position_error_m=pe, actual_endpoint_rotation_error_rad=re,
+--- before/runtime_ipc/postlift_yaw_regression.py
++++ after/runtime_ipc/postlift_yaw_regression.py
+@@ -2,6 +2,7 @@
+ from pathlib import Path
+ import copy
+ import hashlib
++import importlib.util
+ import json
+ import sys
+ from unittest.mock import patch
+@@ -20,7 +21,9 @@
+ 
+ def replay_lift_command(run,cfg):
+     """Rebuild original finite reference commands; does not advance physics."""
+-    planner=Planner(cfg);initial=dict(np.load(run/'initial.npz',allow_pickle=False))
++    spec=importlib.util.spec_from_file_location('postlift_regression_historical_motion',run/'source/motion.py')
++    frozen=importlib.util.module_from_spec(spec);sys.modules[spec.name]=frozen;spec.loader.exec_module(frozen)
++    planner=frozen.Planner(cfg);initial=dict(np.load(run/'initial.npz',allow_pickle=False))
+     qs={s:initial['q_'+s][:7].copy() for s in ('left','right')}
+     finger={s:float(initial['q_'+s][7:].mean()) for s in qs}
+     with np.load(run/'source/assets'/cfg['bag']['npz_file'],allow_pickle=False) as bag:
+@@ -93,8 +96,9 @@
+         evidence=dict(kind='postlift_yaw_actual_lift_helper_regression',physical_success=False,
+             helper_source_sha256=source_hash,input_sha256={n:sha(run/n) for n in ('config.json','rest.npz','lift_teddy.npz','initial.npz','report.json')},
+             command_qs={s:q.tolist() for s,q in command.items()},reconstructed_command_prefix=replay,helper_report=out)
+-        save(run/'independent-production-postlift-yaw-review.json',evidence)
+-        cases.append(dict(run=number,status=out['status'],duration_s=out.get('duration_s'),rejections=out['rejections'],report=str(run/'independent-production-postlift-yaw-review.json')))
++        evidence_path=ROOT/f'runtime_ipc/postlift-yaw30-full{number}-helper-review.json'
++        save(evidence_path,evidence)
++        cases.append(dict(run=number,status=out['status'],duration_s=out.get('duration_s'),rejections=out['rejections'],report=str(evidence_path)))
+         fixtures.append((rest,state,command))
+     rest,state,command=fixtures[0]
+     def reject(name,cfg_override=None,state_override=None,cmd_override=None,patcher=None):
+@@ -103,7 +107,7 @@
+         else:
+             with patcher:r,p=helper.plan_postlift_yaw(*args)
+         check(name,r['status']=='rejected' and p is None and bool(r['rejections']) and bool(json.dumps(r,allow_nan=False)))
+-    for field,value in [('world_z_degrees',0),('world_z_degrees',15.001),('world_z_degrees',-15.001),
++    for field,value in [('world_z_degrees',0),('world_z_degrees',30.001),('world_z_degrees',-30.001),
+                         ('world_z_degrees',float('nan')),('world_z_degrees',float('inf')),('world_z_degrees',True),
+                         ('world_z_degrees','15'),('duration_s',5.999),('duration_s',float('inf')),('duration_s',float('nan'))]:
+         c=copy.deepcopy(cfg);c['task']['contact_trial']['postlift_yaw'][field]=value
+@@ -154,13 +158,16 @@
+         try:helper.continuous_rate_bounds(SimpleNamespace(duration=6.,curves={'left':curve,'right':curve}));rejected=False
+         except ValueError:rejected=True
+         check('rate_bound_rejects_bad_domain_or_dimension_'+str((knots,width)),rejected)
+-    r,p=helper.plan_postlift_yaw(rest,state,{**cfg,'task':{**cfg['task'],'contact_trial':{**cfg['task']['contact_trial'],'postlift_yaw':{'world_z_degrees':-15.,'duration_s':6.}}}},command)
+-    check('negative_15_degree_boundary_supported',r['status']=='candidate' and p is not None)
++    for angle in (-15.,-30.,30.):
++        r,p=helper.plan_postlift_yaw(rest,state,{**cfg,'task':{**cfg['task'],'contact_trial':{**cfg['task']['contact_trial'],'postlift_yaw':{'world_z_degrees':angle,'duration_s':6.}}}},command)
++        check(str(angle)+'_degree_boundary_supported',r['status']=='candidate' and p is not None)
++        if abs(angle)==30 and p is not None:
++            save(ROOT/f'runtime_ipc/postlift-yaw30-angle{angle:+g}-helper-review.json',dict(helper_report=r,command_qs=command,physical_success=False))
+     check('helper_source_unchanged_during_regression',source_hash==sha(ROOT/'postlift_yaw.py'))
+     result=dict(kind='postlift_yaw_helper_regression',physical_success=False,all_checks_passed=all(c['passed'] for c in checks),
+         check_count=len(checks),failed_checks=[c for c in checks if not c['passed']],checks=checks,cases=cases,
+         helper_source_sha256=source_hash,scope='CPU helper contracts and frozen geometry only; no physics, force closure or successful insertion is certified')
+-    save(ROOT/'runtime_ipc/postlift-yaw-regression.json',result)
++    save(ROOT/'runtime_ipc/postlift-yaw30-regression.json',result)
+     print(json.dumps({k:result[k] for k in ('check_count','all_checks_passed','failed_checks','cases')},indent=2))
+     if not result['all_checks_passed']:raise SystemExit(1)
+ 
+--- before/runtime_ipc/postlift_yaw_audit_regression.py
++++ after/runtime_ipc/postlift_yaw_audit_regression.py
+@@ -4,7 +4,7 @@
+ synthetic for auditor testing, never offered as native execution evidence.
+ """
+ from pathlib import Path
+-import copy,hashlib,json,sys,tempfile
++import argparse,copy,hashlib,json,sys,tempfile
+ import numpy as np
+ from scipy.spatial.transform import Rotation
+ ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'runtime_ipc')]
+@@ -16,7 +16,12 @@
+ def save(p,v):p.write_text(json.dumps(v,indent=2,default=audit._json_scalar)+'\n')
+ def copied(x):return copy.deepcopy(x)
+ source_run=ROOT/'runs/two_panel_full_17'
++parser=argparse.ArgumentParser(description=__doc__)
++parser.add_argument('--angle',type=float,choices=(-30.,15.,30.),default=15.)
++parser.add_argument('--baseline-only',action='store_true')
++args=parser.parse_args()
+ cfg=json.loads((ROOT/'config_guarded_postlift_yaw_trial.json').read_text())
++cfg['task']['contact_trial']['postlift_yaw']['world_z_degrees']=args.angle
+ state=dict(np.load(source_run/'lift_teddy.npz',allow_pickle=False));rest=dict(np.load(source_run/'rest.npz',allow_pickle=False))
+ old=json.loads((source_run/'independent-production-postlift-yaw-review.json').read_text())
+ command={s:np.asarray(q) for s,q in old['command_qs'].items()}
+@@ -74,10 +79,17 @@
+         checks.append(dict(name=name,passed=ok,expected_audit_passed=expected,actual_status=out['status'],
+             failed_checks=[k for k,v in out['checks'].items() if not v],error=out.get('error')))
+         print(name,ok,out.get('error'),flush=True)
+-        if name=='synthetic_complete_yaw_contract':save(ROOT/'runtime_ipc/postlift-yaw-audit-synthetic-example.json',dict(out,synthetic_fixture_is_not_native_execution=True))
++        if name=='synthetic_complete_yaw_contract':save(ROOT/f'runtime_ipc/postlift-yaw30-audit-synthetic-example{args.angle:+g}.json',dict(out,synthetic_fixture_is_not_native_execution=True))
+     case('synthetic_complete_yaw_contract',True)
++    if args.baseline_only:
++        result=dict(kind='optional_postlift_yaw_boundary_execution_fixture',physical_success=False,
++            synthetic_fixture_is_not_native_execution=True,world_z_degrees=args.angle,
++            all_checks_passed=all(v['passed'] for v in checks),checks=checks,
++            auditor_sha256=sha(ROOT/'runtime_ipc/audit_guarded_run.py'),helper_sha256=helper_before)
++        save(ROOT/f'runtime_ipc/postlift-yaw30-boundary-execution{args.angle:+g}.json',result)
++        print(json.dumps(result,indent=2));raise SystemExit(0 if result['all_checks_passed'] else 1)
+     mutations={
+-        'bad_frozen_angle':lambda c,r,s,t,g,a:c['task']['contact_trial']['postlift_yaw'].update(world_z_degrees=15.1),
++        'bad_frozen_angle':lambda c,r,s,t,g,a:c['task']['contact_trial']['postlift_yaw'].update(world_z_degrees=30.001),
+         'nan_frozen_angle':lambda c,r,s,t,g,a:c['task']['contact_trial']['postlift_yaw'].update(world_z_degrees=float('nan')),
+         'boolean_duration':lambda c,r,s,t,g,a:c['task']['contact_trial']['postlift_yaw'].update(duration_s=True),
+         'hidden_nonfinite_candidate':lambda c,r,s,t,g,a:r['postlift_yaw'].update(hidden=float('inf')),
+@@ -159,6 +171,6 @@
+ result=dict(kind='optional_postlift_yaw_independent_auditor_regression',physical_success=False,
+     synthetic_fixture_is_not_native_execution=True,all_checks_passed=all(v['passed'] for v in checks),check_count=len(checks),
+     failed_checks=[v for v in checks if not v['passed']],checks=checks,auditor_sha256=sha(ROOT/'runtime_ipc/audit_guarded_run.py'))
+-save(ROOT/'runtime_ipc/postlift-yaw-audit-regression.json',result)
++save(ROOT/'runtime_ipc/postlift-yaw30-audit-regression.json',result)
+ print(json.dumps({k:v for k,v in result.items() if k!='checks'},indent=2))
+ if not result['all_checks_passed']:raise SystemExit(1)

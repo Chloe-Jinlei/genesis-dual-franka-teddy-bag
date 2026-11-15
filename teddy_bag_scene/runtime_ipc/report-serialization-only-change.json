@@ -1,0 +1,32 @@
+{
+  "kind": "report_serialization_only_change_record",
+  "physical_success": false,
+  "source_sha256": {
+    "run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "runtime_ipc/report-serialization-before-run.py": "f774826d687eb6662bd1d4c491382214eac2fce22e554fd0ebdf9bf6fba0a2a6",
+    "runtime_ipc/report-serialization-only.patch": "aaf6f06b0e2726136a28cb2f4d063826f5fab6be5a4454652dfe977f6f5c89fa",
+    "runtime_ipc/report_serialization_regression.py": "38d92347b851cbc2c30d181698ada2e80a5cc84a2a2516e14b1d7b1b8ccd8cd1",
+    "runtime_ipc/report-serialization-regression.json": "ebdbcd022562be0b8e9a0fe9d481b43194a8a78227f96cc625e516e946d7a4f0"
+  },
+  "production_delta": "In finish(), import existing contact_insertion._serial immediately before report writing and serialize _serial(self.report) with allow_nan=False. No other production text changed.",
+  "root_cause": "The two new gravity report objects were serialized for their separate files, but retained NumPy arrays in self.report. The aggregate finish report bypassed that conversion.",
+  "new_report_path_review": {
+    "gravity_release_candidate": "Separate JSON already _serial + allow_nan=False; aggregate self.report now normalized only at output.",
+    "gravity_release_actual_review": "Separate JSON already _serial + allow_nan=False; aggregate self.report now normalized only at output.",
+    "postlift_yaw_candidate_execution": "Existing serialization behavior unchanged."
+  },
+  "tests_passed": 27,
+  "tests_total": 27,
+  "no_native_simulation": true,
+  "full25_report_reconstructed": false,
+  "full25_report_exists": false,
+  "unchanged_scope": [
+    "all control and physics guards",
+    "all planning methods",
+    "source snapshot and manifest actions",
+    "default config",
+    "frozen full25 input",
+    "auditor approved hashes"
+  ],
+  "caveat": "This corrects future output only. It does not recover discarded in-memory full25 report fields or change its native J failure."
+}

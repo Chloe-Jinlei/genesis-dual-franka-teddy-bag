@@ -1,0 +1,25 @@
+"""Locate already-rejected same-curve rigid witnesses. No path acceptance or changed gate."""
+from pathlib import Path
+import hashlib,json,sys,numpy as np
+from scipy.spatial.transform import Rotation
+ROOT=Path(__file__).resolve().parents[1];RUN=ROOT/'runs/two_panel_handoff_upright_offset_01';OUT=RUN/'independent-hybrid-minus30-positive-y30';sys.path.insert(0,str(RUN/'source'))
+from motion import Planner,MotionPlan,CubicSpline,minimum_jerk,mujoco
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+paths=[OUT/'guarded_candidate.json',OUT/'hybrid_hypothetical_observation.npz',OUT/'rest.npz',OUT/'diagnostic_config.json',RUN/'source/motion.py',RUN/'source/assets/panda_tactile.xml',Path(__file__)];hashes={str(p):sha(p) for p in paths}
+a=json.loads(paths[0].read_text());r=a['report'];assert a['status']=='rejected';state=dict(np.load(paths[1]));cfg=json.loads(paths[3].read_text());cfg['robots']['mjcf_path']=str(RUN/'source/assets/panda_tactile.xml');pl=Planner(cfg)
+qs={s:state['q_'+s][:7].copy() for s in ('left','right')};qs['right']=np.array(r['robot_stages'][-1]['right_q_end']);fingers={s:float(state['q_'+s][7:].mean()) for s in qs};R=Rotation.from_quat(r['predicted_targets']['rotation_xyzw']);start=np.array(r['predicted_targets']['outside_tcp_m']);end=np.array(r['predicted_targets']['insert_tcp_m'])
+path=pl.plan_cartesian(qs,{'right':end},rotations={'right':R},samples=45);curves={s:CubicSpline([x['fraction'] for x in path],np.array([x['q'].get(s,qs[s]) for x in path]),axis=0) for s in qs};plan=MotionPlan(curves,float(r['policy']['minimum_insert_duration_s']),fingers,fingers);plan.validate_joint_limits(pl.limits);plan.limit_rate(.55,1.)
+rows=[];first=None;worst=None
+for i,t in enumerate(np.linspace(0.,plan.duration,101)):
+ sample=plan.sample(float(t));raw=pl.clearance(sample['q'],sample['finger']);assert len(raw)==7 and all(np.isfinite(v['distance']) for v in raw.values());category=min(raw,key=lambda k:raw[k]['distance']);margin=raw[category]['distance'];pos,rot=pl.fk('right',sample['q']['right']);progress=float(minimum_jerk(t/plan.duration)[0]);row=dict(sample_index=i,time_s=float(t),time_fraction=float(t/plan.duration),path_fraction=progress,descent_m=float((start[2]-end[2])*progress),actual_fk_tcp_m=pos.tolist(),ideal_tcp_m=(start+progress*(end-start)).tolist(),category=category,minimum_raw_rigid_clearance_m=margin,raw=raw,q={s:v.tolist() for s,v in sample['q'].items()},finite=True)
+ rows.append(row)
+ if margin<.008 and first is None:first=row
+ if worst is None or margin<worst['minimum_raw_rigid_clearance_m']:worst=row
+assert first and abs(first['minimum_raw_rigid_clearance_m']-.007907767566958664)<1e-12
+# Independent exact model pair and closest-points location at the recorded first/worst witnesses.
+for row in (first,worst):
+ pl.clearance(row['q'],fingers);d,g1,g2=min((float(mujoco.mj_geomDistance(pl.m,pl.d,g1,g2,.2,None)),g1,g2) for g1 in pl.geoms['left'] for g2 in pl.geoms['right']);points=np.zeros(6);dist=float(mujoco.mj_geomDistance(pl.m,pl.d,g1,g2,.2,points));assert abs(dist-row['raw']['arms']['distance'])<1e-12
+ row['arms_pair_location']=dict(original_geom_ids=[g1,g2],bodies=[pl.body_name(g1),pl.body_name(g2)],distance_m=dist,left_nearest_world_m=points[:3].tolist(),right_nearest_world_m=points[3:].tolist())
+soft=[dict(stage=s['stage'],status=s['status'],minimum_conservative_gap_lower_bound_m=s['conservative_gap_lower_bound_m'],required_gap_m=s['required_gap_m'],complete_robot_certificate=s['complete_robot_certificate']) for s in r['robot_centering_attempts'][0]['left_robot_teddy_sweep_segments']]
+report=dict(kind='single_rejected_minus30_y30_same_insert_curve_rigid_witness',physical_success=False,native_execution=False,route_accepted=False,original_8mm_gate_preserved=True,scope=['Exactly the rejected insert curve is reconstructed from reported transport q_end, original 45 IK samples, complete actual R, original .55/1.0 planner timing.','No tolerance changed, candidate accepted, future route selected or native plan executed. .35/.5 retiming would only change the clock, not this geometric failure.','101 original time samples locate witnesses; the minimum is sampled, not a continuous global distance minimum.','MuJoCo collision geometry distance is not a native cloth/soft-body penetration result.','Both handles have only four earlier static no-crossing screens; continuous 2mm handle certificate was not run because robot gate already rejects.'],input_sha256=hashes,inputs_unchanged=all(sha(Path(p))==h for p,h in hashes.items()),original_planner_duration_s=plan.duration,first_reject=first,minimum_of_101_samples=worst,wholebear_left_segments=soft,all_101_raw_distance_arrays=rows)
+p=OUT/'rigid-failure-witness.json';p.write_text(json.dumps(report,indent=2,allow_nan=False)+'\n');print(json.dumps(dict(path=str(p),sha256=sha(p),first={k:first[k] for k in ('time_s','path_fraction','descent_m','actual_fk_tcp_m','minimum_raw_rigid_clearance_m','arms_pair_location')},worst={k:worst[k] for k in ('time_s','path_fraction','descent_m','actual_fk_tcp_m','minimum_raw_rigid_clearance_m','arms_pair_location')},soft=soft),indent=2))

@@ -1,0 +1,140 @@
+{
+  "kind": "independent_actual_input_adaptive_selection_record_audit",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "all_checks_passed": true,
+  "checks": {
+    "selection_is_planning_only_and_requires_fresh_insert": true,
+    "selection_observation_matches_actual_center_source": true,
+    "selection_index_and_offsets_match_frozen_list": true,
+    "selected_offset_matches_actual_source_to_target": true,
+    "all_predeclared_attempts_recorded_once_in_order": true,
+    "feasible_scores_reconstruct_from_recorded_margins": true,
+    "chosen_attempt_has_consistent_frozen_remainder": true,
+    "selected_index_maximizes_recorded_score_with_first_index_tie_break": true,
+    "actual_input_time_matches_saved_state": true,
+    "checkpoint_policy_matches_independent_frozen_config": true,
+    "report_policy_matches_independent_frozen_config": true,
+    "checkpoint_source_matches_saved_actual_tcp": true,
+    "checkpoint_target_matches_selected_center": true,
+    "center_only_plan_and_physical_success_false": true
+  },
+  "selected_index": 5,
+  "selected_offset_xy_m": [
+    -0.015,
+    -0.045
+  ],
+  "actual_observed_time_s": 51.520000000007904,
+  "selected_score_m": 0.004434451951726054,
+  "attempts": [
+    {
+      "index": 0,
+      "center_offset_xy_m": [
+        -0.0165,
+        -0.0535
+      ],
+      "center_status": "candidate",
+      "center_rejections": [],
+      "frozen_remainder_status": "candidate",
+      "frozen_remainder_rejections": [],
+      "score_m": 0.004288950402307996
+    },
+    {
+      "index": 1,
+      "center_offset_xy_m": [
+        -0.015,
+        -0.055
+      ],
+      "center_status": "candidate",
+      "center_rejections": [],
+      "frozen_remainder_status": "candidate",
+      "frozen_remainder_rejections": [],
+      "score_m": 0.002687855943022067
+    },
+    {
+      "index": 2,
+      "center_offset_xy_m": [
+        -0.02,
+        -0.05
+      ],
+      "center_status": "candidate",
+      "center_rejections": [],
+      "frozen_remainder_status": "candidate",
+      "frozen_remainder_rejections": [],
+      "score_m": 0.0013877864736057625
+    },
+    {
+      "index": 3,
+      "center_offset_xy_m": [
+        -0.015,
+        -0.06
+      ],
+      "center_status": "candidate",
+      "center_rejections": [],
+      "frozen_remainder_status": "candidate",
+      "frozen_remainder_rejections": [],
+      "score_m": 0.0010793822744146215
+    },
+    {
+      "index": 4,
+      "center_offset_xy_m": [
+        -0.01,
+        -0.055
+      ],
+      "center_status": "rejected",
+      "center_rejections": [
+        "Planned COM must lie in the declared contact envelope with 2 mm margin"
+      ],
+      "frozen_remainder_status": null,
+      "frozen_remainder_rejections": null,
+      "score_m": null
+    },
+    {
+      "index": 5,
+      "center_offset_xy_m": [
+        -0.015,
+        -0.045
+      ],
+      "center_status": "candidate",
+      "center_rejections": [],
+      "frozen_remainder_status": "candidate",
+      "frozen_remainder_rejections": [],
+      "score_m": 0.004434451951726054
+    },
+    {
+      "index": 6,
+      "center_offset_xy_m": [
+        -0.025,
+        -0.045
+      ],
+      "center_status": "candidate",
+      "center_rejections": [],
+      "frozen_remainder_status": "rejected",
+      "frozen_remainder_rejections": [
+        "Rigid clearance violation at 1.563s: {'arms': {'distance': 0.006958416461606223, 'bodies': ['left_hand', 'right_link7'], 'geoms': ['', '']}}"
+      ],
+      "score_m": null
+    },
+    {
+      "index": 7,
+      "center_offset_xy_m": [
+        -0.025,
+        -0.035
+      ],
+      "center_status": "candidate",
+      "center_rejections": [],
+      "frozen_remainder_status": "rejected",
+      "frozen_remainder_rejections": [
+        "Rigid clearance violation at 1.623s: {'arms': {'distance': 0.007681367670327201, 'bodies': ['left_hand', 'right_link7'], 'geoms': ['', '']}}"
+      ],
+      "score_m": null
+    }
+  ],
+  "input_sha256": {
+    "runs/two_panel_full_17/independent-adaptive-actual-center.json": "ec67a22238a10b935815799af3d1d8feb90293cd2c0b4791c27aaf6ebbb86e21",
+    "config_guarded_adaptive_alignment_trial.json": "ce714fcbbf6cc5d72d2bf0686c3b98114e57d4bab6251f865b0e29ce04f8d38f",
+    "runs/two_panel_full_17/lower_teddy_to_rim.npz": "755f02cac671f22826b834364508920f786c438ffb5993dd65da9a7fc956547d",
+    "runtime_ipc/audit_guarded_run.py": "bf8852d93522c5f17eb21b860ca8ce26ef7fb6819f716d9e76ec709f5bf84a78"
+  },
+  "scope": "Checks the actual-input CPU center selection record, recorded score arithmetic/rank, policy, source and target consistency. No center motion was executed; no future geometry, force, or physical success is inferred."
+}

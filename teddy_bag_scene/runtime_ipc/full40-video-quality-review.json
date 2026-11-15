@@ -1,0 +1,34 @@
+{
+  "kind": "completed_run_video_quality_review",
+  "created_utc": "2026-11-15T22:46:16.491858+00:00",
+  "run": "runs/two_panel_full_40",
+  "video_sha256": "b3487914a41b7bf83bc125fc7ad046d5d84f4ff74d388390af0a8c51d6068cdf",
+  "ffprobe": {
+    "width": 960,
+    "height": 720,
+    "r_frame_rate": "20/1",
+    "nb_frames": 1748,
+    "duration_s": 87.4,
+    "size_bytes": 2866172
+  },
+  "complete_decode": {
+    "command": "ffmpeg -v error -i runs/two_panel_full_40/simulation.mp4 -f null -",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  "visually_inspected_frames": {
+    "transport_teddy_along_y-detail.png": "00a34f4cd2c115c6aff3e9a1158cd10d02ce3213c52e0d38a170db9ff2d124cb",
+    "insert_teddy-detail.png": "3d92c8f80844a89bd96290b5e8f83898b00ba5910d61ddfac8a7ff5d313aa31c",
+    "release_teddy-detail.png": "74dafaeb70d9524b28cebbd365b750655706fd28398a7b01fed97c5af72ad1cd",
+    "final_settle-detail.png": "542b95340298c2e557a20fa3b0d866134eac1bbdab4771347efb9f7d01560726"
+  },
+  "visual_observations": [
+    "Left arm holds the front strap while right arm transports the teddy.",
+    "Insertion and release images show right hand at the bag opening; opaque cloth prevents image-only verification of internal containment.",
+    "Final image shows the open right gripper withdrawn and left gripper still holding the same strap.",
+    "Internal containment is established separately by saved geometry and original plus independent task checks, not inferred from opaque imagery."
+  ],
+  "simulation_status": "completed",
+  "simulation_time_s": 86.75999999999358,
+  "all_video_checks_passed": true
+}

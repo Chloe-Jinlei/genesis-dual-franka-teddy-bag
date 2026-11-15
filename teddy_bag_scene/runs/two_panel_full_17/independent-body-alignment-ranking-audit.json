@@ -1,0 +1,191 @@
+{
+  "kind": "independent_body_alignment_ranking_audit",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "reviewed_source_sha256": "f00b64883311ed4cb99fff7f3a176a22baa2f58cc06501a4e253a53d93a25401",
+  "actual_report_sha256": "c9e47bcf2a7fd14b4a7ffa02489b9e39cd99cb6a1dfad545a5f05b969efa7974",
+  "check_count": 34,
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "name": "actual_node_count_0",
+      "passed": true
+    },
+    {
+      "name": "actual_distances_0",
+      "passed": true,
+      "maximum_difference_m": 2.5673907444456745e-16
+    },
+    {
+      "name": "actual_node_count_1",
+      "passed": true
+    },
+    {
+      "name": "actual_distances_1",
+      "passed": true,
+      "maximum_difference_m": 1.457167719820518e-16
+    },
+    {
+      "name": "actual_node_count_2",
+      "passed": true
+    },
+    {
+      "name": "actual_distances_2",
+      "passed": true,
+      "maximum_difference_m": 1.6653345369377348e-16
+    },
+    {
+      "name": "actual_node_count_3",
+      "passed": true
+    },
+    {
+      "name": "actual_distances_3",
+      "passed": true,
+      "maximum_difference_m": 0.0
+    },
+    {
+      "name": "actual_node_count_5",
+      "passed": true
+    },
+    {
+      "name": "actual_distances_5",
+      "passed": true,
+      "maximum_difference_m": 3.469446951953614e-17
+    },
+    {
+      "name": "actual_pure_fronts_match_independent_reference",
+      "passed": true
+    },
+    {
+      "name": "actual_band_fronts_match_independent_reference",
+      "passed": true
+    },
+    {
+      "name": "actual_band_cutoff_matches_independent_reference",
+      "passed": true
+    },
+    {
+      "name": "all_120_input_permutations_preserve_pure_and_band_results",
+      "passed": true
+    },
+    {
+      "name": "height_exact_2mm",
+      "passed": true
+    },
+    {
+      "name": "height_below_2mm",
+      "passed": true
+    },
+    {
+      "name": "body_distance_exact_1um",
+      "passed": true
+    },
+    {
+      "name": "body_distance_above_1um",
+      "passed": true
+    },
+    {
+      "name": "body_distance_negative",
+      "passed": true
+    },
+    {
+      "name": "coherent_negative_orientation_has_same_point_metrics",
+      "passed": true
+    },
+    {
+      "name": "handle_distance_cannot_change_actual_body_metric",
+      "passed": true
+    },
+    {
+      "name": "malformed_diagnostic_actual_topology_orientation",
+      "passed": true
+    },
+    {
+      "name": "malformed_diagnostic_actual_spatial_rim",
+      "passed": true
+    },
+    {
+      "name": "malformed_diagnostic_cap_winding",
+      "passed": true
+    },
+    {
+      "name": "malformed_diagnostic_physical_cloth_query_distance",
+      "passed": true
+    },
+    {
+      "name": "malformed_metrics_missing",
+      "passed": true
+    },
+    {
+      "name": "malformed_metrics_none",
+      "passed": true
+    },
+    {
+      "name": "malformed_metrics_list",
+      "passed": true
+    },
+    {
+      "name": "malformed_metrics_nonfinite_metric",
+      "passed": true
+    },
+    {
+      "name": "actual_outside_band_unknown_preserves_entire_original_order",
+      "passed": true
+    },
+    {
+      "name": "one_geometry_exception_causes_whole_group_fallback",
+      "passed": true
+    },
+    {
+      "name": "one_sided_tolerance_random_transitivity",
+      "passed": true,
+      "nonvacuous_antecedents": 28
+    },
+    {
+      "name": "candidate_inputs_not_mutated",
+      "passed": true
+    },
+    {
+      "name": "actual_output_generated_by_current_prototype",
+      "passed": true
+    }
+  ],
+  "remaining_failures": [],
+  "maximum_independent_actual_metric_difference_m": 2.5673907444456745e-16,
+  "expected_pure_fronts": [
+    [
+      2,
+      3
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      5
+    ]
+  ],
+  "expected_score_band": {
+    "best_original_score_m": 0.004434451951726054,
+    "cutoff_m": 0.0034344519517260537,
+    "in_band_indices": [
+      0,
+      5
+    ],
+    "layers": [
+      [
+        0
+      ],
+      [
+        5
+      ]
+    ]
+  },
+  "mathematical_scope": [
+    "Fixed oriented body plus two caps above all queries gives cap-independent low-region pointwise winding. Closed topology does not prove embedding or absence of body self-intersection.",
+    "Node fraction is unweighted on the common mesh, not mass, volume, collision clearance, or success. COM distance is signed by guarded unit winding and measured only to actual body triangles. Exterior max excludes COM because COM is its separate metric.",
+    "All components exactly no worse plus at least one improvement beyond tolerance is a transitive strict partial order; symmetric epsilon dominance is not used.",
+    "A 1mm original-score loss band is an explicit offline heuristic. It constrains recorded center/insert/release sampled-rigid and COM-envelope surpluses only, not relative withdraw clearance, continuous FK, future deformation or actual contact.",
+    "All old physical gates and the active full19 run remain unchanged. No whole tetrahedral containment, release or settling proof is delivered."
+  ]
+}

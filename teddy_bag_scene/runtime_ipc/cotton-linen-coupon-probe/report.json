@@ -1,0 +1,88 @@
+{
+  "status": "failed",
+  "dt_s": 0.005,
+  "duration_per_coupon_s": 2.0,
+  "dimensions_m": [
+    0.1,
+    0.2
+  ],
+  "nominal_grid_m": 0.01,
+  "force_total_N": 0.5,
+  "force_direction": [
+    0.7071067811865475,
+    0.7071067811865475,
+    0.0
+  ],
+  "load_interval_s": [
+    0.2,
+    0.8
+  ],
+  "gravity_z_m_s2": 0.0,
+  "contact_enabled": false,
+  "added_viscous_damping": false,
+  "production_modified": false,
+  "physical_fabric_calibration": false,
+  "task_success_certified": false,
+  "script_sha256": "8075a7d32c213ca78508cd752deece76ebab2cc2cc2601985f4542addaea9104",
+  "wall_seconds": 2.876882899989141,
+  "limitations": [
+    "One coarse prescribed-load comparison; no fitted fabric parameters.",
+    "BDF1 has numerical dissipation; recoil is not a physical damping calibration.",
+    "Zero-gravity planar load does not validate bending drape.",
+    "Contact is disabled; no self-contact, grasp, robot, or bag insertion is tested.",
+    "Principal and edge stretch are diagnostics; the full-task 1.15 guard is unchanged."
+  ],
+  "cases": [
+    {
+      "label": "baseline",
+      "status": "failed",
+      "E_Pa": 4000000.0,
+      "requested_mu_N_per_m": 50.0,
+      "density_kg_m3": 500.0,
+      "radius_m": 0.0003,
+      "full_thickness_m": 0.0006,
+      "nu": 0.3,
+      "requested_bending_Nm": 5e-05,
+      "requested_strain_rate": 100.0,
+      "gravity_z_m_s2": 0.0,
+      "native_errors": [
+        {
+          "type": "Exception",
+          "message": "Assertion R.dim() == 3 failed. label_triangle_orient() only works on 3D simplicial complex (tetmesh). /project/src/geometry/label_triangle_orient.cpp(10):\nStack trace (most recent call first):\n#0  0x000078ea9d90533d in uipc::Exception::Exception(std::basic_string_view<char, std::char_traits<char> >) at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/libuipc_core.so\n#1  0x000078ea9de8de3b in uipc::geometry::label_triangle_orient(uipc::geometry::SimplicialComplex&) at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/libuipc_geometry.so\n#2  0x000078ea9e782d56 at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc.cpython-312-x86_64-linux-gnu.so\n#3  0x000078ea9e6a3b46 at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc.cpython-312-x86_64-linux-gnu.so\n#4  0x0000000001807afc in cfunction_vectorcall_FASTCALL_KEYWORDS at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#5  0x0000000001819f8f in _PyEval_EvalFrameDefault at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#6  0x00000000018a1bdd in PyEval_EvalCode at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#7  0x00000000018a370b in builtin_exec at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#8  0x0000000001807afc in cfunction_vectorcall_FASTCALL_KEYWORDS at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#9  0x0000000001819f8f in _PyEval_EvalFrameDefault at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#10 0x00000000018a1bdd in PyEval_EvalCode at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#11 0x00000000018a9c56 in run_mod at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#12 0x000000000195ae01 in PyRun_SimpleStringFlags at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#13 0x0000000001adeed0 in Py_RunMain.warm at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#14 0x000000000198f08e in pymain_main at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#15 0x000000000198eeeb in main at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#16 0x000078eade02a1c9 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16\n#17 0x000078eade02a28a in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3\n#18 0x00000000019b8028 in _start at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12",
+          "traceback": "Traceback (most recent call last):\n  File \"runtime_ipc/cotton_linen_coupon_probe.py\", line 119, in run_case\n    label_triangle_orient(mesh)\nuipc._native.pyuipc.Exception: Assertion R.dim() == 3 failed. label_triangle_orient() only works on 3D simplicial complex (tetmesh). /project/src/geometry/label_triangle_orient.cpp(10):\nStack trace (most recent call first):\n#0  0x000078ea9d90533d in uipc::Exception::Exception(std::basic_string_view<char, std::char_traits<char> >) at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/libuipc_core.so\n#1  0x000078ea9de8de3b in uipc::geometry::label_triangle_orient(uipc::geometry::SimplicialComplex&) at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/libuipc_geometry.so\n#2  0x000078ea9e782d56 at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc.cpython-312-x86_64-linux-gnu.so\n#3  0x000078ea9e6a3b46 at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc.cpython-312-x86_64-linux-gnu.so\n#4  0x0000000001807afc in cfunction_vectorcall_FASTCALL_KEYWORDS at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#5  0x0000000001819f8f in _PyEval_EvalFrameDefault at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#6  0x00000000018a1bdd in PyEval_EvalCode at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#7  0x00000000018a370b in builtin_exec at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#8  0x0000000001807afc in cfunction_vectorcall_FASTCALL_KEYWORDS at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#9  0x0000000001819f8f in _PyEval_EvalFrameDefault at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#10 0x00000000018a1bdd in PyEval_EvalCode at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#11 0x00000000018a9c56 in run_mod at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#12 0x000000000195ae01 in PyRun_SimpleStringFlags at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#13 0x0000000001adeed0 in Py_RunMain.warm at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#14 0x000000000198f08e in pymain_main at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#15 0x000000000198eeeb in main at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#16 0x000078eade02a1c9 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16\n#17 0x000078eade02a28a in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3\n#18 0x00000000019b8028 in _start at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n"
+        }
+      ],
+      "callback_count": 0,
+      "wall_seconds": 2.864425829000538,
+      "saved_state_count": 0,
+      "completed_simulated_seconds": 0.0,
+      "metric_columns": [
+        "time_s",
+        "tip_dx_m",
+        "tip_dy_m",
+        "tip_dz_m",
+        "max_edge_stretch",
+        "max_principal_stretch",
+        "min_principal_stretch",
+        "max_absolute_material_axis_cosine",
+        "min_triangle_area_ratio",
+        "max_vertex_speed_m_s",
+        "kinetic_energy_J",
+        "max_clamp_error_m",
+        "min_z_m",
+        "force_x_N",
+        "force_y_N",
+        "force_z_N"
+      ],
+      "callback_columns": [
+        "frame",
+        "dt_s",
+        "load_active",
+        "force_x_N",
+        "force_y_N",
+        "force_z_N",
+        "enabled_vertex_count"
+      ]
+    }
+  ]
+}

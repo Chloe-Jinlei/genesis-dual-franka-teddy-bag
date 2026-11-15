@@ -1,0 +1,43 @@
+{
+  "kind": "new_long_handles_handoff_audit_entry_readiness",
+  "status": "ready_waiting_for_complete_native_evidence",
+  "physical_success": false,
+  "run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01",
+  "audit_script": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/independent_long_handles_handoff_audit.py",
+  "audit_script_sha256": "b4ea9ab35f3bac1d2493b982ac4ca31766c402fc83b15f5ea13835463f04d1c6",
+  "historical_template_sha256": "cfd655d6e3833bf589de6e2bdd4d278b663344f8510b999f0454ae1af07e1cc0",
+  "checks": {
+    "new_script_parses_and_compiles": true,
+    "historical_physical_trace_mass_scope_body_exact_after_documented_binding_edits": true,
+    "all_14_original_physical_keys_match_current_runner": true,
+    "expected_new_config_hash": true,
+    "approved_runner_hash": true,
+    "new_named_source_assets_exist": true,
+    "old_auditor_unchanged": true,
+    "no_native_final_audit_executed": true
+  },
+  "physical_check_keys": [
+    "finite_saved_states",
+    "per_step_soft_metrics_valid_when_supplied",
+    "actual_open_bag_topology",
+    "two_cloth_panels_with_direct_u_seam_and_no_bottom_or_side_panels",
+    "no_tetrahedron_inversion",
+    "no_tetrahedron_volume_below_5_percent",
+    "table_penetration_below_2mm",
+    "cloth_edge_stretch_below_15_percent",
+    "no_final_sampled_bag_bear_penetration_over_1mm",
+    "joint_motion_within_configured_limits",
+    "motion_sample_interval_at_most_20ms",
+    "left_gripper_holds_pose_within_15mm_after_handoff",
+    "named_left_handle_material_within_18mm_after_handoff",
+    "both_left_fingers_command_clamping_after_handoff"
+  ],
+  "documented_changes": [
+    "Bind only new run name and explicit new config filename/SHA.",
+    "Require complete native evidence before importing/recomputing or writing any final audit output.",
+    "Require exact reviewed3454 runner and explicit requested_task=handoff.",
+    "Remove historical1.105\u20133.03s prose; use actual recorded interval and preserve one-hand force limitation."
+  ],
+  "execution_command": "/home/chloe/Desktop/genesis-local/.venv/bin/python /home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/independent_long_handles_handoff_audit.py",
+  "scope": "Prepared and syntax/contract checked only. No native execution, planning or final evidence audit performed. Original reports unmodified; future outputs only under the new run."
+}

@@ -1,0 +1,111 @@
+{
+  "kind": "full21_saved_native_rest_split_accounting_and_quality",
+  "physical_success": false,
+  "genesis_imported": false,
+  "gpu_or_native_execution_by_review": false,
+  "mesher_executed_by_review": false,
+  "inputs": {
+    "runs/two_panel_full_21/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "runs/two_panel_full_21/initial.npz": "7f877fe0b3b1508aedbf8931b0d97926901fad6514f8fedd1cb46d756c0f5c4b",
+    "runs/two_panel_full_21/config.json": "ae0686aa5e7f29c0da663d64f1c9fe98c76fa639ac39b29554460fa8a0dc82cf",
+    "runs/two_panel_full_21/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "runs/two_panel_full_21/source/assets/bear_uniform_coarse_s85.obj": "6f86b3349d0d144148a60b3ab2c4ccbd0b42d38b907d8823e70557e1e620c7b6"
+  },
+  "source_algorithm": {
+    "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/utils/element.py",
+    "sha256": "771f3fad4b4221cd6526300f6b90a413d740cecf435c1edd86d891f339f10fd9",
+    "operation": "split_all_surface_tets: each tet with four surface nodes becomes four tets around one float32 centroid after translation"
+  },
+  "raw_tetgen_log": {
+    "vertices": 1362,
+    "tetrahedra": 5222
+  },
+  "native_saved_rest": {
+    "vertices": 1450,
+    "tetrahedra": 5486,
+    "finite": true,
+    "negative_tetrahedra": 0,
+    "zero_tetrahedra": 0,
+    "minimum_signed_volume_m3": 1.048213306922759e-09,
+    "volume_m3": 0.0013439946909185557,
+    "minimum_mean_ratio_shape_quality": 0.059042542539664865,
+    "shape_quality_quantiles_0_1_10_50_90_100_percent": [
+      0.059042542539664865,
+      0.10295710029309926,
+      0.5473114380921916,
+      0.8292224554951202,
+      0.9398465008066668,
+      0.9969826995278307
+    ],
+    "minimum_edge_length_m": 0.0010850025935393694,
+    "maximum_edge_length_m": 0.02923874273854222
+  },
+  "verified_split": {
+    "parent_tetrahedra": 88,
+    "added_vertices": 88,
+    "added_tetrahedra": 264,
+    "unchanged_tetrahedra": 5134,
+    "all_child_patterns_match_source_exactly": true,
+    "all_and_only_reconstructed_parents_have_four_boundary_vertices": true,
+    "all_added_vertices_equal_source_float32_centroids_exactly": true,
+    "reconstructed_raw_boundary_triangles": 1888,
+    "reconstructed_raw_boundary_nodes": 946,
+    "reconstructed_raw_metrics": {
+      "vertices": 1362,
+      "tetrahedra": 5222,
+      "finite": true,
+      "negative_tetrahedra": 0,
+      "zero_tetrahedra": 0,
+      "minimum_signed_volume_m3": 4.193067277001168e-09,
+      "volume_m3": 0.0013439946909185557,
+      "minimum_mean_ratio_shape_quality": 0.09836644254652176,
+      "shape_quality_quantiles_0_1_10_50_90_100_percent": [
+        0.09836644254652176,
+        0.26305099063513604,
+        0.6498019605283514,
+        0.8363245229750991,
+        0.9411553186713365,
+        0.9969826995278307
+      ],
+      "minimum_edge_length_m": 0.0010850025935393694,
+      "maximum_edge_length_m": 0.02923874273854222
+    },
+    "parent_to_children_total_volume_difference_m3": 0.0
+  },
+  "previous_full20_native_rest": {
+    "vertices": 1450,
+    "tetrahedra": 5486,
+    "finite": true,
+    "negative_tetrahedra": 0,
+    "zero_tetrahedra": 0,
+    "minimum_signed_volume_m3": 1.7068351650302336e-09,
+    "volume_m3": 0.0021884708991142775,
+    "minimum_mean_ratio_shape_quality": 0.059068621277495834,
+    "shape_quality_quantiles_0_1_10_50_90_100_percent": [
+      0.059068621277495834,
+      0.1029381434069889,
+      0.5473114380921935,
+      0.8292224554951172,
+      0.9398465008066657,
+      0.9969826995278298
+    ],
+    "minimum_edge_length_m": 0.001276473639458012,
+    "maximum_edge_length_m": 0.0343985208688733
+  },
+  "roi": {
+    "radius_m": 0.0272,
+    "native_point_count": 63,
+    "minimum_required_count": 3,
+    "previous_full20_point_count": 63,
+    "cross_run_ids_are_not_assumed": true,
+    "observed_same_connectivity": true,
+    "observed_same_roi_ids_only_after_connectivity_check": true
+  },
+  "interpretation": "1362/5222 are raw TetGen counts, not final entity counts. Saved 1450/5486 are explained exactly by the existing 88-parent surface-tet split. No tessellation discrepancy remains between these two observations.",
+  "limits": [
+    "Shape quality is mean ratio (1 regular tetrahedron, near 0 degenerate), not a guarantee of dynamic inversion resistance.",
+    "TetGen mindihedral/minratio are refinement requests before the surface-tet split; no post-split angular quality guarantee is inferred.",
+    "Future mesh/node IDs are not assumed stable. Runtime grasp ROI must be recomputed from actual rest coordinates.",
+    "Uniform-size consistency and positive rest volumes do not establish grasping, insertion or release success."
+  ]
+}

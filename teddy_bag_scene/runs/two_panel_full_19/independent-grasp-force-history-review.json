@@ -1,0 +1,1005 @@
+{
+  "scope": "Read-only audit of every existing grasp-named run with config/report. Force labels distinguish explicit teddy limits from old robot defaults. Actual geometry/hold records take precedence over old probe_passed flags.",
+  "reference_run": "two_panel_full_19",
+  "probes": [
+    {
+      "run": "two_panel_grasp_01",
+      "config_sha256": "bb147f3e89624a85857b1b7daec651ab3dd86eb878a0d5d45582fd3afe34df8d",
+      "report_sha256": "ab8ce59edf15c0c5270c1225468425e17ec78fd662ddca608a1b9c89034a0aa1",
+      "force_limit_per_finger_N": 35.0,
+      "force_source": "no teddy override in frozen source; robot per-finger force limit",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": null,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65
+      },
+      "finger_controller": {
+        "finger_kp": 900.0,
+        "finger_kv": 40.0
+      },
+      "simulation": {
+        "dt": 0.01,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0
+      },
+      "native_STC_feedback_report_enabled": false,
+      "status": "failed",
+      "error": "KeyboardInterrupt: ",
+      "reported_probe_passed": null,
+      "actual_bear_points_count": 1279,
+      "actual_tets_count": 4648,
+      "same_actual_bear_rest_as_full19": false,
+      "same_actual_tet_connectivity_as_full19": false,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": true,
+      "same_finger_xml": false,
+      "recorded_phases": {},
+      "actual_saved_history": {
+        "frame_count": 5,
+        "last_time_s": 0.20000000000000004,
+        "max_whole_bear_table_clearance_m": 0.0020000000000000018,
+        "minimum_J_all_saved": 0.8471256885712488,
+        "last_whole_bear_table_clearance_m": 0.0008228142773413216,
+        "last_bear_tcp_nearest_m": 0.07046748391599103,
+        "full_lift_phase_recorded": false,
+        "one_second_hold_phase_recorded": false
+      }
+    },
+    {
+      "run": "two_panel_grasp_02",
+      "config_sha256": "bb147f3e89624a85857b1b7daec651ab3dd86eb878a0d5d45582fd3afe34df8d",
+      "report_sha256": "cf0e73f6ddf3a7709a4632794ca317aa7e58e6a05590bedb929414e2db2f78da",
+      "force_limit_per_finger_N": 35.0,
+      "force_source": "no teddy override in frozen source; robot per-finger force limit",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": null,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65
+      },
+      "finger_controller": {
+        "finger_kp": 900.0,
+        "finger_kv": 40.0
+      },
+      "simulation": {
+        "dt": 0.01,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0
+      },
+      "native_STC_feedback_report_enabled": false,
+      "status": "failed",
+      "error": "GateFailure: Teddy friction grasp did not lift it clear of the table",
+      "reported_probe_passed": null,
+      "actual_bear_points_count": 1279,
+      "actual_tets_count": 4648,
+      "same_actual_bear_rest_as_full19": false,
+      "same_actual_tet_connectivity_as_full19": false,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": true,
+      "same_finger_xml": false,
+      "recorded_phases": {
+        "close_teddy_gripper": {
+          "time_s": 2.6099999999999883,
+          "minimum_bear_z_m": 0.7408314182058574,
+          "whole_bear_table_clearance_m": 0.0008314182058574149,
+          "minimum_J": 0.8603538109793897,
+          "right_finger_q_m": [
+            -2.461196821027257e-05,
+            -2.4166769754667364e-05
+          ],
+          "right_PD_force_N": [
+            -0.007688552828684421,
+            -0.0075526237572554125
+          ],
+          "nearest_bear_to_right_tcp_m": 0.012855767087535885
+        },
+        "lift_teddy": {
+          "time_s": 5.619999999999925,
+          "minimum_bear_z_m": 0.7408236415884497,
+          "whole_bear_table_clearance_m": 0.0008236415884497195,
+          "minimum_J": 0.8547856137326996,
+          "right_finger_q_m": [
+            8.071080093871954e-11,
+            -4.963477314160034e-11
+          ],
+          "right_PD_force_N": [
+            8.911536912300451e-08,
+            -3.975909053698588e-08
+          ],
+          "nearest_bear_to_right_tcp_m": 0.3632477563334096
+        },
+        "grasp_hold": {
+          "time_s": 6.619999999999903,
+          "minimum_bear_z_m": 0.7408239067092414,
+          "whole_bear_table_clearance_m": 0.0008239067092413732,
+          "minimum_J": 0.8544008290384342,
+          "right_finger_q_m": [
+            8.04260857112521e-17,
+            -1.5360256528486894e-15
+          ],
+          "right_PD_force_N": [
+            4.728992353611703e-12,
+            -2.0532239262015908e-12
+          ],
+          "nearest_bear_to_right_tcp_m": 0.36322684775667624
+        }
+      },
+      "actual_saved_history": {
+        "frame_count": 138,
+        "last_time_s": 6.619999999999903,
+        "max_whole_bear_table_clearance_m": 0.0020000000000000018,
+        "minimum_J_all_saved": -1.3943919602778183,
+        "last_whole_bear_table_clearance_m": 0.0008239067092413732,
+        "last_bear_tcp_nearest_m": 0.36322684775667624,
+        "full_lift_phase_recorded": true,
+        "one_second_hold_phase_recorded": true
+      }
+    },
+    {
+      "run": "two_panel_grasp_03",
+      "config_sha256": "83c5a9315a9c86d3fc0ce6bffbe6fa7124d3c0f3fcfff6b75175e281874006c2",
+      "report_sha256": "c0105f67bbaf26ed6f4377d0514db15c953dc23b4b77aee83f214a5b553d05b7",
+      "force_limit_per_finger_N": 12.0,
+      "force_source": "no teddy override in frozen source; robot per-finger force limit",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": null,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 40.0
+      },
+      "simulation": {
+        "dt": 0.01,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0
+      },
+      "native_STC_feedback_report_enabled": false,
+      "status": "completed",
+      "error": null,
+      "reported_probe_passed": true,
+      "actual_bear_points_count": 1279,
+      "actual_tets_count": 4648,
+      "same_actual_bear_rest_as_full19": false,
+      "same_actual_tet_connectivity_as_full19": false,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": true,
+      "same_finger_xml": true,
+      "recorded_phases": {
+        "close_teddy_gripper": {
+          "time_s": 2.6099999999999883,
+          "minimum_bear_z_m": 0.7408229773862959,
+          "whole_bear_table_clearance_m": 0.0008229773862958867,
+          "minimum_J": -1.2878424627240834,
+          "right_finger_q_m": [
+            -0.0006174685585338412,
+            -0.0005743705060855949
+          ],
+          "right_PD_force_N": [
+            4.9463329911429055,
+            4.601668830274232
+          ],
+          "nearest_bear_to_right_tcp_m": 0.001444778399094516
+        },
+        "lift_teddy": {
+          "time_s": 5.619999999999925,
+          "minimum_bear_z_m": 1.0232582596257096,
+          "whole_bear_table_clearance_m": 0.2832582596257096,
+          "minimum_J": -1.123319551903024,
+          "right_finger_q_m": [
+            -0.0005101709689527203,
+            -0.0004986394937678891
+          ],
+          "right_PD_force_N": [
+            4.087816275888338,
+            3.996705020903914
+          ],
+          "nearest_bear_to_right_tcp_m": 0.0014932088254219335
+        },
+        "grasp_hold": {
+          "time_s": 6.619999999999903,
+          "minimum_bear_z_m": 1.0207662100967503,
+          "whole_bear_table_clearance_m": 0.2807662100967503,
+          "minimum_J": -1.1129044624863953,
+          "right_finger_q_m": [
+            -0.0004928970990952825,
+            -0.000507244543671787
+          ],
+          "right_PD_force_N": [
+            3.9422300309444354,
+            4.057972411846517
+          ],
+          "nearest_bear_to_right_tcp_m": 0.0014768508612190445
+        }
+      },
+      "actual_saved_history": {
+        "frame_count": 138,
+        "last_time_s": 6.619999999999903,
+        "max_whole_bear_table_clearance_m": 0.28364922668904424,
+        "minimum_J_all_saved": -1.2953754691092523,
+        "last_whole_bear_table_clearance_m": 0.2807662100967503,
+        "last_bear_tcp_nearest_m": 0.0014768508612190445,
+        "full_lift_phase_recorded": true,
+        "one_second_hold_phase_recorded": true
+      }
+    },
+    {
+      "run": "two_panel_grasp_04",
+      "config_sha256": "83c5a9315a9c86d3fc0ce6bffbe6fa7124d3c0f3fcfff6b75175e281874006c2",
+      "report_sha256": "04777e1105dc2118c70bec06e80db9f76ae27a9967534b7d9e89a329fe92bc76",
+      "force_limit_per_finger_N": 4.0,
+      "force_source": "explicit config or runtime grip report",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": 0.027,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 40.0
+      },
+      "simulation": {
+        "dt": 0.01,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0
+      },
+      "native_STC_feedback_report_enabled": false,
+      "status": "failed",
+      "error": "GateFailure: Teddy element excessively compressed or inverted: minimum volume ratio 0.0220",
+      "reported_probe_passed": null,
+      "actual_bear_points_count": 1279,
+      "actual_tets_count": 4648,
+      "same_actual_bear_rest_as_full19": false,
+      "same_actual_tet_connectivity_as_full19": false,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": true,
+      "same_finger_xml": true,
+      "recorded_phases": {
+        "close_teddy_gripper": {
+          "time_s": 3.00999999999998,
+          "minimum_bear_z_m": 0.7408112726636817,
+          "whole_bear_table_clearance_m": 0.0008112726636817502,
+          "minimum_J": 0.20202702767712755,
+          "right_finger_q_m": [
+            0.02666876270078264,
+            0.026610658859303134
+          ],
+          "right_PD_force_N": [
+            2.6461112052024274,
+            3.111080132845506
+          ],
+          "nearest_bear_to_right_tcp_m": 0.013380396160601958
+        }
+      },
+      "actual_saved_history": {
+        "frame_count": 88,
+        "last_time_s": 4.209999999999955,
+        "max_whole_bear_table_clearance_m": 0.0020000000000000018,
+        "minimum_J_all_saved": 0.02203019688471127,
+        "last_whole_bear_table_clearance_m": 0.0011191022721858124,
+        "last_bear_tcp_nearest_m": 0.010978678340642287,
+        "full_lift_phase_recorded": false,
+        "one_second_hold_phase_recorded": false
+      }
+    },
+    {
+      "run": "two_panel_grasp_05",
+      "config_sha256": "4066ecac78c7674a8b33bbee9387996f53bce8a6d42fdc214e30587c8775466f",
+      "report_sha256": "0035970411afa303d50956914a5ec7783b0f0f03270da0c9320662e88239e059",
+      "force_limit_per_finger_N": 4.0,
+      "force_source": "explicit config or runtime grip report",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": 0.032,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 40.0
+      },
+      "simulation": {
+        "dt": 0.005,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0
+      },
+      "native_STC_feedback_report_enabled": false,
+      "status": "failed",
+      "error": "GateFailure: Teddy element excessively compressed or inverted: minimum volume ratio 0.0452",
+      "reported_probe_passed": false,
+      "actual_bear_points_count": 1279,
+      "actual_tets_count": 4648,
+      "same_actual_bear_rest_as_full19": false,
+      "same_actual_tet_connectivity_as_full19": false,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": true,
+      "same_finger_xml": true,
+      "recorded_phases": {
+        "close_teddy_gripper": {
+          "time_s": 3.004999999999958,
+          "minimum_bear_z_m": 0.7408824440707017,
+          "whole_bear_table_clearance_m": 0.0008824440707017045,
+          "minimum_J": 0.308831433113559,
+          "right_finger_q_m": [
+            0.03182883746353852,
+            0.031805866286281
+          ],
+          "right_PD_force_N": [
+            1.3687281574720969,
+            1.5525329513762849
+          ],
+          "nearest_bear_to_right_tcp_m": 0.013335569012104259
+        }
+      },
+      "actual_saved_history": {
+        "frame_count": 84,
+        "last_time_s": 4.004999999999937,
+        "max_whole_bear_table_clearance_m": 0.0020000000000000018,
+        "minimum_J_all_saved": 0.045216081669082094,
+        "last_whole_bear_table_clearance_m": 0.00093643686240652,
+        "last_bear_tcp_nearest_m": 0.01301545525135727,
+        "full_lift_phase_recorded": false,
+        "one_second_hold_phase_recorded": false
+      }
+    },
+    {
+      "run": "two_panel_grasp_06",
+      "config_sha256": "77a86e5eec0035eada30ace087132946460096dc9404cc25512b414fe528c32b",
+      "report_sha256": "e3f50c9b558bf484db4ef30d302d47a60d9d676a79ebaeb5abab3bb14eacb6a8",
+      "force_limit_per_finger_N": 4.0,
+      "force_source": "explicit config or runtime grip report",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": 0.034,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 50000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65,
+        "nobisect": false,
+        "mindihedral": 15,
+        "minratio": 1.3
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 40.0
+      },
+      "simulation": {
+        "dt": 0.005,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0
+      },
+      "native_STC_feedback_report_enabled": false,
+      "status": "failed",
+      "error": "GateFailure: Teddy element excessively compressed or inverted: minimum volume ratio -8.2059",
+      "reported_probe_passed": false,
+      "actual_bear_points_count": 3609,
+      "actual_tets_count": 15311,
+      "same_actual_bear_rest_as_full19": false,
+      "same_actual_tet_connectivity_as_full19": false,
+      "same_bear_material_parameters": false,
+      "same_grasp_point": true,
+      "same_finger_xml": true,
+      "recorded_phases": {},
+      "actual_saved_history": {
+        "frame_count": 2,
+        "last_time_s": 0.049999999999999996,
+        "max_whole_bear_table_clearance_m": 0.0020000000000000018,
+        "minimum_J_all_saved": -8.205905174259831,
+        "last_whole_bear_table_clearance_m": 0.0008761962212977537,
+        "last_bear_tcp_nearest_m": 0.06771905362685277,
+        "full_lift_phase_recorded": false,
+        "one_second_hold_phase_recorded": false
+      }
+    },
+    {
+      "run": "two_panel_grasp_07",
+      "config_sha256": "8384f326d57e548a3d31cd4f79a5799eb0a0d292a538e5ff8956eef1139d0b32",
+      "report_sha256": "cdbb9c387bb76c266aa4e4c797bcf46d45708198cdf4f58c53b8fc315da86528",
+      "force_limit_per_finger_N": 4.0,
+      "force_source": "explicit config or runtime grip report",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": 0.03,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65,
+        "mesh": "bear_uniform.obj",
+        "nobisect": true,
+        "mindihedral": 15,
+        "minratio": 1.3
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 40.0
+      },
+      "simulation": {
+        "dt": 0.005,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0,
+        "correct_stc_reaction": true
+      },
+      "native_STC_feedback_report_enabled": true,
+      "status": "completed",
+      "error": null,
+      "reported_probe_passed": true,
+      "actual_bear_points_count": 2963,
+      "actual_tets_count": 11833,
+      "same_actual_bear_rest_as_full19": false,
+      "same_actual_tet_connectivity_as_full19": false,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": true,
+      "same_finger_xml": true,
+      "recorded_phases": {
+        "close_teddy_gripper": {
+          "time_s": 3.004999999999958,
+          "minimum_bear_z_m": 0.7409168033238884,
+          "whole_bear_table_clearance_m": 0.0009168033238884377,
+          "minimum_J": 0.25948196398857293,
+          "right_finger_q_m": [
+            0.032132830094569305,
+            0.03211628333487377
+          ],
+          "right_PD_force_N": [
+            -4.0,
+            -4.0
+          ],
+          "nearest_bear_to_right_tcp_m": 0.012015306820343014
+        },
+        "lift_teddy": {
+          "time_s": 6.014999999999894,
+          "minimum_bear_z_m": 0.959043401216473,
+          "whole_bear_table_clearance_m": 0.21904340121647303,
+          "minimum_J": 0.29302999824257076,
+          "right_finger_q_m": [
+            0.030394569035567462,
+            0.030393703969984576
+          ],
+          "right_PD_force_N": [
+            -3.155210614778296,
+            -3.148615218922882
+          ],
+          "nearest_bear_to_right_tcp_m": 0.002911508235563154
+        },
+        "grasp_hold": {
+          "time_s": 7.014999999999873,
+          "minimum_bear_z_m": 0.9591045111148644,
+          "whole_bear_table_clearance_m": 0.2191045111148644,
+          "minimum_J": 0.2866902366041748,
+          "right_finger_q_m": [
+            0.030389339347731397,
+            0.030388478732793114
+          ],
+          "right_PD_force_N": [
+            -3.113979897831833,
+            -3.1074385496943737
+          ],
+          "nearest_bear_to_right_tcp_m": 0.0028705620882276735
+        }
+      },
+      "actual_saved_history": {
+        "frame_count": 146,
+        "last_time_s": 7.014999999999873,
+        "max_whole_bear_table_clearance_m": 0.21992237544606752,
+        "minimum_J_all_saved": 0.05080296667268052,
+        "last_whole_bear_table_clearance_m": 0.2191045111148644,
+        "last_bear_tcp_nearest_m": 0.0028705620882276735,
+        "full_lift_phase_recorded": true,
+        "one_second_hold_phase_recorded": true
+      }
+    },
+    {
+      "run": "two_panel_grasp_rotate_01",
+      "config_sha256": "315e4b1642a60cc0b2588825803a4c0cc6d5a102a83e3d5c161fb572a841967f",
+      "report_sha256": "bd121b798156844cb0d51d1d321008fc56425f82cccc7940ff6d9f2fcfec5608",
+      "force_limit_per_finger_N": 4.0,
+      "force_source": "explicit config or runtime grip report",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": 0.024,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65,
+        "mesh": "bear_uniform_coarse.obj",
+        "nobisect": true,
+        "mindihedral": 15,
+        "minratio": 1.3
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 200.0
+      },
+      "simulation": {
+        "dt": 0.005,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0,
+        "correct_stc_reaction": true
+      },
+      "native_STC_feedback_report_enabled": true,
+      "status": "failed",
+      "error": "KeyboardInterrupt: ",
+      "reported_probe_passed": false,
+      "actual_bear_points_count": 1450,
+      "actual_tets_count": 5486,
+      "same_actual_bear_rest_as_full19": true,
+      "same_actual_tet_connectivity_as_full19": true,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": true,
+      "same_finger_xml": true,
+      "recorded_phases": {},
+      "actual_saved_history": {
+        "frame_count": 54,
+        "last_time_s": 2.5599999999999676,
+        "max_whole_bear_table_clearance_m": 0.002223527611200038,
+        "minimum_J_all_saved": 0.5896430983673456,
+        "last_whole_bear_table_clearance_m": 0.0009112543991575128,
+        "last_bear_tcp_nearest_m": 0.007065023886755769,
+        "full_lift_phase_recorded": false,
+        "one_second_hold_phase_recorded": false,
+        "minimum_per_step_J": 0.5845359250165911
+      }
+    },
+    {
+      "run": "two_panel_grasp_rotate_02",
+      "config_sha256": "f88dd30f249a4a31d259b0ab608778c7afbca82346029cf188edaaf795e0a25d",
+      "report_sha256": "85816319775e5432458760f63c4457a0cbf742c5450481c3042cd3066fa9742a",
+      "force_limit_per_finger_N": 6.0,
+      "force_source": "explicit config or runtime grip report",
+      "grasp_local_m": [
+        0.08,
+        -0.014,
+        0.034
+      ],
+      "grasp_rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": 0.024,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65,
+        "mesh": "bear_uniform_coarse.obj",
+        "nobisect": true,
+        "mindihedral": 15,
+        "minratio": 1.3
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 200.0
+      },
+      "simulation": {
+        "dt": 0.005,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0,
+        "correct_stc_reaction": true
+      },
+      "native_STC_feedback_report_enabled": true,
+      "status": "failed",
+      "error": "ValueError: Joint limit violation in right trajectory at 29.749s",
+      "reported_probe_passed": false,
+      "actual_bear_points_count": 1450,
+      "actual_tets_count": 5486,
+      "same_actual_bear_rest_as_full19": true,
+      "same_actual_tet_connectivity_as_full19": true,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": true,
+      "same_finger_xml": true,
+      "recorded_phases": {
+        "close_teddy_gripper": {
+          "time_s": 2.6599999999999655,
+          "minimum_bear_z_m": 0.7409111313180582,
+          "whole_bear_table_clearance_m": 0.0009111313180582004,
+          "minimum_J": 0.5210695766421761,
+          "right_finger_q_m": [
+            0.03079653151640029,
+            0.03077521709098629
+          ],
+          "right_PD_force_N": [
+            -6.0,
+            -6.0
+          ],
+          "nearest_bear_to_right_tcp_m": 0.007135597266383385
+        },
+        "lift_teddy": {
+          "time_s": 4.974999999999916,
+          "minimum_bear_z_m": 0.9672868154442698,
+          "whole_bear_table_clearance_m": 0.22728681544426976,
+          "minimum_J": 0.32189049139079673,
+          "right_finger_q_m": [
+            0.02858559750576049,
+            0.02858756352685472
+          ],
+          "right_PD_force_N": [
+            -6.0,
+            -6.0
+          ],
+          "nearest_bear_to_right_tcp_m": 0.010890615715033415
+        },
+        "grasp_hold": {
+          "time_s": 5.974999999999895,
+          "minimum_bear_z_m": 0.9682648891729969,
+          "whole_bear_table_clearance_m": 0.22826488917299692,
+          "minimum_J": 0.3573087567200726,
+          "right_finger_q_m": [
+            0.028961010445091546,
+            0.028960357772039706
+          ],
+          "right_PD_force_N": [
+            -6.0,
+            -6.0
+          ],
+          "nearest_bear_to_right_tcp_m": 0.011075379428297203
+        }
+      },
+      "actual_saved_history": {
+        "frame_count": 125,
+        "last_time_s": 5.974999999999895,
+        "max_whole_bear_table_clearance_m": 0.2307887644864719,
+        "minimum_J_all_saved": 0.09593387085056354,
+        "last_whole_bear_table_clearance_m": 0.22826488917299692,
+        "last_bear_tcp_nearest_m": 0.011075379428297203,
+        "full_lift_phase_recorded": true,
+        "one_second_hold_phase_recorded": true,
+        "minimum_per_step_J": 0.09422316357073436
+      }
+    },
+    {
+      "run": "two_panel_head_grasp_01",
+      "config_sha256": "e386ae69a9320cd82feff7a3060638c177bffba9f08414e71c1550ab450042c3",
+      "report_sha256": "ac7c03281914210fcab3e3e4b54ffc88b44355d4be1aa1befe7378aa460d2240",
+      "force_limit_per_finger_N": 3.0,
+      "force_source": "explicit config or runtime grip report",
+      "grasp_local_m": [
+        0.05,
+        0.153,
+        0.055
+      ],
+      "grasp_rotation_xyzw": [
+        0.7071067811865476,
+        -0.7071067811865476,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": 0.017,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65,
+        "mesh": "bear_uniform_coarse.obj",
+        "nobisect": true,
+        "mindihedral": 15,
+        "minratio": 1.3
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 200.0
+      },
+      "simulation": {
+        "dt": 0.005,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0,
+        "correct_stc_reaction": true
+      },
+      "native_STC_feedback_report_enabled": true,
+      "status": "failed",
+      "error": "GateFailure: Teddy slipped out of the right finger pads during transport",
+      "reported_probe_passed": false,
+      "actual_bear_points_count": 1450,
+      "actual_tets_count": 5486,
+      "same_actual_bear_rest_as_full19": true,
+      "same_actual_tet_connectivity_as_full19": true,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": false,
+      "same_finger_xml": true,
+      "recorded_phases": {
+        "close_teddy_gripper": {
+          "time_s": 2.6599999999999655,
+          "minimum_bear_z_m": 0.7409228325265997,
+          "whole_bear_table_clearance_m": 0.0009228325265997483,
+          "minimum_J": 0.7010914835718245,
+          "right_finger_q_m": [
+            0.017291777480652925,
+            0.017288750531944515
+          ],
+          "right_PD_force_N": [
+            -2.3486802293425684,
+            -2.325781126954616
+          ],
+          "nearest_bear_to_right_tcp_m": 0.004546280602822144
+        }
+      },
+      "actual_saved_history": {
+        "frame_count": 76,
+        "last_time_s": 3.6099999999999453,
+        "max_whole_bear_table_clearance_m": 0.002223527611200038,
+        "minimum_J_all_saved": 0.7010914835718245,
+        "last_whole_bear_table_clearance_m": 0.0009207699256563728,
+        "last_bear_tcp_nearest_m": 0.05334432238403254,
+        "full_lift_phase_recorded": false,
+        "one_second_hold_phase_recorded": false,
+        "minimum_per_step_J": 0.7003786022899957
+      }
+    },
+    {
+      "run": "two_panel_head_grasp_02",
+      "config_sha256": "2abca40eae279ddd1c8fb688a76a86abf4376e44a5e0d3f40b1ba5b42679b593",
+      "report_sha256": "f84dcd2b4af5ff0d83d29c8a465d2f65372590634b2942fb9218d9139b2fe9ca",
+      "force_limit_per_finger_N": 3.0,
+      "force_source": "explicit config or runtime grip report",
+      "grasp_local_m": [
+        0.05,
+        0.153,
+        0.055
+      ],
+      "grasp_rotation_xyzw": [
+        0.7071067811865476,
+        -0.7071067811865476,
+        0.0,
+        0.0
+      ],
+      "target_per_finger_m": 0.0,
+      "bear_config": {
+        "position": [
+          0.27,
+          -0.25,
+          0.742
+        ],
+        "E": 18000.0,
+        "nu": 0.28,
+        "rho": 100.0,
+        "friction_mu": 0.65,
+        "mesh": "bear_uniform_coarse.obj",
+        "nobisect": true,
+        "mindihedral": 15,
+        "minratio": 1.3
+      },
+      "finger_controller": {
+        "finger_kp": 8000.0,
+        "finger_kv": 200.0
+      },
+      "simulation": {
+        "dt": 0.005,
+        "substeps": 1,
+        "precision": "64",
+        "contact_distance": 0.001,
+        "contact_resistance": 10000000.0,
+        "correct_stc_reaction": true
+      },
+      "native_STC_feedback_report_enabled": true,
+      "status": "failed",
+      "error": "GateFailure: Teddy slipped out of the right finger pads during transport",
+      "reported_probe_passed": false,
+      "actual_bear_points_count": 1450,
+      "actual_tets_count": 5486,
+      "same_actual_bear_rest_as_full19": true,
+      "same_actual_tet_connectivity_as_full19": true,
+      "same_bear_material_parameters": true,
+      "same_grasp_point": false,
+      "same_finger_xml": true,
+      "recorded_phases": {
+        "close_teddy_gripper": {
+          "time_s": 2.6599999999999655,
+          "minimum_bear_z_m": 0.7409235504178767,
+          "whole_bear_table_clearance_m": 0.0009235504178767284,
+          "minimum_J": 0.4901363325342841,
+          "right_finger_q_m": [
+            0.012617705587284787,
+            0.012625583042359664
+          ],
+          "right_PD_force_N": [
+            -3.0,
+            -3.0
+          ],
+          "nearest_bear_to_right_tcp_m": 0.003694424299146993
+        }
+      },
+      "actual_saved_history": {
+        "frame_count": 75,
+        "last_time_s": 3.5599999999999463,
+        "max_whole_bear_table_clearance_m": 0.002223527611200038,
+        "minimum_J_all_saved": 0.3881618355052458,
+        "last_whole_bear_table_clearance_m": 0.0009205718380429495,
+        "last_bear_tcp_nearest_m": 0.04822901145904229,
+        "full_lift_phase_recorded": false,
+        "one_second_hold_phase_recorded": false,
+        "minimum_per_step_J": 0.3853925016039633
+      }
+    }
+  ],
+  "three_N_reliable_same_grasp_lift_precedent": false,
+  "findings": [
+    "Only two3N runs exist; both are head grasp at[.05,.153,.055] with a different wrist orientation and both slip before a completed lift. They share the present coarse bear rest/tets/material and finger collision asset, but not the contact location. They are not an upper-arm3N holding precedent.",
+    "The6N coarse upper-arm rotate02 run has actual lift and1s hold records; its subsequent rotation is rejected by joint planning. Finger target.024m differs from present0m and its early-time trajectory differs from full19, so it is not an isolated6N-versus4N experiment.",
+    "The completed4N grasp07 uses2963 vertices/11833tets, finger target.030m and finger damping40, unlike present1450/5486,target0,damping200. Its deformation margin is only J\u2248.0508; old global bag-stretch check fails, so its probe flag alone is not a current complete-physics certificate.",
+    "Earlier reported grasp03 success uses12N robot default, older mesh/feedback and no present5%per-step assurance; do not mislabel it as a3N or4N precedent.",
+    "Present full19 is the strongest direct4N same-grasp evidence: true lift and prolonged transport/entry/center occur before insertion fails at the pad-adjacent cell.",
+    "In4N-cap grasp07, the saved steady hold PD command is only3.11N per finger, but this is an actuator-command observation on a different mesh and gap target, not a native3N-cap success or transferable force-closure certificate."
+  ],
+  "recommendation": {
+    "full20": "Keep4N while changing only high-level yaw as planned, to preserve the single-variable comparison.",
+    "if_same_local_pad_collapse_recurs": "A modest force decrement such as4\u21923.5N is a hypothesis with mechanical directionality, not a validated operating point. First validate the unchanged coarse model, same upper-arm point, target0, controller, native feedback and all existing gates in an isolated lift/hold plus the selected yaw; do not claim3N has prior successful evidence.",
+    "why_not_increase_force": "The failure is local flattening near a finger pad, with both-sided contact retained. More clamping has no demonstrated benefit for this failure and could worsen compression.",
+    "do_not_change": [
+      "E or nu",
+      "cloth material",
+      "volume-ratio or force thresholds",
+      "grasp site or mesh in the same force-comparison trial"
+    ],
+    "limitations": "History does not isolate clamping force causality. Cloth reactions can be transmitted through the bear; stress/contact contribution at the bad tetrahedron was not saved."
+  },
+  "full19_temporal_findings": [
+    "Bad cell3896 J drops.932\u2192.723 from closure to lift; before first sampled strap proximity it reaches.625. This is pre-existing grasp/transport compression, not compression starting only after observed cloth engagement.",
+    "After first body proximity, entry endsJ=.421; centering partly unloads/reorients this cell and restoresJ=.640. Subsequent insertion reducesJ to.04844 in3.375s while wrist torque rises.01209\u2192.13071Nm. Force cap remains4N per finger throughout.",
+    "Native net gripper force is not monotonically increasing and does not isolate cloth reaction. The correlation supports checking contact/motion-induced load transfer, not a claim of sole cloth causation."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "independent_initial_intersection_review",
+  "physics_steps_completed": 0,
+  "requested_task_success": false,
+  "failure_is_native_initial_surface_intersection": true,
+  "native_geometry_pairs": [
+    [
+      "cloth_0_0",
+      "rigid_link_14_0"
+    ],
+    [
+      "cloth_0_0",
+      "rigid_link_17_0"
+    ]
+  ],
+  "source_derived_rigid_mapping": {
+    "14": "left link7 with fixed child hand geometry",
+    "17": "left right_finger"
+  },
+  "mapping_evidence": "Seven preceding rigid entities (table, four legs, floor, left mount), followed by XML body order link0..link7,hand,left_finger,right_finger; IPC groups hand into link7. Source-derived, not a new running-instance dump.",
+  "matched_cloth_vertex_count": 25,
+  "matched_cloth_vertex_indices": [
+    1563,
+    1564,
+    1572,
+    1573,
+    1574,
+    1575,
+    1576,
+    1581,
+    1582,
+    1583,
+    1584,
+    1585,
+    1586,
+    1590,
+    1591,
+    1592,
+    1593,
+    1594,
+    1595,
+    1596,
+    1599,
+    1600,
+    1601,
+    1602,
+    1603
+  ],
+  "all_matched_vertices_in_front_handle": true,
+  "matched_front_center_grasp_vertices": [],
+  "matched_front_x_minus_grasp_vertices": [
+    1581,
+    1582,
+    1583,
+    1584,
+    1585,
+    1586
+  ],
+  "cloth_local_bounds_m": [
+    [
+      -0.09245776226723786,
+      -0.08399557464725607,
+      0.50504317620318
+    ],
+    [
+      -0.018787870976226338,
+      -0.0675927605528477,
+      0.5479302790189287
+    ]
+  ],
+  "preserved_native_evidence": [
+    "native_initial_intersection/intersected_mesh.obj",
+    "native_initial_intersection/close_mesh.obj"
+  ],
+  "interpretation": "The 85-degree initial palm/finger placement crosses the preexisting front-handle curved segment. This is not a time-step instability or later material failure. Opening only the central finger gap cannot move the intersecting palm.",
+  "candidate_next_sequence": "Restore validated35-degree initial grasp, physically spread, slowly rotate the left wrist while both handles remain actually held, settle, then release the right handle. This needs a new dynamic validation; no cloth nodes may be transformed to force it."
+}

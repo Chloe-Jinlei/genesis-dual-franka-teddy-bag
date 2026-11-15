@@ -1,0 +1,43 @@
+--- runtime_ipc/long-handles-before-two-panel-builder.py	2026-11-13 18:24:42.379648395 -0500
++++ two_panel_builder.py	2026-11-13 18:24:42.409649282 -0500
+@@ -7,6 +7,7 @@
+ """
+ from __future__ import annotations
+ import json
++from numbers import Real
+ from pathlib import Path
+ import numpy as np
+ from scipy.optimize import brentq
+@@ -51,7 +52,12 @@
+                   "method":"Alternating row/column arc-length fit of an initially opened two-panel surface; sqrt-sine separation prevents near-seam initial cloth overlap."}
+ 
+ 
+-def build_bag(spacing,stem,point,geometry):
++def build_bag(spacing,stem,point,geometry,*,handle_extra=.04):
++    """Build the same two-panel body with optional straight handle-leg length."""
++    if isinstance(handle_extra,(bool,np.bool_)) or not isinstance(handle_extra,Real) \
++            or not np.isfinite(handle_extra) or handle_extra<=0:
++        raise ValueError("handle_extra must be a finite positive length in metres")
++    handle_extra=float(handle_extra)
+     across = np.unique(np.round(np.r_[np.linspace(-.0125,.0125,6),[-.01,0.,.01]],10))
+     material_x = np.unique(np.round(np.r_[np.linspace(-W/2,W/2,round(W/spacing)+1),
+                                          -.12+across,.12+across],10))
+@@ -110,7 +116,7 @@
+         center0=np.asarray(point(-.12/W+.5,1,side))
+         center1=np.asarray(point(.12/W+.5,1,side))
+         r=(center1[0]-center0[0])/2
+-        extra=.04
++        extra=handle_extra
+         intervals=max(4,2*int(np.ceil(np.pi*r/spacing/2)))
+         arc=np.linspace(np.pi,0,intervals+1)
+         nz=max(2,int(np.ceil(extra/spacing)))
+@@ -148,7 +154,8 @@
+             groups['grasp_'+name+'_'+label]=np.unique(strip[rows]).tolist()
+         groups['grasp_'+name]=groups['grasp_'+name+('_x_minus' if name=='front' else '_x_plus')]
+         handle_data[name]={"root_center_left_m":center0.tolist(),"root_center_right_m":center1.tolist(),
+-                           "centerline_length_m":float(arclength[-1]),"cross_samples":len(cross_s)}
++                           "centerline_length_m":float(arclength[-1]),"cross_samples":len(cross_s),
++                           "vertical_leg_extra_m":handle_extra,"semicircle_radius_m":float(r)}
+     points,faces=np.asarray(points,float),np.asarray(faces,np.int32)
+     mesh=trimesh.Trimesh(points,faces,process=False);trimesh.repair.fix_normals(mesh);faces=mesh.faces.copy()
+     stats=topology(points,faces);body_stats=topology(points[body_indices],faces[body_face_indices])

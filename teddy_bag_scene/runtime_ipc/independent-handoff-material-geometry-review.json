@@ -1,0 +1,137 @@
+{
+  "kind": "independent_handoff_material_geometry_analyzer_review",
+  "physical_success": false,
+  "source_or_native_state_modified": false,
+  "current_full21_result_consistent": true,
+  "checks": {
+    "source_hash_matches": true,
+    "complete_vertex_bijection": true,
+    "source_faces_exactly_match_native_faces": true,
+    "left_seam_matches_front_grid_material_column": true,
+    "right_seam_matches_front_grid_material_column": true,
+    "both_panels_share_actual_seam_columns": true,
+    "seam_rows_match_ordered_material_height": true,
+    "initial_rest_substitution_exact_for_full21": true,
+    "live_validate_matches_full21_frozen": true,
+    "every_reported_phase_uses_its_actual_saved_endpoint": true,
+    "material_width_expression_uses_seam_landmarks_without_PCA": true
+  },
+  "phases": [
+    {
+      "phase": "initial",
+      "time_s": 0.0,
+      "reported_clock_exact": true,
+      "material_lines_and_groups_exact": true,
+      "top_material_chord_m": 0.41474764119999996,
+      "top_material_direction_m": [
+        0.41474764119999996,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "phase": "close_both_handles",
+      "time_s": 0.5000000000000003,
+      "reported_clock_exact": true,
+      "material_lines_and_groups_exact": true,
+      "top_material_chord_m": 0.4033112414688981,
+      "top_material_direction_m": [
+        0.4033045966706848,
+        -0.0023099647121154385,
+        -0.0001544749456903194
+      ]
+    },
+    {
+      "phase": "drape_under_gravity",
+      "time_s": 1.0999999999999985,
+      "reported_clock_exact": true,
+      "material_lines_and_groups_exact": true,
+      "top_material_chord_m": 0.37347643730282953,
+      "top_material_direction_m": [
+        0.37347255492890513,
+        -0.0017029061911893932,
+        -6.767150510844644e-06
+      ]
+    },
+    {
+      "phase": "spread_bag",
+      "time_s": 3.0299999999999576,
+      "reported_clock_exact": true,
+      "material_lines_and_groups_exact": true,
+      "top_material_chord_m": 0.3125496491062807,
+      "top_material_direction_m": [
+        0.31251977542723125,
+        -0.004303675532007639,
+        0.00038923037823246354
+      ]
+    },
+    {
+      "phase": "orient_held_bag",
+      "time_s": 14.690000000000897,
+      "reported_clock_exact": true,
+      "material_lines_and_groups_exact": true,
+      "top_material_chord_m": 0.29438891483828045,
+      "top_material_direction_m": [
+        0.2905270745223224,
+        0.04690759647089869,
+        0.007650460279263749
+      ]
+    },
+    {
+      "phase": "release_right_handle",
+      "time_s": 15.590000000001037,
+      "reported_clock_exact": true,
+      "material_lines_and_groups_exact": true,
+      "top_material_chord_m": 0.104692512814645,
+      "top_material_direction_m": [
+        0.0964963876718982,
+        0.039820109420685146,
+        -0.007957907478979731
+      ]
+    },
+    {
+      "phase": "right_clear_handle",
+      "time_s": 18.205000000000663,
+      "reported_clock_exact": true,
+      "material_lines_and_groups_exact": true,
+      "top_material_chord_m": 0.0955382843114711,
+      "top_material_direction_m": [
+        0.09485535613037965,
+        -0.011045299504748161,
+        -0.0028331151421614464
+      ]
+    }
+  ],
+  "definition": "The reported material width line is the current 3D chord joining corresponding left/right sewn material landmarks at equal reference material height. It is neither fabric arc length nor free aperture width. PCA quantities remain separate projection diagnostics.",
+  "generic_reporting_and_validation_gaps": [
+    "It imports live validate and records only source-asset hash, so a standalone report does not fully freeze helper/state/config provenance.",
+    "Zero XY chord length would make yaw undefined even though atan2(0,0) returns zero; current full21 reported chords have nonzero XY projection."
+  ],
+  "current_full21_incorrect_material_axis_or_phase_value_found": false,
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/analyze_handoff_geometry.py": "8e5218f17c584aba7e5ba2c7234a646a45d9c61e83fbe2c6f3eb7affc79e8833",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/handoff-material-geometry.json": "bb4ec5869f9ee1d16c4fefd4209495b02c65b073628140f81b63a5f5089536c5",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/config.json": "ae0686aa5e7f29c0da663d64f1c9fe98c76fa639ac39b29554460fa8a0dc82cf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/initial.npz": "7f877fe0b3b1508aedbf8931b0d97926901fad6514f8fedd1cb46d756c0f5c4b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/source/assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99"
+  },
+  "reviewed_helper_revision_sha256": "8e5218f17c584aba7e5ba2c7234a646a45d9c61e83fbe2c6f3eb7affc79e8833",
+  "previous_helper_revision_sha256": "8e5218f17c584aba7e5ba2c7234a646a45d9c61e83fbe2c6f3eb7affc79e8833",
+  "post_fix_synthetic_temporary_data_checks": {
+    "initial_row_follows_actual_initial_not_rest": true,
+    "extra_native_vertex_rejected": true,
+    "missing_native_face_rejected": true,
+    "duplicated_native_face_rejected": true,
+    "native_vertex_permutation_preserves_material_endpoints": true
+  },
+  "post_fix_checks_passed": true,
+  "post_fix_regression_scope": "Temporary copies only; tests do not modify any real run input or claim those synthetic states were simulated.",
+  "resolved_generic_gaps": [
+    "Node counts plus injective mapping now establish a complete vertex bijection.",
+    "Canonical source/native face sets match both ways and reject duplicate triangles.",
+    "Initial geometry is read from initial.npz, with explicit initial-rest difference.",
+    "Scope explicitly distinguishes current material endpoint chords from intrinsic fabric lengths or free aperture."
+  ]
+}

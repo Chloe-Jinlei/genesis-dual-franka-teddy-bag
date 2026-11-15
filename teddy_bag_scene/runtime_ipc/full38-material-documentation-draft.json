@@ -1,0 +1,274 @@
+{
+  "kind": "full38_material_documentation_draft_only",
+  "created_utc": "2026-11-15T20:33:32.778863+00:00",
+  "scope_cn": "独立新草稿，仅供之后选择性更新README_CN.md/material_reference_notes.json。未写入生产文档、默认、manifest、源码或资产；未监测、推进或改变正在运行的仿真。",
+  "run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38",
+  "status": "draft_pending_final_native_validation",
+  "task_success": null,
+  "final_native_material_readback": null,
+  "whole_run_metrics": {
+    "maximum_principal_extension": null,
+    "construction_direction_extension": null,
+    "shear_deformation": null,
+    "force_torque_peaks": null,
+    "bear_volume_ratio_minimum": null,
+    "final_containment": null,
+    "released_retention": null,
+    "rebound_or_damping_measurement": null
+  },
+  "run_progress_claim": "No current phase, latest frame or native process status was inspected by this draft. All whole-run outcomes remain pending.",
+  "candidate_bag_parameters": {
+    "position": [
+      -0.13,
+      0.0,
+      0.742
+    ],
+    "E": 10000000.0,
+    "nu": 0.3,
+    "rho": 333.3333333333333,
+    "thickness": 0.0003,
+    "bending_stiffness": 1e-05,
+    "friction_mu": 0.65,
+    "shear_stiffness": 50.0,
+    "mesh": "two_panel_bag_wide_tall_long_handles_coarse.obj",
+    "npz_file": "two_panel_bag_wide_tall_long_handles_coarse.npz",
+    "metadata": "metadata_two_panel_wide_tall_long_handles_coarse.json",
+    "height_m": 0.4,
+    "handle_shear_stiffness": 250.0
+  },
+  "differences_vs_default_full30": [
+    {
+      "field": "bag.E",
+      "baseline": 4000000.0,
+      "candidate": 10000000.0
+    },
+    {
+      "field": "bag.bending_stiffness",
+      "baseline": 5e-05,
+      "candidate": 1e-05
+    },
+    {
+      "field": "bag.rho",
+      "baseline": 500.0,
+      "candidate": 333.3333333333333
+    }
+  ],
+  "parameters_explained_cn": [
+    {
+      "fields": [
+        "bag.E"
+      ],
+      "value": 10000000.0,
+      "unit": "Pa",
+      "text_cn": "膜内拉伸输入10 MPa，较原方案4 MPa提高拉伸阻力。原生二维拉伸系数由E和全厚度转换，目标是抑制拉长；当前整段实际伸长仍待测，不能称零伸长。E未由所引真实试样拟合。",
+      "expected_native_lambda_N_per_m": 6593.406593406592,
+      "native_formula": "lambda = E * (2 * radius) / (1 - nu^2)",
+      "evidence_level": "Frozen config/source-derived; final Full38 numeric native readback pending."
+    },
+    {
+      "fields": [
+        "bag.bending_stiffness"
+      ],
+      "value": 1e-05,
+      "unit": "N·m",
+      "text_cn": "弯曲刚度10 µN·m，较原50 µN·m更易弯折；所引棉平纹对照约10.10 µN·m、棉麻混纺示例约9.71 µN·m，提供数量级参照。这不预测袋口高度、皱褶状态或接触成功。"
+    },
+    {
+      "fields": [
+        "bag.rho",
+        "bag.thickness"
+      ],
+      "rho_kg_m3": 333.3333333333333,
+      "IPC_radius_m": 0.0003,
+      "full_thickness_m": 0.0006,
+      "areal_mass_g_m2": 199.99999999999997,
+      "derived_initial_mass_g": 80.05309630840246,
+      "text_cn": "固定0.6 mm全厚度下，有效密度333.333333 kg/m³对应200 g/m²，静止网格推导袋重约80.053 g。它是含孔隙的织物有效密度，不是纤维本体密度；质量改变同时影响重力载荷和惯性，重力加速度不变。",
+      "mass_formula": "sum(rest triangle area) * rho * (2 * IPC radius)",
+      "mass_evidence": "Independent startup rest-geometry derivation, not a new native buffer readback by this draft."
+    },
+    {
+      "fields": [
+        "bag.shear_stiffness",
+        "bag.handle_shear_stiffness"
+      ],
+      "body_N_per_m": 50.0,
+      "handle_N_per_m": 250.0,
+      "text_cn": "袋身剪切50 N/m、两提带250 N/m均保留原值，不引入额外提带刚化。原生剪切能量按面积积分，小角剪切斜率约2mu；剪切柔顺与轴向抗拉分开控制。两值仍是工程近似，未联合标定真实经纬纱、织带或缝线。",
+      "body_small_angle_surface_slope_N_per_m_per_rad": 100.0,
+      "reference_limit": "Cotton control G = 2.81 gf/(cm degree) gives157.888 N/m/rad and nominal native mu78.944 N/m only in the stated small-angle, no-prestress conversion; KES is not directly interchangeable with this constitutive model."
+    },
+    {
+      "fields": [
+        "bag.friction_mu"
+      ],
+      "value": 0.65,
+      "unit": "dimensionless",
+      "text_cn": "摩擦输入0.65保留原值。原生接触对采用两材料系数的几何平均；这不是从文献标准触头MIU直接得到的机器人/玩偶/桌面摩擦标定。"
+    },
+    {
+      "fields": [
+        "bag.nu"
+      ],
+      "value": 0.3,
+      "unit": "dimensionless",
+      "text_cn": "沿用原泊松比输入；未识别真实织物方向性泊松响应。"
+    }
+  ],
+  "material_reference_notes_replacement_candidate": {
+    "status": "candidate_engineering_parameters_not_calibrated_to_a_physical_sample",
+    "candidate_run": "two_panel_full_38",
+    "candidate_config": "config_cotton_linen_minimal_material.json",
+    "validation_status": "pending_final_actual_run_and_independent_review",
+    "cloth_bending_stiffness_Nm": 1e-05,
+    "bag_material_parameters": {
+      "E": 10000000.0,
+      "nu": 0.3,
+      "rho": 333.3333333333333,
+      "thickness": 0.0003,
+      "bending_stiffness": 1e-05,
+      "shear_stiffness": 50.0,
+      "handle_shear_stiffness": 250.0,
+      "friction_mu": 0.65
+    },
+    "reference_areal_mass_g_m2": 200.0,
+    "reference_full_thickness_mm": 0.6,
+    "derived_initial_bag_mass_g": 80.05309630840246,
+    "material_description_cn": "当前候选仅提高膜内抗拉输入、降低弯曲刚度并调整为200 g/m²面密度，目标是兼顾较难拉长和容易折叠的棉麻布手感。袋身/提带剪切与摩擦保留原设置；不改变熊、网格、动作、求解控制或验收门。",
+    "reference_basis_cn": "公开实测棉样本约185–197 g/m²及0.61–0.77 mm厚度支持面密度/厚度的量级；另一个175 g/m²棉平纹对照弯曲刚度约10.10 µN·m。200 g/m²、D=10 µN·m和当前E/剪切/摩擦不是同一试样联合测量得到的一组参数。",
+    "damping_limit_cn": "没有新增物理粘性阻尼或纱线迟滞模型；原有隐式积分的数值耗散不等于真实棉麻耗散。低弯曲刚度或低质量均不能保证减少回弹。",
+    "references": [
+      {
+        "id": "cotton_control",
+        "title": "Low Stress Mechanical Properties of Plasma-Treated Cotton Fabric Subjected to Zinc Oxide-Anti-Microbial Treatment",
+        "url": "https://www.mdpi.com/1996-1944/6/1/314",
+        "location": "Section 2.1、Table 2、Table 4（未处理对照）",
+        "values": "175 g/m²棉平纹；G=2.81 gf/(cm·degree)，B=0.103 gf·cm²/cm≈10.10085 µN·m。",
+        "scope": "同一试样支持柔顺剪切与约10 µN·m弯曲量级，但不是当前200 g/m²薄壳的完整参数标定。"
+      },
+      {
+        "id": "cotton_mass",
+        "title": "Sylvie® 3D Drape Tester – New system for measuring fabric drape",
+        "url": "https://www.pt.bme.hu/publikaciok/503_open_TEKSTIL%20Sylvie%203D%20Drape%20Teste-New%20measuring%20system-Jelka_k%C3%A9p-tab.pdf",
+        "location": "Table 1，印刷第7页/PDF第7页",
+        "values": "列举的纯棉试样185.37–197.07 g/m²、厚度0.61–0.77 mm。厚度测量压力0.49 cN/cm²。",
+        "scope": "支持200 g/m²和0.6 mm多孔织物包络的近似量级；该表弯曲列宽度归一化不明，不用于SI弯曲换算。"
+      },
+      {
+        "id": "linen_blends",
+        "title": "Comfort and Handle Behaviour of Linen-Blended Fabrics",
+        "url": "https://www.degruyterbrill.com/document/doi/10.1515/aut-2007-070104/pdf",
+        "location": "Tables 1–3、5；印刷第34、35、37、39页",
+        "values": "185 g/m²纯亚麻B≈19.123 µN·m；144 g/m²棉麻混纺B≈9.709 µN·m。",
+        "scope": "仅作不同织物的数量级参照；不存在由这些数据测得的200 g/m²、D=10 µN·m完整匹配样本。"
+      },
+      {
+        "id": "native_shear",
+        "title": "libuipc strain-limiting Baraff–Witkin shell native energy",
+        "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.h",
+        "location": "101–129 (energy), 139–143 (shear derivative)",
+        "values": "按静止三角形面积积分；剪切能量密度mu*(Fa·Fb)^2，小角切变表面切线斜率约2mu。",
+        "scope": "mu单位N/m，不能再乘厚度；小角换算不是织物在有限张力/有限角度下的KES标定。"
+      },
+      {
+        "id": "native_bending",
+        "title": "libuipc discrete shell bending, pinned implementation specification",
+        "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/docs/specification/constitutions/discrete_shell_bending.md",
+        "values": "原生D是独立铰链弯曲系数，单位N·m；D与膜内E、mu分别控制。",
+        "scope": "调低D增加易弯折程度，不新增耗散/迟滞。"
+      }
+    ],
+    "not_measured": [
+      "actual canvas warp/weft extension and shear",
+      "bending hysteresis",
+      "cloth and plush friction",
+      "teddy filling compression and recovery"
+    ],
+    "teddy_model": "A homogeneous compressible elastic continuum; no separately resolved textile skin or loose filling fibers."
+  },
+  "readme_replacement_paragraph_cn": "当前棉麻材料候选 Full38 相对原方案仅改三项：膜内拉伸输入 E=10 MPa、弯曲刚度10 µN·m、面密度200 g/m²（全厚0.6 mm，静止网格推导袋重约80.053 g）。袋身/提带剪切仍为50/250 N/m，摩擦输入仍为0.65；熊、几何、动作和验收门保持原设置。参数参考实测棉/棉麻织物的数量级，尚未对同一真实布料联合标定；未新增阻尼，不能保证零伸长或更少回弹。Full38的实际整段应变、接触、装袋和释放后保持结果均待运行结束后核验。此候选草稿不更改桌面默认。",
+  "reference_provenance_status": "Uses previously researched primary sources from the two hashed local reference reviews; no new web search, native test or material calibration performed. Reported example ranges are not universal cotton/linen bounds.",
+  "final_documentation_requirements_cn": [
+    "必须以Full38最终实际记录填写整段指标和结果；不能使用旧成功或旧材料状态代替。",
+    "将主伸长、构造方向伸长和剪切角变化区分报告；不能把所有对角主伸长都解释为纱线轴向拉长。",
+    "质量先标静止网格推导；最终原生读回、D/摩擦的配置路径证据与数值buffer证据需区分。",
+    "保留未联合标定、无新增阻尼/迟滞、未证明减少回弹、未保证零伸长的限制。",
+    "若本轮失败或中断须明示；原抓持、力/力矩、J、布应变、桌面、最终全包含与释放保持条件不变。",
+    "保留teddy_model原文，不修改或夸大熊模型。"
+  ],
+  "checks": {
+    "frozen_full38_binding": true,
+    "candidate_equals_frozen_full38": true,
+    "exact_three_fields_vs_full30": true,
+    "exact_material_parameters": true,
+    "original_shear_and_friction_retained": true,
+    "teddy_model_text_preserved_exactly": true,
+    "default_remains_full30": true,
+    "protected_inputs_unchanged_before_write": true
+  },
+  "all_draft_checks_passed": true,
+  "source_reports": [
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-areal-mass-reference-review.json",
+      "sha256": "8297fca2227ebd22513ced71550c8454b640bc0e9c89cd2dd29b86cc3aecd720"
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-shear-reference-review.json",
+      "sha256": "c2cb064edcae2bc95f5b6b596f49cb472afa3fe7118e618f3ec915cc2f15f4a0"
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full38-material-startup-review.json",
+      "sha256": "b0366e5ba3dd775cdc2129a05ecf3e5a482e8b0fcde58bd2fe1dbbbc231cf62b"
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full37-material-documentation-draft.json",
+      "sha256": "5e7a26eb253b0207cfd084344978775809faf1021188104e0972883aeae80825"
+    }
+  ],
+  "protected_inputs_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/README_CN.md": "a664c574789ed7fbeb70152a349072b62882b190b8507746c674809239cdc791",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/material_reference_notes.json": "5e2beac17e485dc29c293a66abc7c8cc013e407118dc7cd8d810cc775c21e143",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/dependency_manifest.json": "ed421581e5338f346a573e90b2c0279d8b44b67b7d80f8c92f6a2c4c34b60b31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config.json": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_cotton_linen_minimal_material.json": "b7a8a70d26bd9b91cf04304a57f3386dbcfdab070666a2c7d6ebeb25af78d1fd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/config.json": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/config.json": "24ec28685624319b832f1df9df59301289cc29c79c8e085695b88763f2227768",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/input_sha256.json": "3dd396105db5836383264fa6dd4fc81d8610f70282321729b9a2e33a80cb45dc",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full37-material-documentation-draft.json": "5e7a26eb253b0207cfd084344978775809faf1021188104e0972883aeae80825",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full38-material-startup-review.json": "b0366e5ba3dd775cdc2129a05ecf3e5a482e8b0fcde58bd2fe1dbbbc231cf62b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full38-launch.json": "2a1e83add60d56b67ed312ed66f209ea04c47039ffb711b4ff8f6181384951eb",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-areal-mass-reference-review.json": "8297fca2227ebd22513ced71550c8454b640bc0e9c89cd2dd29b86cc3aecd720",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-shear-reference-review.json": "c2cb064edcae2bc95f5b6b596f49cb472afa3fe7118e618f3ec915cc2f15f4a0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/bear_uniform_coarse_s663.mtl": "f3a8a971b017025ea86cecd97cfdeb7e8693aea417e59cffa4786663a13bc18f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/bear_uniform_coarse_s663.obj": "0e4c2bd67b51b741b18530979e4d22fd1d718ff302ea0901bf9356d01c46dacd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/cotton_canvas.png": "c1fa744e76e59d2be819db3dcc63a84724ff7bab886d9570789712bf562dcb2f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/metadata_two_panel_wide_tall_long_handles_coarse.json": "a2bf8c594b888c9189216a952bb05673fb0f20b505e74d331f2461e5fc969c18",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/teddy_fur.png": "355e29a37479403425f30c734475d141313be8880f68b8c638bdb8d04cf561f8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/two_panel_bag_wide_tall_long_handles_coarse.mtl": "51a06ed3a6e284c29a6cb3192bde876bb1c0f4c30e60c9d716b5935878f0f9d3",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/two_panel_bag_wide_tall_long_handles_coarse.obj": "41b36b030aa3be6947112a39643f519906dc74459f87838ccac8ade1efb9e8f7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets_builder.py": "d6adb8a187a31092b21f6edab55145291fda1ba97d221d744b8989847c1e960e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/build_tall_bag.py": "dc57f031b1a972743eff2edb85ac85630321e848dedc579305d51de0fd4b6926",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/build_wide_tall_bag.py": "072735056b4d238622a8443f4ec6f85e1e097a041a8e2b261d1a7ab12d02349c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_grasp.py": "3ac4767bad63047309b1f18583a40c2afc3424ce944e3a85427dedc2f588c4ab",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/gravity_release.py": "3cb7ea9a10390bcb473d353863917d39cc67a05766b2da3bfc38ed28bd26915f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/remesh_bear.py": "feb5f7dccc5fa4e08a4ca02ec6ff2ad4abaa669e7a9c68869104f881d8428a20",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/staged_contact_insertion.py": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/two_panel_builder.py": "0b52fd1d978b8fb9817a6c932e39ab2e316f697144e367d7e7b511562d30f801",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99"
+  },
+  "only_this_draft_written": true
+}

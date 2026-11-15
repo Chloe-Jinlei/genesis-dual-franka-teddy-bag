@@ -1,0 +1,1863 @@
+{
+  "kind": "independent_full23_stopped_insertion_evidence_review",
+  "status": "stop_evidence_consistent_task_incomplete",
+  "physical_task_success": false,
+  "all_consistency_checks_passed": true,
+  "checks": {
+    "all_frozen_input_manifest_hashes_match": true,
+    "frozen_production_sources_assets_equal_live": true,
+    "live_trial_config_matches_launch_and_frozen_semantics": true,
+    "frozen_helper_matches_launch": true,
+    "per_step_actual_arrays_finite": true,
+    "every_step_joint_trace_coverage": true,
+    "every_step_soft_trace_coverage": true,
+    "soft_and_actual_rate_gates_pass": true,
+    "only_final_tcp_torque_guard_trips": true,
+    "material_and_per_link_wrench_audits_pass": true,
+    "recenter_disabled_and_no_corrections": true,
+    "active_rim_policy_matches_frozen_config_and_keeps_union_diagnostic": true,
+    "supplemental_yaw_interval_and_actual_endpoint_evidence_pass": true,
+    "failed_soft_snapshot_is_actual_last_step_and_recomputes": true,
+    "thirteen_complete_phases_then_partial_insertion_consistent": true,
+    "no_release_withdraw_or_final_settle": true,
+    "native_50_250_material_readback_and_source_mapping": true,
+    "unique_torque_exceedance_is_last_recorded_step": true,
+    "saved_pd_joint_controls_respect_native_joint_clamp": true,
+    "native_stop_and_independent_task_failure_agree": true,
+    "protected_inputs_unchanged_during_summary": true
+  },
+  "failed_checks": [],
+  "native_status": "failed",
+  "native_error": "GateFailure: IPC distal-hand torque at TCP exceeded engineering trial limit",
+  "final_time_s": 44.51000000000432,
+  "actual_insertion_executed": true,
+  "insertion_completed": false,
+  "release_executed": false,
+  "actual_phases": [
+    {
+      "phase": "close_both_handles",
+      "completed": true,
+      "start_s": 0.0,
+      "actual_end_or_stop_s": 0.5000000000000003,
+      "planned_duration_s": 0.5,
+      "actual_elapsed_s": 0.5000000000000003,
+      "actual_step_count": 100,
+      "per_step_soft": {
+        "rows": 101,
+        "min_J": 0.8623928818121652,
+        "max_cloth_stretch": 1.0196630177981751,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 0.0003878495257367831,
+          "acceleration_rad_s2": 0.01749190219584306
+        },
+        "right": {
+          "velocity_rad_s": 0.00036168577270245805,
+          "acceleration_rad_s2": 0.018770793019484696
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "drape_under_gravity",
+      "completed": true,
+      "start_s": 0.5000000000000003,
+      "actual_end_or_stop_s": 1.0999999999999985,
+      "planned_duration_s": 0.6,
+      "actual_elapsed_s": 0.5999999999999982,
+      "actual_step_count": 120,
+      "per_step_soft": {
+        "rows": 121,
+        "min_J": 0.8848548137439408,
+        "max_cloth_stretch": 1.0166323929320837,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 0.00023650389977092345,
+          "acceleration_rad_s2": 0.004908053642793671
+        },
+        "right": {
+          "velocity_rad_s": 0.0002435323562792746,
+          "acceleration_rad_s2": 0.007109027075102852
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "spread_bag",
+      "completed": true,
+      "start_s": 1.0999999999999985,
+      "actual_end_or_stop_s": 3.0299999999999576,
+      "planned_duration_s": 1.9269230769230767,
+      "actual_elapsed_s": 1.929999999999959,
+      "actual_step_count": 386,
+      "per_step_soft": {
+        "rows": 387,
+        "min_J": 0.8859453335650627,
+        "max_cloth_stretch": 1.019140550491814,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 0.098423808635971,
+          "acceleration_rad_s2": 0.15744060358145262
+        },
+        "right": {
+          "velocity_rad_s": 0.104176007722657,
+          "acceleration_rad_s2": 0.41450827433849646
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "release_right_handle",
+      "completed": true,
+      "start_s": 3.0299999999999576,
+      "actual_end_or_stop_s": 3.429999999999949,
+      "planned_duration_s": 0.4,
+      "actual_elapsed_s": 0.3999999999999915,
+      "actual_step_count": 80,
+      "per_step_soft": {
+        "rows": 81,
+        "min_J": 0.8875990238366603,
+        "max_cloth_stretch": 1.0250934893132442,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 0.00029245675230882284,
+          "acceleration_rad_s2": 0.0047552869782309
+        },
+        "right": {
+          "velocity_rad_s": 0.0010056743992947759,
+          "acceleration_rad_s2": 0.03878795446041833
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "right_clear_handle",
+      "completed": true,
+      "start_s": 3.429999999999949,
+      "actual_end_or_stop_s": 4.974999999999916,
+      "planned_duration_s": 1.5415384615384613,
+      "actual_elapsed_s": 1.544999999999967,
+      "actual_step_count": 309,
+      "per_step_soft": {
+        "rows": 310,
+        "min_J": 0.8878054138033521,
+        "max_cloth_stretch": 1.0318575760375375,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 0.0004142223364738129,
+          "acceleration_rad_s2": 0.012411174580506931
+        },
+        "right": {
+          "velocity_rad_s": 0.6222488024778556,
+          "acceleration_rad_s2": 1.4847998345274824
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "teddy_pregrasp",
+      "completed": true,
+      "start_s": 4.974999999999916,
+      "actual_end_or_stop_s": 9.345000000000061,
+      "planned_duration_s": 4.3663724191234685,
+      "actual_elapsed_s": 4.370000000000145,
+      "actual_step_count": 874,
+      "per_step_soft": {
+        "rows": 875,
+        "min_J": 0.8883676590057623,
+        "max_cloth_stretch": 1.0221694550118336,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 0.000129291176449442,
+          "acceleration_rad_s2": 0.013168208474212687
+        },
+        "right": {
+          "velocity_rad_s": 0.7139973349817588,
+          "acceleration_rad_s2": 0.6955277578811234
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "teddy_grasp_approach",
+      "completed": true,
+      "start_s": 9.345000000000061,
+      "actual_end_or_stop_s": 10.890000000000303,
+      "planned_duration_s": 1.5415384615384613,
+      "actual_elapsed_s": 1.5450000000002415,
+      "actual_step_count": 309,
+      "per_step_soft": {
+        "rows": 310,
+        "min_J": 0.8889847813590793,
+        "max_cloth_stretch": 1.0191478323022647,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 9.796897691671802e-05,
+          "acceleration_rad_s2": 0.009861784494090265
+        },
+        "right": {
+          "velocity_rad_s": 0.40513159070592053,
+          "acceleration_rad_s2": 0.871468583141997
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "close_teddy_gripper",
+      "completed": true,
+      "start_s": 10.890000000000303,
+      "actual_end_or_stop_s": 11.890000000000459,
+      "planned_duration_s": 1.0,
+      "actual_elapsed_s": 1.0000000000001563,
+      "actual_step_count": 200,
+      "per_step_soft": {
+        "rows": 201,
+        "min_J": 0.36407975739312815,
+        "max_cloth_stretch": 1.0187019696789426,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 7.504754367460009e-05,
+          "acceleration_rad_s2": 0.006768553512869254
+        },
+        "right": {
+          "velocity_rad_s": 0.0024644716499153674,
+          "acceleration_rad_s2": 0.03859304773214342
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "lift_teddy",
+      "completed": true,
+      "start_s": 11.890000000000459,
+      "actual_end_or_stop_s": 15.880000000001083,
+      "planned_duration_s": 3.986168217759223,
+      "actual_elapsed_s": 3.9900000000006237,
+      "actual_step_count": 798,
+      "per_step_soft": {
+        "rows": 799,
+        "min_J": 0.1961174226107943,
+        "max_cloth_stretch": 1.0184140638059294,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 4.057388593992073e-06,
+          "acceleration_rad_s2": 0.0007079557235555315
+        },
+        "right": {
+          "velocity_rad_s": 0.7138415143580232,
+          "acceleration_rad_s2": 1.0382319452587083
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "orient_teddy_postlift",
+      "completed": true,
+      "start_s": 15.880000000001083,
+      "actual_end_or_stop_s": 21.904999999999927,
+      "planned_duration_s": 6.024024000000001,
+      "actual_elapsed_s": 6.024999999998844,
+      "actual_step_count": 1205,
+      "per_step_soft": {
+        "rows": 1206,
+        "min_J": 0.4332329682477709,
+        "max_cloth_stretch": 1.016626126183992,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 2.1183148106729277e-05,
+          "acceleration_rad_s2": 0.0019029533774532106
+        },
+        "right": {
+          "velocity_rad_s": 0.16116748361493194,
+          "acceleration_rad_s2": 0.08241516002131544
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "adjust_teddy_height_contact_trial",
+      "completed": true,
+      "start_s": 21.904999999999927,
+      "actual_end_or_stop_s": 24.419999999999426,
+      "planned_duration_s": 2.51001,
+      "actual_elapsed_s": 2.5149999999994996,
+      "actual_step_count": 503,
+      "per_step_soft": {
+        "rows": 504,
+        "min_J": 0.49639770466712313,
+        "max_cloth_stretch": 1.0165142812863293,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 3.221639045136726e-05,
+          "acceleration_rad_s2": 0.0033799521105499835
+        },
+        "right": {
+          "velocity_rad_s": 0.00015074580539220506,
+          "acceleration_rad_s2": 0.004281147553798234
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "transport_teddy_along_y",
+      "completed": true,
+      "start_s": 24.419999999999426,
+      "actual_end_or_stop_s": 30.344999999998247,
+      "planned_duration_s": 5.923228656010523,
+      "actual_elapsed_s": 5.924999999998821,
+      "actual_step_count": 1185,
+      "per_step_soft": {
+        "rows": 1186,
+        "min_J": 0.48950252234940894,
+        "max_cloth_stretch": 1.0165328934941493,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 3.989206533105971e-05,
+          "acceleration_rad_s2": 0.005540779673652844
+        },
+        "right": {
+          "velocity_rad_s": 0.3493187368443387,
+          "acceleration_rad_s2": 0.29332445701163756
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "transport_teddy",
+      "completed": true,
+      "start_s": 30.344999999998247,
+      "actual_end_or_stop_s": 40.280000000002154,
+      "planned_duration_s": 9.931903966255753,
+      "actual_elapsed_s": 9.935000000003907,
+      "actual_step_count": 1987,
+      "per_step_soft": {
+        "rows": 1988,
+        "min_J": 0.38725976440172727,
+        "max_cloth_stretch": 1.0166071197336197,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 2.246254905990952e-05,
+          "acceleration_rad_s2": 0.0020611582925756378
+        },
+        "right": {
+          "velocity_rad_s": 0.3494964950286299,
+          "acceleration_rad_s2": 0.34989093188482023
+        }
+      },
+      "next_start_or_final_matches": true,
+      "saved_full_frame_and_actual_joint_trace_match": true,
+      "integer_step_end_matches_plan": true
+    },
+    {
+      "phase": "insert_teddy",
+      "completed": false,
+      "start_s": 40.280000000002154,
+      "actual_end_or_stop_s": 44.51000000000432,
+      "planned_duration_s": 6.834052677057394,
+      "actual_elapsed_s": 4.230000000002164,
+      "actual_step_count": 846,
+      "per_step_soft": {
+        "rows": 847,
+        "min_J": 0.08689350221635922,
+        "max_cloth_stretch": 1.0600242000051086,
+        "max_table_penetration_m": 0.0
+      },
+      "actual_sampled_rates": {
+        "left": {
+          "velocity_rad_s": 0.0013137524061619388,
+          "acceleration_rad_s2": 0.03443607997153834
+        },
+        "right": {
+          "velocity_rad_s": 0.3493464311964942,
+          "acceleration_rad_s2": 0.27144553444870567
+        }
+      },
+      "next_start_or_final_matches": true
+    }
+  ],
+  "stop": {
+    "reason": "Uncalibrated engineering TCP-moment norm threshold",
+    "last_raw_row": {
+      "time_s": 44.51000000000432,
+      "physics_step": 8902,
+      "force_world_n": [
+        -0.19797506883770222,
+        0.2219883269484808,
+        1.4870938105442835
+      ],
+      "torque_at_aim_tcp_world_nm": [
+        -0.11748791849745983,
+        0.09387671666249274,
+        0.005278489435576367
+      ],
+      "aim_tcp_world_m": [
+        -0.14329364620838447,
+        0.07142352178587638,
+        1.0548792814703356
+      ],
+      "net_force_norm_n": 1.5165490254330045,
+      "tcp_torque_norm_nm": 0.1504796045147554,
+      "right_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_link_force_world_n": [
+        [
+          -2.852477835639305e-12,
+          -3.809116154714246e-12,
+          -8.537211227042773e-11
+        ],
+        [
+          -1.77898345557003,
+          -2.363262384758065,
+          3.6237417134556247
+        ],
+        [
+          1.58100838673518,
+          2.585250711710355,
+          -2.136647902825969
+        ]
+      ],
+      "right_link_torque_at_aim_origin_world_nm": [
+        [
+          -2.738144688653636e-15,
+          6.536918108152792e-14,
+          -1.332438596016364e-13
+        ],
+        [
+          -0.11368702063003823,
+          0.11942020757087102,
+          0.02464893703828087
+        ],
+        [
+          0.1167567571916689,
+          -0.08063834499854539,
+          -0.009719768163728593
+        ]
+      ],
+      "right_link_aim_origin_world_m": [
+        [
+          -0.14331960097685553,
+          0.07129874324748267,
+          1.2647792427773028
+        ],
+        [
+          -0.15438352218484488,
+          0.052202035736551876,
+          1.0993664918431167
+        ],
+        [
+          -0.13221322976389502,
+          0.09059477683163814,
+          1.0993920564734867
+        ]
+      ],
+      "right_link_torque_at_aim_tcp_world_nm": [
+        [
+          8.074477961882979e-13,
+          -5.355816196560079e-13,
+          -1.3350092288889295e-13
+        ],
+        [
+          -0.07820577054476831,
+          0.08046504250617897,
+          0.016662518111863447
+        ],
+        [
+          -0.03928214795349898,
+          0.013411674156849351,
+          -0.011384028676153578
+        ]
+      ],
+      "right_finger_aim_opening_axis_world": [
+        [
+          -0.5000715248470996,
+          -0.8659839129743483,
+          -0.0005766339680395939
+        ],
+        [
+          0.5000715248470996,
+          0.8659839129743483,
+          0.0005766339680395939
+        ]
+      ],
+      "left_link_names": [
+        "link0",
+        "link1",
+        "link2",
+        "link3",
+        "link4",
+        "link5",
+        "link6",
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "left_link_force_world_n": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.912334990268178e-11,
+          7.561610324963963e-11,
+          -6.2079706264375335e-12
+        ],
+        [
+          1.559905223772037e-11,
+          -6.688634132488681e-15,
+          -1.4591729778447383e-10
+        ],
+        [
+          0.0,
+          -7.394286449766789e-12,
+          4.834127476282466e-12
+        ],
+        [
+          -1.9735152022900324e-10,
+          -9.6784624753118e-12,
+          -1.2486453977691095e-10
+        ],
+        [
+          1.9151827805642153e-10,
+          7.903680729397944e-11,
+          -2.748632397537888e-11
+        ],
+        [
+          -4.9810231579160346e-11,
+          6.725039036087377e-12,
+          -1.2720020819781908e-11
+        ],
+        [
+          -5.333740624181648e-12,
+          -1.558915177851906e-11,
+          8.605807632668232e-11
+        ],
+        [
+          -1.6534048420461867,
+          -8.411933208880152,
+          -2.0592324990177198
+        ],
+        [
+          1.7717315457534892,
+          8.97538777999888,
+          -0.5391078540642055
+        ]
+      ],
+      "left_link_torque_at_aim_origin_world_nm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          4.305881128138527e-12,
+          1.0887465701445207e-12,
+          -3.6008441506100115e-13
+        ],
+        [
+          -1.162714119355263e-12,
+          -7.277606487959285e-12,
+          -8.585467199422796e-13
+        ],
+        [
+          -1.0542008072449435e-13,
+          -2.2428680347829977e-13,
+          -3.3904548670595586e-13
+        ],
+        [
+          1.985884035860683e-12,
+          -1.2054104088784347e-12,
+          -3.3494617518467336e-12
+        ],
+        [
+          -1.7773635899810891e-12,
+          -4.5160623296065533e-13,
+          -1.3497266165887101e-11
+        ],
+        [
+          -1.9377452600158893e-13,
+          1.1760630718992414e-13,
+          1.2307320560621504e-12
+        ],
+        [
+          -1.257032710283889e-12,
+          5.39501785973412e-13,
+          -4.63399421785515e-13
+        ],
+        [
+          -0.3538252068162989,
+          0.052387927853105934,
+          -0.008686246288275218
+        ],
+        [
+          0.34409891162566036,
+          -0.08443942912031027,
+          0.002150296234718502
+        ]
+      ],
+      "left_link_aim_origin_world_m": [
+        [
+          -0.6,
+          -0.28,
+          0.76
+        ],
+        [
+          -0.6,
+          -0.28,
+          1.093
+        ],
+        [
+          -0.6,
+          -0.28,
+          1.093
+        ],
+        [
+          -0.7216502389604719,
+          -0.30396863992135276,
+          1.3836591193497645
+        ],
+        [
+          -0.6488239171550738,
+          -0.2824673420610913,
+          1.4159123524066368
+        ],
+        [
+          -0.2738507653469019,
+          -0.17585857975134722,
+          1.463786742447975
+        ],
+        [
+          -0.2738507653469019,
+          -0.17585857975134722,
+          1.463786742447975
+        ],
+        [
+          -0.18881184197034728,
+          -0.15365986454168892,
+          1.4682137678598013
+        ],
+        [
+          -0.1853532339178505,
+          -0.13605498427061852,
+          1.3037860040402343
+        ],
+        [
+          -0.18491540860228445,
+          -0.13389199317584569,
+          1.3040417433464273
+        ]
+      ],
+      "left_link_torque_at_left_aim_tcp_world_nm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.7843271579336426e-11,
+          1.6951752264017837e-12,
+          -3.4674757486353554e-11
+        ],
+        [
+          2.0730779394753242e-11,
+          -7.055838848942833e-11,
+          1.4848424202284625e-12
+        ],
+        [
+          -3.011746457189056e-14,
+          2.3740767189424377e-12,
+          3.635414078059009e-12
+        ],
+        [
+          2.2541457292595562e-11,
+          -9.005413113389372e-11,
+          -2.8951242910774885e-11
+        ],
+        [
+          -1.664519979136495e-11,
+          3.6167330999459153e-11,
+          -1.1795274379825276e-11
+        ],
+        [
+          -9.822707769400292e-13,
+          -1.118859092970779e-11,
+          -1.6591560526215578e-12
+        ],
+        [
+          -4.6881646919063665e-14,
+          -1.710830523838128e-13,
+          -5.171164371537325e-13
+        ],
+        [
+          0.029513931000286486,
+          -0.02297472018185634,
+          -0.008622739567807607
+        ],
+        [
+          -0.051679168745866366,
+          -0.00630871845342415,
+          0.002226191345308183
+        ]
+      ],
+      "left_aim_tcp_world_m": [
+        -0.18414610089853398,
+        -0.12995193234065755,
+        1.259709152057172
+      ],
+      "left_all_link_net_force_world_n": [
+        0.11832670364280107,
+        0.563454571247437,
+        -2.598340353308229
+      ],
+      "left_all_link_torque_at_aim_tcp_world_nm": [
+        -0.02216523770216884,
+        -0.029283438767016102,
+        -0.006396548294976716
+      ],
+      "left_finger_aim_opening_axis_world": [
+        [
+          -0.19707422726386348,
+          -0.9736070150029228,
+          -0.11511354953023549
+        ],
+        [
+          0.19707422726386348,
+          0.9736070150029226,
+          0.11511354953023549
+        ]
+      ],
+      "right_finger_opening_projection_n": [
+        2.934076604079166,
+        3.0281707383388565
+      ],
+      "right_finger_force_norm_n": [
+        4.677744674545904,
+        3.7078798553858894
+      ],
+      "left_finger_opening_projection_n": [
+        8.752806225772291,
+        9.025604511615837
+      ],
+      "left_finger_force_norm_n": [
+        8.816734450315108,
+        9.164456107695916
+      ],
+      "baseline_time_s": 15.880000000001083,
+      "delta_force_world_n": [
+        -0.21698348491240238,
+        0.23111971397262643,
+        2.807844340999
+      ],
+      "delta_torque_at_aim_tcp_world_nm": [
+        -0.10895669722541104,
+        0.11164730090724273,
+        0.006564518317572186
+      ],
+      "delta_right_finger_opening_projection_n": [
+        0.16275191249295506,
+        0.2664660589403818
+      ],
+      "delta_right_finger_force_norm_n": [
+        1.8523435260076768,
+        0.7843302406315371
+      ],
+      "delta_left_finger_opening_projection_n": [
+        -0.10270106232769471,
+        0.059086335378074395
+      ],
+      "delta_left_finger_force_norm_n": [
+        -0.040682229979688955,
+        0.1957014221311706
+      ],
+      "stop_reason": "IPC distal-hand torque at TCP exceeded engineering trial limit",
+      "left_designated_material_distance_m": 0.0003604112145037559,
+      "right_nearest_teddy_distance_m": 0.003483325647471791,
+      "right_two_sided_contact_required": true
+    },
+    "maximum_and_last_moment_nm": 0.1504796045147554,
+    "limit_nm": 0.15,
+    "excess_nm": 0.00047960451475539956,
+    "excess_percent": 0.31973634317026267,
+    "exceeding_rows": 1,
+    "right_per_link_at_stop": [
+      {
+        "link": "link7",
+        "force_world_n": [
+          -2.852477835639305e-12,
+          -3.809116154714246e-12,
+          -8.537211227042773e-11
+        ],
+        "force_norm_n": 8.550464051264958e-11,
+        "torque_at_aim_tcp_world_nm": [
+          8.074477961882979e-13,
+          -5.355816196560079e-13,
+          -1.3350092288889295e-13
+        ],
+        "torque_norm_nm": 9.780808306550527e-13,
+        "projection_onto_total_torque_direction_nm": -9.69225620369156e-13,
+        "scope": "Projection is additive; individual vector norms are not additive."
+      },
+      {
+        "link": "left_finger",
+        "force_world_n": [
+          -1.77898345557003,
+          -2.363262384758065,
+          3.6237417134556247
+        ],
+        "force_norm_n": 4.677744674545904,
+        "torque_at_aim_tcp_world_nm": [
+          -0.07820577054476831,
+          0.08046504250617897,
+          0.016662518111863447
+        ],
+        "torque_norm_nm": 0.11343899295149934,
+        "projection_onto_total_torque_direction_nm": 0.11184226707982926,
+        "scope": "Projection is additive; individual vector norms are not additive."
+      },
+      {
+        "link": "right_finger",
+        "force_world_n": [
+          1.58100838673518,
+          2.585250711710355,
+          -2.136647902825969
+        ],
+        "force_norm_n": 3.7078798553858894,
+        "torque_at_aim_tcp_world_nm": [
+          -0.03928214795349898,
+          0.013411674156849351,
+          -0.011384028676153578
+        ],
+        "torque_norm_nm": 0.04304133200110763,
+        "projection_onto_total_torque_direction_nm": 0.03863733743589541,
+        "scope": "Projection is additive; individual vector norms are not additive."
+      }
+    ],
+    "chronology": [
+      {
+        "time_s": 40.280000000002154,
+        "tcp_torque_norm_nm": 0.00914266896008444,
+        "net_force_norm_n": 1.3179715223376456,
+        "right_finger_force_norm_n": [
+          3.0666213087483554,
+          3.1479337888560286
+        ],
+        "min_J": 0.39652254290877476,
+        "max_cloth_stretch": 1.016400698903257,
+        "stop_reason": null
+      },
+      {
+        "time_s": 41.00000000000252,
+        "tcp_torque_norm_nm": 0.008961130039350463,
+        "net_force_norm_n": 1.3054662904701775,
+        "right_finger_force_norm_n": [
+          3.02182368690788,
+          3.099758476998357
+        ],
+        "min_J": 0.38167739161413483,
+        "max_cloth_stretch": 1.0163749887098095,
+        "stop_reason": null
+      },
+      {
+        "time_s": 42.000000000003034,
+        "tcp_torque_norm_nm": 0.008953703267959034,
+        "net_force_norm_n": 1.3104546780451827,
+        "right_finger_force_norm_n": [
+          3.0788774305918833,
+          3.1574805453789097
+        ],
+        "min_J": 0.3550582199660858,
+        "max_cloth_stretch": 1.0163870305128428,
+        "stop_reason": null
+      },
+      {
+        "time_s": 43.000000000003546,
+        "tcp_torque_norm_nm": 0.012278912007765538,
+        "net_force_norm_n": 1.20569808535677,
+        "right_finger_force_norm_n": [
+          3.0190140123733338,
+          3.1409972724854875
+        ],
+        "min_J": 0.3454810026164763,
+        "max_cloth_stretch": 1.016144542013058,
+        "stop_reason": null
+      },
+      {
+        "time_s": 43.5000000000038,
+        "tcp_torque_norm_nm": 0.048977751871285016,
+        "net_force_norm_n": 0.7476365405388937,
+        "right_finger_force_norm_n": [
+          3.2317739660807594,
+          3.362574243263846
+        ],
+        "min_J": 0.3400505635643299,
+        "max_cloth_stretch": 1.0214245558385386,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.00000000000406,
+        "tcp_torque_norm_nm": 0.08545819861853285,
+        "net_force_norm_n": 1.7117470121634908,
+        "right_finger_force_norm_n": [
+          3.8793174161198833,
+          3.031479931414381
+        ],
+        "min_J": 0.14200747588314916,
+        "max_cloth_stretch": 1.0449608251077098,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.07000000000409,
+        "tcp_torque_norm_nm": 0.09520800521334863,
+        "net_force_norm_n": 1.9221076915268596,
+        "right_finger_force_norm_n": [
+          4.223790450190149,
+          3.238567935669639
+        ],
+        "min_J": 0.08689350221635922,
+        "max_cloth_stretch": 1.0468024765974382,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.20000000000416,
+        "tcp_torque_norm_nm": 0.10322659627259877,
+        "net_force_norm_n": 0.345356424822984,
+        "right_finger_force_norm_n": [
+          3.558782755522064,
+          3.541580290557226
+        ],
+        "min_J": 0.12868999635924427,
+        "max_cloth_stretch": 1.045968412730004,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.30000000000421,
+        "tcp_torque_norm_nm": 0.10030724247733007,
+        "net_force_norm_n": 0.6949572304423453,
+        "right_finger_force_norm_n": [
+          3.932386966703573,
+          3.8394749043351237
+        ],
+        "min_J": 0.14615461279363015,
+        "max_cloth_stretch": 1.0473239984953566,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.40000000000426,
+        "tcp_torque_norm_nm": 0.12758116410355216,
+        "net_force_norm_n": 1.214614727827675,
+        "right_finger_force_norm_n": [
+          4.219793297888423,
+          3.514999630803353
+        ],
+        "min_J": 0.08984217348215381,
+        "max_cloth_stretch": 1.0557687579755393,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.45000000000429,
+        "tcp_torque_norm_nm": 0.13839541648566173,
+        "net_force_norm_n": 1.3219492721545412,
+        "right_finger_force_norm_n": [
+          4.324756473289679,
+          3.4462321501342386
+        ],
+        "min_J": 0.09312590473644708,
+        "max_cloth_stretch": 1.0579378692701797,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.50000000000431,
+        "tcp_torque_norm_nm": 0.14881710921857685,
+        "net_force_norm_n": 1.5048037576086544,
+        "right_finger_force_norm_n": [
+          4.617949048714458,
+          3.64226267160127
+        ],
+        "min_J": 0.10702158588645734,
+        "max_cloth_stretch": 1.0593724453937532,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.505000000004316,
+        "tcp_torque_norm_nm": 0.14967376964496268,
+        "net_force_norm_n": 1.5139544096259672,
+        "right_finger_force_norm_n": [
+          4.648327588497577,
+          3.674639480619436
+        ],
+        "min_J": 0.10825874277262705,
+        "max_cloth_stretch": 1.0596895228466723,
+        "stop_reason": null
+      },
+      {
+        "time_s": 44.51000000000432,
+        "tcp_torque_norm_nm": 0.1504796045147554,
+        "net_force_norm_n": 1.5165490254330045,
+        "right_finger_force_norm_n": [
+          4.677744674545904,
+          3.7078798553858894
+        ],
+        "min_J": 0.10970991962655041,
+        "max_cloth_stretch": 1.0600242000051086,
+        "stop_reason": "IPC distal-hand torque at TCP exceeded engineering trial limit"
+      }
+    ],
+    "first_diagnostic_level_crossings": [
+      {
+        "diagnostic_level_nm": 0.025,
+        "first_time_s": 43.37500000000374
+      },
+      {
+        "diagnostic_level_nm": 0.05,
+        "first_time_s": 43.63000000000387
+      },
+      {
+        "diagnostic_level_nm": 0.075,
+        "first_time_s": 43.73500000000392
+      },
+      {
+        "diagnostic_level_nm": 0.1,
+        "first_time_s": 44.190000000004154
+      },
+      {
+        "diagnostic_level_nm": 0.125,
+        "first_time_s": 44.39500000000426
+      },
+      {
+        "diagnostic_level_nm": 0.14,
+        "first_time_s": 44.45500000000429
+      },
+      {
+        "diagnostic_level_nm": 0.15,
+        "first_time_s": 44.51000000000432
+      }
+    ]
+  },
+  "force_and_hold": {
+    "status": "failed",
+    "passed": false,
+    "rows": 5727,
+    "start_time_s": 15.880000000001083,
+    "end_time_s": 44.51000000000432,
+    "checks": {
+      "all_required_raw_values_finite": true,
+      "strictly_increasing_consecutive_steps": true,
+      "timestamps_match_fixed_integration_step": true,
+      "covers_every_step_from_guard_entry_to_run_end": true,
+      "last_time_matches_report": true,
+      "right_hold_flag_agrees_with_release_event": true,
+      "summed_raw_link_force_matches_net_force": true,
+      "stored_force_norms_match_raw_vectors": true,
+      "stored_torque_norms_match_raw_vectors": true,
+      "stored_finger_norms_match_raw_vectors": true,
+      "baseline_differences_are_only_recorded_subtractions": true,
+      "raw_net_force_below_limit": true,
+      "raw_tcp_torque_below_limit": false,
+      "raw_each_right_finger_force_below_limit": true,
+      "left_both_soft_opening_reactions_above_minimum": true,
+      "right_both_soft_opening_reactions_above_minimum_until_release": true,
+      "designated_left_material_within_18mm": true,
+      "right_teddy_vertex_within_45mm_until_release": true,
+      "no_recorded_stop_reason": false
+    },
+    "first_physical_violation": {
+      "time_s": 44.51000000000432,
+      "reasons": [
+        "raw TCP torque"
+      ]
+    },
+    "raw_limits": {
+      "max_net_force_n": 8.0,
+      "max_tcp_torque_nm": 0.15,
+      "max_finger_force_n": 8.0,
+      "minimum_left_opening_reaction_n": 0.1
+    },
+    "maximum_net_force_n": 1.9416623357464189,
+    "maximum_tcp_torque_nm": 0.1504796045147554,
+    "maximum_right_finger_force_n": [
+      4.677744674545904,
+      3.8940823472495785
+    ],
+    "minimum_right_opening_reaction_until_release_n": [
+      2.6986491118986233,
+      2.7221884133890515
+    ],
+    "minimum_left_opening_reaction_n": [
+      8.609918678516124,
+      8.873488425735129
+    ],
+    "maximum_designated_left_material_distance_m": 0.000788994181891476,
+    "maximum_right_nearest_material_distance_until_release_m": 0.005789486617499151,
+    "maximum_saved_baseline_subtraction_error": 0.0,
+    "scope": "IPC soft-coupling STC feedback; excludes native Genesis rigid-contact force",
+    "limitations": [
+      "Positive finger-axis projections plus material proximity are grip evidence, not force-closure proof.",
+      "Saved per-link origins and aim axes are independently checked by the richer contact trace audit.",
+      "Raw engineering force and moment limits are uncalibrated; baseline subtraction never waives them."
+    ]
+  },
+  "native_initial_handle_grip": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "all_recorded_values_finite": true,
+      "exact_four_individual_fingers_and_two_material_groups": true,
+      "strictly_increasing_fixed_step_times": true,
+      "every_integration_step_from_spread_until_handoff": true,
+      "all_four_opening_reactions_above_0p1n": true,
+      "both_designated_material_groups_within_18mm": true
+    },
+    "samples": 386,
+    "start_s": 1.1049999999999984,
+    "end_s": 3.0299999999999576,
+    "minimum_opening_reactions_n": [
+      8.859663595345287,
+      8.861711084828327,
+      8.912085861578674,
+      8.912625902993941
+    ],
+    "maximum_designated_material_distance_m": [
+      0.001399336607664919,
+      0.0013708277233627486
+    ],
+    "phases": [
+      {
+        "phase": "spread_bag",
+        "samples": 386,
+        "min_opening_reactions_n": [
+          8.859663595345287,
+          8.861711084828327,
+          8.912085861578674,
+          8.912625902993941
+        ],
+        "max_opening_reactions_n": [
+          8.88644886797716,
+          8.876847868450062,
+          8.932917663935097,
+          8.937945975504999
+        ],
+        "max_designated_material_distance_m": [
+          0.001399336607664919,
+          0.0013708277233627486
+        ]
+      }
+    ],
+    "limitations": [
+      "Reactions are IPC soft-coupling feedback, not contact forces identified by individual material.",
+      "Material proximity and four positive opening-axis reactions support held-handle evidence; they do not prove force closure.",
+      "Checks cover recorded integration states only."
+    ]
+  },
+  "per_link_wrench_reconstruction": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "right_per_link_shifted_moment_reconstructs": true,
+      "right_total_shifted_moment_reconstructs": true,
+      "right_total_force_reconstructs": true,
+      "right_finger_axis_projection_reconstructs": true,
+      "left_per_link_shifted_moment_reconstructs": true,
+      "left_total_shifted_moment_reconstructs": true,
+      "left_total_force_reconstructs": true,
+      "left_finger_axis_projection_reconstructs": true,
+      "left_finger_force_norm_reconstructs": true,
+      "stable_left_link_mapping": true,
+      "stable_right_link_mapping": true,
+      "raw_geometry_and_wrenches_finite": true,
+      "opening_axes_unit_length": true
+    },
+    "reconstruction_max_absolute_errors": {
+      "right_per_link_shifted_moment": 0.0,
+      "right_total_shifted_moment": 0.0,
+      "right_total_force": 0.0,
+      "right_finger_axis_projection": 0.0,
+      "left_per_link_shifted_moment": 0.0,
+      "left_total_shifted_moment": 0.0,
+      "left_total_force": 0.0,
+      "left_finger_axis_projection": 0.0,
+      "left_finger_force_norm": 0.0
+    },
+    "samples": 5727,
+    "left_link_diagnostics": [
+      {
+        "link": "link0",
+        "max_raw_force_n": 0.0,
+        "peak_time_s": 15.880000000001083,
+        "force_at_peak_world_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_torque_at_left_tcp_nm": 0.0,
+        "first_force_world_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "last_force_world_n": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "link": "link1",
+        "max_raw_force_n": 3.4590422566147444e-05,
+        "peak_time_s": 24.309999999999448,
+        "force_at_peak_world_n": [
+          3.3935673822746446e-05,
+          6.6983113917460186e-06,
+          3.050540647381212e-12
+        ],
+        "max_torque_at_left_tcp_nm": 9.163304347048616e-06,
+        "first_force_world_n": [
+          -8.22659227126186e-09,
+          -1.607584741120557e-09,
+          -2.971888371797386e-12
+        ],
+        "last_force_world_n": [
+          -1.912334990268178e-11,
+          7.561610324963963e-11,
+          -6.2079706264375335e-12
+        ]
+      },
+      {
+        "link": "link2",
+        "max_raw_force_n": 0.0005392527805197035,
+        "peak_time_s": 24.34999999999944,
+        "force_at_peak_world_n": [
+          0.000485555584358795,
+          0.0001186301286782943,
+          0.00020237645210347961
+        ],
+        "max_torque_at_left_tcp_nm": 8.175347333956405e-05,
+        "first_force_world_n": [
+          -1.7509068198880047e-08,
+          4.141577429535258e-09,
+          -1.0735922265869042e-08
+        ],
+        "last_force_world_n": [
+          1.559905223772037e-11,
+          -6.688634132488681e-15,
+          -1.4591729778447383e-10
+        ]
+      },
+      {
+        "link": "link3",
+        "max_raw_force_n": 0.0016105271445528574,
+        "peak_time_s": 24.34999999999944,
+        "force_at_peak_world_n": [
+          0.0015206118225422705,
+          0.0003506234749728795,
+          0.0003982468421521974
+        ],
+        "max_torque_at_left_tcp_nm": 0.0003893077174914834,
+        "first_force_world_n": [
+          -6.595071961990737e-08,
+          -1.1586089733953712e-08,
+          -1.7751930897253395e-08
+        ],
+        "last_force_world_n": [
+          0.0,
+          -7.394286449766789e-12,
+          4.834127476282466e-12
+        ]
+      },
+      {
+        "link": "link4",
+        "max_raw_force_n": 0.002234955156042852,
+        "peak_time_s": 24.34999999999944,
+        "force_at_peak_world_n": [
+          0.002181001931523736,
+          0.00045718415784650916,
+          -0.00017099055537204654
+        ],
+        "max_torque_at_left_tcp_nm": 0.00042167799009093775,
+        "first_force_world_n": [
+          -1.1704867664135659e-07,
+          -6.725334814419611e-08,
+          1.2643485654307936e-08
+        ],
+        "last_force_world_n": [
+          -1.9735152022900324e-10,
+          -9.6784624753118e-12,
+          -1.2486453977691095e-10
+        ]
+      },
+      {
+        "link": "link5",
+        "max_raw_force_n": 0.0032161388031900955,
+        "peak_time_s": 24.34999999999944,
+        "force_at_peak_world_n": [
+          0.0022149206954457886,
+          0.00034116853329327996,
+          -0.0023067897923654585
+        ],
+        "max_torque_at_left_tcp_nm": 0.00024380004652665828,
+        "first_force_world_n": [
+          -5.911895430358481e-08,
+          -1.5302699257544685e-07,
+          1.4259044051686916e-07
+        ],
+        "last_force_world_n": [
+          1.9151827805642153e-10,
+          7.903680729397944e-11,
+          -2.748632397537888e-11
+        ]
+      },
+      {
+        "link": "link6",
+        "max_raw_force_n": 0.002900949534672094,
+        "peak_time_s": 24.34999999999944,
+        "force_at_peak_world_n": [
+          0.0014818721076094864,
+          0.00015550642420119278,
+          -0.0024890522315603215
+        ],
+        "max_torque_at_left_tcp_nm": 0.00024427859871934456,
+        "first_force_world_n": [
+          -4.271205105151996e-08,
+          -1.5643764625202512e-07,
+          1.7158855341035333e-07
+        ],
+        "last_force_world_n": [
+          -4.9810231579160346e-11,
+          6.725039036087377e-12,
+          -1.2720020819781908e-11
+        ]
+      },
+      {
+        "link": "link7",
+        "max_raw_force_n": 0.00231237975163237,
+        "peak_time_s": 24.34999999999944,
+        "force_at_peak_world_n": [
+          0.0008122056336512208,
+          -8.276889954955747e-05,
+          -0.0021634628339058555
+        ],
+        "max_torque_at_left_tcp_nm": 8.671723219781245e-05,
+        "first_force_world_n": [
+          1.844896587732564e-08,
+          -1.2597733517389196e-07,
+          1.5332893926463533e-07
+        ],
+        "last_force_world_n": [
+          -5.333740624181648e-12,
+          -1.558915177851906e-11,
+          8.605807632668232e-11
+        ]
+      },
+      {
+        "link": "left_finger",
+        "max_raw_force_n": 8.866664996471902,
+        "peak_time_s": 44.250000000004185,
+        "force_at_peak_world_n": [
+          -1.709004257927236,
+          -8.539906957698342,
+          -1.663442743199204
+        ],
+        "max_torque_at_left_tcp_nm": 0.05317188042808676,
+        "first_force_world_n": [
+          -1.7369120562234752,
+          -8.601524653044585,
+          -1.2044668531662794
+        ],
+        "last_force_world_n": [
+          -1.6534048420461867,
+          -8.411933208880152,
+          -2.0592324990177198
+        ]
+      },
+      {
+        "link": "right_finger",
+        "max_raw_force_n": 9.390491102920427,
+        "peak_time_s": 44.06000000000409,
+        "force_at_peak_world_n": [
+          1.7228535424247657,
+          9.202979538241326,
+          -0.7199072468683577
+        ],
+        "max_torque_at_left_tcp_nm": 0.05456126348278954,
+        "first_force_world_n": [
+          1.7768422652845448,
+          8.751164279768561,
+          0.8357726500914306
+        ],
+        "last_force_world_n": [
+          1.7717315457534892,
+          8.97538777999888,
+          -0.5391078540642055
+        ]
+      }
+    ],
+    "phase_palm_diagnostics": [
+      {
+        "phase": "lift_teddy",
+        "sample_count": 1,
+        "left_palm_force_norm_min_max_n": [
+          1.9929981669704584e-07,
+          1.9929981669704584e-07
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            1.844896587732564e-08,
+            -1.2597733517389196e-07,
+            1.5332893926463533e-07
+          ],
+          [
+            1.844896587732564e-08,
+            -1.2597733517389196e-07,
+            1.5332893926463533e-07
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 1.0343268693865614e-08,
+        "right_palm_force_norm_max_n": 2.6495884361862874e-05
+      },
+      {
+        "phase": "orient_teddy_postlift",
+        "sample_count": 1206,
+        "left_palm_force_norm_min_max_n": [
+          0.0,
+          0.0007852505341869088
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            1.844896587732564e-08,
+            -1.2597733517389196e-07,
+            1.5332893926463533e-07
+          ],
+          [
+            8.63649298039394e-09,
+            -1.7240073276987802e-08,
+            1.0791127951753508e-08
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 3.944378251467055e-05,
+        "right_palm_force_norm_max_n": 0.010578070107225853
+      },
+      {
+        "phase": "adjust_teddy_height_contact_trial",
+        "sample_count": 504,
+        "left_palm_force_norm_min_max_n": [
+          1.9328958345376793e-10,
+          0.00231237975163237
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            8.63649298039394e-09,
+            -1.7240073276987802e-08,
+            1.0791127951753508e-08
+          ],
+          [
+            -0.00039582280835137606,
+            -4.314037358595727e-06,
+            0.0013044052427152427
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 8.671723219781245e-05,
+        "right_palm_force_norm_max_n": 0.0048510422858443316
+      },
+      {
+        "phase": "transport_teddy_along_y",
+        "sample_count": 1186,
+        "left_palm_force_norm_min_max_n": [
+          0.0,
+          0.0016018072980622225
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            -0.00039582280835137606,
+            -4.314037358595727e-06,
+            0.0013044052427152427
+          ],
+          [
+            8.356154286728628e-07,
+            -1.1032244313108993e-06,
+            -1.62472111714668e-06
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 5.874320475214828e-05,
+        "right_palm_force_norm_max_n": 0.019018257472158948
+      },
+      {
+        "phase": "transport_teddy",
+        "sample_count": 1988,
+        "left_palm_force_norm_min_max_n": [
+          0.0,
+          0.0010088879392360312
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            8.356154286728628e-07,
+            -1.1032244313108993e-06,
+            -1.62472111714668e-06
+          ],
+          [
+            5.1399097066894645e-06,
+            -1.833438310719666e-06,
+            -1.938984429616803e-05
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 1.7904820689038094e-05,
+        "right_palm_force_norm_max_n": 0.027629959987753003
+      },
+      {
+        "phase": "insert_teddy",
+        "sample_count": 847,
+        "left_palm_force_norm_min_max_n": [
+          0.0,
+          0.0003996200340122415
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            5.1399097066894645e-06,
+            -1.833438310719666e-06,
+            -1.938984429616803e-05
+          ],
+          [
+            -5.333740624181648e-12,
+            -1.558915177851906e-11,
+            8.605807632668232e-11
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 2.0376897403716902e-05,
+        "right_palm_force_norm_max_n": 0.027270489360860413
+      }
+    ],
+    "limitations": [
+      "Exact algebraic reconstruction checks stored reaction geometry, not independent native solver pair forces.",
+      "Left link7 contains the welded palm. Its nonzero reaction alone cannot identify teddy versus cloth contact.",
+      "No new force or torque limits are imposed by these diagnostic summaries."
+    ]
+  },
+  "every_step_soft": {
+    "provided": true,
+    "valid": true,
+    "columns": [
+      "time_s",
+      "minimum_tetra_volume_ratio",
+      "bag_table_penetration_m",
+      "bear_table_penetration_m",
+      "maximum_bag_edge_stretch_ratio",
+      "all_soft_states_finite"
+    ],
+    "sampling_scope": "Soft summary at each recorded integration step; full geometry at saved frames.",
+    "rows": 8903,
+    "maximum_interval_s": 0.005000000000002558,
+    "expected_integration_interval_s": 0.005,
+    "covers_all_saved_frame_timestamps": true,
+    "covers_all_joint_trace_timestamps": true,
+    "matches_independent_saved_frame_recomputation": true,
+    "maximum_shared_frame_absolute_error_by_metric": [
+      2.886579864025407e-15,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "minimum_tetrahedron_volume_ratio": 0.08689350221635922,
+    "maximum_table_penetration_m": {
+      "bag": 0.0,
+      "bear": 0.0
+    },
+    "maximum_bag_edge_stretch_ratio": 1.0600242000051086,
+    "worst_volume_ratio_time_s": 44.07000000000409,
+    "errors": []
+  },
+  "last_soft_metrics": {
+    "time_s": 44.51000000000432,
+    "min_J": 0.10970991962655077,
+    "max_cloth_stretch": 1.0600242000051086,
+    "bag_table_penetration_m": 0.0,
+    "bear_table_penetration_m": 0.0
+  },
+  "actual_joint_rates": {
+    "left": {
+      "maximum_joint_velocity_rad_s": 0.098423808635971,
+      "maximum_joint_acceleration_rad_s2": 0.15744060358145262,
+      "per_joint_peak_velocity_rad_s": [
+        0.0452308455327568,
+        0.0543396073924427,
+        0.055404854911358825,
+        0.06103402930324364,
+        0.009886905599204354,
+        0.005253507587923423,
+        0.098423808635971
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.07348974811538644,
+        0.09565476625539482,
+        0.08998590134261697,
+        0.10543719170641674,
+        0.019831420811123157,
+        0.013168208474212687,
+        0.15744060358145262
+      ],
+      "within_configured_limits": true
+    },
+    "right": {
+      "maximum_joint_velocity_rad_s": 0.7139973349817588,
+      "maximum_joint_acceleration_rad_s2": 1.4847998345274824,
+      "per_joint_peak_velocity_rad_s": [
+        0.2492696639950367,
+        0.7139973349817588,
+        0.49210404466877833,
+        0.7138415143580232,
+        0.3005396973703819,
+        0.6785674968762123,
+        0.29337492816480903
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.5310524301506909,
+        1.4847998345274824,
+        1.152605510618823,
+        1.0382319452587083,
+        0.8200275354497126,
+        1.1182829110936368,
+        0.4390695291221025
+      ],
+      "within_configured_limits": true
+    }
+  },
+  "actual_joint_rate_thresholds": {
+    "velocity_rad_s": 1.5,
+    "acceleration_rad_s2": 10.0,
+    "source": "config.validation or conservative audit defaults; not robot manufacturer limits"
+  },
+  "saved_pd_control_torques": {
+    "left": {
+      "per_joint_peak_abs_control_torque_nm": [
+        0.9807604337233343,
+        1.2570277873626687,
+        0.9198371675002048,
+        1.3146314015972747,
+        0.0978050660696035,
+        0.23200680127998224,
+        0.8841164907477421
+      ],
+      "per_finger_peak_abs_control_force_n": [
+        8.901120303812673,
+        8.999842355725418
+      ],
+      "recorded_control_torques_within_native_clamp": true
+    },
+    "right": {
+      "per_joint_peak_abs_control_torque_nm": [
+        5.337426837850167,
+        15.499667031373093,
+        7.940482456587075,
+        11.6111661210263,
+        2.708482040679036,
+        6.2054317885521195,
+        2.640589735244536
+      ],
+      "per_finger_peak_abs_control_force_n": [
+        8.950909072367256,
+        8.953088517139689
+      ],
+      "recorded_control_torques_within_native_clamp": true
+    }
+  },
+  "yaw": {
+    "main_aggregate_status": "failed",
+    "main_aggregate_failed_checks": [
+      "complete_run_native_reaction_audit_passed"
+    ],
+    "supplemental_interval_status": "passed",
+    "supplemental_report": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/independent-postlift-yaw-interval-review.json",
+    "supplemental_sha256": "3303744d6379e07e3090fb78021f90766ad9750cfc4f4343069d90af0113d6b6",
+    "actual_endpoint_position_error_m": 0.00017262118914484044,
+    "actual_endpoint_rotation_error_rad": 0.00037723621525885857,
+    "scope": "The original full-run dependency failure remains. Supplement completes actual yaw endpoint/fresh-preparation/401 sample evidence under a verified yaw-interval reaction condition, never a complete-run pass."
+  },
+  "active_rim_policy": {
+    "mode": "deformable_rim_contact",
+    "criterion": "buffered_section_only",
+    "audit_passed": true,
+    "fresh_time_s": 40.280000000002154,
+    "fresh_status": "candidate",
+    "available_rim_m": 0.9152328087150292,
+    "legacy_union_required_m": 0.9306665542254413,
+    "legacy_union_margin_m": -0.0154337455104121,
+    "active_required_m": 0.5989072164344563,
+    "active_margin_m": 0.3163255922805729,
+    "scope": "Frozen policy identity and report arithmetic only; no independent cloth-feasibility, body fit, collision, or physical-success certificate."
+  },
+  "native_material_readback": {
+    "regions": {
+      "body": {
+        "face_count": 2960,
+        "shear_stiffness_n_per_m": 50.0,
+        "all_faces_equal": true
+      },
+      "handle_front": {
+        "face_count": 352,
+        "shear_stiffness_n_per_m": 250.0,
+        "all_faces_equal": true
+      },
+      "handle_back": {
+        "face_count": 352,
+        "shear_stiffness_n_per_m": 250.0,
+        "all_faces_equal": true
+      }
+    },
+    "all_protected_attributes_unchanged": {
+      "triangles.lambda": true,
+      "triangles.strain_rate": true,
+      "vertices.thickness": true,
+      "vertices.volume": true,
+      "vertices.is_fixed": true,
+      "edges.bending_stiffness": true,
+      "geometry_metadata_including_contact_material": true
+    },
+    "scope": "Native initialization readback persisted in final report, not a new end-time buffer sample."
+  },
+  "franka_comparison": {
+    "native_model_and_official_panda_joint_torque_limits_nm": [
+      87.0,
+      87.0,
+      87.0,
+      87.0,
+      12.0,
+      12.0,
+      12.0
+    ],
+    "engineering_tcp_moment_norm_limit_nm": 0.15,
+    "quantities_not_interchangeable": true,
+    "conclusion": "The TCP moment exceeded this experiment engineering threshold. It does not establish a manufacturer joint-torque-limit violation, structural failure, or violation of physical laws. Joint torque requires a configuration-dependent wrench mapping plus other contacts/dynamic contributions. Saved control forces are PD commands, not all actual load torques.",
+    "sources": [
+      {
+        "url": "https://frankarobotics.github.io/docs/robot_specifications.html",
+        "claim": "FER/Panda maximum joint torques: 87,87,87,87,12,12,12 Nm."
+      },
+      {
+        "url": "https://frankarobotics.github.io/libfranka/latest/classfranka_1_1Robot.html",
+        "claim": "setCollisionBehavior configures separate joint-torque and Cartesian force/moment per-axis thresholds."
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/scene.py",
+        "line": 114,
+        "claim": "Native joint actuator force clamp uses the same seven torque limits."
+      }
+    ]
+  },
+  "unmet_full_task_checks": [
+    "bear_fully_inside_bag_final",
+    "bear_remains_inside_during_final_hold_samples",
+    "requested_phases_recorded_in_order",
+    "right_fingers_open_after_release",
+    "controller_explicitly_reports_task_complete"
+  ],
+  "last_complete_geometry_and_robot_frame_s": 44.4800000000043,
+  "failure_snapshot_scope": "failed_soft_state has actual bag and bear geometry at 44.510s but no robot q/TCP; actual joint trace reaches 44.510s. Full geometry/robot saved frame ends at 44.480s.",
+  "limitations": [
+    "Force feedback is IPC soft-coupling STC and excludes native Genesis rigid contacts. Per-link reactions do not identify the contacting material or object.",
+    "Positive opening reactions and material proximity support holding, not force closure.",
+    "Actual rate estimates use finite differences at integration steps; guarded continuous reference .35/.5 differs from original actual validation 1.5/10.",
+    "Sampled control torques do not certify continuous actuator saturation or physical hardware safety.",
+    "No release, withdrawal or final retention occurred. Final sampled containment diagnostics are not a completed insertion success test.",
+    "Native soft state summaries cover every integration step, not a continuous collision or material calibration proof.",
+    "Geometry/contact root cause requires the separate actual-state review; torque chronology alone does not prove rear-handle causation."
+  ],
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/config.json": "ba490b666b8a543800f114fc5c4889c6c089db130cd47ac100565010555cfc5a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/bear_uniform_coarse_s85.mtl": "f3a8a971b017025ea86cecd97cfdeb7e8693aea417e59cffa4786663a13bc18f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/bear_uniform_coarse_s85.obj": "6f86b3349d0d144148a60b3ab2c4ccbd0b42d38b907d8823e70557e1e620c7b6",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/cotton_canvas.png": "c1fa744e76e59d2be819db3dcc63a84724ff7bab886d9570789712bf562dcb2f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/metadata_two_panel_wide_tall_coarse.json": "717b85a19fff38ea75a0f10f8721fbce48d6c011958de8a3b6b246d7dcb0217a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/teddy_fur.png": "355e29a37479403425f30c734475d141313be8880f68b8c638bdb8d04cf561f8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/two_panel_bag_wide_tall_coarse.mtl": "51a06ed3a6e284c29a6cb3192bde876bb1c0f4c30e60c9d716b5935878f0f9d3",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets/two_panel_bag_wide_tall_coarse.obj": "a047869313d6c5469640724eb84a412c67f71d2d0d07eb492c67880c39cff280",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/assets_builder.py": "d6adb8a187a31092b21f6edab55145291fda1ba97d221d744b8989847c1e960e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/build_tall_bag.py": "dc57f031b1a972743eff2edb85ac85630321e848dedc579305d51de0fd4b6926",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/build_wide_tall_bag.py": "072735056b4d238622a8443f4ec6f85e1e097a041a8e2b261d1a7ab12d02349c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/contact_grasp.py": "3ac4767bad63047309b1f18583a40c2afc3424ce944e3a85427dedc2f588c4ab",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/remesh_bear.py": "feb5f7dccc5fa4e08a4ca02ec6ff2ad4abaa669e7a9c68869104f881d8428a20",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/run.py": "c63b0f9771a72882b1a5e2829510ad843fb8f1c7780e534cf71a2758bb12a307",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/staged_contact_insertion.py": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/two_panel_builder.py": "d915692a9f2ae8a6185520582e1a2db93365c9fde3d433a9c6991097a6aa4188",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/source/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/report.json": "dac872b514f52c6264a60f129c806174682f52b1d8166d8d6a16c6d1a28fa98e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/events.json": "4e86801c229cf0eb7a6c2a7132708e24e944222cd25749cf8068e843712246ba",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/states.npz": "cdac0100ff7d516cd00b551c012b944200fb033d75b4d2cae166b3d9a693b984",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/joint_trace.npy": "731c773d683cb8cdf7a5bb4de9d0e7f7ceb94fe1820ee4642c43355c26fb58ee",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/soft_metrics.npy": "a75b7aaa9d0bc98b3e4600851bff70d4998f941efd4299b19d2f4b22f4abae4b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/contact_guard_trace.json": "c79a2b42b385e85cec3f39f71bb545b731a8ecc334910c7d7c021439e4ac4b77",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/coupling_trace.json": "e1e42f3a02c75d4d4035fa003c86a16e1b7594265451f5969ae298e1f19006ff",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/handle_grip_trace.json": "2b45c299bce86ce78eb4f3c11c073100a4dc8882cb50e237ef8ae17a90b7c589",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/failed_soft_state.npz": "09d63bee1c6b3467fa92e023b1936e8840cbce31317377b96c997a6d60f60003",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/postlift_yaw_plan.npz": "bf71b2dcf9cb768d1add220c4bcbe730179829c4ef15064ae865b49922543846",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/postlift_yaw_execution.json": "998b35d06afb05e39a1d9f78a505b70e5cef0886b62fbab11bc9d85ad20e2467",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/independent-final-review.json": "a22494ee7a70e5938524cb36f37df3814cc4e0b66bd52caf7e400c5ccbec8b60",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/independent-postlift-yaw-sequence.json": "a2b347771234ef3113f0e2616f876feef5bd9a9f7b61dddfa930b7746021ddce",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/independent-guard-reactions.json": "57bcefaebf758001c35187669363316fd19f17526739155a69321e387e7e799f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": "39b9426b429711c0cf60ffabcfcce8a91819f9de5b6f711273db90d9161fdbab",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full23_executed_prefix_summary.py": "f20c036391cb383762fb4d56bea4f155aa4d11730ebc3dd9ace0eb94ef007949"
+  }
+}

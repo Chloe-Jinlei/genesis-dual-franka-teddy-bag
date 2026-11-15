@@ -1,0 +1,168 @@
+{
+  "kind": "actual_full14_low_phase_section_diagnostic_CPU_review",
+  "physical_success": false,
+  "actual_center_not_executed": true,
+  "hypothetical_insert_not_physical_observation": true,
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "name": "explicit_diagnostic_only",
+      "passed": true
+    },
+    {
+      "name": "default_strict",
+      "passed": true
+    },
+    {
+      "name": "base_physical_policy_unchanged",
+      "passed": true
+    },
+    {
+      "name": "unknown_section_gate_rejected",
+      "passed": true
+    },
+    {
+      "name": "actual_full14_strict_rejection_retained_as_evidence",
+      "passed": true
+    },
+    {
+      "name": "actual_transport_entry_candidate",
+      "passed": true
+    },
+    {
+      "name": "entry_still_enforces_section_gate",
+      "passed": true
+    },
+    {
+      "name": "entry_target_rotation_duration_unchanged",
+      "passed": true
+    },
+    {
+      "name": "actual_entry_endpoint_center_candidate",
+      "passed": true
+    },
+    {
+      "name": "center_violations_saved_nonblocking",
+      "passed": true
+    },
+    {
+      "name": "actual_com_loop_robot_gates_retained",
+      "passed": true
+    },
+    {
+      "name": "frozen_hypothetical_insert_candidate",
+      "passed": true
+    },
+    {
+      "name": "insert_diagnostic_and_release_withdraw_retained",
+      "passed": true
+    }
+  ],
+  "stages": [
+    {
+      "phase": "entry",
+      "status": "candidate",
+      "rejections": [],
+      "wall_seconds": 8.138320869999006,
+      "state_origin": "saved full14 transport",
+      "physical_state_rejections": [],
+      "observed_bear_top_to_left_hand_clearance_m": -0.16460696640333317,
+      "target_bear_bounds_world_m": [
+        [
+          -0.15912439230498707,
+          -0.09794747439960094,
+          0.9869277906300682
+        ],
+        [
+          -0.032936402424079206,
+          0.22860165432990487,
+          1.2268914722543034
+        ]
+      ],
+      "section_diagnostics": {
+        "section_guard_enforced": true,
+        "section_policy_role": "strict_planning_gate",
+        "minimum_section_slab_overlap_fraction": 0.0,
+        "maximum_outside_excursion_bound_m": 0.08436299108237985,
+        "allowed_outside_excursion_m": 0.08870247272457213,
+        "required_perimeter_ratio_to_unextended_rim": 0.9986449031503161,
+        "section_heuristic_violations": []
+      },
+      "left_sweep_status": "clear",
+      "rigid_path_minimum_m": 0.02181750056162627,
+      "release_withdraw_preflight_present": false
+    },
+    {
+      "phase": "center",
+      "status": "candidate",
+      "rejections": [],
+      "wall_seconds": 6.730136734004191,
+      "state_origin": "saved full14 actual entry endpoint",
+      "physical_state_rejections": [],
+      "observed_bear_top_to_left_hand_clearance_m": 0.014611367421307087,
+      "planned_com_contact_envelope_boundary_distance_m": 0.02112736455121568,
+      "target_bear_bounds_world_m": [
+        [
+          -0.20768648631165598,
+          -0.12036720887686542,
+          0.9775623438231477
+        ],
+        [
+          -0.05961373432265156,
+          0.19756223889010494,
+          1.22223828422746
+        ]
+      ],
+      "section_diagnostics": {
+        "section_guard_enforced": false,
+        "section_policy_role": "nonblocking_diagnostic",
+        "minimum_section_slab_overlap_fraction": 0.47853609962523974,
+        "maximum_outside_excursion_bound_m": 0.0666289678058455,
+        "allowed_outside_excursion_m": 0.06476705302694234,
+        "required_perimeter_ratio_to_unextended_rim": 1.0080736888944888,
+        "section_heuristic_violations": [
+          "section lateral excursion exceeds declared fraction of declared contact envelope minimum width"
+        ]
+      },
+      "left_sweep_status": "clear",
+      "rigid_path_minimum_m": 0.0157571841451615,
+      "release_withdraw_preflight_present": false
+    },
+    {
+      "phase": "insert",
+      "status": "candidate",
+      "rejections": [],
+      "wall_seconds": 11.697754836997774,
+      "state_origin": "frozen center translation with planned q; NOT a physical observation",
+      "physical_state_rejections": [],
+      "observed_bear_top_to_left_hand_clearance_m": 0.014611367421307087,
+      "planned_com_contact_envelope_boundary_distance_m": 0.021127364551215565,
+      "target_bear_bounds_world_m": [
+        [
+          -0.20768648631165598,
+          -0.12036720887686542,
+          0.75
+        ],
+        [
+          -0.05961373432265156,
+          0.19756223889010494,
+          0.9946759404043123
+        ]
+      ],
+      "section_diagnostics": {
+        "section_guard_enforced": false,
+        "section_policy_role": "nonblocking_diagnostic",
+        "minimum_section_slab_overlap_fraction": 0.563322664287003,
+        "maximum_outside_excursion_bound_m": 0.04465850807401678,
+        "allowed_outside_excursion_m": 0.051813642421553875,
+        "required_perimeter_ratio_to_unextended_rim": 0.9630869938457578,
+        "section_heuristic_violations": []
+      },
+      "left_sweep_status": "clear",
+      "rigid_path_minimum_m": 0.009825572770181475,
+      "release_withdraw_preflight_present": true
+    }
+  ],
+  "module_sha256": "569197355503e2c7ed5932a35ca74b9ab9593514f3932cdadf2e9c3680144f2d",
+  "config_sha256": "f86be9f7d13084555d3c903e3ad0c59cd521cc4bc73dc43de945460d4ab48b6e"
+}

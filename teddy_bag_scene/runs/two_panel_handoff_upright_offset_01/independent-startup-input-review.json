@@ -1,0 +1,408 @@
+{
+  "kind": "independent_handoff_startup_input_and_actual_prefix_review",
+  "physical_task_success": false,
+  "handoff_probe_success": false,
+  "status": "startup_consistent_full_native_probe_pending",
+  "available_checks_passed": true,
+  "checks": {
+    "frozen_manifest_all_entries_valid": true,
+    "supplied_config_sha_matches_launch": true,
+    "frozen_config_semantics_match_supplied": true,
+    "all_live_source_and_assets_match_frozen": true,
+    "continuous_rate_fix_frozen": true,
+    "handoff_scope_runner_frozen": true,
+    "actual_process_uses_handoff_task": true,
+    "actual_process_cwd_matches_scene": true,
+    "material_mapping_complete": true,
+    "mapped_full_native_faces_match": true,
+    "same_bag_rest_and_topology_as_full21": true,
+    "all_saved_initial_tetrahedra_positive": true,
+    "bag_effective_50_250_unchanged": true,
+    "unmodified_material_simulation_and_robot_configs": true,
+    "initial_phase_data_finite": true
+  },
+  "failed_checks": [],
+  "process": {
+    "pid": 103516,
+    "command": [
+      "/home/chloe/Desktop/genesis-local/.venv/bin/python",
+      "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py",
+      "--task",
+      "handoff",
+      "--config",
+      "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_upright_offset_handle_probe.json",
+      "--output",
+      "two_panel_handoff_upright_offset_01"
+    ],
+    "cwd": "/home/chloe/Desktop/genesis-local/teddy_bag_scene"
+  },
+  "config_semantic_diff_from_full21": [
+    {
+      "path": "task.handle_grasps.left.group",
+      "before": "grasp_front_center",
+      "after": "grasp_front_x_minus"
+    },
+    {
+      "path": "task.handle_grasps.left.preferred_approach",
+      "before": [
+        0.573576436351046,
+        0.0,
+        -0.8191520442889918
+      ],
+      "after": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "path": "task.handle_grasps.right.group",
+      "before": "grasp_back_center",
+      "after": "grasp_back_x_plus"
+    },
+    {
+      "path": "task.handle_grasps.right.preferred_approach",
+      "before": [
+        -0.573576436351046,
+        0.0,
+        -0.8191520442889918
+      ],
+      "after": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "path": "task.left_hold_preferred_approach",
+      "before": [
+        0.9961946980917455,
+        0.0,
+        -0.08715574274765814
+      ],
+      "after": "<missing>"
+    },
+    {
+      "path": "task.left_hold_rotation_duration_s",
+      "before": 4.0,
+      "after": "<missing>"
+    },
+    {
+      "path": "task.open_targets.left",
+      "before": [
+        -0.13,
+        -0.13,
+        1.26
+      ],
+      "after": [
+        -0.18409751840950164,
+        -0.13,
+        1.26
+      ]
+    },
+    {
+      "path": "task.open_targets.right",
+      "before": [
+        -0.13,
+        0.13,
+        1.26
+      ],
+      "after": [
+        -0.07590248159049842,
+        0.13,
+        1.26
+      ]
+    }
+  ],
+  "actual_saved_phase_measurements": [
+    {
+      "phase": "initial",
+      "time_s": 0.0,
+      "all_values_finite": true,
+      "sides": {
+        "left": {
+          "named_material_group": "grasp_front_x_minus",
+          "named_material_count": 9,
+          "native_indices": [
+            1581,
+            1582,
+            1583,
+            1584,
+            1585,
+            1586,
+            1587,
+            1588,
+            1589
+          ],
+          "tcp_m": [
+            -0.18409710475104746,
+            -0.07704239166113894,
+            1.2647675662403897
+          ],
+          "nearest_material_distance_m": 1.0619186393405883e-06,
+          "farthest_material_distance_m": 0.0125010340699294,
+          "material_centroid_m": [
+            -0.18409751841000002,
+            -0.07704260150999999,
+            1.2647685214555555
+          ],
+          "actual_finger_positions_m": [
+            0.001,
+            0.001
+          ],
+          "saved_finger_PD_control_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "named_material_group": "grasp_back_x_plus",
+          "named_material_count": 9,
+          "native_indices": [
+            1824,
+            1825,
+            1826,
+            1827,
+            1828,
+            1829,
+            1830,
+            1831,
+            1832
+          ],
+          "tcp_m": [
+            -0.07590290311989219,
+            0.07704235428839443,
+            1.2647672974666762
+          ],
+          "nearest_material_distance_m": 1.3179770673526535e-06,
+          "farthest_material_distance_m": 0.012501270772815145,
+          "material_centroid_m": [
+            -0.07590248159000001,
+            0.07704260150999999,
+            1.2647685214555555
+          ],
+          "actual_finger_positions_m": [
+            0.001,
+            0.001
+          ],
+          "saved_finger_PD_control_force_n": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "minimum_J": 1.0,
+      "sha256": "d5714a89ebf319e8f742210057da41c87748b8895d0248d669b864b2edf9456f"
+    },
+    {
+      "phase": "close_both_handles",
+      "time_s": 0.5000000000000003,
+      "all_values_finite": true,
+      "sides": {
+        "left": {
+          "named_material_group": "grasp_front_x_minus",
+          "named_material_count": 9,
+          "native_indices": [
+            1581,
+            1582,
+            1583,
+            1584,
+            1585,
+            1586,
+            1587,
+            1588,
+            1589
+          ],
+          "tcp_m": [
+            -0.18409606719503635,
+            -0.07704582204109127,
+            1.2647529553407217
+          ],
+          "nearest_material_distance_m": 0.001365318238619282,
+          "farthest_material_distance_m": 0.013897117188579009,
+          "material_centroid_m": [
+            -0.18400947376432386,
+            -0.07687669929578207,
+            1.2631976943976344
+          ],
+          "actual_finger_positions_m": [
+            0.0011096115334094897,
+            0.0011092226156985225
+          ],
+          "saved_finger_PD_control_force_n": [
+            -8.876986492129,
+            -8.873212221983474
+          ]
+        },
+        "right": {
+          "named_material_group": "grasp_back_x_plus",
+          "named_material_count": 9,
+          "native_indices": [
+            1824,
+            1825,
+            1826,
+            1827,
+            1828,
+            1829,
+            1830,
+            1831,
+            1832
+          ],
+          "tcp_m": [
+            -0.07590362626953248,
+            0.07704729125753643,
+            1.264753842980704
+          ],
+          "nearest_material_distance_m": 0.0013504935456495936,
+          "farthest_material_distance_m": 0.014005646972318148,
+          "material_centroid_m": [
+            -0.07594582007997551,
+            0.07685179658030576,
+            1.2630624330110771
+          ],
+          "actual_finger_positions_m": [
+            0.0011156837251594402,
+            0.0011160972811549345
+          ],
+          "saved_finger_PD_control_force_n": [
+            -8.92464482007729,
+            -8.929104288971988
+          ]
+        }
+      },
+      "minimum_J": 0.8848537644082287,
+      "sha256": "9536c7bdbe1589dd976d1184d973162d8bf06f0c4ad781244f23767b7fa48c3b"
+    },
+    {
+      "phase": "drape_under_gravity",
+      "time_s": 1.0999999999999985,
+      "all_values_finite": true,
+      "sides": {
+        "left": {
+          "named_material_group": "grasp_front_x_minus",
+          "named_material_count": 9,
+          "native_indices": [
+            1581,
+            1582,
+            1583,
+            1584,
+            1585,
+            1586,
+            1587,
+            1588,
+            1589
+          ],
+          "tcp_m": [
+            -0.18409656704637833,
+            -0.07704632569311377,
+            1.2647479029829645
+          ],
+          "nearest_material_distance_m": 0.0013541708057661843,
+          "farthest_material_distance_m": 0.013905389447118749,
+          "material_centroid_m": [
+            -0.18399070868659803,
+            -0.07687989522052577,
+            1.263192093461949
+          ],
+          "actual_finger_positions_m": [
+            0.0011097116644965225,
+            0.0011090466849448682
+          ],
+          "saved_finger_PD_control_force_n": [
+            -8.877683487185555,
+            -8.872512937026263
+          ]
+        },
+        "right": {
+          "named_material_group": "grasp_back_x_plus",
+          "named_material_count": 9,
+          "native_indices": [
+            1824,
+            1825,
+            1826,
+            1827,
+            1828,
+            1829,
+            1830,
+            1831,
+            1832
+          ],
+          "tcp_m": [
+            -0.07590276064905738,
+            0.07704830448799418,
+            1.2647471983156666
+          ],
+          "nearest_material_distance_m": 0.00132986713489004,
+          "farthest_material_distance_m": 0.014021317382251472,
+          "material_centroid_m": [
+            -0.07597264315970763,
+            0.0768588236187838,
+            1.2630564049558264
+          ],
+          "actual_finger_positions_m": [
+            0.001115270638904858,
+            0.001116021560557727
+          ],
+          "saved_finger_PD_control_force_n": [
+            -8.922536461276854,
+            -8.92810776967607
+          ]
+        }
+      },
+      "minimum_J": 0.8859442686395544,
+      "sha256": "8874e493bec44009629a0019b13d7ee416658134f659144c3d4cea889967f903"
+    }
+  ],
+  "native_material_readback_status": "pending final report; configuration/source coefficients verified only",
+  "native_grip_evidence_scope": "Actual named material proximity, finger q and saved PD control forces at saved endpoints. Complete native soft opening reaction trace remains pending; these values alone do not prove force closure.",
+  "final_probe_audit_required": [
+    "All handoff-scope validation checks, including discrete final bag-bear penetration, must pass.",
+    "Both handles during spread and left named material/negative clamping after right release, with required trace coverage.",
+    "Every-step finite/J/stretch/table and actual joint traces through the 10-second hold.",
+    "Actual release, right_clear_handle, settle_handoff endpoints and 10-second timing.",
+    "Initialization 50/250 native material attribute readback and unchanged protected attributes.",
+    "No claim of teddy lift/insertion/release/containment or full requested task success."
+  ],
+  "no_contact_guard_trace_expected_before_teddy_contact_trial": true,
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/config.json": "60c2d441055adc02edda6738a8e50dc59fac9bc92b36e9cdd991f644a4df98c8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/bear_uniform_coarse_s85.mtl": "f3a8a971b017025ea86cecd97cfdeb7e8693aea417e59cffa4786663a13bc18f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/bear_uniform_coarse_s85.obj": "6f86b3349d0d144148a60b3ab2c4ccbd0b42d38b907d8823e70557e1e620c7b6",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/cotton_canvas.png": "c1fa744e76e59d2be819db3dcc63a84724ff7bab886d9570789712bf562dcb2f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/metadata_two_panel_wide_tall_coarse.json": "717b85a19fff38ea75a0f10f8721fbce48d6c011958de8a3b6b246d7dcb0217a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/teddy_fur.png": "355e29a37479403425f30c734475d141313be8880f68b8c638bdb8d04cf561f8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/two_panel_bag_wide_tall_coarse.mtl": "51a06ed3a6e284c29a6cb3192bde876bb1c0f4c30e60c9d716b5935878f0f9d3",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets/two_panel_bag_wide_tall_coarse.obj": "a047869313d6c5469640724eb84a412c67f71d2d0d07eb492c67880c39cff280",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/assets_builder.py": "d6adb8a187a31092b21f6edab55145291fda1ba97d221d744b8989847c1e960e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/build_tall_bag.py": "dc57f031b1a972743eff2edb85ac85630321e848dedc579305d51de0fd4b6926",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/build_wide_tall_bag.py": "072735056b4d238622a8443f4ec6f85e1e097a041a8e2b261d1a7ab12d02349c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/contact_grasp.py": "3ac4767bad63047309b1f18583a40c2afc3424ce944e3a85427dedc2f588c4ab",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/postlift_yaw.py": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/remesh_bear.py": "feb5f7dccc5fa4e08a4ca02ec6ff2ad4abaa669e7a9c68869104f881d8428a20",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/run.py": "0ed42957296a0ad41b4691856042a77ccef9ce3472a0b77f0d78d653f09c38f1",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/staged_contact_insertion.py": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/two_panel_builder.py": "d915692a9f2ae8a6185520582e1a2db93365c9fde3d433a9c6991097a6aa4188",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99"
+  },
+  "limitations": [
+    "External robot mesh hashes are measured at this review, not established as startup hashes.",
+    "The input manifest covers scene source/config/copied assets, not installed Genesis/libuipc binaries or all environment dependencies.",
+    "Hash consistency proves recorded inputs match the manifest; it does not prove physical correctness or task success."
+  ],
+  "geometry_tool_review": {
+    "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/independent-handoff-material-geometry-review.json",
+    "sha256": "d7cff987ea482c43a186a2c2e221d56675df7a831b90c2bae8f74d58871b5469"
+  }
+}

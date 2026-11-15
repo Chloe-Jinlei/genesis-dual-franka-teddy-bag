@@ -1,0 +1,133 @@
+{
+  "kind": "full18_bounded_alternate_initial_offset_feasibility",
+  "accepted_full_preparation_candidate": true,
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "observed_time_s": 29.044999999998506,
+  "accepted_offset_xy_m": [
+    0.015,
+    0.02
+  ],
+  "accepted_offset_radius_m": 0.025,
+  "checks": {
+    "full_helper_candidate": true,
+    "all_four_route_stages_present": true,
+    "all_four_bear_left_sweeps_pass_5mm": true,
+    "all_robot_stages_require_8mm": true,
+    "no_section_guard_rejections": true,
+    "release_preflight_at_least_8mm": true,
+    "actual_state_global_rejections_absent": true
+  },
+  "section_gates": {
+    "maximum_outside_excursion_bound_m": 0.06107670969214247,
+    "allowed_outside_excursion_m": 0.06199373381572976,
+    "minimum_section_slab_overlap_fraction": 0.5383776350513513,
+    "maximum_required_enclosing_rim_perimeter_m": 0.8849004997564772,
+    "available_rim_perimeter_m": 0.9152328087150292,
+    "com_boundary_distance_m": 0.016583864553093592
+  },
+  "stage_separation": [
+    {
+      "stage": "height_at_current_xy",
+      "executed_by_initial_runtime_preparation": true,
+      "continuous_frozen_bear_left_sweep_status": "clear",
+      "conservative_gap_lower_bound_m": 0.4260171411072662
+    },
+    {
+      "stage": "transport_y_at_current_x",
+      "executed_by_initial_runtime_preparation": true,
+      "continuous_frozen_bear_left_sweep_status": "clear",
+      "conservative_gap_lower_bound_m": 0.4094619968439176
+    },
+    {
+      "stage": "translate_outside_mouth",
+      "executed_by_initial_runtime_preparation": true,
+      "continuous_frozen_bear_left_sweep_status": "clear",
+      "conservative_gap_lower_bound_m": 0.005365192969484153
+    },
+    {
+      "stage": "insert_candidate",
+      "executed_by_initial_runtime_preparation": false,
+      "continuous_frozen_bear_left_sweep_status": "clear",
+      "conservative_gap_lower_bound_m": 0.005365192969484153
+    }
+  ],
+  "full_helper_probe_results": [
+    {
+      "offset_xy_m": [
+        0.024,
+        0.02
+      ],
+      "status": "rejected",
+      "rejections": [
+        "section lateral excursion exceeds declared fraction of actual opening minimum width",
+        "section slab overlap with actual opening below 40 percent"
+      ],
+      "maximum_outside_bound_m": 0.06645384501958033,
+      "allowed_outside_m": 0.06199373381572976,
+      "minimum_slab_overlap_fraction": 0.360928343779832,
+      "robot_attempts_entered": 0
+    },
+    {
+      "offset_xy_m": [
+        0.02,
+        0.02
+      ],
+      "status": "rejected",
+      "rejections": [
+        "section lateral excursion exceeds declared fraction of actual opening minimum width"
+      ],
+      "maximum_outside_bound_m": 0.06245487404497002,
+      "allowed_outside_m": 0.06199373381572976,
+      "minimum_slab_overlap_fraction": 0.43804256131255054,
+      "robot_attempts_entered": 0
+    },
+    {
+      "offset_xy_m": [
+        0.015,
+        0.02
+      ],
+      "status": "candidate",
+      "rejections": [],
+      "maximum_outside_bound_m": 0.06107670969214247,
+      "allowed_outside_m": 0.06199373381572976,
+      "minimum_slab_overlap_fraction": 0.5383776350513513,
+      "robot_attempts_entered": 1
+    }
+  ],
+  "candidate_outside_tcp_m": [
+    -0.0980566836414759,
+    0.05655165004712992,
+    1.369737788455032
+  ],
+  "retained_full_rotation_xyzw": [
+    0.9999999556315369,
+    -1.6547998574201197e-06,
+    3.48377165814905e-05,
+    -0.0002958386711639858
+  ],
+  "release_opening_minimum_rigid_gap_m": 0.022303129979080762,
+  "grid_search_scope": {
+    "grid_spacing_m": 0.005,
+    "radius_m": 0.035,
+    "grid_plus_original_count": 150,
+    "necessary_screen_survivors": 131,
+    "full_grid_exhausted": false,
+    "first_25_candidate_batch_completed": false,
+    "reason_stopped": "Independent nearby single-grid-point probe found a full-helper accepted candidate; stopped only owned broad CPU process PID32888 with SIGINT/session36673 exit130.",
+    "not_all_survivors_claimed_feasible": true
+  },
+  "limits": [
+    "Existing helper is unchanged: complete 1449 slab envelopes, original full orientation, actual physical-state checks, 5mm frozen teddy-left sweep and sampled 8mm rigid checks remain enforced.",
+    "The accepted route passes both actual preparation height/Y/X and the provisional insert/release/withdraw extrapolation; no phase-scoped relaxation was needed for this observed state.",
+    "Minimum frozen bear-left clearance is 5.365mm, only0.365mm over the planning gate. Future deformation and new observed poses must be checked again.",
+    "No native simulation was started and no runtime/config source was edited. Only the in-memory candidate list changed.",
+    "This finds one feasible candidate, not an optimum, exhaustive radius search, calibrated material behavior or physical insertion success."
+  ],
+  "input_sha256": {
+    "runs/two_panel_full_18/config.json": "2356b57fe13bd4dd5bfd9849bfb77988097d91b4f7face4847687f3b4efa7548",
+    "runs/two_panel_full_18/rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "runs/two_panel_full_18/lift_teddy.npz": "44a7ec13a97f1a395b282e0f283b3f6e1d91dfb83c44fdc315354fb026008185",
+    "runs/two_panel_full_18/source/contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4"
+  }
+}

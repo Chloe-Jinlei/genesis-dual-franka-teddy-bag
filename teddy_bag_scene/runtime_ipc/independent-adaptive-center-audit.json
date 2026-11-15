@@ -1,0 +1,1141 @@
+{
+  "kind": "independent_adaptive_center_contract_audit",
+  "runtime_execution_performed": false,
+  "source_sha256": "cc8b6885c4969246d87ad8d3fbde3a2f290833ef8991a57f1bad5b2949d1c68f",
+  "runner_sha256": "059436d865fdb27bb5fe26ebe0245168ecb3c50efbf9c173d8f38f744de1b5a8",
+  "checks": [
+    {
+      "name": "invalid_offsets_empty",
+      "status": "rejected",
+      "reasons": [
+        "Declare 1\u20138 unique finite nonzero center offsets within the staged XY budget"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "invalid_offsets_none",
+      "status": "rejected",
+      "reasons": [
+        "Declare 1\u20138 unique finite nonzero center offsets within the staged XY budget"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "invalid_offsets_flat",
+      "status": "rejected",
+      "reasons": [
+        "Declare 1\u20138 unique finite nonzero center offsets within the staged XY budget"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "invalid_offsets_ragged",
+      "status": "rejected",
+      "reasons": [
+        "setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part."
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "invalid_offsets_duplicate",
+      "status": "rejected",
+      "reasons": [
+        "Declare 1\u20138 unique finite nonzero center offsets within the staged XY budget"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "invalid_offsets_zero",
+      "status": "rejected",
+      "reasons": [
+        "Declare 1\u20138 unique finite nonzero center offsets within the staged XY budget"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "invalid_offsets_nonfinite",
+      "status": "rejected",
+      "reasons": [
+        "Declare 1\u20138 unique finite nonzero center offsets within the staged XY budget"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "invalid_offsets_nine",
+      "status": "rejected",
+      "reasons": [
+        "Declare 1\u20138 unique finite nonzero center offsets within the staged XY budget"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "invalid_offsets_over_budget",
+      "status": "rejected",
+      "reasons": [
+        "Declare 1\u20138 unique finite nonzero center offsets within the staged XY budget"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "robot_201_point_0.0075",
+      "returned": false,
+      "exception": "ValueError",
+      "message": "The 201-sample robot review fails the original 8 mm rigid clearance",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "robot_201_point_nan",
+      "returned": false,
+      "exception": "ValueError",
+      "message": "Nonfinite or empty raw robot-clearance samples",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "robot_201_point_inf",
+      "returned": false,
+      "exception": "ValueError",
+      "message": "Nonfinite or empty raw robot-clearance samples",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_clearance_0.0075",
+      "status": "rejected",
+      "selected_index": null,
+      "scores": [
+        null,
+        null
+      ],
+      "only_center_stage": true,
+      "contains_executable_remainder_stage": false,
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_clearance_nan",
+      "status": "rejected",
+      "selected_index": null,
+      "scores": [
+        null,
+        null
+      ],
+      "only_center_stage": true,
+      "contains_executable_remainder_stage": false,
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_clearance_inf",
+      "status": "rejected",
+      "selected_index": null,
+      "scores": [
+        null,
+        null
+      ],
+      "only_center_stage": true,
+      "contains_executable_remainder_stage": false,
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_clearance_0.02",
+      "status": "candidate",
+      "selected_index": 0,
+      "scores": [
+        0.008,
+        0.008
+      ],
+      "only_center_stage": true,
+      "contains_executable_remainder_stage": false,
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_insert_raw_nan",
+      "status": "rejected",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_insert_raw_inf",
+      "status": "rejected",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_insert_raw_0.0075",
+      "status": "rejected",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_release_raw_nan",
+      "status": "rejected",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_release_raw_inf",
+      "status": "rejected",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "wrapper_release_raw_0.0075",
+      "status": "rejected",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "state_isolation",
+      "actual_unchanged": true,
+      "hypothetical_calls": [
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ],
+            [
+              -0.015000000000000013,
+              -0.05500000000000005,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        },
+        {
+          "time": 14.0,
+          "bear_shift": [
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ],
+            [
+              -0.020000000000000018,
+              -0.050000000000000044,
+              0.0
+            ]
+          ],
+          "left_unchanged": true,
+          "bag_unchanged": true,
+          "right_fingers_unchanged": true,
+          "right_q": [
+            0.2,
+            -0.3,
+            0.4,
+            -2.1,
+            0.5,
+            1.9,
+            0.8,
+            0.027,
+            0.028
+          ],
+          "same_array_alias": false
+        }
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "missing_simulation",
+      "status": "rejected",
+      "reasons": [
+        "No predeclared center passes center and frozen remainder preflight"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "missing_dt",
+      "status": "rejected",
+      "reasons": [
+        "No predeclared center passes center and frozen remainder preflight"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "string_dt",
+      "status": "rejected",
+      "reasons": [
+        "could not convert string to float: 'bad'"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "nan_dt",
+      "status": "rejected",
+      "reasons": [
+        "No predeclared center passes center and frozen remainder preflight"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "zero_dt",
+      "status": "rejected",
+      "reasons": [
+        "No predeclared center passes center and frozen remainder preflight"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "list_only_staged_policy",
+      "accepted": true,
+      "expected_contract_pass": true
+    },
+    {
+      "name": "runner_list_only_current_expression",
+      "accepted": true,
+      "actual_expression": "np.asarray(settings.get(\"center_offsets_xy_m\",\n                    [settings.get(\"center_offset_xy_m\",[-.027,-.010])]),float)",
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_valid_center_contract",
+      "status": "candidate",
+      "reasons": [],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_insert_contract_fresh",
+      "status": "candidate",
+      "reasons": [],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_insert_contract_stale_time",
+      "status": "rejected",
+      "reasons": [
+        "Each staged phase needs a strictly newer actual observation"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_insert_contract_changed_list",
+      "status": "rejected",
+      "reasons": [
+        "Do not change staged or physical policy between observations"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_insert_contract_changed_order",
+      "status": "rejected",
+      "reasons": [
+        "Do not change staged or physical policy between observations"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_insert_contract_missing_list",
+      "status": "rejected",
+      "reasons": [
+        "Do not change staged or physical policy between observations"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_insert_contract_missing_selected",
+      "status": "rejected",
+      "reasons": [
+        "Prior adaptive center is not its declared selected displacement"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_insert_contract_wrong_allowed_selected",
+      "status": "rejected",
+      "reasons": [
+        "Prior adaptive center is not its declared selected displacement"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_insert_contract_unreached_endpoint",
+      "status": "rejected",
+      "reasons": [
+        "Previous physical stage has not reached its complete TCP target within 2 mm"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_release_raw_nan",
+      "status": "rejected",
+      "reasons": [
+        "Nonfinite or empty release-opening clearance samples"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_release_raw_inf",
+      "status": "rejected",
+      "reasons": [
+        "Nonfinite or empty release-opening clearance samples"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_release_raw_empty",
+      "status": "rejected",
+      "reasons": [
+        "Nonfinite or empty release-opening clearance samples"
+      ],
+      "expected_contract_pass": true
+    },
+    {
+      "name": "real_core_release_raw_0.0075",
+      "status": "rejected",
+      "reasons": [
+        "Release opening fails 8 mm rigid clearance"
+      ],
+      "expected_contract_pass": true
+    }
+  ],
+  "check_count": 43,
+  "all_expected_contracts_pass": true,
+  "remaining_failures": [],
+  "limitations": "Bounded CPU contract regressions with explicit geometry stubs; no dynamic or full task success is asserted."
+}

@@ -1,0 +1,269 @@
+{
+  "kind": "independent_actual_postlift_yaw_prefix_review",
+  "status": "incomplete_pending_native_trace",
+  "passed": false,
+  "physical_success": false,
+  "complete_run_audited": false,
+  "complete_native_guard_trace_audited": false,
+  "all_available_prefix_checks_passed": true,
+  "checks": {
+    "original_optional_config_bounds": true,
+    "frozen_sources_assets_and_config_match_manifest": true,
+    "candidate_and_execution_records_finite": true,
+    "candidate_complete_check_contract": true,
+    "planning_keeps_native_execution_and_task_success_separate": true,
+    "left_source_matches_actual_fk": true,
+    "left_command_fk_record_and_actual_consistency": true,
+    "right_source_matches_actual_fk": true,
+    "right_command_fk_record_and_actual_consistency": true,
+    "target_is_world_z_yaw_of_actual_full_rotation_and_fixed_tcp": true,
+    "source_independent_soft_and_grasp_limits": true,
+    "source_physical_record_matches_saved_geometry": true,
+    "source_independent_actual_rigid_8mm": true,
+    "source_actual_rigid_record_matches_recomputed_distances": true,
+    "source_actual_joints_fingers_and_tcp_valid": true,
+    "source_original_physical_rejections_empty_and_lifted": true,
+    "endpoint_independent_soft_and_grasp_limits": true,
+    "endpoint_physical_record_matches_saved_geometry": true,
+    "endpoint_independent_actual_rigid_8mm": true,
+    "endpoint_actual_rigid_record_matches_recomputed_distances": true,
+    "endpoint_actual_joints_fingers_and_tcp_valid": true,
+    "endpoint_original_physical_rejections_empty_and_lifted": true,
+    "source_time_is_actual_saved_lift_end": true,
+    "archive_exact_duration_and_observation": true,
+    "left_closed_finger_motor_target_preserved": true,
+    "left_cubic_c0_c1_c2_continuity": true,
+    "left_archive_exact_reported_command_endpoints": true,
+    "left_analytic_joint_and_continuous_rate_bounds": true,
+    "left_reported_bounds_cover_independent_bounds": true,
+    "right_closed_finger_motor_target_preserved": true,
+    "right_cubic_c0_c1_c2_continuity": true,
+    "right_archive_exact_reported_command_endpoints": true,
+    "right_analytic_joint_and_continuous_rate_bounds": true,
+    "right_reported_bounds_cover_independent_bounds": true,
+    "left_command_constant_for_entire_cubic": true,
+    "independent_401_samples_original_8mm_and_fk_limits": true,
+    "archive_sampled_metrics_match_report": true,
+    "independent_frozen_bear_left_arc_axes_and_sagitta_5mm": true,
+    "native_saved_endpoint_matches_execution_pose": true,
+    "endpoint_original_pose_and_rejection_gates": true,
+    "execution_declares_same_plan_without_baseline_reset": true,
+    "actual_integer_steps_and_endpoint_times": true,
+    "unique_yaw_immediately_follows_lift": true,
+    "frozen_runner_yaw_baseline_and_sampling_contract_matches_audited_full20": true,
+    "immutable_prefix_inputs_unchanged_during_review": true
+  },
+  "failed_available_checks": [],
+  "actual_measurements": {
+    "source": {
+      "time_s": 29.034999999998508,
+      "minimum_tetra_volume_ratio": 0.44433260453467804,
+      "maximum_bag_edge_stretch_ratio": 1.02681233737753,
+      "bag_table_penetration_m": 0.0,
+      "bear_table_penetration_m": 0.0,
+      "left_designated_material_distance_m": 0.0008286729765797748,
+      "right_nearest_teddy_distance_m": 0.00578416082354719,
+      "all_soft_states_finite": 1.0
+    },
+    "endpoint": {
+      "time_s": 35.059999999999484,
+      "minimum_tetra_volume_ratio": 0.5359309437270422,
+      "maximum_bag_edge_stretch_ratio": 1.0267315435684508,
+      "bag_table_penetration_m": 0.0,
+      "bear_table_penetration_m": 0.0,
+      "left_designated_material_distance_m": 0.0009475680930986599,
+      "right_nearest_teddy_distance_m": 0.005049019092931759,
+      "all_soft_states_finite": 1.0
+    }
+  },
+  "actual_endpoint_position_error_m": 0.00017018206712980202,
+  "actual_endpoint_rotation_error_rad": 0.00037831761861565325,
+  "observed_time_s": 29.034999999998508,
+  "planned_duration_s": 6.024024000000001,
+  "actual_step_count": 1205,
+  "actual_endpoint_time_s": 35.059999999999484,
+  "independent_reference_metrics": {
+    "minimum_sampled_rigid_clearance_m": 0.022146391921015824,
+    "maximum_sampled_tcp_error_m": 0.0001602005850293955,
+    "maximum_sampled_slerp_error_rad": 0.0003600691872666853
+  },
+  "archived_reference_bounds": {
+    "left": {
+      "minimum": [
+        -1.157928347972202,
+        -0.9029488935435553,
+        0.9411009229135125,
+        -2.770943866192143,
+        -0.25250611142918494,
+        3.7131464594091894,
+        1.6865365922465478
+      ],
+      "maximum": [
+        -1.157928347972202,
+        -0.9029488935435553,
+        0.9411009229135125,
+        -2.770943866192143,
+        -0.25250611142918494,
+        3.7131464594091894,
+        1.6865365922465478
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "acceleration": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "right": {
+      "minimum": [
+        0.5190986159530913,
+        0.2577204534048859,
+        0.2965759615599352,
+        -0.9953009988016664,
+        -0.08520333364544193,
+        1.242753654916953,
+        -1.0753090191855148
+      ],
+      "maximum": [
+        0.5358672309412137,
+        0.2592830563142676,
+        0.3194827139569829,
+        -0.9952739433162365,
+        -0.07875363747563448,
+        1.2431515186502322,
+        -0.8168061531921081
+      ],
+      "velocity": [
+        0.005232270638338918,
+        0.0005023682307450601,
+        0.007167154909138797,
+        1.3621955787434289e-05,
+        0.002041825866896672,
+        0.00012459601688569527,
+        0.08047090038519696
+      ],
+      "acceleration": [
+        0.002683876864291467,
+        0.00026845883030507536,
+        0.0036881473122711743,
+        1.1928891058136261e-05,
+        0.001065244577309197,
+        6.6487574395762e-05,
+        0.04113999356757885
+      ]
+    }
+  },
+  "continuous_single_baseline": {
+    "frozen_source_contract_checks": {
+      "begin_guarded_contact_monitor": true,
+      "run_postlift_yaw": true,
+      "run_guarded_contact_trial": true,
+      "observe_physics": true,
+      "execute": true
+    },
+    "execution_declares_no_reset": true,
+    "actual_baseline_record_verified": false,
+    "every_step_coverage_verified": false,
+    "native_force_torque_grip_audit_passed": null,
+    "status": "pending_saved_native_baseline_and_complete_guard_trace"
+  },
+  "pending": [
+    "Actual baseline before yaw, equality with final baseline, and every yaw integration step need final report and contact_guard_trace.json.",
+    "Every-step native reaction forces/torques/grip and joint trace are not available in this prefix review.",
+    "Fresh preparation and the remaining task require their own saved evidence and final audit."
+  ],
+  "events_observed": [
+    {
+      "phase": "close_both_handles",
+      "start": 0.0,
+      "duration": 0.5
+    },
+    {
+      "phase": "drape_under_gravity",
+      "start": 0.5000000000000003,
+      "duration": 0.6
+    },
+    {
+      "phase": "spread_bag",
+      "start": 1.0999999999999985,
+      "duration": 1.9269230769230767
+    },
+    {
+      "phase": "orient_held_bag",
+      "start": 3.0299999999999576,
+      "duration": 11.656389349575587
+    },
+    {
+      "phase": "settle_oriented_bag",
+      "start": 14.690000000000897,
+      "duration": 0.5
+    },
+    {
+      "phase": "release_right_handle",
+      "start": 15.190000000000975,
+      "duration": 0.4
+    },
+    {
+      "phase": "right_clear_handle",
+      "start": 15.590000000001037,
+      "duration": 2.612375332616872
+    },
+    {
+      "phase": "teddy_pregrasp",
+      "start": 18.205000000000663,
+      "duration": 4.293896453350504
+    },
+    {
+      "phase": "teddy_grasp_approach",
+      "start": 22.499999999999808,
+      "duration": 1.5415384615384613
+    },
+    {
+      "phase": "close_teddy_gripper",
+      "start": 24.0449999999995,
+      "duration": 1.0
+    },
+    {
+      "phase": "lift_teddy",
+      "start": 25.044999999999302,
+      "duration": 3.988068166804684
+    },
+    {
+      "phase": "orient_teddy_postlift",
+      "start": 29.034999999998508,
+      "duration": 6.024024000000001
+    },
+    {
+      "phase": "adjust_teddy_height_contact_trial",
+      "start": 35.059999999999484,
+      "duration": 2.51001
+    }
+  ],
+  "input_sha256": {
+    "config.json": "ae0686aa5e7f29c0da663d64f1c9fe98c76fa639ac39b29554460fa8a0dc82cf",
+    "rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "lift_teddy.npz": "d29be047bb21f880af87c65855d68c55ff047aea703498b1a6f1ca9e41a1fb40",
+    "orient_teddy_postlift.npz": "4f9da44c782a6ea76a83d50b3344b7ee67768c7055a11d58cb35c5bbffc698f3",
+    "postlift_yaw_candidate.json": "6398df46a8c9ee121e00e4fa67a744fc106c626723ca7a76b018e69319b64cca",
+    "postlift_yaw_execution.json": "2510c3228ed0501fdd331cae78bd5dfa8fb223d327fcdc4754dde8ba6dfd2f79",
+    "postlift_yaw_plan.npz": "102ed6242a061377c287da46fd79c5c36bc3a4e8670bc461f29b1f069b83e670"
+  },
+  "auditor_sha256": "cfffd244a7a8064dc2780a337e17e2b13ab4447849a2834ca10e20700f2771f8",
+  "limitations": [
+    "Analytic rate bounds concern the archived commanded reference, not actual dynamic velocities or continuous native clearance.",
+    "401-sample robot/FK checks remain sampled; frozen arc axes and sagitta concern ideal rigid grasp and two static left poses.",
+    "No final yaw pass or physical task-success conclusion is made while complete native evidence is pending."
+  ]
+}

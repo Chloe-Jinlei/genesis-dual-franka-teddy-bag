@@ -1,0 +1,33 @@
+{
+  "kind": "explicit_free_released_handle_contact_experiment_decision",
+  "created_utc": "2026-11-13T20:17:33.077894+00:00",
+  "native_run_started": false,
+  "task_success_established": false,
+  "scope": "Fresh native finite-force trial of the sole -30 degree / COM[0,+0.0345]m candidate. A full-path two-handle 2mm frozen-clearance condition was tested and failed; that failed evidence is retained. Contact with the free back strap after entry into the cloth body is permitted for this physical experiment, not certified as a collision-free path.",
+  "unchanged_physical_requirements": [
+    "Native FEM plus IPC self/soft/rigid contact; no pins, attachments, hidden supports or vertex manipulation",
+    "Original J>=0.05, cloth stretch<=1.15, table penetration<=2mm, holding/force/torque gates",
+    "Original robot 8mm and frozen teddy-left-robot 5mm route gates; continuous reference limits .35rad/s and .5rad/s2",
+    "Fresh actual-shape planning and pre-insertion reobservation; recenter_enabled=false",
+    "Final actual 3D whole-teddy and COM containment, retention and release/withdraw validation"
+  ],
+  "why_contact_is_not_automatically_disqualifying": "The task intentionally asks cloth and teddy to deform through physical contact. A frozen intersection involving an unheld flexible handle after the teddy has entered the body does not establish a native penetration or impossible motion. It is a risk to test with the actual collision solver, not a success prediction.",
+  "known_risks": [
+    "The free handle may catch the teddy, displace the bag or prevent containment.",
+    "Hybrid source geometry is not one actual joint snapshot; actual full-run geometry may reject the route.",
+    "A nominal clearance certificate does not guarantee dynamic tracking, friction grasp, material realism or final containment."
+  ],
+  "required_before_native": [
+    "Complete original robot and continuous rate review passed",
+    "Held front strap full-descent 2mm frozen gap and both straps pre-entry separation independently confirmed",
+    "Reviewed source/config hashes locked and fresh initialization used"
+  ],
+  "evidence_sha256": {
+    "runs/two_panel_handoff_upright_offset_01/independent-hybrid-minus30-positive-y34p5/independent-continuous-handles-review.json": "d0d46834d697cd6a864b2e5393ade989d7ec58d8d275fe0475ecaefe1a62dd89",
+    "runs/two_panel_handoff_upright_offset_01/independent-hybrid-minus30-positive-y34p5/independent_robot_review/review.json": "12812ec0aeac9d16886f5b2930317ed75a9724b161b6109cb7d9e173ac8fc45c",
+    "config_guarded_upright_offset_trial.json": "34d29f270144496818569b260185f98ba7f75d9d5c8964b63fbd073d826ec52b",
+    "run.py": "c63b0f9771a72882b1a5e2829510ad843fb8f1c7780e534cf71a2758bb12a307",
+    "postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "status": "superseded",
+  "task_passed": false,
+  "physics": {
+    "solver": "Genesis 1.4.3 + libuipc 0.0.29, IPC contact, FEM shell/volume",
+    "bag_vertices": 2230,
+    "bear_vertices": 1279,
+    "bear_tetrahedra": 4648,
+    "no_fixed_soft_vertices": true,
+    "no_soft_grasp_attachments": true,
+    "grasp_model": "finite-force finger PD and IPC friction, no ideal attachment",
+    "robot_soft_contact_links": "all collision links",
+    "other_arm_links_soft_contact": true,
+    "two_way_contact_coupling": true,
+    "material_experimentally_calibrated": false,
+    "bear_material_scope": "homogeneous compressible elastic filling approximation; no separate textile skin",
+    "bag_material_scope": "isotropic strain-limiting shell; no yarn model",
+    "cloth_thickness_convention": "IPC thickness is a radius; physical thickness is twice the configured value",
+    "bag": {
+      "position": [
+        -0.13,
+        0.0,
+        0.742
+      ],
+      "E": 400000.0,
+      "nu": 0.3,
+      "rho": 500.0558339592595,
+      "thickness": 0.0003,
+      "bending_stiffness": 5e-06,
+      "friction_mu": 0.65,
+      "mesh": "bag_coarse.obj",
+      "metadata": "metadata_coarse.json",
+      "shear_stiffness": 5.0
+    },
+    "bear": {
+      "position": [
+        0.27,
+        -0.25,
+        0.742
+      ],
+      "E": 18000.0,
+      "nu": 0.28,
+      "rho": 100.0,
+      "friction_mu": 0.65
+    },
+    "simulation": {
+      "dt": 0.01,
+      "substeps": 1,
+      "precision": "64",
+      "contact_distance": 0.001,
+      "contact_resistance": 10000000.0
+    }
+  },
+  "initialization": {
+    "method": "Actual qpos after rigid solver build, before IPC geometry build",
+    "neutral_joint_reference_modified": false,
+    "verified": true,
+    "maximum_initial_ipc_genesis_translation_error_m": 0.0
+  },
+  "shell_conversion": {
+    "scope": "Per-scene pre-initialization FEM shell coefficient conversion",
+    "calibrated": false,
+    "shear_stiffness_n_per_m": 5.0,
+    "thickness_semantics": "IPC one-sided radius r; full thickness h=2r",
+    "entities": [
+      {
+        "entity_index": 0,
+        "environment": 0,
+        "previous_shear_coefficient": 153846.15384615384,
+        "new_shear_coefficient": 5.0,
+        "stretch_coefficient": 263.73626373626377,
+        "full_shell_thickness_m": 0.0006,
+        "native_rest_mass_kg": 0.14712849050652801
+      }
+    ]
+  },
+  "initial_handle_proximity": {
+    "left": {
+      "near_vertices": 15,
+      "nearest_m": 0.007403909928402934
+    },
+    "right": {
+      "near_vertices": 15,
+      "nearest_m": 0.007757059757413379
+    }
+  },
+  "spread_handle_proximity": {
+    "left": {
+      "near_vertices": 15,
+      "nearest_m": 0.008852177781933063
+    },
+    "right": {
+      "near_vertices": 14,
+      "nearest_m": 0.009014424173090731
+    }
+  },
+  "error": "Stopped after user clarified a two-panel flat-bottom sewn bag; this box/gusset geometry is not the requested design.",
+  "simulated_seconds": 3.659999999999966,
+  "wall_seconds": 125.39994085700164,
+  "events": [
+    {
+      "phase": "close_both_handles",
+      "start": 0.0,
+      "duration": 0.2
+    },
+    {
+      "phase": "drape_under_gravity",
+      "start": 0.20000000000000004,
+      "duration": 0.6
+    },
+    {
+      "phase": "spread_bag",
+      "start": 0.8000000000000005,
+      "duration": 2.505
+    },
+    {
+      "phase": "release_right_handle",
+      "start": 3.3099999999999734,
+      "duration": 0.4
+    }
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "kind": "independent_full28_release_sequence_review",
+  "diagnostic_checks_passed": true,
+  "checks": {
+    "reviewed_runner_3454_and_manifest": true,
+    "actual_original_finite_force_18252N_zero_close_target": true,
+    "admissible_actual_capture_before_intent": true,
+    "complete_fixed_step_release_joint_and_guard_rows": true,
+    "right_hold_required_at_endpoint_then_intentionally_disabled": true,
+    "finite_native_joint_force_and_soft_records": true,
+    "saved_motor_forces_within_unchanged_finite_limit": true,
+    "actual_fingers_reached_open_endpoint": true,
+    "right_finger_contact_vanished_before_failure": true,
+    "native_failed_soft_gate_not_grip_or_wrench_gate": true,
+    "withdrawal_and_settle_not_executed": true,
+    "existing_auditor_did_not_pass_incomplete_task": true,
+    "all_reviewed_evidence_unchanged": true
+  },
+  "physical_task_success": false,
+  "actual_run": {
+    "status": "failed",
+    "error": "GateFailure: Teddy element excessively compressed or inverted: volume ratio 0.0167",
+    "failure_time_s": 48.295000000006254,
+    "release_start_s": 47.795000000006,
+    "release_duration_s": 0.5,
+    "integrated_release_steps": 100,
+    "release_phase_completed": false,
+    "failure_scope": "Final release integration step was recorded, then original J guard raised before the normal release endpoint capture/return; withdrawal and settle were not executed."
+  },
+  "existing_gravity_audit": {
+    "path": "independent-gravity-execution-review.json",
+    "sha256": "dffbb9baaa7aee83420a760347bfc6e2644437977dbc403cf46eeaf30573e06d",
+    "status": "incomplete",
+    "passed": false,
+    "passed_prefix_checks": 28,
+    "incomplete_evidence": [
+      "No withdrawal curve archived"
+    ],
+    "scope": "The existing auditor returns at missing withdrawal archive. It certifies listed executed-prefix checks, not final physics, final containment, or all later auditor sections."
+  },
+  "admissible_release_containment": {
+    "mouth_projected_area_m2": 0.030861523612377584,
+    "mouth_projected_crossings": 0,
+    "mouth_projected_dimensions_m": [
+      0.39877268385822073,
+      0.12097481803201487
+    ],
+    "mouth_nonplanarity_max_m": 0.02415498844778791,
+    "virtual_closed_body_valid": true,
+    "bear_vertex_inside_fraction": 0.8103448275862069,
+    "bear_center_of_mass_m": [
+      -0.14349342248278163,
+      0.10523696560300876,
+      1.0202808640875765
+    ],
+    "bear_center_of_mass_inside": true,
+    "all_bear_vertices_inside": false
+  },
+  "source_sequence": {
+    "runner_sha256": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "motor_force_cap_per_finger_n": 1.8252,
+    "command_start_per_finger_m": 0.0,
+    "command_end_per_finger_m": 0.04,
+    "interpolation": "0.5 s minimum-jerk position and analytic velocity feed-forward; both arm command positions held constant",
+    "minimum_jerk_target_at_02s_m": 0.012697600000000395,
+    "actual_start_per_finger_m": [
+      0.018860995915382428,
+      0.018860152163278097
+    ],
+    "minimum_actual_positions_m": [
+      0.01871681863540495,
+      0.018715991216465548
+    ],
+    "minimum_actual_position_times_s": [
+      47.95500000000608,
+      47.95500000000608
+    ],
+    "actual_final_per_finger_m": [
+      0.04000860258396066,
+      0.04000859308234574
+    ],
+    "interpretation": "The historical closed motor target is zero even though actual fingers surround the bear at about18.86mm. The release ramp therefore initially continues closing and only later opens. This is source-consistent existing behavior, not proof of a cause for the later local J failure."
+  },
+  "first_both_opening_reactions_at_most_01N": {
+    "time_s": 48.07500000000614,
+    "elapsed_s": 0.28000000000014325,
+    "remains_true_through_last_row": true
+  },
+  "first_both_contact_force_norms_at_most_1uN": {
+    "time_s": 48.080000000006144,
+    "elapsed_s": 0.2850000000001458,
+    "remains_true_through_last_row": true
+  },
+  "selected_release_rows": [
+    {
+      "time_s": 47.795000000006,
+      "elapsed_release_s": 0.0,
+      "source_reconstructed_motor_target_per_finger_m": 0.0,
+      "actual_right_finger_positions_m": [
+        0.018860995915382428,
+        0.018860152163278097
+      ],
+      "nominal_joint_separation_m": 0.037721148078660525,
+      "right_opening_reactions_n": [
+        1.8069532136722388,
+        1.788265557225582
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.8372496063842751,
+        1.833587417449313
+      ],
+      "net_force_n": 0.3888556676385635,
+      "tcp_torque_nm": 0.024602266076925297,
+      "minimum_tetra_volume_ratio": 0.3264184584997177,
+      "right_two_sided_contact_required": true
+    },
+    {
+      "time_s": 47.845000000006024,
+      "elapsed_release_s": 0.05000000000002558,
+      "source_reconstructed_motor_target_per_finger_m": 0.00034240000000049724,
+      "actual_right_finger_positions_m": [
+        0.01881882480660801,
+        0.018817916336892535
+      ],
+      "nominal_joint_separation_m": 0.037636741143500546,
+      "right_opening_reactions_n": [
+        1.8198910844768141,
+        1.8028977404964959
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.850253320316734,
+        1.8479396685930551
+      ],
+      "net_force_n": 0.3928534672804421,
+      "tcp_torque_nm": 0.024136408573178364,
+      "minimum_tetra_volume_ratio": 0.32385733537666467,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 47.89500000000605,
+      "elapsed_release_s": 0.10000000000005116,
+      "source_reconstructed_motor_target_per_finger_m": 0.0023168000000031433,
+      "actual_right_finger_positions_m": [
+        0.018754506435312415,
+        0.018753714408078326
+      ],
+      "nominal_joint_separation_m": 0.03750822084339074,
+      "right_opening_reactions_n": [
+        1.8431646308290823,
+        1.8283557265944648
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.8731330099631927,
+        1.8723666642027745
+      ],
+      "net_force_n": 0.39251054393492113,
+      "tcp_torque_nm": 0.02377597529142932,
+      "minimum_tetra_volume_ratio": 0.31793052684558026,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 47.945000000006075,
+      "elapsed_release_s": 0.15000000000007674,
+      "source_reconstructed_motor_target_per_finger_m": 0.006523200000008123,
+      "actual_right_finger_positions_m": [
+        0.018717946241077536,
+        0.01871711797073062
+      ],
+      "nominal_joint_separation_m": 0.03743506421180816,
+      "right_opening_reactions_n": [
+        1.8582935447649254,
+        1.841913100716009
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.888100015637234,
+        1.8858901501120968
+      ],
+      "net_force_n": 0.3977813430026827,
+      "tcp_torque_nm": 0.023414099386339014,
+      "minimum_tetra_volume_ratio": 0.31460364258670753,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 47.9950000000061,
+      "elapsed_release_s": 0.20000000000010232,
+      "source_reconstructed_motor_target_per_finger_m": 0.012697600000014143,
+      "actual_right_finger_positions_m": [
+        0.01873282705609696,
+        0.01873190309828788
+      ],
+      "nominal_joint_separation_m": 0.03746473015438484,
+      "right_opening_reactions_n": [
+        1.8519238357595875,
+        1.833753787645797
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.8818275092545185,
+        1.8778523556007125
+      ],
+      "net_force_n": 0.3995166288070576,
+      "tcp_torque_nm": 0.02353622264374807,
+      "minimum_tetra_volume_ratio": 0.31755908105702,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.04500000000613,
+      "elapsed_release_s": 0.2500000000001279,
+      "source_reconstructed_motor_target_per_finger_m": 0.020000000000019186,
+      "actual_right_finger_positions_m": [
+        0.020949389335133406,
+        0.02094805143708321
+      ],
+      "nominal_joint_separation_m": 0.04189744077221662,
+      "right_opening_reactions_n": [
+        1.1875944208486087,
+        1.1583357895611552
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.2229988697216672,
+        1.2256008854821612
+      ],
+      "net_force_n": 0.4049486590049133,
+      "tcp_torque_nm": 0.024832154044375908,
+      "minimum_tetra_volume_ratio": 0.5028134793443699,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.07500000000614,
+      "elapsed_release_s": 0.28000000000014325,
+      "source_reconstructed_motor_target_per_finger_m": 0.024456986624020877,
+      "actual_right_finger_positions_m": [
+        0.025114105232035062,
+        0.02511357754330226
+      ],
+      "nominal_joint_separation_m": 0.05022768277533732,
+      "right_opening_reactions_n": [
+        0.005519964691736384,
+        0.009068449450366046
+      ],
+      "right_finger_contact_force_norms_n": [
+        0.08086425477200661,
+        0.10568132904344373
+      ],
+      "net_force_n": 0.07391601487107728,
+      "tcp_torque_nm": 0.02308496485536072,
+      "minimum_tetra_volume_ratio": 0.9179986472624159,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.080000000006144,
+      "elapsed_release_s": 0.2850000000001458,
+      "source_reconstructed_motor_target_per_finger_m": 0.02518180336802103,
+      "actual_right_finger_positions_m": [
+        0.02584619566544725,
+        0.02584579038242461
+      ],
+      "nominal_joint_separation_m": 0.051691986047871855,
+      "right_opening_reactions_n": [
+        -1.2032767892251238e-10,
+        -1.193921724040997e-10
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.203341174113587e-10,
+        1.193979160251438e-10
+      ],
+      "net_force_n": 0.2027839838241987,
+      "tcp_torque_nm": 0.022155197769810658,
+      "minimum_tetra_volume_ratio": 0.9160771158552234,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.09500000000615,
+      "elapsed_release_s": 0.3000000000001535,
+      "source_reconstructed_motor_target_per_finger_m": 0.027302400000021234,
+      "actual_right_finger_positions_m": [
+        0.027969205055910083,
+        0.027969019176115172
+      ],
+      "nominal_joint_separation_m": 0.055938224232025255,
+      "right_opening_reactions_n": [
+        1.4342712299496987e-12,
+        -3.0709234310050124e-14
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.4895291096512085e-12,
+        3.4566803806707747e-14
+      ],
+      "net_force_n": 0.19797513290626256,
+      "tcp_torque_nm": 0.021704039171516063,
+      "minimum_tetra_volume_ratio": 0.9090415980515191,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.14500000000618,
+      "elapsed_release_s": 0.35000000000017906,
+      "source_reconstructed_motor_target_per_finger_m": 0.033476800000018944,
+      "actual_right_finger_positions_m": [
+        0.03403130091178137,
+        0.0340312823278242
+      ],
+      "nominal_joint_separation_m": 0.06806258323960557,
+      "right_opening_reactions_n": [
+        -1.2546680615468255e-13,
+        9.015941703481758e-14
+      ],
+      "right_finger_contact_force_norms_n": [
+        3.9043203026039234e-13,
+        4.009422857212055e-13
+      ],
+      "net_force_n": 0.17610345491903878,
+      "tcp_torque_nm": 0.015639429973053374,
+      "minimum_tetra_volume_ratio": 0.9061446665711009,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.1950000000062,
+      "elapsed_release_s": 0.40000000000020464,
+      "source_reconstructed_motor_target_per_finger_m": 0.03768320000001255,
+      "actual_right_finger_positions_m": [
+        0.03803721976053016,
+        0.038037225335354426
+      ],
+      "nominal_joint_separation_m": 0.07607444509588458,
+      "right_opening_reactions_n": [
+        4.498239490399424e-14,
+        9.022552503179684e-14
+      ],
+      "right_finger_contact_force_norms_n": [
+        3.701855649105943e-13,
+        4.0086393325973897e-13
+      ],
+      "net_force_n": 0.17780178339048466,
+      "tcp_torque_nm": 0.019436477248664295,
+      "minimum_tetra_volume_ratio": 0.9130899213562622,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.24500000000623,
+      "elapsed_release_s": 0.4500000000002302,
+      "source_reconstructed_motor_target_per_finger_m": 0.039657600000004505,
+      "actual_right_finger_positions_m": [
+        0.03980274248978072,
+        0.039802743345201945
+      ],
+      "nominal_joint_separation_m": 0.07960548583498267,
+      "right_opening_reactions_n": [
+        -2.2147409104385596e-13,
+        -1.641893306092729e-13
+      ],
+      "right_finger_contact_force_norms_n": [
+        2.2850208885027206e-13,
+        1.4846903862668125e-12
+      ],
+      "net_force_n": 0.19793380881107342,
+      "tcp_torque_nm": 0.02162524649569815,
+      "minimum_tetra_volume_ratio": 0.8970632397033063,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.29000000000625,
+      "elapsed_release_s": 0.49500000000025324,
+      "source_reconstructed_motor_target_per_finger_m": 0.03999960597600009,
+      "actual_right_finger_positions_m": [
+        0.040011007175639664,
+        0.04001099865408036
+      ],
+      "nominal_joint_separation_m": 0.08002200582972002,
+      "right_opening_reactions_n": [
+        2.1644688088065234e-13,
+        1.428806303271921e-13
+      ],
+      "right_finger_contact_force_norms_n": [
+        3.9799912724534186e-13,
+        1.1147800071990012e-12
+      ],
+      "net_force_n": 0.21645063649330265,
+      "tcp_torque_nm": 0.012499787124342993,
+      "minimum_tetra_volume_ratio": 0.08904085257328449,
+      "right_two_sided_contact_required": false
+    },
+    {
+      "time_s": 48.295000000006254,
+      "elapsed_release_s": 0.5000000000002558,
+      "source_reconstructed_motor_target_per_finger_m": 0.04,
+      "actual_right_finger_positions_m": [
+        0.04000860258396066,
+        0.04000859308234574
+      ],
+      "nominal_joint_separation_m": 0.08001719566630641,
+      "right_opening_reactions_n": [
+        -5.333980083846e-13,
+        1.3965268063012804e-13
+      ],
+      "right_finger_contact_force_norms_n": [
+        1.1647365306779965e-12,
+        1.1126397669849943e-12
+      ],
+      "net_force_n": 0.22247128601047902,
+      "tcp_torque_nm": 0.013057773257276436,
+      "minimum_tetra_volume_ratio": 0.016728643251805,
+      "right_two_sided_contact_required": false
+    }
+  ],
+  "sampled_motor_control_forces": [
+    {
+      "time_s": 47.795000000006,
+      "actual_motor_control_force_n": [
+        -1.8252,
+        -1.8252
+      ],
+      "actual_finger_positions_m": [
+        0.018860995915382428,
+        0.018860152163278097
+      ]
+    },
+    {
+      "time_s": 47.845000000006024,
+      "actual_motor_control_force_n": [
+        -1.8252,
+        -1.8252
+      ],
+      "actual_finger_positions_m": [
+        0.01881882480660801,
+        0.018817916336892535
+      ]
+    },
+    {
+      "time_s": 47.89500000000605,
+      "actual_motor_control_force_n": [
+        -1.8252,
+        -1.8252
+      ],
+      "actual_finger_positions_m": [
+        0.018754506435312415,
+        0.018753714408078326
+      ]
+    },
+    {
+      "time_s": 47.945000000006075,
+      "actual_motor_control_force_n": [
+        -1.8252,
+        -1.8252
+      ],
+      "actual_finger_positions_m": [
+        0.018717946241077536,
+        0.01871711797073062
+      ]
+    },
+    {
+      "time_s": 47.9950000000061,
+      "actual_motor_control_force_n": [
+        -1.8252,
+        -1.8252
+      ],
+      "actual_finger_positions_m": [
+        0.01873282705609696,
+        0.01873190309828788
+      ]
+    },
+    {
+      "time_s": 48.04500000000613,
+      "actual_motor_control_force_n": [
+        1.2889598403335434,
+        1.3007746469536876
+      ],
+      "actual_finger_positions_m": [
+        0.020949389335133406,
+        0.02094805143708321
+      ]
+    },
+    {
+      "time_s": 48.09500000000615,
+      "actual_motor_control_force_n": [
+        -1.8252,
+        -1.8252
+      ],
+      "actual_finger_positions_m": [
+        0.027969205055910083,
+        0.027969019176115172
+      ]
+    },
+    {
+      "time_s": 48.14500000000618,
+      "actual_motor_control_force_n": [
+        -1.8252,
+        -1.8252
+      ],
+      "actual_finger_positions_m": [
+        0.03403130091178137,
+        0.0340312823278242
+      ]
+    },
+    {
+      "time_s": 48.1950000000062,
+      "actual_motor_control_force_n": [
+        -1.8252,
+        -1.8252
+      ],
+      "actual_finger_positions_m": [
+        0.03803721976053016,
+        0.038037225335354426
+      ]
+    },
+    {
+      "time_s": 48.24500000000623,
+      "actual_motor_control_force_n": [
+        -0.7611266139421653,
+        -0.7611033691383294
+      ],
+      "actual_finger_positions_m": [
+        0.03980274248978072,
+        0.039802743345201945
+      ]
+    }
+  ],
+  "release_metrics": {
+    "minimum_J": 0.016728643251805,
+    "maximum_cloth_edge_ratio": 1.0417772481350887,
+    "maximum_table_penetration_m": 0.0,
+    "maximum_right_net_force_n": 0.4049486590049133,
+    "maximum_right_TCP_torque_nm": 0.025025508452994897,
+    "first_J_failure_time_s": 48.295000000006254,
+    "last_complete_geometry_time_s": 48.24500000000623,
+    "final_guard_finger_force_norms_n": [
+      1.1647365306779965e-12,
+      1.1126397669849943e-12
+    ]
+  },
+  "input_sha256": {
+    "report.json": "7dac23038eba6638fee3b95ca932289b7afe7898dafec4463f0bc1a471312998",
+    "events.json": "b3ef441b5d9c922e14cce71a44e43f667ad449a70f0cf1eac39f305cd0c8fbdb",
+    "config.json": "87c73321ad0389c8f40f536a6b8f41fd7ee933a4aeb949ed45b4a5c891d8f31e",
+    "input_sha256.json": "f81892f3ff4c6669d4c66c9bd7e57c2f0ab087a649d56f325f79f65d9055733b",
+    "gravity_release_actual_review.json": "8f2bfabbcc83ea06bbccfc65c04e88c94fbbf50a29bc6cd49ec3a5bd0de09c2d",
+    "independent-gravity-execution-review.json": "dffbb9baaa7aee83420a760347bfc6e2644437977dbc403cf46eeaf30573e06d",
+    "joint_trace.npy": "1578c37174e0e76930eba1c7457ef3693c7e980f1327a6640ea488d8242e44dd",
+    "soft_metrics.npy": "ed66a081e1ad02f1dff9c3bea73be748ab049358a047b3a0b89e974517d1a4c6",
+    "states.npz": "7b44fc8eff042e56a595e86d6edaa9217c93dc2ed00b80b3bb95ad6277c44033",
+    "insert_teddy.npz": "547ceca1b8eb7b8cfe20ed571b2c3859db56092a24e1eb13810e8628f752cb64",
+    "failed_soft_state.npz": "60fbb5defab3b9df7bea29eeb91e0ef6b8498424712ac4deab62be08b82ab9ab",
+    "contact_guard_trace.json": "0a98192b611b45824ede60063ea81c703ea2bc6aed05e927d01c11b5bacf78d2",
+    "source/run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31"
+  },
+  "limitations": [
+    "Finger displacement sum is nominal joint separation, not an exact deformed pad-to-pad geometric distance.",
+    "Command sequence is reconstructed from pinned source and recorded event; there is no separate per-step target log. Actual positions and coupling reactions are observed at5ms; motor control force is saved with complete geometry approximately every50ms.",
+    "A negative PD force while fingers move outward can be braking; after48.080s the measured finger coupling force remains below1microN.",
+    "The terminal local compression occurs after fingers have unloaded. Its contact-object/tetra geometry cause is outside this bounded sequencing review.",
+    "No native stepping, planning, source/config/asset/default edit, or final-success assertion."
+  ]
+}

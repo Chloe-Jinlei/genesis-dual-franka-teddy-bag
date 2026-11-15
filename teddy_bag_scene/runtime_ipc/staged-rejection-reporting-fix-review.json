@@ -1,0 +1,231 @@
+{
+  "kind": "staged_rejection_reporting_only_fix_review",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "source_sha256": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b",
+  "prior_source_sha256": "cc8b6885c4969246d87ad8d3fbde3a2f290833ef8991a57f1bad5b2949d1c68f",
+  "source_diff": "--- full20 frozen source\n+++ live reporting fix\n@@ -482,7 +482,7 @@\n             center_delta_override=delta)\n         if first is None: first=center\n         attempt=dict(index=index,center_offset_xy_m=delta,center_status=center[\"status\"],\n-            center_rejections=center[\"report\"][\"rejections\"],physical_success=False)\n+            center_rejections=list(center[\"report\"][\"rejections\"]),physical_success=False)\n         attempts.append(attempt)\n         if center[\"status\"]!=\"candidate\": continue\n         stage=center[\"stage\"]\n@@ -498,7 +498,7 @@\n         hypothetical[\"time\"]=np.asarray(float(state[\"time\"])+np.ceil(stage[\"duration_s\"]/dt)*dt)\n         remainder=_plan_staged_contact_single(rest,hypothetical,config,phase=\"insert\",previous=center)\n         attempt.update(frozen_remainder_status=remainder[\"status\"],\n-            frozen_remainder_rejections=remainder[\"report\"][\"rejections\"],\n+            frozen_remainder_rejections=list(remainder[\"report\"][\"rejections\"]),\n             frozen_remainder_is_hypothesis_not_actual_observation=True,\n             hypothetical_time_s=float(hypothetical[\"time\"]))\n         if remainder[\"status\"]!=\"candidate\": continue\n",
+  "checks": {
+    "source_exactly_two_list_copies": true,
+    "source_and_frozen_inputs_unchanged_during_replay": true,
+    "input_arrays_unchanged": true,
+    "input_config_and_entry_unchanged": true,
+    "exact_only_serialized_difference_is_first_attempt_reason": true,
+    "rejected_with_no_selection": true,
+    "first_individual_center_candidate_has_no_rejections": true,
+    "original_historical_record_unmodified": true
+  },
+  "all_checks_passed": true,
+  "controlled_alias_regressions": [
+    {
+      "case": "remainder_rejected",
+      "checks": {
+        "no_selected_index": true,
+        "overall_rejected": true,
+        "all_individual_centers_have_empty_rejections": true,
+        "aggregate_reason_only_in_overall": true,
+        "remainder_source_reasons_unchanged": true,
+        "score_rejections_preserved_in_attempt": true
+      },
+      "passed": true
+    },
+    {
+      "case": "nonfinite_score",
+      "checks": {
+        "no_selected_index": true,
+        "overall_rejected": true,
+        "all_individual_centers_have_empty_rejections": true,
+        "aggregate_reason_only_in_overall": true,
+        "remainder_source_reasons_unchanged": true,
+        "score_rejections_preserved_in_attempt": true
+      },
+      "passed": true
+    }
+  ],
+  "existing_center_selection_audit_regression": {
+    "all_checks_passed": true,
+    "case_count": 45,
+    "legacy_sequence_and_budget_regressions_passed": true
+  },
+  "full20_replay": {
+    "actual_observation_time_s": 58.98500000001172,
+    "elapsed_wall_s": 60.519244863000495,
+    "output": "runs/two_panel_full_20/independent-center-reporting-fix-replay.json",
+    "sha256": "b2ed884d09efad18bdf5f0df2003091d3643caf15c9023f460b70ce404690343",
+    "status": "rejected",
+    "selected_index": null,
+    "exact_json_differences": [
+      {
+        "path": "/center_selection/attempts/0/center_rejections",
+        "before": [
+          "No predeclared center passes center and frozen remainder preflight"
+        ],
+        "after": []
+      }
+    ],
+    "attempts": [
+      {
+        "index": 0,
+        "center_offset_xy_m": [
+          -0.0165,
+          -0.0535
+        ],
+        "center_status": "candidate",
+        "center_rejections": [],
+        "physical_success": false,
+        "frozen_remainder_status": "rejected",
+        "frozen_remainder_rejections": [
+          "Whole teddy endpoint does not fit below actual lowest rim with 2 mm clearance"
+        ],
+        "frozen_remainder_is_hypothesis_not_actual_observation": true,
+        "hypothetical_time_s": 62.99500000001172
+      },
+      {
+        "index": 1,
+        "center_offset_xy_m": [
+          -0.015,
+          -0.055
+        ],
+        "center_status": "candidate",
+        "center_rejections": [],
+        "physical_success": false,
+        "frozen_remainder_status": "rejected",
+        "frozen_remainder_rejections": [
+          "Whole teddy endpoint does not fit below actual lowest rim with 2 mm clearance"
+        ],
+        "frozen_remainder_is_hypothesis_not_actual_observation": true,
+        "hypothetical_time_s": 62.99500000001172
+      },
+      {
+        "index": 2,
+        "center_offset_xy_m": [
+          -0.02,
+          -0.05
+        ],
+        "center_status": "candidate",
+        "center_rejections": [],
+        "physical_success": false,
+        "frozen_remainder_status": "rejected",
+        "frozen_remainder_rejections": [
+          "Whole teddy endpoint does not fit below actual lowest rim with 2 mm clearance"
+        ],
+        "frozen_remainder_is_hypothesis_not_actual_observation": true,
+        "hypothetical_time_s": 62.99500000001172
+      },
+      {
+        "index": 3,
+        "center_offset_xy_m": [
+          -0.015,
+          -0.06
+        ],
+        "center_status": "candidate",
+        "center_rejections": [],
+        "physical_success": false,
+        "frozen_remainder_status": "rejected",
+        "frozen_remainder_rejections": [
+          "Whole teddy endpoint does not fit below actual lowest rim with 2 mm clearance"
+        ],
+        "frozen_remainder_is_hypothesis_not_actual_observation": true,
+        "hypothetical_time_s": 62.99500000001172
+      },
+      {
+        "index": 4,
+        "center_offset_xy_m": [
+          -0.01,
+          -0.055
+        ],
+        "center_status": "rejected",
+        "center_rejections": [
+          "Planned COM must lie in the declared contact envelope with 2 mm margin"
+        ],
+        "physical_success": false
+      },
+      {
+        "index": 5,
+        "center_offset_xy_m": [
+          -0.015,
+          -0.045
+        ],
+        "center_status": "candidate",
+        "center_rejections": [],
+        "physical_success": false,
+        "frozen_remainder_status": "rejected",
+        "frozen_remainder_rejections": [
+          "Whole teddy endpoint does not fit below actual lowest rim with 2 mm clearance"
+        ],
+        "frozen_remainder_is_hypothesis_not_actual_observation": true,
+        "hypothetical_time_s": 62.99500000001172
+      },
+      {
+        "index": 6,
+        "center_offset_xy_m": [
+          -0.025,
+          -0.045
+        ],
+        "center_status": "candidate",
+        "center_rejections": [],
+        "physical_success": false,
+        "frozen_remainder_status": "rejected",
+        "frozen_remainder_rejections": [
+          "Whole teddy endpoint does not fit below actual lowest rim with 2 mm clearance"
+        ],
+        "frozen_remainder_is_hypothesis_not_actual_observation": true,
+        "hypothetical_time_s": 62.99500000001172
+      },
+      {
+        "index": 7,
+        "center_offset_xy_m": [
+          -0.025,
+          -0.035
+        ],
+        "center_status": "candidate",
+        "center_rejections": [],
+        "physical_success": false,
+        "frozen_remainder_status": "rejected",
+        "frozen_remainder_rejections": [
+          "Whole teddy endpoint does not fit below actual lowest rim with 2 mm clearance"
+        ],
+        "frozen_remainder_is_hypothesis_not_actual_observation": true,
+        "hypothetical_time_s": 62.99500000001172
+      }
+    ]
+  },
+  "input_sha256": {
+    "runs/two_panel_full_20/config.json": "38e226bb4a928ed9dbbd592cb2118741452d58fdf1a1f25f87c91dce10a8fd34",
+    "runs/two_panel_full_20/rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "runs/two_panel_full_20/lower_teddy_to_rim.npz": "a05a490c5491e5c348e677e5d9196335525ffa0040a8b475b2ab83da58321073",
+    "runs/two_panel_full_20/staged_contact_entry.json": "e986d27aab8078bc17a1b4a4d66182d431c714c1c1dd22d568f6f729dc6858f0",
+    "runs/two_panel_full_20/staged_contact_center.json": "4f7112f3d3d99d2e9ce0a7d37b171729e8c3b87f1cae3522c6f778e4cd4ee0f4",
+    "runs/two_panel_full_20/source/assets/bear_uniform_coarse.mtl": "f3a8a971b017025ea86cecd97cfdeb7e8693aea417e59cffa4786663a13bc18f",
+    "runs/two_panel_full_20/source/assets/bear_uniform_coarse.obj": "c8886611d884cc6ea79b5beccb075a8502f4084d94eacabc24fca37c2340af77",
+    "runs/two_panel_full_20/source/assets/cotton_canvas.png": "c1fa744e76e59d2be819db3dcc63a84724ff7bab886d9570789712bf562dcb2f",
+    "runs/two_panel_full_20/source/assets/metadata_two_panel_wide_tall_coarse.json": "717b85a19fff38ea75a0f10f8721fbce48d6c011958de8a3b6b246d7dcb0217a",
+    "runs/two_panel_full_20/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "runs/two_panel_full_20/source/assets/teddy_fur.png": "355e29a37479403425f30c734475d141313be8880f68b8c638bdb8d04cf561f8",
+    "runs/two_panel_full_20/source/assets/two_panel_bag_wide_tall_coarse.mtl": "51a06ed3a6e284c29a6cb3192bde876bb1c0f4c30e60c9d716b5935878f0f9d3",
+    "runs/two_panel_full_20/source/assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "runs/two_panel_full_20/source/assets/two_panel_bag_wide_tall_coarse.obj": "a047869313d6c5469640724eb84a412c67f71d2d0d07eb492c67880c39cff280",
+    "runs/two_panel_full_20/source/assets_builder.py": "d6adb8a187a31092b21f6edab55145291fda1ba97d221d744b8989847c1e960e",
+    "runs/two_panel_full_20/source/build_tall_bag.py": "dc57f031b1a972743eff2edb85ac85630321e848dedc579305d51de0fd4b6926",
+    "runs/two_panel_full_20/source/build_wide_tall_bag.py": "072735056b4d238622a8443f4ec6f85e1e097a041a8e2b261d1a7ab12d02349c",
+    "runs/two_panel_full_20/source/contact_grasp.py": "3ac4767bad63047309b1f18583a40c2afc3424ce944e3a85427dedc2f588c4ab",
+    "runs/two_panel_full_20/source/contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "runs/two_panel_full_20/source/contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4",
+    "runs/two_panel_full_20/source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "runs/two_panel_full_20/source/contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "runs/two_panel_full_20/source/insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "runs/two_panel_full_20/source/motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "runs/two_panel_full_20/source/physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "runs/two_panel_full_20/source/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "runs/two_panel_full_20/source/postlift_yaw.py": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c",
+    "runs/two_panel_full_20/source/remesh_bear.py": "feb5f7dccc5fa4e08a4ca02ec6ff2ad4abaa669e7a9c68869104f881d8428a20",
+    "runs/two_panel_full_20/source/run.py": "dde3320d8b13e7370d61079614e0cc6fe7029256de6bd589f48ebe16d099eb9b",
+    "runs/two_panel_full_20/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "runs/two_panel_full_20/source/staged_contact_insertion.py": "cc8b6885c4969246d87ad8d3fbde3a2f290833ef8991a57f1bad5b2949d1c68f",
+    "runs/two_panel_full_20/source/staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "runs/two_panel_full_20/source/two_panel_builder.py": "d915692a9f2ae8a6185520582e1a2db93365c9fde3d433a9c6991097a6aa4188",
+    "runs/two_panel_full_20/source/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "staged_contact_insertion.py": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b"
+  },
+  "scope": "Reporting list isolation only. Native simulation was not run; all planning gates and full20 rejection outcomes remain unchanged."
+}

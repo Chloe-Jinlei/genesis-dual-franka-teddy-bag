@@ -1,0 +1,79 @@
+{
+  "kind": "bounded_scale85_antipodal_comparison",
+  "physical_success": false,
+  "production_edits": false,
+  "native_or_GPU_execution": false,
+  "rows": [
+    {
+      "orientation": "plus15",
+      "selected_offset_xy_m": [
+        0.0,
+        0.0
+      ],
+      "original_route_gates_pass": true,
+      "minimum_left22_continuous_tet_translation_gap_m": 0.009777144695656385,
+      "minimum_sampled_rigid_gap_m": 0.021613528364839277,
+      "transport_front_strap_nearest_sample_distance_m": 0.00010943231546021283,
+      "transport_front_strap_samples_within_5mm": 27,
+      "transport_front_strap_nearest_original_bear_material_coordinate_m": [
+        -0.06207194290308837,
+        -0.14528966661399423,
+        0.04213827095342315
+      ],
+      "insert_inside_node_fraction": 0.9282758620689655,
+      "insert_outside_nodes": 104,
+      "insert_maximum_outside_node_distance_m": 0.02942806978316964,
+      "insert_COM_inside": true,
+      "insert_frozen_cloth_bear_sampled_overlap": {
+        "method": "Discrete bag vertex, edge-midpoint and triangle-centroid winding/distance samples",
+        "sample_count": 11121,
+        "near_bear_samples": 1074,
+        "inside_samples": 46,
+        "penetration_over_tolerance": 42,
+        "maximum_sampled_penetration_m": 0.01704102928521942,
+        "tolerance_m": 0.001,
+        "continuous_collision_guarantee": false
+      },
+      "evidence": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_20/independent-scaled-teddy-geometry/scale_85/candidate_body_geometry.json"
+    },
+    {
+      "orientation": "eventual_minus165",
+      "selected_offset_xy_m": [
+        0.0,
+        0.0
+      ],
+      "original_route_gates_pass": true,
+      "minimum_left22_continuous_tet_translation_gap_m": 0.006491308260125841,
+      "minimum_sampled_rigid_gap_m": 0.020522916150681903,
+      "transport_front_strap_nearest_sample_distance_m": 5.017573712684499e-05,
+      "transport_front_strap_samples_within_5mm": 63,
+      "transport_front_strap_nearest_original_bear_material_coordinate_m": [
+        -0.06033823433005167,
+        0.1548440521971015,
+        0.05529360711883968
+      ],
+      "insert_inside_node_fraction": 0.9255172413793104,
+      "insert_outside_nodes": 108,
+      "insert_maximum_outside_node_distance_m": 0.029636521797592248,
+      "insert_COM_inside": true,
+      "insert_frozen_cloth_bear_sampled_overlap": {
+        "method": "Discrete bag vertex, edge-midpoint and triangle-centroid winding/distance samples",
+        "sample_count": 11121,
+        "near_bear_samples": 1012,
+        "inside_samples": 65,
+        "penetration_over_tolerance": 53,
+        "maximum_sampled_penetration_m": 0.011058108027926238,
+        "tolerance_m": 0.001,
+        "continuous_collision_guarantee": false
+      },
+      "evidence": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_20/independent-scaled-teddy-antipodal/candidate_body_geometry.json"
+    }
+  ],
+  "recommendation": "No geometric evidence supports replacing plus15 by eventual minus165: both pass original robot/sweep gates, but the antipodal candidate reduces robot/teddy-left clearances and increases near-front-strap samples without improving point containment. Preserve current native plus15 trial and compare its fresh actual observations. No additional search conducted.",
+  "caveats": [
+    "Frozen postlift full20 bag and scaled observed bear are hypothetical. Full21 uses new native geometry/grip/contact and must be judged independently.",
+    "A 4-candidate list is passed once per orientation; helper returns the first candidate passing its original ordered search, so the antipodal case only needed its first selected offset.",
+    "Node winding proportions are not contained volume/mass fractions. Contact-overlap figures are discrete samples, not dynamic outcomes.",
+    "Both high-level and final body diagnostics use real three-dimensional body triangles and74-node open rim, never XY hull as containment."
+  ]
+}

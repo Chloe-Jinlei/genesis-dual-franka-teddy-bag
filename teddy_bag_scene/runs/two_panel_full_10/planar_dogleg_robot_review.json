@@ -1,0 +1,2164 @@
+{
+  "kind": "fixed_actual_rotation_planar_Y_then_X_dogleg_robot_geometry_diagnostic",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "candidate_authorized": false,
+  "geometry_route_only": true,
+  "observed_time_s": 29.044999999998506,
+  "input_sha256": {
+    "rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "lift_teddy.npz": "10d35bdbc6792b34112df0ff83e3e82f3c70308f43751e5efa1682f39e6c5fae",
+    "config.json": "bbf39ea24b348851bc5d753cfbd9b09727c8dfc188601d9632ee61b0a926946e"
+  },
+  "source_sha256_start": {
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "contact_insertion.py": "116cf7bd72e013e61a75824f57244d19077c6a233ed1b58039ea311457710686"
+  },
+  "actual_left_q9": [
+    -1.1579177940590315,
+    -0.9029333749457532,
+    0.9411552967648306,
+    -2.7709807298336293,
+    -0.25254700658826773,
+    3.7131241370625663,
+    1.6865305092954874,
+    0.0011221660152683974,
+    0.0011263718201036902
+  ],
+  "actual_right_q9": [
+    0.5402448713582996,
+    0.26651789151749666,
+    0.32193592656042147,
+    -0.9853430111268493,
+    -0.08815507172101285,
+    1.2393687114395504,
+    -0.7917545723377885,
+    0.030832365375489577,
+    0.030831337264300054
+  ],
+  "actual_right_tcp_m": [
+    0.349830397021566,
+    -0.2638846779296129,
+    1.369737813607271
+  ],
+  "rotation_xyzw": [
+    0.9999999556306131,
+    -1.5725301656388528e-06,
+    3.493942409453492e-05,
+    -0.00029583024817121054
+  ],
+  "paired_mean_fingers_m": {
+    "left": 0.0011242689176860438,
+    "right": 0.030831851319894816
+  },
+  "finger_pair_approximation_error_m": {
+    "left": 2.102902417646388e-06,
+    "right": 5.140555947615033e-07
+  },
+  "waypoint_tcp_m": [
+    0.349830397021566,
+    0.05758653401962627,
+    1.369737813607271
+  ],
+  "outside_tcp_m": [
+    -0.09923943862806384,
+    0.05758653401962627,
+    1.369737813607271
+  ],
+  "insert_tcp_m": [
+    -0.09923943862806384,
+    0.05758653401962627,
+    0.9546621543719613
+  ],
+  "required_rigid_clearance_m": 0.008,
+  "joint_velocity_limit_rad_s": 0.35,
+  "joint_acceleration_limit_rad_s2": 0.5,
+  "IK_samples_per_stage": 45,
+  "rigid_clearance_samples_per_stage": 101,
+  "rate_check_samples_per_stage": 501,
+  "stages": [
+    {
+      "name": "translate_Y_at_current_X",
+      "target_tcp_m": [
+        0.349830397021566,
+        0.05758653401962627,
+        1.369737813607271
+      ],
+      "start_q": {
+        "left": [
+          -1.1579177940590315,
+          -0.9029333749457532,
+          0.9411552967648306,
+          -2.7709807298336293,
+          -0.25254700658826773,
+          3.7131241370625663,
+          1.6865305092954874
+        ],
+        "right": [
+          0.5402448713582996,
+          0.26651789151749666,
+          0.32193592656042147,
+          -0.9853430111268493,
+          -0.08815507172101285,
+          1.2393687114395504,
+          -0.7917545723377885
+        ]
+      },
+      "straight_path_FK_review": {
+        "sample_count": 201,
+        "declared_start_tcp_m": [
+          0.349830397021566,
+          -0.2638846779296129,
+          1.369737813607271
+        ],
+        "declared_target_tcp_m": [
+          0.349830397021566,
+          0.05758653401962627,
+          1.369737813607271
+        ],
+        "max_position_error_m": 1.7480798012944205e-06,
+        "max_rotation_error_rad": 2.2275452765313253e-06,
+        "max_frozen_bear_point_deviation_upper_m": 2.261391591565855e-06,
+        "maximum_position_error_witness": {
+          "time_s": 0.5842062567934083,
+          "path_fraction": 0.008560000000000002,
+          "actual_tcp_m": [
+            0.34983045054419093,
+            -0.2611338842850887,
+            1.369739246457156
+          ],
+          "declared_straight_tcp_m": [
+            0.349830397021566,
+            -0.26113288435532744,
+            1.369737813607271
+          ],
+          "position_error_m": 1.7480798012944205e-06,
+          "rotation_error_rad": 2.2275452765313253e-06,
+          "frozen_bear_point_deviation_upper_m": 2.261391591565855e-06
+        },
+        "maximum_rotation_error_witness": {
+          "time_s": 0.5842062567934083,
+          "path_fraction": 0.008560000000000002,
+          "actual_tcp_m": [
+            0.34983045054419093,
+            -0.2611338842850887,
+            1.369739246457156
+          ],
+          "declared_straight_tcp_m": [
+            0.349830397021566,
+            -0.26113288435532744,
+            1.369737813607271
+          ],
+          "position_error_m": 1.7480798012944205e-06,
+          "rotation_error_rad": 2.2275452765313253e-06,
+          "frozen_bear_point_deviation_upper_m": 2.261391591565855e-06
+        },
+        "note": "201-sample interpolation diagnostic, not a continuous error certificate; expected position is declared start+(target-start)*minimum_jerk(time/duration)."
+      },
+      "duration_s": 5.842062567934083,
+      "minimum_rigid_clearance_m": 0.021843770130936187,
+      "limiting_rigid_pair": {
+        "distance": 0.021843770130936187,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ],
+        "category": "right_self",
+        "time_s": 3.2131344123637455
+      },
+      "clearance_by_category": {
+        "left_self": {
+          "distance": 0.02230317957944945,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        },
+        "left_table": {
+          "distance": 0.16099593221477013,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.0
+        },
+        "left_mounts": {
+          "distance": 0.1409959322147701,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ],
+          "time_s": 0.0
+        },
+        "right_self": {
+          "distance": 0.021843770130936187,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 3.2131344123637455
+        },
+        "right_table": {
+          "distance": 0.16099593221477002,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.05842062567934083
+        },
+        "right_mounts": {
+          "distance": 0.14099593221477003,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ],
+          "time_s": 0.05842062567934083
+        },
+        "arms": {
+          "distance": 0.2,
+          "bodies": [
+            "left_link1",
+            "right_link1"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        }
+      },
+      "analytic_joint_extrema": {
+        "left": {
+          "minimum": [
+            -1.1579177940590315,
+            -0.9029333749457532,
+            0.9411552967648306,
+            -2.7709807298336293,
+            -0.25254700658826773,
+            3.7131241370625663,
+            1.6865305092954874
+          ],
+          "maximum": [
+            -1.1579177940590315,
+            -0.9029333749457532,
+            0.9411552967648306,
+            -2.7709807298336293,
+            -0.25254700658826773,
+            3.7131241370625663,
+            1.6865305092954874
+          ],
+          "minimum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "minimum": [
+            0.4578691085447508,
+            -0.7781844629612743,
+            0.1142053756383544,
+            -2.0089353156157266,
+            -0.08815507172101285,
+            1.2345490201026263,
+            -1.0296571167231745
+          ],
+          "maximum": [
+            0.5402448713582996,
+            0.26651789151749666,
+            0.32193592656042147,
+            -0.9853430111268493,
+            0.09327872573137017,
+            1.3598634826997913,
+            -0.7917545723377885
+          ],
+          "minimum_at_fraction": [
+            0.488538163471849,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "maximum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.7869700589871224,
+            0.414533532975596,
+            0.0
+          ]
+        }
+      },
+      "exact_joint_margin_rad": {
+        "left": 0.03937586293743367,
+        "right": 0.9155430111268493
+      },
+      "sampled_max_rotation_error_rad": 2.2275452765313253e-06,
+      "sampled_peak_joint_velocity_rad_s": 0.3493013972055888,
+      "sampled_peak_joint_acceleration_rad_s2": 0.2981185026343901,
+      "end_q": {
+        "left": [
+          -1.1579177940590315,
+          -0.9029333749457532,
+          0.9411552967648306,
+          -2.7709807298336293,
+          -0.25254700658826773,
+          3.7131241370625663,
+          1.6865305092954874
+        ],
+        "right": [
+          0.4754568180474003,
+          -0.7781844629612743,
+          0.1142053756383544,
+          -2.0089353156157266,
+          0.08474667111517598,
+          1.2345490201026263,
+          -1.0296571167231745
+        ]
+      }
+    },
+    {
+      "name": "translate_X_at_final_Y",
+      "target_tcp_m": [
+        -0.09923943862806384,
+        0.05758653401962627,
+        1.369737813607271
+      ],
+      "start_q": {
+        "left": [
+          -1.1579177940590315,
+          -0.9029333749457532,
+          0.9411552967648306,
+          -2.7709807298336293,
+          -0.25254700658826773,
+          3.7131241370625663,
+          1.6865305092954874
+        ],
+        "right": [
+          0.4754568180474003,
+          -0.7781844629612743,
+          0.1142053756383544,
+          -2.0089353156157266,
+          0.08474667111517598,
+          1.2345490201026263,
+          -1.0296571167231745
+        ]
+      },
+      "straight_path_FK_review": {
+        "sample_count": 201,
+        "declared_start_tcp_m": [
+          0.349830397021566,
+          0.05758653401962627,
+          1.369737813607271
+        ],
+        "declared_target_tcp_m": [
+          -0.09923943862806384,
+          0.05758653401962627,
+          1.369737813607271
+        ],
+        "max_position_error_m": 9.814080593588474e-07,
+        "max_rotation_error_rad": 2.1026377624937986e-06,
+        "max_frozen_bear_point_deviation_upper_m": 1.465936371994858e-06,
+        "maximum_position_error_witness": {
+          "time_s": 4.803124322075891,
+          "path_fraction": 0.9914400000000017,
+          "actual_tcp_m": [
+            -0.09539546480429391,
+            0.05758644047215211,
+            1.3697387884501129
+          ],
+          "declared_straight_tcp_m": [
+            -0.09539540083490375,
+            0.05758653401962627,
+            1.369737813607271
+          ],
+          "position_error_m": 9.814080593588474e-07,
+          "rotation_error_rad": 2.1026377624937986e-06,
+          "frozen_bear_point_deviation_upper_m": 1.465936371994858e-06
+        },
+        "maximum_rotation_error_witness": {
+          "time_s": 4.803124322075891,
+          "path_fraction": 0.9914400000000017,
+          "actual_tcp_m": [
+            -0.09539546480429391,
+            0.05758644047215211,
+            1.3697387884501129
+          ],
+          "declared_straight_tcp_m": [
+            -0.09539540083490375,
+            0.05758653401962627,
+            1.369737813607271
+          ],
+          "position_error_m": 9.814080593588474e-07,
+          "rotation_error_rad": 2.1026377624937986e-06,
+          "frozen_bear_point_deviation_upper_m": 1.465936371994858e-06
+        },
+        "note": "201-sample interpolation diagnostic, not a continuous error certificate; expected position is declared start+(target-start)*minimum_jerk(time/duration)."
+      },
+      "duration_s": 5.3368048023065455,
+      "minimum_rigid_clearance_m": 0.021654524223522518,
+      "limiting_rigid_pair": {
+        "distance": 0.021654524223522518,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ],
+        "category": "right_self",
+        "time_s": 3.735763361614582
+      },
+      "clearance_by_category": {
+        "left_self": {
+          "distance": 0.02230317957944945,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        },
+        "left_table": {
+          "distance": 0.16099593221477013,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.0
+        },
+        "left_mounts": {
+          "distance": 0.1409959322147701,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ],
+          "time_s": 0.0
+        },
+        "right_self": {
+          "distance": 0.021654524223522518,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 3.735763361614582
+        },
+        "right_table": {
+          "distance": 0.16099593221477002,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 1.9746177768534219
+        },
+        "right_mounts": {
+          "distance": 0.14099593221477,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ],
+          "time_s": 0.16010414406919637
+        },
+        "arms": {
+          "distance": 0.11372461050218981,
+          "bodies": [
+            "left_hand",
+            "right_left_finger"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 5.3368048023065455
+        }
+      },
+      "analytic_joint_extrema": {
+        "left": {
+          "minimum": [
+            -1.1579177940590315,
+            -0.9029333749457532,
+            0.9411552967648306,
+            -2.7709807298336293,
+            -0.25254700658826773,
+            3.7131241370625663,
+            1.6865305092954874
+          ],
+          "maximum": [
+            -1.1579177940590315,
+            -0.9029333749457532,
+            0.9411552967648306,
+            -2.7709807298336293,
+            -0.25254700658826773,
+            3.7131241370625663,
+            1.6865305092954874
+          ],
+          "minimum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "minimum": [
+            0.27403136060757716,
+            -0.7781844629612743,
+            -0.565599883601469,
+            -2.0089353156157266,
+            -0.125614778954034,
+            1.2345490201026263,
+            -1.8900764249859257
+          ],
+          "maximum": [
+            0.4754568180474003,
+            0.09787105902063913,
+            0.1142053756383544,
+            -1.225847027596001,
+            0.08474667111517598,
+            1.3561656771209922,
+            -1.0296571167231745
+          ],
+          "minimum_at_fraction": [
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.6114499599107229,
+            0.0,
+            1.0
+          ],
+          "maximum_at_fraction": [
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.7724872772779572,
+            0.0
+          ]
+        }
+      },
+      "exact_joint_margin_rad": {
+        "left": 0.03937586293743367,
+        "right": 0.9846155370387256
+      },
+      "sampled_max_rotation_error_rad": 2.1026377624937986e-06,
+      "sampled_peak_joint_velocity_rad_s": 0.34930139720558884,
+      "sampled_peak_joint_acceleration_rad_s2": 0.31167955292748406,
+      "end_q": {
+        "left": [
+          -1.1579177940590315,
+          -0.9029333749457532,
+          0.9411552967648306,
+          -2.7709807298336293,
+          -0.25254700658826773,
+          3.7131241370625663,
+          1.6865305092954874
+        ],
+        "right": [
+          0.27403136060757716,
+          0.09787105902063913,
+          -0.565599883601469,
+          -1.225847027596001,
+          0.05372794390315475,
+          1.3085920539491682,
+          -1.8900764249859257
+        ]
+      }
+    },
+    {
+      "name": "insert_diagnostic",
+      "target_tcp_m": [
+        -0.09923943862806384,
+        0.05758653401962627,
+        0.9546621543719613
+      ],
+      "start_q": {
+        "left": [
+          -1.1579177940590315,
+          -0.9029333749457532,
+          0.9411552967648306,
+          -2.7709807298336293,
+          -0.25254700658826773,
+          3.7131241370625663,
+          1.6865305092954874
+        ],
+        "right": [
+          0.27403136060757716,
+          0.09787105902063913,
+          -0.565599883601469,
+          -1.225847027596001,
+          0.05372794390315475,
+          1.3085920539491682,
+          -1.8900764249859257
+        ]
+      },
+      "straight_path_FK_review": {
+        "sample_count": 201,
+        "declared_start_tcp_m": [
+          -0.09923943862806384,
+          0.05758653401962627,
+          1.369737813607271
+        ],
+        "declared_target_tcp_m": [
+          -0.09923943862806384,
+          0.05758653401962627,
+          0.9546621543719613
+        ],
+        "max_position_error_m": 1.8229551575754429e-06,
+        "max_rotation_error_rad": 5.327130921412911e-06,
+        "max_frozen_bear_point_deviation_upper_m": 3.050530255189695e-06,
+        "maximum_position_error_witness": {
+          "time_s": 3.788900893810568,
+          "path_fraction": 0.16975767126875,
+          "actual_tcp_m": [
+            -0.0992403359288056,
+            0.05758698686035955,
+            1.2992740154558504
+          ],
+          "declared_straight_tcp_m": [
+            -0.09923943862806384,
+            0.05758653401962627,
+            1.2992755362951436
+          ],
+          "position_error_m": 1.8229551575754429e-06,
+          "rotation_error_rad": 5.327130921412911e-06,
+          "frozen_bear_point_deviation_upper_m": 3.050530255189695e-06
+        },
+        "maximum_rotation_error_witness": {
+          "time_s": 3.788900893810568,
+          "path_fraction": 0.16975767126875,
+          "actual_tcp_m": [
+            -0.0992403359288056,
+            0.05758698686035955,
+            1.2992740154558504
+          ],
+          "declared_straight_tcp_m": [
+            -0.09923943862806384,
+            0.05758653401962627,
+            1.2992755362951436
+          ],
+          "position_error_m": 1.8229551575754429e-06,
+          "rotation_error_rad": 5.327130921412911e-06,
+          "frozen_bear_point_deviation_upper_m": 3.050530255189695e-06
+        },
+        "note": "201-sample interpolation diagnostic, not a continuous error certificate; expected position is declared start+(target-start)*minimum_jerk(time/duration)."
+      },
+      "duration_s": 12.422625881346125,
+      "minimum_rigid_clearance_m": 0.021826816343426834,
+      "limiting_rigid_pair": {
+        "distance": 0.021826816343426834,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ],
+        "category": "right_self",
+        "time_s": 2.111846399828841
+      },
+      "clearance_by_category": {
+        "left_self": {
+          "distance": 0.02230317957944945,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        },
+        "left_table": {
+          "distance": 0.16099593221477013,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.0
+        },
+        "left_mounts": {
+          "distance": 0.1409959322147701,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ],
+          "time_s": 0.0
+        },
+        "right_self": {
+          "distance": 0.021826816343426834,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 2.111846399828841
+        },
+        "right_table": {
+          "distance": 0.16099593221477002,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 5.714407905419217
+        },
+        "right_mounts": {
+          "distance": 0.14099593221476997,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ],
+          "time_s": 9.068516893382672
+        },
+        "arms": {
+          "distance": 0.03781149412797475,
+          "bodies": [
+            "left_hand",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 6.335539199486524
+        }
+      },
+      "analytic_joint_extrema": {
+        "left": {
+          "minimum": [
+            -1.1579177940590315,
+            -0.9029333749457532,
+            0.9411552967648306,
+            -2.7709807298336293,
+            -0.25254700658826773,
+            3.7131241370625663,
+            1.6865305092954874
+          ],
+          "maximum": [
+            -1.1579177940590315,
+            -0.9029333749457532,
+            0.9411552967648306,
+            -2.7709807298336293,
+            -0.25254700658826773,
+            3.7131241370625663,
+            1.6865305092954874
+          ],
+          "minimum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "minimum": [
+            0.27403136060757716,
+            -0.061106523002730395,
+            -0.565599883601469,
+            -2.214480408690259,
+            -0.03165259423063128,
+            1.3085920539491682,
+            -1.9599983459092853
+          ],
+          "maximum": [
+            0.3176463585682796,
+            0.2041289861668482,
+            -0.5139251460732266,
+            -1.225847027596001,
+            0.1492497580377121,
+            2.3852745205741885,
+            -1.831622733988749
+          ],
+          "minimum_at_fraction": [
+            0.0,
+            0.404542211425622,
+            0.0,
+            1.0,
+            0.42713783385290377,
+            0.0,
+            1.0
+          ],
+          "maximum_at_fraction": [
+            0.529516647060291,
+            1.0,
+            0.3404247622339621,
+            0.0,
+            1.0,
+            1.0,
+            0.42652625380036513
+          ]
+        }
+      },
+      "exact_joint_margin_rad": {
+        "left": 0.03937586293743367,
+        "right": 0.8573195913097411
+      },
+      "sampled_max_rotation_error_rad": 5.073447052426165e-06,
+      "sampled_peak_joint_velocity_rad_s": 0.17100448101714563,
+      "sampled_peak_joint_acceleration_rad_s2": 0.4980059840399039,
+      "end_q": {
+        "left": [
+          -1.1579177940590315,
+          -0.9029333749457532,
+          0.9411552967648306,
+          -2.7709807298336293,
+          -0.25254700658826773,
+          3.7131241370625663,
+          1.6865305092954874
+        ],
+        "right": [
+          0.2847269988197979,
+          0.2041289861668482,
+          -0.5302578317374413,
+          -2.214480408690259,
+          0.1492497580377121,
+          2.3852745205741885,
+          -1.9599983459092853
+        ]
+      }
+    }
+  ],
+  "status": "geometry_route_passed",
+  "first_failure": null,
+  "limitations": [
+    "Rigid clearance is sampled at 101 times per stage; continuous cubic joint extrema checked analytically.",
+    "This report does not certify frozen teddy sweep during either XY leg; parent audits that independently.",
+    "No soft bag material clearance, deformable passage, force/torque, grasp retention or physical success is certified.",
+    "Planner paired-finger collision geometry uses each hand measured mean; actual pair approximation error is recorded."
+  ],
+  "generating_script": "/tmp/full10_planar_dogleg_robot_review.py",
+  "source_sha256_finish": {
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "contact_insertion.py": "116cf7bd72e013e61a75824f57244d19077c6a233ed1b58039ea311457710686"
+  },
+  "input_state_arrays_unchanged": true,
+  "release": {
+    "samples": [
+      {
+        "fraction": 0.0,
+        "right_half_opening_m": 0.030831851319894816,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.1,
+        "right_half_opening_m": 0.03174866618790534,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.2,
+        "right_half_opening_m": 0.03266548105591585,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.30000000000000004,
+        "right_half_opening_m": 0.03358229592392637,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.4,
+        "right_half_opening_m": 0.03449911079193689,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.5,
+        "right_half_opening_m": 0.03541592565994741,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.6000000000000001,
+        "right_half_opening_m": 0.03633274052795793,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.7000000000000001,
+        "right_half_opening_m": 0.03724955539596845,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.8,
+        "right_half_opening_m": 0.03816637026397896,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 0.9,
+        "right_half_opening_m": 0.03908318513198949,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "fraction": 1.0,
+        "right_half_opening_m": 0.04,
+        "minimum_rigid_clearance_m": 0.02230317957944945,
+        "clearances": {
+          "left_self": {
+            "distance": 0.02230317957944945,
+            "bodies": [
+              "left_link5",
+              "left_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "left_table": {
+            "distance": 0.16099593221477013,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "left_mounts": {
+            "distance": 0.1409959322147701,
+            "bodies": [
+              "left_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "left_mount"
+            ]
+          },
+          "right_self": {
+            "distance": 0.024625314657094197,
+            "bodies": [
+              "right_link5",
+              "right_link7"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          },
+          "right_table": {
+            "distance": 0.16099593221477015,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "table"
+            ]
+          },
+          "right_mounts": {
+            "distance": 0.14099593221477014,
+            "bodies": [
+              "right_link1",
+              "world"
+            ],
+            "geoms": [
+              "",
+              "right_mount"
+            ]
+          },
+          "arms": {
+            "distance": 0.08337119217457158,
+            "bodies": [
+              "left_hand",
+              "right_link6"
+            ],
+            "geoms": [
+              "",
+              ""
+            ]
+          }
+        }
+      }
+    ],
+    "minimum_rigid_clearance_m": 0.02230317957944945
+  },
+  "withdraw_after_release": {
+    "name": "withdraw_after_release_diagnostic",
+    "target_tcp_m": [
+      -0.09923943862806384,
+      0.05758653401962627,
+      1.369737813607271
+    ],
+    "start_q": {
+      "left": [
+        -1.1579177940590315,
+        -0.9029333749457532,
+        0.9411552967648306,
+        -2.7709807298336293,
+        -0.25254700658826773,
+        3.7131241370625663,
+        1.6865305092954874
+      ],
+      "right": [
+        0.2847269988197979,
+        0.2041289861668482,
+        -0.5302578317374413,
+        -2.214480408690259,
+        0.1492497580377121,
+        2.3852745205741885,
+        -1.9599983459092853
+      ]
+    },
+    "straight_path_FK_review": {
+      "sample_count": 201,
+      "declared_start_tcp_m": [
+        -0.09923943862806384,
+        0.05758653401962627,
+        0.9546621543719613
+      ],
+      "declared_target_tcp_m": [
+        -0.09923943862806384,
+        0.05758653401962627,
+        1.369737813607271
+      ],
+      "max_position_error_m": 9.63067329071501e-07,
+      "max_rotation_error_rad": 2.267987326017764e-06,
+      "max_frozen_bear_point_deviation_upper_m": 1.4856985172662164e-06,
+      "maximum_position_error_witness": {
+        "time_s": 5.4731353001114265,
+        "path_fraction": 0.9914400000000017,
+        "actual_tcp_m": [
+          -0.099239910923776,
+          0.057586836597165396,
+          1.366185548832197
+        ],
+        "declared_straight_tcp_m": [
+          -0.09923943862806384,
+          0.05758653401962627,
+          1.3661847659642175
+        ],
+        "position_error_m": 9.63067329071501e-07,
+        "rotation_error_rad": 2.267987326017764e-06,
+        "frozen_bear_point_deviation_upper_m": 1.4856985172662164e-06
+      },
+      "maximum_rotation_error_witness": {
+        "time_s": 5.4731353001114265,
+        "path_fraction": 0.9914400000000017,
+        "actual_tcp_m": [
+          -0.099239910923776,
+          0.057586836597165396,
+          1.366185548832197
+        ],
+        "declared_straight_tcp_m": [
+          -0.09923943862806384,
+          0.05758653401962627,
+          1.3661847659642175
+        ],
+        "position_error_m": 9.63067329071501e-07,
+        "rotation_error_rad": 2.267987326017764e-06,
+        "frozen_bear_point_deviation_upper_m": 1.4856985172662164e-06
+      },
+      "note": "201-sample interpolation diagnostic, not a continuous error certificate; expected position is declared start+(target-start)*minimum_jerk(time/duration)."
+    },
+    "duration_s": 6.081261444568251,
+    "minimum_rigid_clearance_m": 0.021826490235461935,
+    "limiting_rigid_pair": {
+      "distance": 0.021826490235461935,
+      "bodies": [
+        "right_link5",
+        "right_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ],
+      "category": "right_self",
+      "time_s": 5.047446998991648
+    },
+    "clearance_by_category": {
+      "left_self": {
+        "distance": 0.02230317957944945,
+        "bodies": [
+          "left_link5",
+          "left_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ],
+        "time_s": 0.0
+      },
+      "left_table": {
+        "distance": 0.16099593221477013,
+        "bodies": [
+          "left_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ],
+        "time_s": 0.0
+      },
+      "left_mounts": {
+        "distance": 0.1409959322147701,
+        "bodies": [
+          "left_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "left_mount"
+        ],
+        "time_s": 0.0
+      },
+      "right_self": {
+        "distance": 0.021826490235461935,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ],
+        "time_s": 5.047446998991648
+      },
+      "right_table": {
+        "distance": 0.16099593221477,
+        "bodies": [
+          "right_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ],
+        "time_s": 2.3108793489359356
+      },
+      "right_mounts": {
+        "distance": 0.14099593221477,
+        "bodies": [
+          "right_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "right_mount"
+        ],
+        "time_s": 1.9460036622618404
+      },
+      "arms": {
+        "distance": 0.037811710467200464,
+        "bodies": [
+          "left_hand",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ],
+        "time_s": 2.979818107838443
+      }
+    },
+    "analytic_joint_extrema": {
+      "left": {
+        "minimum": [
+          -1.1579177940590315,
+          -0.9029333749457532,
+          0.9411552967648306,
+          -2.7709807298336293,
+          -0.25254700658826773,
+          3.7131241370625663,
+          1.6865305092954874
+        ],
+        "maximum": [
+          -1.1579177940590315,
+          -0.9029333749457532,
+          0.9411552967648306,
+          -2.7709807298336293,
+          -0.25254700658826773,
+          3.7131241370625663,
+          1.6865305092954874
+        ],
+        "minimum_at_fraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum_at_fraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "minimum": [
+          0.2776204976980559,
+          -0.06188171157642494,
+          -0.5696329970110445,
+          -2.214480408690259,
+          -0.03302876785440408,
+          1.3085718755554758,
+          -1.9599983459092853
+        ],
+        "maximum": [
+          0.316294670746187,
+          0.2041289861668482,
+          -0.5302578317374413,
+          -1.2258412990061485,
+          0.1492497580377121,
+          2.3852745205741885,
+          -1.8305901585756172
+        ],
+        "minimum_at_fraction": [
+          1.0,
+          0.5982336174145415,
+          1.0,
+          0.0,
+          0.5876296398489429,
+          1.0,
+          0.0
+        ],
+        "maximum_at_fraction": [
+          0.674361388629122,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.5877138811206458
+        ]
+      }
+    },
+    "exact_joint_margin_rad": {
+      "left": 0.03937586293743367,
+      "right": 0.8573195913097411
+    },
+    "sampled_max_rotation_error_rad": 2.267987326017764e-06,
+    "sampled_peak_joint_velocity_rad_s": 0.3493013972055887,
+    "sampled_peak_joint_acceleration_rad_s2": 0.26917045757644553,
+    "end_q": {
+      "left": [
+        -1.1579177940590315,
+        -0.9029333749457532,
+        0.9411552967648306,
+        -2.7709807298336293,
+        -0.25254700658826773,
+        3.7131241370625663,
+        1.6865305092954874
+      ],
+      "right": [
+        0.2776204976980559,
+        0.0980965268787619,
+        -0.5696329970110445,
+        -1.2258412990061485,
+        0.05419814707662642,
+        1.3085718755554758,
+        -1.8903790287774511
+      ]
+    }
+  }
+}

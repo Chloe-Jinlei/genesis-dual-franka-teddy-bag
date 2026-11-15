@@ -1,0 +1,388 @@
+{
+  "kind": "bounded_primary_cotton_linen_shear_reference_review",
+  "created_utc": "2026-11-15T19:19:46.442598+00:00",
+  "scope": "Read-only source, literature and archived-run review. Only this unique diagnostic file is written. No production, configuration, asset, current-run output, trajectory, solver or gate is modified; no native simulation is launched.",
+  "physical_success": false,
+  "native_simulation_performed_by_this_review": false,
+  "references": [
+    {
+      "title": "Low Stress Mechanical Properties of Plasma-Treated Cotton Fabric Subjected to Zinc Oxide-Anti-Microbial Treatment",
+      "authors": [
+        "Chi-Wai Kan",
+        "Yin-Ling Lam"
+      ],
+      "year": 2013,
+      "journal": "Materials 6(1),314–333",
+      "doi": "10.3390/ma6010314",
+      "primary_url": "https://www.mdpi.com/1996-1944/6/1/314",
+      "locations": [
+        "Section 2.1: starting fabric",
+        "Table 2: KES definitions and units",
+        "Table 4: untreated control measurements"
+      ],
+      "sample": {
+        "label": "Control",
+        "description": "Semi-bleached plain woven cotton; control prior to the plasma/antimicrobial treatments compared in this experiment",
+        "areal_mass_g_m2": 175,
+        "G_reported": 2.81,
+        "G_unit": "gf/(cm degree)",
+        "B_reported": 0.103,
+        "B_unit": "gf cm^2/cm",
+        "B_N_m": 1.01008495e-05,
+        "B_micro_N_m": 10.1008495,
+        "T_o_mm_at_0_5_gf_cm2": 0.975,
+        "T_m_mm_at_50_gf_cm2": 0.637,
+        "EMT_percent_at_500_gf_cm": 9.14,
+        "MIU_against_standard_contactor": 0.2
+      },
+      "G_definition": "Average slope of the linear portions of the measured shear hysteresis curve through +/-2.5 degrees. Lower G indicates greater ease of shear and softer drape.",
+      "supports": "A measured plain cotton combines approximately 10 micronewton-metre bending rigidity with an equivalent small-angle shear-energy coefficient of order 10^2 N/m rather than 500 N/m.",
+      "limits": "Its density, weave, conditioning, anisotropy, hysteresis, tension during measurement and thickness under load differ from the simulation. No direct same-sample calibration or friction transfer to robot/plush/table is established."
+    },
+    {
+      "title": "Comfort and Handle Behaviour of Linen-Blended Fabrics",
+      "author": "B.K. Behera",
+      "year": 2007,
+      "primary_url": "https://www.degruyterbrill.com/document/doi/10.1515/aut-2007-070104/pdf",
+      "locations": [
+        "Tables 1 and 3: areal mass and thickness",
+        "Table 2: property units",
+        "Table 5: bending and shear",
+        "Table 6: surface friction"
+      ],
+      "examples": [
+        {
+          "sample": "L2",
+          "composition": "100% linen",
+          "areal_mass_g_m2": 185,
+          "thickness_mm": 0.78,
+          "B_reported_gf_cm2_per_cm": 0.195,
+          "B_micro_N_m": 19.1229675,
+          "G_reported": 0.252
+        },
+        {
+          "sample": "LC1",
+          "composition": "80% linen / 20% cotton",
+          "areal_mass_g_m2": 169,
+          "B_micro_N_m": 16.671305,
+          "G_reported": 0.281
+        },
+        {
+          "sample": "LC2",
+          "composition": "64% linen / 36% cotton",
+          "areal_mass_g_m2": 157,
+          "B_micro_N_m": 15.3964405,
+          "G_reported": 0.613
+        },
+        {
+          "sample": "LC3",
+          "composition": "55% linen / 45% cotton",
+          "areal_mass_g_m2": 144,
+          "B_micro_N_m": 9.708583500000001,
+          "G_reported": 0.513
+        },
+        {
+          "sample": "C",
+          "composition": "100% cotton",
+          "areal_mass_g_m2": 100,
+          "G_reported": 0.672
+        }
+      ],
+      "shear_unit_caveat": "The printed Table 2 label gf cm/degree is ambiguous. The numerical comparison interprets G using the conventional KES force-per-width-per-degree definition explicitly given by Kan & Lam Table 2. It is an order-of-magnitude cross-check, not an exact material fit.",
+      "interpreted_G_surface_slope_N_per_m_per_radian_examples": {
+        "0.252": 14.159367335281614,
+        "0.281": 15.788818338151325,
+        "0.513": 28.824426361108998,
+        "0.613": 34.44322292272869,
+        "0.672": 37.758312894084305
+      },
+      "interpretation": "These examples are softer in low-angle shear than the 175 gsm cotton control. The 185 gsm linen / 19.1229675 micronewton-metre bending pair is measured, but substituting it would choose a different, more resistant-to-bending fabric. It does not justify increasing D to prop the simulated opening."
+    },
+    {
+      "title": "KES-FB1-A Tensile and Shear Tester, manufacturer catalogue",
+      "primary_url": "https://english.keskato.co.jp/contents/katotech-catalog-kesfb1a-en-41.pdf",
+      "relevance": "Manufacturer distinguishes shear rigidity from shear hysteresis/recoverability, and documents finite tensile loading during shearing. Therefore a raw KES G value is not a direct fit of the simulation shear coefficient."
+    }
+  ],
+  "native_energy_source": {
+    "pinned_cpp_commit": "ac89e1009c7d8efb72d260790bb5ab31d7460542",
+    "primary_url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.h",
+    "lines": "101–129 (energy), 139–143 (shear derivative)",
+    "formula": "W = lambda * sum_i[(|F a_i|-1)^2 + q*max(|F a_i|-1,0)^3] + mu*(F a dot F b)^2",
+    "native_area_weighting": "Backend integrates W over rest triangle area; effective lambda and mu units are N/m. No extra thickness multiplier should be applied to the configured mu.",
+    "small_angle_derivation": {
+      "F": "[[1,gamma],[0,1],[0,0]], a=(1,0), b=(0,1)",
+      "F_a_dot_F_b": "gamma",
+      "shear_energy_J_per_m2": "mu*gamma^2",
+      "stretch_contribution": "O(gamma^4), with higher-order positive strain penalty",
+      "surface_shear_stress_N_per_m": "dW/dgamma = 2*mu*gamma + O(gamma^3)",
+      "zero_angle_tangent_N_per_m_per_radian": "2*mu",
+      "caveat": "This limiting calculation assumes the native orthogonal material chart and no pre-tension; it is not a KES experiment simulation or a finite-angle woven-fabric constitutive law."
+    }
+  },
+  "unit_conversion": {
+    "gf_N": 0.00980665,
+    "cm_m": 0.01,
+    "degrees_per_radian": 57.29577951308232,
+    "G_surface_slope_N_per_m_per_radian_per_gf_cm_degree": 56.18796561619688,
+    "cotton_control_G_surface_slope": 157.88818338151322,
+    "nominal_native_mu_for_cotton_control_N_per_m": 78.94409169075661,
+    "D_N_m_per_gf_cm2_per_cm": 9.80665e-05
+  },
+  "body_shear_prior_assessment": {
+    "old_full30_mu_N_per_m": 50,
+    "full31_mu_N_per_m": 1000,
+    "full32_through_full36_mu_N_per_m": 500,
+    "full37_mu_N_per_m": 50,
+    "old_and_full37_surface_tangent_N_per_m_per_radian": 100,
+    "full36_surface_tangent_N_per_m_per_radian": 1000,
+    "full36_to_cotton_control_tangent_ratio": 6.333596210830099,
+    "full37_to_cotton_control_tangent_ratio": 0.6333596210830099,
+    "conclusion": "50 N/m is an order-of-magnitude plausible compliant cotton prior and restores the accepted original body shear scale. 500 N/m was an unmeasured engineering increase to suppress diagonal principal deformation; it is not established as rag-like cotton/linen. High axial resistance and low shear resistance are independent goals.",
+    "not_claimed": [
+      "50 N/m is not a same-sample measurement or a uniquely correct cotton/linen coefficient.",
+      "Lower shear does not imply the lowest rim rises, opening improves, or the full task passes.",
+      "No inextensibility, physical damping, hysteresis or reduced rebound is established."
+    ]
+  },
+  "held_handle_assessment": {
+    "full30_mu_N_per_m": 250,
+    "full37_mu_N_per_m": 1000,
+    "retention_reason": "Retained in full37 to isolate the body-only correction; it remains a separate unmeasured engineering value.",
+    "limits": "The 1000 N/m setting is not calibrated woven tape, sewn reinforcement or a measured bag handle. A later 500 N/m alternative would only be a more modest engineering increase from 250, not evidence of actual fabric properties. Do not schedule or assert it as a validated material."
+  },
+  "full30_archived_deformation_evidence": {
+    "source": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full30-cloth-material-baseline.json",
+    "source_sha256": "ec66543e57231e8b544ec110b7fcc9c7f8470ccc049dcb5612dd9452c383d177",
+    "sampling": "Existing 1541 unique saved frames; integration-step edge metrics are a separate observable. No new native run or comparator was executed.",
+    "region_extrema": {
+      "panel_front": {
+        "principal_max": {
+          "value": 1.0350482990419008,
+          "time_s": 54.80000000000958,
+          "native_and_source_face_index": 1464,
+          "phase_at_time": "insert_teddy"
+        },
+        "width_ratio": {
+          "value": 1.0217614914273039,
+          "time_s": 55.860000000010125,
+          "native_and_source_face_index": 1409,
+          "phase_at_time": "release_teddy"
+        },
+        "length_ratio": {
+          "value": 1.018181564211782,
+          "time_s": 53.650000000008994,
+          "native_and_source_face_index": 1466,
+          "phase_at_time": "insert_teddy"
+        },
+        "shear_angle_change_deg": {
+          "value": 3.616490342892234,
+          "time_s": 54.95000000000966,
+          "native_and_source_face_index": 1469,
+          "phase_at_time": "insert_teddy"
+        }
+      },
+      "panel_back": {
+        "principal_max": {
+          "value": 1.0349315144884859,
+          "time_s": 55.860000000010125,
+          "native_and_source_face_index": 2182,
+          "phase_at_time": "release_teddy"
+        },
+        "width_ratio": {
+          "value": 1.019539773616864,
+          "time_s": 56.26000000001033,
+          "native_and_source_face_index": 2889,
+          "phase_at_time": "withdraw_right_arm"
+        },
+        "length_ratio": {
+          "value": 1.0098671911095105,
+          "time_s": 3.579999999999946,
+          "native_and_source_face_index": 1700,
+          "phase_at_time": "right_clear_handle"
+        },
+        "shear_angle_change_deg": {
+          "value": 4.1226859316166955,
+          "time_s": 55.860000000010125,
+          "native_and_source_face_index": 2182,
+          "phase_at_time": "release_teddy"
+        }
+      },
+      "handle_front": {
+        "principal_max": {
+          "value": 1.0856875252359648,
+          "time_s": 53.650000000008994,
+          "native_and_source_face_index": 3390,
+          "phase_at_time": "insert_teddy"
+        },
+        "width_ratio": {
+          "value": 1.0085221714657424,
+          "time_s": 57.110000000010764,
+          "native_and_source_face_index": 3220,
+          "phase_at_time": "withdraw_right_arm"
+        },
+        "length_ratio": {
+          "value": 1.0478384006037162,
+          "time_s": 53.650000000008994,
+          "native_and_source_face_index": 3374,
+          "phase_at_time": "insert_teddy"
+        },
+        "shear_angle_change_deg": {
+          "value": 8.392077921790184,
+          "time_s": 53.650000000008994,
+          "native_and_source_face_index": 3521,
+          "phase_at_time": "insert_teddy"
+        }
+      },
+      "handle_back": {
+        "principal_max": {
+          "value": 1.0237217387753572,
+          "time_s": 0.2500000000000001,
+          "native_and_source_face_index": 3872,
+          "phase_at_time": "close_both_handles"
+        },
+        "width_ratio": {
+          "value": 1.0060722618491758,
+          "time_s": 3.479999999999948,
+          "native_and_source_face_index": 4097,
+          "phase_at_time": "right_clear_handle"
+        },
+        "length_ratio": {
+          "value": 1.0208595569627967,
+          "time_s": 0.2000000000000001,
+          "native_and_source_face_index": 3889,
+          "phase_at_time": "close_both_handles"
+        },
+        "shear_angle_change_deg": {
+          "value": -2.594430760583829,
+          "time_s": 55.960000000010176,
+          "native_and_source_face_index": 3777,
+          "phase_at_time": "release_teddy"
+        }
+      }
+    },
+    "interpretation": [
+      "Principal stretches are singular values of the in-surface deformation gradient and can increase under shear while the two construction directions remain nearly unchanged in length.",
+      "Full30 body principal extension peaks near 3.5%; construction-direction extension peaks are roughly 1–2%. Held front strap has 8.56875% maximum principal extension and 4.78384% maximum construction length extension, at potentially different faces.",
+      "Construction directions are geometric proxies, not measured yarn directions. Neither construction axes nor arbitrary native material chart axes establish physical warp/weft without an identified fabric orientation.",
+      "A high principal extension alone is not proof of rubber-like axial extension; shear, local contact loading and direction must be distinguished."
+    ]
+  },
+  "recorded_drape_evidence": {
+    "runs_at_same_observation": [
+      {
+        "run": "two_panel_full_32",
+        "bag": {
+          "E": 10000000.0,
+          "rho": 500.0,
+          "thickness": 0.0003,
+          "bending_stiffness": 5e-05,
+          "friction_mu": 0.65,
+          "shear_stiffness": 500.0,
+          "handle_shear_stiffness": 1000.0
+        },
+        "observed_time_s": 23.314999999999646,
+        "candidate_status": "candidate",
+        "rim_min_m": 0.9990478731610334,
+        "height_margin_m": 0.08722543518588066,
+        "rejections": []
+      },
+      {
+        "run": "two_panel_full_34",
+        "bag": {
+          "E": 10000000.0,
+          "rho": 500.0,
+          "thickness": 0.0003,
+          "bending_stiffness": 4e-06,
+          "friction_mu": 0.5,
+          "shear_stiffness": 500.0,
+          "handle_shear_stiffness": 1000.0
+        },
+        "observed_time_s": 23.314999999999646,
+        "candidate_status": "rejected",
+        "rim_min_m": 0.8678488845758447,
+        "height_margin_m": -0.04397219085572779,
+        "rejections": [
+          "observed teddy height exceeds space between required table clearance and lowest actual rim"
+        ]
+      },
+      {
+        "run": "two_panel_full_35",
+        "bag": {
+          "E": 10000000.0,
+          "rho": 500.0,
+          "thickness": 0.0003,
+          "bending_stiffness": 1e-05,
+          "friction_mu": 0.5,
+          "shear_stiffness": 500.0,
+          "handle_shear_stiffness": 1000.0
+        },
+        "observed_time_s": 23.314999999999646,
+        "candidate_status": "rejected",
+        "rim_min_m": 0.859213812227306,
+        "height_margin_m": -0.052604690207148974,
+        "rejections": [
+          "observed teddy height exceeds space between required table clearance and lowest actual rim"
+        ]
+      }
+    ],
+    "full35_minus_full34_minimum_rim_m": -0.008635072348538775,
+    "interpretation": "Full34 to full35 changed only D from4 to10 micronewton-metres; the lowest rim decreased by8.635072 mm. This observed path contradicts a simple monotonic increase of rim height with D. It does not prove a universal inverse relation.",
+    "guard_scope": "Both rejected at23.315s before insertion under the unchanged whole-bear-below-lowest-rim preflight. The test is an engineering admissibility condition, not a proof that actual cloth cannot contain the teddy."
+  },
+  "friction_confound": {
+    "full32_bag_friction_mu": 0.65,
+    "full33_through_full37_bag_friction_mu": 0.5,
+    "full33_status": "Intentionally interrupted at6.93s; no completed friction-only material/control comparison was established.",
+    "full32_to_full34": "Both friction and bending changed, so their effects cannot be isolated by these two runs.",
+    "native_pair_rule": "Geometric mean of the two material friction coefficients. Changing bag mu affects bag-self, bag-robot, bag-table and bag-teddy friction together; robot-teddy pair is unchanged.",
+    "restoring_original_0_65": "A possible later independent contact control, not a proven correction and not part of the current body-only change. It may also increase resistance or jamming during insertion.",
+    "measurement_limit": "KES MIU is measured against a standard contactor; values around0.2 in these papers must not be assigned directly to the simulation bag parameter or its robot/plush/table pairs."
+  },
+  "current_trial_context": {
+    "launch_record": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full37-launch.json",
+    "launch_sha256": "875809394cd6a9869cb60a044aa09a6e665a749740d0c75c86f1eb85a54ae835",
+    "changes_from_full36": [
+      {
+        "field": "bag.shear_stiffness",
+        "before": 500.0,
+        "after": 50.0
+      }
+    ],
+    "full37_native_success_not_evaluated_by_this_review": true,
+    "previous_full36_report_status": "failed",
+    "previous_full36_error": "KeyboardInterrupt: ",
+    "previous_full36_simulated_seconds": 4.009999999999937,
+    "previous_full36_wall_seconds": 318.9106709770276,
+    "full36_interruption_record": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_36/external_interruption.json",
+    "full36_interpretation": "Intentionally interrupted; neither a completed 200gsm comparison nor a physical failure under a gate. The new trial must start from its own actual state and satisfy every original check."
+  },
+  "completion_boundary": "If physically supported compliant material still fails with the fixed geometry, accepted motion and unchanged acceptance conditions, report that this model/material/controller combination remains unverified. Do not manufacture success with excess bending stiffness, lower gravity, ideal pins, motion edits, weaker checks or unsupported damping.",
+  "protected_local_inputs_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config.json": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/gravity_release.py": "3cb7ea9a10390bcb473d353863917d39cc67a05766b2da3bfc38ed28bd26915f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full30-cloth-material-baseline.json": "ec66543e57231e8b544ec110b7fcc9c7f8470ccc049dcb5612dd9452c383d177",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full37-launch.json": "875809394cd6a9869cb60a044aa09a6e665a749740d0c75c86f1eb85a54ae835",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-areal-mass-reference-review.json": "8297fca2227ebd22513ced71550c8454b640bc0e9c89cd2dd29b86cc3aecd720",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/bear_uniform_coarse_s663.obj": "0e4c2bd67b51b741b18530979e4d22fd1d718ff302ea0901bf9356d01c46dacd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/config.json": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/config.json": "0069b4df0d64dc28d65d461dbc38ff7f5235616bb514f006d3c547d493cb82e8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_33/config.json": "229245694a0da5472539a58cea6ee8d4ebbf32a91efc31446edaaab0a28f4c59",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/config.json": "3bc8dae5538c7a84fe7a0d14c7e7e6e140a10203d9971cf72673701ff1addb26",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_35/config.json": "d2c344a484c246a86289b3dfdcca7cea3a510870aab6af2f042c1d7ad8b406ee",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_36/config.json": "f55a0448f5b8bc78abf5c65bc64e17c4f0679ed77f487580f2fc9adcd85965c0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/config.json": "c5e48e9132a8f7d5d33f677f3963f026c780d16931cd02d048a219d3434a6164",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/guarded_contact_candidate.json": "5b1efd3dcc0171e4407536b47c141ba6334cfabaf7898c6af9e1111b0f36b4a5",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/guarded_contact_candidate.json": "e147c1117c21d437307bbc9b6903698eb8ed7b7ac1d5b63b109ef65f5783b43a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_35/guarded_contact_candidate.json": "80ae0997e00ece27e1dd8e334529c82c9b2e8ab4352ebb8f320e3e6e7a40bad0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_36/external_interruption.json": "d89acfcc57d9a5e7ea48352bbf02da06c2a9382af0ace89b0bf64a279f38052c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_36/report.json": "1f6f12d8e367867ed3c7e20de76543d0dea547f7754beb2945478c7acd587081"
+  },
+  "protected_local_inputs_unchanged_before_write": true
+}

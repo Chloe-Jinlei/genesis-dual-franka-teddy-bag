@@ -1,0 +1,67 @@
+{
+  "status": "incomplete",
+  "passed": false,
+  "checks": {
+    "frozen_config_xy_limits_within_allowed_bounds": true,
+    "at_most_one_plan_for_each_ordered_phase": true,
+    "physical_phase_order_unique_and_complete": false,
+    "three_accepted_staged_plans": false,
+    "old_high_entry_correction_loop_not_fabricated": true,
+    "one_completed_initial_transport": true,
+    "entry_finite_observation_target_orientation": true,
+    "entry_stage_name_matches_phase": true,
+    "entry_original_complete_rotation_target_preserved": true,
+    "entry_event_starts_at_actual_plan_observation": true,
+    "entry_strict_new_observation_after_previous_completed_stage": true,
+    "entry_planned_budget_finite_and_within_declared_xy_limits": true,
+    "entry_checkpoint_budget_matches_frozen_config": true,
+    "entry_planned_budget_matches_actual_prior_and_target": true,
+    "entry_checkpoint_source_matches_actual_state": true,
+    "entry_duration_is_slow_guarded_motion": true,
+    "entry_strictly_down_at_actual_xy": true,
+    "entry_actual_endpoint_within_2mm": true,
+    "entry_actual_xy_within_declared_xy_limits": true,
+    "entry_runtime_distance_records_match_actual_tcp": true,
+    "entry_runtime_endpoint_time_matches_actual_completion": true,
+    "entry_actual_full_rotation_within_015rad_every_joint_step": true,
+    "entry_actual_tcp_matches_joint_fk": true,
+    "center_rejected_plan_not_executed": true,
+    "continuous_original_contact_guard_passed": true,
+    "single_original_guard_baseline_preserved": true,
+    "guard_started_with_initial_contact_plan_not_reset_at_stages": true,
+    "native_hand_height_trace_valid": false
+  },
+  "stages": [
+    {
+      "phase": "entry",
+      "observed_time_s": 42.75500000000342,
+      "actual_end_time_s": 51.52000000000342,
+      "planned_xy_distance_m": 0.0,
+      "actual_xy_distance_m": 5.927256215892008e-05,
+      "actual_cumulative_xy_m": 5.927256215892008e-05,
+      "actual_max_rotation_error_rad": 0.0005873656904171624,
+      "maximum_endpoint_fk_error_m": 5.101384946613274e-16
+    }
+  ],
+  "incomplete_evidence": [
+    "center rejected before execution"
+  ],
+  "kind": "independent_lower_then_center_sequence",
+  "distance_scope": "Sum of actual staged endpoint XY displacements, not oscillatory path arc length.",
+  "independently_validated_frozen_config_xy_limits_m": {
+    "maximum_individual_xy_m": 0.07,
+    "maximum_cumulative_xy_m": 0.09
+  },
+  "native_hand_height_audit": {
+    "status": "not_entered",
+    "passed": false,
+    "checks": {},
+    "limitations": [
+      "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+      "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+      "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+    ],
+    "reason": "No physical low-height centering phase was entered."
+  },
+  "actual_cumulative_endpoint_displacement_m": 5.927256215892008e-05
+}

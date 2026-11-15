@@ -1,0 +1,1515 @@
+{
+  "kind": "full17_adaptive_selected_frozen_true_body_section_comparison",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "source_config_or_policy_modified": false,
+  "actual_time_s": 51.520000000007904,
+  "actual_com_world_m": [
+    -0.0977486951746135,
+    0.05329979334131997,
+    1.0977347615437831
+  ],
+  "actual_tcp_world_m": [
+    -0.09920657997715483,
+    0.058034297601392205,
+    1.1946997711079614
+  ],
+  "actual_rim_min_z_m": 1.0032772415936109,
+  "actual_rim_max_z_m": 1.100580087393459,
+  "height_grid_m": [
+    0.76,
+    0.78,
+    0.8,
+    0.82,
+    0.84,
+    0.86,
+    0.88,
+    0.9,
+    0.9199999999999999,
+    0.94,
+    0.96,
+    0.98
+  ],
+  "frozen_final_z_translation_m": -0.23490329337871318,
+  "frozen_final_bottom_m": 0.75,
+  "body_cut_method": "Physical body triangle-plane intersections, endpoint join tolerance 1e-9 m, original ordered closed loops; no bag convex hull or rim-shadow substitution.",
+  "body_sections_all_single_closed_loop": true,
+  "recomputed_body_loops_match_previous_method": true,
+  "legacy_summary_comparison": [
+    {
+      "offset_xy_m": [
+        -0.015,
+        -0.055
+      ],
+      "maximum_matching_summary_absolute_difference": 8.933825901280557e-17
+    },
+    {
+      "offset_xy_m": [
+        -0.02,
+        -0.05
+      ],
+      "maximum_matching_summary_absolute_difference": 8.847089727481716e-17
+    }
+  ],
+  "actual_body_winding_orientation_and_cap_closure_pass": true,
+  "actual_rim_3d_diagnostic": {
+    "vertex_count": 74,
+    "nonadjacent_edge_pair_count": 2627,
+    "minimum_current_edge_length_m": 0.0023067836806949546,
+    "minimum_rest_edge_length_m": 0.002307408660269694,
+    "minimum_nonadjacent_3d_edge_distance_m": 0.0023067836806949546,
+    "minimum_nonadjacent_3d_edge_pair": [
+      61,
+      63
+    ],
+    "edge_distance_numerical_guard_m": 1e-08,
+    "required_nonadjacent_3d_edge_separation_m": 0.0006,
+    "minimum_nonadjacent_3d_edge_distance_lower_bound_m": 0.0023067736806949546,
+    "passed": true
+  },
+  "yaw_contingency_scope": "Fifth candidate uses intended +45-degree WORLD-Z pure frozen yaw about actual TCP, then XY and final Z translation. Existing actual-FK vs commanded-baseline discrepancy can move a rigidly grasped endpoint by up to 0.108737 mm. No assumption of real soft-grasp rotation retention, or current-policy approval, is made.",
+  "outline_method": "Original contour endpoint/midpoint discrete metric retained at the same 12 heights; these are unweighted sampled frozen sections, not area/volume fractions or dynamic passage clearance.",
+  "candidates": [
+    {
+      "world_z_yaw_degrees": 0.0,
+      "offset_xy_m": [
+        -0.015,
+        -0.045
+      ],
+      "hypothetical_center_tcp_world_m": [
+        -0.11420657997715483,
+        0.013034297601392207,
+        1.1946997711079614
+      ],
+      "hypothetical_center_com_world_m": [
+        -0.1127486951746135,
+        0.008299793341319972,
+        1.0977347615437831
+      ],
+      "hypothetical_final_com_world_m": [
+        -0.1127486951746135,
+        0.008299793341319972,
+        0.86283146816507
+      ],
+      "contact_envelope_com_signed_margin_m": 0.006434451951726054,
+      "ordered_rim_projection_signed_margin_m": -0.028881438286023107,
+      "runtime_selection_rigid_minimum_m": 0.015111530595383237,
+      "runtime_selection_score_m": 0.004434451951726054,
+      "body_section_summary": {
+        "section_count": 12,
+        "com_axis_inside_count": 12,
+        "mean_com_axis_signed_clearance_m": 0.04865532482693929,
+        "minimum_com_axis_signed_clearance_m": 0.0005085888687953168,
+        "mean_com_axis_centroid_distance_m": 0.04156571218438771,
+        "mean_frozen_cut_sample_inside_fraction": 0.8024128143657666,
+        "worst_frozen_cut_sample_outside_distance_m": 0.072743820943135,
+        "worst_com_axis_height_m": 0.98
+      },
+      "sections": [
+        {
+          "height_m": 0.76,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.03708538526801675,
+          "com_axis_centroid_distance_m": 0.03987939181214251,
+          "frozen_teddy_section_sample_count": 48,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.13956543274699604,
+            -0.021216786360270554
+          ]
+        },
+        {
+          "height_m": 0.78,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.07156515522779787,
+          "com_axis_centroid_distance_m": 0.035959871991680346,
+          "frozen_teddy_section_sample_count": 126,
+          "frozen_teddy_section_samples_inside_fraction": 0.5396825396825397,
+          "maximum_frozen_sample_outside_distance_m": 0.072743820943135,
+          "actual_body_section_centroid_xy_m": [
+            -0.13648926821935736,
+            -0.01870941962694732
+          ]
+        },
+        {
+          "height_m": 0.8,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.08655821593588248,
+          "com_axis_centroid_distance_m": 0.033721352071851826,
+          "frozen_teddy_section_sample_count": 170,
+          "frozen_teddy_section_samples_inside_fraction": 0.7529411764705882,
+          "maximum_frozen_sample_outside_distance_m": 0.03875979474783573,
+          "actual_body_section_centroid_xy_m": [
+            -0.13470246943122205,
+            -0.017296327096036488
+          ]
+        },
+        {
+          "height_m": 0.82,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.08918553674893237,
+          "com_axis_centroid_distance_m": 0.03432087861355964,
+          "frozen_teddy_section_sample_count": 246,
+          "frozen_teddy_section_samples_inside_fraction": 0.7520325203252033,
+          "maximum_frozen_sample_outside_distance_m": 0.024468025343247782,
+          "actual_body_section_centroid_xy_m": [
+            -0.13410864429909472,
+            -0.018564221291758783
+          ]
+        },
+        {
+          "height_m": 0.84,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.0839519222781467,
+          "com_axis_centroid_distance_m": 0.038543033600456696,
+          "frozen_teddy_section_sample_count": 254,
+          "frozen_teddy_section_samples_inside_fraction": 0.6811023622047244,
+          "maximum_frozen_sample_outside_distance_m": 0.028234815824906476,
+          "actual_body_section_centroid_xy_m": [
+            -0.13501903055147027,
+            -0.023158076919208723
+          ]
+        },
+        {
+          "height_m": 0.86,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.06687608768901561,
+          "com_axis_centroid_distance_m": 0.04292393571226756,
+          "frozen_teddy_section_sample_count": 256,
+          "frozen_teddy_section_samples_inside_fraction": 0.703125,
+          "maximum_frozen_sample_outside_distance_m": 0.034067436344128246,
+          "actual_body_section_centroid_xy_m": [
+            -0.13667220641647376,
+            -0.02733908805093846
+          ]
+        },
+        {
+          "height_m": 0.88,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.05101064341934841,
+          "com_axis_centroid_distance_m": 0.045808396967252175,
+          "frozen_teddy_section_sample_count": 244,
+          "frozen_teddy_section_samples_inside_fraction": 0.7418032786885246,
+          "maximum_frozen_sample_outside_distance_m": 0.02953308647871567,
+          "actual_body_section_centroid_xy_m": [
+            -0.13796155073491806,
+            -0.029945744270335826
+          ]
+        },
+        {
+          "height_m": 0.9,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.03932117316329542,
+          "com_axis_centroid_distance_m": 0.046307162907999536,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.9390243902439024,
+          "maximum_frozen_sample_outside_distance_m": 0.008032712563402154,
+          "actual_body_section_centroid_xy_m": [
+            -0.13787955955820533,
+            -0.030594846288345242
+          ]
+        },
+        {
+          "height_m": 0.9199999999999999,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.02895407969658373,
+          "com_axis_centroid_distance_m": 0.04577521404024842,
+          "frozen_teddy_section_sample_count": 152,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.1374920818169266,
+            -0.03021169894214728
+          ]
+        },
+        {
+          "height_m": 0.94,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.018960262827001983,
+          "com_axis_centroid_distance_m": 0.04547437926281707,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.926829268292683,
+          "maximum_frozen_sample_outside_distance_m": 0.006799764022048358,
+          "actual_body_section_centroid_xy_m": [
+            -0.13788958241013766,
+            -0.0295928835019592
+          ]
+        },
+        {
+          "height_m": 0.96,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.009886846800454695,
+          "com_axis_centroid_distance_m": 0.045301482070865234,
+          "frozen_teddy_section_sample_count": 118,
+          "frozen_teddy_section_samples_inside_fraction": 0.8305084745762712,
+          "maximum_frozen_sample_outside_distance_m": 0.011552831309214563,
+          "actual_body_section_centroid_xy_m": [
+            -0.1387207597121782,
+            -0.028817266637529357
+          ]
+        },
+        {
+          "height_m": 0.98,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.0005085888687953168,
+          "com_axis_centroid_distance_m": 0.044773447161511486,
+          "frozen_teddy_section_sample_count": 42,
+          "frozen_teddy_section_samples_inside_fraction": 0.7619047619047619,
+          "maximum_frozen_sample_outside_distance_m": 0.006208720872369472,
+          "actual_body_section_centroid_xy_m": [
+            -0.1396413827742592,
+            -0.027497482035341355
+          ]
+        }
+      ],
+      "frozen_pointwise_containment": {
+        "scope": "Frozen hypothetical final points against actual full17 bag, NOT an actual executed final state",
+        "height_precondition_met": true,
+        "minimum_query_below_rim_margin_m": 0.016181172597512727,
+        "all_whole_bear_volume_containment_certified": false,
+        "physical_success": false,
+        "cap_agreement_max_difference": 2.220446049250313e-16,
+        "max_integer_residual": 6.661338147750939e-16,
+        "multiple_winding_detected": false,
+        "numerical_topology_spatial_rim_and_near_surface_guards_pass": true,
+        "unit_winding_bear_vertex_count": 1152,
+        "total_bear_vertices": 1450,
+        "com_unit_winding": true,
+        "all_vertices_and_com_have_guarded_unit_winding": false,
+        "outside_bear_vertex_count": 298,
+        "minimum_body_vertex_distance_m": 4.347681308331115e-05,
+        "com_actual_body_distance_m": 0.05253480536898202,
+        "maximum_outside_bear_vertex_body_distance_m": 0.05187487978790815,
+        "near_body_1um_query_indices": [],
+        "limitation": "Pointwise winding only; positive vertex results would not establish entire tetrahedral volume containment, physical cloth nonintersection, release or stability. Any clearly exterior vertex rules out all-point containment of this frozen hypothesis.",
+        "farthest_outside_vertex": {
+          "index": 140,
+          "frozen_world_m": [
+            -0.06597809548285033,
+            0.1411137914336314,
+            0.7684612131054127
+          ],
+          "reference_bear_local_m": [
+            -0.057351802519999995,
+            0.1583320197,
+            0.052638890749999945
+          ],
+          "closest_body_point_m": [
+            -0.07571171794472756,
+            0.1082767132431296,
+            0.8074225534659603
+          ],
+          "closest_body_face_index": 2111,
+          "body_distance_m": 0.05187487978790815
+        }
+      }
+    },
+    {
+      "world_z_yaw_degrees": 0.0,
+      "offset_xy_m": [
+        -0.0165,
+        -0.0535
+      ],
+      "hypothetical_center_tcp_world_m": [
+        -0.11570657997715483,
+        0.0045342976013922065,
+        1.1946997711079614
+      ],
+      "hypothetical_center_com_world_m": [
+        -0.1142486951746135,
+        -0.00020020665868002857,
+        1.0977347615437831
+      ],
+      "hypothetical_final_com_world_m": [
+        -0.1142486951746135,
+        -0.00020020665868002857,
+        0.86283146816507
+      ],
+      "contact_envelope_com_signed_margin_m": 0.0064267886586100885,
+      "ordered_rim_projection_signed_margin_m": -0.02975103625984719,
+      "runtime_selection_rigid_minimum_m": 0.012288950402307996,
+      "runtime_selection_score_m": 0.004288950402307996,
+      "body_section_summary": {
+        "section_count": 12,
+        "com_axis_inside_count": 12,
+        "mean_com_axis_signed_clearance_m": 0.05499258135979037,
+        "minimum_com_axis_signed_clearance_m": 0.005724099512332861,
+        "mean_com_axis_centroid_distance_m": 0.03407209019315102,
+        "mean_frozen_cut_sample_inside_fraction": 0.8206942777765861,
+        "worst_frozen_cut_sample_outside_distance_m": 0.06415818770934219,
+        "worst_com_axis_height_m": 0.98
+      },
+      "sections": [
+        {
+          "height_m": 0.76,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.04571645782281894,
+          "com_axis_centroid_distance_m": 0.032903401399584704,
+          "frozen_teddy_section_sample_count": 48,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.13956543274699604,
+            -0.021216786360270554
+          ]
+        },
+        {
+          "height_m": 0.78,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.08019082283863697,
+          "com_axis_centroid_distance_m": 0.028934997046194098,
+          "frozen_teddy_section_sample_count": 126,
+          "frozen_teddy_section_samples_inside_fraction": 0.5396825396825397,
+          "maximum_frozen_sample_outside_distance_m": 0.06415818770934219,
+          "actual_body_section_centroid_xy_m": [
+            -0.13648926821935736,
+            -0.01870941962694732
+          ]
+        },
+        {
+          "height_m": 0.8,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.0932061759449081,
+          "com_axis_centroid_distance_m": 0.02665772337145278,
+          "frozen_teddy_section_sample_count": 170,
+          "frozen_teddy_section_samples_inside_fraction": 0.7705882352941177,
+          "maximum_frozen_sample_outside_distance_m": 0.030153792109385843,
+          "actual_body_section_centroid_xy_m": [
+            -0.13470246943122205,
+            -0.017296327096036488
+          ]
+        },
+        {
+          "height_m": 0.82,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.09470715891147437,
+          "com_axis_centroid_distance_m": 0.02704911482231744,
+          "frozen_teddy_section_sample_count": 246,
+          "frozen_teddy_section_samples_inside_fraction": 0.7682926829268293,
+          "maximum_frozen_sample_outside_distance_m": 0.018126165216794138,
+          "actual_body_section_centroid_xy_m": [
+            -0.13410864429909472,
+            -0.018564221291758783
+          ]
+        },
+        {
+          "height_m": 0.84,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.09057843979709423,
+          "com_axis_centroid_distance_m": 0.030959176968491518,
+          "frozen_teddy_section_sample_count": 254,
+          "frozen_teddy_section_samples_inside_fraction": 0.7086614173228346,
+          "maximum_frozen_sample_outside_distance_m": 0.025777967570190217,
+          "actual_body_section_centroid_xy_m": [
+            -0.13501903055147027,
+            -0.023158076919208723
+          ]
+        },
+        {
+          "height_m": 0.86,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.07361763081958163,
+          "com_axis_centroid_distance_m": 0.03520415798789831,
+          "frozen_teddy_section_sample_count": 256,
+          "frozen_teddy_section_samples_inside_fraction": 0.67578125,
+          "maximum_frozen_sample_outside_distance_m": 0.03416729687633935,
+          "actual_body_section_centroid_xy_m": [
+            -0.13667220641647376,
+            -0.02733908805093846
+          ]
+        },
+        {
+          "height_m": 0.88,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.05725076105910853,
+          "com_axis_centroid_distance_m": 0.038040721952012115,
+          "frozen_teddy_section_sample_count": 244,
+          "frozen_teddy_section_samples_inside_fraction": 0.7581967213114754,
+          "maximum_frozen_sample_outside_distance_m": 0.029225055858891354,
+          "actual_body_section_centroid_xy_m": [
+            -0.13796155073491806,
+            -0.029945744270335826
+          ]
+        },
+        {
+          "height_m": 0.9,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.04515622025905509,
+          "com_axis_centroid_distance_m": 0.0385000242822381,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.9207317073170732,
+          "maximum_frozen_sample_outside_distance_m": 0.008754482900553218,
+          "actual_body_section_centroid_xy_m": [
+            -0.13787955955820533,
+            -0.030594846288345242
+          ]
+        },
+        {
+          "height_m": 0.9199999999999999,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.03454545804071153,
+          "com_axis_centroid_distance_m": 0.03795977728707945,
+          "frozen_teddy_section_sample_count": 152,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.1374920818169266,
+            -0.03021169894214728
+          ]
+        },
+        {
+          "height_m": 0.94,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.024589172702217256,
+          "com_axis_centroid_distance_m": 0.03772029959181407,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.9695121951219512,
+          "maximum_frozen_sample_outside_distance_m": 0.002397581484266213,
+          "actual_body_section_centroid_xy_m": [
+            -0.13788958241013766,
+            -0.0295928835019592
+          ]
+        },
+        {
+          "height_m": 0.96,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.014628578609544883,
+          "com_axis_centroid_distance_m": 0.03765392495562437,
+          "frozen_teddy_section_sample_count": 118,
+          "frozen_teddy_section_samples_inside_fraction": 0.8559322033898306,
+          "maximum_frozen_sample_outside_distance_m": 0.007662838762842911,
+          "actual_body_section_centroid_xy_m": [
+            -0.1387207597121782,
+            -0.028817266637529357
+          ]
+        },
+        {
+          "height_m": 0.98,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.005724099512332861,
+          "com_axis_centroid_distance_m": 0.03728176265310535,
+          "frozen_teddy_section_sample_count": 42,
+          "frozen_teddy_section_samples_inside_fraction": 0.8809523809523809,
+          "maximum_frozen_sample_outside_distance_m": 0.0028079534873717994,
+          "actual_body_section_centroid_xy_m": [
+            -0.1396413827742592,
+            -0.027497482035341355
+          ]
+        }
+      ],
+      "frozen_pointwise_containment": {
+        "scope": "Frozen hypothetical final points against actual full17 bag, NOT an actual executed final state",
+        "height_precondition_met": true,
+        "minimum_query_below_rim_margin_m": 0.016181172597512727,
+        "all_whole_bear_volume_containment_certified": false,
+        "physical_success": false,
+        "cap_agreement_max_difference": 2.220446049250313e-16,
+        "max_integer_residual": 8.881784197001252e-16,
+        "multiple_winding_detected": false,
+        "numerical_topology_spatial_rim_and_near_surface_guards_pass": true,
+        "unit_winding_bear_vertex_count": 1178,
+        "total_bear_vertices": 1450,
+        "com_unit_winding": true,
+        "all_vertices_and_com_have_guarded_unit_winding": false,
+        "outside_bear_vertex_count": 272,
+        "minimum_body_vertex_distance_m": 6.661043620842927e-06,
+        "com_actual_body_distance_m": 0.057814810303694696,
+        "maximum_outside_bear_vertex_body_distance_m": 0.04604391356823186,
+        "near_body_1um_query_indices": [],
+        "limitation": "Pointwise winding only; positive vertex results would not establish entire tetrahedral volume containment, physical cloth nonintersection, release or stability. Any clearly exterior vertex rules out all-point containment of this frozen hypothesis.",
+        "farthest_outside_vertex": {
+          "index": 140,
+          "frozen_world_m": [
+            -0.06747809548285033,
+            0.1326137914336314,
+            0.7684612131054127
+          ],
+          "reference_bear_local_m": [
+            -0.057351802519999995,
+            0.1583320197,
+            0.052638890749999945
+          ],
+          "closest_body_point_m": [
+            -0.07524017742282235,
+            0.10238040102854072,
+            0.8023099082833562
+          ],
+          "closest_body_face_index": 2110,
+          "body_distance_m": 0.04604391356823186
+        }
+      }
+    },
+    {
+      "world_z_yaw_degrees": 0.0,
+      "offset_xy_m": [
+        -0.015,
+        -0.055
+      ],
+      "hypothetical_center_tcp_world_m": [
+        -0.11420657997715483,
+        0.003034297601392205,
+        1.1946997711079614
+      ],
+      "hypothetical_center_com_world_m": [
+        -0.1127486951746135,
+        -0.00170020665868003,
+        1.0977347615437831
+      ],
+      "hypothetical_final_com_world_m": [
+        -0.1127486951746135,
+        -0.00170020665868003,
+        0.86283146816507
+      ],
+      "contact_envelope_com_signed_margin_m": 0.004687855943022067,
+      "ordered_rim_projection_signed_margin_m": -0.031538752849013404,
+      "runtime_selection_rigid_minimum_m": 0.01353017592460561,
+      "runtime_selection_score_m": 0.002687855943022067,
+      "body_section_summary": {
+        "section_count": 12,
+        "com_axis_inside_count": 12,
+        "mean_com_axis_signed_clearance_m": 0.05477818697982458,
+        "minimum_com_axis_signed_clearance_m": 0.005068539914655711,
+        "mean_com_axis_centroid_distance_m": 0.034065048054971965,
+        "mean_frozen_cut_sample_inside_fraction": 0.8186396069231586,
+        "worst_frozen_cut_sample_outside_distance_m": 0.06316657999559758,
+        "worst_com_axis_height_m": 0.98
+      },
+      "sections": [
+        {
+          "height_m": 0.76,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.046919281988231455,
+          "com_axis_centroid_distance_m": 0.03316676495039226,
+          "frozen_teddy_section_sample_count": 48,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.13956543274699604,
+            -0.021216786360270554
+          ]
+        },
+        {
+          "height_m": 0.78,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.08062440810996653,
+          "com_axis_centroid_distance_m": 0.02920493338962941,
+          "frozen_teddy_section_sample_count": 126,
+          "frozen_teddy_section_samples_inside_fraction": 0.5396825396825397,
+          "maximum_frozen_sample_outside_distance_m": 0.06316657999559758,
+          "actual_body_section_centroid_xy_m": [
+            -0.13648926821935736,
+            -0.01870941962694732
+          ]
+        },
+        {
+          "height_m": 0.8,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.0928204634575045,
+          "com_axis_centroid_distance_m": 0.026929670937585852,
+          "frozen_teddy_section_sample_count": 170,
+          "frozen_teddy_section_samples_inside_fraction": 0.7764705882352941,
+          "maximum_frozen_sample_outside_distance_m": 0.029125546938211157,
+          "actual_body_section_centroid_xy_m": [
+            -0.13470246943122205,
+            -0.017296327096036488
+          ]
+        },
+        {
+          "height_m": 0.82,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.09424539027449587,
+          "com_axis_centroid_distance_m": 0.0272147462994811,
+          "frozen_teddy_section_sample_count": 246,
+          "frozen_teddy_section_samples_inside_fraction": 0.7682926829268293,
+          "maximum_frozen_sample_outside_distance_m": 0.019198028422439926,
+          "actual_body_section_centroid_xy_m": [
+            -0.13410864429909472,
+            -0.018564221291758783
+          ]
+        },
+        {
+          "height_m": 0.84,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.09006814182344994,
+          "com_axis_centroid_distance_m": 0.03092584734353062,
+          "frozen_teddy_section_sample_count": 254,
+          "frozen_teddy_section_samples_inside_fraction": 0.7125984251968503,
+          "maximum_frozen_sample_outside_distance_m": 0.026991822885067754,
+          "actual_body_section_centroid_xy_m": [
+            -0.13501903055147027,
+            -0.023158076919208723
+          ]
+        },
+        {
+          "height_m": 0.86,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.0735287856809509,
+          "com_axis_centroid_distance_m": 0.03506688793129082,
+          "frozen_teddy_section_sample_count": 256,
+          "frozen_teddy_section_samples_inside_fraction": 0.6796875,
+          "maximum_frozen_sample_outside_distance_m": 0.035399541670325184,
+          "actual_body_section_centroid_xy_m": [
+            -0.13667220641647376,
+            -0.02733908805093846
+          ]
+        },
+        {
+          "height_m": 0.88,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.057032619521028304,
+          "com_axis_centroid_distance_m": 0.03786156996845538,
+          "frozen_teddy_section_sample_count": 244,
+          "frozen_teddy_section_samples_inside_fraction": 0.7581967213114754,
+          "maximum_frozen_sample_outside_distance_m": 0.030741206240631473,
+          "actual_body_section_centroid_xy_m": [
+            -0.13796155073491806,
+            -0.029945744270335826
+          ]
+        },
+        {
+          "height_m": 0.9,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.04481519862871727,
+          "com_axis_centroid_distance_m": 0.038294393114328154,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.9207317073170732,
+          "maximum_frozen_sample_outside_distance_m": 0.010607571500014608,
+          "actual_body_section_centroid_xy_m": [
+            -0.13787955955820533,
+            -0.030594846288345242
+          ]
+        },
+        {
+          "height_m": 0.9199999999999999,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.034031514996353526,
+          "com_axis_centroid_distance_m": 0.037751031439699906,
+          "frozen_teddy_section_sample_count": 152,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.1374920818169266,
+            -0.03021169894214728
+          ]
+        },
+        {
+          "height_m": 0.94,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.024070700819525264,
+          "com_axis_centroid_distance_m": 0.037550840636035615,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.9634146341463414,
+          "maximum_frozen_sample_outside_distance_m": 0.0032719727253351072,
+          "actual_body_section_centroid_xy_m": [
+            -0.13788958241013766,
+            -0.0295928835019592
+          ]
+        },
+        {
+          "height_m": 0.96,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.014113198543015702,
+          "com_axis_centroid_distance_m": 0.03754840979642065,
+          "frozen_teddy_section_sample_count": 118,
+          "frozen_teddy_section_samples_inside_fraction": 0.847457627118644,
+          "maximum_frozen_sample_outside_distance_m": 0.008724668185126435,
+          "actual_body_section_centroid_xy_m": [
+            -0.1387207597121782,
+            -0.028817266637529357
+          ]
+        },
+        {
+          "height_m": 0.98,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.005068539914655711,
+          "com_axis_centroid_distance_m": 0.03726548085281382,
+          "frozen_teddy_section_sample_count": 42,
+          "frozen_teddy_section_samples_inside_fraction": 0.8571428571428571,
+          "maximum_frozen_sample_outside_distance_m": 0.003925928111776566,
+          "actual_body_section_centroid_xy_m": [
+            -0.1396413827742592,
+            -0.027497482035341355
+          ]
+        }
+      ],
+      "frozen_pointwise_containment": {
+        "scope": "Frozen hypothetical final points against actual full17 bag, NOT an actual executed final state",
+        "height_precondition_met": true,
+        "minimum_query_below_rim_margin_m": 0.016181172597512727,
+        "all_whole_bear_volume_containment_certified": false,
+        "physical_success": false,
+        "cap_agreement_max_difference": 2.220446049250313e-16,
+        "max_integer_residual": 6.007714398319976e-16,
+        "multiple_winding_detected": false,
+        "numerical_topology_spatial_rim_and_near_surface_guards_pass": true,
+        "unit_winding_bear_vertex_count": 1173,
+        "total_bear_vertices": 1450,
+        "com_unit_winding": true,
+        "all_vertices_and_com_have_guarded_unit_winding": false,
+        "outside_bear_vertex_count": 277,
+        "minimum_body_vertex_distance_m": 9.518591726496955e-05,
+        "com_actual_body_distance_m": 0.05756915615941233,
+        "maximum_outside_bear_vertex_body_distance_m": 0.045342719834908736,
+        "near_body_1um_query_indices": [],
+        "limitation": "Pointwise winding only; positive vertex results would not establish entire tetrahedral volume containment, physical cloth nonintersection, release or stability. Any clearly exterior vertex rules out all-point containment of this frozen hypothesis.",
+        "farthest_outside_vertex": {
+          "index": 102,
+          "frozen_world_m": [
+            -0.06426048964015088,
+            0.12479662120637505,
+            0.763430681434294
+          ],
+          "reference_bear_local_m": [
+            -0.06412507552000002,
+            0.154415696,
+            0.050005207340000024
+          ],
+          "closest_body_point_m": [
+            -0.07589579452781647,
+            0.09620200682987663,
+            0.7966410706349258
+          ],
+          "closest_body_face_index": 2110,
+          "body_distance_m": 0.045342719834908736
+        }
+      }
+    },
+    {
+      "world_z_yaw_degrees": 0.0,
+      "offset_xy_m": [
+        -0.02,
+        -0.05
+      ],
+      "hypothetical_center_tcp_world_m": [
+        -0.11920657997715484,
+        0.008034297601392203,
+        1.1946997711079614
+      ],
+      "hypothetical_center_com_world_m": [
+        -0.1177486951746135,
+        0.0032997933413199676,
+        1.0977347615437831
+      ],
+      "hypothetical_final_com_world_m": [
+        -0.1177486951746135,
+        0.0032997933413199676,
+        0.86283146816507
+      ],
+      "contact_envelope_com_signed_margin_m": 0.010484298328315461,
+      "ordered_rim_projection_signed_margin_m": -0.025579697551792697,
+      "runtime_selection_rigid_minimum_m": 0.009387786473605763,
+      "runtime_selection_score_m": 0.0013877864736057625,
+      "body_section_summary": {
+        "section_count": 12,
+        "com_axis_inside_count": 12,
+        "mean_com_axis_signed_clearance_m": 0.05536350620405419,
+        "minimum_com_axis_signed_clearance_m": 0.007253738573579547,
+        "mean_com_axis_centroid_distance_m": 0.03460449487539538,
+        "mean_frozen_cut_sample_inside_fraction": 0.8312160580091681,
+        "worst_frozen_cut_sample_outside_distance_m": 0.06667736423277461,
+        "worst_com_axis_height_m": 0.98
+      },
+      "sections": [
+        {
+          "height_m": 0.76,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.04294223451493805,
+          "com_axis_centroid_distance_m": 0.03281817664902559,
+          "frozen_teddy_section_sample_count": 48,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.13956543274699604,
+            -0.021216786360270554
+          ]
+        },
+        {
+          "height_m": 0.78,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.07747377216265958,
+          "com_axis_centroid_distance_m": 0.02890699800269694,
+          "frozen_teddy_section_sample_count": 126,
+          "frozen_teddy_section_samples_inside_fraction": 0.5396825396825397,
+          "maximum_frozen_sample_outside_distance_m": 0.06667736423277461,
+          "actual_body_section_centroid_xy_m": [
+            -0.13648926821935736,
+            -0.01870941962694732
+          ]
+        },
+        {
+          "height_m": 0.8,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.093596234419829,
+          "com_axis_centroid_distance_m": 0.02667640602881383,
+          "frozen_teddy_section_sample_count": 170,
+          "frozen_teddy_section_samples_inside_fraction": 0.7705882352941177,
+          "maximum_frozen_sample_outside_distance_m": 0.032673489077906896,
+          "actual_body_section_centroid_xy_m": [
+            -0.13470246943122205,
+            -0.017296327096036488
+          ]
+        },
+        {
+          "height_m": 0.82,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.09595850557209316,
+          "com_axis_centroid_distance_m": 0.027307198157831856,
+          "frozen_teddy_section_sample_count": 246,
+          "frozen_teddy_section_samples_inside_fraction": 0.7845528455284553,
+          "maximum_frozen_sample_outside_distance_m": 0.017951842185012338,
+          "actual_body_section_centroid_xy_m": [
+            -0.13410864429909472,
+            -0.018564221291758783
+          ]
+        },
+        {
+          "height_m": 0.84,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.09098700779704175,
+          "com_axis_centroid_distance_m": 0.031595622841654486,
+          "frozen_teddy_section_sample_count": 254,
+          "frozen_teddy_section_samples_inside_fraction": 0.6732283464566929,
+          "maximum_frozen_sample_outside_distance_m": 0.023144446847118527,
+          "actual_body_section_centroid_xy_m": [
+            -0.13501903055147027,
+            -0.023158076919208723
+          ]
+        },
+        {
+          "height_m": 0.86,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.0739208757264294,
+          "com_axis_centroid_distance_m": 0.036011669368271326,
+          "frozen_teddy_section_sample_count": 256,
+          "frozen_teddy_section_samples_inside_fraction": 0.6875,
+          "maximum_frozen_sample_outside_distance_m": 0.03036192100159923,
+          "actual_body_section_centroid_xy_m": [
+            -0.13667220641647376,
+            -0.02733908805093846
+          ]
+        },
+        {
+          "height_m": 0.88,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.05800218497770334,
+          "com_axis_centroid_distance_m": 0.0389079079492814,
+          "frozen_teddy_section_sample_count": 244,
+          "frozen_teddy_section_samples_inside_fraction": 0.75,
+          "maximum_frozen_sample_outside_distance_m": 0.025588672844790956,
+          "actual_body_section_centroid_xy_m": [
+            -0.13796155073491806,
+            -0.029945744270335826
+          ]
+        },
+        {
+          "height_m": 0.9,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.04622774852250416,
+          "com_axis_centroid_distance_m": 0.03942205342768737,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.9451219512195121,
+          "maximum_frozen_sample_outside_distance_m": 0.004372751596185021,
+          "actual_body_section_centroid_xy_m": [
+            -0.13787955955820533,
+            -0.030594846288345242
+          ]
+        },
+        {
+          "height_m": 0.9199999999999999,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.03579117462827461,
+          "com_axis_centroid_distance_m": 0.03889500522140024,
+          "frozen_teddy_section_sample_count": 152,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.1374920818169266,
+            -0.03021169894214728
+          ]
+        },
+        {
+          "height_m": 0.94,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.025792786406616586,
+          "com_axis_centroid_distance_m": 0.03856920440650148,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.9817073170731707,
+          "maximum_frozen_sample_outside_distance_m": 0.0003573352551054574,
+          "actual_body_section_centroid_xy_m": [
+            -0.13788958241013766,
+            -0.0295928835019592
+          ]
+        },
+        {
+          "height_m": 0.96,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.016415811146980985,
+          "com_axis_centroid_distance_m": 0.03835795918258405,
+          "frozen_teddy_section_sample_count": 118,
+          "frozen_teddy_section_samples_inside_fraction": 0.8898305084745762,
+          "maximum_frozen_sample_outside_distance_m": 0.005547053150999548,
+          "actual_body_section_centroid_xy_m": [
+            -0.1387207597121782,
+            -0.028817266637529357
+          ]
+        },
+        {
+          "height_m": 0.98,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.007253738573579547,
+          "com_axis_centroid_distance_m": 0.03778573726899596,
+          "frozen_teddy_section_sample_count": 42,
+          "frozen_teddy_section_samples_inside_fraction": 0.9523809523809523,
+          "maximum_frozen_sample_outside_distance_m": 0.00019934603042734262,
+          "actual_body_section_centroid_xy_m": [
+            -0.1396413827742592,
+            -0.027497482035341355
+          ]
+        }
+      ],
+      "frozen_pointwise_containment": {
+        "scope": "Frozen hypothetical final points against actual full17 bag, NOT an actual executed final state",
+        "height_precondition_met": true,
+        "minimum_query_below_rim_margin_m": 0.016181172597512727,
+        "all_whole_bear_volume_containment_certified": false,
+        "physical_success": false,
+        "cap_agreement_max_difference": 2.220446049250313e-16,
+        "max_integer_residual": 1.1102230246251565e-15,
+        "multiple_winding_detected": false,
+        "numerical_topology_spatial_rim_and_near_surface_guards_pass": true,
+        "unit_winding_bear_vertex_count": 1184,
+        "total_bear_vertices": 1450,
+        "com_unit_winding": true,
+        "all_vertices_and_com_have_guarded_unit_winding": false,
+        "outside_bear_vertex_count": 266,
+        "minimum_body_vertex_distance_m": 2.31180221603644e-05,
+        "com_actual_body_distance_m": 0.05850109582440887,
+        "maximum_outside_bear_vertex_body_distance_m": 0.04775205637219583,
+        "near_body_1um_query_indices": [],
+        "limitation": "Pointwise winding only; positive vertex results would not establish entire tetrahedral volume containment, physical cloth nonintersection, release or stability. Any clearly exterior vertex rules out all-point containment of this frozen hypothesis.",
+        "farthest_outside_vertex": {
+          "index": 140,
+          "frozen_world_m": [
+            -0.07097809548285033,
+            0.1361137914336314,
+            0.7684612131054127
+          ],
+          "reference_bear_local_m": [
+            -0.057351802519999995,
+            0.1583320197,
+            0.052638890749999945
+          ],
+          "closest_body_point_m": [
+            -0.07902813609926923,
+            0.10475879896959843,
+            0.8035656313661931
+          ],
+          "closest_body_face_index": 2110,
+          "body_distance_m": 0.04775205637219583
+        }
+      }
+    },
+    {
+      "world_z_yaw_degrees": 45.0,
+      "offset_xy_m": [
+        -0.025,
+        -0.05
+      ],
+      "hypothetical_center_tcp_world_m": [
+        -0.12420657997715484,
+        0.008034297601392203,
+        1.1946997711079614
+      ],
+      "hypothetical_center_com_world_m": [
+        -0.11982789967923538,
+        0.005717377763604314,
+        1.0977347615437831
+      ],
+      "hypothetical_final_com_world_m": [
+        -0.11982789967923538,
+        0.005717377763604314,
+        0.86283146816507
+      ],
+      "contact_envelope_com_signed_margin_m": 0.012953797453333582,
+      "ordered_rim_projection_signed_margin_m": -0.023028841447601298,
+      "runtime_selection_rigid_minimum_m": 0.01717788937034063,
+      "runtime_selection_score_m": null,
+      "body_section_summary": {
+        "section_count": 12,
+        "com_axis_inside_count": 12,
+        "mean_com_axis_signed_clearance_m": 0.05536975426390386,
+        "minimum_com_axis_signed_clearance_m": 0.007958227280924298,
+        "mean_com_axis_centroid_distance_m": 0.03554657963734955,
+        "mean_frozen_cut_sample_inside_fraction": 0.8711021362675546,
+        "worst_frozen_cut_sample_outside_distance_m": 0.08202266594421215,
+        "worst_com_axis_height_m": 0.98
+      },
+      "sections": [
+        {
+          "height_m": 0.76,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.04103922208066211,
+          "com_axis_centroid_distance_m": 0.033391906334511265,
+          "frozen_teddy_section_sample_count": 48,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.13956543274699604,
+            -0.021216786360270554
+          ]
+        },
+        {
+          "height_m": 0.78,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.07551340239738229,
+          "com_axis_centroid_distance_m": 0.02956805087233223,
+          "frozen_teddy_section_sample_count": 126,
+          "frozen_teddy_section_samples_inside_fraction": 0.5396825396825397,
+          "maximum_frozen_sample_outside_distance_m": 0.055955850783179654,
+          "actual_body_section_centroid_xy_m": [
+            -0.13648926821935736,
+            -0.01870941962694732
+          ]
+        },
+        {
+          "height_m": 0.8,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.09370754324251757,
+          "com_axis_centroid_distance_m": 0.027402252401460936,
+          "frozen_teddy_section_sample_count": 170,
+          "frozen_teddy_section_samples_inside_fraction": 0.7823529411764706,
+          "maximum_frozen_sample_outside_distance_m": 0.03547620289069085,
+          "actual_body_section_centroid_xy_m": [
+            -0.13470246943122205,
+            -0.017296327096036488
+          ]
+        },
+        {
+          "height_m": 0.82,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.09665964289339811,
+          "com_axis_centroid_distance_m": 0.028169766054815783,
+          "frozen_teddy_section_sample_count": 246,
+          "frozen_teddy_section_samples_inside_fraction": 0.8414634146341463,
+          "maximum_frozen_sample_outside_distance_m": 0.038501419856083574,
+          "actual_body_section_centroid_xy_m": [
+            -0.13410864429909472,
+            -0.018564221291758783
+          ]
+        },
+        {
+          "height_m": 0.84,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.0904633340637392,
+          "com_axis_centroid_distance_m": 0.03262763154623022,
+          "frozen_teddy_section_sample_count": 254,
+          "frozen_teddy_section_samples_inside_fraction": 0.84251968503937,
+          "maximum_frozen_sample_outside_distance_m": 0.05120704923577174,
+          "actual_body_section_centroid_xy_m": [
+            -0.13501903055147027,
+            -0.023158076919208723
+          ]
+        },
+        {
+          "height_m": 0.86,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.07392468078599258,
+          "com_axis_centroid_distance_m": 0.03710068195608013,
+          "frozen_teddy_section_sample_count": 256,
+          "frozen_teddy_section_samples_inside_fraction": 0.79296875,
+          "maximum_frozen_sample_outside_distance_m": 0.07616389605203587,
+          "actual_body_section_centroid_xy_m": [
+            -0.13667220641647376,
+            -0.02733908805093846
+          ]
+        },
+        {
+          "height_m": 0.88,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.058265477082608,
+          "com_axis_centroid_distance_m": 0.04000859374955546,
+          "frozen_teddy_section_sample_count": 244,
+          "frozen_teddy_section_samples_inside_fraction": 0.7213114754098361,
+          "maximum_frozen_sample_outside_distance_m": 0.08202266594421215,
+          "actual_body_section_centroid_xy_m": [
+            -0.13796155073491806,
+            -0.029945744270335826
+          ]
+        },
+        {
+          "height_m": 0.9,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.04667589956710802,
+          "com_axis_centroid_distance_m": 0.04055169589530132,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 0.9329268292682927,
+          "maximum_frozen_sample_outside_distance_m": 0.0135412052883278,
+          "actual_body_section_centroid_xy_m": [
+            -0.13787955955820533,
+            -0.030594846288345242
+          ]
+        },
+        {
+          "height_m": 0.9199999999999999,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.036371006503460236,
+          "com_axis_centroid_distance_m": 0.040036506884608594,
+          "frozen_teddy_section_sample_count": 152,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.1374920818169266,
+            -0.03021169894214728
+          ]
+        },
+        {
+          "height_m": 0.94,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.026445486901292125,
+          "com_axis_centroid_distance_m": 0.03966155485749554,
+          "frozen_teddy_section_sample_count": 164,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.13788958241013766,
+            -0.0295928835019592
+          ]
+        },
+        {
+          "height_m": 0.96,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.01741312836776168,
+          "com_axis_centroid_distance_m": 0.039364728173037364,
+          "frozen_teddy_section_sample_count": 118,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.1387207597121782,
+            -0.028817266637529357
+          ]
+        },
+        {
+          "height_m": 0.98,
+          "com_axis_inside": true,
+          "com_axis_signed_clearance_m": 0.007958227280924298,
+          "com_axis_centroid_distance_m": 0.038675586922765785,
+          "frozen_teddy_section_sample_count": 42,
+          "frozen_teddy_section_samples_inside_fraction": 1.0,
+          "maximum_frozen_sample_outside_distance_m": 0.0,
+          "actual_body_section_centroid_xy_m": [
+            -0.1396413827742592,
+            -0.027497482035341355
+          ]
+        }
+      ],
+      "frozen_pointwise_containment": {
+        "scope": "Frozen hypothetical final points against actual full17 bag, NOT an actual executed final state",
+        "height_precondition_met": true,
+        "minimum_query_below_rim_margin_m": 0.016181172597512727,
+        "all_whole_bear_volume_containment_certified": false,
+        "physical_success": false,
+        "cap_agreement_max_difference": 2.220446049250313e-16,
+        "max_integer_residual": 3.5339496460705744e-16,
+        "multiple_winding_detected": false,
+        "numerical_topology_spatial_rim_and_near_surface_guards_pass": true,
+        "unit_winding_bear_vertex_count": 1200,
+        "total_bear_vertices": 1450,
+        "com_unit_winding": true,
+        "all_vertices_and_com_have_guarded_unit_winding": false,
+        "outside_bear_vertex_count": 250,
+        "minimum_body_vertex_distance_m": 2.9568070477532266e-05,
+        "com_actual_body_distance_m": 0.05874054140319604,
+        "maximum_outside_bear_vertex_body_distance_m": 0.0810321252812874,
+        "near_body_1um_query_indices": [],
+        "limitation": "Pointwise winding only; positive vertex results would not establish entire tetrahedral volume containment, physical cloth nonintersection, release or stability. Any clearly exterior vertex rules out all-point containment of this frozen hypothesis.",
+        "farthest_outside_vertex": {
+          "index": 564,
+          "frozen_world_m": [
+            -0.2096092422244584,
+            0.15035076313157775,
+            0.8773183013508488
+          ],
+          "reference_bear_local_m": [
+            0.05674689130999999,
+            0.1589594302,
+            0.05064423165999998
+          ],
+          "closest_body_point_m": [
+            -0.13714472355693363,
+            0.11420243057905373,
+            0.880216044534491
+          ],
+          "closest_body_face_index": 2399,
+          "body_distance_m": 0.0810321252812874
+        }
+      }
+    }
+  ],
+  "selected_vs_references": [
+    {
+      "selected_offset_xy_m": [
+        -0.015,
+        -0.045
+      ],
+      "reference_offset_xy_m": [
+        -0.0165,
+        -0.0535
+      ],
+      "selected_minus_reference_summary": {
+        "com_axis_inside_count": 0,
+        "mean_com_axis_signed_clearance_m": -0.006337256532851082,
+        "minimum_com_axis_signed_clearance_m": -0.005215510643537544,
+        "mean_com_axis_centroid_distance_m": 0.007493621991236689,
+        "mean_frozen_cut_sample_inside_fraction": -0.018281463410819487,
+        "worst_frozen_cut_sample_outside_distance_m": 0.008585633233792814
+      },
+      "selected_minus_reference_runtime_score_m": 0.00014550154941805806,
+      "per_height": [
+        {
+          "height_m": 0.76,
+          "COM_signed_margin_change_m": -0.008631072554802187,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.78,
+          "COM_signed_margin_change_m": -0.008625667610839105,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.8,
+          "COM_signed_margin_change_m": -0.006647960009025622,
+          "contour_sample_inside_fraction_change": -0.01764705882352946
+        },
+        {
+          "height_m": 0.82,
+          "COM_signed_margin_change_m": -0.0055216221625419976,
+          "contour_sample_inside_fraction_change": -0.016260162601625994
+        },
+        {
+          "height_m": 0.84,
+          "COM_signed_margin_change_m": -0.006626517518947536,
+          "contour_sample_inside_fraction_change": -0.027559055118110187
+        },
+        {
+          "height_m": 0.86,
+          "COM_signed_margin_change_m": -0.006741543130566019,
+          "contour_sample_inside_fraction_change": 0.02734375
+        },
+        {
+          "height_m": 0.88,
+          "COM_signed_margin_change_m": -0.006240117639760116,
+          "contour_sample_inside_fraction_change": -0.016393442622950838
+        },
+        {
+          "height_m": 0.9,
+          "COM_signed_margin_change_m": -0.005835047095759667,
+          "contour_sample_inside_fraction_change": 0.018292682926829174
+        },
+        {
+          "height_m": 0.9199999999999999,
+          "COM_signed_margin_change_m": -0.005591378344127804,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.94,
+          "COM_signed_margin_change_m": -0.005628909875215273,
+          "contour_sample_inside_fraction_change": -0.04268292682926822
+        },
+        {
+          "height_m": 0.96,
+          "COM_signed_margin_change_m": -0.004741731809090188,
+          "contour_sample_inside_fraction_change": -0.025423728813559365
+        },
+        {
+          "height_m": 0.98,
+          "COM_signed_margin_change_m": -0.005215510643537544,
+          "contour_sample_inside_fraction_change": -0.11904761904761907
+        }
+      ]
+    },
+    {
+      "selected_offset_xy_m": [
+        -0.015,
+        -0.045
+      ],
+      "reference_offset_xy_m": [
+        -0.015,
+        -0.055
+      ],
+      "selected_minus_reference_summary": {
+        "com_axis_inside_count": 0,
+        "mean_com_axis_signed_clearance_m": -0.0061228621528852945,
+        "minimum_com_axis_signed_clearance_m": -0.004559951045860394,
+        "mean_com_axis_centroid_distance_m": 0.007500664129415746,
+        "mean_frozen_cut_sample_inside_fraction": -0.01622679255739201,
+        "worst_frozen_cut_sample_outside_distance_m": 0.009577240947537424
+      },
+      "selected_minus_reference_runtime_score_m": 0.0017465960087039867,
+      "per_height": [
+        {
+          "height_m": 0.76,
+          "COM_signed_margin_change_m": -0.009833896720214702,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.78,
+          "COM_signed_margin_change_m": -0.009059252882168661,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.8,
+          "COM_signed_margin_change_m": -0.006262247521622022,
+          "contour_sample_inside_fraction_change": -0.02352941176470591
+        },
+        {
+          "height_m": 0.82,
+          "COM_signed_margin_change_m": -0.0050598535255634985,
+          "contour_sample_inside_fraction_change": -0.016260162601625994
+        },
+        {
+          "height_m": 0.84,
+          "COM_signed_margin_change_m": -0.006116219545303239,
+          "contour_sample_inside_fraction_change": -0.03149606299212593
+        },
+        {
+          "height_m": 0.86,
+          "COM_signed_margin_change_m": -0.006652697991935297,
+          "contour_sample_inside_fraction_change": 0.0234375
+        },
+        {
+          "height_m": 0.88,
+          "COM_signed_margin_change_m": -0.006021976101679892,
+          "contour_sample_inside_fraction_change": -0.016393442622950838
+        },
+        {
+          "height_m": 0.9,
+          "COM_signed_margin_change_m": -0.0054940254654218534,
+          "contour_sample_inside_fraction_change": 0.018292682926829174
+        },
+        {
+          "height_m": 0.9199999999999999,
+          "COM_signed_margin_change_m": -0.0050774352997697975,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.94,
+          "COM_signed_margin_change_m": -0.005110437992523281,
+          "contour_sample_inside_fraction_change": -0.03658536585365846
+        },
+        {
+          "height_m": 0.96,
+          "COM_signed_margin_change_m": -0.004226351742561007,
+          "contour_sample_inside_fraction_change": -0.016949152542372836
+        },
+        {
+          "height_m": 0.98,
+          "COM_signed_margin_change_m": -0.004559951045860394,
+          "contour_sample_inside_fraction_change": -0.09523809523809523
+        }
+      ]
+    },
+    {
+      "selected_offset_xy_m": [
+        -0.015,
+        -0.045
+      ],
+      "reference_offset_xy_m": [
+        -0.02,
+        -0.05
+      ],
+      "selected_minus_reference_summary": {
+        "com_axis_inside_count": 0,
+        "mean_com_axis_signed_clearance_m": -0.006708181377114902,
+        "minimum_com_axis_signed_clearance_m": -0.00674514970478423,
+        "mean_com_axis_centroid_distance_m": 0.00696121730899233,
+        "mean_frozen_cut_sample_inside_fraction": -0.028803243643401477,
+        "worst_frozen_cut_sample_outside_distance_m": 0.006066456710360393
+      },
+      "selected_minus_reference_runtime_score_m": 0.0030466654781202912,
+      "per_height": [
+        {
+          "height_m": 0.76,
+          "COM_signed_margin_change_m": -0.0058568492469213,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.78,
+          "COM_signed_margin_change_m": -0.005908616934861707,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.8,
+          "COM_signed_margin_change_m": -0.007038018483946529,
+          "contour_sample_inside_fraction_change": -0.01764705882352946
+        },
+        {
+          "height_m": 0.82,
+          "COM_signed_margin_change_m": -0.006772968823160794,
+          "contour_sample_inside_fraction_change": -0.03252032520325199
+        },
+        {
+          "height_m": 0.84,
+          "COM_signed_margin_change_m": -0.007035085518895048,
+          "contour_sample_inside_fraction_change": 0.007874015748031482
+        },
+        {
+          "height_m": 0.86,
+          "COM_signed_margin_change_m": -0.0070447880374137906,
+          "contour_sample_inside_fraction_change": 0.015625
+        },
+        {
+          "height_m": 0.88,
+          "COM_signed_margin_change_m": -0.006991541558354929,
+          "contour_sample_inside_fraction_change": -0.008196721311475419
+        },
+        {
+          "height_m": 0.9,
+          "COM_signed_margin_change_m": -0.006906575359208737,
+          "contour_sample_inside_fraction_change": -0.0060975609756097615
+        },
+        {
+          "height_m": 0.9199999999999999,
+          "COM_signed_margin_change_m": -0.006837094931690879,
+          "contour_sample_inside_fraction_change": 0.0
+        },
+        {
+          "height_m": 0.94,
+          "COM_signed_margin_change_m": -0.006832523579614603,
+          "contour_sample_inside_fraction_change": -0.05487804878048774
+        },
+        {
+          "height_m": 0.96,
+          "COM_signed_margin_change_m": -0.00652896434652629,
+          "contour_sample_inside_fraction_change": -0.05932203389830504
+        },
+        {
+          "height_m": 0.98,
+          "COM_signed_margin_change_m": -0.00674514970478423,
+          "contour_sample_inside_fraction_change": -0.19047619047619047
+        }
+      ]
+    }
+  ],
+  "input_sha256": {
+    "runs/two_panel_full_17/rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "runs/two_panel_full_17/lower_teddy_to_rim.npz": "755f02cac671f22826b834364508920f786c438ffb5993dd65da9a7fc956547d",
+    "runs/two_panel_full_17/config.json": "20b6cbbd9489f1853260249f401f6709afb20bb37e6f7a4b4483117064fcb9cd",
+    "runs/two_panel_full_17/independent-entry-three-balanced-centers.json": "8a103305c89895bee6e1c9558773807cbaad9b5439c34ed7d64d77a72d8e59e9",
+    "runs/two_panel_full_17/independent-adaptive-center-actual-input-review.json": "0225fce081d13ee6cc007c59c659ddb871cc0b91c1722dda64e7bb79db555803"
+  },
+  "prior_section_method_sha256": "f05e7916860cc0ed6aebfa3a0cb23c7121800d418a98d7891f62e3e81f2a224b",
+  "bounded_conclusion": {
+    "translation_selection": "On the same frozen full17 body, selected [-15,-45] mm loses COM-axis clearance at all 12 sampled heights versus the three alternatives, increases mean distance to section centroids, slightly lowers mean discrete contour coverage, and increases the worst sampled exterior distance. It buys robot clearance, while current contact-envelope scoring does not measure this actual body alignment.",
+    "next_iteration": "If a later physical failure motivates revision, use newly observed body alignment as an additional diagnostic when candidates have similar current scores; do not change the ongoing full19 policy or turn frozen section metrics into unvalidated physical acceptance thresholds.",
+    "yaw": "The +45-degree frozen yaw improves upper-section coverage and reduces the number of exterior vertices, but creates a substantially larger localized exterior protrusion at middle heights. It is not a uniformly better body fit and is not evidence of actual yaw/grasp feasibility.",
+    "containment": "All five hypotheses meet the low-region precondition and all numerical/topology guards, but all have clearly exterior teddy vertices. None is whole-bear-contained in the unchanged captured bag; future real cloth deformation is not predicted by this test."
+  },
+  "limitations": [
+    "Frozen full17 actual-entry cloth shape is held fixed. It is neither a rigid aperture nor a prediction of full19, whose native cloth may differ.",
+    "Center COM vertical-axis clearance is not full teddy containment. All four frozen teddy shapes exceed some captured body sections.",
+    "Discrete outline samples are not area/volume fractions or a continuous outline-containment guarantee.",
+    "The highest cut is 0.98 m, below the actual lowest rim 1.003277 m. No free opening or upper-rim passage is inferred.",
+    "No soft strain, force, grasp, physical contact, release, settled containment, or route safety is decided by this diagnostic. Runtime gates and ongoing full19 stay unchanged."
+  ]
+}

@@ -1,0 +1,408 @@
+{
+  "kind": "synthetic_native_height_postrun_audit_regression",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "fixture_is_synthetic": true,
+  "audit_source_modified": false,
+  "fixture": {
+    "native_reference_bodies": 3,
+    "vertices_per_body": 4,
+    "trace_rows": 5,
+    "full_bear_frames": 3,
+    "native_finger_transform_crosschecks": 6,
+    "center_start_s": 0.01,
+    "insert_endpoint_release_start_s": 0.03,
+    "integration_step_s": 0.005,
+    "native_affine_is_nonrigid": true
+  },
+  "source_sha256_at_import": "eb06a82232349d5efd96a7ee9bc7df7cf63f82df58fef5d06f141184cf66967b",
+  "source_sha256_at_finish": "eb06a82232349d5efd96a7ee9bc7df7cf63f82df58fef5d06f141184cf66967b",
+  "regression_script_sha256": "712298d8b22c4bed9ea4c721ce13d62d9da80c915976829e7d7d88b8dc706df3",
+  "passed_count": 9,
+  "test_count": 9,
+  "tests": [
+    {
+      "case": "valid_affine_fixture",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "passed",
+        "passed": true,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": true,
+          "stable_native_link_order": true,
+          "native_affine_homogeneous_rows_valid": true,
+          "native_affine_bodies_noninverted": true,
+          "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+          "whole_hand_minimum_matches_three_components": true,
+          "reported_vertical_gaps_reconstruct": true,
+          "minimum_threshold_is_5mm": true,
+          "all_recorded_vertical_gaps_at_least_5mm": true,
+          "whole_bear_counts_and_max_vertex_indices_valid": true,
+          "covers_every_step_from_center_entry_through_insert_endpoint": true,
+          "strictly_increasing_consecutive_steps": true,
+          "timestamps_match_fixed_step": true,
+          "no_native_height_stop_reason": true,
+          "all_full_bear_frames_in_monitored_window_matched": true,
+          "full_frame_bear_maxima_and_argmax_reconstruct": true,
+          "saved_coupling_finger_transforms_match_height_trace": true
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "rows": 5,
+        "start_time_s": 0.01,
+        "end_time_s": 0.03,
+        "minimum_gap_m": 0.07000000000000006,
+        "maximum_hand_reconstruction_error_m": 0.0,
+        "full_bear_frame_crosschecks": 3,
+        "failed_full_bear_frame_crosschecked": false,
+        "bear_summary_only_rows_without_matching_full_frame": 2,
+        "finger_transform_crosschecks": 6
+      }
+    },
+    {
+      "case": "delete_first_row",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "failed",
+        "passed": false,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": true,
+          "stable_native_link_order": true,
+          "native_affine_homogeneous_rows_valid": true,
+          "native_affine_bodies_noninverted": true,
+          "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+          "whole_hand_minimum_matches_three_components": true,
+          "reported_vertical_gaps_reconstruct": true,
+          "minimum_threshold_is_5mm": true,
+          "all_recorded_vertical_gaps_at_least_5mm": true,
+          "whole_bear_counts_and_max_vertex_indices_valid": true,
+          "covers_every_step_from_center_entry_through_insert_endpoint": false,
+          "strictly_increasing_consecutive_steps": true,
+          "timestamps_match_fixed_step": true,
+          "no_native_height_stop_reason": true,
+          "all_full_bear_frames_in_monitored_window_matched": false,
+          "full_frame_bear_maxima_and_argmax_reconstruct": true,
+          "saved_coupling_finger_transforms_match_height_trace": true
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "rows": 4,
+        "start_time_s": 0.015,
+        "end_time_s": 0.03,
+        "minimum_gap_m": 0.07000000000000006,
+        "maximum_hand_reconstruction_error_m": 0.0,
+        "full_bear_frame_crosschecks": 2,
+        "failed_full_bear_frame_crosschecked": false,
+        "bear_summary_only_rows_without_matching_full_frame": 2,
+        "finger_transform_crosschecks": 4
+      }
+    },
+    {
+      "case": "delete_last_row",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "failed",
+        "passed": false,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": true,
+          "stable_native_link_order": true,
+          "native_affine_homogeneous_rows_valid": true,
+          "native_affine_bodies_noninverted": true,
+          "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+          "whole_hand_minimum_matches_three_components": true,
+          "reported_vertical_gaps_reconstruct": true,
+          "minimum_threshold_is_5mm": true,
+          "all_recorded_vertical_gaps_at_least_5mm": true,
+          "whole_bear_counts_and_max_vertex_indices_valid": true,
+          "covers_every_step_from_center_entry_through_insert_endpoint": false,
+          "strictly_increasing_consecutive_steps": true,
+          "timestamps_match_fixed_step": true,
+          "no_native_height_stop_reason": true,
+          "all_full_bear_frames_in_monitored_window_matched": false,
+          "full_frame_bear_maxima_and_argmax_reconstruct": true,
+          "saved_coupling_finger_transforms_match_height_trace": true
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "rows": 4,
+        "start_time_s": 0.01,
+        "end_time_s": 0.025,
+        "minimum_gap_m": 0.07000000000000006,
+        "maximum_hand_reconstruction_error_m": 0.0,
+        "full_bear_frame_crosschecks": 2,
+        "failed_full_bear_frame_crosschecked": false,
+        "bear_summary_only_rows_without_matching_full_frame": 2,
+        "finger_transform_crosschecks": 4
+      }
+    },
+    {
+      "case": "repeat_physics_step",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "failed",
+        "passed": false,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": true,
+          "stable_native_link_order": true,
+          "native_affine_homogeneous_rows_valid": true,
+          "native_affine_bodies_noninverted": true,
+          "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+          "whole_hand_minimum_matches_three_components": true,
+          "reported_vertical_gaps_reconstruct": true,
+          "minimum_threshold_is_5mm": true,
+          "all_recorded_vertical_gaps_at_least_5mm": true,
+          "whole_bear_counts_and_max_vertex_indices_valid": true,
+          "covers_every_step_from_center_entry_through_insert_endpoint": true,
+          "strictly_increasing_consecutive_steps": false,
+          "timestamps_match_fixed_step": true,
+          "no_native_height_stop_reason": true,
+          "all_full_bear_frames_in_monitored_window_matched": true,
+          "full_frame_bear_maxima_and_argmax_reconstruct": true,
+          "saved_coupling_finger_transforms_match_height_trace": true
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "rows": 5,
+        "start_time_s": 0.01,
+        "end_time_s": 0.03,
+        "minimum_gap_m": 0.07000000000000006,
+        "maximum_hand_reconstruction_error_m": 0.0,
+        "full_bear_frame_crosschecks": 3,
+        "failed_full_bear_frame_crosschecked": false,
+        "bear_summary_only_rows_without_matching_full_frame": 2,
+        "finger_transform_crosschecks": 6
+      }
+    },
+    {
+      "case": "lower_threshold_in_rows_and_metadata",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "failed",
+        "passed": false,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": true,
+          "stable_native_link_order": true,
+          "native_affine_homogeneous_rows_valid": true,
+          "native_affine_bodies_noninverted": true,
+          "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+          "whole_hand_minimum_matches_three_components": true,
+          "reported_vertical_gaps_reconstruct": true,
+          "minimum_threshold_is_5mm": false,
+          "all_recorded_vertical_gaps_at_least_5mm": true,
+          "whole_bear_counts_and_max_vertex_indices_valid": true,
+          "covers_every_step_from_center_entry_through_insert_endpoint": true,
+          "strictly_increasing_consecutive_steps": true,
+          "timestamps_match_fixed_step": true,
+          "no_native_height_stop_reason": true,
+          "all_full_bear_frames_in_monitored_window_matched": true,
+          "full_frame_bear_maxima_and_argmax_reconstruct": true,
+          "saved_coupling_finger_transforms_match_height_trace": true
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "rows": 5,
+        "start_time_s": 0.01,
+        "end_time_s": 0.03,
+        "minimum_gap_m": 0.07000000000000006,
+        "maximum_hand_reconstruction_error_m": 0.0,
+        "full_bear_frame_crosschecks": 3,
+        "failed_full_bear_frame_crosschecked": false,
+        "bear_summary_only_rows_without_matching_full_frame": 2,
+        "finger_transform_crosschecks": 6
+      }
+    },
+    {
+      "case": "nonfinite_gap",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "failed",
+        "passed": false,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": false
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "error": "Nonfinite or malformed native height rows"
+      }
+    },
+    {
+      "case": "tamper_native_affine_matrix",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "failed",
+        "passed": false,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": true,
+          "stable_native_link_order": true,
+          "native_affine_homogeneous_rows_valid": true,
+          "native_affine_bodies_noninverted": true,
+          "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+          "whole_hand_minimum_matches_three_components": true,
+          "reported_vertical_gaps_reconstruct": true,
+          "minimum_threshold_is_5mm": true,
+          "all_recorded_vertical_gaps_at_least_5mm": true,
+          "whole_bear_counts_and_max_vertex_indices_valid": true,
+          "covers_every_step_from_center_entry_through_insert_endpoint": true,
+          "strictly_increasing_consecutive_steps": true,
+          "timestamps_match_fixed_step": true,
+          "no_native_height_stop_reason": true,
+          "all_full_bear_frames_in_monitored_window_matched": true,
+          "full_frame_bear_maxima_and_argmax_reconstruct": true,
+          "saved_coupling_finger_transforms_match_height_trace": false
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "rows": 5,
+        "start_time_s": 0.01,
+        "end_time_s": 0.03,
+        "minimum_gap_m": 0.07000000000000006,
+        "maximum_hand_reconstruction_error_m": 0.0,
+        "full_bear_frame_crosschecks": 3,
+        "failed_full_bear_frame_crosschecked": false,
+        "bear_summary_only_rows_without_matching_full_frame": 2,
+        "finger_transform_crosschecks": 6
+      }
+    },
+    {
+      "case": "argmax_index_out_of_range",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "failed",
+        "passed": false,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": true,
+          "stable_native_link_order": true,
+          "native_affine_homogeneous_rows_valid": true,
+          "native_affine_bodies_noninverted": true,
+          "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+          "whole_hand_minimum_matches_three_components": true,
+          "reported_vertical_gaps_reconstruct": true,
+          "minimum_threshold_is_5mm": true,
+          "all_recorded_vertical_gaps_at_least_5mm": true,
+          "whole_bear_counts_and_max_vertex_indices_valid": false,
+          "covers_every_step_from_center_entry_through_insert_endpoint": true,
+          "strictly_increasing_consecutive_steps": true,
+          "timestamps_match_fixed_step": true,
+          "no_native_height_stop_reason": true
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "error": "index 4 is out of bounds for axis 0 with size 4"
+      }
+    },
+    {
+      "case": "full_bear_frame_disagrees",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_result": {
+        "status": "failed",
+        "passed": false,
+        "checks": {
+          "exact_three_native_reference_links": true,
+          "reference_vertices_match_recorded_hashes": true,
+          "reference_bounds_match_recorded_geometry": true,
+          "link7_reference_is_true_palm_subset_not_arm_link7": true,
+          "all_native_rows_finite_and_shapes_valid": true,
+          "stable_native_link_order": true,
+          "native_affine_homogeneous_rows_valid": true,
+          "native_affine_bodies_noninverted": true,
+          "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+          "whole_hand_minimum_matches_three_components": true,
+          "reported_vertical_gaps_reconstruct": true,
+          "minimum_threshold_is_5mm": true,
+          "all_recorded_vertical_gaps_at_least_5mm": true,
+          "whole_bear_counts_and_max_vertex_indices_valid": true,
+          "covers_every_step_from_center_entry_through_insert_endpoint": true,
+          "strictly_increasing_consecutive_steps": true,
+          "timestamps_match_fixed_step": true,
+          "no_native_height_stop_reason": true,
+          "all_full_bear_frames_in_monitored_window_matched": true,
+          "full_frame_bear_maxima_and_argmax_reconstruct": false,
+          "saved_coupling_finger_transforms_match_height_trace": true
+        },
+        "limitations": [
+          "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+          "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+          "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+        ],
+        "rows": 5,
+        "start_time_s": 0.01,
+        "end_time_s": 0.03,
+        "minimum_gap_m": 0.07000000000000006,
+        "maximum_hand_reconstruction_error_m": 0.0,
+        "full_bear_frame_crosschecks": 3,
+        "failed_full_bear_frame_crosschecked": false,
+        "bear_summary_only_rows_without_matching_full_frame": 2,
+        "finger_transform_crosschecks": 6
+      }
+    }
+  ],
+  "limitations": [
+    "Tests only audit_staged_hand on a small synthetic fixture.",
+    "Does not validate physical runs, native monitor acquisition, staged sequence audit, or dynamics."
+  ]
+}

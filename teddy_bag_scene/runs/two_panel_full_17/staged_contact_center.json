@@ -1,0 +1,744 @@
+{
+  "kind": "staged_guarded_contact_trial",
+  "status": "rejected",
+  "phase": "center",
+  "stage": null,
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "outside_tcp_m": null,
+  "requires_final_actual_3d_containment_audit": true,
+  "report": {
+    "rejections": [
+      "Planned COM must lie in the declared contact envelope with 2 mm margin"
+    ],
+    "physical_success": false,
+    "staged_policy": {
+      "planned_hand_clearance_m": 0.01,
+      "observed_required_hand_clearance_m": 0.005,
+      "low_rim_geometry": "spatial_loop_contact_envelope",
+      "low_phase_section_gate": "diagnostic_only",
+      "center_offset_xy_m": [
+        -0.01,
+        -0.06
+      ],
+      "maximum_rim_stretch_ratio": 1.01,
+      "entry_max_lateral_excursion_fraction_of_mouth_width": 1.0,
+      "entry_minimum_section_envelope_overlap_fraction": 0.0,
+      "maximum_individual_xy_m": 0.07,
+      "maximum_cumulative_xy_m": 0.09,
+      "maximum_original_rotation_error_rad": 0.015,
+      "maximum_previous_endpoint_error_m": 0.002,
+      "rigid_clearance_m": 0.008,
+      "left_robot_sweep_clearance_m": 0.005,
+      "maximum_joint_velocity_rad_s": 0.35,
+      "maximum_joint_acceleration_rad_s2": 0.5,
+      "minimum_downward_duration_s": 6.0,
+      "minimum_center_duration_s": 4.0,
+      "each_stage_requires_strictly_new_actual_observation": true,
+      "wall_contact_is_risk_not_success": true,
+      "physical_limits_unchanged": true
+    },
+    "base_contact_policy": {
+      "bottom_clearance_m": 0.01,
+      "endpoint_below_lowest_rim_m": 0.002,
+      "start_above_highest_rim_m": 0.04,
+      "planned_outside_clearance_m": 0.045,
+      "com_boundary_clearance_m": 0.002,
+      "lateral_excursion_fraction_of_mouth_width": 0.8,
+      "minimum_section_envelope_overlap_fraction": 0.4,
+      "maximum_initial_com_offset_m": 0.035,
+      "transport_xy_strategy": "y_then_x",
+      "rim_perimeter_clearance_m": 0.002,
+      "rigid_clearance_m": 0.008,
+      "left_robot_soft_sweep_clearance_m": 0.005,
+      "minimum_insert_duration_s": 6.0,
+      "minimum_tetra_volume_ratio": 0.05,
+      "maximum_cloth_edge_stretch_ratio": 1.15,
+      "maximum_table_penetration_m": 0.002,
+      "maximum_left_designated_handle_distance_m": 0.018,
+      "maximum_right_teddy_distance_m": 0.045,
+      "maximum_tcp_fk_error_m": 0.002,
+      "force_and_torque_runtime_limits": {
+        "maximum_contact_force_N": 8.0,
+        "maximum_wrist_contact_torque_Nm": 0.15
+      },
+      "note": "Lateral/overlap/perimeter are declared trial policies, not physical laws. Explicit lateral/overlap values permit a bounded contact experiment, not a material-feasibility claim. The initial COM search radius does not change the 30 mm individual or 50 mm cumulative correction budget. The 5 mm minimum teddy/left-robot clearance is an engineering preflight allowance, not a physical law. Bottom clearance and lateral trial fraction are configurable; no compression is prescribed."
+    },
+    "actual_contact_force_torque_unavailable_in_saved_state": true,
+    "all_runtime_native_contact_grasp_wrench_strain_table_gates_required": true,
+    "final_containment_criteria_unchanged": true,
+    "physical_state": {
+      "time_s": 51.520000000007904,
+      "minimum_tetra_volume_ratio": 0.30161010406677696,
+      "bag_table_penetration_m": 0.0,
+      "bear_table_penetration_m": 0.0,
+      "maximum_bag_edge_stretch_ratio": 1.0302719947093253,
+      "all_soft_states_finite": 1.0,
+      "left_designated_material_distance_m": 0.0011163230755995763,
+      "right_nearest_teddy_distance_m": 0.00828015182203934,
+      "tcp_fk_errors_m": {
+        "left": 2.2887833992611187e-16,
+        "right": 5.101384946613274e-16
+      },
+      "actual_rigid_clearances": {
+        "left_self": {
+          "distance": 0.022302821896099004,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        },
+        "left_table": {
+          "distance": 0.16099593221477013,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ]
+        },
+        "left_mounts": {
+          "distance": 0.14099593221477014,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ]
+        },
+        "right_self": {
+          "distance": 0.022269203698074096,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        },
+        "right_table": {
+          "distance": 0.16099593221477015,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ]
+        },
+        "right_mounts": {
+          "distance": 0.14099593221477014,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ]
+        },
+        "arms": {
+          "distance": 0.04410370951495903,
+          "bodies": [
+            "left_hand",
+            "right_hand"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        }
+      },
+      "finger_pair_half_opening_approximation_error_m": {
+        "left": 1.2304030365417086e-06,
+        "right": 6.295446092308837e-06
+      },
+      "contact_force_and_torque_not_in_saved_state": true,
+      "physical_state_rejections": []
+    },
+    "mouth": {
+      "representation": "spatial_loop_contact_envelope",
+      "is_actual_opening": false,
+      "does_not_certify_open_aperture_or_passage": true,
+      "ordered_rim_world_m": [
+        [
+          -0.18397178302920575,
+          0.020525341800282846,
+          1.0984795108484884
+        ],
+        [
+          -0.18708169020229273,
+          0.052003912844692815,
+          1.0981908440263346
+        ],
+        [
+          -0.16594825287289475,
+          0.07024622279511746,
+          1.0833037605219116
+        ],
+        [
+          -0.15105154994262848,
+          0.08074080815034243,
+          1.0727511665324525
+        ],
+        [
+          -0.14077392350831083,
+          0.09462537902625132,
+          1.0631403251790146
+        ],
+        [
+          -0.13402612399084823,
+          0.11014114446692475,
+          1.0540580440742744
+        ],
+        [
+          -0.1287008857422075,
+          0.12366194544460908,
+          1.046189172311391
+        ],
+        [
+          -0.12777387450221467,
+          0.12550471026873702,
+          1.0450798132290173
+        ],
+        [
+          -0.1268479567448122,
+          0.12734535928528404,
+          1.0439733635407147
+        ],
+        [
+          -0.12502251089089172,
+          0.13102874241767784,
+          1.0417702768273762
+        ],
+        [
+          -0.12411229582806742,
+          0.1328709586961856,
+          1.0406793472101217
+        ],
+        [
+          -0.12320335086990584,
+          0.13471238114742282,
+          1.0395927728720489
+        ],
+        [
+          -0.1214137752136887,
+          0.13840021694944726,
+          1.037429679824958
+        ],
+        [
+          -0.12052134695174574,
+          0.14024782161962004,
+          1.0363650248029705
+        ],
+        [
+          -0.11963028678758379,
+          0.1420962097001336,
+          1.035307483525517
+        ],
+        [
+          -0.11417978596080237,
+          0.1553233063592565,
+          1.0279937572518318
+        ],
+        [
+          -0.11195425561032175,
+          0.17154360220357975,
+          1.0199267667612846
+        ],
+        [
+          -0.1099464902523178,
+          0.18777752705435127,
+          1.0120197969549003
+        ],
+        [
+          -0.10052299764470282,
+          0.2012301204856925,
+          1.0044520245214592
+        ],
+        [
+          -0.08285720570117104,
+          0.19773560384814154,
+          1.0032772415936109
+        ],
+        [
+          -0.07660599338439218,
+          0.18139626542869594,
+          1.0076713503830195
+        ],
+        [
+          -0.07858551832544994,
+          0.16405188678892269,
+          1.0123014981821405
+        ],
+        [
+          -0.08248963760825131,
+          0.14694861603829693,
+          1.0168018021470462
+        ],
+        [
+          -0.08838359183559476,
+          0.13031138428937142,
+          1.0212515093328198
+        ],
+        [
+          -0.09559808842776685,
+          0.1140649729463795,
+          1.0256118382654558
+        ],
+        [
+          -0.10252139771895667,
+          0.10001589427216714,
+          1.029352773913545
+        ],
+        [
+          -0.10379904747367935,
+          0.09817013779429022,
+          1.02989621621051
+        ],
+        [
+          -0.10508477760164216,
+          0.09632656144301438,
+          1.0304376735295253
+        ],
+        [
+          -0.10769954521193406,
+          0.09265649704807954,
+          1.0315225935667132
+        ],
+        [
+          -0.1089870895145302,
+          0.09080668212174135,
+          1.032082741438388
+        ],
+        [
+          -0.11026029252732056,
+          0.08894664331877736,
+          1.0326513375393556
+        ],
+        [
+          -0.11285281883202146,
+          0.08524124966874154,
+          1.0337855730378036
+        ],
+        [
+          -0.11409716276376236,
+          0.08335765797969201,
+          1.0343730647441982
+        ],
+        [
+          -0.1152739901264527,
+          0.08144103812277953,
+          1.0349807983065287
+        ],
+        [
+          -0.12133861859472223,
+          0.06666445407629738,
+          1.039403621233591
+        ],
+        [
+          -0.12822229360846954,
+          0.04942484165952939,
+          1.0446629417118503
+        ],
+        [
+          -0.1351065045775081,
+          0.031602246280191794,
+          1.0501252508283676
+        ],
+        [
+          -0.14191880075072394,
+          0.012480530458588003,
+          1.0559648167528182
+        ],
+        [
+          -0.1485541530250761,
+          -0.017622738095448568,
+          1.0644259054633496
+        ],
+        [
+          -0.15173107974189387,
+          -0.04931462484395773,
+          1.0655673131901728
+        ],
+        [
+          -0.1521164682020207,
+          -0.07035942548479378,
+          1.0670279264483133
+        ],
+        [
+          -0.14951236814321014,
+          -0.0894698492513568,
+          1.0715168530928825
+        ],
+        [
+          -0.14153689764300625,
+          -0.10331350246961771,
+          1.0821036048538761
+        ],
+        [
+          -0.13248021603036955,
+          -0.11171862177031865,
+          1.092911430065005
+        ],
+        [
+          -0.1324232920270033,
+          -0.11391670395918434,
+          1.0936396622393645
+        ],
+        [
+          -0.1323497214975074,
+          -0.11612868180424037,
+          1.094343154542961
+        ],
+        [
+          -0.1321155502333965,
+          -0.12053203932073238,
+          1.0957629745968813
+        ],
+        [
+          -0.1320660746958985,
+          -0.12275602176805163,
+          1.0964248140249275
+        ],
+        [
+          -0.1319624973438731,
+          -0.12497463298876264,
+          1.0970926778539893
+        ],
+        [
+          -0.13169316575083256,
+          -0.12937750843783252,
+          1.0984643703238584
+        ],
+        [
+          -0.13161124744775857,
+          -0.13159546208435025,
+          1.0991123898370236
+        ],
+        [
+          -0.13142194263135984,
+          -0.13380903140210407,
+          1.0997601858795454
+        ],
+        [
+          -0.13632554745242664,
+          -0.14918493711633027,
+          1.100580087393459
+        ],
+        [
+          -0.14340864275981582,
+          -0.1660619708289368,
+          1.1005506577866775
+        ],
+        [
+          -0.15202495652744885,
+          -0.18204905510539054,
+          1.0993835247849455
+        ],
+        [
+          -0.1671984986268955,
+          -0.1915191745872199,
+          1.0966673535241618
+        ],
+        [
+          -0.17778450956290096,
+          -0.17695418169956859,
+          1.095754317559546
+        ],
+        [
+          -0.1754993281465058,
+          -0.1591129658554408,
+          1.0944582062494193
+        ],
+        [
+          -0.16986677221106514,
+          -0.1420408139555555,
+          1.0926506055173852
+        ],
+        [
+          -0.16359802050167696,
+          -0.12514743853118301,
+          1.0908032948138713
+        ],
+        [
+          -0.15799588068593226,
+          -0.10794183556487047,
+          1.0891601264910105
+        ],
+        [
+          -0.15408687729074014,
+          -0.09016113979980953,
+          1.087959269288976
+        ],
+        [
+          -0.15444473087614452,
+          -0.07409827719284978,
+          1.0880093878393395
+        ],
+        [
+          -0.15519082371277348,
+          -0.07192693609995213,
+          1.08823271335724
+        ],
+        [
+          -0.1560359702004439,
+          -0.0697924030667024,
+          1.0884751716510817
+        ],
+        [
+          -0.15776228807298717,
+          -0.0655300902847742,
+          1.0889771374091894
+        ],
+        [
+          -0.15869774056125166,
+          -0.06342747289221252,
+          1.0892424387970396
+        ],
+        [
+          -0.15967750707209324,
+          -0.06134302128782534,
+          1.0895176781673708
+        ],
+        [
+          -0.1615736778204319,
+          -0.05712977546736578,
+          1.0900856190142658
+        ],
+        [
+          -0.1626039732620398,
+          -0.055058276270202905,
+          1.0903874070445532
+        ],
+        [
+          -0.16370704750037154,
+          -0.0530220398747456,
+          1.0907036350825758
+        ],
+        [
+          -0.16818446827073297,
+          -0.03717275350133797,
+          1.0924170429361388
+        ],
+        [
+          -0.1732319815460889,
+          -0.01868386629069718,
+          1.094381409102129
+        ],
+        [
+          -0.17865606266033016,
+          0.0002802663796670056,
+          1.0964802398388795
+        ]
+      ],
+      "contact_envelope_xy_m": [
+        [
+          -0.18708169020229273,
+          0.052003912844692815
+        ],
+        [
+          -0.17778450956290096,
+          -0.17695418169956859
+        ],
+        [
+          -0.1671984986268955,
+          -0.1915191745872199
+        ],
+        [
+          -0.15202495652744885,
+          -0.18204905510539054
+        ],
+        [
+          -0.14340864275981582,
+          -0.1660619708289368
+        ],
+        [
+          -0.13632554745242664,
+          -0.14918493711633027
+        ],
+        [
+          -0.13142194263135984,
+          -0.13380903140210407
+        ],
+        [
+          -0.07858551832544994,
+          0.16405188678892269
+        ],
+        [
+          -0.07660599338439218,
+          0.18139626542869594
+        ],
+        [
+          -0.08285720570117104,
+          0.19773560384814154
+        ],
+        [
+          -0.10052299764470282,
+          0.2012301204856925
+        ],
+        [
+          -0.1099464902523178,
+          0.18777752705435127
+        ]
+      ],
+      "projected_envelope_area_m2": 0.023324240743467284,
+      "actual_rim_xy_projection_crossings": 0,
+      "nonadjacent_3d_pair_count": 2627,
+      "minimum_nonadjacent_3d_edge_distance_m": 0.0023067836806949546,
+      "minimum_nonadjacent_3d_edge_pair": [
+        61,
+        63
+      ],
+      "edge_distance_numerical_guard_m": 1e-08,
+      "required_nonadjacent_3d_edge_separation_m": 0.0006,
+      "minimum_nonadjacent_3d_edge_distance_lower_bound_m": 0.0023067736806949546,
+      "projected_minimum_caliper_width_m": 0.0872582093783901,
+      "caliper_width_geometry": "XY convex contact envelope, not the actual opening",
+      "rim_z_min_m": 1.0032772415936109,
+      "rim_z_max_m": 1.100580087393459,
+      "fitted_plane_max_nonplanarity_m": 0.018551488638863956,
+      "nonplanarity_is_diagnostic_not_rejection": true,
+      "reference_rim_arc_length_m": 0.9152328087150292,
+      "current_rim_arc_length_m": 0.9174464649215559,
+      "available_nonstretch_rim_perimeter_m": 0.9152328087150292,
+      "scope": "Finite contact-trial search envelope. A connected separated spatial rim and its convex shadow do not establish a free aperture, empty interior, or safe passage; native contact and unchanged final containment remain required.",
+      "topology": {
+        "actual_open_body_boundary": true,
+        "body_boundary_loop_count": 1,
+        "complete_bag_boundary_loop_count": 3,
+        "nonmanifold_edges": 0,
+        "connected_components": 1,
+        "body_triangle_count": 2960,
+        "rim_rest_z": 1.1315683174918918,
+        "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+        "independent_flat_bottom_triangles": 0,
+        "independent_flat_side_triangles": 0,
+        "body_boundary_only_at_top": true,
+        "two_panels_directly_sewn_along_u": true,
+        "analysis_cap_is_not_simulated": true
+      },
+      "ordered_rim_indices": [
+        761,
+        760,
+        1482,
+        1483,
+        1484,
+        1485,
+        1486,
+        1487,
+        1488,
+        1489,
+        1490,
+        1491,
+        1492,
+        1493,
+        1494,
+        1495,
+        1496,
+        1497,
+        1498,
+        1499,
+        1500,
+        1501,
+        1502,
+        1503,
+        1504,
+        1505,
+        1506,
+        1507,
+        1508,
+        1509,
+        1510,
+        1511,
+        1512,
+        1513,
+        1514,
+        1515,
+        1516,
+        1517,
+        797,
+        796,
+        795,
+        794,
+        793,
+        792,
+        791,
+        790,
+        789,
+        788,
+        787,
+        786,
+        785,
+        784,
+        783,
+        782,
+        781,
+        780,
+        779,
+        778,
+        777,
+        776,
+        775,
+        774,
+        773,
+        772,
+        771,
+        770,
+        769,
+        768,
+        767,
+        766,
+        765,
+        764,
+        763,
+        762
+      ]
+    },
+    "previous_endpoint_error_m": 0.00020309055150120355,
+    "observed_previous_stage_xy_displacement_m": 5.927256215892008e-05,
+    "original_rotation_error_rad": 0.00047266884003890355,
+    "actual_left_hand_minimum_z_m": 1.2368416654249745,
+    "actual_bear_top_z_m": 1.2219993623748113,
+    "observed_bear_top_to_left_hand_clearance_m": 0.014842303050163208,
+    "planned_hand_clearance_m": 0.01,
+    "observed_required_hand_clearance_m": 0.005,
+    "target_bear_bounds_world_m": [
+      [
+        -0.17253697284476444,
+        -0.16866346088283063,
+        0.9849032933787132
+      ],
+      [
+        -0.03717424185477408,
+        0.15905603705874066,
+        1.2219993623748113
+      ]
+    ],
+    "planned_center_of_mass_world_m": [
+      -0.1077486951746135,
+      -0.006700206658680027,
+      1.0977347615437831
+    ],
+    "planned_com_in_contact_envelope": false,
+    "planned_com_contact_envelope_boundary_distance_m": 0.001108586442271321,
+    "com_membership_is_not_actual_opening_containment": true
+  },
+  "observed_time_s": 51.520000000007904,
+  "original_rotation_xyzw": [
+    0.9999999555965872,
+    -1.6877577428409123e-06,
+    3.48010729605708e-05,
+    -0.0002959609102767963
+  ]
+}

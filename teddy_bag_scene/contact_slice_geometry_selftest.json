@@ -1,0 +1,199 @@
+{
+  "kind": "CPU geometry unit checks only",
+  "physical_success": false,
+  "passed": true,
+  "checks": [
+    {
+      "name": "rectangle_hull_area_perimeter",
+      "passed": true,
+      "actual": [
+        2.0,
+        6.0
+      ],
+      "expected": [
+        2.0,
+        6.0
+      ]
+    },
+    {
+      "name": "rectangle_overlap",
+      "passed": true,
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "touching_rectangle_zero_area",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "disjoint_rectangle_zero_area",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "concave_L_triangulation_area",
+      "passed": true,
+      "actual": 3.0,
+      "expected": 3.0
+    },
+    {
+      "name": "concave_L_overlap_exact",
+      "passed": true,
+      "actual": 0.75,
+      "expected": 0.75
+    },
+    {
+      "name": "pretriangles_overlap",
+      "passed": true,
+      "actual": 0.75,
+      "expected": 0.75
+    },
+    {
+      "name": "positional_pretriangles_overlap",
+      "passed": true,
+      "actual": 0.75,
+      "expected": 0.75
+    },
+    {
+      "name": "clockwise_L_overlap",
+      "passed": true,
+      "actual": 0.75,
+      "expected": 0.75
+    },
+    {
+      "name": "closed_collinear_ring_area",
+      "passed": true,
+      "actual": 2.0,
+      "expected": 2.0
+    },
+    {
+      "name": "tetra_all_event_heights",
+      "passed": true,
+      "actual": [
+        0.0,
+        1.0
+      ],
+      "expected": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "tetra_base_section",
+      "passed": true,
+      "actual": [
+        0.5,
+        3.414213562373095
+      ],
+      "expected": [
+        0.5,
+        3.414213562373095
+      ]
+    },
+    {
+      "name": "tetra_top_point",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "tetra_mid_event_area_perimeter",
+      "passed": true,
+      "actual": [
+        0.125,
+        1.7071067811865475
+      ],
+      "expected": [
+        0.125,
+        1.7071067811865475
+      ]
+    },
+    {
+      "name": "split_tetra_all_events",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "expected": [
+        0.0,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "name": "tetra_extreme_segment_limit_perimeters",
+      "passed": true,
+      "actual": [
+        2.0,
+        2.0
+      ],
+      "expected": [
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "name": "translated_scaled_overlap",
+      "passed": true,
+      "actual": 7.499999999911751e-07,
+      "expected": 7.5e-07
+    },
+    {
+      "name": "reject_bowtie",
+      "passed": true,
+      "rejected": "Polygon self-intersects or has touching nonadjacent edges"
+    },
+    {
+      "name": "reject_duplicate_ring_vertex",
+      "passed": true,
+      "rejected": "Polygon self-intersects or has touching nonadjacent edges"
+    },
+    {
+      "name": "reject_collinear_hull",
+      "passed": true,
+      "rejected": "Convex hull points are collinear or numerically too thin"
+    },
+    {
+      "name": "reject_concave_convex_argument",
+      "passed": true,
+      "rejected": "convex_hull must be convex and cyclically ordered"
+    },
+    {
+      "name": "reject_duplicate_pretriangles",
+      "passed": true,
+      "rejected": "Pretriangles overlap or have inconsistent shared edges"
+    },
+    {
+      "name": "reject_flat_tetra",
+      "passed": true,
+      "rejected": "Zero-volume or numerically degenerate tetrahedron"
+    },
+    {
+      "name": "reject_float_tetra_indices",
+      "passed": true,
+      "rejected": "tets must be a nonempty integer (m,4) array of valid vertex indices"
+    },
+    {
+      "name": "reject_unreferenced_point",
+      "passed": true,
+      "rejected": "Every point must be referenced by a tetrahedron"
+    },
+    {
+      "name": "reject_nonfinite_polygon",
+      "passed": true,
+      "rejected": "polygon must be a finite (n,2) array, n >= 3"
+    }
+  ],
+  "section_perimeter_scope": "All exact vertex-Z events; convex hull perimeter bound, not concave fit or physical success."
+}

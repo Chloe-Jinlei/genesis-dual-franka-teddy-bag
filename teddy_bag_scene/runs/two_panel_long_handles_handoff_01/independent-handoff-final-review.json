@@ -1,0 +1,611 @@
+{
+  "kind": "independent_completed_handoff_scope_audit",
+  "run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01",
+  "status": "declared_handoff_probe_passed",
+  "independent_requested_handoff_probe_passed": true,
+  "full_task_success": false,
+  "continuous_native_left_finger_reaction_hold_certificate": false,
+  "native_requested_task": "handoff",
+  "native_requested_task_passed": true,
+  "native_handoff_probe_passed": true,
+  "native_full_task_passed": false,
+  "checks": {
+    "finite_saved_states": true,
+    "per_step_soft_metrics_valid_when_supplied": true,
+    "actual_open_bag_topology": true,
+    "two_cloth_panels_with_direct_u_seam_and_no_bottom_or_side_panels": true,
+    "no_tetrahedron_inversion": true,
+    "no_tetrahedron_volume_below_5_percent": true,
+    "table_penetration_below_2mm": true,
+    "cloth_edge_stretch_below_15_percent": true,
+    "no_final_sampled_bag_bear_penetration_over_1mm": true,
+    "joint_motion_within_configured_limits": true,
+    "motion_sample_interval_at_most_20ms": true,
+    "left_gripper_holds_pose_within_15mm_after_handoff": true,
+    "named_left_handle_material_within_18mm_after_handoff": true,
+    "both_left_fingers_command_clamping_after_handoff": true,
+    "frozen_manifest_matches": true,
+    "all_live_source_assets_match_frozen": true,
+    "exact_reviewed_serialization_only_runner": true,
+    "explicitly_requested_handoff_scope": true,
+    "source_config_matches_frozen": true,
+    "original_config_sha_matches": true,
+    "handoff_exact_six_phases_in_order": true,
+    "events_match_report": true,
+    "native_finished_without_exception": true,
+    "every_step_joint_timing": true,
+    "every_step_soft_timing": true,
+    "soft_has_initial_plus_all_joint_rows": true,
+    "every_joint_and_soft_value_finite": true,
+    "four_native_finger_reactions_during_both_handle_hold": true,
+    "final_right_handle_fingers_open": true,
+    "no_teddy_handling_phase_executed": true,
+    "full_task_explicitly_false": true,
+    "material_vertex_bijection": true,
+    "material_faces_match_native": true,
+    "all_phase_endpoints_and_clocks_reconstruct": true,
+    "ten_second_hold_has_exact_2000_native_steps": true,
+    "reported_final_time_matches_all_streams": true,
+    "native_body_material_faces_match": true,
+    "native_body_effective_shear_readback_matches": true,
+    "native_handle_front_material_faces_match": true,
+    "native_handle_front_effective_shear_readback_matches": true,
+    "native_handle_back_material_faces_match": true,
+    "native_handle_back_effective_shear_readback_matches": true,
+    "material_source_hash_matches": true,
+    "native_protected_shell_attributes_unchanged": true,
+    "native_reference_mass_matches_geometry": true,
+    "coupling_every_saved_frame_timestamp": true,
+    "coupling_raw_link_diagnostics_finite": true,
+    "runtime_left_held_distance_matches_available_samples": true,
+    "runtime_right_held_distance_matches_spread_trace": true,
+    "native_declared_probe_and_requested_task_flags_agree": true,
+    "recomputed_all_validation_checks_equal_native": true
+  },
+  "failed_checks": [],
+  "live_source_mismatches": [],
+  "full_task_incomplete_checks": [
+    "bear_fully_inside_bag_final",
+    "bear_remains_inside_during_final_hold_samples",
+    "requested_phases_recorded_in_order",
+    "bear_lifted_clear_of_table",
+    "right_fingers_open_after_release",
+    "controller_explicitly_reports_task_complete"
+  ],
+  "simulated_seconds": 15.440000000001014,
+  "joint_trace_rows": 3088,
+  "soft_trace_rows": 3089,
+  "saved_full_frames": 315,
+  "physical_metrics": {
+    "minimum_tetrahedron_volume_ratio": 0.8623813563529769,
+    "maximum_bag_edge_stretch_ratio": 1.0326363827661607,
+    "maximum_table_penetration_m": {
+      "bear": 0.0,
+      "bag": 0.0
+    },
+    "motion": {
+      "left": {
+        "maximum_joint_velocity_rad_s": 0.10699528960219595,
+        "maximum_joint_acceleration_rad_s2": 0.17181751754549524,
+        "per_joint_peak_velocity_rad_s": [
+          0.04658397998793262,
+          0.060825426273158456,
+          0.05904658603056312,
+          0.07418740645030653,
+          0.0036121786664402578,
+          0.0018992999576994407,
+          0.10699528960219595
+        ],
+        "per_joint_peak_acceleration_rad_s2": [
+          0.07521377568338217,
+          0.10790407390679713,
+          0.09529786012123731,
+          0.13026708070924808,
+          0.011424732206500005,
+          0.007381837019693191,
+          0.17181751754549524
+        ],
+        "within_configured_limits": true
+      },
+      "right": {
+        "maximum_joint_velocity_rad_s": 0.7139108915723966,
+        "maximum_joint_acceleration_rad_s2": 1.358154456636413,
+        "per_joint_peak_velocity_rad_s": [
+          0.03900232727223418,
+          0.6111972434939403,
+          0.10760178129743636,
+          0.7139108915723966,
+          0.14870390966651859,
+          0.10253489430809282,
+          0.0819262541930641
+        ],
+        "per_joint_peak_acceleration_rad_s2": [
+          0.11860006836901493,
+          1.036398196646914,
+          0.21259299478231686,
+          1.358154456636413,
+          0.3183102458417757,
+          0.3124623091480383,
+          0.13293513371764032
+        ],
+        "within_configured_limits": true
+      }
+    },
+    "motion_thresholds": {
+      "velocity_rad_s": 1.5,
+      "acceleration_rad_s2": 10.0,
+      "source": "config.validation or conservative audit defaults; not robot manufacturer limits"
+    },
+    "final_contact": {
+      "method": "Discrete bag vertex, edge-midpoint and triangle-centroid winding/distance samples",
+      "sample_count": 12521,
+      "near_bear_samples": 0,
+      "inside_samples": 0,
+      "penetration_over_tolerance": 0,
+      "maximum_sampled_penetration_m": 0.0,
+      "tolerance_m": 0.001,
+      "continuous_collision_guarantee": false
+    },
+    "mass": {
+      "bag_kg": 0.12007964446260372,
+      "bear_kg": 0.13439946909185557,
+      "bag_mass_formula": "rest area * density * 2 * IPC thickness radius",
+      "derived_from_reference_geometry_and_config": true,
+      "runtime_IPC_mass_buffer_checked": false
+    }
+  },
+  "phase_endpoints": [
+    {
+      "phase": "close_both_handles",
+      "start_s": 0.0,
+      "end_s": 0.5000000000000003,
+      "planned_duration_s": 0.5,
+      "actual_duration_s": 0.5000000000000003,
+      "actual_steps": 100,
+      "clock_matches_integer_steps": true,
+      "next_phase_contiguous": true,
+      "full_frame_exact": true,
+      "actual_joint_trace_endpoint_exact": true,
+      "left_named_material_distance_m": 0.0012990899931656047,
+      "right_named_material_distance_m": 0.0013522123774216018,
+      "finger_pd_n": {
+        "left": [
+          -8.886945184169694,
+          -8.8828194828633
+        ],
+        "right": [
+          -8.949367829368798,
+          -8.95287305381032
+        ]
+      },
+      "finger_q_m": {
+        "left": [
+          0.0011108663479426602,
+          0.0011104376447706433
+        ],
+        "right": [
+          0.0011187263902459597,
+          0.0011190898450770224
+        ]
+      },
+      "top_seam_chord_m": 0.3870762929076161,
+      "top_seam_vector_m": [
+        0.3845678171340623,
+        -0.0439957935612433,
+        0.0001438914920617318
+      ],
+      "actual_rim_span_xyz_m": [
+        0.3845678171340623,
+        0.20825690227830185,
+        0.019775890954065956
+      ],
+      "all_state_values_finite": true
+    },
+    {
+      "phase": "drape_under_gravity",
+      "start_s": 0.5000000000000003,
+      "end_s": 1.0999999999999985,
+      "planned_duration_s": 0.6,
+      "actual_duration_s": 0.5999999999999982,
+      "actual_steps": 120,
+      "clock_matches_integer_steps": true,
+      "next_phase_contiguous": true,
+      "full_frame_exact": true,
+      "actual_joint_trace_endpoint_exact": true,
+      "left_named_material_distance_m": 0.0013049194548337925,
+      "right_named_material_distance_m": 0.0013360818687381407,
+      "finger_pd_n": {
+        "left": [
+          -8.888705812112027,
+          -8.880033511428996
+        ],
+        "right": [
+          -8.942717933026515,
+          -8.949849166022647
+        ]
+      },
+      "finger_q_m": {
+        "left": [
+          0.0011111227812379482,
+          0.0011098864902912202
+        ],
+        "right": [
+          0.001117698571836546,
+          0.0011187445644383874
+        ]
+      },
+      "top_seam_chord_m": 0.3817307366029389,
+      "top_seam_vector_m": [
+        0.38088125334482725,
+        -0.025452309164025817,
+        -7.794943660277553e-05
+      ],
+      "actual_rim_span_xyz_m": [
+        0.38088125334482725,
+        0.22082195462628174,
+        0.021826237543520977
+      ],
+      "all_state_values_finite": true
+    },
+    {
+      "phase": "spread_bag",
+      "start_s": 1.0999999999999985,
+      "end_s": 3.0299999999999576,
+      "planned_duration_s": 1.9269230769230767,
+      "actual_duration_s": 1.929999999999959,
+      "actual_steps": 386,
+      "clock_matches_integer_steps": true,
+      "next_phase_contiguous": true,
+      "full_frame_exact": true,
+      "actual_joint_trace_endpoint_exact": true,
+      "left_named_material_distance_m": 0.0013303539451159218,
+      "right_named_material_distance_m": 0.001267329408517077,
+      "finger_pd_n": {
+        "left": [
+          -8.881033185467654,
+          -8.879831254414135
+        ],
+        "right": [
+          -8.945126461770425,
+          -8.946663639193863
+        ]
+      },
+      "finger_q_m": {
+        "left": [
+          0.0011101440791285225,
+          0.0011099602108222517
+        ],
+        "right": [
+          0.0011181302376312371,
+          0.001118332039065535
+        ]
+      },
+      "top_seam_chord_m": 0.3546270853282967,
+      "top_seam_vector_m": [
+        0.35462510849840767,
+        0.0011216247878930831,
+        0.0003795112261979483
+      ],
+      "actual_rim_span_xyz_m": [
+        0.35462510849840767,
+        0.2547570663034326,
+        0.02701284395671122
+      ],
+      "all_state_values_finite": true
+    },
+    {
+      "phase": "release_right_handle",
+      "start_s": 3.0299999999999576,
+      "end_s": 3.429999999999949,
+      "planned_duration_s": 0.4,
+      "actual_duration_s": 0.3999999999999915,
+      "actual_steps": 80,
+      "clock_matches_integer_steps": true,
+      "next_phase_contiguous": true,
+      "full_frame_exact": true,
+      "actual_joint_trace_endpoint_exact": true,
+      "left_named_material_distance_m": 0.0013270893053641479,
+      "right_named_material_distance_m": 0.38333782441052056,
+      "finger_pd_n": {
+        "left": [
+          -8.86452195698682,
+          -8.8876652353516
+        ],
+        "right": [
+          0.06528552143246846,
+          0.06528538868700268
+        ]
+      },
+      "finger_q_m": {
+        "left": [
+          0.0011084225724720704,
+          0.0011107035478753293
+        ],
+        "right": [
+          0.04002032217975369,
+          0.04002032218533806
+        ]
+      },
+      "top_seam_chord_m": 0.20354981103911116,
+      "top_seam_vector_m": [
+        0.2022713253378266,
+        0.02261354551803886,
+        0.0027320467127323056
+      ],
+      "actual_rim_span_xyz_m": [
+        0.21300679862765368,
+        0.35691797709628437,
+        0.09810408771232737
+      ],
+      "all_state_values_finite": true
+    },
+    {
+      "phase": "right_clear_handle",
+      "start_s": 3.429999999999949,
+      "end_s": 5.439999999999906,
+      "planned_duration_s": 2.0066848799922385,
+      "actual_duration_s": 2.009999999999957,
+      "actual_steps": 402,
+      "clock_matches_integer_steps": true,
+      "next_phase_contiguous": true,
+      "full_frame_exact": true,
+      "actual_joint_trace_endpoint_exact": true,
+      "left_named_material_distance_m": 0.0012391109869505277,
+      "right_named_material_distance_m": 0.5837944766804397,
+      "finger_pd_n": {
+        "left": [
+          -8.86700853258181,
+          -8.901220290822012
+        ],
+        "right": [
+          -1.9578915375260862e-05,
+          1.3465462622915979e-05
+        ]
+      },
+      "finger_q_m": {
+        "left": [
+          0.0011084739019977155,
+          0.0011125219427681088
+        ],
+        "right": [
+          0.039999995380365166,
+          0.04000000168548991
+        ]
+      },
+      "top_seam_chord_m": 0.17319696362163062,
+      "top_seam_vector_m": [
+        0.1352323786871972,
+        0.10638728033649722,
+        -0.0197772228828641
+      ],
+      "actual_rim_span_xyz_m": [
+        0.149253455774307,
+        0.36115741440471316,
+        0.14845033889324877
+      ],
+      "all_state_values_finite": true
+    },
+    {
+      "phase": "settle_handoff",
+      "start_s": 5.439999999999906,
+      "end_s": 15.440000000001014,
+      "planned_duration_s": 10.0,
+      "actual_duration_s": 10.000000000001108,
+      "actual_steps": 2000,
+      "clock_matches_integer_steps": true,
+      "next_phase_contiguous": true,
+      "full_frame_exact": true,
+      "actual_joint_trace_endpoint_exact": true,
+      "left_named_material_distance_m": 0.0009251788939602871,
+      "right_named_material_distance_m": 0.5842032452581617,
+      "finger_pd_n": {
+        "left": [
+          -8.865095258438709,
+          -8.894288557490814
+        ],
+        "right": [
+          -4.225999850288011e-09,
+          -1.4588217066354148e-09
+        ]
+      },
+      "finger_q_m": {
+        "left": [
+          0.0011081462191130282,
+          0.0011118016761972915
+        ],
+        "right": [
+          0.040000000000265414,
+          0.040000000000087736
+        ]
+      },
+      "top_seam_chord_m": 0.16811837350220055,
+      "top_seam_vector_m": [
+        0.13003762309057942,
+        0.10467553878226522,
+        -0.019925753953622394
+      ],
+      "actual_rim_span_xyz_m": [
+        0.14093253842020056,
+        0.36536794728129984,
+        0.14761072973542544
+      ],
+      "all_state_values_finite": true
+    }
+  ],
+  "native_two_handle_reaction_evidence": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "all_recorded_values_finite": true,
+      "exact_four_individual_fingers_and_two_material_groups": true,
+      "strictly_increasing_fixed_step_times": true,
+      "every_integration_step_from_spread_until_handoff": true,
+      "all_four_opening_reactions_above_0p1n": true,
+      "both_designated_material_groups_within_18mm": true
+    },
+    "samples": 386,
+    "start_s": 1.1049999999999984,
+    "end_s": 3.0299999999999576,
+    "minimum_opening_reactions_n": [
+      8.88278162803408,
+      8.864884602030985,
+      8.928730127627642,
+      8.94687802092859
+    ],
+    "maximum_designated_material_distance_m": [
+      0.0013471371686160348,
+      0.0013736131189152016
+    ],
+    "phases": [
+      {
+        "phase": "spread_bag",
+        "samples": 386,
+        "min_opening_reactions_n": [
+          8.88278162803408,
+          8.864884602030985,
+          8.928730127627642,
+          8.94687802092859
+        ],
+        "max_opening_reactions_n": [
+          8.901489222137148,
+          8.878074828763333,
+          8.943049978007998,
+          8.96440434864213
+        ],
+        "max_designated_material_distance_m": [
+          0.0013471371686160348,
+          0.0013736131189152016
+        ]
+      }
+    ],
+    "limitations": [
+      "Reactions are IPC soft-coupling feedback, not contact forces identified by individual material.",
+      "Material proximity and four positive opening-axis reactions support held-handle evidence; they do not prove force closure.",
+      "Checks cover recorded integration states only."
+    ]
+  },
+  "left_hold_saved_frame_evidence": {
+    "applicable": true,
+    "passed": true,
+    "material_group_retained": true,
+    "both_fingers_command_clamping": true,
+    "distance_limit_m": 0.018,
+    "pd_clamping_threshold_n": -0.1,
+    "distance_definition": "Nearest vertex belonging to the exact configured left grasp material group",
+    "sampling_scope": "Every saved full-geometry frame after right-handle release starts",
+    "force_evidence_scope": "Saved get_dofs_control_force PD values; not native contact force",
+    "errors": [],
+    "material_group": "grasp_front_x_minus",
+    "source_npz": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz",
+    "first_checked_time_s": 3.0299999999999576,
+    "last_checked_time_s": 15.440000000001014,
+    "checked_frames": 250,
+    "source_to_rest_maximum_mapping_error_m": 6.944641773336686e-11,
+    "mapped_material_vertex_indices": [
+      1644,
+      1645,
+      1646,
+      1647,
+      1648,
+      1649,
+      1650,
+      1651,
+      1652
+    ],
+    "source_vertex_order_identical_to_rest": true,
+    "metadata_file": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/source/assets/metadata_two_panel_wide_tall_long_handles_coarse.json",
+    "maximum_nearest_group_distance_m": 0.0013347972555062368,
+    "maximum_group_centroid_distance_m": 0.00167333910216549,
+    "maximum_farthest_group_vertex_distance_m": 0.014149476108366331,
+    "first_material_distance_violation_s": null,
+    "finger_pd_minimum_n": [
+      -8.881033185467654,
+      -8.948019708316394
+    ],
+    "finger_pd_maximum_n": [
+      -8.853783172416682,
+      -8.878426257523305
+    ],
+    "first_pd_clamping_violation_s": null
+  },
+  "maximum_left_tcp_displacement_after_handoff_m": 7.279038057615724e-05,
+  "native_per_step_left_material_distance_max_m": 0.0013471371686160348,
+  "native_per_step_left_material_distance_scope": "Source checks this named group each step from spread onward; only maximum aggregate is retained after right release. Saved full frames independently recomputed.",
+  "native_material_readback": {
+    "region_coefficients": {
+      "body": {
+        "face_count": 2960,
+        "shear_stiffness_n_per_m": 50.0,
+        "all_faces_equal": true
+      },
+      "handle_front": {
+        "face_count": 576,
+        "shear_stiffness_n_per_m": 250.0,
+        "all_faces_equal": true
+      },
+      "handle_back": {
+        "face_count": 576,
+        "shear_stiffness_n_per_m": 250.0,
+        "all_faces_equal": true
+      }
+    },
+    "protected_attributes_unchanged": {
+      "triangles.lambda": true,
+      "triangles.strain_rate": true,
+      "vertices.thickness": true,
+      "vertices.volume": true,
+      "vertices.is_fixed": true,
+      "edges.bending_stiffness": true,
+      "geometry_metadata_including_contact_material": true
+    },
+    "native_rest_mass_kg": 0.12007964446260372,
+    "scope": "Initialization native IPC material readback persisted into final report; no separate final-time material-buffer readback."
+  },
+  "coupling_diagnostic_maxima": {
+    "translation_error_m": 0.0010694256594352871,
+    "rotation_error_rad": 0.004115375868312168,
+    "affine_singular_value_deviation": 5.990158924662481e-06
+  },
+  "scope": "Both fabric handles held during spread, right handle released and right arm cleared, left holds designated fabric for a 10-second native settle. No teddy grasp/lift/insertion/release attempted.",
+  "limitations": [
+    "Four native finger opening-axis reaction traces cover the actual recorded two-handle hold interval through spread, not the later ten-second one-hand hold. After right release, saved PD forces are motor control evidence, not measured contact forces; no continuous native left-finger reaction certificate is asserted.",
+    "No full-task contact guard is initialized in handoff mode. Native force/torque limits of the later teddy contact trial are therefore not certified or applicable to this scoped probe.",
+    "Named material proximity and opening-axis reactions do not identify individual cloth-contact pairs or certify force closure.",
+    "Every-step state summaries and saved-frame geometry do not certify continuous-time nonpenetration between samples; final bag-bear contact is a sampled final geometry check.",
+    "TCP/IPC link coupling diagnostic maxima are observations, not a newly introduced pass threshold.",
+    "Actual joint rates are derivatives of actual per-step q under validation limits 1.5 rad/s and 10 rad/s^2; they are not guarantees of exact continuous servo rates.",
+    "Top seam width is a chord between material seam corners, not intrinsic cloth width or guaranteed free opening.",
+    "Uncalibrated effective 50/250 N/m cloth shear and homogeneous teddy FEM remain model assumptions. This probe does not establish full packing success."
+  ],
+  "outputs": {
+    "geometry_soft": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/independent-handoff-geometry-soft-audit.json",
+      "sha256": "20d09b8d42cfeea31a3a58afe7c6c4cca8b24a6dc492594fbb7e457daea42d93"
+    },
+    "native_reactions": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/independent-handoff-native-reactions.json",
+      "sha256": "081beb7cde38dd3dfd34f592257083b506bf55636d7b3b01dc910cc527dd68f0"
+    },
+    "input_manifest": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/independent-final-input-manifest-review.json",
+      "sha256": "a578c13aa48f3f76688da84142410adb29c1a2481150701e020977ec2257476a"
+    }
+  },
+  "provenance_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/report.json": "9a298a864d9a4078901afd2c6768a560c4420769f8944ca7726a38432565ea44",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/validation.json": "e4ea470d9fc407aca6133e49ef8d12fcf3737fc570cfe0c516f72e8af788c0cd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/events.json": "120284aadb7621fa48d00c004ad60a38fb28afb0730d00ea33c334634262c22c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/states.npz": "166596155cd0be253f7543eaaa9e12874f4292bb65fcb63333acfc8279d95560",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/rest.npz": "ae2b8af6ec291b2ae14b595c8430050f0eb43f15d9fd05b7e6b2107cb68ffd72",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/joint_trace.npy": "282458e29072d47864d4292749b6de9eedc267ce9b0b4692f73dcbd2e6467362",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/soft_metrics.npy": "44a5f71f0ed9b5db9acf8166f7451b4bf42459413bc5daa5d547e15930bb446b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/handle_grip_trace.json": "4f3f7d22824fd9783b14985a545584a6f72677b5ed5cce8c25f7f51a41a65cd2",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/coupling_trace.json": "35cfa07b6a08287e7ef56c2c499db74720c61b6508f5afba1d4a21511c750142",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/config.json": "f0ed885afcd53325a9c8352e416dea5d8f293d31324d83880a59d3aa80bd517b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/input_sha256.json": "d146edbdbc78a306076219996928d368fe34d6f843807aaac73e8bd26171600c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/source/run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_long_handles_handoff_01/source/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99"
+  },
+  "audit_script_sha256": "b4ea9ab35f3bac1d2493b982ac4ca31766c402fc83b15f5ea13835463f04d1c6"
+}

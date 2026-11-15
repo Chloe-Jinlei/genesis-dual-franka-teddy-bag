@@ -1,0 +1,296 @@
+{
+  "kind": "offline_robot_geometry_only",
+  "config": {
+    "table": {
+      "size": [
+        1.7,
+        1.2,
+        0.06
+      ],
+      "height": 0.74
+    },
+    "robots": {
+      "mjcf_path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/panda_tactile.xml",
+      "left_base": [
+        -0.6,
+        -0.28,
+        0.76
+      ],
+      "right_base": [
+        0.38,
+        0.32,
+        0.76
+      ],
+      "left_yaw": 0.35,
+      "right_yaw": -2.4,
+      "home": [
+        0.0,
+        -0.45,
+        0.0,
+        -2.15,
+        0.0,
+        1.7,
+        0.785398
+      ]
+    }
+  },
+  "tcp_hand_local_m": [
+    0.0,
+    0.0,
+    0.1029
+  ],
+  "success": true,
+  "limitations": [
+    "MuJoCo convex collision geometry only; no Genesis dynamic validation in this report.",
+    "Soft bag and teddy are not collision obstacles in this preflight: intended frictional contacts require runtime checking.",
+    "The teddy must hang beneath the grasp before insertion; its fit and the unsupported bag mouth must be measured at runtime.",
+    "Nominal grasp locations must be replaced with observed mesh points after settling.",
+    "The local panda_tactile.xml extends each real rubber pad inward by 1.5 mm; thin cloth gripping still requires actual contact/friction verification."
+  ],
+  "initial_q": {
+    "left": [
+      -0.02908673372173311,
+      -0.19654295293786261,
+      0.023630523566218916,
+      -1.948204230264816,
+      0.004690719965269797,
+      1.7517128123830303,
+      1.1286431104145755
+    ],
+    "right": [
+      1.4152710998813964,
+      -0.7343530959757225,
+      -1.298587273841353,
+      -1.720518332192674,
+      -0.703519738778511,
+      1.5033145242686716,
+      -1.4675658693497595
+    ]
+  },
+  "stages": [
+    {
+      "stage": "open_bag",
+      "targets_m": {
+        "left": [
+          -0.25,
+          -0.16,
+          1.23
+        ],
+        "right": [
+          -0.13,
+          0.15,
+          1.23
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.2478033201584819,
+      "peak_joint_acceleration_rad_s2": 0.25624979705749534,
+      "min_rigid_clearance_m": 0.018754969922029817,
+      "max_tcp_path_deviation_m": 5.4199638846368026e-09
+    },
+    {
+      "stage": "right_clear_handle",
+      "targets_m": {
+        "right": [
+          0.12,
+          0.2,
+          1.32
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.44852847140422464,
+      "peak_joint_acceleration_rad_s2": 0.5616061408555642,
+      "min_rigid_clearance_m": 0.021808389111197174,
+      "max_tcp_path_deviation_m": 4.07082791154155e-08
+    },
+    {
+      "stage": "teddy_pregrasp",
+      "targets_m": {
+        "right": [
+          0.37238069672434515,
+          -0.26047414981380346,
+          0.9259705807492951
+        ]
+      },
+      "duration_s": 7.523672195904135,
+      "peak_joint_velocity_rad_s": 0.48200500794165585,
+      "peak_joint_acceleration_rad_s2": 0.9960119680798086,
+      "min_rigid_clearance_m": 0.021697919151306224,
+      "max_tcp_path_deviation_m": 5.9476458804450735e-06
+    },
+    {
+      "stage": "teddy_grasp",
+      "targets_m": {
+        "right": [
+          0.37238069672434515,
+          -0.26047414981380346,
+          0.775970580749295
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.2018596432602674,
+      "peak_joint_acceleration_rad_s2": 0.21696080633543072,
+      "min_rigid_clearance_m": 0.02312788776202486,
+      "max_tcp_path_deviation_m": 4.4655825535555634e-10
+    },
+    {
+      "stage": "teddy_lift",
+      "targets_m": {
+        "right": [
+          0.37238069672434515,
+          -0.26047414981380346,
+          1.37
+        ]
+      },
+      "duration_s": 5.109894002292139,
+      "peak_joint_velocity_rad_s": 0.5488667120259295,
+      "peak_joint_acceleration_rad_s2": 0.6129278571528028,
+      "min_rigid_clearance_m": 0.021799495097756024,
+      "max_tcp_path_deviation_m": 3.3915036425508576e-06
+    },
+    {
+      "stage": "bag_above",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.37
+        ]
+      },
+      "duration_s": 4.286406728410308,
+      "peak_joint_velocity_rad_s": 0.5489021956087825,
+      "peak_joint_acceleration_rad_s2": 0.7051739910620127,
+      "min_rigid_clearance_m": 0.021682258231830825,
+      "max_tcp_path_deviation_m": 1.2811323487097295e-06
+    },
+    {
+      "stage": "bag_insert",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.14
+        ]
+      },
+      "duration_s": 6.192413609429474,
+      "peak_joint_velocity_rad_s": 0.240772078998742,
+      "peak_joint_acceleration_rad_s2": 0.8488893728921644,
+      "min_rigid_clearance_m": 0.021721960294996893,
+      "max_tcp_path_deviation_m": 2.2046869123623355e-07
+    },
+    {
+      "stage": "release",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          0.96
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.27109949955722734,
+      "peak_joint_acceleration_rad_s2": 0.30184859996564584,
+      "min_rigid_clearance_m": 0.021865184936058556,
+      "max_tcp_path_deviation_m": 1.5579279480836965e-09
+    },
+    {
+      "stage": "right_retreat",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.38
+        ]
+      },
+      "duration_s": 4.144639841635263,
+      "peak_joint_velocity_rad_s": 0.5489011797587783,
+      "peak_joint_acceleration_rad_s2": 0.6629390093868288,
+      "min_rigid_clearance_m": 0.021735579753635468,
+      "max_tcp_path_deviation_m": 3.613695985650574e-07
+    }
+  ],
+  "initial_clearance": {
+    "left_self": {
+      "distance": 0.022671055251283035,
+      "bodies": [
+        "left_link5",
+        "left_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "left_table": {
+      "distance": 0.16099593221477004,
+      "bodies": [
+        "left_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "table"
+      ]
+    },
+    "left_mounts": {
+      "distance": 0.14099593221477003,
+      "bodies": [
+        "left_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "left_mount"
+      ]
+    },
+    "right_self": {
+      "distance": 0.022724050262989702,
+      "bodies": [
+        "right_link5",
+        "right_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "right_table": {
+      "distance": 0.16099593221477013,
+      "bodies": [
+        "right_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "table"
+      ]
+    },
+    "right_mounts": {
+      "distance": 0.14099593221477014,
+      "bodies": [
+        "right_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "right_mount"
+      ]
+    },
+    "arms": {
+      "distance": 0.018754969922029817,
+      "bodies": [
+        "left_hand",
+        "right_hand"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    }
+  },
+  "total_motion_duration_s": 39.28102637767131,
+  "minimum_rigid_clearance_m": 0.018754969922029817,
+  "dynamic_task_success_verified": false,
+  "superseded": true,
+  "superseded_reason": "Reference cuboid bag replaced by a two-panel bag sewn only along sides and bottom; preserved historical geometry report."
+}

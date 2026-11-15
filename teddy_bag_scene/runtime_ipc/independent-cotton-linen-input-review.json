@@ -1,0 +1,94 @@
+{
+  "kind": "independent_cotton_linen_material_input_review",
+  "recorded_utc": "2026-11-15T16:42:35.932881+00:00",
+  "scope": "Persist the already-completed exact semantic diff and source/asset hash review; no additional simulation, planning, or test run.",
+  "all_checks_passed": true,
+  "physical_success": false,
+  "candidate_config": "config_cotton_linen_material.json",
+  "candidate_config_sha256": "bb5fa17e4a7725ef2efcba05aaaebf4538b8fc32996891ca5020d0813068c85a",
+  "reference_config": "runs/two_panel_full_30/config.json",
+  "reference_config_sha256": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+  "semantic_differences": [
+    {
+      "path": "bag.E",
+      "old": 4000000.0,
+      "new": 20000000.0,
+      "unit": "Pa"
+    },
+    {
+      "path": "bag.handle_shear_stiffness",
+      "old": 250.0,
+      "new": 2000.0,
+      "unit": "N/m effective shell shear parameter"
+    },
+    {
+      "path": "bag.shear_stiffness",
+      "old": 50.0,
+      "new": 1000.0,
+      "unit": "N/m effective shell shear parameter"
+    }
+  ],
+  "checks": {
+    "only_three_declared_bag_properties_changed": true,
+    "all_other_config_values_equal_successful_full30": true,
+    "bending_stiffness_5e_minus5_unchanged": true,
+    "thickness_radius_0_0003_m_unchanged": true,
+    "all_production_source_hashes_equal_successful_full30": true,
+    "all_nine_frozen_asset_hashes_equal_successful_full30": true,
+    "default_config_still_byte_identical_successful_full30_at_review": true
+  },
+  "reviewed_source_and_asset_sha256": {
+    "source/assets/bear_uniform_coarse_s663.mtl": "f3a8a971b017025ea86cecd97cfdeb7e8693aea417e59cffa4786663a13bc18f",
+    "source/assets/bear_uniform_coarse_s663.obj": "0e4c2bd67b51b741b18530979e4d22fd1d718ff302ea0901bf9356d01c46dacd",
+    "source/assets/cotton_canvas.png": "c1fa744e76e59d2be819db3dcc63a84724ff7bab886d9570789712bf562dcb2f",
+    "source/assets/metadata_two_panel_wide_tall_long_handles_coarse.json": "a2bf8c594b888c9189216a952bb05673fb0f20b505e74d331f2461e5fc969c18",
+    "source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "source/assets/teddy_fur.png": "355e29a37479403425f30c734475d141313be8880f68b8c638bdb8d04cf561f8",
+    "source/assets/two_panel_bag_wide_tall_long_handles_coarse.mtl": "51a06ed3a6e284c29a6cb3192bde876bb1c0f4c30e60c9d716b5935878f0f9d3",
+    "source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "source/assets/two_panel_bag_wide_tall_long_handles_coarse.obj": "41b36b030aa3be6947112a39643f519906dc74459f87838ccac8ade1efb9e8f7",
+    "source/assets_builder.py": "d6adb8a187a31092b21f6edab55145291fda1ba97d221d744b8989847c1e960e",
+    "source/build_tall_bag.py": "dc57f031b1a972743eff2edb85ac85630321e848dedc579305d51de0fd4b6926",
+    "source/build_wide_tall_bag.py": "072735056b4d238622a8443f4ec6f85e1e097a041a8e2b261d1a7ab12d02349c",
+    "source/contact_grasp.py": "3ac4767bad63047309b1f18583a40c2afc3424ce944e3a85427dedc2f588c4ab",
+    "source/contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "source/contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "source/contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "source/gravity_release.py": "3cb7ea9a10390bcb473d353863917d39cc67a05766b2da3bfc38ed28bd26915f",
+    "source/insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "source/physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "source/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "source/postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "source/remesh_bear.py": "feb5f7dccc5fa4e08a4ca02ec6ff2ad4abaa669e7a9c68869104f881d8428a20",
+    "source/run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "source/staged_contact_insertion.py": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b",
+    "source/staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "source/two_panel_builder.py": "0b52fd1d978b8fb9817a6c932e39ab2e316f697144e367d7e7b511562d30f801",
+    "source/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99"
+  },
+  "hash_failures": [],
+  "default_config_sha256_at_review": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+  "baseline_material_measurement": {
+    "path": "runtime_ipc/full30-cloth-material-baseline.json",
+    "sha256": "ec66543e57231e8b544ec110b7fcc9c7f8470ccc049dcb5612dd9452c383d177",
+    "immutable": true,
+    "source_run": "two_panel_full_30",
+    "method": "Native-rest triangle principal stretches and construction-direction proxies; 1541 unique saved frames, all 4112 cloth faces.",
+    "all_run_peak_principal_stretch_ratio": {
+      "panel_front": 1.0350482990419008,
+      "panel_back": 1.0349315144884859,
+      "handle_front": 1.0856875252359648,
+      "handle_back": 1.0237217387753572
+    },
+    "comparison_status": "Only successful old-material baseline measured. New material has no full-run strain or task-success evidence in this input review."
+  },
+  "limitations": [
+    "This input review does not establish that the changed material meets the user preference or that the unchanged motion succeeds with it.",
+    "The construction grid directions are not experimentally identified warp/weft axes.",
+    "Material parameters remain uncalibrated; shear, principal extension and mesh-edge extension are distinct measurements.",
+    "No production source, config, asset, acceptance gate, successful run archive, or baseline report was edited by this review."
+  ]
+}

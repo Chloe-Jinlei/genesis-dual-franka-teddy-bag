@@ -1,0 +1,438 @@
+{
+  "status": "admissible_release",
+  "checks": {
+    "actual_state_has_no_original_preflight_rejection": true,
+    "actual_time_after_candidate": true,
+    "actual_endpoint_within_2mm": true,
+    "actual_full_orientation_retained": true,
+    "actual_joint_trace_matches_endpoint_time": true,
+    "actual_joint_trace_matches_saved_endpoint_joints": true,
+    "actual_right_joint_velocity_below_0_05_rad_s": true,
+    "contact_row_is_current_and_still_holding": true,
+    "both_right_opening_reactions_above_original_0_1N": true,
+    "actual_analysis_body_valid": true,
+    "actual_mass_COM_inside": true,
+    "actual_all_node_fraction_at_least_declared_minimum": true
+  },
+  "actual_time_s": 66.08500000001239,
+  "actual_containment": {
+    "mouth_projected_area_m2": 0.027996479997265684,
+    "mouth_projected_crossings": 0,
+    "mouth_projected_dimensions_m": [
+      0.40215922007483307,
+      0.10763924359706399
+    ],
+    "mouth_nonplanarity_max_m": 0.01886804157252098,
+    "virtual_closed_body_valid": true,
+    "bear_vertex_inside_fraction": 1.0,
+    "bear_center_of_mass_m": [
+      -0.1721979657080773,
+      0.09838063953224534,
+      0.8543765741633891
+    ],
+    "bear_center_of_mass_inside": true,
+    "all_bear_vertices_inside": true
+  },
+  "actual_endpoint_position_error_m": 0.0002705154950394444,
+  "actual_orientation_error_rad": 0.0004968539716442765,
+  "actual_right_endpoint_joint_velocity_rad_s": [
+    1.2098297058626873e-06,
+    2.4988465296993913e-05,
+    4.745738202420622e-06,
+    -2.0113630050407312e-05,
+    -4.091455063641005e-07,
+    -5.545371362108467e-06,
+    -1.1608532801698501e-06
+  ],
+  "actual_opening_and_withdrawal_preflight": {
+    "minimum_opening_rigid_clearance_m": 0.021702212042093574,
+    "opening_samples": 21,
+    "withdrawal_duration_s": 25.94207428791064,
+    "withdrawal_rigid_samples": 401,
+    "withdrawal_joint_extrema": {
+      "left": {
+        "minimum": [
+          -0.221275649139976,
+          -0.27250778141817733,
+          0.1268382251349762,
+          -1.5644174271302398,
+          0.14173798795907322,
+          1.3463089503453727,
+          1.2719691043489347
+        ],
+        "maximum": [
+          -0.221275649139976,
+          -0.27250778141817733,
+          0.1268382251349762,
+          -1.5644174271302398,
+          0.14173798795907322,
+          1.3463089503453727,
+          1.2719691043489347
+        ],
+        "minimum_at_fraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum_at_fraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "minimum": [
+          -0.1586558470990497,
+          0.13077449779167777,
+          -0.31916722442453077,
+          -2.018416369345828,
+          0.0400239336605623,
+          1.1835211043046536,
+          -2.335157581231878
+        ],
+        "maximum": [
+          -0.07004681408481224,
+          0.4000254039989608,
+          -0.2677998876783084,
+          -0.8253094155759723,
+          0.15286041667686226,
+          2.3998507045791606,
+          -2.260087053745838
+        ],
+        "minimum_at_fraction": [
+          1.0,
+          0.5968319968956697,
+          0.9737041357988508,
+          0.0,
+          0.6096054823141605,
+          1.0,
+          0.0
+        ],
+        "maximum_at_fraction": [
+          0.4992509403327341,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.6210650888691865
+        ]
+      }
+    },
+    "withdrawal_curve_review": {
+      "minimum_sampled_rigid_clearance_m": 0.021702212042093574,
+      "rigid_sample_count": 401,
+      "maximum_sampled_position_error_m": 2.1192157417783286e-05,
+      "maximum_sampled_rotation_error_rad": 2.2803016630740887e-05,
+      "continuous_rate_bounds": {
+        "left": {
+          "path_first_derivative_bound": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "path_second_derivative_bound": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "velocity_upper_bound_rad_s": [
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10
+          ],
+          "acceleration_upper_bound_rad_s2": [
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10
+          ]
+        },
+        "right": {
+          "path_first_derivative_bound": [
+            0.9948024422306923,
+            2.181823841624373,
+            0.19059337696693937,
+            4.832854823693902,
+            0.7954488570217617,
+            2.6771049303805676,
+            0.22787193523574226
+          ],
+          "path_second_derivative_bound": [
+            15.230046534048023,
+            27.442774342653102,
+            3.9982514444246573,
+            50.997490519801396,
+            9.90189396114331,
+            22.994153072603176,
+            1.8078946579751936
+          ],
+          "velocity_upper_bound_rad_s": [
+            0.07190074938016769,
+            0.15769439483666622,
+            0.013775405175435589,
+            0.34930139727658954,
+            0.05749218790129879,
+            0.19349153392090013,
+            0.016469765540696686
+          ],
+          "acceleration_upper_bound_rad_s2": [
+            0.08809420594849125,
+            0.16207532351527473,
+            0.022521459066773285,
+            0.3078651657820695,
+            0.05855035112906505,
+            0.14308521323643061,
+            0.011399107070720562
+          ]
+        }
+      },
+      "exact_command_start_preserved": true,
+      "actual_and_commanded_left_checked": true,
+      "continuous_rigid_clearance_certified": false
+    },
+    "scope": "Robot geometry only. Released cloth and teddy remain native dynamic contact."
+  },
+  "commanded_opening_and_withdrawal_preflight": {
+    "minimum_opening_rigid_clearance_m": 0.02170185362639005,
+    "opening_samples": 21,
+    "withdrawal_duration_s": 26.057211705265253,
+    "withdrawal_rigid_samples": 401,
+    "withdrawal_joint_extrema": {
+      "left": {
+        "minimum": [
+          -0.22136014882994928,
+          -0.2727500652649277,
+          0.1266923955840482,
+          -1.564115431691947,
+          0.141677891860779,
+          1.3464022056306204,
+          1.271968239482411
+        ],
+        "maximum": [
+          -0.22136014882994928,
+          -0.2727500652649277,
+          0.1266923955840482,
+          -1.564115431691947,
+          0.141677891860779,
+          1.3464022056306204,
+          1.271968239482411
+        ],
+        "minimum_at_fraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum_at_fraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "minimum": [
+          -0.15892763074993993,
+          0.1309129758974272,
+          -0.3192154551301091,
+          -2.018610282352022,
+          0.03996507964723907,
+          1.182458443481477,
+          -2.335160378925377
+        ],
+        "maximum": [
+          -0.07005449594820244,
+          0.4001992206483384,
+          -0.26791621004715044,
+          -0.8238318548873148,
+          0.1528309939144464,
+          2.399761442198412,
+          -2.259958965169248
+        ],
+        "minimum_at_fraction": [
+          1.0,
+          0.5966246372809989,
+          0.973343858188504,
+          0.0,
+          0.609406690365715,
+          1.0,
+          0.0
+        ],
+        "maximum_at_fraction": [
+          0.49980323317320896,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.6212918083006083
+        ]
+      }
+    },
+    "withdrawal_curve_review": {
+      "minimum_sampled_rigid_clearance_m": 0.02170185362639005,
+      "rigid_sample_count": 401,
+      "maximum_sampled_position_error_m": 2.1547097978901656e-05,
+      "maximum_sampled_rotation_error_rad": 2.314819634568187e-05,
+      "continuous_rate_bounds": {
+        "left": {
+          "path_first_derivative_bound": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "path_second_derivative_bound": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "velocity_upper_bound_rad_s": [
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10
+          ],
+          "acceleration_upper_bound_rad_s2": [
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10,
+            1e-10
+          ]
+        },
+        "right": {
+          "path_first_derivative_bound": [
+            1.0007839068281594,
+            2.1931557355454996,
+            0.1907396630530153,
+            4.854304242761483,
+            0.7991570743912279,
+            2.686923489973837,
+            0.22818769022914728
+          ],
+          "path_second_derivative_bound": [
+            15.380747940877914,
+            27.71616145151132,
+            4.05296029035606,
+            51.51764253777193,
+            9.987854244813576,
+            23.23015919349246,
+            1.8368737273499467
+          ],
+          "velocity_upper_bound_rad_s": [
+            0.07201345443761932,
+            0.15781300982110097,
+            0.013725062945159973,
+            0.34930139727668336,
+            0.05750498303648103,
+            0.19334307919402846,
+            0.016419712386145997
+          ],
+          "acceleration_upper_bound_rad_s2": [
+            0.088148578868068,
+            0.1621580890824755,
+            0.022607386652894187,
+            0.3080261273701463,
+            0.05851068690907935,
+            0.14312900880950588,
+            0.011451325789373712
+          ]
+        }
+      },
+      "exact_command_start_preserved": true,
+      "actual_and_commanded_left_checked": true,
+      "continuous_rigid_clearance_certified": false
+    },
+    "scope": "Robot geometry only. Released cloth and teddy remain native dynamic contact."
+  },
+  "physical_success": false,
+  "withdraw_command_q_start": {
+    "left": [
+      -0.22136014882994928,
+      -0.2727500652649277,
+      0.1266923955840482,
+      -1.564115431691947,
+      0.141677891860779,
+      1.3464022056306204,
+      1.271968239482411
+    ],
+    "right": [
+      -0.09801566712917402,
+      0.4001992206483384,
+      -0.26791621004715044,
+      -2.018610282352022,
+      0.1528309939144464,
+      2.399761442198412,
+      -2.335160378925377
+    ]
+  },
+  "withdraw_command_q_end": {
+    "left": [
+      -0.22136014882994928,
+      -0.2727500652649277,
+      0.1266923955840482,
+      -1.564115431691947,
+      0.141677891860779,
+      1.3464022056306204,
+      1.271968239482411
+    ],
+    "right": [
+      -0.15892763074993993,
+      0.3734241004054267,
+      -0.3182273499800248,
+      -0.8238318548873148,
+      0.12329668928572421,
+      1.182458443481477,
+      -2.286084805548871
+    ]
+  },
+  "limits": [
+    "Partial node inclusion and COM inclusion are a release policy, not stable support proof.",
+    "The nonplanar mouth analysis cap is not simulated and its valid flag is not a general body-self-intersection certificate.",
+    "All original runtime contact, deformation and holding gates apply until deliberate release.",
+    "Final success still requires the original whole-teddy containment, retention and physical audit."
+  ]
+}

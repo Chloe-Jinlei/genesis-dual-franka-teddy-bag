@@ -1,0 +1,152 @@
+{
+  "scope": "Read-only installed Genesis/libuipc material mapping + exact formula checks, not calibrated textile properties or a physical success certificate",
+  "production_files_unchanged": true,
+  "source_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/two_panel_builder.py": "0b52fd1d978b8fb9817a6c932e39ab2e316f697144e367d7e7b511562d30f801",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc/constitution.pyi": "4151f6a73beaaef71bbe0f538588dae0b432b8ac304e66104652d3069b8db358",
+    "/home/chloe/Desktop/genesis-local/genesis-world/genesis/engine/couplers/ipc_coupler/coupler.py": "e663fd3f076c6efdadac32b7c8c8911277fe3ec41081db23a3f8c86c5ca661a3",
+    "/home/chloe/Desktop/genesis-local/genesis-world/genesis/engine/solvers/fem_solver.py": "e45074058e33765bd6ea719fde1fe9df33301736818b98a948cba1c82419d22e"
+  },
+  "versions": {
+    "genesis": "1.4.3",
+    "pyuipc": "0.0.29",
+    "pinned_cpp_commit": "ac89e1009c7d8efb72d260790bb5ab31d7460542"
+  },
+  "source_evidence": [
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/scene.py",
+      "lines": "68-77,99-103",
+      "finding": "Genesis Cloth passes E/nu/rho/radius/bending/friction; per-scene mu adapter runs before initialization."
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/physics_config.py",
+      "lines": "316-435",
+      "finding": "Mutates only triangles.mu; protects lambda/strain_rate/thickness/mass/is_fixed/bending/contact metadata; exact source/native region bijection."
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/engine/couplers/ipc_coupler/coupler.py",
+      "lines": "330-385",
+      "finding": "Cloth actually uses StrainLimitingBaraffWitkinShell plus independent DiscreteShellBending; stale NeoHookean docstring is not actual implementation."
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/engine/solvers/fem_solver.py",
+      "lines": "978-987",
+      "finding": "Genesis FEM substep is skipped for IPCCoupler; its FEM damping options do not control current cloth."
+    },
+    {
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/constitution/strain_limiting_baraff_witkin.cpp",
+      "finding": "lambda=(Lamé lambda+2mu)*(2radius), mu=shear_moduli.mu(); native area weighting gives both effective coefficients units N/m."
+    },
+    {
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.h",
+      "finding": "W=lambda*sum(e^2+q*max(e,0)^3)+mu*(Fa dot Fb)^2, where e=norm(F a/b)-1. q=strain_rate is dimensionless, conservative, finite, not hard cap or viscous damping."
+    },
+    {
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.cu",
+      "finding": "Rest triangle normal is rotated onto +Z to define Dm XY axes; a=(1,0),b=(0,1). Energy is W*restarea*dt². Backend copies coefficients at init."
+    },
+    {
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/constitution/discrete_shell_bending.cpp",
+      "finding": "Explicit raw coefficient is independent from E; units N*m via E*(2r)^3/[12*(1-nu²)]. Increasing membrane E need not increase bend stiffness."
+    }
+  ],
+  "current_material": {
+    "E_Pa": 4000000.0,
+    "nu": 0.3,
+    "rho_kg_m3": 500.0,
+    "collision_radius_m": 0.0003,
+    "body_mu_N_m": 50.0,
+    "handle_mu_N_m": 250.0,
+    "bending_N_m": 5e-05,
+    "strain_rate_dimensionless": 100.0,
+    "stretch_lambda_N_m": 2637.362637362637,
+    "areal_density_kg_m2": 0.3
+  },
+  "one_recommended_candidate": {
+    "E_Pa": 20000000.0,
+    "nu": 0.3,
+    "rho_kg_m3": 500.0,
+    "collision_radius_m": 0.0003,
+    "body_mu_N_m": 1000.0,
+    "handle_mu_N_m": 2000.0,
+    "bending_N_m": 5e-05,
+    "strain_rate_dimensionless": 100.0,
+    "stretch_lambda_N_m": 13186.813186813184,
+    "areal_density_kg_m2": 0.3
+  },
+  "unchanged": [
+    "s663 teddy and all teddy physical parameters",
+    "two-panel U seam/zero-width bottom/geometry/handles",
+    "mass/density/thickness",
+    "friction/contact/integrator/dt",
+    "robot motion/grasp/force and every final validation gate"
+  ],
+  "algebraic_probes": [
+    {
+      "name": "identity",
+      "material_axis_lengths": [
+        1.0,
+        1.0
+      ],
+      "dot_Fa_Fb": 0.0,
+      "old_body_energy_J_m2": 0.0,
+      "new_body_energy_J_m2": 0.0,
+      "old_handle_energy_J_m2": 0.0,
+      "new_handle_energy_J_m2": 0.0
+    },
+    {
+      "name": "uniaxial_2pct",
+      "material_axis_lengths": [
+        1.02,
+        1.0
+      ],
+      "dot_Fa_Fb": 0.0,
+      "old_body_energy_J_m2": 3.1648351648351722,
+      "new_body_energy_J_m2": 15.82417582417586,
+      "old_handle_energy_J_m2": 3.1648351648351722,
+      "new_handle_energy_J_m2": 15.82417582417586
+    },
+    {
+      "name": "unit_columns_rhombus_15pct_principal",
+      "material_axis_lengths": [
+        1.0,
+        1.0
+      ],
+      "dot_Fa_Fb": 0.3224999999999998,
+      "old_body_energy_J_m2": 5.200312499999993,
+      "new_body_energy_J_m2": 104.00624999999985,
+      "old_handle_energy_J_m2": 26.001562499999963,
+      "new_handle_energy_J_m2": 208.0124999999997
+    }
+  ],
+  "rhombus_explanation": {
+    "principal_stretches": [
+      1.15,
+      0.8231038816577165
+    ],
+    "angle_between_material_axes_deg": 71.18581814750445,
+    "axis_lengths": [
+      1,
+      1
+    ],
+    "claim": "This is an exact deformation-gradient counterexample: significant diagonal/principal extension can occur with zero axial stretching term. E alone cannot suppress it. It is not a prediction of any native run."
+  },
+  "damping_scope": {
+    "built_in_viscous_material_parameter_found": false,
+    "strain_rate_is_damping": false,
+    "plastic_bending_is_viscous_damping": false,
+    "external_force_animator_in_current_recommendation": false,
+    "limitations": "Installed public constitutions expose no viscous/Rayleigh shell setting. Plastic bending changes rest curvature/yield memory; not generic cotton hysteresis. Explicit velocity drag is possible only with additional callback/state handling, excluded from this narrow material update. Unchanged implicit integration/contact friction dissipate energy, but reduced rebound must be measured: increasing stiffness alone is no damping guarantee."
+  },
+  "candidate_rationale": "Increase membrane axial coefficient 5x and body/handle shear 20x/8x; keep very small independent bending coefficient and same mass. These are engineering trial values with meaningful units, not measured cotton/linen calibration. q=100 already makes axial positive strain increasingly costly; retaining it avoids conflating stiffness and damping.",
+  "required_probe_evidence": [
+    "same coupon mesh/mass/clamp/time step and finite force protocol",
+    "read back native lambda/mu/strain_rate/thickness/bending/mass before world init",
+    "loaded principal stretch and a/b deformation; do not use 15% safety gate as material target",
+    "after unloading, actual displacement/kinetic-energy trend with stated observation window",
+    "same-motion bag handoff observes drape/grip/contact force; cloth-only coupon cannot certify manipulation"
+  ],
+  "physical_success": false
+}

@@ -1,0 +1,1986 @@
+{
+  "kind": "independent_full21_complete_failure_evidence_summary",
+  "utc": "2026-11-13T19:21:19.166338+00:00",
+  "physical_task_success": false,
+  "action_sequence_completed": true,
+  "native_status": "validation_failed",
+  "native_error": null,
+  "final_simulated_seconds": 69.76500000000904,
+  "all_independent_evidence_consistency_checks_passed": true,
+  "checks": {
+    "frozen_manifest_matches": true,
+    "live_source_assets_still_match_run_snapshot": true,
+    "launch_config_hash_and_frozen_semantics_match": true,
+    "launch_source_hashes_match_live_and_frozen": true,
+    "all_19_phase_endpoints_match_integer_steps_saved_geometry_and_actual_joints": true,
+    "native_initialization_material_readback_matches_50_250_and_independent_face_mapping": true,
+    "native_material_source_hash_matches_frozen_asset": true,
+    "native_material_protected_attributes_reported_unchanged": true,
+    "single_guard_baseline_record_unchanged": true,
+    "native_raw_force_limits_equal_original_explicit_limits": true,
+    "all_guarded_steps_and_yaw_contract_pass": true
+  },
+  "failed_consistency_checks": [],
+  "task_failures": [
+    "bear_fully_inside_bag_final",
+    "bear_remains_inside_during_final_hold_samples"
+  ],
+  "conclusion": "All 19 native action phases completed including release, withdrawal and settling. The task failed: actual final bear nodes and mass COM are outside the bag; physical limits passing does not establish containment.",
+  "original_physical_limits": {
+    "minimum_J": 0.05,
+    "maximum_cloth_edge_stretch": 1.15,
+    "maximum_table_penetration_m": 0.002,
+    "max_net_force_n": 8.0,
+    "max_tcp_torque_nm": 0.15,
+    "max_finger_force_n": 8.0,
+    "minimum_left_opening_reaction_n": 0.1
+  },
+  "actual_every_step_soft": {
+    "provided": true,
+    "valid": true,
+    "columns": [
+      "time_s",
+      "minimum_tetra_volume_ratio",
+      "bag_table_penetration_m",
+      "bear_table_penetration_m",
+      "maximum_bag_edge_stretch_ratio",
+      "all_soft_states_finite"
+    ],
+    "sampling_scope": "Soft summary at each recorded integration step; full geometry at saved frames.",
+    "rows": 13954,
+    "maximum_interval_s": 0.005000000000002558,
+    "expected_integration_interval_s": 0.005,
+    "covers_all_saved_frame_timestamps": true,
+    "covers_all_joint_trace_timestamps": true,
+    "matches_independent_saved_frame_recomputation": true,
+    "maximum_shared_frame_absolute_error_by_metric": [
+      3.885780586188048e-15,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "minimum_tetrahedron_volume_ratio": 0.07986866833975034,
+    "maximum_table_penetration_m": {
+      "bag": 0.0,
+      "bear": 0.0
+    },
+    "maximum_bag_edge_stretch_ratio": 1.0362136178422408,
+    "worst_volume_ratio_time_s": 60.005000000012245,
+    "errors": []
+  },
+  "actual_guard": {
+    "status": "passed",
+    "passed": true,
+    "rows": 8147,
+    "start_time_s": 29.034999999998508,
+    "end_time_s": 69.76500000000904,
+    "checks": {
+      "all_required_raw_values_finite": true,
+      "strictly_increasing_consecutive_steps": true,
+      "timestamps_match_fixed_integration_step": true,
+      "covers_every_step_from_guard_entry_to_run_end": true,
+      "last_time_matches_report": true,
+      "right_hold_flag_agrees_with_release_event": true,
+      "summed_raw_link_force_matches_net_force": true,
+      "stored_force_norms_match_raw_vectors": true,
+      "stored_torque_norms_match_raw_vectors": true,
+      "stored_finger_norms_match_raw_vectors": true,
+      "baseline_differences_are_only_recorded_subtractions": true,
+      "raw_net_force_below_limit": true,
+      "raw_tcp_torque_below_limit": true,
+      "raw_each_right_finger_force_below_limit": true,
+      "left_both_soft_opening_reactions_above_minimum": true,
+      "right_both_soft_opening_reactions_above_minimum_until_release": true,
+      "designated_left_material_within_18mm": true,
+      "right_teddy_vertex_within_45mm_until_release": true,
+      "no_recorded_stop_reason": true
+    },
+    "first_physical_violation": null,
+    "raw_limits": {
+      "max_net_force_n": 8.0,
+      "max_tcp_torque_nm": 0.15,
+      "max_finger_force_n": 8.0,
+      "minimum_left_opening_reaction_n": 0.1
+    },
+    "maximum_net_force_n": 1.512824064438489,
+    "maximum_tcp_torque_nm": 0.056180965275557486,
+    "maximum_right_finger_force_n": [
+      3.291631955864191,
+      3.4519154628754367
+    ],
+    "minimum_right_opening_reaction_until_release_n": [
+      2.7711451978213133,
+      2.688794228157936
+    ],
+    "minimum_left_opening_reaction_n": [
+      8.818465465547257,
+      8.957370157951955
+    ],
+    "maximum_designated_left_material_distance_m": 0.00125978175658622,
+    "maximum_right_nearest_material_distance_until_release_m": 0.0057929661003178696,
+    "maximum_saved_baseline_subtraction_error": 0.0,
+    "scope": "IPC soft-coupling STC feedback; excludes native Genesis rigid-contact force",
+    "limitations": [
+      "Positive finger-axis projections plus material proximity are grip evidence, not force-closure proof.",
+      "Saved per-link origins and aim axes are independently checked by the richer contact trace audit.",
+      "Raw engineering force and moment limits are uncalibrated; baseline subtraction never waives them."
+    ]
+  },
+  "actual_jointrates": {
+    "left": {
+      "maximum_joint_velocity_rad_s": 0.2495282018282836,
+      "maximum_joint_acceleration_rad_s2": 0.1624630042613293,
+      "per_joint_peak_velocity_rad_s": [
+        0.2495282018282836,
+        0.07890298930348649,
+        0.1959671737709101,
+        0.09700796461561367,
+        0.08995033365039973,
+        0.2262948901206414,
+        0.1161993678165345
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.09460276316771044,
+        0.08395381512613831,
+        0.12379956399098058,
+        0.1624630042613293,
+        0.108717499632843,
+        0.10058623266502531,
+        0.12939267664222864
+      ],
+      "within_configured_limits": true
+    },
+    "right": {
+      "maximum_joint_velocity_rad_s": 0.7139802585387756,
+      "maximum_joint_acceleration_rad_s2": 1.091938428419187,
+      "per_joint_peak_velocity_rad_s": [
+        0.15822992477911768,
+        0.7139802585387756,
+        0.29299746321846243,
+        0.7138405710105928,
+        0.26698146180510207,
+        0.7138216055082012,
+        0.3713053877536794
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.7639360631978427,
+        0.8613354492085818,
+        1.091938428419187,
+        1.0390535458514378,
+        0.7025569784707528,
+        0.874310878882234,
+        0.397404453752948
+      ],
+      "within_configured_limits": true
+    }
+  },
+  "actual_jointrate_thresholds": {
+    "velocity_rad_s": 1.5,
+    "acceleration_rad_s2": 10.0,
+    "source": "config.validation or conservative audit defaults; not robot manufacturer limits"
+  },
+  "rate_scope": "Every-step actual joint positions differentiated by numpy.gradient; phase masks use the same full-run derivatives. Separate from planned reference 0.35/0.5 gates and yaw continuous reference bounds.",
+  "source_input_manifest": {
+    "kind": "independent_input_manifest_review",
+    "manifest_entry_count": 30,
+    "snapshot_file_count": 30,
+    "all_declared_hashes_match": true,
+    "hash_or_path_failures": [],
+    "all_snapshot_files_in_manifest": true,
+    "unmanifested_snapshot_files": [],
+    "missing_external_model_files": [],
+    "external_model_file_count": 67,
+    "external_model_files": [
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0.stl",
+        "exists": true,
+        "sha256_at_review": "dfc6d94330de8ddb005b311bfdba9f3b8e1aa7c256b71592ee7ff32cb9a9a5aa"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link1.stl",
+        "exists": true,
+        "sha256_at_review": "e41a39a94108fcf56aacff603fc91ec80541f4c1af17b51a0de5617f5566e6d2"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link2.stl",
+        "exists": true,
+        "sha256_at_review": "370f7605a0fae3529db169ded50f52f171024aa792d4d773bc84197301f6a039"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link3.stl",
+        "exists": true,
+        "sha256_at_review": "0a8d638b9349c6c0eefc4e888636ac4838c4b27170f18a51699321118af709c1"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link4.stl",
+        "exists": true,
+        "sha256_at_review": "0180ebb5772ec9840cb049750cffb29a9ddc90311752a16ea34757782ef9e48d"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_collision_0.obj",
+        "exists": true,
+        "sha256_at_review": "3e5aa75fb13f193555c3dfb999df91d81df25006a5c3af5338297d78137c129b"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_collision_1.obj",
+        "exists": true,
+        "sha256_at_review": "87cd8f621071df010f774cbde789282b8463840dfe704f8bdfa2e29be0142e15"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_collision_2.obj",
+        "exists": true,
+        "sha256_at_review": "823ab6c8f7b1d79e0844fa071d82a03499ff68e34fddb1ba3451032c22736040"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6.stl",
+        "exists": true,
+        "sha256_at_review": "20b768e99a0e0440b5754dcca108016434e57937cc356acd9c352ccd3cb27f77"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7.stl",
+        "exists": true,
+        "sha256_at_review": "92ac6afcf7574c034d3170d8a68e95ac9048ab9d0dd5bbd8311b86e551b9ab1c"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/hand.stl",
+        "exists": true,
+        "sha256_at_review": "94493e94f30fe940f2c8ca2f155c3bbe67bbff406d3edf5e261670d2f0f6e2ed"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_0.obj",
+        "exists": true,
+        "sha256_at_review": "6b9f41a4c203540daaeb7a33cc3d0d6c6a32dc8bba187074eeaf97b3e36b3f9c"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_1.obj",
+        "exists": true,
+        "sha256_at_review": "57673d2ee2a9db2e10c8986ae57c56a7c39c012b60fd26d7d8549553b664a5ed"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_2.obj",
+        "exists": true,
+        "sha256_at_review": "1ca435a2a87a9608a146a47955724d43dd7ce10fc3dd3018800aa98f8ba86e05"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_3.obj",
+        "exists": true,
+        "sha256_at_review": "3e9c6334d2b3b47944af3458ee5f20519abc20fe7ee23063bb53405ccab28046"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_4.obj",
+        "exists": true,
+        "sha256_at_review": "215d25789704936120f119c0bc1cc7f68516dd3f8f1df61457b71acac3873f26"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_5.obj",
+        "exists": true,
+        "sha256_at_review": "9361b104e93743045107aa5b15fb1a0835ba9c1f355aae71f56403cf6a9c33f6"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_7.obj",
+        "exists": true,
+        "sha256_at_review": "2dc0b8ebbbc80e4c065d71e195adbc384f673438641fac82b07b801b4d2837cb"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_8.obj",
+        "exists": true,
+        "sha256_at_review": "3b8c436999db5586b8eb47bed2b0aa7de6993868b2681b4c04246eeac42fdb7a"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_9.obj",
+        "exists": true,
+        "sha256_at_review": "45178f97d2b5da6bce11f610212c4ef7d08c73db33a4fc38e1b7f66b93d023f5"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_10.obj",
+        "exists": true,
+        "sha256_at_review": "c9198b9d8534d628d097b0f2b239bb30343353182df098ce0d9db6bc13326848"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link0_11.obj",
+        "exists": true,
+        "sha256_at_review": "f0adec78d6677b7799d25121981270e8bfe119b5c18d08a91ee37a54ad75f65c"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link1.obj",
+        "exists": true,
+        "sha256_at_review": "51091e776b16babdbe2f3849b5c041f921d1f11dd94ac19a0f1c81abf496fbae"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link2.obj",
+        "exists": true,
+        "sha256_at_review": "5c9f8e715de52c3eb71b475de35993b3b96081e02abea9f28c414768877fc59b"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link3_0.obj",
+        "exists": true,
+        "sha256_at_review": "ce2da87f51708e11b189249d41401065dabe89a06e251185a06cef4d5ff27178"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link3_1.obj",
+        "exists": true,
+        "sha256_at_review": "2880b7753a7173f38fa87ee21da4dfc7fa7be46fbe07bac5aef9e128513cb118"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link3_2.obj",
+        "exists": true,
+        "sha256_at_review": "670cff81ae84693769ca4ae658c154cf909d81167e7c8d22b70ea977f2504efa"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link3_3.obj",
+        "exists": true,
+        "sha256_at_review": "30ede0c812efd0e0b767d134a4eae0b84e0fa407bb6325a5a555e0569b3a3ffd"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link4_0.obj",
+        "exists": true,
+        "sha256_at_review": "443bf6d178177cf347951ecf107ccd10ca444e605e375b67304579e5f948806f"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link4_1.obj",
+        "exists": true,
+        "sha256_at_review": "ca935ec7cc8b3f0e86aa079c76b0b3bf593b1e9830bab0fa7131ac51577c74f0"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link4_2.obj",
+        "exists": true,
+        "sha256_at_review": "c89caf26d379c35bb9e191ee2d91d09ab29ecc792b48d8bc10b39e5b38222175"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link4_3.obj",
+        "exists": true,
+        "sha256_at_review": "1495d17f45bdb230cf58b0beef9da4e8c9cfe76a3d2d38da89017efe5e093136"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_0.obj",
+        "exists": true,
+        "sha256_at_review": "a3238b8f2af0f2eb66d9fe63dc5d41ac52d5d38507241b5ed10e3cb019ab3e71"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_1.obj",
+        "exists": true,
+        "sha256_at_review": "9d994bbf83ec241e301b5197a6846da13f2a4a0582edb2c0f76962c5549649d6"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link5_2.obj",
+        "exists": true,
+        "sha256_at_review": "83b4ffe9f772cd7fe182e98640650eebc899aaf01842656574b0416c90dd40a4"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_0.obj",
+        "exists": true,
+        "sha256_at_review": "0504c70ebf1b284ee8faae7dcb896b8830bc672a6552015dd5dbd121fa031fb9"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_1.obj",
+        "exists": true,
+        "sha256_at_review": "45f7ca77695198b6d86ec2417ad4e42e6275044f0f96266699ee8e1057757ac1"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_2.obj",
+        "exists": true,
+        "sha256_at_review": "e54eee4d8232947ee8af65afd5a067e09dac2da6e7e585cb1dccb65496457da0"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_3.obj",
+        "exists": true,
+        "sha256_at_review": "d4f6a25ef32fa1fa4734146981994ee760232cb077c80fea6487d78a077c7f27"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_4.obj",
+        "exists": true,
+        "sha256_at_review": "be353480fe71d46f7a96f0a3cbb7e112caaf8d88368826f321a36a253c8749b2"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_5.obj",
+        "exists": true,
+        "sha256_at_review": "7c87664623c3e1a6cb330db273227a69626dc5e53b4caff1d4ee7911eb3340c6"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_6.obj",
+        "exists": true,
+        "sha256_at_review": "8fbc031e0d07b795ebf99115c75223141caaba317cab569159f3d477a7821681"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_7.obj",
+        "exists": true,
+        "sha256_at_review": "7dc5ebb799fe281aab27d6e84e7a4efa0a8e42da2369ec83de3ea3f206f62d73"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_8.obj",
+        "exists": true,
+        "sha256_at_review": "e3f77381817a341030f9dcc4c4aa7c559f80411b453fd87eb0fefecca82151bf"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_9.obj",
+        "exists": true,
+        "sha256_at_review": "25a56ea9b02a03b6cb5a81f31c54f54d0185e1a0b3937c37e4289d896e50215a"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_10.obj",
+        "exists": true,
+        "sha256_at_review": "365f26c21d10332cab8d8704645cb46930c30b3085956f2d097498c793f24db4"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_11.obj",
+        "exists": true,
+        "sha256_at_review": "8ae61e08b3ad064f25bbf03b22e59cc15d65883b5a7ce92711aff29df2493901"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_12.obj",
+        "exists": true,
+        "sha256_at_review": "f28d1bfd62b0244ffd19fb35fe9edefdf583d3c9167db944e87185d919e1d021"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_13.obj",
+        "exists": true,
+        "sha256_at_review": "0a55fa92dccb261d07200e6565fca4c850fd17f0c1ecf38821c0b97d51796c7d"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_14.obj",
+        "exists": true,
+        "sha256_at_review": "750ae3ee4781e62e3a045c662195247b03f6642b05aa93104f08258e5f6eba26"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_15.obj",
+        "exists": true,
+        "sha256_at_review": "5999c1c2497a004a7c4bbe034cdf13744f839d85ae7a11b1bc386c48a3e642e6"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link6_16.obj",
+        "exists": true,
+        "sha256_at_review": "551d7a8b37c53e7a152d008b4e36992e5b5abe74a4be18b57ee6319c27def09f"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7_0.obj",
+        "exists": true,
+        "sha256_at_review": "04586b0bde011715cfc22072ac72fe0717eb4d4817bcf665987ce6cd88eb2b93"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7_1.obj",
+        "exists": true,
+        "sha256_at_review": "c3f72289f394c9d6749a4a327fb11f05b203c37c95032c92f28019b40ebe7e00"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7_2.obj",
+        "exists": true,
+        "sha256_at_review": "d2faecedb304d0989040d082410378dc949dbbda23bd18c05134f08aae984db5"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7_3.obj",
+        "exists": true,
+        "sha256_at_review": "b62d87c4d4bdb7b281ed341d347c39dad0e50bf36aed8ac11d050073701d5f70"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7_4.obj",
+        "exists": true,
+        "sha256_at_review": "cb78ccb61fd4ad6c7bff4c4d2e6cb41e1964a5a3e1a28e67c0c6202371cfc018"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7_5.obj",
+        "exists": true,
+        "sha256_at_review": "099071d3090b51471ba52f4f90814fd3089f4975d196e4d488117073d0bfe491"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7_6.obj",
+        "exists": true,
+        "sha256_at_review": "99469e2d95ab74ce0292f2f16954c87a8a7dc16652e62e970fe37c94330a81bb"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/link7_7.obj",
+        "exists": true,
+        "sha256_at_review": "426c3db8a19373f3dc73d4bec672e948121b2914c10e2e7b9c7ea80643a19e54"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/hand_0.obj",
+        "exists": true,
+        "sha256_at_review": "b94aab901086f85df04c019b30f43bf9aa23a7ad0443ec80a8c14662a41cabd2"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/hand_1.obj",
+        "exists": true,
+        "sha256_at_review": "cd76f7494bb314406a1819c46eb826ee254894f87235714f604a470653d9badb"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/hand_2.obj",
+        "exists": true,
+        "sha256_at_review": "e0f44a71712afa5b98eb20355eff17763d3e2e19f459b2bef19abed3727e64b3"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/hand_3.obj",
+        "exists": true,
+        "sha256_at_review": "a431a06d99e88a1b322b3122a01424ee7704daeaad0bc343b90b9604f014ad0c"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/hand_4.obj",
+        "exists": true,
+        "sha256_at_review": "21f96ef6a8de082e41b1ea9834f1043de359e5d60305541bcb63539581f53bff"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/finger_0.obj",
+        "exists": true,
+        "sha256_at_review": "215098c0fcdf7192f6c503a37cf49e3efecf8a9e1320f02b17c5584d89cc5b2c"
+      },
+      {
+        "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/assets/xml/franka_emika_panda/assets/finger_1.obj",
+        "exists": true,
+        "sha256_at_review": "cf239e9aca26bba09dbbf1c544c47d87cfc9a2f0637c8bb786af750b6d4eca44"
+      }
+    ],
+    "self_contained_snapshot": false,
+    "integration_dt_s": 0.005,
+    "declared_left_sweep_gap_m": 0.005,
+    "limitations": [
+      "External robot mesh hashes are measured at this review, not established as startup hashes.",
+      "The input manifest covers scene source/config/copied assets, not installed Genesis/libuipc binaries or all environment dependencies.",
+      "Hash consistency proves recorded inputs match the manifest; it does not prove physical correctness or task success."
+    ]
+  },
+  "final_material_readback": {
+    "scope": "Per-scene pre-initialization FEM shell coefficient conversion",
+    "written_in_final_report": true,
+    "final_time_material_resampling_performed": false,
+    "calibrated": false,
+    "regions": {
+      "body": {
+        "face_count": 2960,
+        "shear_stiffness_n_per_m": 50.0,
+        "all_faces_equal": true
+      },
+      "handle_front": {
+        "face_count": 352,
+        "shear_stiffness_n_per_m": 250.0,
+        "all_faces_equal": true
+      },
+      "handle_back": {
+        "face_count": 352,
+        "shear_stiffness_n_per_m": 250.0,
+        "all_faces_equal": true
+      }
+    },
+    "independent_region_checks": {
+      "body": true,
+      "handle_front": true,
+      "handle_back": true
+    },
+    "all_protected_attributes_unchanged": {
+      "triangles.lambda": true,
+      "triangles.strain_rate": true,
+      "vertices.thickness": true,
+      "vertices.volume": true,
+      "vertices.is_fixed": true,
+      "edges.bending_stiffness": true,
+      "geometry_metadata_including_contact_material": true
+    },
+    "rest_area_density_derived_and_native_reported_mass_kg": {
+      "independent": 0.11587964720889248,
+      "native": 0.11587964720889249
+    },
+    "note": "Native attribute readback was taken during pre-initialization and persisted in the final report; this is not a second end-time material-buffer readback."
+  },
+  "final_original_containment": {
+    "mouth_projected_area_m2": 0.015358066519082,
+    "mouth_projected_crossings": 0,
+    "mouth_projected_dimensions_m": [
+      0.41627560568304467,
+      0.06842435131495235
+    ],
+    "mouth_nonplanarity_max_m": 0.028531783519686115,
+    "virtual_closed_body_valid": true,
+    "bear_vertex_inside_fraction": 0.0,
+    "bear_center_of_mass_m": [
+      -0.051907837399116155,
+      0.035563909901772356,
+      0.8203126747211307
+    ],
+    "bear_center_of_mass_inside": false,
+    "all_bear_vertices_inside": false
+  },
+  "original_retention_samples": [
+    {
+      "time": 69.2650000000095,
+      "mouth_projected_area_m2": 0.015366443154591536,
+      "mouth_projected_crossings": 0,
+      "mouth_projected_dimensions_m": [
+        0.41624126950529605,
+        0.06850553544839913
+      ],
+      "mouth_nonplanarity_max_m": 0.028535719392120074,
+      "virtual_closed_body_valid": true,
+      "bear_vertex_inside_fraction": 0.0,
+      "bear_center_of_mass_m": [
+        -0.051847104579246545,
+        0.03555791450967546,
+        0.8204012950070461
+      ],
+      "bear_center_of_mass_inside": false,
+      "all_bear_vertices_inside": false
+    },
+    {
+      "time": 69.51500000000927,
+      "mouth_projected_area_m2": 0.015362958927397875,
+      "mouth_projected_crossings": 0,
+      "mouth_projected_dimensions_m": [
+        0.4162519318063561,
+        0.06845027429322922
+      ],
+      "mouth_nonplanarity_max_m": 0.028529803741086067,
+      "virtual_closed_body_valid": true,
+      "bear_vertex_inside_fraction": 0.0,
+      "bear_center_of_mass_m": [
+        -0.05187898922166152,
+        0.03555860581837815,
+        0.8203544841485586
+      ],
+      "bear_center_of_mass_inside": false,
+      "all_bear_vertices_inside": false
+    },
+    {
+      "time": 69.76500000000904,
+      "mouth_projected_area_m2": 0.015358066519082,
+      "mouth_projected_crossings": 0,
+      "mouth_projected_dimensions_m": [
+        0.41627560568304467,
+        0.06842435131495235
+      ],
+      "mouth_nonplanarity_max_m": 0.028531783519686115,
+      "virtual_closed_body_valid": true,
+      "bear_vertex_inside_fraction": 0.0,
+      "bear_center_of_mass_m": [
+        -0.051907837399116155,
+        0.035563909901772356,
+        0.8203126747211307
+      ],
+      "bear_center_of_mass_inside": false,
+      "all_bear_vertices_inside": false
+    }
+  ],
+  "final_contact_sampling": {
+    "method": "Discrete bag vertex, edge-midpoint and triangle-centroid winding/distance samples",
+    "sample_count": 11121,
+    "near_bear_samples": 1500,
+    "inside_samples": 0,
+    "penetration_over_tolerance": 0,
+    "maximum_sampled_penetration_m": 0.0,
+    "tolerance_m": 0.001,
+    "continuous_collision_guarantee": false
+  },
+  "final_low_region_pointwise_diagnostic": {
+    "actual_time_s": 69.76500000000904,
+    "diagnostic_guards_passed": true,
+    "eligible_bear_nodes": 1450,
+    "eligible_COM_queries": 1,
+    "inside_unit_degree_nodes": 0,
+    "outside_zero_degree_nodes": 1450,
+    "COM_zero_degree": true,
+    "height": {
+      "actual_rim_min_z_m": 0.9437488228648331,
+      "actual_rim_max_z_m": 1.1098265736798933,
+      "actual_bear_max_z_m": 0.9110492867978252,
+      "actual_com_m": [
+        -0.051907837399116155,
+        0.035563909901772356,
+        0.8203126747211307
+      ],
+      "minimum_query_height_gap_m": 0.03269953606700793,
+      "required_height_gap_m": 0.002,
+      "all_bear_vertices_and_com_at_least_required_margin_below_rim": true,
+      "query_count": 1451,
+      "queries_below_rim_with_required_margin": 1451
+    },
+    "maximum_cap_difference": 7.067899292141149e-17,
+    "maximum_integer_residual": 2.8271597168564594e-16,
+    "minimum_body_distance_m": 0.0012580726276882317,
+    "COM_distance_to_actual_body_m": 0.037049799101332166,
+    "maximum_outside_node_distance_to_actual_body_m": 0.09387578725670682,
+    "all_points_above_cap_or_empty_query_false_negative": false,
+    "scope": "Actual pointwise degree relative to two coherently closed physical-body triangle chains. Does not certify embedded/nonintersecting body or whole tetrahedron volume."
+  },
+  "actual_insert_low_region_existing_independent_diagnostic": {
+    "minimum_rim_z_m": 0.9459135220178739,
+    "below_lowest_rim_by_2mm_count": 1445,
+    "bear_vertex_count": 1450,
+    "scope": "Only points below every rim vertex and the virtual fan cap; cap exists for analysis only. Not whole-body final containment proof.",
+    "inside_count": 0,
+    "outside_count": 1445,
+    "absolute_winding_range": [
+      0.0,
+      2.650462234552931e-16
+    ],
+    "positive_outward_side_count": 1445,
+    "nearest_body_distance_range_m": [
+      0.001245963082316286,
+      0.028325699583950627,
+      0.07934463180665653
+    ]
+  },
+  "actual_phase_endpoints": [
+    {
+      "phase": "close_both_handles",
+      "actual_start_s": 0.0,
+      "actual_end_s": 0.5000000000000003,
+      "nominal_duration_s": 0.5,
+      "actual_integration_steps": 100,
+      "expected_end_by_integer_steps_s": 0.5,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8850495673156306,
+      "endpoint_maximum_cloth_edge_stretch": 1.005920610334495,
+      "endpoint_bear_COM_m": [
+        0.269887068171116,
+        -0.2506090320994518,
+        0.7720380314578934
+      ],
+      "endpoint_bear_min_m": [
+        0.167604423738056,
+        -0.3862935096105249,
+        0.7409286902984458
+      ],
+      "endpoint_bear_max_m": [
+        0.3718285827673027,
+        -0.11348244973253326,
+        0.8248088345723877
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000122888293536,
+        -0.08500107345241113,
+        1.2792459422852471
+      ],
+      "endpoint_right_TCP_m": [
+        -0.1299987015890049,
+        0.0850009414515497,
+        1.2792467839972843
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.001114788540649928,
+        0.001114810826493243
+      ],
+      "per_step_soft_extrema": {
+        "rows": 101,
+        "minimum_J": 0.8629525291016571,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.013970712658668
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.000499266967267431,
+          "maximum_acceleration_rad_s2": 0.018791981008803298
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.0004713238812144027,
+          "maximum_acceleration_rad_s2": 0.017905544623886268
+        }
+      }
+    },
+    {
+      "phase": "drape_under_gravity",
+      "actual_start_s": 0.5000000000000003,
+      "actual_end_s": 1.0999999999999985,
+      "nominal_duration_s": 0.6,
+      "actual_integration_steps": 120,
+      "expected_end_by_integer_steps_s": 1.1000000000000003,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8860460641678294,
+      "endpoint_maximum_cloth_edge_stretch": 1.0111275237676443,
+      "endpoint_bear_COM_m": [
+        0.26991817702011905,
+        -0.2506151477987515,
+        0.7720335536655287
+      ],
+      "endpoint_bear_min_m": [
+        0.16762766466465961,
+        -0.38632734931106805,
+        0.7409288205781536
+      ],
+      "endpoint_bear_max_m": [
+        0.3718461790095242,
+        -0.11346754823200418,
+        0.8248197406486996
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000158010563234,
+        -0.08500566165800122,
+        1.2792165830017197
+      ],
+      "endpoint_right_TCP_m": [
+        -0.12999739530021273,
+        0.0850039220327068,
+        1.279218581076106
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.0011143445186701378,
+        0.0011147699850724581
+      ],
+      "per_step_soft_extrema": {
+        "rows": 121,
+        "minimum_J": 0.885049567315631,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0124383023714052
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.0003191393008421528,
+          "maximum_acceleration_rad_s2": 0.0054537676902555125
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.00031519016155812096,
+          "maximum_acceleration_rad_s2": 0.00549124982001103
+        }
+      }
+    },
+    {
+      "phase": "spread_bag",
+      "actual_start_s": 1.0999999999999985,
+      "actual_end_s": 3.0299999999999576,
+      "nominal_duration_s": 1.9269230769230767,
+      "actual_integration_steps": 386,
+      "expected_end_by_integer_steps_s": 3.0299999999999985,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8876055609249215,
+      "endpoint_maximum_cloth_edge_stretch": 1.0092604471891533,
+      "endpoint_bear_COM_m": [
+        0.26992424367189904,
+        -0.2506427015501796,
+        0.7720263648606719
+      ],
+      "endpoint_bear_min_m": [
+        0.1676352230684484,
+        -0.38639535442409984,
+        0.7409290531670454
+      ],
+      "endpoint_bear_max_m": [
+        0.3718462770307016,
+        -0.11347190728208069,
+        0.8248340396822126
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000112925703294,
+        -0.13001129968214437,
+        1.259964671512833
+      ],
+      "endpoint_right_TCP_m": [
+        -0.13000150414581788,
+        0.13000895446709865,
+        1.2599938899988345
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.0011150134072047194,
+        0.0011149734659619314
+      ],
+      "per_step_soft_extrema": {
+        "rows": 387,
+        "minimum_J": 0.8860460641678278,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0111275237676443
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.09700796461561367,
+          "maximum_acceleration_rad_s2": 0.1624630042613293
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.1033228550240608,
+          "maximum_acceleration_rad_s2": 0.17284616399991037
+        }
+      }
+    },
+    {
+      "phase": "orient_held_bag",
+      "actual_start_s": 3.0299999999999576,
+      "actual_end_s": 14.690000000000897,
+      "nominal_duration_s": 11.656389349575587,
+      "actual_integration_steps": 2332,
+      "expected_end_by_integer_steps_s": 14.689999999999959,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8891786070504876,
+      "endpoint_maximum_cloth_edge_stretch": 1.0304892162807524,
+      "endpoint_bear_COM_m": [
+        0.2699275498165031,
+        -0.25068573253685394,
+        0.7720207835356308
+      ],
+      "endpoint_bear_min_m": [
+        0.16764028650101395,
+        -0.38646976119100984,
+        0.7409292624942656
+      ],
+      "endpoint_bear_max_m": [
+        0.37184378125231554,
+        -0.11349591599300513,
+        0.8248468770752279
+      ],
+      "endpoint_left_TCP_m": [
+        -0.12999934700594573,
+        -0.13000553303707132,
+        1.2599327102314342
+      ],
+      "endpoint_right_TCP_m": [
+        -0.12999957555400415,
+        0.13000435200252974,
+        1.2599838637285332
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.0011136408436261045,
+        0.0011143345912550315
+      ],
+      "per_step_soft_extrema": {
+        "rows": 2333,
+        "minimum_J": 0.8876055609249198,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0307606432789402
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.2495282018282836,
+          "maximum_acceleration_rad_s2": 0.108717499632843
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.0002682124420374521,
+          "maximum_acceleration_rad_s2": 0.0048346335056238445
+        }
+      }
+    },
+    {
+      "phase": "settle_oriented_bag",
+      "actual_start_s": 14.690000000000897,
+      "actual_end_s": 15.190000000000975,
+      "nominal_duration_s": 0.5,
+      "actual_integration_steps": 100,
+      "expected_end_by_integer_steps_s": 15.190000000000897,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8891861960350227,
+      "endpoint_maximum_cloth_edge_stretch": 1.0305376926677117,
+      "endpoint_bear_COM_m": [
+        0.26992775708587446,
+        -0.25068590302789434,
+        0.7720207703822352
+      ],
+      "endpoint_bear_min_m": [
+        0.1676404334014523,
+        -0.3864700505203369,
+        0.7409292633771567
+      ],
+      "endpoint_bear_max_m": [
+        0.3718438902020906,
+        -0.1134959828509771,
+        0.824846952541954
+      ],
+      "endpoint_left_TCP_m": [
+        -0.1299993345335268,
+        -0.13000560877499823,
+        1.2599328425612728
+      ],
+      "endpoint_right_TCP_m": [
+        -0.12999956764154807,
+        0.13000435629932924,
+        1.259983866063544
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.0011135898928471878,
+        0.0011142900846133406
+      ],
+      "per_step_soft_extrema": {
+        "rows": 101,
+        "minimum_J": 0.8891785065428832,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.030558240562995
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 8.696243781969315e-06,
+          "maximum_acceleration_rad_s2": 0.0002972742265682872
+        },
+        "right": {
+          "maximum_velocity_rad_s": 3.8929488539451995e-06,
+          "maximum_acceleration_rad_s2": 0.0002751562952596057
+        }
+      }
+    },
+    {
+      "phase": "release_right_handle",
+      "actual_start_s": 15.190000000000975,
+      "actual_end_s": 15.590000000001037,
+      "nominal_duration_s": 0.4,
+      "actual_integration_steps": 80,
+      "expected_end_by_integer_steps_s": 15.590000000000975,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8891884712317459,
+      "endpoint_maximum_cloth_edge_stretch": 1.0260315366216965,
+      "endpoint_bear_COM_m": [
+        0.269927625072056,
+        -0.2506860174478003,
+        0.7720207578909474
+      ],
+      "endpoint_bear_min_m": [
+        0.16764034975136463,
+        -0.38647022926983177,
+        0.7409292638029469
+      ],
+      "endpoint_bear_max_m": [
+        0.3718437977410332,
+        -0.113496082074203,
+        0.8248469616478312
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000087063542903,
+        -0.1299927902164837,
+        1.2599326129645376
+      ],
+      "endpoint_right_TCP_m": [
+        -0.1299999996404309,
+        0.13000000004210777,
+        1.2599999990002395
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.040020322187637535,
+        0.04002032218831978
+      ],
+      "per_step_soft_extrema": {
+        "rows": 81,
+        "minimum_J": 0.8891833981272562,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.030730366949012
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.00017869336643627776,
+          "maximum_acceleration_rad_s2": 0.0033587355332537518
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.00019814151841046623,
+          "maximum_acceleration_rad_s2": 0.009123241588325464
+        }
+      }
+    },
+    {
+      "phase": "right_clear_handle",
+      "actual_start_s": 15.590000000001037,
+      "actual_end_s": 18.205000000000663,
+      "nominal_duration_s": 2.612375332616872,
+      "actual_integration_steps": 523,
+      "expected_end_by_integer_steps_s": 18.205000000001036,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8892031892089871,
+      "endpoint_maximum_cloth_edge_stretch": 1.0268639052607793,
+      "endpoint_bear_COM_m": [
+        0.2699276030544712,
+        -0.250686488983468,
+        0.7720207045334015
+      ],
+      "endpoint_bear_min_m": [
+        0.16764035349589343,
+        -0.38647099752234143,
+        0.7409292658367806
+      ],
+      "endpoint_bear_max_m": [
+        0.3718437247943529,
+        -0.11349637517639558,
+        0.8248470735957004
+      ],
+      "endpoint_left_TCP_m": [
+        -0.1300019496782463,
+        -0.1299874459527145,
+        1.2599344722114452
+      ],
+      "endpoint_right_TCP_m": [
+        0.1200061085455641,
+        0.20000257774037847,
+        1.320007281470001
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.03999999756530321,
+        0.040000000899668424
+      ],
+      "per_step_soft_extrema": {
+        "rows": 524,
+        "minimum_J": 0.8891880313465085,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0282297027994536
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.00039763061245423614,
+          "maximum_acceleration_rad_s2": 0.017312769085717286
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.7138216055082012,
+          "maximum_acceleration_rad_s2": 0.874310878882234
+        }
+      }
+    },
+    {
+      "phase": "teddy_pregrasp",
+      "actual_start_s": 18.205000000000663,
+      "actual_end_s": 22.499999999999808,
+      "nominal_duration_s": 4.293896453350504,
+      "actual_integration_steps": 859,
+      "expected_end_by_integer_steps_s": 22.50000000000066,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8892121766604455,
+      "endpoint_maximum_cloth_edge_stretch": 1.0269385819526322,
+      "endpoint_bear_COM_m": [
+        0.26992763611746895,
+        -0.2506867200621943,
+        0.7720206802311554
+      ],
+      "endpoint_bear_min_m": [
+        0.1676403885526868,
+        -0.38647139012848125,
+        0.7409292670636928
+      ],
+      "endpoint_bear_max_m": [
+        0.3718437331022454,
+        -0.11349650833220655,
+        0.8248471506572056
+      ],
+      "endpoint_left_TCP_m": [
+        -0.1300020654367425,
+        -0.12998734654912156,
+        1.2599355947470732
+      ],
+      "endpoint_right_TCP_m": [
+        0.3379008995501769,
+        -0.26179636618422786,
+        0.9171453484646833
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.040000001419551665,
+        0.039999996190151335
+      ],
+      "per_step_soft_extrema": {
+        "rows": 860,
+        "minimum_J": 0.8892031892089848,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.027058289140327
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.00016382470442977137,
+          "maximum_acceleration_rad_s2": 0.01529529299091641
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.7139802585387756,
+          "maximum_acceleration_rad_s2": 1.091938428419187
+        }
+      }
+    },
+    {
+      "phase": "teddy_grasp_approach",
+      "actual_start_s": 22.499999999999808,
+      "actual_end_s": 24.0449999999995,
+      "nominal_duration_s": 1.5415384615384613,
+      "actual_integration_steps": 309,
+      "expected_end_by_integer_steps_s": 24.04499999999981,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.8892134779922666,
+      "endpoint_maximum_cloth_edge_stretch": 1.026913349676081,
+      "endpoint_bear_COM_m": [
+        0.2699276451042372,
+        -0.2506867583909613,
+        0.772020673172383
+      ],
+      "endpoint_bear_min_m": [
+        0.1676403945635494,
+        -0.38647145162351304,
+        0.7409292672059608
+      ],
+      "endpoint_bear_max_m": [
+        0.3718437146307026,
+        -0.11349652554164304,
+        0.8248471572628607
+      ],
+      "endpoint_left_TCP_m": [
+        -0.1300022100281346,
+        -0.12998761441228157,
+        1.2599351013459046
+      ],
+      "endpoint_right_TCP_m": [
+        0.33789755972723,
+        -0.26175688940124947,
+        0.7670953536190422
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.039999998483163476,
+        0.040000000716224
+      ],
+      "per_step_soft_extrema": {
+        "rows": 310,
+        "minimum_J": 0.8892120789637029,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0269401575030161
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 4.0095424594710494e-05,
+          "maximum_acceleration_rad_s2": 0.0048424697979508515
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.40325533457715323,
+          "maximum_acceleration_rad_s2": 0.8613354492085818
+        }
+      }
+    },
+    {
+      "phase": "close_teddy_gripper",
+      "actual_start_s": 24.0449999999995,
+      "actual_end_s": 25.044999999999302,
+      "nominal_duration_s": 1.0,
+      "actual_integration_steps": 200,
+      "expected_end_by_integer_steps_s": 25.0449999999995,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.5911769475921111,
+      "endpoint_maximum_cloth_edge_stretch": 1.0268760539741113,
+      "endpoint_bear_COM_m": [
+        0.26995340631952186,
+        -0.2501832140197262,
+        0.7719809825383207
+      ],
+      "endpoint_bear_min_m": [
+        0.16744213331909288,
+        -0.3865034488920045,
+        0.7409283995490474
+      ],
+      "endpoint_bear_max_m": [
+        0.37211282435646226,
+        -0.11312493798835999,
+        0.8247278474710734
+      ],
+      "endpoint_left_TCP_m": [
+        -0.1300018099631866,
+        -0.1299878868172603,
+        1.259935317873524
+      ],
+      "endpoint_right_TCP_m": [
+        0.33791361234578277,
+        -0.26183078994944964,
+        0.7671812517358673
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.028934448498532758,
+        0.028923977601769006
+      ],
+      "per_step_soft_extrema": {
+        "rows": 201,
+        "minimum_J": 0.3642217837122805,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0269193893807516
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 6.312539056807509e-05,
+          "maximum_acceleration_rad_s2": 0.006671413939331123
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.0024536159657060352,
+          "maximum_acceleration_rad_s2": 0.03934913756467823
+        }
+      }
+    },
+    {
+      "phase": "lift_teddy",
+      "actual_start_s": 25.044999999999302,
+      "actual_end_s": 29.034999999998508,
+      "nominal_duration_s": 3.988068166804684,
+      "actual_integration_steps": 798,
+      "expected_end_by_integer_steps_s": 29.0349999999993,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.444332604534678,
+      "endpoint_maximum_cloth_edge_stretch": 1.02681233737753,
+      "endpoint_bear_COM_m": [
+        0.32570264814207184,
+        -0.256543215808315,
+        1.2966588234334504
+      ],
+      "endpoint_bear_min_m": [
+        0.28273189636898977,
+        -0.39276439092694426,
+        1.1971568940993165
+      ],
+      "endpoint_bear_max_m": [
+        0.3782572005112227,
+        -0.11648607599959904,
+        1.4017387447527279
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000181809518438,
+        -0.1299879819329806,
+        1.2599365888481704
+      ],
+      "endpoint_right_TCP_m": [
+        0.33788684288473053,
+        -0.2618278379774708,
+        1.3698429695216388
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.02684121632356507,
+        0.02684080556009912
+      ],
+      "per_step_soft_extrema": {
+        "rows": 799,
+        "minimum_J": 0.19791665125995167,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0268793461752332
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 3.6199750184096047e-06,
+          "maximum_acceleration_rad_s2": 0.00036555532574318925
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.7138405710105928,
+          "maximum_acceleration_rad_s2": 1.0390535458514378
+        }
+      }
+    },
+    {
+      "phase": "orient_teddy_postlift",
+      "actual_start_s": 29.034999999998508,
+      "actual_end_s": 35.059999999999484,
+      "nominal_duration_s": 6.024024000000001,
+      "actual_integration_steps": 1205,
+      "expected_end_by_integer_steps_s": 35.05999999999851,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.5359309437270412,
+      "endpoint_maximum_cloth_edge_stretch": 1.0267315435684508,
+      "endpoint_bear_COM_m": [
+        0.32716798076813514,
+        -0.2597738449014373,
+        1.295141993000459
+      ],
+      "endpoint_bear_min_m": [
+        0.2756648472521964,
+        -0.39880827081026304,
+        1.1957051544535973
+      ],
+      "endpoint_bear_max_m": [
+        0.36120444973223176,
+        -0.11718952978494936,
+        1.4007216006714873
+      ],
+      "endpoint_left_TCP_m": [
+        -0.1300018260561936,
+        -0.12998813200634554,
+        1.259938118505896
+      ],
+      "endpoint_right_TCP_m": [
+        0.33787384463259273,
+        -0.26185843429259703,
+        1.3696760658161238
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.026329392549707058,
+        0.02632944649867547
+      ],
+      "per_step_soft_extrema": {
+        "rows": 1206,
+        "minimum_J": 0.431170909673341,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0268322417821723
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 1.977742812186989e-05,
+          "maximum_acceleration_rad_s2": 0.0019597088567014885
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.08046542077302377,
+          "maximum_acceleration_rad_s2": 0.04437611558356602
+        }
+      }
+    },
+    {
+      "phase": "adjust_teddy_height_contact_trial",
+      "actual_start_s": 35.059999999999484,
+      "actual_end_s": 37.57500000000077,
+      "nominal_duration_s": 2.51001,
+      "actual_integration_steps": 503,
+      "expected_end_by_integer_steps_s": 37.574999999999484,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.5298056673722942,
+      "endpoint_maximum_cloth_edge_stretch": 1.0266740276640334,
+      "endpoint_bear_COM_m": [
+        0.3283683112712286,
+        -0.2596992817460095,
+        1.2944857028836227
+      ],
+      "endpoint_bear_min_m": [
+        0.27751349594255886,
+        -0.3987091530760365,
+        1.1951007376864815
+      ],
+      "endpoint_bear_max_m": [
+        0.362974978338922,
+        -0.11713870829489537,
+        1.4002289626817943
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000182983332229,
+        -0.1299882335311709,
+        1.2599386819426086
+      ],
+      "endpoint_right_TCP_m": [
+        0.33786048585575623,
+        -0.26188906986526306,
+        1.3695093500840279
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.026190795518053842,
+        0.02619073588766335
+      ],
+      "per_step_soft_extrema": {
+        "rows": 504,
+        "minimum_J": 0.5294419664392648,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0267432812860948
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 1.6747045094689383e-05,
+          "maximum_acceleration_rad_s2": 0.0014856051961934685
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.0001382612722977683,
+          "maximum_acceleration_rad_s2": 0.0034400657256110794
+        }
+      }
+    },
+    {
+      "phase": "transport_teddy_along_y",
+      "actual_start_s": 37.57500000000077,
+      "actual_end_s": 43.14000000000362,
+      "nominal_duration_s": 5.56058215141055,
+      "actual_integration_steps": 1113,
+      "expected_end_by_integer_steps_s": 43.14000000000077,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.5163218330580823,
+      "endpoint_maximum_cloth_edge_stretch": 1.0265709113333203,
+      "endpoint_bear_COM_m": [
+        0.33000322174797286,
+        0.04035895457361243,
+        1.2934464716607295
+      ],
+      "endpoint_bear_min_m": [
+        0.28199828366474844,
+        -0.09864046861099227,
+        1.1941998239552285
+      ],
+      "endpoint_bear_max_m": [
+        0.36720597262614635,
+        0.1829966633597491,
+        1.3993386936587493
+      ],
+      "endpoint_left_TCP_m": [
+        -0.1300018590996952,
+        -0.1299881136930796,
+        1.2599397126392113
+      ],
+      "endpoint_right_TCP_m": [
+        0.3378702378558637,
+        0.03820404914478552,
+        1.3695800415959243
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.025847102050052223,
+        0.025846873675630374
+      ],
+      "per_step_soft_extrema": {
+        "rows": 1114,
+        "minimum_J": 0.5084863693716267,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0267107468860353
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 3.0471674278942373e-05,
+          "maximum_acceleration_rad_s2": 0.0033977224120445397
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.3493289731511027,
+          "maximum_acceleration_rad_s2": 0.3098548576231348
+        }
+      }
+    },
+    {
+      "phase": "transport_teddy",
+      "actual_start_s": 43.14000000000362,
+      "actual_end_s": 49.13000000000668,
+      "nominal_duration_s": 5.988831282934525,
+      "actual_integration_steps": 1198,
+      "expected_end_by_integer_steps_s": 49.13000000000362,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.4973884106609975,
+      "endpoint_maximum_cloth_edge_stretch": 1.0259587317340764,
+      "endpoint_bear_COM_m": [
+        -0.12607222400919585,
+        0.04074137312919039,
+        1.2920886925512243
+      ],
+      "endpoint_bear_min_m": [
+        -0.1726573781741128,
+        -0.09811712523314516,
+        1.193007108219492
+      ],
+      "endpoint_bear_max_m": [
+        -0.08778612027327382,
+        0.18323868694906115,
+        1.397998294600871
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000191090094224,
+        -0.12998988685952484,
+        1.2599402032837448
+      ],
+      "endpoint_right_TCP_m": [
+        -0.12042568632255085,
+        0.03818228260464953,
+        1.3695185220881136
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.025740048734870156,
+        0.025740579580823986
+      ],
+      "per_step_soft_extrema": {
+        "rows": 1199,
+        "minimum_J": 0.49738841066099854,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0265728524233801
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 2.741593090149763e-05,
+          "maximum_acceleration_rad_s2": 0.003193035280444932
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.349312227702427,
+          "maximum_acceleration_rad_s2": 0.30676608660924387
+        }
+      }
+    },
+    {
+      "phase": "insert_teddy",
+      "actual_start_s": 49.13000000000668,
+      "actual_end_s": 60.56000000001253,
+      "nominal_duration_s": 11.426740610429377,
+      "actual_integration_steps": 2286,
+      "expected_end_by_integer_steps_s": 60.56000000000668,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.0949924507518793,
+      "endpoint_maximum_cloth_edge_stretch": 1.0284747464034796,
+      "endpoint_bear_COM_m": [
+        -0.0897011853743669,
+        0.03719343638036216,
+        0.8564106776605335
+      ],
+      "endpoint_bear_min_m": [
+        -0.15343747362684365,
+        -0.0977016719857937,
+        0.7696717934093117
+      ],
+      "endpoint_bear_max_m": [
+        -0.01817450844173996,
+        0.1767150097853063,
+        0.9476154537553932
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000627700858103,
+        -0.12998430778504405,
+        1.2598615921990912
+      ],
+      "endpoint_right_TCP_m": [
+        -0.12035835248492169,
+        0.03818715460824586,
+        0.9264539282360666
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.02425344066390994,
+        0.024259250677655952
+      ],
+      "per_step_soft_extrema": {
+        "rows": 2287,
+        "minimum_J": 0.07986866833975034,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0362136178422408
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.0004293326294231292,
+          "maximum_acceleration_rad_s2": 0.010970803947424272
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.204961390638573,
+          "maximum_acceleration_rad_s2": 0.5156629147184537
+        }
+      },
+      "endpoint_original_containment": {
+        "mouth_projected_area_m2": 0.0007458921087423712,
+        "mouth_projected_crossings": 2,
+        "mouth_projected_dimensions_m": [
+          0.4093285675334515,
+          0.07127167348105704
+        ],
+        "mouth_nonplanarity_max_m": 0.015858055561531397,
+        "virtual_closed_body_valid": false,
+        "bear_vertex_inside_fraction": 0.0,
+        "bear_center_of_mass_m": [
+          -0.0897011853743669,
+          0.03719343638036216,
+          0.8564106776605335
+        ],
+        "bear_center_of_mass_inside": false,
+        "all_bear_vertices_inside": false
+      }
+    },
+    {
+      "phase": "release_teddy",
+      "actual_start_s": 60.56000000001253,
+      "actual_end_s": 61.060000000012785,
+      "nominal_duration_s": 0.5,
+      "actual_integration_steps": 100,
+      "expected_end_by_integer_steps_s": 61.06000000001253,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.9526155303998906,
+      "endpoint_maximum_cloth_edge_stretch": 1.024787259576039,
+      "endpoint_bear_COM_m": [
+        -0.055128837709450866,
+        0.04193007813035809,
+        0.8275758993791419
+      ],
+      "endpoint_bear_min_m": [
+        -0.13744976643588497,
+        -0.08286749816647257,
+        0.7415279978365639
+      ],
+      "endpoint_bear_max_m": [
+        0.026949768571636657,
+        0.16772577692919421,
+        0.921777476758928
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000420545862942,
+        -0.12998647228547597,
+        1.259931824771434
+      ],
+      "endpoint_right_TCP_m": [
+        -0.12042553805274285,
+        0.03817774885048914,
+        0.926522011707247
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.040008622627348875,
+        0.040008636488105924
+      ],
+      "per_step_soft_extrema": {
+        "rows": 101,
+        "minimum_J": 0.09499245075187963,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0300037256847223
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.0006602083610687259,
+          "maximum_acceleration_rad_s2": 0.016145855801133546
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.0012975343526591132,
+          "maximum_acceleration_rad_s2": 0.05922233042664783
+        }
+      },
+      "endpoint_original_containment": {
+        "mouth_projected_area_m2": 0.0016740548967526677,
+        "mouth_projected_crossings": 2,
+        "mouth_projected_dimensions_m": [
+          0.4157940596312283,
+          0.06479635720351612
+        ],
+        "mouth_nonplanarity_max_m": 0.018418088675890777,
+        "virtual_closed_body_valid": false,
+        "bear_vertex_inside_fraction": 0.0,
+        "bear_center_of_mass_m": [
+          -0.055128837709450866,
+          0.04193007813035809,
+          0.8275758993791419
+        ],
+        "bear_center_of_mass_inside": false,
+        "all_bear_vertices_inside": false
+      }
+    },
+    {
+      "phase": "withdraw_right_arm",
+      "actual_start_s": 61.060000000012785,
+      "actual_end_s": 67.76500000001086,
+      "nominal_duration_s": 6.701752697675407,
+      "actual_integration_steps": 1341,
+      "expected_end_by_integer_steps_s": 67.76500000001279,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.6105360339761281,
+      "endpoint_maximum_cloth_edge_stretch": 1.0217678050003964,
+      "endpoint_bear_COM_m": [
+        -0.05162430032436966,
+        0.035566510981889225,
+        0.8206869935190577
+      ],
+      "endpoint_bear_min_m": [
+        -0.13910038443251357,
+        -0.08676922241776623,
+        0.7409254142961751
+      ],
+      "endpoint_bear_max_m": [
+        0.03697683419701235,
+        0.15983241414638494,
+        0.9118576465153438
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000249047046736,
+        -0.12999421947769668,
+        1.2599558957003305
+      ],
+      "endpoint_right_TCP_m": [
+        -0.12042555361956851,
+        0.038182347736531876,
+        1.3695199109921479
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.040000000002774115,
+        0.039999999996183776
+      ],
+      "per_step_soft_extrema": {
+        "rows": 1342,
+        "minimum_J": 0.32530653637498697,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0311191416099053
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 0.0001962266632773435,
+          "maximum_acceleration_rad_s2": 0.01004395845144249
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.3493405948958923,
+          "maximum_acceleration_rad_s2": 0.26797334886790125
+        }
+      },
+      "endpoint_original_containment": {
+        "mouth_projected_area_m2": 0.015381970868909012,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.41615407184776576,
+          0.0688552105322913
+        ],
+        "mouth_nonplanarity_max_m": 0.028567851127938963,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 0.0,
+        "bear_center_of_mass_m": [
+          -0.05162430032436966,
+          0.035566510981889225,
+          0.8206869935190577
+        ],
+        "bear_center_of_mass_inside": false,
+        "all_bear_vertices_inside": false
+      }
+    },
+    {
+      "phase": "final_settle",
+      "actual_start_s": 67.76500000001086,
+      "actual_end_s": 69.76500000000904,
+      "nominal_duration_s": 2.0,
+      "actual_integration_steps": 400,
+      "expected_end_by_integer_steps_s": 69.76500000001086,
+      "timestamp_matches_integer_steps": true,
+      "endpoint_matches_next_start_or_final": true,
+      "endpoint_exactly_matches_saved_full_frame": true,
+      "endpoint_actual_joints_exactly_match_every_step_trace": true,
+      "all_endpoint_values_finite": true,
+      "endpoint_minimum_J": 0.6080882011216899,
+      "endpoint_maximum_cloth_edge_stretch": 1.0216805769452828,
+      "endpoint_bear_COM_m": [
+        -0.051907837399116155,
+        0.035563909901772356,
+        0.8203126747211307
+      ],
+      "endpoint_bear_min_m": [
+        -0.13976661779787816,
+        -0.0867933010250725,
+        0.7409254058268752
+      ],
+      "endpoint_bear_max_m": [
+        0.036961438889857395,
+        0.1601309672411361,
+        0.9110492867978252
+      ],
+      "endpoint_left_TCP_m": [
+        -0.13000249313943912,
+        -0.1299942262846199,
+        1.2599557270146404
+      ],
+      "endpoint_right_TCP_m": [
+        -0.12042568526527399,
+        0.03818228313896686,
+        1.3695185209173997
+      ],
+      "endpoint_right_finger_positions_m": [
+        0.04000000000007057,
+        0.04000000000007055
+      ],
+      "per_step_soft_extrema": {
+        "rows": 401,
+        "minimum_J": 0.6079921933308151,
+        "maximum_bag_table_penetration_m": 0.0,
+        "maximum_bear_table_penetration_m": 0.0,
+        "maximum_cloth_edge_stretch": 1.0217678050003964
+      },
+      "actual_sampled_joint_motion": {
+        "left": {
+          "maximum_velocity_rad_s": 4.362965626114601e-06,
+          "maximum_acceleration_rad_s2": 0.00031968410780820674
+        },
+        "right": {
+          "maximum_velocity_rad_s": 0.00010263797830134536,
+          "maximum_acceleration_rad_s2": 0.0018881838798296378
+        }
+      },
+      "endpoint_original_containment": {
+        "mouth_projected_area_m2": 0.015358066519082,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.41627560568304467,
+          0.06842435131495235
+        ],
+        "mouth_nonplanarity_max_m": 0.028531783519686115,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 0.0,
+        "bear_center_of_mass_m": [
+          -0.051907837399116155,
+          0.035563909901772356,
+          0.8203126747211307
+        ],
+        "bear_center_of_mass_inside": false,
+        "all_bear_vertices_inside": false
+      }
+    }
+  ],
+  "relevant_subaudit_status": {
+    "runtime_status": "validation_failed",
+    "geometry_and_soft_audit_status": "failed",
+    "guard_reaction_status": "passed",
+    "correction_sequence_status": "passed",
+    "staged_sequence_status": "not_applicable",
+    "staged_native_hand_height_status": "not_applicable",
+    "held_handle_monitor_status": "passed",
+    "per_link_wrench_reconstruction_status": "passed",
+    "postlift_yaw_status": "passed"
+  },
+  "limitations": [
+    "Integration-step and saved-frame observations do not certify continuous collision freedom.",
+    "Positive opening reactions and named material proximity are holding evidence, not a force-closure proof.",
+    "Three final 0.5-second retention samples are the original criterion; no exhaustive continuous retention proof is claimed.",
+    "Effective cloth and bear parameters remain uncalibrated.",
+    "Zero eligible low-region queries means not applicable, never zero containment; final queries here are all 1451 eligible."
+  ],
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/report.json": "f4f502a90dd46ebbb8a1127bd6cfe5893ed12d5df22b03807fdbae3374ba41c3",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/validation.json": "558938c61c557de240abde8f7652d55429bd9c6fe30dded0753e138416f5dd87",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/config.json": "ae0686aa5e7f29c0da663d64f1c9fe98c76fa639ac39b29554460fa8a0dc82cf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/input_sha256.json": "627d13cdcdc32e09af6a2bc922886b821c547d9e73fa66469cce5fea0787bf14",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/events.json": "5ef473b794ccb9a67a040b3fdee318ab29ca7397570b76776a5a3a2c842b9bc5",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/states.npz": "99a95e1d06b9de7e033e55dba3311b8d3e784f4c2738a0ab943f2795d340c3f9",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/joint_trace.npy": "ee7d40f591f728c77a70a249fcc24649920a9594e7eab06b9098a20a39137cf8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/soft_metrics.npy": "b125d9948540aa8e25d9496ef3a4627d62e67943ef7d7af413f190f7834dce03",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/contact_guard_trace.json": "2e93acee6bfd61d831bc4dd7837ece8af8edfe80c531b81371ea950c5eedecfa",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/coupling_trace.json": "afb042a03cbce90c3d9ed734856027027cf512f04665ad7438cb0fe839cc0736",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/handle_grip_trace.json": "dca3d69a337147a6a40825d37e11a41384abf481b7ca90cea24e4061115a69a6",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/independent-final-review.json": "16ca74ffad919fe7ef91f52b069efa5ba653b4f7ba6ad45417dcaae515bc6849",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/independent-final-low-region-winding.json": "0eb2edb6914ac35ac41bb46d7d9d9469ad353851ba53aaf95fb8055cbf8aff37"
+  },
+  "audit_source_sha256": "cfffd244a7a8064dc2780a337e17e2b13ab4447849a2834ca10e20700f2771f8",
+  "summary_source_sha256": "e616ffcbc360d4e4040cdd3118e0ef30e1103450a272cfb03013cf0bdece2630"
+}

@@ -1,0 +1,4357 @@
+{
+  "route": {
+    "approach": "vertical",
+    "outward_approach_axis": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "warnings": [],
+    "orientation_source": {
+      "kind": "fixed_executed_orientation"
+    },
+    "wrist_world_z_yaw_deg": null,
+    "mouth_projected_area_m2": 0.03896828613654967,
+    "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+    "wrist_world_x_tilt_deg": null,
+    "in_plane_offset_strategy": {
+      "anchor": "fresh_projected_mouth_area_centroid",
+      "delta_m": [
+        0.0,
+        -0.01
+      ],
+      "reference_axes_world": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "delta_world_m": [
+        0.0,
+        -0.01,
+        0.0
+      ]
+    },
+    "mouth_entry_center_m": [
+      -0.12992673376783578,
+      0.03152049925811912,
+      1.033982146474565
+    ],
+    "fresh_rotation_sweep_padding_m": 0.0,
+    "bear_clearance_above_rim_m": 0.04,
+    "rotation_xyzw": [
+      0.6995191336765171,
+      0.11079457814315942,
+      0.06897381691961114,
+      0.7025953000512276
+    ],
+    "predicted_rotated_bear_dimensions_xyz_m": [
+      0.14081678364799494,
+      0.22624986615168446,
+      0.33140802100602823
+    ],
+    "predicted_projected_vertices_inside_fraction": 0.7777777777777778,
+    "predicted_footprint_fits_with_2mm_margin": false,
+    "predicted_convex_footprint_boundary_separation_m": 0.002339914933285051,
+    "predicted_maximum_outside_rim_distance_m": 0.005447340773679036,
+    "required_predicted_planar_compression": 0.07,
+    "bounded_compression_screen_passes": true,
+    "rotation_staging_tcp_m": [
+      0.3498549209971197,
+      -0.26390391580423833,
+      1.369357472599349
+    ],
+    "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+    "rotation_sphere_table_clearance_m": 0.4035427286720241,
+    "above_tcp_m": [
+      -0.105166088823407,
+      0.10663821249122275,
+      1.3056799196772162
+    ],
+    "insert_tcp_m": [
+      -0.105166088823407,
+      0.10663821249122275,
+      0.9915865817981885
+    ],
+    "robot_route_feasible": true,
+    "robot_planning_attempted": true,
+    "stages": [
+      {
+        "name": "height_at_current_xy",
+        "right_tcp_m": [
+          0.3498549209971197,
+          -0.26390391580423833,
+          1.369357472599349
+        ],
+        "rotation_xyzw": [
+          0.7074036861337226,
+          9.491817932472116e-06,
+          2.70606705873866e-06,
+          0.7068097514515518
+        ],
+        "duration_s": 2.505,
+        "right_q_end": [
+          1.55611845812161,
+          -0.3129430818365109,
+          -0.6546681503734404,
+          -2.3699725683445676,
+          0.1752807103513259,
+          3.7137650059262577,
+          -1.122558912654512
+        ]
+      },
+      {
+        "name": "rotate_held_teddy",
+        "right_tcp_m": [
+          0.3498549209971197,
+          -0.26390391580423833,
+          1.369357472599349
+        ],
+        "rotation_xyzw": [
+          0.6995191336765171,
+          0.11079457814315942,
+          0.06897381691961114,
+          0.7025953000512276
+        ],
+        "duration_s": 2.505,
+        "right_q_end": [
+          1.9488326934565068,
+          -0.566686644170836,
+          -1.0898822361848988,
+          -2.350555498555864,
+          -0.3167793415873635,
+          3.5786111731436687,
+          -1.0572138886202616
+        ]
+      },
+      {
+        "name": "translate_outside_mouth",
+        "right_tcp_m": [
+          -0.105166088823407,
+          0.10663821249122275,
+          1.3056799196772162
+        ],
+        "rotation_xyzw": [
+          0.6995191336765171,
+          0.11079457814315942,
+          0.06897381691961114,
+          0.7025953000512276
+        ],
+        "duration_s": 6.964673176202379,
+        "right_q_end": [
+          1.3252606353554912,
+          -1.7617999922441576,
+          -1.111048747908039,
+          -2.0946024706848423,
+          -0.34615997978467594,
+          2.201643973554208,
+          -1.787962824775991
+        ]
+      },
+      {
+        "name": "insert_candidate",
+        "right_tcp_m": [
+          -0.105166088823407,
+          0.10663821249122275,
+          0.9915865817981885
+        ],
+        "rotation_xyzw": [
+          0.6995191336765171,
+          0.11079457814315942,
+          0.06897381691961114,
+          0.7025953000512276
+        ],
+        "duration_s": 5.610277966498397,
+        "right_q_end": [
+          1.104103650169624,
+          -1.7580619355871066,
+          -1.7362938449640113,
+          -2.217297252458196,
+          -0.23893111149902116,
+          2.254914413132099,
+          -2.434806105027168
+        ]
+      }
+    ],
+    "total_motion_duration_s": 17.584951142700778,
+    "geometry_screen_passes": true
+  },
+  "report": {
+    "kind": "observed_shape_bounded_reorientation",
+    "observed_time_s": 29.814999999998353,
+    "attempt": 0,
+    "max_attempts": 2,
+    "warnings": [],
+    "orientation_trials": [
+      {
+        "axis": "current_orientation",
+        "angle_degrees": 0.0,
+        "rotation_xyzw": [
+          0.7074036861337226,
+          9.491817932472116e-06,
+          2.70606705873866e-06,
+          0.7068097514515518
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7074036861337226,
+                9.491817932472116e-06,
+                2.70606705873866e-06,
+                0.7068097514515518
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.18761464890693497,
+                0.20604238433529015,
+                0.328364839397727
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5555555555555556,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 2.1095137545641147e-05,
+              "predicted_maximum_outside_rim_distance_m": 0.019189091124291378,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.08931197027118012,
+                0.09805340723911593,
+                1.306596394233366
+              ],
+              "insert_tcp_m": [
+                -0.08931197027118012,
+                0.09805340723911593,
+                0.9939029064516293
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.009993914549124145,
+                  0.0002345590273124529,
+                  -0.00025817445170068864
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13969091023846336,
+                0.04390669590895071,
+                1.0350154771746878
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7074036861337226,
+                9.491817932472116e-06,
+                2.70606705873866e-06,
+                0.7068097514515518
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.18761464890693497,
+                0.20604238433529015,
+                0.328364839397727
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.43478260869565216,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0017032363758797376,
+              "predicted_maximum_outside_rim_distance_m": 0.027416553969315617,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.10366975434518651,
+                0.16276035535376795,
+                1.3002893890563247
+              ],
+              "insert_tcp_m": [
+                -0.09748798718943774,
+                0.09235061841297261,
+                0.9970243230843256
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "world_vertical",
+        "angle_degrees": -5.0,
+        "rotation_xyzw": [
+          0.7067308085996296,
+          -0.0308470326253084,
+          -0.030827904850679582,
+          0.706137143221375
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7067308085996296,
+                -0.0308470326253084,
+                -0.030827904850679582,
+                0.706137143221375
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.19808511773312387,
+                0.19730739562269511,
+                0.3283648393977269
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4444444444444444,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.00024043758887471505,
+              "predicted_maximum_outside_rim_distance_m": 0.020927338548866654,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.08366779669597188,
+                0.09426041955834262,
+                1.306596394233366
+              ],
+              "insert_tcp_m": [
+                -0.08366779669597188,
+                0.09426041955834262,
+                0.9939029064516293
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.009993914549124145,
+                  0.0002345590273124529,
+                  -0.00025817445170068864
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13969091023846336,
+                0.04390669590895071,
+                1.0350154771746878
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7067308085996296,
+                -0.0308470326253084,
+                -0.030827904850679582,
+                0.706137143221375
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.19808511773312387,
+                0.19730739562269511,
+                0.3283648393977269
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.00033579397123234143,
+              "predicted_maximum_outside_rim_distance_m": 0.030152134703945746,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.09803531097355514,
+                0.15907819376154947,
+                1.3007667332776967
+              ],
+              "insert_tcp_m": [
+                -0.0918438136142295,
+                0.08855763073219929,
+                0.9970243230843256
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "world_vertical",
+        "angle_degrees": 5.0,
+        "rotation_xyzw": [
+          0.7067299805450631,
+          0.030865998192958426,
+          0.03083331183364461,
+          0.7061369071474004
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7067299805450631,
+                0.030865998192958426,
+                0.03083331183364461,
+                0.7061369071474004
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.17608241128905264,
+                0.21364322258667937,
+                0.3283648393977271
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5555555555555556,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.001909112412670833,
+              "predicted_maximum_outside_rim_distance_m": 0.01737020847233742,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.09526524672046262,
+                0.10134003931648564,
+                1.306596394233366
+              ],
+              "insert_tcp_m": [
+                -0.09526524672046262,
+                0.10134003931648564,
+                0.9939029064516293
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.009993914549124145,
+                  0.0002345590273124529,
+                  -0.00025817445170068864
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13969091023846336,
+                0.04390669590895071,
+                1.0350154771746878
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7067299805450631,
+                0.030865998192958426,
+                0.03083331183364461,
+                0.7061369071474004
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.17608241128905264,
+                0.21364322258667937,
+                0.3283648393977271
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4782608695652174,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 8.180426657092928e-05,
+              "predicted_maximum_outside_rim_distance_m": 0.026209506294306857,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.10961249762486627,
+                0.16592701563631018,
+                1.2997726529363796
+              ],
+              "insert_tcp_m": [
+                -0.10344126363872023,
+                0.09563725049034232,
+                0.9970243230843256
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "mouth_normal",
+        "angle_degrees": -5.0,
+        "rotation_xyzw": [
+          0.7073428201677556,
+          -0.03701282710349819,
+          -0.02304614639793942,
+          0.7055246703859033
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7073428201677556,
+                -0.03701282710349819,
+                -0.02304614639793942,
+                0.7055246703859033
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.20208391568523,
+                0.19748572625379074,
+                0.3272206727589096
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5555555555555556,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0005847409234053582,
+              "predicted_maximum_outside_rim_distance_m": 0.022812929383821103,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.08460988011196952,
+                0.09432944361011276,
+                1.3070335577836014
+              ],
+              "insert_tcp_m": [
+                -0.08460988011196952,
+                0.09432944361011276,
+                0.9948633551108615
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.009993914549124145,
+                  0.0002345590273124529,
+                  -0.00025817445170068864
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13969091023846336,
+                0.04390669590895071,
+                1.0350154771746878
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7073428201677556,
+                -0.03701282710349819,
+                -0.02304614639793942,
+                0.7055246703859033
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.20208391568523,
+                0.19748572625379074,
+                0.3272206727589096
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.43478260869565216,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 9.75708390906946e-05,
+              "predicted_maximum_outside_rim_distance_m": 0.03208429530409402,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.0989676641859759,
+                0.15903639172476478,
+                1.301249837715557
+              ],
+              "insert_tcp_m": [
+                -0.09278589703022713,
+                0.08862665478396943,
+                0.9979847717435579
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "mouth_normal",
+        "angle_degrees": 5.0,
+        "rotation_xyzw": [
+          0.7061179689769369,
+          0.03703179267114821,
+          0.023051553380904446,
+          0.706749379982872
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7061179689769369,
+                0.03703179267114821,
+                0.023051553380904446,
+                0.706749379982872
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.17218428114857995,
+                0.21362324774130292,
+                0.3294495372186514
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.6153846153846154,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0019720850451706547,
+              "predicted_maximum_outside_rim_distance_m": 0.01528290470688266,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.09433118843275283,
+                0.10136242070872964,
+                1.3062232583227518
+              ],
+              "insert_tcp_m": [
+                -0.09433118843275283,
+                0.10136242070872964,
+                0.993032333360523
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.009993914549124145,
+                  0.0002345590273124529,
+                  -0.00025817445170068864
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13969091023846336,
+                0.04390669590895071,
+                1.0350154771746878
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7061179689769369,
+                0.03703179267114821,
+                0.023051553380904446,
+                0.706749379982872
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.17218428114857995,
+                0.21362324774130292,
+                0.3294495372186514
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4782608695652174,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0013291200159042064,
+              "predicted_maximum_outside_rim_distance_m": 0.024596329237574495,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.10868897250675921,
+                0.1660693688233817,
+                1.2994188159652185
+              ],
+              "insert_tcp_m": [
+                -0.10250720535101045,
+                0.09565963188258632,
+                0.9961537499932194
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "world_vertical",
+        "angle_degrees": -10.0,
+        "rotation_xyzw": [
+          0.7047126288034137,
+          -0.06164483798871626,
+          -0.06159983309939106,
+          0.7041203628048648
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7047126288034137,
+                -0.06164483798871626,
+                -0.06159983309939106,
+                0.7041203628048648
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.20734072598658881,
+                0.187615877966064,
+                0.3283648393977271
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4444444444444444,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0027370856032769876,
+              "predicted_maximum_outside_rim_distance_m": 0.023375686832526277,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.0783756815637904,
+                0.089989943200685,
+                1.306596394233366
+              ],
+              "insert_tcp_m": [
+                -0.0783756815637904,
+                0.089989943200685,
+                0.9939029064516293
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  -0.02,
+                  0.0
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.0005736264171761657,
+                  -0.019476375844255184,
+                  0.004510181449435355
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13027062210651538,
+                0.024195761037383075,
+                1.0397838330758238
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7047126288034137,
+                -0.06164483798871626,
+                -0.06159983309939106,
+                0.7041203628048648
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.20734072598658881,
+                0.187615877966064,
+                0.3283648393977271
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4230769230769231,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.00258906038955118,
+              "predicted_maximum_outside_rim_distance_m": 0.031803377224136634,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.08333176089425225,
+                0.13519761946115388,
+                1.3059694086238782
+              ],
+              "insert_tcp_m": [
+                -0.07713141035010004,
+                0.06457621950297404,
+                1.0017926789854616
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "world_vertical",
+        "angle_degrees": 10.0,
+        "rotation_xyzw": [
+          0.7047109742705299,
+          0.06166374938611543,
+          0.061605224638704256,
+          0.7041198911062959
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7047109742705299,
+                0.06166374938611543,
+                0.061605224638704256,
+                0.7041198911062959
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.16363489849019358,
+                0.2205303319680058,
+                0.328364839397727
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5925925925925926,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 5.872063432496308e-05,
+              "predicted_maximum_outside_rim_distance_m": 0.014643261487343412,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.10148231801535373,
+                0.10409530253582022,
+                1.306596394233366
+              ],
+              "insert_tcp_m": [
+                -0.10148231801535373,
+                0.10409530253582022,
+                0.9939029064516293
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.02,
+                  0.02
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.019414202681072124,
+                  0.01994549389888009,
+                  -0.005026530352836732
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.14911119837041134,
+                0.06361763078051835,
+                1.0302471212735518
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7047109742705299,
+                0.06166374938611543,
+                0.061605224638704256,
+                0.7041198911062959
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.16363489849019358,
+                0.2205303319680058,
+                0.328364839397727
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4782608695652174,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 9.100335742656389e-05,
+              "predicted_maximum_outside_rim_distance_m": 0.02249883989480854,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.12523860107985757,
+                0.1882650092839118,
+                1.2944521016906119
+              ],
+              "insert_tcp_m": [
+                -0.11907862306555933,
+                0.11810344858124454,
+                0.9922559671831896
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "mouth_normal",
+        "angle_degrees": -10.0,
+        "rotation_xyzw": [
+          0.7059354869408615,
+          -0.07396469000486576,
+          -0.046051129213411764,
+          0.7028965830107746
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7059354869408615,
+                -0.07396469000486576,
+                -0.046051129213411764,
+                0.7028965830107746
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.21556376162257243,
+                0.18814882685827689,
+                0.3260257451011874
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5185185185185185,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.001302522395537161,
+              "predicted_maximum_outside_rim_distance_m": 0.027380920082682867,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.08026070370043226,
+                0.09021887143352761,
+                1.3075314218948741
+              ],
+              "insert_tcp_m": [
+                -0.08026070370043226,
+                0.09021887143352761,
+                0.9959063697439882
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  -0.02,
+                  0.0
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.0005736264171761657,
+                  -0.019476375844255184,
+                  0.004510181449435355
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13027062210651538,
+                0.024195761037383075,
+                1.0397838330758238
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7059354869408615,
+                -0.07396469000486576,
+                -0.046051129213411764,
+                0.7028965830107746
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.21556376162257243,
+                0.18814882685827689,
+                0.3260257451011874
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.43478260869565216,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0022973365163613704,
+              "predicted_maximum_outside_rim_distance_m": 0.03483909298138585,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.08519819964249066,
+                0.13521488467661202,
+                1.3070612082498196
+              ],
+              "insert_tcp_m": [
+                -0.0790164324867419,
+                0.06480514773581665,
+                1.0037961422778205
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "mouth_normal",
+        "angle_degrees": 10.0,
+        "rotation_xyzw": [
+          0.703488116133082,
+          0.07398360140226493,
+          0.04605652075272496,
+          0.7053436709003861
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.703488116133082,
+                0.07398360140226493,
+                0.04605652075272496,
+                0.7053436709003861
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.1558960269302187,
+                0.2205069552266704,
+                0.33046651101630703
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.6666666666666666,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0004877365607615089,
+              "predicted_maximum_outside_rim_distance_m": 0.010387038376767698,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.09962933531579128,
+                0.10423130042841314,
+                1.305916989841344
+              ],
+              "insert_tcp_m": [
+                -0.09962933531579128,
+                0.10423130042841314,
+                0.9922582614244323
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.02,
+                  0.02
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.019414202681072124,
+                  0.01994549389888009,
+                  -0.005026530352836732
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.14911119837041134,
+                0.06361763078051835,
+                1.0302471212735518
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.703488116133082,
+                0.07398360140226493,
+                0.04605652075272496,
+                0.7053436709003861
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.1558960269302187,
+                0.2205069552266704,
+                0.33046651101630703
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5652173913043478,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 6.212109480451916e-05,
+              "predicted_maximum_outside_rim_distance_m": 0.018722572380039704,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.12340740752174564,
+                0.1886491834146328,
+                1.2938763881279918
+              ],
+              "insert_tcp_m": [
+                -0.11722564036599688,
+                0.11823944647383745,
+                0.9906113221559927
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "world_vertical",
+        "angle_degrees": -15.0,
+        "rotation_xyzw": [
+          0.7013529884650231,
+          -0.09232529889934907,
+          -0.09225450256469221,
+          0.7007632492581701
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7013529884650231,
+                -0.09232529889934907,
+                -0.09225450256469221,
+                0.7007632492581701
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.21513227757050618,
+                0.17649649019254648,
+                0.328364839397727
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4074074074074074,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.00043959767454987257,
+              "predicted_maximum_outside_rim_distance_m": 0.025722679226570642,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.0734759010662581,
+                0.08527447906980887,
+                1.306596394233366
+              ],
+              "insert_tcp_m": [
+                -0.0734759010662581,
+                0.08527447906980887,
+                0.9939029064516293
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  -0.02,
+                  0.0
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.0005736264171761657,
+                  -0.019476375844255184,
+                  0.004510181449435355
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13027062210651538,
+                0.024195761037383075,
+                1.0397838330758238
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7013529884650231,
+                -0.09232529889934907,
+                -0.09225450256469221,
+                0.7007632492581701
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.21513227757050618,
+                0.17649649019254648,
+                0.328364839397727
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.4230769230769231,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.00034311286769758253,
+              "predicted_maximum_outside_rim_distance_m": 0.031193256584409242,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.07843988918471394,
+                0.1305722356694668,
+                1.3063573978593717
+              ],
+              "insert_tcp_m": [
+                -0.07223162985256774,
+                0.059860755372097896,
+                1.0017926789854616
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "world_vertical",
+        "angle_degrees": 15.0,
+        "rotation_xyzw": [
+          0.7013505106033191,
+          0.09234412012757756,
+          0.09225986839725205,
+          0.7007625428329121
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7013505106033191,
+                0.09234412012757756,
+                0.09225986839725205,
+                0.7007625428329121
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.15111129136661366,
+                0.22605058347684265,
+                0.3283648393977271
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.6296296296296297,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0002710903072054057,
+              "predicted_maximum_outside_rim_distance_m": 0.011032719770428906,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.10791586848932905,
+                0.10629822768034715,
+                1.306596394233366
+              ],
+              "insert_tcp_m": [
+                -0.10791586848932905,
+                0.10629822768034715,
+                0.9939029064516293
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.02,
+                  0.02
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.019414202681072124,
+                  0.01994549389888009,
+                  -0.005026530352836732
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.14911119837041134,
+                0.06361763078051835,
+                1.0302471212735518
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7013505106033191,
+                0.09234412012757756,
+                0.09225986839725205,
+                0.7007625428329121
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.15111129136661366,
+                0.22605058347684265,
+                0.3283648393977271
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5652173913043478,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0005280092031394889,
+              "predicted_maximum_outside_rim_distance_m": 0.017450180867147745,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.13166025844448231,
+                0.19033247304989054,
+                1.2938686496612908
+              ],
+              "insert_tcp_m": [
+                -0.12551217353953464,
+                0.12030637372577145,
+                0.9922559671831896
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "mouth_normal",
+        "angle_degrees": -15.0,
+        "rotation_xyzw": [
+          0.7031843653918252,
+          -0.11077575691493088,
+          -0.06896845108705128,
+          0.6989304920398546
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7031843653918252,
+                -0.11077575691493088,
+                -0.06896845108705128,
+                0.6989304920398546
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.2274319143569441,
+                0.17755764611680694,
+                0.3247891505455524
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5357142857142857,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.00010310473844028621,
+              "predicted_maximum_outside_rim_distance_m": 0.031527120981759874,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.07629754089516469,
+                0.08575297464565554,
+                1.3080861975206788
+              ],
+              "insert_tcp_m": [
+                -0.07629754089516469,
+                0.08575297464565554,
+                0.9970240123798617
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  -0.02,
+                  0.0
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.0005736264171761657,
+                  -0.019476375844255184,
+                  0.004510181449435355
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.13027062210651538,
+                0.024195761037383075,
+                1.0397838330758238
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.7031843653918252,
+                -0.11077575691493088,
+                -0.06896845108705128,
+                0.6989304920398546
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.2274319143569441,
+                0.17755764611680694,
+                0.3247891505455524
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.43478260869565216,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.0001501630645631713,
+              "predicted_maximum_outside_rim_distance_m": 0.03648503483823398,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.08123503683722309,
+                0.13074898788873993,
+                1.308178850885693
+              ],
+              "insert_tcp_m": [
+                -0.07505326968147433,
+                0.06033925094794458,
+                1.004913784913694
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 0,
+          "geometry_screen_candidates": 0
+        }
+      },
+      {
+        "axis": "mouth_normal",
+        "angle_degrees": 15.0,
+        "rotation_xyzw": [
+          0.6995191336765171,
+          0.11079457814315942,
+          0.06897381691961114,
+          0.7025953000512276
+        ],
+        "report": {
+          "kind": "offline_geometry_candidates_from_observed_state",
+          "robot_planning_scope": "Only candidates passing geometric screens",
+          "robot_planning_mode": "full",
+          "observed_time_s": 29.814999999998353,
+          "warnings": [],
+          "mouth": {
+            "center_m": [
+              -0.13009404383149573,
+              0.049199979376401984,
+              1.033982146474565
+            ],
+            "rim_maximum_z_m": 1.0602920807501686,
+            "xy_projected_area_m2": 0.03896828613654968,
+            "xy_projected_crossings": 0,
+            "fitted_plane_normal_abs_z": 0.9738989258428277,
+            "topology": {
+              "actual_open_body_boundary": true,
+              "body_boundary_loop_count": 1,
+              "complete_bag_boundary_loop_count": 3,
+              "nonmanifold_edges": 0,
+              "connected_components": 1,
+              "body_triangle_count": 2380,
+              "rim_rest_z": 1.0705194386657142,
+              "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+              "independent_flat_bottom_triangles": 0,
+              "independent_flat_side_triangles": 0,
+              "body_boundary_only_at_top": true,
+              "two_panels_directly_sewn_along_u": true,
+              "analysis_cap_is_not_simulated": true
+            },
+            "fitted_normal_up": [
+              -0.019851994404624467,
+              0.22611231846218655,
+              0.9738989258428277
+            ],
+            "maximum_nonplanarity_m": 0.024559564787893663
+          },
+          "left_nearest_bag_vertex_m": 0.00023083690349718304,
+          "observed_bear_dimensions_xyz_m": [
+            0.18761464890693497,
+            0.20604238433529015,
+            0.328364839397727
+          ],
+          "observed_bear_center_of_mass_offset_m": [
+            -0.04061476349665566,
+            -0.06653290798099681,
+            -0.039920759977064124
+          ],
+          "observed_mass_principal_axes_world": [
+            [
+              -0.3608944959818452,
+              0.47143602804092305,
+              -0.8046758566248955
+            ],
+            [
+              -0.14930028751152136,
+              0.8224906153337408,
+              0.5488338654245952
+            ],
+            [
+              0.920578398029732,
+              0.3182094579878534,
+              -0.22644680154086866
+            ]
+          ],
+          "observed_mass_principal_variances_m2": [
+            0.00628621817470666,
+            0.001908763902759402,
+            0.0002924089124306246
+          ],
+          "motion_search_stop_after_valid_routes": 2,
+          "current_minimum_bear_tetrahedron_volume_ratio": 0.24005663552875633,
+          "screening_allowances": {
+            "max_planar_compression": 0.08,
+            "max_outside_projection_m": 0.008
+          },
+          "orientation_sampling": {
+            "world_z_yaw_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "world_x_tilt_deg": [
+              0.0,
+              90.0,
+              -90.0
+            ],
+            "composition": "Observed mass principal axes to mouth normal/major axis, both axis signs and +/-20 degree normal spins; plus legacy world tilt/yaw",
+            "orientation_count": 1
+          },
+          "fk_vs_recorded_right_tcp_error_m": 4.577566798522237e-16,
+          "fk_vs_recorded_tcp_error_m": {
+            "left": 6.23728986632994e-16,
+            "right": 4.577566798522237e-16
+          },
+          "observed_finger_q_m": {
+            "left": [
+              0.001112878816168112,
+              0.0011157617538447944
+            ],
+            "right": [
+              0.027359305574746258,
+              0.027459030876136954
+            ]
+          },
+          "rigid_preflight_finger_q_m": {
+            "left": 0.0011143202850064531,
+            "right": 0.027409168225441607
+          },
+          "candidates": [
+            {
+              "approach": "vertical",
+              "outward_approach_axis": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03896828613654967,
+              "mouth_nonadjacent_edge_clearance_m": 0.0021011808655846138,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.0,
+                  -0.01
+                ],
+                "reference_axes_world": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                ],
+                "delta_world_m": [
+                  0.0,
+                  -0.01,
+                  0.0
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.12992673376783578,
+                0.03152049925811912,
+                1.033982146474565
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.6995191336765171,
+                0.11079457814315942,
+                0.06897381691961114,
+                0.7025953000512276
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.14081678364799494,
+                0.22624986615168446,
+                0.33140802100602823
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.7777777777777778,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 0.002339914933285051,
+              "predicted_maximum_outside_rim_distance_m": 0.005447340773679036,
+              "required_predicted_planar_compression": 0.07,
+              "bounded_compression_screen_passes": true,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.105166088823407,
+                0.10663821249122275,
+                1.3056799196772162
+              ],
+              "insert_tcp_m": [
+                -0.105166088823407,
+                0.10663821249122275,
+                0.9915865817981885
+              ],
+              "robot_route_feasible": true,
+              "robot_planning_attempted": true,
+              "stages": [
+                {
+                  "name": "height_at_current_xy",
+                  "right_tcp_m": [
+                    0.3498549209971197,
+                    -0.26390391580423833,
+                    1.369357472599349
+                  ],
+                  "rotation_xyzw": [
+                    0.7074036861337226,
+                    9.491817932472116e-06,
+                    2.70606705873866e-06,
+                    0.7068097514515518
+                  ],
+                  "duration_s": 2.505,
+                  "right_q_end": [
+                    1.55611845812161,
+                    -0.3129430818365109,
+                    -0.6546681503734404,
+                    -2.3699725683445676,
+                    0.1752807103513259,
+                    3.7137650059262577,
+                    -1.122558912654512
+                  ]
+                },
+                {
+                  "name": "rotate_held_teddy",
+                  "right_tcp_m": [
+                    0.3498549209971197,
+                    -0.26390391580423833,
+                    1.369357472599349
+                  ],
+                  "rotation_xyzw": [
+                    0.6995191336765171,
+                    0.11079457814315942,
+                    0.06897381691961114,
+                    0.7025953000512276
+                  ],
+                  "duration_s": 2.505,
+                  "right_q_end": [
+                    1.9488326934565068,
+                    -0.566686644170836,
+                    -1.0898822361848988,
+                    -2.350555498555864,
+                    -0.3167793415873635,
+                    3.5786111731436687,
+                    -1.0572138886202616
+                  ]
+                },
+                {
+                  "name": "translate_outside_mouth",
+                  "right_tcp_m": [
+                    -0.105166088823407,
+                    0.10663821249122275,
+                    1.3056799196772162
+                  ],
+                  "rotation_xyzw": [
+                    0.6995191336765171,
+                    0.11079457814315942,
+                    0.06897381691961114,
+                    0.7025953000512276
+                  ],
+                  "duration_s": 6.964673176202379,
+                  "right_q_end": [
+                    1.3252606353554912,
+                    -1.7617999922441576,
+                    -1.111048747908039,
+                    -2.0946024706848423,
+                    -0.34615997978467594,
+                    2.201643973554208,
+                    -1.787962824775991
+                  ]
+                },
+                {
+                  "name": "insert_candidate",
+                  "right_tcp_m": [
+                    -0.105166088823407,
+                    0.10663821249122275,
+                    0.9915865817981885
+                  ],
+                  "rotation_xyzw": [
+                    0.6995191336765171,
+                    0.11079457814315942,
+                    0.06897381691961114,
+                    0.7025953000512276
+                  ],
+                  "duration_s": 5.610277966498397,
+                  "right_q_end": [
+                    1.104103650169624,
+                    -1.7580619355871066,
+                    -1.7362938449640113,
+                    -2.217297252458196,
+                    -0.23893111149902116,
+                    2.254914413132099,
+                    -2.434806105027168
+                  ]
+                }
+              ],
+              "total_motion_duration_s": 17.584951142700778,
+              "geometry_screen_passes": true
+            },
+            {
+              "approach": "mouth_normal",
+              "outward_approach_axis": [
+                -0.019851994404624467,
+                0.22611231846218655,
+                0.9738989258428277
+              ],
+              "warnings": [],
+              "orientation_source": {
+                "kind": "fixed_executed_orientation"
+              },
+              "wrist_world_z_yaw_deg": null,
+              "mouth_projected_area_m2": 0.03973432949552403,
+              "mouth_nonadjacent_edge_clearance_m": 0.002183367155286109,
+              "wrist_world_x_tilt_deg": null,
+              "in_plane_offset_strategy": {
+                "anchor": "fresh_projected_mouth_area_centroid",
+                "delta_m": [
+                  0.02,
+                  0.02
+                ],
+                "reference_axes_world": [
+                  [
+                    0.028681320858808288,
+                    0.9738187922127591,
+                    -0.2255090724717677
+                  ],
+                  [
+                    -0.9993914549124145,
+                    0.02345590273124529,
+                    -0.025817445170068863
+                  ]
+                ],
+                "delta_world_m": [
+                  -0.019414202681072124,
+                  0.01994549389888009,
+                  -0.005026530352836732
+                ]
+              },
+              "mouth_entry_center_m": [
+                -0.14911119837041134,
+                0.06361763078051835,
+                1.0302471212735518
+              ],
+              "fresh_rotation_sweep_padding_m": 0.0,
+              "bear_clearance_above_rim_m": 0.04,
+              "rotation_xyzw": [
+                0.6995191336765171,
+                0.11079457814315942,
+                0.06897381691961114,
+                0.7025953000512276
+              ],
+              "predicted_rotated_bear_dimensions_xyz_m": [
+                0.14081678364799494,
+                0.22624986615168446,
+                0.33140802100602823
+              ],
+              "predicted_projected_vertices_inside_fraction": 0.5652173913043478,
+              "predicted_footprint_fits_with_2mm_margin": false,
+              "predicted_convex_footprint_boundary_separation_m": 1.20230040430438e-07,
+              "predicted_maximum_outside_rim_distance_m": 0.012024776623617497,
+              "required_predicted_planar_compression": null,
+              "bounded_compression_screen_passes": false,
+              "rotation_staging_tcp_m": [
+                0.3498549209971197,
+                -0.26390391580423833,
+                1.369357472599349
+              ],
+              "rotation_enclosing_sphere_radius_m": 0.22581474392732492,
+              "rotation_sphere_table_clearance_m": 0.4035427286720241,
+              "above_tcp_m": [
+                -0.12894416102936138,
+                0.1910560954774424,
+                1.293204708501748
+              ],
+              "insert_tcp_m": [
+                -0.1227623938736126,
+                0.12064635853664706,
+                0.9899396425297489
+              ],
+              "robot_route_feasible": false,
+              "robot_planning_attempted": false,
+              "stages": [],
+              "rejection": "Observed mouth or bounded teddy compression screen rejects this candidate before robot planning",
+              "geometry_screen_passes": false
+            }
+          ],
+          "limitations": [
+            "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+            "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+            "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+            "A footprint-fit result assumes translation through the chosen projection plane; it does not establish volume containment.",
+            "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+          ],
+          "robot_feasible_candidates": 1,
+          "geometry_screen_candidates": 1
+        }
+      }
+    ],
+    "physical_success": false,
+    "runtime_execution_performed": false,
+    "maximum_single_correction_degrees": 35.0,
+    "candidate_axes": "world vertical and current mouth normal",
+    "current_orientation_has_priority": true,
+    "nearest_bear_to_right_tcp_m": 0.010179642868842388,
+    "current_rotation_xyzw": [
+      0.7074036861337226,
+      9.491817932472116e-06,
+      2.70606705873866e-06,
+      0.7068097514515518
+    ],
+    "mouth": {
+      "center_m": [
+        -0.13009404383149573,
+        0.049199979376401984,
+        1.033982146474565
+      ],
+      "rim_maximum_z_m": 1.0602920807501686,
+      "xy_projected_area_m2": 0.03896828613654968,
+      "xy_projected_crossings": 0,
+      "fitted_plane_normal_abs_z": 0.9738989258428277,
+      "topology": {
+        "actual_open_body_boundary": true,
+        "body_boundary_loop_count": 1,
+        "complete_bag_boundary_loop_count": 3,
+        "nonmanifold_edges": 0,
+        "connected_components": 1,
+        "body_triangle_count": 2380,
+        "rim_rest_z": 1.0705194386657142,
+        "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+        "independent_flat_bottom_triangles": 0,
+        "independent_flat_side_triangles": 0,
+        "body_boundary_only_at_top": true,
+        "two_panels_directly_sewn_along_u": true,
+        "analysis_cap_is_not_simulated": true
+      },
+      "fitted_normal_up": [
+        -0.019851994404624467,
+        0.22611231846218655,
+        0.9738989258428277
+      ],
+      "maximum_nonplanarity_m": 0.024559564787893663
+    },
+    "geometry_screen_candidates": 1,
+    "selected_rotation_change_rad": 0.2617993877991494,
+    "selected_axis": "mouth_normal",
+    "selected_angle_degrees": 15.0
+  },
+  "stages_to_execute": [
+    {
+      "name": "height_at_current_xy",
+      "right_tcp_m": [
+        0.3498549209971197,
+        -0.26390391580423833,
+        1.369357472599349
+      ],
+      "rotation_xyzw": [
+        0.7074036861337226,
+        9.491817932472116e-06,
+        2.70606705873866e-06,
+        0.7068097514515518
+      ],
+      "duration_s": 2.505,
+      "right_q_end": [
+        1.55611845812161,
+        -0.3129430818365109,
+        -0.6546681503734404,
+        -2.3699725683445676,
+        0.1752807103513259,
+        3.7137650059262577,
+        -1.122558912654512
+      ]
+    },
+    {
+      "name": "rotate_held_teddy",
+      "right_tcp_m": [
+        0.3498549209971197,
+        -0.26390391580423833,
+        1.369357472599349
+      ],
+      "rotation_xyzw": [
+        0.6995191336765171,
+        0.11079457814315942,
+        0.06897381691961114,
+        0.7025953000512276
+      ],
+      "duration_s": 2.505,
+      "right_q_end": [
+        1.9488326934565068,
+        -0.566686644170836,
+        -1.0898822361848988,
+        -2.350555498555864,
+        -0.3167793415873635,
+        3.5786111731436687,
+        -1.0572138886202616
+      ]
+    }
+  ],
+  "observed_time_s": 29.814999999998353,
+  "attempt": 0,
+  "next_attempt": 1,
+  "max_attempts": 2,
+  "orientation_correction_required": true,
+  "next_observation": "after_orientation",
+  "requires_reobservation_after_orientation": true,
+  "requires_reobservation_before_insertion": true,
+  "reobserve_before_every_stage": false,
+  "observe_after_stages": [
+    "rotate_held_teddy"
+  ],
+  "physical_success": false,
+  "requires_physical_validation": true,
+  "requires_runtime_grasp_and_deformation_gates": true,
+  "compression_is_a_prediction_not_applied_deformation": true
+}

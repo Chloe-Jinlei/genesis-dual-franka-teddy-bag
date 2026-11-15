@@ -1,0 +1,412 @@
+{
+  "status": "incomplete",
+  "task_success": false,
+  "checks": {
+    "finite_saved_states": true,
+    "per_step_soft_metrics_valid_when_supplied": true,
+    "actual_open_bag_topology": true,
+    "two_cloth_panels_with_direct_u_seam_and_no_bottom_or_side_panels": true,
+    "no_tetrahedron_inversion": true,
+    "no_tetrahedron_volume_below_5_percent": true,
+    "table_penetration_below_2mm": true,
+    "cloth_edge_stretch_below_15_percent": true,
+    "joint_motion_within_configured_limits": true,
+    "motion_sample_interval_at_most_20ms": true,
+    "no_final_sampled_bag_bear_penetration_over_1mm": true,
+    "bear_fully_inside_bag_final": false,
+    "bear_remains_inside_during_final_hold_samples": false,
+    "requested_phases_recorded_in_order": false,
+    "bear_lifted_clear_of_table": true,
+    "right_fingers_open_after_release": false,
+    "left_gripper_holds_pose_within_15mm_after_handoff": true,
+    "named_left_handle_material_within_18mm_after_handoff": true,
+    "both_left_fingers_command_clamping_after_handoff": true,
+    "controller_explicitly_reports_task_complete": false
+  },
+  "frames": 860,
+  "duplicate_timestamps_removed": 5,
+  "duration_s": 42.745000000003415,
+  "maximum_saved_interval_s": 0.05000000000002558,
+  "mass": {
+    "bag_kg": 0.11587964720889248,
+    "bear_kg": 0.21884708991142776,
+    "bag_mass_formula": "rest area * density * 2 * IPC thickness radius",
+    "derived_from_reference_geometry_and_config": true,
+    "runtime_IPC_mass_buffer_checked": false
+  },
+  "bag_topology": {
+    "actual_open_body_boundary": true,
+    "body_boundary_loop_count": 1,
+    "complete_bag_boundary_loop_count": 3,
+    "nonmanifold_edges": 0,
+    "connected_components": 1,
+    "body_triangle_count": 2960,
+    "rim_rest_z": 1.1315683174918918,
+    "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+    "independent_flat_bottom_triangles": 0,
+    "independent_flat_side_triangles": 0,
+    "body_boundary_only_at_top": true,
+    "two_panels_directly_sewn_along_u": true,
+    "analysis_cap_is_not_simulated": true
+  },
+  "minimum_tetrahedron_volume_ratio": 0.23188181526564827,
+  "maximum_inverted_reference_volume_fraction": 0.0,
+  "inverted_volume_fraction_sampling_scope": "Full saved frames only; per-step minimum J cannot recover inverted volume.",
+  "soft_metric_sampling": {
+    "provided": true,
+    "valid": true,
+    "columns": [
+      "time_s",
+      "minimum_tetra_volume_ratio",
+      "bag_table_penetration_m",
+      "bear_table_penetration_m",
+      "maximum_bag_edge_stretch_ratio",
+      "all_soft_states_finite"
+    ],
+    "sampling_scope": "Soft summary at each recorded integration step; full geometry at saved frames.",
+    "rows": 8550,
+    "maximum_interval_s": 0.005000000000002558,
+    "expected_integration_interval_s": 0.005,
+    "covers_all_saved_frame_timestamps": true,
+    "covers_all_joint_trace_timestamps": true,
+    "matches_independent_saved_frame_recomputation": true,
+    "maximum_shared_frame_absolute_error_by_metric": [
+      3.3306690738754696e-15,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "minimum_tetrahedron_volume_ratio": 0.23188181526564827,
+    "maximum_table_penetration_m": {
+      "bag": 0.0,
+      "bear": 0.0
+    },
+    "maximum_bag_edge_stretch_ratio": 1.0646866164041238,
+    "worst_volume_ratio_time_s": 26.649999999998983,
+    "errors": []
+  },
+  "maximum_table_penetration_m": {
+    "bear": 0.0,
+    "bag": 0.0
+  },
+  "maximum_bag_edge_stretch_ratio": 1.0646866164041238,
+  "motion": {
+    "left": {
+      "maximum_joint_velocity_rad_s": 0.2495294446037235,
+      "maximum_joint_acceleration_rad_s2": 0.16393004420365642,
+      "per_joint_peak_velocity_rad_s": [
+        0.2495294446037235,
+        0.0789021039175708,
+        0.19595308699553726,
+        0.09707369373103347,
+        0.08994948084743015,
+        0.22629687914036367,
+        0.11619975816833517
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.09459997652781738,
+        0.08274354924893323,
+        0.1238885611588385,
+        0.16393004420365642,
+        0.10878039790183613,
+        0.09894988773453628,
+        0.1293626165463051
+      ],
+      "within_configured_limits": true
+    },
+    "right": {
+      "maximum_joint_velocity_rad_s": 0.7139744827337715,
+      "maximum_joint_acceleration_rad_s2": 1.2001204955647466,
+      "per_joint_peak_velocity_rad_s": [
+        0.15933557299099732,
+        0.7139744827337715,
+        0.304025369425192,
+        0.7138193438651399,
+        0.26698146180518023,
+        0.7138216055082296,
+        0.38427993903925994
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.8668150535706634,
+        0.8533275471096431,
+        1.2001204955647466,
+        1.045681236489525,
+        0.7564860139612044,
+        0.8743108788737075,
+        0.48816396630836323
+      ],
+      "within_configured_limits": true
+    }
+  },
+  "motion_source": "every-physics-step actual joint_trace",
+  "maximum_joint_trace_interval_s": 0.005000000000002558,
+  "motion_thresholds": {
+    "velocity_rad_s": 1.5,
+    "acceleration_rad_s2": 10.0,
+    "source": "config.validation or conservative audit defaults; not robot manufacturer limits"
+  },
+  "final_containment": {
+    "mouth_projected_area_m2": 0.022387566489574136,
+    "mouth_projected_crossings": 0,
+    "mouth_projected_dimensions_m": [
+      0.4179668775851289,
+      0.09224867838480824
+    ],
+    "mouth_nonplanarity_max_m": 0.029790752419560706,
+    "virtual_closed_body_valid": true,
+    "bear_vertex_inside_fraction": 0.0,
+    "bear_center_of_mass_m": [
+      -0.09679691811084944,
+      0.059001637811443824,
+      1.2767134999377578
+    ],
+    "bear_center_of_mass_inside": false,
+    "all_bear_vertices_inside": false
+  },
+  "hold_containment_samples": [
+    {
+      "time": 42.255000000003164,
+      "mouth_projected_area_m2": 0.022962410708034762,
+      "mouth_projected_crossings": 0,
+      "mouth_projected_dimensions_m": [
+        0.4179401295112866,
+        0.0945481122839488
+      ],
+      "mouth_nonplanarity_max_m": 0.02829643433389183,
+      "virtual_closed_body_valid": true,
+      "bear_vertex_inside_fraction": 0.0,
+      "bear_center_of_mass_m": [
+        -0.09484600569678149,
+        0.05919771060837198,
+        1.2768461280900896
+      ],
+      "bear_center_of_mass_inside": false,
+      "all_bear_vertices_inside": false
+    },
+    {
+      "time": 42.50500000000329,
+      "mouth_projected_area_m2": 0.022616150086710494,
+      "mouth_projected_crossings": 0,
+      "mouth_projected_dimensions_m": [
+        0.41726780936059815,
+        0.09432801592307116
+      ],
+      "mouth_nonplanarity_max_m": 0.029978670179531857,
+      "virtual_closed_body_valid": true,
+      "bear_vertex_inside_fraction": 0.0,
+      "bear_center_of_mass_m": [
+        -0.09673998135882678,
+        0.05908577600077705,
+        1.276777183960339
+      ],
+      "bear_center_of_mass_inside": false,
+      "all_bear_vertices_inside": false
+    },
+    {
+      "time": 42.745000000003415,
+      "mouth_projected_area_m2": 0.022387566489574136,
+      "mouth_projected_crossings": 0,
+      "mouth_projected_dimensions_m": [
+        0.4179668775851289,
+        0.09224867838480824
+      ],
+      "mouth_nonplanarity_max_m": 0.029790752419560706,
+      "virtual_closed_body_valid": true,
+      "bear_vertex_inside_fraction": 0.0,
+      "bear_center_of_mass_m": [
+        -0.09679691811084944,
+        0.059001637811443824,
+        1.2767134999377578
+      ],
+      "bear_center_of_mass_inside": false,
+      "all_bear_vertices_inside": false
+    }
+  ],
+  "final_contact": {
+    "method": "Discrete bag vertex, edge-midpoint and triangle-centroid winding/distance samples",
+    "sample_count": 11121,
+    "near_bear_samples": 256,
+    "inside_samples": 0,
+    "penetration_over_tolerance": 0,
+    "maximum_sampled_penetration_m": 0.0,
+    "tolerance_m": 0.001,
+    "continuous_collision_guarantee": false
+  },
+  "bear_deformation": {
+    "first_observed_inversion": null,
+    "worst_volume_ratio_sample": {
+      "time_s": 26.65499999999898,
+      "minimum_volume_ratio": 0.23252545869191715,
+      "inverted_tetrahedra": 0,
+      "inverted_reference_volume_fraction": 0.0,
+      "right_finger_q_m": [
+        0.03051227763224291,
+        0.030514676179343326
+      ],
+      "tetra_index": 1895,
+      "rest_center_m": [
+        0.3574691968486824,
+        -0.22951138956095324,
+        0.7750569215751737
+      ],
+      "rest_volume_m3": 1.270990278600544e-07,
+      "rest_mean_ratio_quality": 0.7580440395281695,
+      "rest_quality_percentile": 29.365658038643822
+    },
+    "maximum_principal_stretch": 2.567134945749855,
+    "maximum_reference_volume_fraction_with_principal_stretch_over_2": 8.89443721273589e-06,
+    "final_volume_weighted_principal_stretch_quantiles": {
+      "smallest": {
+        "p01": 0.8564159985369697,
+        "p50": 0.9953981826492297,
+        "p99": 0.9998469762155768
+      },
+      "largest": {
+        "p01": 1.0002096781908953,
+        "p50": 1.004778783512117,
+        "p99": 1.068046524108062
+      }
+    },
+    "phase_deformation": {
+      "close_both_handles": {
+        "minimum_volume_ratio": 0.8649171528149526,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "drape_under_gravity": {
+        "minimum_volume_ratio": 0.8798354074461476,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "spread_bag": {
+        "minimum_volume_ratio": 0.8805787698277299,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "orient_held_bag": {
+        "minimum_volume_ratio": 0.8819919996308085,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "settle_oriented_bag": {
+        "minimum_volume_ratio": 0.8839570987747237,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "release_right_handle": {
+        "minimum_volume_ratio": 0.8839704687694109,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "right_clear_handle": {
+        "minimum_volume_ratio": 0.8839796620958554,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "teddy_pregrasp": {
+        "minimum_volume_ratio": 0.8840225850061187,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "teddy_grasp_approach": {
+        "minimum_volume_ratio": 0.8840528604125697,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "close_teddy_gripper": {
+        "minimum_volume_ratio": 0.5504784958504526,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "lift_teddy": {
+        "minimum_volume_ratio": 0.23252545869191715,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "adjust_teddy_height_contact_trial": {
+        "minimum_volume_ratio": 0.5271699220021167,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "transport_teddy_along_y": {
+        "minimum_volume_ratio": 0.5010166814795326,
+        "maximum_inverted_tetrahedra": 0
+      },
+      "transport_teddy": {
+        "minimum_volume_ratio": 0.4148154719706892,
+        "maximum_inverted_tetrahedra": 0
+      }
+    },
+    "positive_tetra_volume_in_all_saved_states": true,
+    "rest_mean_ratio_quality_quantiles": {
+      "min": 0.059068621277495834,
+      "p01": 0.1029381434069889,
+      "p50": 0.8292224554951172,
+      "p99": 0.9810260909291237
+    },
+    "material_realism_calibrated": false
+  },
+  "left_handle_hold_evidence": {
+    "applicable": true,
+    "passed": true,
+    "material_group_retained": true,
+    "both_fingers_command_clamping": true,
+    "distance_limit_m": 0.018,
+    "pd_clamping_threshold_n": -0.1,
+    "distance_definition": "Nearest vertex belonging to the exact configured left grasp material group",
+    "sampling_scope": "Every saved full-geometry frame after right-handle release starts",
+    "force_evidence_scope": "Saved get_dofs_control_force PD values; not native contact force",
+    "errors": [],
+    "material_group": "grasp_front_center",
+    "source_npz": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_12/source/assets/two_panel_bag_wide_tall_coarse.npz",
+    "first_checked_time_s": 15.190000000000975,
+    "last_checked_time_s": 42.745000000003415,
+    "checked_frames": 555,
+    "source_to_rest_maximum_mapping_error_m": 6.944641773336686e-11,
+    "mapped_material_vertex_indices": [
+      1608,
+      1609,
+      1610,
+      1611,
+      1612,
+      1613,
+      1614,
+      1615,
+      1616
+    ],
+    "source_vertex_order_identical_to_rest": true,
+    "metadata_file": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_12/source/assets/metadata_two_panel_wide_tall_coarse.json",
+    "maximum_nearest_group_distance_m": 0.0007198457287996053,
+    "maximum_group_centroid_distance_m": 0.0007333711192603618,
+    "maximum_farthest_group_vertex_distance_m": 0.013224724343864078,
+    "first_material_distance_violation_s": null,
+    "finger_pd_minimum_n": [
+      -8.994826558536579,
+      -9.028053451513852
+    ],
+    "finger_pd_maximum_n": [
+      -8.912491489374112,
+      -8.954952512300409
+    ],
+    "first_pd_clamping_violation_s": null
+  },
+  "sequence_evidence": {
+    "recorded_phases": [
+      "close_both_handles",
+      "drape_under_gravity",
+      "spread_bag",
+      "orient_held_bag",
+      "settle_oriented_bag",
+      "release_right_handle",
+      "right_clear_handle",
+      "teddy_pregrasp",
+      "teddy_grasp_approach",
+      "close_teddy_gripper",
+      "lift_teddy",
+      "adjust_teddy_height_contact_trial",
+      "transport_teddy_along_y",
+      "transport_teddy"
+    ],
+    "maximum_left_tcp_displacement_after_handoff_m": 3.0464801982140865e-05,
+    "released_finger_minimum_m": 0.038,
+    "final_right_finger_positions_m": [
+      0.029879503937066055,
+      0.029879670593184745
+    ]
+  },
+  "limitations": [
+    "Saved geometry and integration-step summaries do not certify continuous nonpenetration between recorded states.",
+    "Two-way IPC ABD versus rendered link transform error is unavailable in these arrays.",
+    "Finger opening and event timestamps support sequence checks but do not certify force closure.",
+    "Named strap proximity and negative finger PD are independent hold evidence, not measured native contact forces; the IPC soft-contact guard provides complementary reaction evidence.",
+    "Material values remain uncalibrated; no real-world success claim follows."
+  ]
+}

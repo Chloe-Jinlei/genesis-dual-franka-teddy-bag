@@ -1,0 +1,113 @@
+{
+  "kind": "independent_full32_native_material_readback_review",
+  "created_utc": "2026-11-15T18:14:55.368095+00:00",
+  "all_checks_passed": true,
+  "checks": {
+    "native_process_ended": true,
+    "report_declares_failure_not_success": true,
+    "frozen_manifest_entries_match": true,
+    "production_sources_assets_unchanged_vs_full30": true,
+    "native_report_bag_input_equals_frozen_config": true,
+    "only_one_cloth_entity_environment_zero": true,
+    "native_stretch_mean_matches_E_and_thickness": true,
+    "native_generated_pre_override_mu_matches_E_nu": true,
+    "all_region_mu_values_counts_and_uniformity_match": true,
+    "native_overall_mu_mean_matches_face_weighted_values": true,
+    "body_and_both_handles_complete_disjoint_partition": true,
+    "recorded_native_region_face_ids_match_independent_asset_classification": true,
+    "source_native_vertex_face_bijections_reported": true,
+    "frozen_asset_hash_matches_native_mapping_source": true,
+    "source_native_identity_geometry_within_mapping_tolerance": true,
+    "shear_conversion_protected_attributes_unchanged": true,
+    "native_full_thickness_matches_twice_radius": true,
+    "native_rest_mass_matches_independent_rest_geometry": true,
+    "same_thickness_mass_as_successful_full30": true,
+    "baseline_immutable": true,
+    "inputs_unchanged": true
+  },
+  "physical_task_success": false,
+  "run_status": "failed",
+  "run_error": "GateFailure: Teddy element excessively compressed or inverted: volume ratio 0.0495",
+  "failure_time_s": 53.89500000000912,
+  "evidence_scope": "Direct native attribute readbacks recorded during pre-initialization shell conversion, now persisted by finalization; this is not an independent live-process memory read or a per-step material-buffer trace.",
+  "resolves_startup_pending_evidence": {
+    "path": "runtime_ipc/full32-material-startup-review.json",
+    "sha256": "0fad0955fa781a1b6a7a317a802972f0ae3fe2ac1c0289fd144bd3fa5bf41435",
+    "prior_report_unchanged": true
+  },
+  "measured_native_coefficients": {
+    "stretch_mean_lambda_n_per_m": 6593.406593406591,
+    "region_mu": {
+      "body": {
+        "face_count": 2960,
+        "shear_stiffness_n_per_m": 500.0,
+        "all_faces_equal": true
+      },
+      "handle_front": {
+        "face_count": 576,
+        "shear_stiffness_n_per_m": 1000.0,
+        "all_faces_equal": true
+      },
+      "handle_back": {
+        "face_count": 576,
+        "shear_stiffness_n_per_m": 1000.0,
+        "all_faces_equal": true
+      }
+    },
+    "overall_mu_mean_n_per_m": 640.0778210116731,
+    "full_shell_thickness_m": 0.0006,
+    "native_rest_mass_kg": 0.12007964446260372,
+    "protected_attributes_unchanged": {
+      "triangles.lambda": true,
+      "triangles.strain_rate": true,
+      "vertices.thickness": true,
+      "vertices.volume": true,
+      "vertices.is_fixed": true,
+      "edges.bending_stiffness": true,
+      "geometry_metadata_including_contact_material": true
+    }
+  },
+  "configuration": {
+    "position": [
+      -0.13,
+      0.0,
+      0.742
+    ],
+    "E": 10000000.0,
+    "nu": 0.3,
+    "rho": 500.0,
+    "thickness": 0.0003,
+    "bending_stiffness": 5e-05,
+    "friction_mu": 0.65,
+    "shear_stiffness": 500.0,
+    "mesh": "two_panel_bag_wide_tall_long_handles_coarse.obj",
+    "npz_file": "two_panel_bag_wide_tall_long_handles_coarse.npz",
+    "metadata": "metadata_two_panel_wide_tall_long_handles_coarse.json",
+    "height_m": 0.4,
+    "handle_shear_stiffness": 1000.0
+  },
+  "independent_expected_values": {
+    "stretch_mean_lambda_n_per_m": 6593.406593406592,
+    "body_shear_n_per_m": 500.0,
+    "each_handle_shear_n_per_m": 1000.0,
+    "overall_mu_mean_n_per_m": 640.0778210116731,
+    "reference_geometry_density_mass_kg": 0.12007964446260372
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/report.json": "ca696dc2ee4ff43ea970721c1eb6dde2f5f5cb6a20094cc84c787be818ff963e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/config.json": "0069b4df0d64dc28d65d461dbc38ff7f5235616bb514f006d3c547d493cb82e8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/input_sha256.json": "4c0c55ee46977f140e9db63f4bc5dea12f05d34429274bb0e19a69c67e4be37d",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/source/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full32-material-startup-review.json": "0fad0955fa781a1b6a7a317a802972f0ae3fe2ac1c0289fd144bd3fa5bf41435",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full30-cloth-material-baseline.json": "ec66543e57231e8b544ec110b7fcc9c7f8470ccc049dcb5612dd9452c383d177"
+  },
+  "limitations": [
+    "Correct coefficient installation does not establish successful motion or acceptable contact forces.",
+    "The trace records a native stretch coefficient mean, not an independently archived all-face lambda vector. Region shear uniformity is explicitly recorded by the conversion callback.",
+    "No low-rebound/damping/hysteresis property is identified by this readback; triangles.strain_rate remaining unchanged is not a damping measurement.",
+    "No source/config/assets/default/threshold edits, simulation, planning, or successful-task audit."
+  ]
+}

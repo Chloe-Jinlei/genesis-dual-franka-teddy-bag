@@ -1,0 +1,130 @@
+{
+  "scope": "One hypothetical rigid +10 degree world-Z rotation of actual full23 transport shape about measured TCP; local direction only",
+  "native_execution": false,
+  "production_edited": false,
+  "physical_success": false,
+  "route_candidate": false,
+  "input_sha256": {
+    "runs/two_panel_full_23/transport_teddy.npz": "f250dd8134ddf539cb73bbfffb44637f97708af3f9c9ded653f21d9a0e66fdd0",
+    "runs/two_panel_full_23/states.npz": "cdac0100ff7d516cd00b551c012b944200fb033d75b4d2cae166b3d9a693b984",
+    "runs/two_panel_full_23/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "runs/two_panel_full_23/config.json": "ba490b666b8a543800f114fc5c4889c6c089db130cd47ac100565010555cfc5a",
+    "runs/two_panel_full_23/independent-first-body-near-contact-review.json": "c5c39c9ea4521c02bae06fc5ef2d6f51996fad946988cc025fd0c32332711282",
+    "runs/two_panel_full_23/source/assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "runtime_ipc/full23_local_yaw_direction.py": "1150432ec3ef7f71ae4e605a5196ebab4ecd0d1f8e91079cde49e8cdd3b4d60e"
+  },
+  "actual_transport_time_s": 40.280000000002154,
+  "fixed_actual_tcp_m": [
+    -0.14319289719859887,
+    0.07139902506415546,
+    1.3695410878914718
+  ],
+  "source_to_native_max_mapping_error_m": 6.944641773336686e-11,
+  "world_z_increment_deg": 10.0,
+  "nominal_total_world_z_from_original_grasp_deg": -20.0,
+  "actual43p030_contact": {
+    "time_s": 43.03000000000356,
+    "bear_node": 66,
+    "source_body_face": 1407,
+    "actual_face_vertices_m": [
+      [
+        -0.21010077165146224,
+        0.025525666245538363,
+        1.0824708842749289
+      ],
+      [
+        -0.19874600217583102,
+        -0.0029021933028370943,
+        1.1019602619243127
+      ],
+      [
+        -0.19630419932979226,
+        0.02830692092926559,
+        1.096425236093444
+      ]
+    ],
+    "outward_normal": [
+      -0.7173376950207639,
+      0.17569734702407874,
+      0.6742084792933102
+    ],
+    "horizontal_inward_unit_vector": [
+      0.9712901756024855,
+      -0.23789786627477952,
+      0.0
+    ]
+  },
+  "node66": {
+    "original100percent_material_local_m": [
+      -0.07249766751000002,
+      -0.09300993996000001,
+      0.019897639289999984
+    ],
+    "description": "Left foot/leg exterior according to original implicit teddy components",
+    "transport_point_m": [
+      -0.20038380812862927,
+      0.013643063014758759,
+      1.2369924630538973
+    ],
+    "transport_lever_from_TCP_m": [
+      -0.0571909109300304,
+      -0.0577559620493967,
+      -0.13254862483757446
+    ],
+    "hypothetical_point_m": [
+      -0.18948573212504533,
+      0.004589408393119221,
+      1.2369924630538973
+    ],
+    "displacement_m": [
+      0.010898076003583945,
+      -0.009053654621639538,
+      0.0
+    ],
+    "inward_horizontal_projection_m": 0.012739039271727126
+  },
+  "transport_bear_material_axis": {
+    "definition": "Mean of nodes rest-local y>70mm minus mean of nodes y<-80mm; coarse material head/feet regions, not PCA",
+    "head_node_count": 358,
+    "foot_node_count": 358,
+    "feet_mean_m": [
+      -0.2217311675728156,
+      0.013609174877469103,
+      1.298791773429765
+    ],
+    "head_mean_m": [
+      -0.07006040659845174,
+      0.1399993070200415,
+      1.2798988062093768
+    ],
+    "foot_to_head_unit_world": [
+      0.7647331520550298,
+      0.6372666921502305,
+      -0.09525948364274282
+    ],
+    "tilt_above_world_XY_deg": -5.466254862249252
+  },
+  "bbox": {
+    "actual_span_m": [
+      0.21879776604750306,
+      0.19333150758664183,
+      0.20549984261317622
+    ],
+    "hypothetical_span_m": [
+      0.1883515553253295,
+      0.22410222665366497,
+      0.20549984261317622
+    ],
+    "actual_min_z_m": 1.190515833793177,
+    "hypothetical_min_z_m": 1.190515833793177,
+    "yaw_preserves_all_vertex_heights": true
+  },
+  "conclusion": "Reducing the magnitude of the current -30 degree yaw moves the demonstrated initial contact foot mainly +X and -Y, toward the later actual front-panel local inward direction. The same rotation changes all other body points and cannot establish passage.",
+  "limits": [
+    "The inward direction is measured on actual43.030 deformed front cloth; applying it at40.280 is a direction diagnostic, not a future contact normal prediction.",
+    "The stated -20 degree total is nominal relative to the commanded -30 degree pose; actual native robot orientation and bear grasp response are not replaced.",
+    "No robot IK, 8mm rigid gate, 5mm full-bear left clearance, handle sweep, section route, retention, or dynamics was tested for this alternative.",
+    "No standing-teddy, further yaw or XY candidate was searched. Parent has stopped this diagnostic at its local directional result."
+  ],
+  "inputs_unchanged": true
+}

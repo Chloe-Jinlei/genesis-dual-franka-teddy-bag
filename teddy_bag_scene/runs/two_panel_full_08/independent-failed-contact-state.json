@@ -1,0 +1,87 @@
+{
+  "time_s": 33.09999999999848,
+  "exact_failed_soft_state_metrics": [
+    33.09999999999848,
+    0.24707087866390973,
+    0.0,
+    0.0,
+    1.022643104216426,
+    1.0
+  ],
+  "bear_min_z_m": 1.1141789579970054,
+  "highest_actual_body_rim_z_m": 1.1135926898966175,
+  "material_group_proximity": {
+    "body": {
+      "minimum_vertex_to_bear_surface_distance_m": 0.04777276136890653,
+      "closest_bag_vertex_id": 794,
+      "vertices_within_2mm": 0,
+      "closest_bag_vertex_m": [
+        -0.0670160782915955,
+        0.010713386813103593,
+        1.109736532457437
+      ],
+      "closest_bear_surface_m": [
+        -0.09902381816999657,
+        0.012560055372520746,
+        1.1451530700058588
+      ]
+    },
+    "handle_front": {
+      "minimum_vertex_to_bear_surface_distance_m": 0.02208877967343589,
+      "closest_bag_vertex_id": 1636,
+      "vertices_within_2mm": 0,
+      "closest_bag_vertex_m": [
+        -0.08761473938807077,
+        -0.09662310910191636,
+        1.2528440111010752
+      ],
+      "closest_bear_surface_m": [
+        -0.10538903628520052,
+        -0.08436079947586092,
+        1.2574942067861004
+      ]
+    },
+    "handle_back": {
+      "minimum_vertex_to_bear_surface_distance_m": 0.06428317728534988,
+      "closest_bag_vertex_id": 1887,
+      "vertices_within_2mm": 0,
+      "closest_bag_vertex_m": [
+        -0.1082345819993837,
+        0.1772150698046923,
+        1.0507934269885018
+      ],
+      "closest_bear_surface_m": [
+        -0.11593780581050653,
+        0.169781249549568,
+        1.1141789579970054
+      ]
+    }
+  },
+  "exact_failed_soft_state_containment": {
+    "mouth_projected_area_m2": 0.031004921528553303,
+    "mouth_projected_crossings": 0,
+    "mouth_projected_dimensions_m": [
+      0.41398344879828386,
+      0.1227264365430538
+    ],
+    "mouth_nonplanarity_max_m": 0.02837270279780785,
+    "virtual_closed_body_valid": true,
+    "bear_vertex_inside_fraction": 0.0,
+    "bear_center_of_mass_m": [
+      -0.12657385651516054,
+      0.06888964574226111,
+      1.243261501326065
+    ],
+    "bear_center_of_mass_inside": false,
+    "all_bear_vertices_inside": false
+  },
+  "interpretation": "Failed a declared uncalibrated 0.15Nm engineering torque stop; this is not by itself a constitutive material-failure criterion. Distance samples suggest contact location but do not identify native pair force.",
+  "whole_cloth_surface_separation_bound": {
+    "minimum_cloth_triangle_to_bear_surface_distance_lower_bound_m": 0.008191044711346766,
+    "limiting_face": 3184,
+    "centroid_distance_m": 0.022641132936905152,
+    "triangle_enclosing_radius_m": 0.014450088225558386,
+    "method": "For every cloth triangle, exact centroid-to-teddy-surface distance minus its enclosing vertex radius. Distance is 1-Lipschitz; a positive minimum lower bound separates the entire cloth triangle mesh from teddy surface.",
+    "scope": "failed state only; no claim for prior times or robot/soft contact"
+  }
+}

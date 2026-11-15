@@ -1,0 +1,168 @@
+{
+  "kind": "staged_guarded_contact_trial",
+  "status": "rejected",
+  "phase": "center",
+  "stage": null,
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "outside_tcp_m": null,
+  "requires_final_actual_3d_containment_audit": true,
+  "report": {
+    "rejections": [
+      "Vertical rim projection is self-crossed, touching or closed"
+    ],
+    "physical_success": false,
+    "staged_policy": {
+      "planned_hand_clearance_m": 0.01,
+      "observed_required_hand_clearance_m": 0.005,
+      "center_offset_xy_m": [
+        -0.027,
+        -0.01
+      ],
+      "maximum_rim_stretch_ratio": 1.01,
+      "entry_max_lateral_excursion_fraction_of_mouth_width": 1.0,
+      "entry_minimum_section_envelope_overlap_fraction": 0.0,
+      "maximum_individual_xy_m": 0.03,
+      "maximum_cumulative_xy_m": 0.05,
+      "maximum_original_rotation_error_rad": 0.015,
+      "maximum_previous_endpoint_error_m": 0.002,
+      "rigid_clearance_m": 0.008,
+      "left_robot_sweep_clearance_m": 0.005,
+      "maximum_joint_velocity_rad_s": 0.35,
+      "maximum_joint_acceleration_rad_s2": 0.5,
+      "minimum_downward_duration_s": 6.0,
+      "minimum_center_duration_s": 4.0,
+      "each_stage_requires_strictly_new_actual_observation": true,
+      "wall_contact_is_risk_not_success": true,
+      "physical_limits_unchanged": true
+    },
+    "base_contact_policy": {
+      "bottom_clearance_m": 0.01,
+      "endpoint_below_lowest_rim_m": 0.002,
+      "start_above_highest_rim_m": 0.04,
+      "planned_outside_clearance_m": 0.045,
+      "com_boundary_clearance_m": 0.002,
+      "lateral_excursion_fraction_of_mouth_width": 0.8,
+      "minimum_section_envelope_overlap_fraction": 0.4,
+      "maximum_initial_com_offset_m": 0.035,
+      "transport_xy_strategy": "y_then_x",
+      "rim_perimeter_clearance_m": 0.002,
+      "rigid_clearance_m": 0.008,
+      "left_robot_soft_sweep_clearance_m": 0.005,
+      "minimum_insert_duration_s": 6.0,
+      "minimum_tetra_volume_ratio": 0.05,
+      "maximum_cloth_edge_stretch_ratio": 1.15,
+      "maximum_table_penetration_m": 0.002,
+      "maximum_left_designated_handle_distance_m": 0.018,
+      "maximum_right_teddy_distance_m": 0.045,
+      "maximum_tcp_fk_error_m": 0.002,
+      "force_and_torque_runtime_limits": {
+        "maximum_contact_force_N": 8.0,
+        "maximum_wrist_contact_torque_Nm": 0.15
+      },
+      "note": "Lateral/overlap/perimeter are declared trial policies, not physical laws. Explicit lateral/overlap values permit a bounded contact experiment, not a material-feasibility claim. The initial COM search radius does not change the 30 mm individual or 50 mm cumulative correction budget. The 5 mm minimum teddy/left-robot clearance is an engineering preflight allowance, not a physical law. Bottom clearance and lateral trial fraction are configurable; no compression is prescribed."
+    },
+    "actual_contact_force_torque_unavailable_in_saved_state": true,
+    "all_runtime_native_contact_grasp_wrench_strain_table_gates_required": true,
+    "final_containment_criteria_unchanged": true,
+    "physical_state": {
+      "time_s": 52.89500000000861,
+      "minimum_tetra_volume_ratio": 0.2963769501969024,
+      "bag_table_penetration_m": 0.0,
+      "bear_table_penetration_m": 0.0,
+      "maximum_bag_edge_stretch_ratio": 1.085890023646154,
+      "all_soft_states_finite": 1.0,
+      "left_designated_material_distance_m": 0.0008777429156949045,
+      "right_nearest_teddy_distance_m": 0.007744838346274617,
+      "tcp_fk_errors_m": {
+        "left": 6.521083742145178e-16,
+        "right": 7.617628845276424e-16
+      },
+      "actual_rigid_clearances": {
+        "left_self": {
+          "distance": 0.022302995802724525,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        },
+        "left_table": {
+          "distance": 0.16099593221477015,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ]
+        },
+        "left_mounts": {
+          "distance": 0.14099593221477014,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ]
+        },
+        "right_self": {
+          "distance": 0.02226211696232007,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        },
+        "right_table": {
+          "distance": 0.16099593221477013,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ]
+        },
+        "right_mounts": {
+          "distance": 0.14099593221477014,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ]
+        },
+        "arms": {
+          "distance": 0.044310712120943736,
+          "bodies": [
+            "left_hand",
+            "right_hand"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        }
+      },
+      "finger_pair_half_opening_approximation_error_m": {
+        "left": 1.7386650913383834e-06,
+        "right": 1.3740643837675814e-07
+      },
+      "contact_force_and_torque_not_in_saved_state": true,
+      "physical_state_rejections": []
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "runtime_status": "failed",
+  "task_success": false,
+  "independent_conclusion": "The run physically retained the bag and lifted the teddy with a 4 N-per-finger continuous-following grasp. It stopped after lifting because the observed bag-mouth planner rejected all insertion routes. No insertion/release/retention success is claimed.",
+  "stop_time_s": 16.885000000000925,
+  "stop_reason": "NoInsertionRoute: No observed-state insertion route passed mouth, bounded-compression and rigid-motion checks",
+  "soft_metrics": {
+    "minimum_tetrahedron_volume_ratio": 0.22946030569196418,
+    "maximum_bag_edge_stretch_ratio": 1.038571458707952,
+    "maximum_table_penetration_m": {
+      "bear": 0.0,
+      "bag": 0.0
+    }
+  },
+  "summary_rows": 3378,
+  "physics_step_s": 0.005,
+  "actual_motion": {
+    "left": {
+      "maximum_joint_velocity_rad_s": 0.0970736970972439,
+      "maximum_joint_acceleration_rad_s2": 0.16392335294313298,
+      "per_joint_peak_velocity_rad_s": [
+        0.0046552605728393814,
+        0.0483485685330578,
+        0.07643947653830452,
+        0.0970736970972439,
+        0.011600560758612488,
+        0.06117569053361649,
+        0.08000743690377021
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.010873165987135513,
+        0.08273646432570736,
+        0.12393627000620011,
+        0.16392335294313298,
+        0.022158793876770222,
+        0.09897073425691127,
+        0.1293490536397739
+      ],
+      "within_configured_limits": true
+    },
+    "right": {
+      "maximum_joint_velocity_rad_s": 0.7139739945466914,
+      "maximum_joint_acceleration_rad_s2": 1.046029797959342,
+      "per_joint_peak_velocity_rad_s": [
+        0.1593647387443866,
+        0.7139739945466914,
+        0.3040936984999494,
+        0.7138179172516743,
+        0.2669814618050168,
+        0.7138216055082296,
+        0.3827633487730111
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.7727331095032,
+        0.853457095600028,
+        1.0338482997822283,
+        1.046029797959342,
+        0.6261367497772863,
+        0.8743108788564911,
+        0.41201407679658786
+      ],
+      "within_configured_limits": true
+    }
+  },
+  "left_handle_hold": {
+    "applicable": true,
+    "passed": true,
+    "material_group_retained": true,
+    "both_fingers_command_clamping": true,
+    "distance_limit_m": 0.018,
+    "pd_clamping_threshold_n": -0.1,
+    "distance_definition": "Nearest vertex belonging to the exact configured left grasp material group",
+    "sampling_scope": "Every saved full-geometry frame after right-handle release starts",
+    "force_evidence_scope": "Saved get_dofs_control_force PD values; not native contact force",
+    "errors": [],
+    "material_group": "grasp_front_center",
+    "source_npz": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/two_panel_bag_wide_tall_coarse.npz",
+    "first_checked_time_s": 3.0299999999999576,
+    "last_checked_time_s": 16.885000000000925,
+    "checked_frames": 280,
+    "source_to_rest_maximum_mapping_error_m": 6.944641773336686e-11,
+    "mapped_material_vertex_indices": [
+      1608,
+      1609,
+      1610,
+      1611,
+      1612,
+      1613,
+      1614,
+      1615,
+      1616
+    ],
+    "source_vertex_order_identical_to_rest": true,
+    "metadata_file": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/metadata_two_panel_wide_tall_coarse.json",
+    "maximum_nearest_group_distance_m": 0.000246377780577633,
+    "maximum_group_centroid_distance_m": 0.0002477793017636458,
+    "maximum_farthest_group_vertex_distance_m": 0.012561445956018878,
+    "first_material_distance_violation_s": null,
+    "finger_pd_minimum_n": [
+      -8.91724059256971,
+      -8.963681998347763
+    ],
+    "finger_pd_maximum_n": [
+      -8.858405351350468,
+      -8.903616435261261
+    ],
+    "first_pd_clamping_violation_s": null
+  },
+  "rigid_pairing": {
+    "total_geometry_pairs": 1270,
+    "geometry_pairs_by_entity_pair": {
+      "left_franka | tabletop": 22,
+      "right_franka | tabletop": 22,
+      "left_franka | leg_-0.75_-0.5": 22,
+      "leg_-0.75_-0.5 | right_franka": 22,
+      "left_franka | leg_-0.75_0.5": 22,
+      "leg_-0.75_0.5 | right_franka": 22,
+      "left_franka | leg_0.75_-0.5": 22,
+      "leg_0.75_-0.5 | right_franka": 22,
+      "left_franka | leg_0.75_0.5": 22,
+      "leg_0.75_0.5 | right_franka": 22,
+      "floor | left_franka": 22,
+      "floor | right_franka": 22,
+      "left_franka | left_mount": 22,
+      "left_mount | right_franka": 22,
+      "left_franka | left_franka": 195,
+      "left_franka | right_franka": 528,
+      "left_franka | right_mount": 22,
+      "right_franka | right_mount": 22,
+      "right_franka | right_franka": 195
+    }
+  },
+  "lift_endpoint": {
+    "time_s": 16.885,
+    "bear_minimum_z_m": 1.1650650523163997,
+    "minimum_tetra_volume_ratio": 0.5419348345770287,
+    "right_finger_actual_q_m": [
+      0.030832734792731468,
+      0.030831757204584385
+    ],
+    "right_finger_PD_n": [
+      -4.0,
+      -4.0
+    ],
+    "right_finger_STC_opening_projection_n": [
+      4.082905000626203,
+      4.059617469023227
+    ],
+    "sum_finger_STC_force_world_n": [
+      -0.02391496425005263,
+      -0.022018768628832674,
+      -2.14787518300849
+    ],
+    "sum_finger_STC_moment_about_actual_TCP_world_nm": [
+      -0.009203722105303291,
+      -0.01377740767152402,
+      0.0016710786664244706
+    ],
+    "material_reference_distance_to_TCP_m": 0.0071296441173834355,
+    "mouth_PCA_dimensions_m": [
+      0.41358757292852755,
+      0.12364485527928924
+    ],
+    "mouth_PCA_maximum_nonplanarity_m": 0.028462596258454053
+  },
+  "interpretation": "Natural hanging has much less measured distal-finger moment than full05 after its large wrist turn; this supports retaining that strategy. A nonplanar rim invalidates the existing planar geometric gate, but by itself neither proves nor disproves a contact-assisted insertion. Such an insertion remains an explicitly bounded future physical experiment.",
+  "limitations": [
+    "STC proxy wrenches are coupling feedback, not separately resolved native contact impulses or measured real forces.",
+    "Full geometry and PD evidence are sampled about every 50 ms; soft extrema and actual q have 5 ms integration-step coverage.",
+    "Native rigid contact arrays were not recorded, although pairing was restored and neutral-overlap deletion disabled.",
+    "Material parameters are uncalibrated engineering choices; positive tetrahedron volumes do not establish real plush constitutive behavior.",
+    "Coarse mesh results do not establish fine-mesh or time-step convergence."
+  ],
+  "supporting_reports": [
+    "independent-audit.json",
+    "independent-contact-evidence.json"
+  ]
+}

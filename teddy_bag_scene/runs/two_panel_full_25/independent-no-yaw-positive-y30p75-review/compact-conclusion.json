@@ -1,0 +1,53 @@
+{
+  "status": "rejected_original_preparation",
+  "physical_success": false,
+  "native_execution_performed": false,
+  "postlift_yaw": "omitted",
+  "sole_com_offset_xy_m": [
+    0,
+    0.03075
+  ],
+  "source_actual_lift_time_s": 15.880000000001083,
+  "stage": "translate_outside_mouth",
+  "prior_planned_stages": 2,
+  "blocking_left_body": "left_hand",
+  "blocking_left_geom_id": 67,
+  "required_continuous_gap_m": 0.005,
+  "first_uncertified_tetrahedron": {
+    "tetrahedron_index": 3710,
+    "status": "indeterminate",
+    "conservative_gap_lower_bound_m": 0.004403775856552802,
+    "raw_separating_projection_gap_m": 0.0044038758565528024,
+    "separating_axis_world": [
+      -0.4251821209251145,
+      -0.899299164074018,
+      -0.10237762226870578
+    ],
+    "numerical_guard_m": 1e-07,
+    "mujoco_convex_signed_distance_diagnostic_m": 0.004403886862130865,
+    "solid_envelope_intersection_proven": false,
+    "original_surface_distance_computed": false,
+    "common_interior_ball": {
+      "center_world_m": [
+        -0.1608822367480513,
+        -0.03838915337572577,
+        1.3572017972300856
+      ],
+      "radius_m": -0.0021659298989030046
+    },
+    "reason": "required continuous solid gap was not certified"
+  },
+  "geometric_section_rejections": [],
+  "active_perimeter_margin_m": 0.31189378863676254,
+  "legacy_union_perimeter_margin_m": 0.04264156603493496,
+  "minimum_section_overlap_fraction": 0.9441990452236951,
+  "COM_boundary_distance_m": 0.05488446428180585,
+  "scope": "Original frozen tetrahedral translation versus left robot convex solid failed 5mm certificate. The outer whole hull intersects, but first refined tetrahedron has positive diagnostic distance and no proven intersection. No native collision or total trajectory minimum is claimed. Stop after original preparation rejection; command proxy, hypothetical fresh, and handles not evaluated.",
+  "artifact_sha256": {
+    "review.json": "d1b8b41d2d1129024679496d059ec4bf75d070c045a0d088a3da60cb3fdad61e",
+    "preparation.json": "4effca0e9742ff7d8ee66c01a540b6981e9b1af266a6bdfc3fd7e6a2f9806111",
+    "diagnostic_config.json": "dce4e18f960be6dec513801ab94f15b7a0461762e2814be455f0ac4855702b1f",
+    "actual_lift_source.npz": "d6c5551e7d0209d09b0edfa35cf4707e0f3fe4de5c82738809e77d06a108a047",
+    "rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4"
+  }
+}

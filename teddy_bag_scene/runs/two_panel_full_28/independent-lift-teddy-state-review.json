@@ -1,0 +1,304 @@
+{
+  "kind": "independent_full28_actual_saved_lift_review",
+  "status": "saved_actual_lift_checks_passed",
+  "physical_task_success": false,
+  "future_trajectory_certified": false,
+  "native_execution_performed_by_reviewer": false,
+  "checks": {
+    "current_s663_config_semantically_exact": true,
+    "saved_native_mesh_shapes_consistent": true,
+    "material_mapping_bijective_exact": true,
+    "all_three_saved_actual_frames_finite": true,
+    "all_reference_tetra_volumes_positive": true,
+    "actual_lift_J_above_original5percent": true,
+    "actual_lift_cloth_stretch_below_original15percent": true,
+    "actual_lift_table_penetration_below2mm": true,
+    "actual_lift_bear_minZ_above_required40mm": true,
+    "actual_left_named_material_within18mm": true,
+    "actual_right_nearest_bear_within45mm": true,
+    "actual_lift_and_yaw_source_same_clock": true,
+    "independent_actual_J_stretch_distance_match_saved_yaw_preflight": true,
+    "all_reviewed_completed_inputs_unchanged": true
+  },
+  "failed_checks": [],
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/config.json": "87c73321ad0389c8f40f536a6b8f41fd7ee933a4aeb949ed45b4a5c891d8f31e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/postlift_yaw_candidate.json": "5780acc1c86233472e189bb0580a477b09d9d8d130efe8caf462c59c29058bb1",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/right_clear_handle.npz": "86a667e799a5275c00665e46b9672410462c0a7d6ba0eee954099c3ee37a71e5",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/close_teddy_gripper.npz": "ab69b59a72094478af4b60412fafff9f5ae6dc89ea2b9f84c0faa6df9f0f29fa",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/lift_teddy.npz": "d66811b2766609eeab9c8cc8dca83b36ed89f06ce39b74af899f4c8243ebb264",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/source/run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37"
+  },
+  "current_bear_mesh": "bear_uniform_coarse_s663.obj",
+  "native_rest_geometry": {
+    "bear_vertices": 1450,
+    "bear_tetrahedra": 5486,
+    "bear_reference_volume_m3": 0.0006377953685647822,
+    "rho_kg_m3": 100.0,
+    "derived_bear_mass_kg": 0.06377953685647822,
+    "bag_vertices": 2148,
+    "bag_faces": 4112,
+    "left_material_group": "grasp_front_x_minus",
+    "left_material_node_count": 9,
+    "material_mapping_max_error_m": 6.944641773336686e-11,
+    "actual_reference_grasp_ROI_node_count": 63
+  },
+  "actual_frames": {
+    "right_clear_handle": {
+      "actual_time_s": 5.439999999999906,
+      "all_saved_arrays_finite": true,
+      "minimum_tetrahedron_volume_ratio": 0.8978901848491752,
+      "minimum_tetrahedron_index": 4744,
+      "inverted_tetrahedra": 0,
+      "maximum_cloth_edge_stretch_ratio": 1.0213765816212415,
+      "bear_world_bounds_m": [
+        [
+          0.1901534357916314,
+          -0.35642755998069825,
+          0.7409422988063105
+        ],
+        [
+          0.34945794910086464,
+          -0.14354459845713485,
+          0.806531355986177
+        ]
+      ],
+      "bear_world_extents_m": [
+        0.15930451330923323,
+        0.2128829615235634,
+        0.06558905717986652
+      ],
+      "bear_minimum_height_above_table_m": 0.0009422988063104709,
+      "mass_COM_world_m": [
+        0.26994641543278736,
+        -0.2505354520793874,
+        0.7653219730915607
+      ],
+      "table_penetration_m": {
+        "bag": 0.0,
+        "bear": 0.0
+      },
+      "left_named_material_nearest_TCP_m": 0.0012252782398392277,
+      "left_named_material_mean_TCP_distance_m": 0.007386021254992797,
+      "left_named_material_max_TCP_distance_m": 0.013861231133266677,
+      "right_nearest_bear_TCP_m": 0.6517144491058371,
+      "right_tracking_ROI_nearest_TCP_m": 0.7305072154710119,
+      "actual_tcp_m": {
+        "left": [
+          -0.18409112459184465,
+          -0.1299793085740577,
+          1.3999430456618256
+        ],
+        "right": [
+          0.12001439518065413,
+          0.20000366625480964,
+          1.3200053906361138
+        ]
+      },
+      "actual_finger_joint_m": {
+        "left": [
+          0.001108170435219729,
+          0.0011125847183994161
+        ],
+        "right": [
+          0.039999995380362814,
+          0.040000001685490894
+        ]
+      },
+      "reported_finger_PD_force_N": {
+        "left": [
+          -8.864745454168037,
+          -8.901282499965284
+        ],
+        "right": [
+          -1.9578913162621333e-05,
+          1.346545403543852e-05
+        ]
+      },
+      "actual_body_rim_z_range_m": [
+        0.9768276218895603,
+        1.1262662441260436
+      ]
+    },
+    "close_teddy_gripper": {
+      "actual_time_s": 13.30000000000068,
+      "all_saved_arrays_finite": true,
+      "minimum_tetrahedron_volume_ratio": 0.6005835030433049,
+      "minimum_tetrahedron_index": 1711,
+      "inverted_tetrahedra": 0,
+      "maximum_cloth_edge_stretch_ratio": 1.0196884828481996,
+      "bear_world_bounds_m": [
+        [
+          0.18920281232356703,
+          -0.35581549405494733,
+          0.7409416078180081
+        ],
+        [
+          0.34876326266158564,
+          -0.1425360264555166,
+          0.8064176355126965
+        ]
+      ],
+      "bear_world_extents_m": [
+        0.1595604503380186,
+        0.21327946759943073,
+        0.06547602769468841
+      ],
+      "bear_minimum_height_above_table_m": 0.0009416078180081167,
+      "mass_COM_world_m": [
+        0.26923793573211774,
+        -0.24968264049215338,
+        0.7652957196933463
+      ],
+      "table_penetration_m": {
+        "bag": 0.0,
+        "bear": 0.0
+      },
+      "left_named_material_nearest_TCP_m": 0.000986328604010056,
+      "left_named_material_mean_TCP_distance_m": 0.007412876836751167,
+      "left_named_material_max_TCP_distance_m": 0.014095456395032428,
+      "right_nearest_bear_TCP_m": 0.006726119609256675,
+      "right_tracking_ROI_nearest_TCP_m": 0.006726119609256675,
+      "actual_tcp_m": {
+        "left": [
+          -0.18409187959621318,
+          -0.129981616938814,
+          1.399948517710739
+        ],
+        "right": [
+          0.3229912953605045,
+          -0.25920230136240796,
+          0.7650059439689402
+        ]
+      },
+      "actual_finger_joint_m": {
+        "left": [
+          0.0011079916362439935,
+          0.001111727028769165
+        ],
+        "right": [
+          0.022850385286370106,
+          0.022845894700579423
+        ]
+      },
+      "reported_finger_PD_force_N": {
+        "left": [
+          -8.863921741902239,
+          -8.89381676615157
+        ],
+        "right": [
+          -1.8252,
+          -1.8252
+        ]
+      },
+      "actual_body_rim_z_range_m": [
+        0.977961827198938,
+        1.1247160874406823
+      ]
+    },
+    "lift_teddy": {
+      "actual_time_s": 17.290000000000845,
+      "all_saved_arrays_finite": true,
+      "minimum_tetrahedron_volume_ratio": 0.47710381765680876,
+      "minimum_tetrahedron_index": 1895,
+      "inverted_tetrahedra": 0,
+      "maximum_cloth_edge_stretch_ratio": 1.0196531499152695,
+      "bear_world_bounds_m": [
+        [
+          0.2765751216270283,
+          -0.35912247858183094,
+          1.2339807438673067
+        ],
+        [
+          0.3483997408273104,
+          -0.1443822150300184,
+          1.3932563176705512
+        ]
+      ],
+      "bear_world_extents_m": [
+        0.0718246192002821,
+        0.21474026355181253,
+        0.15927557380324453
+      ],
+      "bear_minimum_height_above_table_m": 0.4939807438673067,
+      "mass_COM_world_m": [
+        0.30909967662724286,
+        -0.25318944523201475,
+        1.3121380429949034
+      ],
+      "table_penetration_m": {
+        "bag": 0.0,
+        "bear": 0.0
+      },
+      "left_named_material_nearest_TCP_m": 0.0008830101980822676,
+      "left_named_material_mean_TCP_distance_m": 0.0074259859254988585,
+      "left_named_material_max_TCP_distance_m": 0.014202174860002642,
+      "right_nearest_bear_TCP_m": 0.0033262171669562303,
+      "right_tracking_ROI_nearest_TCP_m": 0.0033262171669562303,
+      "actual_tcp_m": {
+        "left": [
+          -0.18409240716201167,
+          -0.12998144225609817,
+          1.3999495189219795
+        ],
+        "right": [
+          0.3229548286816619,
+          -0.25920345205162615,
+          1.3699360526709703
+        ]
+      },
+      "actual_finger_joint_m": {
+        "left": [
+          0.0011084041371791648,
+          0.0011121143243592688
+        ],
+        "right": [
+          0.021171763686911396,
+          0.021172027823398172
+        ]
+      },
+      "reported_finger_PD_force_N": {
+        "left": [
+          -8.867217059006439,
+          -8.896908719714602
+        ],
+        "right": [
+          -1.8252,
+          -1.8252
+        ]
+      },
+      "actual_body_rim_z_range_m": [
+        0.9767556204640887,
+        1.1243745911552163
+      ]
+    }
+  },
+  "left_material_endpoint_comparison": {
+    "reference_phase": "right_clear_handle",
+    "reference_time_s": 5.439999999999906,
+    "left_TCP_displacement_m": [
+      -1.2825701670160505e-06,
+      -2.1336820404671553e-06,
+      6.473260153905258e-06
+    ],
+    "left_TCP_displacement_norm_m": 6.9354655433697595e-06,
+    "named_material_mean_displacement_m": [
+      0.0002816706852810318,
+      -3.475927753746672e-05,
+      -0.0002276993530879364
+    ],
+    "named_material_max_displacement_m": 0.0006969070212641305,
+    "named_material_max_displacement_relative_to_TCP_m": 0.0006974099225477656,
+    "scope": "Only these two saved actual endpoints; not the intervening per-step maximum or a force-closure certificate."
+  },
+  "limitations": [
+    "Measurements use this full28 saved native shape, not scaled old held states.",
+    "Only named completed snapshots were audited; full per-step traces are not yet finalized. These checks are not a final audit of the executed prefix or future yaw/transport/insertion.",
+    "Saved force_left/right are PD/generalized motor-force evidence, not measured pairwise contact reactions. The current latest_contact_diagnostics timestamp is later than lift, so it was deliberately excluded.",
+    "The actual lift remains a deformed soft object with local compression; passingJ.05 does not imply negligible deformation or calibrated material.",
+    "Native release and final all-node/COM containment and retention have not been audited or claimed."
+  ]
+}

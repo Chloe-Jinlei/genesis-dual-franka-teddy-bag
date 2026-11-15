@@ -1,0 +1,105 @@
+{
+  "kind": "synthetic_staged_explicit_xy_budget_audit_regression",
+  "physical_success": false,
+  "all_checks_passed": true,
+  "case_count": 11,
+  "cases": [
+    {
+      "case": "explicit_70_90mm_allows_declared_53p85mm_center",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "case": "individual_above_ceiling",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [],
+      "error": "Invalid declared staged XY limits: individual [0.03,0.10] m, cumulative [0.05,0.12] m and cumulative >= individual required"
+    },
+    {
+      "case": "individual_below_floor",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [],
+      "error": "Invalid declared staged XY limits: individual [0.03,0.10] m, cumulative [0.05,0.12] m and cumulative >= individual required"
+    },
+    {
+      "case": "cumulative_above_ceiling",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [],
+      "error": "Invalid declared staged XY limits: individual [0.03,0.10] m, cumulative [0.05,0.12] m and cumulative >= individual required"
+    },
+    {
+      "case": "cumulative_below_floor",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [],
+      "error": "Invalid declared staged XY limits: individual [0.03,0.10] m, cumulative [0.05,0.12] m and cumulative >= individual required"
+    },
+    {
+      "case": "cumulative_below_individual",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [],
+      "error": "Invalid declared staged XY limits: individual [0.03,0.10] m, cumulative [0.05,0.12] m and cumulative >= individual required"
+    },
+    {
+      "case": "nonfinite_individual",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [],
+      "error": "Invalid declared staged XY limits: individual [0.03,0.10] m, cumulative [0.05,0.12] m and cumulative >= individual required"
+    },
+    {
+      "case": "default_30_50mm_still_rejects_large_motion",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [],
+      "error": "Invalid frozen-config single center offset"
+    },
+    {
+      "case": "checkpoint_forges_larger_budget",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [
+        "center_checkpoint_budget_matches_frozen_config"
+      ],
+      "error": null
+    },
+    {
+      "case": "cumulative_budget_reset_rejected",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [
+        "insert_planned_budget_matches_actual_prior_and_target"
+      ],
+      "error": null
+    },
+    {
+      "case": "undeclared_center_target_rejected",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "status": "failed",
+      "failed_checks": [
+        "center_bounded_declared_horizontal_target"
+      ],
+      "error": null
+    }
+  ],
+  "existing_sequence_regression_all_passed": true,
+  "auditor_sha256": "cfffd244a7a8064dc2780a337e17e2b13ab4447849a2834ca10e20700f2771f8",
+  "scope": "Synthetic sequence data exercise budget-only contract; hand-height and raw native reactions are separately tested and mocked here. No physical success is established."
+}

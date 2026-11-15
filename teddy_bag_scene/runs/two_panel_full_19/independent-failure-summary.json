@@ -1,0 +1,328 @@
+{
+  "kind": "independent_full19_failure_summary",
+  "physical_success": false,
+  "independent_task_success": false,
+  "runtime_failure_time_s": 61.940000000013235,
+  "runtime_error": "GateFailure: Teddy element excessively compressed or inverted: volume ratio 0.0484",
+  "actual_progress": {
+    "entry_completed_s": 54.545,
+    "selected_center_index": 4,
+    "selected_center_offset_xy_m": [
+      -0.01,
+      -0.055
+    ],
+    "center_completed_s": 58.565,
+    "insert_started_s": 58.565,
+    "insert_failed_s": 61.940000000013235,
+    "released": false,
+    "withdrawn": false
+  },
+  "primary_physical_failure": {
+    "kind": "single_tetrahedron_overcompression",
+    "required_minimum_J": 0.05,
+    "recomputed_failed_frame_minimum_J": 0.04844234248162941,
+    "failed_frame_metrics_minimum_J": 0.04844234248162944,
+    "failed_tetrahedron_index": 3896,
+    "failed_node_indices": [
+      610,
+      631,
+      644,
+      1150
+    ],
+    "tetrahedra_below_5_percent": 1,
+    "nonpositive_tetrahedra": 0,
+    "failed_tetrahedron_center_m": [
+      -0.11923433237747881,
+      -0.021479988852741553,
+      1.0438596649201328
+    ],
+    "not_a_planning_rejection": true
+  },
+  "soft_metrics": {
+    "provided": true,
+    "valid": true,
+    "columns": [
+      "time_s",
+      "minimum_tetra_volume_ratio",
+      "bag_table_penetration_m",
+      "bear_table_penetration_m",
+      "maximum_bag_edge_stretch_ratio",
+      "all_soft_states_finite"
+    ],
+    "sampling_scope": "Soft summary at each recorded integration step; full geometry at saved frames.",
+    "rows": 12389,
+    "maximum_interval_s": 0.005000000000002558,
+    "expected_integration_interval_s": 0.005,
+    "covers_all_saved_frame_timestamps": true,
+    "covers_all_joint_trace_timestamps": true,
+    "matches_independent_saved_frame_recomputation": true,
+    "maximum_shared_frame_absolute_error_by_metric": [
+      3.6637359812630166e-15,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "minimum_tetrahedron_volume_ratio": 0.04844234248162944,
+    "maximum_table_penetration_m": {
+      "bag": 0.0,
+      "bear": 0.0
+    },
+    "maximum_bag_edge_stretch_ratio": 1.1072015557129555,
+    "worst_volume_ratio_time_s": 61.940000000013235,
+    "errors": []
+  },
+  "contact_guards": {
+    "status": "passed",
+    "passed": true,
+    "rows": 6580,
+    "start_time_s": 29.044999999998506,
+    "end_time_s": 61.940000000013235,
+    "checks": {
+      "all_required_raw_values_finite": true,
+      "strictly_increasing_consecutive_steps": true,
+      "timestamps_match_fixed_integration_step": true,
+      "covers_every_step_from_guard_entry_to_run_end": true,
+      "last_time_matches_report": true,
+      "right_hold_flag_agrees_with_release_event": true,
+      "summed_raw_link_force_matches_net_force": true,
+      "stored_force_norms_match_raw_vectors": true,
+      "stored_torque_norms_match_raw_vectors": true,
+      "stored_finger_norms_match_raw_vectors": true,
+      "baseline_differences_are_only_recorded_subtractions": true,
+      "raw_net_force_below_limit": true,
+      "raw_tcp_torque_below_limit": true,
+      "raw_each_right_finger_force_below_limit": true,
+      "left_both_soft_opening_reactions_above_minimum": true,
+      "right_both_soft_opening_reactions_above_minimum_until_release": true,
+      "designated_left_material_within_18mm": true,
+      "right_teddy_vertex_within_45mm_until_release": true,
+      "no_recorded_stop_reason": true
+    },
+    "first_physical_violation": null,
+    "raw_limits": {
+      "max_net_force_n": 8.0,
+      "max_tcp_torque_nm": 0.15,
+      "max_finger_force_n": 8.0,
+      "minimum_left_opening_reaction_n": 0.1
+    },
+    "maximum_net_force_n": 2.4025712623733226,
+    "maximum_tcp_torque_nm": 0.13071187280527768,
+    "maximum_right_finger_force_n": [
+      4.9533461761367175,
+      4.941264321062198
+    ],
+    "minimum_right_opening_reaction_until_release_n": [
+      3.3225718212917315,
+      3.7699249756965023
+    ],
+    "minimum_left_opening_reaction_n": [
+      8.910215670867546,
+      8.843102363541945
+    ],
+    "maximum_designated_left_material_distance_m": 0.0012628927507528033,
+    "maximum_right_nearest_material_distance_until_release_m": 0.00851067884853288,
+    "maximum_saved_baseline_subtraction_error": 0.0,
+    "scope": "IPC soft-coupling STC feedback; excludes native Genesis rigid-contact force",
+    "limitations": [
+      "Positive finger-axis projections plus material proximity are grip evidence, not force-closure proof.",
+      "Saved per-link origins and aim axes are independently checked by the richer contact trace audit.",
+      "Raw engineering force and moment limits are uncalibrated; baseline subtraction never waives them."
+    ]
+  },
+  "native_hand": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "exact_three_native_reference_links": true,
+      "reference_vertices_match_recorded_hashes": true,
+      "reference_bounds_match_recorded_geometry": true,
+      "link7_reference_is_true_palm_subset_not_arm_link7": true,
+      "all_native_rows_finite_and_shapes_valid": true,
+      "stable_native_link_order": true,
+      "native_affine_homogeneous_rows_valid": true,
+      "native_affine_bodies_noninverted": true,
+      "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+      "whole_hand_minimum_matches_three_components": true,
+      "reported_vertical_gaps_reconstruct": true,
+      "minimum_threshold_is_5mm": true,
+      "all_recorded_vertical_gaps_at_least_5mm": true,
+      "whole_bear_counts_and_max_vertex_indices_valid": true,
+      "covers_every_step_from_center_entry_through_insert_endpoint": true,
+      "strictly_increasing_consecutive_steps": true,
+      "timestamps_match_fixed_step": true,
+      "no_native_height_stop_reason": true,
+      "all_full_bear_frames_in_monitored_window_matched": true,
+      "full_frame_bear_maxima_and_argmax_reconstruct": true,
+      "failed_full_bear_frame_matches_height_row": true,
+      "saved_coupling_finger_transforms_match_height_trace": true
+    },
+    "limitations": [
+      "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+      "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+      "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+    ],
+    "rows": 1480,
+    "start_time_s": 54.54500000000945,
+    "end_time_s": 61.940000000013235,
+    "minimum_gap_m": 0.014615824950735545,
+    "maximum_hand_reconstruction_error_m": 2.220446049250313e-16,
+    "full_bear_frame_crosschecks": 150,
+    "failed_full_bear_frame_crosschecked": true,
+    "bear_summary_only_rows_without_matching_full_frame": 1331,
+    "finger_transform_crosschecks": 300
+  },
+  "left_tcp_maximum_post_handoff_displacement_m": 0.0003630919466075654,
+  "dual_handle_monitor": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "all_recorded_values_finite": true,
+      "exact_four_individual_fingers_and_two_material_groups": true,
+      "strictly_increasing_fixed_step_times": true,
+      "every_integration_step_from_spread_until_handoff": true,
+      "all_four_opening_reactions_above_0p1n": true,
+      "both_designated_material_groups_within_18mm": true
+    },
+    "samples": 2818,
+    "start_s": 1.1049999999999984,
+    "end_s": 15.190000000000975,
+    "minimum_opening_reactions_n": [
+      8.884450999280626,
+      8.904972271270585,
+      8.902476464616695,
+      8.900577475056437
+    ],
+    "maximum_designated_material_distance_m": [
+      0.0006350442628387215,
+      0.0004786720926224424
+    ],
+    "phases": [
+      {
+        "phase": "spread_bag",
+        "samples": 386,
+        "min_opening_reactions_n": [
+          8.947566751757051,
+          8.930680176666607,
+          8.902476464616695,
+          8.900577475056437
+        ],
+        "max_opening_reactions_n": [
+          8.959911429102181,
+          8.944290261980221,
+          8.938083857858937,
+          8.932996821055612
+        ],
+        "max_designated_material_distance_m": [
+          0.00044511813702782115,
+          0.0004702052997207075
+        ]
+      },
+      {
+        "phase": "orient_held_bag",
+        "samples": 2332,
+        "min_opening_reactions_n": [
+          8.884450999280626,
+          8.904972271270585,
+          8.904020377073355,
+          8.90839090922918
+        ],
+        "max_opening_reactions_n": [
+          9.139052625510383,
+          9.163356127847129,
+          8.92953854219226,
+          8.928982128561351
+        ],
+        "max_designated_material_distance_m": [
+          0.000624378925443634,
+          0.0004786720926224424
+        ]
+      },
+      {
+        "phase": "settle_oriented_bag",
+        "samples": 100,
+        "min_opening_reactions_n": [
+          9.059493463050194,
+          9.09576159806588,
+          8.905260123439854,
+          8.924414431839143
+        ],
+        "max_opening_reactions_n": [
+          9.062783205457817,
+          9.099184820258117,
+          8.905660459320679,
+          8.924690188071839
+        ],
+        "max_designated_material_distance_m": [
+          0.0006350442628387215,
+          0.00045128672833966724
+        ]
+      }
+    ],
+    "limitations": [
+      "Reactions are IPC soft-coupling feedback, not contact forces identified by individual material.",
+      "Material proximity and four positive opening-axis reactions support held-handle evidence; they do not prove force closure.",
+      "Checks cover recorded integration states only."
+    ]
+  },
+  "native_material_regions": {
+    "body": {
+      "face_count": 2960,
+      "shear_stiffness_n_per_m": 50.0,
+      "all_faces_equal": true
+    },
+    "handle_front": {
+      "face_count": 352,
+      "shear_stiffness_n_per_m": 250.0,
+      "all_faces_equal": true
+    },
+    "handle_back": {
+      "face_count": 352,
+      "shear_stiffness_n_per_m": 250.0,
+      "all_faces_equal": true
+    }
+  },
+  "all_original_checks_failed": [
+    "no_tetrahedron_volume_below_5_percent",
+    "bear_fully_inside_bag_final",
+    "bear_remains_inside_during_final_hold_samples",
+    "requested_phases_recorded_in_order",
+    "right_fingers_open_after_release",
+    "controller_explicitly_reports_task_complete"
+  ],
+  "staged_status": "incomplete",
+  "staged_incomplete_evidence": [
+    "No actual full-state frame at staged endpoint 64.59000000001151"
+  ],
+  "last_regular_geometry_time_s": 61.91500000001322,
+  "last_regular_containment_result": {
+    "mouth_projected_area_m2": 0.006428133442693739,
+    "mouth_projected_crossings": 2,
+    "mouth_projected_dimensions_m": [
+      0.24451721449201735,
+      0.16637501391746867
+    ],
+    "mouth_nonplanarity_max_m": 0.04019166291346732,
+    "virtual_closed_body_valid": false,
+    "bear_vertex_inside_fraction": 0.0,
+    "bear_center_of_mass_m": [
+      -0.11358121444207497,
+      -0.02476706161676057,
+      0.9663045853428848
+    ],
+    "bear_center_of_mass_inside": false,
+    "all_bear_vertices_inside": false
+  },
+  "containment_interpretation": "The original virtual cap is invalid at the last regular frame (two XY projected crossings). Its 0/false outputs are fail-closed results, NOT a measured zero node inclusion fraction or proof that the COM is outside. No valid final containment/release/settling certificate exists.",
+  "failed_frame_geometry_time_s": 61.940000000013235,
+  "input_manifest_matches": true,
+  "distinction": "The actual physical stop is J below 0.05. The five other task failures concern unfinished inclusion/hold/order/release/completion. Low-phase section diagnostics are not additional physical failures.",
+  "input_sha256": {
+    "report.json": "1a213bd381701fc965b245b7bdb7d4bd42bb99a9394e44fa659d972e6a9bd457",
+    "failed_soft_state.npz": "21aa97649144863763f45cab6bd5524c3ed1beaa69bc9dd9113301fa0163fc78",
+    "rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "independent-final-review.json": "9a4c58cabb6da2487fd1f8116edb85f4e3aa722292e47713313bef5d2e0348e1",
+    "independent-audit.json": "817f433620cfdb704530879fbc9f4d86b1969a14471163b7cf971d6866eef594",
+    "independent-guard-reactions.json": "f03f0f954c348b29b7606a368b04ff9dbb0e98858c9ca0ccb3e8c3aae42800a7",
+    "independent-staged-contact-sequence.json": "6551e1e7505cbf45892318d301cd4fba9cc8b57ab8646cf7776a6e96f7594f10"
+  }
+}

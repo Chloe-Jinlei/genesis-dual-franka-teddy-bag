@@ -1,0 +1,144 @@
+{
+  "kind": "continuous_reference_rate_sampling_bug_fix",
+  "utc": "2026-11-13T19:36:01.050317+00:00",
+  "native_run": false,
+  "physical_task_success": false,
+  "old_motion_sha256": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+  "new_motion_sha256": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+  "cause": "MotionPlan.limit_rate used 501 clock samples. At path knot 19/44 the saved zero/+Y20 provisional insertion has an acceleration peak between those samples; sampled .498005984 hid true .52419/.52425 rad/s\u00b2.",
+  "changes": [
+    "Replace 501 samples with per-cubic composition q(s(u)) and real stationary roots for |velocity| and |acceleration|, including both endpoints/sides of each knot.",
+    "Normalize each inverse-progress clock interval to [0,1]; use a stable Taylor expansion and symmetric minimum-jerk inversion near the end.",
+    "Isolate real polynomial roots through recursive derivative monotonic intervals and bracketed brentq; repeated stationary roots are retained.",
+    "Reject malformed/nonreal/nonfinite cubic arrays, incomplete knot domains, unresolvable clock intervals, discontinuities and invalid duration/rate limits.",
+    "Preserve limit_rate arguments/return value, joint path coefficients, finger targets and original duration factor 1.002. Only the duration is retimed after all checks."
+  ],
+  "numerical_scope": {
+    "root_solver": "brentq on recursively isolated real monotone intervals",
+    "root_xtol": 5e-15,
+    "root_rtol": "4*float64 epsilon",
+    "near_zero_stationary_tolerance": "64*float64 epsilon*sum(abs(normalized polynomial coefficients))",
+    "continuity_absolute_tolerances": {
+      "C0": 1e-10,
+      "C1": 1e-10,
+      "C2": 1e-08
+    },
+    "continuity_relative_tolerance": 1e-10,
+    "duration_margin": 1.002,
+    "velocity_margin_factor": 0.998003992015968,
+    "acceleration_margin_factor": 0.9960119680798085,
+    "directed_rounding_interval_certificate": false,
+    "finite_extrema_method": "Analytic polynomial extrema evaluated in float64; numerical margins stated explicitly, no sampling-only acceptance."
+  },
+  "unchanged_nonmotion_production_assets": {
+    "source/assets/bear_uniform_coarse_s85.mtl": true,
+    "source/assets/bear_uniform_coarse_s85.obj": true,
+    "source/assets/cotton_canvas.png": true,
+    "source/assets/metadata_two_panel_wide_tall_coarse.json": true,
+    "source/assets/panda_tactile.xml": true,
+    "source/assets/teddy_fur.png": true,
+    "source/assets/two_panel_bag_wide_tall_coarse.mtl": true,
+    "source/assets/two_panel_bag_wide_tall_coarse.npz": true,
+    "source/assets/two_panel_bag_wide_tall_coarse.obj": true,
+    "source/assets_builder.py": true,
+    "source/build_tall_bag.py": true,
+    "source/build_wide_tall_bag.py": true,
+    "source/contact_grasp.py": true,
+    "source/contact_guard.py": true,
+    "source/contact_insertion.py": true,
+    "source/contact_robot_geometry.py": true,
+    "source/contact_slice_geometry.py": true,
+    "source/insertion_candidates.py": true,
+    "source/physical_monitor.py": true,
+    "source/physics_config.py": true,
+    "source/postlift_yaw.py": true,
+    "source/remesh_bear.py": true,
+    "source/run.py": false,
+    "source/scene.py": true,
+    "source/staged_contact_insertion.py": true,
+    "source/staged_hand_monitor.py": true,
+    "source/two_panel_builder.py": true,
+    "source/validate.py": true
+  },
+  "all_28_other_frozen_sources_assets_unchanged": false,
+  "full21_run_config_unchanged": true,
+  "positive_y_candidate_config_unchanged": true,
+  "targeted_regression": {
+    "passed": true,
+    "count": 152,
+    "failures": [],
+    "report": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/motion-continuous-rate-regression.json",
+    "sha256": "c472c5d5c5a558278290d3af5854cc92d184a8627919df6eb43226bd3a5e416d"
+  },
+  "actual_archived_witness_corrections": [
+    {
+      "archive": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/independent-positive-y20-route-review/positive_y20_3_runner_proxy.npz",
+      "archive_sha256": "9917ab9c5ee055f2e0a6e9ad09a979dc43f99b01406a3d1c856e678b752a7e10",
+      "before_duration_s": 13.00859053435956,
+      "old_501_peak_acceleration_rad_s2": 0.4980059840399043,
+      "before_continuous_peaks": [
+        0.17647444706454316,
+        0.5241907840760455
+      ],
+      "after_duration_s": 13.346200771126785,
+      "after_continuous_peaks": [
+        0.172010286748169,
+        0.49800598403990415
+      ],
+      "independent_100001_plus_knots_peaks": [
+        0.17201028674076385,
+        0.49800598403989943
+      ]
+    },
+    {
+      "archive": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/independent-positive-y20-route-review/zero_3_runner_proxy.npz",
+      "archive_sha256": "2deacf7b60764601a93aa9cf95ba177f05167f63b47f84be3201237f30e45b46",
+      "before_duration_s": 11.6371024018759,
+      "old_501_peak_acceleration_rad_s2": 0.49800598403990437,
+      "before_continuous_peaks": [
+        0.20193742204978368,
+        0.5242450661659865
+      ],
+      "after_duration_s": 11.93973674394778,
+      "after_continuous_peaks": [
+        0.19681895083284448,
+        0.4980059840399041
+      ],
+      "independent_100001_plus_knots_peaks": [
+        0.1968189508326783,
+        0.4980059840398994
+      ]
+    }
+  ],
+  "independent_review": {
+    "status": "passed",
+    "report": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/independent-motion-rate-fix-review.json",
+    "sha256": "02b3aecc8390a60f4e2cceb3744c745bc5ce542f2ac2670773243724e53dfe02",
+    "checks_passed": 38,
+    "checks_total": 38,
+    "method": "Independent polynomial expansion and 64-subinterval Bernstein bounds; did not reuse the production root-isolation algorithm.",
+    "scope": "Both archived witnesses, three nonuniform-knot curve families, reverse and angle-shift checks, timing/knots/repeated-root review. Numerical bounds include 1e-9 padding, not a directed-rounding universal proof."
+  },
+  "limitations": [
+    "This corrects the continuous reference timing; native measured joint tracking may differ and still needs actual-run validation.",
+    "limit_rate is used by ordinary arm trajectories too, so a future fresh native run may have different phase durations and soft-object evolution. Old physical states are not evidence of the new timing outcome.",
+    "No improvement of cloth contact, grasp retention or final teddy containment is claimed; +Y20 frozen route also has an independently observed strap intersection and is not authorized here for native execution."
+  ],
+  "artifacts_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/motion_continuous_rate_regression.py": "2e7dba2212beffd03daae647097fda57481b379cdd6646b4c30096827979e4cd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/motion-continuous-rate-regression.json": "c472c5d5c5a558278290d3af5854cc92d184a8627919df6eb43226bd3a5e416d",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/motion-continuous-rate-fix.patch": "fc21b40bd82063d2a23729e1e91ebca5ac69c92f84630918e51f8bc9f59afdf7"
+  },
+  "production_files_changed_by_this_task": [
+    "motion.py"
+  ],
+  "concurrent_worktree_difference_from_full21": {
+    "run.py": {
+      "current_sha256": "d43661243039a5c7a84f0d876832f4c9cbfe2b314f579dd997f2ea0e57b56d6a",
+      "frozen_full21_sha256": "37a8fe37bdd065dfc415273f3a1764a11b113ff6618ad6d8b262eddabe64b3b0",
+      "scope": "Parallel handoff runner branch work; not edited by this rate-fix task."
+    }
+  },
+  "all_other_27_frozen_sources_assets_unchanged_excluding_motion_and_parallel_runner": true,
+  "independent_reviewed_source_still_current": true
+}

@@ -1,0 +1,252 @@
+{
+  "status": "incomplete",
+  "passed": false,
+  "checks": {
+    "frozen_config_xy_limits_within_allowed_bounds": true,
+    "frozen_config_center_offsets_valid": true,
+    "at_most_one_plan_for_each_ordered_phase": true,
+    "physical_phase_order_unique_and_complete": true,
+    "three_accepted_staged_plans": true,
+    "old_high_entry_correction_loop_not_fabricated": true,
+    "one_completed_initial_transport": true,
+    "entry_reported_policy_matches_frozen_config": true,
+    "entry_checkpoint_policy_matches_frozen_config": true,
+    "entry_finite_observation_target_orientation": true,
+    "entry_stage_name_matches_phase": true,
+    "entry_original_complete_rotation_target_preserved": true,
+    "entry_event_starts_at_actual_plan_observation": true,
+    "entry_strict_new_observation_after_previous_completed_stage": true,
+    "entry_planned_budget_finite_and_within_declared_xy_limits": true,
+    "entry_checkpoint_budget_matches_frozen_config": true,
+    "entry_planned_budget_matches_actual_prior_and_target": true,
+    "entry_checkpoint_source_matches_actual_state": true,
+    "entry_duration_is_slow_guarded_motion": true,
+    "entry_strictly_down_at_actual_xy": true,
+    "entry_actual_endpoint_within_2mm": true,
+    "entry_actual_xy_within_declared_xy_limits": true,
+    "entry_runtime_distance_records_match_actual_tcp": true,
+    "entry_runtime_endpoint_time_matches_actual_completion": true,
+    "entry_actual_full_rotation_within_015rad_every_joint_step": true,
+    "entry_actual_tcp_matches_joint_fk": true,
+    "center_reported_policy_matches_frozen_config": true,
+    "center_checkpoint_policy_matches_frozen_config": true,
+    "center_finite_observation_target_orientation": true,
+    "center_stage_name_matches_phase": true,
+    "center_original_complete_rotation_target_preserved": true,
+    "center_event_starts_at_actual_plan_observation": true,
+    "center_strict_new_observation_after_previous_completed_stage": true,
+    "center_planned_budget_finite_and_within_declared_xy_limits": true,
+    "center_checkpoint_budget_matches_frozen_config": true,
+    "center_planned_budget_matches_actual_prior_and_target": true,
+    "center_checkpoint_source_matches_actual_state": true,
+    "center_duration_is_slow_guarded_motion": true,
+    "center_bounded_declared_horizontal_target": true,
+    "center_selection_is_planning_only_and_requires_fresh_insert": true,
+    "center_selection_observation_matches_actual_center_source": true,
+    "center_selection_index_and_offsets_match_frozen_list": true,
+    "center_selected_offset_matches_actual_source_to_target": true,
+    "center_all_predeclared_attempts_recorded_once_in_order": true,
+    "center_feasible_scores_reconstruct_from_recorded_margins": true,
+    "center_chosen_attempt_has_consistent_frozen_remainder": true,
+    "center_selected_index_maximizes_recorded_score_with_first_index_tie_break": true,
+    "center_checkpoint_target_matches_selected_stage": true,
+    "center_actual_endpoint_within_2mm": true,
+    "center_actual_executed_offset_tracks_selected_candidate_within_2mm": true,
+    "center_actual_xy_within_declared_xy_limits": true,
+    "center_runtime_distance_records_match_actual_tcp": true,
+    "center_runtime_endpoint_time_matches_actual_completion": true,
+    "center_actual_full_rotation_within_015rad_every_joint_step": true,
+    "center_actual_tcp_matches_joint_fk": true,
+    "insert_reported_policy_matches_frozen_config": true,
+    "insert_checkpoint_policy_matches_frozen_config": true,
+    "insert_finite_observation_target_orientation": true,
+    "insert_stage_name_matches_phase": true,
+    "insert_original_complete_rotation_target_preserved": true,
+    "insert_event_starts_at_actual_plan_observation": true,
+    "insert_strict_new_observation_after_previous_completed_stage": true,
+    "insert_planned_budget_finite_and_within_declared_xy_limits": true,
+    "insert_checkpoint_budget_matches_frozen_config": true,
+    "insert_planned_budget_matches_actual_prior_and_target": true,
+    "insert_checkpoint_source_matches_actual_state": true,
+    "insert_duration_is_slow_guarded_motion": true,
+    "insert_strictly_down_at_actual_xy": true,
+    "continuous_original_contact_guard_passed": true,
+    "single_original_guard_baseline_preserved": true,
+    "guard_started_with_initial_contact_plan_not_reset_at_stages": true,
+    "native_hand_height_trace_valid": true
+  },
+  "stages": [
+    {
+      "phase": "entry",
+      "observed_time_s": 42.79500000000344,
+      "actual_end_time_s": 54.54500000000344,
+      "planned_xy_distance_m": 0.0,
+      "actual_xy_distance_m": 5.036841481083172e-05,
+      "actual_cumulative_xy_m": 5.036841481083172e-05,
+      "actual_max_rotation_error_rad": 0.0005883221105590312,
+      "maximum_endpoint_fk_error_m": 6.233042740359761e-16
+    },
+    {
+      "phase": "center",
+      "observed_time_s": 54.54500000000945,
+      "actual_end_time_s": 58.565000000009455,
+      "planned_xy_distance_m": 0.05590169943749474,
+      "actual_xy_distance_m": 0.05583708729361993,
+      "actual_cumulative_xy_m": 0.05588745570843076,
+      "actual_max_rotation_error_rad": 0.0005137569740011839,
+      "maximum_endpoint_fk_error_m": 5.311115925541012e-16
+    }
+  ],
+  "incomplete_evidence": [
+    "No actual full-state frame at staged endpoint 64.59000000001151"
+  ],
+  "kind": "independent_lower_then_center_sequence",
+  "distance_scope": "Sum of actual staged endpoint XY displacements, not oscillatory path arc length.",
+  "independently_validated_frozen_config_xy_limits_m": {
+    "maximum_individual_xy_m": 0.07,
+    "maximum_cumulative_xy_m": 0.09
+  },
+  "independently_validated_frozen_config_center_contract": {
+    "adaptive": true,
+    "allowed_offsets_xy_m": [
+      [
+        -0.0165,
+        -0.0535
+      ],
+      [
+        -0.015,
+        -0.055
+      ],
+      [
+        -0.02,
+        -0.05
+      ],
+      [
+        -0.015,
+        -0.06
+      ],
+      [
+        -0.01,
+        -0.055
+      ],
+      [
+        -0.015,
+        -0.045
+      ],
+      [
+        -0.025,
+        -0.045
+      ],
+      [
+        -0.025,
+        -0.035
+      ]
+    ],
+    "expected_staged_policy": {
+      "planned_hand_clearance_m": 0.01,
+      "observed_required_hand_clearance_m": 0.005,
+      "low_rim_geometry": "spatial_loop_contact_envelope",
+      "low_phase_section_gate": "diagnostic_only",
+      "center_offset_xy_m": [
+        -0.0165,
+        -0.0535
+      ],
+      "maximum_rim_stretch_ratio": 1.01,
+      "entry_max_lateral_excursion_fraction_of_mouth_width": 1.0,
+      "entry_minimum_section_envelope_overlap_fraction": 0.0,
+      "maximum_individual_xy_m": 0.07,
+      "maximum_cumulative_xy_m": 0.09,
+      "maximum_original_rotation_error_rad": 0.015,
+      "maximum_previous_endpoint_error_m": 0.002,
+      "rigid_clearance_m": 0.008,
+      "left_robot_sweep_clearance_m": 0.005,
+      "maximum_joint_velocity_rad_s": 0.35,
+      "maximum_joint_acceleration_rad_s2": 0.5,
+      "minimum_downward_duration_s": 6.0,
+      "minimum_center_duration_s": 4.0,
+      "each_stage_requires_strictly_new_actual_observation": true,
+      "wall_contact_is_risk_not_success": true,
+      "physical_limits_unchanged": true,
+      "center_offsets_xy_m": [
+        [
+          -0.0165,
+          -0.0535
+        ],
+        [
+          -0.015,
+          -0.055
+        ],
+        [
+          -0.02,
+          -0.05
+        ],
+        [
+          -0.015,
+          -0.06
+        ],
+        [
+          -0.01,
+          -0.055
+        ],
+        [
+          -0.015,
+          -0.045
+        ],
+        [
+          -0.025,
+          -0.045
+        ],
+        [
+          -0.025,
+          -0.035
+        ]
+      ],
+      "center_selection_policy": "fresh_actual_center_then_frozen_remainder_preflight",
+      "center_selection_score": "minimum center/insert rigid surplus above 8mm and COM envelope surplus above 2mm",
+      "frozen_remainder_does_not_authorize_later_execution": true
+    }
+  },
+  "native_hand_height_audit": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "exact_three_native_reference_links": true,
+      "reference_vertices_match_recorded_hashes": true,
+      "reference_bounds_match_recorded_geometry": true,
+      "link7_reference_is_true_palm_subset_not_arm_link7": true,
+      "all_native_rows_finite_and_shapes_valid": true,
+      "stable_native_link_order": true,
+      "native_affine_homogeneous_rows_valid": true,
+      "native_affine_bodies_noninverted": true,
+      "all_hand_minima_reconstruct_from_native_affine_vertices": true,
+      "whole_hand_minimum_matches_three_components": true,
+      "reported_vertical_gaps_reconstruct": true,
+      "minimum_threshold_is_5mm": true,
+      "all_recorded_vertical_gaps_at_least_5mm": true,
+      "whole_bear_counts_and_max_vertex_indices_valid": true,
+      "covers_every_step_from_center_entry_through_insert_endpoint": true,
+      "strictly_increasing_consecutive_steps": true,
+      "timestamps_match_fixed_step": true,
+      "no_native_height_stop_reason": true,
+      "all_full_bear_frames_in_monitored_window_matched": true,
+      "full_frame_bear_maxima_and_argmax_reconstruct": true,
+      "failed_full_bear_frame_matches_height_row": true,
+      "saved_coupling_finger_transforms_match_height_trace": true
+    },
+    "limitations": [
+      "Hand minima are reconstructed for every trace row from saved reference vertices and native affine transforms.",
+      "Complete bear geometry exists only at saved frames/endpoints; intervening bear maxima are monitor summaries, not independently reconstructed shapes.",
+      "Recorded integration-state separation does not establish continuous-time clearance or final bag containment."
+    ],
+    "rows": 1480,
+    "start_time_s": 54.54500000000945,
+    "end_time_s": 61.940000000013235,
+    "minimum_gap_m": 0.014615824950735545,
+    "maximum_hand_reconstruction_error_m": 2.220446049250313e-16,
+    "full_bear_frame_crosschecks": 150,
+    "failed_full_bear_frame_crosschecked": true,
+    "bear_summary_only_rows_without_matching_full_frame": 1331,
+    "finger_transform_crosschecks": 300
+  },
+  "actual_cumulative_endpoint_displacement_m": 0.05588745570843076
+}

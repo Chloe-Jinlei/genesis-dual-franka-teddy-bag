@@ -1,0 +1,21 @@
+--- before/run.py
++++ after/run.py
+@@ -550,6 +550,9 @@
+             (self.out/"postlift_yaw_execution.json").write_text(json.dumps(_serial(execution),indent=2,allow_nan=False)+"\n")
+ 
+     def run_guarded_contact_trial(self):
++        recenter_enabled=self.config.get("task",{}).get("contact_trial",{}).get("recenter_enabled",True)
++        if type(recenter_enabled) is not bool:
++            raise GateFailure("contact_trial.recenter_enabled must be a boolean")
+         from contact_insertion import (plan_guarded_contact_trial,
+             reobserve_guarded_contact_trial,recenter_guarded_contact_trial)
+         if "postlift_yaw" in self.config.get("task",{}).get("contact_trial",{}):
+@@ -599,6 +602,8 @@
+             self.report["guarded_contact_reobservations"].append(fresh)
+             if fresh["status"]=="candidate":
+                 break
++            if not recenter_enabled:
++                raise GateFailure("Fresh contact insertion rejected and recentering is disabled; see "+filename)
+             if attempt==2:
+                 raise GateFailure("Fresh contact insertion remains rejected after two measured XY corrections")
+             correction=recenter_guarded_contact_trial(self.rest,self.frames[-1],self.config,choice,

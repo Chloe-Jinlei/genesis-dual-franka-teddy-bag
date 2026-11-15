@@ -1,0 +1,62 @@
+[38;5;226m[Genesis] [10:44:02] [WARNING] (MJCF) Approximating tendon by joint actuator for `finger_joint1`[0m
+[38;5;226m[Genesis] [10:44:02] [WARNING] (MJCF) Approximating tendon by joint actuator for `finger_joint2`[0m
+[38;5;226m[Genesis] [10:44:02] [WARNING] (MJCF) Approximating tendon by joint actuator for `finger_joint1`[0m
+[38;5;226m[Genesis] [10:44:02] [WARNING] (MJCF) Approximating tendon by joint actuator for `finger_joint2`[0m
+BUILD_START
+[38;5;226m[Genesis] [10:44:02] [WARNING] Neutral robot position (qpos0) exceeds joint limits.[0m
+[38;5;226m[Genesis] [10:44:02] [WARNING] Constraint solver time constant should be greater than 2*substep_dt. timeconst is changed from `0.005` to `0.01`). Decrease simulation timestep or increase timeconst to avoid altering the original value.[0m
+CUDA Backend Kernel Console Init Success!
+/home/chloe/Desktop/genesis-local/.venv/lib/python3.12/site-packages/quadrants/_test_tools/warnings_helper.py:11: UserWarning: cannot create weak reference to 'tuple' object. Template mapper caching disabled.
+  warnings.warn(message)
+BUILD_DONE
+{
+  "passed": true,
+  "checks": {
+    "native_built_and_twenty_steps_completed": true,
+    "native_body_2960_at_50": true,
+    "native_each_handle_352_at_250": true,
+    "no_fixed_soft_vertices": true,
+    "protected_attributes_unchanged": true,
+    "native_mu_same_after_advance": true,
+    "all_soft_states_finite": true,
+    "minimum_J_at_least_005": true,
+    "table_penetration_at_most_2mm": true,
+    "cloth_edge_stretch_at_most_115": true
+  },
+  "simulated_seconds": 0.1,
+  "wall_seconds": 11.496585784999752,
+  "native_region_values_n_per_m": {
+    "body": [
+      50.0
+    ],
+    "handle_front": [
+      250.0
+    ],
+    "handle_back": [
+      250.0
+    ]
+  },
+  "native_lambda_unique": [
+    2637.3626373626375
+  ],
+  "native_thickness_radius_unique_m": [
+    0.0003
+  ],
+  "native_bending_unique_nm": [
+    5e-05
+  ],
+  "fixed_soft_vertex_counts": {
+    "('cloth', 0, 0)": 0,
+    "('fem', 0, 1)": 0
+  },
+  "minimum_J": 0.8544702291749356,
+  "maximum_table_penetration_m": 0.0,
+  "maximum_cloth_edge_stretch_ratio": 1.0095519978890117,
+  "source_sha256": {
+    "physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "config_guarded_webbing_alignment_trial.json": "805b32557e46e973ffd2d8701c7c4bb23225ad428fbcb86f8e5877f5def846d0",
+    "runs/two_panel_full_16/initial.npz": "cce897cf0ddc3ae585d004f529ea080a9a94641bf7714c281bdb2ff1fb08a423"
+  },
+  "scope": "Complete native scene with saved correct initial robot pose, then 0.1 s physical integration. No full task, grasp transfer, insertion or calibrated material claim."
+}

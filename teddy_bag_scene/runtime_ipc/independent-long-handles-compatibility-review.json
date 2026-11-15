@@ -1,0 +1,279 @@
+{
+  "kind": "independent_long_handles_geometry_and_runtime_compatibility_review",
+  "status": "geometry_and_generic_runtime_contract_passed_native_pending",
+  "physical_success": false,
+  "native_execution_performed": false,
+  "checks": {
+    "body_identical": true,
+    "body_face_indices_identical": true,
+    "panel_front_grid_identical": true,
+    "panel_back_grid_identical": true,
+    "panel_front_identical": true,
+    "panel_back_identical": true,
+    "panel_front_face_indices_identical": true,
+    "panel_back_face_indices_identical": true,
+    "u_seam_identical": true,
+    "bottom_seam_identical": true,
+    "seam_left_identical": true,
+    "seam_right_identical": true,
+    "rim_identical": true,
+    "material_x_identical": true,
+    "material_height_identical": true,
+    "body_points_bit_identical": true,
+    "body_faces_and_orientation_bit_identical": true,
+    "body_uv_bit_identical": true,
+    "bottom_zero_yz_width": true,
+    "front_back_share_all_three_U_edges": true,
+    "body_two_handles_disjoint_complete": true,
+    "handle_front_root_left_exact": true,
+    "handle_front_root_right_exact": true,
+    "front_grasp_material_patch_translated_140mm_only": true,
+    "front_length_added_280mm": true,
+    "handle_back_root_left_exact": true,
+    "handle_back_root_right_exact": true,
+    "back_grasp_material_patch_translated_140mm_only": true,
+    "back_length_added_280mm": true,
+    "obj_npz_physical_topology_identical": true,
+    "obj_npz_points_agree_with_export_precision": true,
+    "obj_npz_uv_agree_with_export_precision": true,
+    "connected_oriented_nondegenerate_shell_three_loops": true,
+    "only_explicit_asset_height_yaw_config_changes": true,
+    "all_materials_physical_and_gravity_gates_unchanged": true,
+    "runner_exact_approved_serialization_only_version": true,
+    "all_reviewed_source_config_assets_unchanged": true
+  },
+  "failed_checks": [],
+  "input_sha256": {
+    "run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "gravity_release.py": "d88f4a7cd34853fb8f07eb34d42e137007cd553f69ddc920a0856a0710c96dee",
+    "contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "two_panel_builder.py": "0b52fd1d978b8fb9817a6c932e39ab2e316f697144e367d7e7b511562d30f801",
+    "build_long_handle_bag.py": "f8b3f144bc849d499ceb24f8c8e9121a2c98f10154bae6941234de17dc4de58d",
+    "config_gravity_seating_trial.json": "a07e36055578a5aeb7bd27262112a6dbbdf88c0db41ecc8a7c578113bf33a861",
+    "config_long_handles_gravity_trial.json": "c8a3a0c01b1cc107cbf3f9317b0cd9d5b956dde21c7e4d9fa28cb9c950fc40c4",
+    "assets/two_panel_bag_wide_tall_coarse.obj": "a047869313d6c5469640724eb84a412c67f71d2d0d07eb492c67880c39cff280",
+    "assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "assets/metadata_two_panel_wide_tall_coarse.json": "717b85a19fff38ea75a0f10f8721fbce48d6c011958de8a3b6b246d7dcb0217a",
+    "assets/two_panel_bag_wide_tall_long_handles_coarse.obj": "41b36b030aa3be6947112a39643f519906dc74459f87838ccac8ade1efb9e8f7",
+    "assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "assets/metadata_two_panel_wide_tall_long_handles_coarse.json": "a2bf8c594b888c9189216a952bb05673fb0f20b505e74d331f2461e5fc969c18"
+  },
+  "configuration_changes": [
+    {
+      "path": "/bag/mesh",
+      "old": "two_panel_bag_wide_tall_coarse.obj",
+      "new": "two_panel_bag_wide_tall_long_handles_coarse.obj"
+    },
+    {
+      "path": "/bag/metadata",
+      "old": "metadata_two_panel_wide_tall_coarse.json",
+      "new": "metadata_two_panel_wide_tall_long_handles_coarse.json"
+    },
+    {
+      "path": "/bag/npz_file",
+      "old": "two_panel_bag_wide_tall_coarse.npz",
+      "new": "two_panel_bag_wide_tall_long_handles_coarse.npz"
+    },
+    {
+      "path": "/task/contact_trial/postlift_yaw/world_z_degrees",
+      "old": -30.0,
+      "new": 15.0
+    },
+    {
+      "path": "/task/open_targets/left",
+      "old": [
+        -0.18409751840950164,
+        -0.13,
+        1.26
+      ],
+      "new": [
+        -0.18409751840950164,
+        -0.13,
+        1.4
+      ]
+    },
+    {
+      "path": "/task/open_targets/right",
+      "old": [
+        -0.07590248159049842,
+        0.13,
+        1.26
+      ],
+      "new": [
+        -0.07590248159049842,
+        0.13,
+        1.4
+      ]
+    }
+  ],
+  "topology": {
+    "vertices": 2148,
+    "faces": 4112,
+    "components": 1,
+    "nonmanifold_edges": 0,
+    "boundary_loops": 3,
+    "boundary_degree_two": true,
+    "consistent_winding": true,
+    "minimum_triangle_area_m2": 2.080949644911527e-05,
+    "area_m2": 0.40026548154897634
+  },
+  "old_topology": {
+    "vertices": 1896,
+    "faces": 3664,
+    "components": 1,
+    "nonmanifold_edges": 0,
+    "boundary_loops": 3,
+    "boundary_degree_two": true,
+    "consistent_winding": true,
+    "minimum_triangle_area_m2": 2.0809496449115273e-05,
+    "area_m2": 0.38626549069202165
+  },
+  "body": {
+    "nominal_flat_width_m": 0.46,
+    "nominal_flat_height_m": 0.4,
+    "rim_nodes": 74,
+    "body_nodes": 1518,
+    "body_faces": 2960,
+    "area_m2": 0.3652458873433292,
+    "zero_bottom_panel_area": true
+  },
+  "regions": {
+    "body": {
+      "face_count": 2960,
+      "area_m2": 0.3652458873433292
+    },
+    "handle_front": {
+      "face_count": 576,
+      "area_m2": 0.017509797102823577
+    },
+    "handle_back": {
+      "face_count": 576,
+      "area_m2": 0.017509797102823573
+    }
+  },
+  "handles": {
+    "front": {
+      "centerline_samples": 37,
+      "centerline_present_in_actual_mesh_max_error_m": 1.3877787807814457e-17,
+      "centerline_length_m": 0.7047729530732276,
+      "old_centerline_length_m": 0.42477295307322754,
+      "added_length_m": 0.2800000000000001,
+      "centerline_bounds_m": [
+        [
+          -0.10819503681900322,
+          -0.085,
+          0.38906887100948034
+        ],
+        [
+          0.10819503681900322,
+          -0.05783174216441526,
+          0.6772639078284836
+        ]
+      ],
+      "surface_bounds_m": [
+        [
+          -0.12069503681900323,
+          -0.085,
+          0.3883037446668292
+        ],
+        [
+          0.12069503681900323,
+          -0.05501804991397063,
+          0.6897639078284836
+        ]
+      ],
+      "grasp_patch_size": 9,
+      "grasp_local_mean_m": [
+        -0.05409751840950164,
+        -0.0770426015129818,
+        0.6627685214581297
+      ],
+      "old_grasp_local_mean_m": [
+        -0.05409751840950164,
+        -0.0770426015129818,
+        0.5227685214581298
+      ]
+    },
+    "back": {
+      "centerline_samples": 37,
+      "centerline_present_in_actual_mesh_max_error_m": 1.3877787807814457e-17,
+      "centerline_length_m": 0.7047729530732276,
+      "old_centerline_length_m": 0.42477295307322754,
+      "added_length_m": 0.2800000000000001,
+      "centerline_bounds_m": [
+        [
+          -0.10819503681900322,
+          0.05783174216441526,
+          0.38906887100948034
+        ],
+        [
+          0.10819503681900322,
+          0.085,
+          0.6772639078284836
+        ]
+      ],
+      "surface_bounds_m": [
+        [
+          -0.12069503681900323,
+          0.05501804991397063,
+          0.3883037446668292
+        ],
+        [
+          0.12069503681900323,
+          0.085,
+          0.6897639078284836
+        ]
+      ],
+      "grasp_patch_size": 9,
+      "grasp_local_mean_m": [
+        0.05409751840950159,
+        0.0770426015129818,
+        0.6627685214581297
+      ],
+      "old_grasp_local_mean_m": [
+        0.05409751840950159,
+        0.0770426015129818,
+        0.5227685214581298
+      ]
+    }
+  },
+  "mass": {
+    "old_area_m2": 0.38626549069202165,
+    "new_area_m2": 0.40026548154897634,
+    "added_area_m2": 0.013999990856954692,
+    "rho_kg_m3": 500.0,
+    "IPC_thickness_radius_m": 0.0003,
+    "physical_thickness_m": 0.0006,
+    "areal_density_kg_m2": 0.3,
+    "old_bag_mass_kg": 0.11587964720760649,
+    "new_bag_mass_kg": 0.1200796444646929,
+    "added_mass_kg": 0.004199997257086405,
+    "relative_increase": 0.036244477423734434,
+    "added_weight_N": 0.04120197309201763,
+    "native_mass_readback_pending": true,
+    "metadata_suggested_density_kg_m2": 0.24,
+    "metadata_estimate_kg": 0.09606371557175432
+  },
+  "source_contract_notes": [
+    "run.py uses config asset paths and declared grasp groups; pre-native initial IK follows the real new grasp patches. Native named material mapping is positional, not tied to historical vertex counts.",
+    "physics_config.py maps body and both handle faces by a unique source/native geometry bijection; new count is allowed but mismatch or missing partition fails closed.",
+    "validate.py uses labeled body/rim from selected NPZ; handle maximum Z does not replace mouth height. Rest area and mass use actual geometry with 2*IPC radius.",
+    "run.py configured spread targets become1.40m; existing fixed right_clear_handle remains[.12,.20,1.32]. This downward retreat needs its existing rigid preflight and actual new-cloth handoff verification.",
+    "handoff ends after release/clear and10s native hold, before teddy grasp; original scope-specific physical, left material18mm/pose15mm, and right actual opening.038m gates remain.",
+    "General input-manifest/guarded/yaw/gravity auditors use config/rest shapes, not old cloth count or1.26m. Historical independent_handoff_final_audit.py and startup scripts intentionally bind old run/config/hash and require a new explicitly bound entry for this probe.",
+    "run.py snapshots selected OBJ/MTL/NPZ/metadata and two_panel_builder.py. New build_long_handle_bag.py is not on its fixed source list; preserve its exact source separately with launch provenance if desired without changing runtime.",
+    "Inherited metadata.bear is historical unscaled asset information, not the current s85 physical asset. Runtime reads config.bear/rest; current reference mass/tets must be read from actual build."
+  ],
+  "physical_limits": [
+    "Only handle cloth grows; the identical body has no additional volume, mouth perimeter or flat-panel area. Higher grasp targets plus equally longer straps do not guarantee a higher actual mouth or bag bottom.",
+    "Each handle material length grows0.28m (~66%); gravitational sag, free-loop location, twisting and contact with robot/bear can change despite small total bag mass increase. Longer straps do not establish a clear insertion corridor.",
+    "Added material weight is ~0.0412N; original force budgets remain unchanged and must use actual reactions. Native body50/handle250N/m shear and mass must be read back after initialization.",
+    "Initial tabletop clearance and two-panel topology do not certify full triangle-triangle self-embedding or later dynamic clearance. The proposed handoff probe must preserve original J/stretch/table/hold gates and inspect actual settled rim/handles before any full insertion.",
+    "This review performs no IK replanning, native integration, continuous soft collision proof, or full-task success claim."
+  ]
+}

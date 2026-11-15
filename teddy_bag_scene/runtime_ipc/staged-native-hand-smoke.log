@@ -1,0 +1,342 @@
+[38;5;226m[Genesis] [02:53:37] [WARNING] (MJCF) Approximating tendon by joint actuator for `finger_joint1`[0m
+[38;5;226m[Genesis] [02:53:37] [WARNING] (MJCF) Approximating tendon by joint actuator for `finger_joint2`[0m
+[38;5;226m[Genesis] [02:53:37] [WARNING] (MJCF) Approximating tendon by joint actuator for `finger_joint1`[0m
+[38;5;226m[Genesis] [02:53:37] [WARNING] (MJCF) Approximating tendon by joint actuator for `finger_joint2`[0m
+BUILD_START
+[38;5;226m[Genesis] [02:53:38] [WARNING] Neutral robot position (qpos0) exceeds joint limits.[0m
+[38;5;226m[Genesis] [02:53:38] [WARNING] Constraint solver time constant should be greater than 2*substep_dt. timeconst is changed from `0.005` to `0.01`). Decrease simulation timestep or increase timeconst to avoid altering the original value.[0m
+CUDA Backend Kernel Console Init Success!
+/home/chloe/Desktop/genesis-local/.venv/lib/python3.12/site-packages/quadrants/_test_tools/warnings_helper.py:11: UserWarning: cannot create weak reference to 'tuple' object. Template mapper caching disabled.
+  warnings.warn(message)
+BUILD_DONE
+{
+  "kind": "one_step_native_hand_mapping_regression",
+  "passed": true,
+  "checks": {
+    "constructor_and_completed_step_sample_succeeded": true,
+    "palm_is_strict_subset_of_link7": true,
+    "all_palm_points_match_native": true,
+    "smoke_native_vs_measured_fk_below_1mm": true,
+    "full12_palm_geometry_matches_mujoco_below_1um": true,
+    "full12_link7_lower_point_is_excluded": true
+  },
+  "monitor": {
+    "kind": "native_left_distal_hand_height_monitor",
+    "minimum_gap_m": 0.005,
+    "model": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/panda_tactile.xml",
+      "sha256": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+      "tcp_in_link7_m": [
+        0.0,
+        0.0,
+        0.2099
+      ],
+      "hand_position_in_link7_m": [
+        0.0,
+        0.0,
+        0.107
+      ]
+    },
+    "cached_reference_geometry": [
+      {
+        "link": "link7",
+        "coupling_index": 13,
+        "vertices": 102,
+        "selection": {
+          "collision_body": "hand",
+          "source_geom_indices": [
+            17
+          ],
+          "merge_target": "link7",
+          "native_subset_max_error_m": 0.0,
+          "native_slot_vertex_count": 204,
+          "native_subset_vertex_indices": [
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203
+          ]
+        },
+        "local_bounds_m": [
+          [
+            -0.08177107210649494,
+            -0.08186007750146794,
+            0.08107519874468838
+          ],
+          [
+            0.08327058533257001,
+            0.083233952204092,
+            0.17296215114326624
+          ]
+        ],
+        "local_vertices_sha256": "c9f16befac248976d723de692c7a9403e4ae872eb3ae178ca95a0af3a9d86578"
+      },
+      {
+        "link": "left_finger",
+        "coupling_index": 14,
+        "vertices": 89,
+        "selection": {
+          "collision_body": "left_finger",
+          "native_slot_vertex_count": 89
+        },
+        "local_bounds_m": [
+          [
+            -0.010500999782309221,
+            0.0,
+            0.00013299951330074736
+          ],
+          [
+            0.010502000384087575,
+            0.026344999744785675,
+            0.05385800025231669
+          ]
+        ],
+        "local_vertices_sha256": "e01acccb581130e631180c64db2266a6db018dc66b4f3151658809f363c6773b"
+      },
+      {
+        "link": "right_finger",
+        "coupling_index": 15,
+        "vertices": 89,
+        "selection": {
+          "collision_body": "right_finger",
+          "native_slot_vertex_count": 89
+        },
+        "local_bounds_m": [
+          [
+            -0.010500999782309221,
+            0.0,
+            0.00013299951330074736
+          ],
+          [
+            0.010502000384087575,
+            0.026344999744785675,
+            0.05385800025231669
+          ]
+        ],
+        "local_vertices_sha256": "e01acccb581130e631180c64db2266a6db018dc66b4f3151658809f363c6773b"
+      }
+    ],
+    "bear_vertex_count": 1450,
+    "native_transform_source": "IPCCouplingData.ipc_transforms populated by AffineBodyStateAccessorFeature after completed IPC advance",
+    "vertex_source": "Verified native vertex subset for the fixed hand alone inside link7; all native vertices for each finger. Arm link7 geometry is excluded.",
+    "native_affine_preserved": true,
+    "modifies_state_or_forces": false,
+    "scope": "Separation of complete teddy below the left distal hand only; other arm links, rigid robot paths, cloth passage and grip need their existing guards.",
+    "limitations": [
+      "Recorded integration states only; no independent continuous-time guarantee between samples.",
+      "Requires reference_geometry() to be saved with the trace for independent per-row reconstruction.",
+      "A valid height gap does not establish teddy containment or successful cloth passage."
+    ]
+  },
+  "sample": {
+    "time_s": 0.005,
+    "physics_step": 1,
+    "left_link_names": [
+      "link7",
+      "left_finger",
+      "right_finger"
+    ],
+    "left_distal_ipc_transforms": [
+      [
+        [
+          0.5792259721771316,
+          -0.579225895211653,
+          0.573580539655693,
+          -0.2503945553822329
+        ],
+        [
+          -0.708981711488982,
+          -0.705216616144693,
+          0.0038022477013930733,
+          -0.08579809358319154
+        ],
+        [
+          0.40229616693377884,
+          -0.4088604733031648,
+          -0.8191403466077722,
+          1.4512014703603415
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          0.8191775277066489,
+          -0.001992052545197821,
+          0.573536061227217,
+          -0.1554981021485645
+        ],
+        [
+          -0.0029472223335221264,
+          -0.9999904706602244,
+          0.000734181336024623,
+          -0.08628728572451928
+        ],
+        [
+          0.5735324595458725,
+          -0.002293127487100269,
+          -0.8191789294102173,
+          1.3156812072471933
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          -0.8191784287127014,
+          -0.002011122344328519,
+          0.5735347071824591,
+          -0.1554977839915618
+        ],
+        [
+          0.002361535302639129,
+          0.9999686178079753,
+          0.006881463171216931,
+          -0.08405095082086635
+        ],
+        [
+          -0.5735338757540909,
+          0.0069901661551912235,
+          -0.8191512892536169,
+          1.315691610210967
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    ],
+    "left_link_minimum_z_m": [
+      1.3008201698763944,
+      1.2673644736799536,
+      1.2674015539366155
+    ],
+    "left_distal_minimum_z_m": 1.2673644736799536,
+    "bear_vertex_count": 1450,
+    "bear_maximum_z_m": 0.8428971724963837,
+    "highest_bear_vertex_index": 334,
+    "vertical_gap_m": 0.4244673011835699,
+    "minimum_gap_m": 0.005,
+    "scope": "Current native IPC affine collision surfaces versus all current bear vertices",
+    "stop_reason": null
+  },
+  "sample_stop_reason": null,
+  "initial_native_entire_link7_minimum_z_m": 1.3008201698763944,
+  "initial_actual_q_hand_minimum_z_m": 1.2673685747501364,
+  "full12_pose_replay": {
+    "palm_minimum_z_m": 1.2368930789444788,
+    "arm_link7_minimum_z_m": 1.2261190039949983,
+    "cached_native_palm_at_measured_q_minimum_z_m": 1.2368930789444785
+  },
+  "source_sha256": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+  "wall_seconds": 9.267040026003087,
+  "scope": "One native integration step plus saved-pose CPU geometry replay; no insertion or material calibration."
+}

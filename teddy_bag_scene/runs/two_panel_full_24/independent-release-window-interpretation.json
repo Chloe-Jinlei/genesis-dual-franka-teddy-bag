@@ -1,0 +1,133 @@
+{
+  "scope": "Interpretation of the bounded full24 actual observation window; no production change, new motion plan or native simulation.",
+  "physical_success": false,
+  "geometry_report": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/independent-release-window-containment-review.json",
+  "geometry_report_sha256": "5491e765fc080d02cfab5a653c69dafe3a08938f5a3789832c1a12ce6b9c32b7",
+  "decision": "A planned zero-velocity stop near TCP1.085m followed by fresh intentional-release gating is a reasonable bounded new control experiment; current data does not establish it will seat the bear or retain it after release. TCP1.10\u20131.11m is unsupported by the proposed existing-cap COMinside condition in this run.",
+  "proposed_stop_is_root_supplied_hypothesis_m": 1.085,
+  "actual_evidence_table": [
+    {
+      "time_s": 42.46500000000327,
+      "source": "states.npz",
+      "actual_saved_TCP_z_m": 1.110820881479422,
+      "node_inside_fraction_not_volume": 0.19448275862068964,
+      "original_cap_COM_inside": false,
+      "right_finger_opening_reactions_N": [
+        3.1440137456786963,
+        2.7342710339242924
+      ],
+      "torque_Nm": 0.111082385083545
+    },
+    {
+      "time_s": 42.5150000000033,
+      "source": "states.npz",
+      "actual_saved_TCP_z_m": 1.1047015534699736,
+      "node_inside_fraction_not_volume": 0.22344827586206897,
+      "original_cap_COM_inside": false,
+      "right_finger_opening_reactions_N": [
+        3.439986388491536,
+        2.9284314210698468
+      ],
+      "torque_Nm": 0.10502559437916587
+    },
+    {
+      "time_s": 42.56500000000332,
+      "source": "states.npz",
+      "actual_saved_TCP_z_m": 1.0985811885753205,
+      "node_inside_fraction_not_volume": 0.32689655172413795,
+      "original_cap_COM_inside": false,
+      "right_finger_opening_reactions_N": [
+        4.1028138438567865,
+        2.6972898265701897
+      ],
+      "torque_Nm": 0.08275094716142511
+    },
+    {
+      "time_s": 42.61500000000335,
+      "source": "states.npz",
+      "actual_saved_TCP_z_m": 1.0924963095452507,
+      "node_inside_fraction_not_volume": 0.4303448275862069,
+      "original_cap_COM_inside": false,
+      "right_finger_opening_reactions_N": [
+        3.4182626345260285,
+        2.4878099934128257
+      ],
+      "torque_Nm": 0.03154014657718572
+    },
+    {
+      "time_s": 42.665000000003374,
+      "source": "states.npz",
+      "actual_saved_TCP_z_m": 1.0864319696172606,
+      "node_inside_fraction_not_volume": 0.5151724137931034,
+      "original_cap_COM_inside": true,
+      "right_finger_opening_reactions_N": [
+        2.6619561683267787,
+        2.345151746526004
+      ],
+      "torque_Nm": 0.031580920438623435
+    },
+    {
+      "time_s": 42.7150000000034,
+      "source": "states.npz",
+      "actual_saved_TCP_z_m": 1.080419018320062,
+      "node_inside_fraction_not_volume": 0.5331034482758621,
+      "original_cap_COM_inside": true,
+      "right_finger_opening_reactions_N": [
+        2.634278550194547,
+        2.329524170707862
+      ],
+      "torque_Nm": 0.03779467188211786
+    },
+    {
+      "time_s": 42.765000000003425,
+      "source": "states.npz",
+      "actual_saved_TCP_z_m": 1.074547238668548,
+      "node_inside_fraction_not_volume": 0.5662068965517242,
+      "original_cap_COM_inside": true,
+      "right_finger_opening_reactions_N": [
+        1.087743593030741,
+        0.7088933894884564
+      ],
+      "torque_Nm": 0.013758554598292592
+    },
+    {
+      "time_s": 42.79500000000344,
+      "source": "failed_soft_state.npz",
+      "actual_saved_TCP_z_m": null,
+      "node_inside_fraction_not_volume": 0.5779310344827586,
+      "original_cap_COM_inside": true,
+      "right_finger_opening_reactions_N": [
+        0.4631731598175326,
+        0.036750549024876136
+      ],
+      "torque_Nm": 0.005974484590128462
+    }
+  ],
+  "first_COM_inside_bracket_s": [
+    42.615,
+    42.665
+  ],
+  "bracket_is_saved_frame_only": true,
+  "why_worth_testing": [
+    "Near1.086m the existing original cap reports COMinside and51.517%nodesinside while both opening reactions remain2.662/2.345N and minJ=.47764.",
+    "This separates an explicit intentional release from the actual uncommanded loss of one finger reaction at42.795.",
+    "A new shortened minimum-jerk segment can have a genuine zero-velocity endpoint; abruptly stopping the old moving segment would not have the same rate/acceleration contract."
+  ],
+  "critical_limits": [
+    "All COMs in the window are above the lowest rim: original mean-fan membership is not a cap-independent physical containment certificate. Mean/high caps agree for COM at42.665 but190node memberships differ.",
+    "At42.665,703nodes remain outside the original cap, principally head/ears, right arm and torso;8low-region left-ear points have zero winding. Point counts do not certify any whole tetrahedra or percentage volume.",
+    "Peer actual contact evidence shows ongoing body and free rear-handle/muzzle contact, material migration and rapid movement. Unloading the right gripper does not prove stable support by the bag.",
+    "The stopped experiment changes cloth/soft-body dynamics; a target chosen from moving-through data must be reobserved after stopping and may fail the release precondition.",
+    "The true failed-soft endpoint lacks measured robot q/TCP. Lastcomplete42.765and failed42.795remain separate."
+  ],
+  "reviewable_control_conditions": [
+    "Retain the original full-depth hypothetical capacity/route preflight and every original material/table/robot/force/torque gate; declare the new shorter executed endpoint separately.",
+    "Reach the shorter endpoint with the same continuous rate limits and zero endpoint velocity; preserve left-held handle and original right grasp requirements until an explicit release decision.",
+    "Use a fresh actual stopped observation, valid originalcap and finite exactCOM/node metrics; require the declared partial-release condition instead of automatically releasing on height or elapsedtime. Observe temporal motion rather than claiming a single partial-inside result demonstrates support.",
+    "If pre-release grip/contact/material gates fail, stop under the existing policy; do not relabel an involuntary lost grip as intentional release.",
+    "After a deliberate smooth release, gravity seating/withdrawal/retention still require native physics and unchanged final ALL-node plus COMcontainment and retention acceptance."
+  ],
+  "no_threshold_relaxation_or_production_edit": true,
+  "peer_contact_report": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/independent-late-contact-review/geometry-and-contact.json",
+  "peer_contact_report_sha256": "f4d738e5d46dfb930bfda582b03671b412700fa35a48a0d31f927328df884e38"
+}

@@ -1,0 +1,117 @@
+{
+  "kind": "new_initial_s51_teddy_asset_and_separate_config",
+  "status": "static_asset_checks_passed",
+  "physical_success": false,
+  "native_execution_performed": false,
+  "simulation_state_modified": false,
+  "scale_from_current_s85": 0.6,
+  "nominal_scale_from_original": 0.51,
+  "linear_size_reduction_fraction": 0.4,
+  "same_density_mass_ratio": 0.21599999999999997,
+  "checks": {
+    "exact_linear_scale_at_every_physical_vertex": true,
+    "physical_vertex_and_triangle_counts_preserved": true,
+    "physical_face_indices_and_winding_exact": true,
+    "UV_lines_exact": true,
+    "full_face_texture_index_tokens_exact": true,
+    "normals_exact": true,
+    "material_file_bytes_exact": true,
+    "closed_consistently_oriented_positive_volume": true,
+    "one_connected_teddy_surface": true,
+    "all_triangles_positive_area": true,
+    "bounds_scaled_without_translation": true,
+    "volume_cubic_scale": true,
+    "only_five_authorized_config_fields_changed": true,
+    "material_density_and_constitutive_parameters_unchanged": true,
+    "bag_and_all_trial_acceptance_policies_unchanged": true,
+    "scaled_tracking_radius_within_existing005_05_bound": true,
+    "force_exact_108N": true,
+    "all_existing_assets_sources_configs_unchanged": true
+  },
+  "passed": 18,
+  "total": 18,
+  "physical_surface_counts": {
+    "vertices": 946,
+    "triangles": 1888
+  },
+  "old_dimensions_xyz_m": [
+    0.20435150645,
+    0.27280517669500004,
+    0.08578170164047999
+  ],
+  "new_dimensions_xyz_m": [
+    0.12261090387000001,
+    0.16368310601699998,
+    0.051469020984287996
+  ],
+  "new_bounds_m": [
+    [
+      -0.061407558219,
+      -0.081875447022,
+      0.000113999081712
+    ],
+    [
+      0.061203345651,
+      0.08180765899499999,
+      0.051583020066
+    ]
+  ],
+  "old_enclosed_mesh_volume_m3": 0.001343994690918556,
+  "new_enclosed_mesh_volume_m3": 0.000290302853238408,
+  "unchanged_density_kg_m3": 100.0,
+  "old_rest_mesh_derived_mass_kg": 0.1343994690918556,
+  "new_rest_mesh_derived_mass_kg": 0.029030285323840797,
+  "actual_native_tetra_topology": "pending fresh native meshing; no old deformed tetra state reused",
+  "config_diff": [
+    {
+      "path": ".bear.maxvolume",
+      "old": 2.4564999999999997e-06,
+      "new": 5.306039999999998e-07
+    },
+    {
+      "path": ".bear.mesh",
+      "old": "bear_uniform_coarse_s85.obj",
+      "new": "bear_uniform_coarse_s51.obj"
+    },
+    {
+      "path": ".task.bear_finger_force_limit",
+      "old": 3.0,
+      "new": 1.08
+    },
+    {
+      "path": ".task.bear_grasp_local",
+      "old": [
+        0.068,
+        -0.011899999999999999,
+        0.028900000000000002
+      ],
+      "new": [
+        0.0408,
+        -0.007139999999999999,
+        0.01734
+      ]
+    },
+    {
+      "path": ".task.bear_grasp_tracking_radius_m",
+      "old": 0.0272,
+      "new": 0.016319999999999998
+    }
+  ],
+  "force_rationale": "3 N * 0.6^2 = 1.08 N per finger for approximate area-scaled pressure only; this does not establish stable friction grasp or safe deformation.",
+  "protected_existing_file_count": 136,
+  "hashes": {
+    "assets/bear_uniform_coarse_s85.obj": "6f86b3349d0d144148a60b3ab2c4ccbd0b42d38b907d8823e70557e1e620c7b6",
+    "assets/bear_uniform_coarse_s51.obj": "932a92ff1d497bd793390cb00c670440ec7e1f241858d04138b92b00eb017e12",
+    "assets/bear_uniform_coarse_s51.mtl": "f3a8a971b017025ea86cecd97cfdeb7e8693aea417e59cffa4786663a13bc18f",
+    "assets/bear_uniform_coarse_s51.json": "256c89465cf3c7e6893d2106ce75fc8e4fe2c99d51188461b52054fc581d6136",
+    "config_long_handles_centered_gravity_trial.json": "177af420224b1729cfe424fa62ce20ff95393f31443d7d922200dd276bd8731d",
+    "config_small_bear40_long_handles_trial.json": "2be492d560204446948e7a51cb8bbf848c1464be4d9db28a224367d383fcb2b3",
+    "scale_bear_asset.py": "a5ab305024338aaaaa1dfeb89a532492996fd392a015aed696d661fa52d26d45"
+  },
+  "limitations": [
+    "Only a new initial rest surface and corresponding configuration were created. No scaling of an existing dynamic state or hybrid geometry.",
+    "The scale is about the asset local origin, preserving world initial position; local grasp and tracking radius scale with it.",
+    "New native volume meshing, finite-force grasp, soft deformation, robot/cloth contacts and full containment remain unverified.",
+    "All material properties and physical/acceptance gates are unchanged; default and previous assets/configurations remain intact."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "status": "candidate",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "scope": "Exact full current adaptive config passed to current unchanged preparation helper on actual full18 lift/rest; no single-offset substitution or GPU.",
+  "config_sha256": "ce714fcbbf6cc5d72d2bf0686c3b98114e57d4bab6251f865b0e29ce04f8d38f",
+  "source_sha256": {
+    "contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4",
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89"
+  },
+  "wall_seconds": 184.91369862699958,
+  "config_diff_vs_full18": [
+    {
+      "path": "/task/contact_trial/center_offsets_xy_m",
+      "before": [
+        [
+          0.024,
+          0.02
+        ]
+      ],
+      "after": [
+        [
+          0.024,
+          0.02
+        ],
+        [
+          0.015,
+          0.02
+        ],
+        [
+          0.02,
+          0.02
+        ],
+        [
+          0.02,
+          0.015
+        ],
+        [
+          0.015,
+          0.015
+        ],
+        [
+          0.025,
+          0.01
+        ],
+        [
+          0.01,
+          0.02
+        ],
+        [
+          0.01,
+          0.025
+        ],
+        [
+          0.015,
+          0.025
+        ],
+        [
+          0.02,
+          0.025
+        ],
+        [
+          0.025,
+          0.015
+        ],
+        [
+          0.005,
+          0.025
+        ]
+      ]
+    },
+    {
+      "path": "/task/contact_trial/staged/center_offsets_xy_m",
+      "before": "<absent>",
+      "after": [
+        [
+          -0.0165,
+          -0.0535
+        ],
+        [
+          -0.015,
+          -0.055
+        ],
+        [
+          -0.02,
+          -0.05
+        ],
+        [
+          -0.015,
+          -0.06
+        ],
+        [
+          -0.01,
+          -0.055
+        ],
+        [
+          -0.015,
+          -0.045
+        ],
+        [
+          -0.025,
+          -0.045
+        ],
+        [
+          -0.025,
+          -0.035
+        ]
+      ]
+    }
+  ],
+  "only_initial_list_and_new_low_center_list_changed": true,
+  "all_preparation_policies_unchanged": true,
+  "initial_candidate_count": 12,
+  "low_center_candidate_count": 8,
+  "chosen_initial_offset_xy_m": [
+    0.015,
+    0.024999999999999994
+  ],
+  "rejections": [],
+  "robot_route_attempt_count": 4,
+  "accepted_stages": [
+    {
+      "stage": "height_at_current_xy",
+      "status": "clear",
+      "conservative_gap_lower_bound_m": 0.4260171411072662
+    },
+    {
+      "stage": "transport_y_at_current_x",
+      "status": "clear",
+      "conservative_gap_lower_bound_m": 0.4094619968439176
+    },
+    {
+      "stage": "translate_outside_mouth",
+      "status": "clear",
+      "conservative_gap_lower_bound_m": 0.007184678542620229
+    },
+    {
+      "stage": "insert_candidate",
+      "status": "clear",
+      "conservative_gap_lower_bound_m": 0.007184678542620229
+    }
+  ],
+  "actual_preparation_stages_are_height_Y_X_only": true,
+  "provisional_insert_release_withdraw_also_checked_by_helper": true,
+  "limitations": [
+    "The exact list is checked here; the low-center list is not used by initial preparation and requires its own fresh-state gate.",
+    "Candidate is a frozen route only, not physical passage, grasp retention, force/strain or final task success."
+  ]
+}

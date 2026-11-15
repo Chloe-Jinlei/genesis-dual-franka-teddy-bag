@@ -1,0 +1,185 @@
+{
+  "kind": "staged_contact_rim_geometry_layer_small_CPU_review",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "no_full12_full_section_repetition": true,
+  "source_modified": false,
+  "source_sha256_at_import": "e4fdfd701cdbe7d60924437a01bca37361b2b0f495557e2c69aced8609960a1e",
+  "source_sha256_at_finish": "e4fdfd701cdbe7d60924437a01bca37361b2b0f495557e2c69aced8609960a1e",
+  "tests": [
+    {
+      "name": "path entirely above rim rejects",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Declared entry path does not cross actual body-rim heights"
+      }
+    },
+    {
+      "name": "path entirely below rim rejects",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Declared entry path does not cross actual body-rim heights"
+      }
+    },
+    {
+      "name": "all relevant Z event slabs and XY endpoint union cover intermediate translation",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "source_height_range": [
+          0.10000000000000003,
+          0.8
+        ],
+        "slab_ranges": [
+          [
+            0.0,
+            0.25
+          ],
+          [
+            0.25,
+            0.75
+          ],
+          [
+            0.75,
+            1.0
+          ]
+        ],
+        "maximum_halfspace_residual_at_tested_intermediate_points": 3.469446951953614e-18,
+        "proof": "Every intermediate d_xy is a convex combination of endpoints; for each convex slab hull H, H+d_xy is contained in conv((H+d0_xy) union (H+d1_xy)). Source Z range [rim_min-max(dz),rim_max-min(dz)] includes every actual rim height at every time. Event-overlapping slabs use closed intervals, conservatively covering event endpoints."
+      }
+    },
+    {
+      "name": "entry explicit 1.0/0.0 planning gates and 1 percent rim budget",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "phase": "entry",
+        "passed_lateral": 1.0,
+        "passed_overlap": 0.0,
+        "passed_perimeter_m": 0.808,
+        "physical_inputs_and_base_policy_unchanged": true
+      }
+    },
+    {
+      "name": "center explicit 1.0/0.0 planning gates and 1 percent rim budget",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "phase": "center",
+        "passed_lateral": 1.0,
+        "passed_overlap": 0.0,
+        "passed_perimeter_m": 0.808,
+        "physical_inputs_and_base_policy_unchanged": true
+      }
+    },
+    {
+      "name": "insert retains original 0.8/0.4 gates with declared 1 percent planning rim budget",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "phase": "insert",
+        "passed_lateral": 0.8,
+        "passed_overlap": 0.4,
+        "passed_perimeter_m": 0.808,
+        "physical_inputs_and_base_policy_unchanged": true
+      }
+    },
+    {
+      "name": "private helper NaN end Z must reject",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Invalid phase, finite translation or actual rim bounds for section review"
+      }
+    },
+    {
+      "name": "private helper NaN start Z must reject",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Invalid phase, finite translation or actual rim bounds for section review"
+      }
+    },
+    {
+      "name": "private helper NaN XY must reject",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Invalid phase, finite translation or actual rim bounds for section review"
+      }
+    },
+    {
+      "name": "private helper illegal phase must reject",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Invalid phase, finite translation or actual rim bounds for section review"
+      }
+    },
+    {
+      "name": "public invalid phase 'invalid' rejects",
+      "passed": true,
+      "evidence": [
+        "Staged phase must be entry, center or insert"
+      ]
+    },
+    {
+      "name": "public invalid phase None rejects",
+      "passed": true,
+      "evidence": [
+        "Staged phase must be entry, center or insert"
+      ]
+    },
+    {
+      "name": "public invalid phase 42 rejects",
+      "passed": true,
+      "evidence": [
+        "Staged phase must be entry, center or insert"
+      ]
+    },
+    {
+      "name": "policy maximum_rim_stretch_ratio=nan rejects",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Invalid bounded staged contact engineering policy"
+      }
+    },
+    {
+      "name": "policy hand_clearance_m=nan rejects",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Invalid bounded staged contact engineering policy"
+      }
+    },
+    {
+      "name": "policy maximum_rim_stretch_ratio=1.010001 rejects",
+      "passed": true,
+      "evidence": {
+        "passed": true,
+        "rejection_type": "ValueError",
+        "rejection": "Invalid bounded staged contact engineering policy"
+      }
+    }
+  ],
+  "passed_count": 16,
+  "test_count": 16,
+  "mathematical_conclusion": "For finite valid arguments and valid phase, source-Z event filtering plus convex union of each slab XY hull at both translations encloses the frozen section at every actual rim height and every segment time; it may overestimate because it ignores height/time correlation.",
+  "perimeter_semantics": "1.01 changes only a copied planning allowance; no soft geometry, material constant or runtime physical threshold is modified. Final insert retains base .8 lateral/.4 overlap when configured as here.",
+  "limitations": [
+    "Private helper input validation findings are not proof that the public planner returns executable candidates: public phase and state checks plus downstream finite displacement sweep can still reject.",
+    "This review does not certify deformable passage, side-wall topology, continuous FK tracking or physical success."
+  ],
+  "generating_script": "/tmp/staged_contact_geometry_review.py"
+}

@@ -1,0 +1,63 @@
+{
+  "status": "failed",
+  "passed": false,
+  "rows": 3244,
+  "start_time_s": 16.885000000000925,
+  "end_time_s": 33.09999999999848,
+  "checks": {
+    "all_required_raw_values_finite": true,
+    "strictly_increasing_consecutive_steps": true,
+    "timestamps_match_fixed_integration_step": true,
+    "covers_every_step_from_guard_entry_to_run_end": true,
+    "last_time_matches_report": true,
+    "right_hold_flag_agrees_with_release_event": true,
+    "summed_raw_link_force_matches_net_force": true,
+    "stored_force_norms_match_raw_vectors": true,
+    "stored_torque_norms_match_raw_vectors": true,
+    "stored_finger_norms_match_raw_vectors": true,
+    "baseline_differences_are_only_recorded_subtractions": true,
+    "raw_net_force_below_limit": true,
+    "raw_tcp_torque_below_limit": false,
+    "raw_each_right_finger_force_below_limit": true,
+    "left_both_soft_opening_reactions_above_minimum": true,
+    "right_both_soft_opening_reactions_above_minimum_until_release": true,
+    "designated_left_material_within_18mm": true,
+    "right_teddy_vertex_within_45mm_until_release": true,
+    "no_recorded_stop_reason": false
+  },
+  "first_physical_violation": {
+    "time_s": 33.09999999999848,
+    "reasons": [
+      "raw TCP torque"
+    ]
+  },
+  "raw_limits": {
+    "max_net_force_n": 8.0,
+    "max_tcp_torque_nm": 0.15,
+    "max_finger_force_n": 8.0,
+    "minimum_left_opening_reaction_n": 0.1
+  },
+  "maximum_net_force_n": 2.409624125516034,
+  "maximum_tcp_torque_nm": 0.15113149282813249,
+  "maximum_right_finger_force_n": [
+    4.353451704075771,
+    4.908233625267559
+  ],
+  "minimum_right_opening_reaction_until_release_n": [
+    3.637415206373938,
+    3.76671396215289
+  ],
+  "minimum_left_opening_reaction_n": [
+    8.794543093974825,
+    8.925216590105872
+  ],
+  "maximum_designated_left_material_distance_m": 0.0003393310385406485,
+  "maximum_right_nearest_material_distance_until_release_m": 0.008625150532653735,
+  "maximum_saved_baseline_subtraction_error": 0.0,
+  "scope": "IPC soft-coupling STC feedback; excludes native Genesis rigid-contact force",
+  "limitations": [
+    "Positive finger-axis projections plus material proximity are grip evidence, not force-closure proof.",
+    "Link origin positions and aim axes are not present in every-step trace, so torque-reference shifting and opening projections cannot be independently reconstructed from these rows.",
+    "Raw engineering force and moment limits are uncalibrated; baseline subtraction never waives them."
+  ]
+}

@@ -1,0 +1,237 @@
+--- runtime_ipc/rim-policy-before-contact_insertion.py
++++ contact_insertion.py
+@@ -81,6 +81,11 @@
+     strategy=settings.get("transport_xy_strategy","direct")
+     if strategy not in ("direct","y_then_x"):
+         raise ValueError("transport_xy_strategy must be direct or y_then_x")
++    rim_policy=settings.get("rim_perimeter_policy","fixed_mouth_union")
++    if type(rim_policy) is not str or rim_policy not in ("fixed_mouth_union","deformable_rim_contact"):
++        raise ValueError("rim_perimeter_policy must be fixed_mouth_union or deformable_rim_contact")
++    if rim_policy=="deformable_rim_contact" and settings.get("insertion_strategy","vertical")!="vertical":
++        raise ValueError("deformable_rim_contact requires insertion_strategy vertical")
+     soft_gap=float(settings.get("left_robot_soft_sweep_clearance_m",.005))
+     if not np.isfinite(soft_gap) or not .005<=soft_gap<=.03:
+         raise ValueError("Declared teddy/left-robot sweep margin must be finite and in [0.005,0.03] m")
+@@ -90,6 +95,9 @@
+         minimum_section_envelope_overlap_fraction=overlap,
+         maximum_initial_com_offset_m=initial_radius,
+         transport_xy_strategy=strategy,
++        rim_perimeter_policy=rim_policy,
++        rim_perimeter_criterion=("mouth_and_buffered_section_union" if rim_policy=="fixed_mouth_union"
++                                 else "buffered_section_only"),
+         rim_perimeter_clearance_m=.002, rigid_clearance_m=.008,
+         left_robot_soft_sweep_clearance_m=soft_gap,
+         minimum_insert_duration_s=6., minimum_tetra_volume_ratio=.05,
+@@ -270,6 +278,7 @@
+         # The square buffer conservatively contains a 2 mm circular buffer.
+         buffered=(hull[:,None,:]+padding[None,:,:]).reshape(-1,2)
+         union=convex_hull_metrics(np.vstack((polygon,buffered)))
++        section_only=convex_hull_metrics(buffered)
+         overlap=convex_polygon_overlap_area(hull,pretriangles=triangles)
+         ratio=min(1.,max(0.,float(overlap/env["area"])))
+         rows.append(dict(z_interval_m=[env["z_min"],env["z_max"]],
+@@ -278,18 +287,40 @@
+             maximum_outside_excursion_bound_m=outside,
+             interior_distance_grid_spacing_m=used_spacing,
+             entire_slab_interior_distance_bound=True,
+-            mouth_and_section_envelope_perimeter_m=union["perimeter"]))
++            mouth_and_section_envelope_perimeter_m=union["perimeter"],
++            buffered_section_envelope_perimeter_m=section_only["perimeter"]))
+     maximum_outside=max(r["maximum_outside_excursion_bound_m"] for r in rows)
+     minimum_overlap=min(r["opening_overlap_fraction"] for r in rows)
+     perimeter=max(r["mouth_and_section_envelope_perimeter_m"] for r in rows)
++    section_perimeter=max(r["buffered_section_envelope_perimeter_m"] for r in rows)
++    rim_policy=policy.get("rim_perimeter_policy","fixed_mouth_union")
++    if type(rim_policy) is not str or rim_policy not in ("fixed_mouth_union","deformable_rim_contact"):
++        raise ValueError("Invalid active rim perimeter policy")
++    active_perimeter=perimeter if rim_policy=="fixed_mouth_union" else section_perimeter
++    union_rejections=(["mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"]
++                      if perimeter>available else [])
+     reasons=[]
+     if maximum_outside>outside_limit: reasons.append("section lateral excursion exceeds declared fraction of actual opening minimum width")
+     if minimum_overlap<policy["minimum_section_envelope_overlap_fraction"]:
+         reasons.append(f"section slab overlap with actual opening below {100*policy['minimum_section_envelope_overlap_fraction']:g} percent")
+-    if perimeter>available: reasons.append("mouth-plus-section perimeter with clearance exceeds available nonstretch rim length")
++    if active_perimeter>available:
++        reasons.append("mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
++                       if rim_policy=="fixed_mouth_union" else
++                       "buffered-section perimeter with clearance exceeds available nonstretch rim length")
+     return dict(translation_xy_m=delta.tolist(),maximum_outside_excursion_bound_m=maximum_outside,
+         allowed_outside_excursion_m=outside_limit,minimum_section_slab_overlap_fraction=minimum_overlap,
+         maximum_required_enclosing_rim_perimeter_m=perimeter,
++        maximum_buffered_section_envelope_perimeter_m=section_perimeter,
++        active_rim_perimeter_policy=rim_policy,
++        active_rim_perimeter_criterion=("mouth_and_buffered_section_union" if rim_policy=="fixed_mouth_union"
++                                       else "buffered_section_only"),
++        active_required_enclosing_rim_perimeter_m=active_perimeter,
++        active_perimeter_margin_m=available-active_perimeter,
++        mouth_union_perimeter_rejections=union_rejections,
++        mouth_union_perimeter_is_diagnostic_only=rim_policy=="deformable_rim_contact",
++        rim_perimeter_scope="The legacy union metric retains all current mouth XY points. "
++            "The optional section-only criterion allows mouth rearrangement as a bounded contact preflight; "
++            "it does not establish cloth feasibility, collision freedom, or coupled passage of a nonplanar rim.",
+         section_perimeter_square_buffer_halfwidth_m=clearance,available_rim_perimeter_m=available,
+         interior_distance_initial_grid_spacing_m=spacing,
+         interior_distance_refined_grid_spacing_m=.001,
+@@ -299,6 +330,9 @@
+ 
+ def _plan(rest,state,config,selected=None,*,correction_offsets=None):
+     policy=_policy(config)
++    if selected is not None and (not isinstance(selected,dict) or not isinstance(selected.get("report"),dict)
++                                 or selected["report"].get("policy")!=policy):
++        raise ValueError("Do not change contact/physical policy within a fresh observation sequence")
+     report=dict(kind="guarded_contact_trial",physical_success=False,
+         runtime_execution_performed=False,policy=policy,geometry_guarantees=[
+             "Uses the ordered actual 3D body rim, not a fitted mouth plane.",
+--- runtime_ipc/rim-policy-before-audit_guarded_run.py
++++ runtime_ipc/audit_guarded_run.py
+@@ -192,6 +192,122 @@
+     except (TypeError,AttributeError,KeyError) as error:
+         result["error"]=type(error).__name__+": "+str(error)
+     result["scope"]="Config/record policy only. No successful motion, physical guard, or task completion follows from this check."
++    return result
++
++
++def audit_rim_perimeter_policy(run, report, config):
++    """Validate the frozen criterion and its reported arithmetic, without planning.
++
++    Exact reviewed function AST identities distinguish the new explicit policy
++    from the legacy union-only implementation. Frozen helper code is never run.
++    This checks provenance/criterion reporting, not cloth feasibility or contact.
++    """
++    result={"passed":False,"status":"failed","checks":{},"physical_success":False}
++    checks=result["checks"]
++    def check(name,value):checks[name]=bool(value)
++    def number(value):
++        if isinstance(value,(bool,np.bool_)) or not isinstance(value,(int,float,np.number)) or not np.isfinite(value):
++            raise ValueError("Rim policy report requires finite numeric values")
++        return float(value)
++    def close(a,b):return abs(number(a)-number(b))<=1e-10
++    try:
++        settings=config.get("task",{}).get("contact_trial",{})
++        mode=settings.get("rim_perimeter_policy","fixed_mouth_union")
++        if type(mode) is not str or mode not in ("fixed_mouth_union","deformable_rim_contact"):
++            raise ValueError("Invalid frozen rim_perimeter_policy")
++        if mode=="deformable_rim_contact" and settings.get("insertion_strategy","vertical")!="vertical":
++            raise ValueError("Opted deformable rim policy requires vertical insertion")
++        path=Path(run)/"source/contact_insertion.py";raw=path.read_bytes();tree=ast.parse(raw)
++        functions={n.name:n for n in tree.body if isinstance(n,ast.FunctionDef)}
++        digest=lambda n:hashlib.sha256(ast.dump(n,include_attributes=False).encode()).hexdigest()
++        policy_hash=digest(functions["_policy"]);evaluation_hash=digest(functions["_evaluate_offset"])
++        current=(policy_hash=="8e71d627e9028c339df73242972d589a15b0e46d9206148475dfd2c32d246ffa" and
++                 evaluation_hash=="b92b200f1910b617223e99e0ad4a769602f1a58a8d6ad07667c3df1609b0aaea")
++        legacy=(evaluation_hash=="d29c5c49e3532e1738c7e4b78fcd3b342aede8a1508f98504e2c0c428b4631f2" and
++                not any(isinstance(n,ast.Constant) and n.value=="rim_perimeter_policy" for n in ast.walk(functions["_policy"])))
++        if not current and not legacy:raise ValueError("Unreviewed frozen rim-policy function AST")
++        if legacy and mode!="fixed_mouth_union":raise ValueError("Legacy frozen helper cannot implement deformable_rim_contact")
++        criterion="mouth_and_buffered_section_union" if mode=="fixed_mouth_union" else "buffered_section_only"
++        dynamic={"bottom":number(settings.get("bottom_clearance_m",.03)),
++                 "lateral":number(settings.get("max_lateral_excursion_fraction_of_mouth_width",.25)),
++                 "overlap":number(settings.get("minimum_section_envelope_overlap_fraction",.50)),
++                 "initial_radius":number(settings.get("maximum_initial_com_offset_m",.03)),
++                 "strategy":settings.get("transport_xy_strategy","direct"),
++                 "soft_gap":number(settings.get("left_robot_soft_sweep_clearance_m",.005)),"rim_policy":mode}
++        if not (.01<=dynamic["bottom"]<=.05 and 0<=dynamic["lateral"]<=.80 and .40<=dynamic["overlap"]<=1 and
++                .03<=dynamic["initial_radius"]<=.06 and .005<=dynamic["soft_gap"]<=.03 and dynamic["strategy"] in ("direct","y_then_x")):
++            raise ValueError("Frozen contact policy values outside original declared bounds")
++        returned=[n for n in functions["_policy"].body if isinstance(n,ast.Return)]
++        if len(returned)!=1 or not isinstance(returned[0].value,ast.Call) or not isinstance(returned[0].value.func,ast.Name) or returned[0].value.func.id!="dict":
++            raise ValueError("Unknown frozen contact policy return structure")
++        expected_policy={}
++        for keyword in returned[0].value.keywords:
++            if keyword.arg=="rim_perimeter_criterion":value=criterion
++            elif isinstance(keyword.value,ast.Name):value=dynamic[keyword.value.id]
++            else:value=ast.literal_eval(keyword.value)
++            expected_policy[keyword.arg]=value
++        result.update(mode=mode,criterion=criterion,source_form="explicit_reviewed_policy" if current else "legacy_union_only",
++                      frozen_helper_sha256=hashlib.sha256(raw).hexdigest())
++        reports=[];candidate_records=[]
++        def walk(value):
++            if isinstance(value,dict):
++                if value.get("kind")=="guarded_contact_trial" and value.get("status")=="candidate":
++                    candidate_records.append(value)
++                if value.get("kind")=="guarded_contact_trial" and isinstance(value.get("policy"),dict):reports.append(value)
++                for child in value.values():walk(child)
++            elif isinstance(value,list):
++                for child in value:walk(child)
++        walk(report)
++        check("accepted_candidates_have_policy_report",all(isinstance(v.get("report"),dict) and
++              isinstance(v["report"].get("policy"),dict) for v in candidate_records))
++        check("accepted_candidates_do_not_carry_rejections",all(isinstance(v.get("report"),dict) and
++              v["report"].get("rejections")==[] and not v["report"].get("selected_sections",{}).get("section_guard_rejections",[]) for v in candidate_records))
++        record_count=evaluation_count=0
++        union_reason="mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
++        section_reason="buffered-section perimeter with clearance exceeds available nonstretch rim length"
++        for index,item in enumerate(reports):
++            prefix=f"report_{index}_";p=item["policy"];record_count+=1
++            check(prefix+"complete_policy_matches_frozen_config",p==expected_policy)
++            check(prefix+"physical_success_is_false",item.get("physical_success") is False)
++            check(prefix+"original_2mm_square_buffer",p.get("rim_perimeter_clearance_m")==.002)
++            if current:
++                check(prefix+"mode_and_criterion_match_frozen_config",p.get("rim_perimeter_policy")==mode and p.get("rim_perimeter_criterion")==criterion)
++            else:
++                check(prefix+"legacy_has_no_forged_new_criterion","rim_perimeter_policy" not in p and "rim_perimeter_criterion" not in p)
++            evaluations=list(item.get("centering_candidates",[]))
++            if isinstance(item.get("selected_sections"),dict):evaluations.append(item["selected_sections"])
++            for j,e in enumerate(evaluations):
++                key=prefix+f"evaluation_{j}_";evaluation_count+=1
++                union=number(e["maximum_required_enclosing_rim_perimeter_m"]);available=number(e["available_rim_perimeter_m"])
++                check(key+"positive_perimeter_lengths",union>0 and available>0)
++                check(key+"legacy_union_margin_preserved",close(e["perimeter_margin_m"],available-union))
++                check(key+"original_square_buffer",e["section_perimeter_square_buffer_halfwidth_m"]==.002)
++                reasons=e["section_guard_rejections"]
++                if not isinstance(reasons,list):raise ValueError("Invalid section rejection list")
++                if current:
++                    buffered=number(e["maximum_buffered_section_envelope_perimeter_m"])
++                    check(key+"union_encloses_positive_buffered_section",buffered>0 and union+1e-10>=buffered)
++                    active=union if mode=="fixed_mouth_union" else buffered
++                    check(key+"active_metadata_matches_frozen_config",e["active_rim_perimeter_policy"]==mode and e["active_rim_perimeter_criterion"]==criterion)
++                    check(key+"active_numeric_metric_matches_criterion",close(e["active_required_enclosing_rim_perimeter_m"],active) and close(e["active_perimeter_margin_m"],available-active))
++                    check(key+"union_failure_remains_explicit",e["mouth_union_perimeter_rejections"]==([union_reason] if union>available else []) and e["mouth_union_perimeter_is_diagnostic_only"] is (mode=="deformable_rim_contact"))
++                    active_reason=union_reason if mode=="fixed_mouth_union" else section_reason
++                    other_reason=section_reason if mode=="fixed_mouth_union" else union_reason
++                    check(key+"only_active_perimeter_failure_rejects",(active_reason in reasons)==(active>available) and other_reason not in reasons)
++                    rows=e.get("sections")
++                    if rows is not None:
++                        if not isinstance(rows,list) or not rows:raise ValueError("Invalid nonempty section rows")
++                        unions=[number(row["mouth_and_section_envelope_perimeter_m"]) for row in rows]
++                        buffers=[number(row["buffered_section_envelope_perimeter_m"]) for row in rows]
++                        check(key+"maxima_include_all_reported_slabs",close(union,max(unions)) and close(buffered,max(buffers)))
++                        check(key+"independent_square_minkowski_perimeter",all(close(b,number(row["convex_section_slab_perimeter_m"])+8*.002) for b,row in zip(buffers,rows)))
++                else:
++                    check(key+"legacy_union_rejection_unchanged",(union_reason in reasons)==(union>available) and section_reason not in reasons)
++        result.update(reported_policy_count=record_count,reported_evaluation_count=evaluation_count,
++                      passed=all(checks.values()),status="passed" if all(checks.values()) else "failed")
++    except (ValueError,KeyError,IndexError,TypeError,AttributeError,OSError,SyntaxError) as error:
++        result.update(status="failed",passed=False,error=type(error).__name__+": "+str(error))
++    result["scope"]="Frozen policy identity and report arithmetic only; no independent cloth-feasibility, body fit, collision, or physical-success certificate."
+     return result
+ 
+ 
+@@ -1089,6 +1205,8 @@
+     yaw=audit_postlift_yaw(run,report,states,trace,config,reactions)
+     recenter_policy=audit_recenter_policy(config,report)
+     (run / "independent-recenter-policy-review.json").write_text(json.dumps(recenter_policy,indent=2,allow_nan=False))
++    rim_policy=audit_rim_perimeter_policy(run,report,config)
++    (run / "independent-rim-perimeter-policy-review.json").write_text(json.dumps(rim_policy,indent=2,allow_nan=False))
+     if yaw["required"] or yaw["status"]!="not_configured":
+         (run / "independent-postlift-yaw-sequence.json").write_text(json.dumps(yaw,indent=2,default=_json_scalar,allow_nan=False))
+     staged=config.get("task",{}).get("contact_trial",{}).get("insertion_strategy")=="lower_then_center"
+@@ -1119,7 +1237,7 @@
+                     richer["per_link_wrench_reconstruction"]["passed"])
+     if input_audit is not None:
+         passed=bool(passed and input_audit["all_declared_hashes_match"] and input_audit["all_snapshot_files_in_manifest"])
+-    passed=bool(passed and yaw["passed"] and recenter_policy["passed"])
++    passed=bool(passed and yaw["passed"] and recenter_policy["passed"] and rim_policy["passed"])
+     result = {"run": str(run), "independent_task_success": passed,
+         "runtime_status": report["status"], "runtime_error": report.get("error"),
+         "sequence_completed": bool(report.get("sequence_completed", False)),
+@@ -1128,6 +1246,8 @@
+         "correction_sequence_status":"not_applicable_staged_trial" if staged else corrections["status"],
+         "recenter_policy_status":recenter_policy["status"],
+         "failed_recenter_policy_checks":[k for k,v in recenter_policy["checks"].items() if not v],
++        "rim_perimeter_policy_status":rim_policy["status"],
++        "failed_rim_perimeter_policy_checks":[k for k,v in rim_policy["checks"].items() if not v],
+         "staged_sequence_status":corrections["status"] if staged else "not_applicable",
+         "staged_native_hand_height_status":corrections.get("native_hand_height_audit",{}).get("status","not_entered") if staged else "not_applicable",
+         "richer_contact_evidence_required":richer_required,

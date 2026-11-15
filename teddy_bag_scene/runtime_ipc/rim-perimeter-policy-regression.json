@@ -1,0 +1,111 @@
+{
+  "kind": "rim_perimeter_policy_targeted_regression",
+  "physical_success": false,
+  "passed": true,
+  "check_count": 37,
+  "checks": {
+    "default_exact_fixed_mode": true,
+    "old_other_policy_values_identical": true,
+    "new_mode_declares_only_buffered_section_criterion": true,
+    "invalid_NoneType_None": true,
+    "invalid_bool_False": true,
+    "invalid_int_0": true,
+    "invalid_list_[]": true,
+    "invalid_dict_{}": true,
+    "invalid_str_''": true,
+    "invalid_str_'fixed'": true,
+    "invalid_str_'DEFORMABLE_RIM_CONTACT'": true,
+    "invalid_str__np.str_('deformable_rim_contact')": true,
+    "opt_rejects_nonvertical_lower_then_center": true,
+    "opt_rejects_nonvertical_unknown": true,
+    "opt_rejects_nonvertical_None": true,
+    "historical_missing_policy_tags_rejected": true,
+    "fresh_cross_policy_rejected": true,
+    "raw_route_not_silently_accepted": true,
+    "malformed_selected_report_None": true,
+    "malformed_selected_report_[]": true,
+    "malformed_selected_report_False": true,
+    "synthetic_default_all_old_values_exact": true,
+    "opt_retains_negative_old_union": true,
+    "opt_only_active_section_gate_passes": true,
+    "analytic_square_buffer_plus8r": true,
+    "section_boundary_-1e-10": true,
+    "section_boundary_0.0": true,
+    "section_boundary_1e-10": true,
+    "opt_preserves_lateral_and_overlap_rejections": true,
+    "section_only_perimeter_translation_invariant": true,
+    "other_functions_AST_identical": true,
+    "plan_changes_only_early_policy_equality": true,
+    "actual_legacy_all_evaluation_values_exact": true,
+    "actual_opt_union_failure_remains_exact": true,
+    "actual_opt_only_perimeter_reason_removed": true,
+    "every_actual_slab_square_buffer_perimeter": true,
+    "inputs_unchanged": true
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py": "c63b0f9771a72882b1a5e2829510ad843fb8f1c7780e534cf71a2758bb12a307",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config.json": "49b28d189787f6f5b7112cf780658bfbaedbae6e680d9f50c54a72ed8a34a01e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_guarded_upright_offset_trial.json": "34d29f270144496818569b260185f98ba7f75d9d5c8964b63fbd073d826ec52b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/rim_perimeter_policy_regression.py": "df956aa4363835cbeba6dfc18b9118aa4c8abbe84a5cc2bc3ac7ae3e0b86f4ea"
+  },
+  "actual_fixed_summary": {
+    "translation_xy_m": [
+      0.0,
+      0.0
+    ],
+    "maximum_outside_excursion_bound_m": 0.06932122994349792,
+    "allowed_outside_excursion_m": 0.10576165178542812,
+    "minimum_section_slab_overlap_fraction": 0.6569478112646631,
+    "maximum_required_enclosing_rim_perimeter_m": 0.9329884321149986,
+    "maximum_buffered_section_envelope_perimeter_m": 0.5988709620010368,
+    "active_rim_perimeter_policy": "fixed_mouth_union",
+    "active_rim_perimeter_criterion": "mouth_and_buffered_section_union",
+    "active_required_enclosing_rim_perimeter_m": 0.9329884321149986,
+    "active_perimeter_margin_m": -0.01775562339996939,
+    "mouth_union_perimeter_rejections": [
+      "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+    ],
+    "mouth_union_perimeter_is_diagnostic_only": false,
+    "rim_perimeter_scope": "The legacy union metric retains all current mouth XY points. The optional section-only criterion allows mouth rearrangement as a bounded contact preflight; it does not establish cloth feasibility, collision freedom, or coupled passage of a nonplanar rim.",
+    "section_perimeter_square_buffer_halfwidth_m": 0.002,
+    "available_rim_perimeter_m": 0.9152328087150292,
+    "interior_distance_initial_grid_spacing_m": 0.004,
+    "interior_distance_refined_grid_spacing_m": 0.001,
+    "interior_distance_refined_slab_count": 0,
+    "perimeter_margin_m": -0.01775562339996939,
+    "section_guard_rejections": [
+      "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+    ]
+  },
+  "actual_opt_summary": {
+    "translation_xy_m": [
+      0.0,
+      0.0
+    ],
+    "maximum_outside_excursion_bound_m": 0.06932122994349792,
+    "allowed_outside_excursion_m": 0.10576165178542812,
+    "minimum_section_slab_overlap_fraction": 0.6569478112646631,
+    "maximum_required_enclosing_rim_perimeter_m": 0.9329884321149986,
+    "maximum_buffered_section_envelope_perimeter_m": 0.5988709620010368,
+    "active_rim_perimeter_policy": "deformable_rim_contact",
+    "active_rim_perimeter_criterion": "buffered_section_only",
+    "active_required_enclosing_rim_perimeter_m": 0.5988709620010368,
+    "active_perimeter_margin_m": 0.31636184671399237,
+    "mouth_union_perimeter_rejections": [
+      "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+    ],
+    "mouth_union_perimeter_is_diagnostic_only": true,
+    "rim_perimeter_scope": "The legacy union metric retains all current mouth XY points. The optional section-only criterion allows mouth rearrangement as a bounded contact preflight; it does not establish cloth feasibility, collision freedom, or coupled passage of a nonplanar rim.",
+    "section_perimeter_square_buffer_halfwidth_m": 0.002,
+    "available_rim_perimeter_m": 0.9152328087150292,
+    "interior_distance_initial_grid_spacing_m": 0.004,
+    "interior_distance_refined_grid_spacing_m": 0.001,
+    "interior_distance_refined_slab_count": 0,
+    "perimeter_margin_m": -0.01775562339996939,
+    "section_guard_rejections": []
+  },
+  "scope": "Geometry/policy tests only. No robot route, cloth feasibility or actual insertion demonstrated. Historical old-schema selected records are intentionally rejected by the new helper; replay them with frozen source or regenerate preparations, never silently rewrite history."
+}

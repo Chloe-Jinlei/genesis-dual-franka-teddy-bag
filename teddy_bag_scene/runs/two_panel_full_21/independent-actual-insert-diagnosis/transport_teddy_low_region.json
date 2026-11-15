@@ -1,0 +1,64 @@
+{
+  "status": "not_applicable",
+  "scope": "Pointwise cap-independent low-region winding diagnostic only",
+  "run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21",
+  "state": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/transport_teddy.npz",
+  "state_index": null,
+  "time_s": 49.13000000000668,
+  "physical_task_success_certified": false,
+  "does_not_replace_original_validator": true,
+  "does_not_certify_physical_body_nonintersection": true,
+  "does_not_replace_final_contact_release_or_stability_checks": true,
+  "continuous_whole_bear_containment_certified": false,
+  "all_bear_vertices_inside_by_guarded_unit_winding": null,
+  "bear_com_inside_by_guarded_unit_winding": null,
+  "all_query_points_inside_by_guarded_unit_winding": null,
+  "thresholds": {
+    "minimum_low_region_height_margin_m": 0.002,
+    "physical_body_near_surface_ambiguity_distance_m": 1e-06,
+    "integer_residual_tolerance": 1e-06,
+    "cap_agreement_tolerance": 1e-08,
+    "tolerance_scope": "Explicit diagnostic numerical guards, not a relaxation of physical contact or penetration limits"
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/config.json": "ae0686aa5e7f29c0da663d64f1c9fe98c76fa639ac39b29554460fa8a0dc82cf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/transport_teddy.npz": "a0516208c2b4e0f9f6d886a2caff3cb1b0f5181270f54cdd982e5c2c6a6ddc59",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/diagnose_low_region_winding.py": "e92f1c2bb632a8ee9f58ab5f9c37ae2265183df6016ca2960e2f1b9448124c81"
+  },
+  "reasons": [
+    "At least one actual teddy vertex or COM is not 2 mm below the lowest actual rim"
+  ],
+  "original_body_topology": {
+    "actual_open_body_boundary": true,
+    "body_boundary_loop_count": 1,
+    "complete_bag_boundary_loop_count": 3,
+    "nonmanifold_edges": 0,
+    "connected_components": 1,
+    "body_triangle_count": 2960,
+    "rim_rest_z": 1.1315683174918918,
+    "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+    "independent_flat_bottom_triangles": 0,
+    "independent_flat_side_triangles": 0,
+    "body_boundary_only_at_top": true,
+    "two_panels_directly_sewn_along_u": true,
+    "analysis_cap_is_not_simulated": true
+  },
+  "height_precondition": {
+    "actual_rim_min_z_m": 0.9949015826241008,
+    "actual_rim_max_z_m": 1.1098063626247334,
+    "actual_bear_max_z_m": 1.397998294600871,
+    "actual_com_m": [
+      -0.12607222400919585,
+      0.04074137312919039,
+      1.2920886925512243
+    ],
+    "minimum_query_height_gap_m": -0.4030967119767703,
+    "required_height_gap_m": 0.002,
+    "all_bear_vertices_and_com_at_least_required_margin_below_rim": false,
+    "query_count": 1451,
+    "queries_below_rim_with_required_margin": 0
+  },
+  "winding_computed": false
+}

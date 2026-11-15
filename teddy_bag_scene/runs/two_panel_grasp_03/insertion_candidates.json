@@ -1,0 +1,543 @@
+{
+  "kind": "offline_geometry_candidates_from_observed_state",
+  "observed_time_s": 6.619999999999903,
+  "warnings": [
+    "Left gripper is farther than 30 mm from every bag vertex; this state does not demonstrate a held bag.",
+    "The mouth XY projection crosses itself; vertical insertion footprint checks are invalid."
+  ],
+  "mouth": {
+    "center_m": [
+      -0.25248302997043964,
+      -0.0011923257043617882,
+      0.7771343032650637
+    ],
+    "rim_maximum_z_m": 0.8227173335549446,
+    "xy_projected_area_m2": 0.00886622849560823,
+    "xy_projected_crossings": 1,
+    "fitted_plane_normal_abs_z": 0.827665655708629,
+    "topology": {
+      "actual_open_body_boundary": true,
+      "body_boundary_loop_count": 1,
+      "complete_bag_boundary_loop_count": 3,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "body_triangle_count": 2380,
+      "rim_rest_z": 1.0705194386657142,
+      "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+      "independent_flat_bottom_triangles": 0,
+      "independent_flat_side_triangles": 0,
+      "body_boundary_only_at_top": true,
+      "two_panels_directly_sewn_along_u": true,
+      "analysis_cap_is_not_simulated": true
+    }
+  },
+  "left_nearest_bag_vertex_m": 0.37861512341775944,
+  "observed_bear_dimensions_xyz_m": [
+    0.16548383696748695,
+    0.3149977735127325,
+    0.1830296128281279
+  ],
+  "observed_bear_center_of_mass_offset_m": [
+    -0.04726567609738702,
+    0.01967532782953446,
+    -0.05208613782018312
+  ],
+  "fk_vs_recorded_right_tcp_error_m": 3.554447978966673e-16,
+  "candidates": [
+    {
+      "wrist_world_z_yaw_deg": 0.0,
+      "bear_clearance_above_rim_m": 0.04,
+      "rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "predicted_rotated_bear_dimensions_xyz_m": [
+        0.16481237122681217,
+        0.3155289426622681,
+        0.18359232086159036
+      ],
+      "predicted_projected_vertices_inside_fraction": 0.1853010164190774,
+      "predicted_footprint_fits_with_2mm_margin": false,
+      "predicted_maximum_outside_rim_distance_m": 0.06659269977774718,
+      "above_tcp_m": [
+        -0.20509279584091386,
+        -0.020304227478141864,
+        1.04
+      ],
+      "insert_tcp_m": [
+        -0.20509279584091386,
+        -0.020304227478141864,
+        0.9160465832337149
+      ],
+      "robot_route_feasible": false,
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.04
+          ],
+          "rotation_xyzw": [
+            0.9999917572753961,
+            -0.00225064083643145,
+            0.0003573541235369197,
+            -0.003360401035716958
+          ],
+          "duration_s": 2.505,
+          "right_q_end": [
+            0.13357368889691976,
+            0.1982717000974353,
+            0.6693827922727689,
+            -1.9923527243799666,
+            -0.14475712603970975,
+            2.137061423351338,
+            -0.7378730279613746
+          ]
+        },
+        {
+          "name": "rotate_held_teddy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.04
+          ],
+          "rotation_xyzw": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "duration_s": 2.505,
+          "right_q_end": [
+            0.13173675834465548,
+            0.19420772840615047,
+            0.670298439593789,
+            -1.9986106777009964,
+            -0.14344770649491703,
+            2.1468122881710228,
+            -0.7432721323198042
+          ]
+        }
+      ],
+      "rejection": "Rigid clearance violation at 2.481s: {'arms': {'distance': 0.002212354434523144, 'bodies': ['left_link7', 'right_link6'], 'geoms': ['', '']}}",
+      "geometry_screen_passes": false
+    },
+    {
+      "wrist_world_z_yaw_deg": 0.0,
+      "bear_clearance_above_rim_m": 0.08,
+      "rotation_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "predicted_rotated_bear_dimensions_xyz_m": [
+        0.16481237122681217,
+        0.3155289426622681,
+        0.18359232086159036
+      ],
+      "predicted_projected_vertices_inside_fraction": 0.1853010164190774,
+      "predicted_footprint_fits_with_2mm_margin": false,
+      "predicted_maximum_outside_rim_distance_m": 0.06659269977774718,
+      "above_tcp_m": [
+        -0.20509279584091386,
+        -0.020304227478141864,
+        1.0487639167886595
+      ],
+      "insert_tcp_m": [
+        -0.20509279584091386,
+        -0.020304227478141864,
+        0.9160465832337149
+      ],
+      "robot_route_feasible": false,
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.0487639167886595
+          ],
+          "rotation_xyzw": [
+            0.9999917572753961,
+            -0.00225064083643145,
+            0.0003573541235369197,
+            -0.003360401035716958
+          ],
+          "duration_s": 2.505,
+          "right_q_end": [
+            0.13095244644932041,
+            0.18673319227150037,
+            0.6719698077313176,
+            -1.9815312316471216,
+            -0.13512092878381934,
+            2.1174665614033787,
+            -0.74436696282569
+          ]
+        },
+        {
+          "name": "rotate_held_teddy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.0487639167886595
+          ],
+          "rotation_xyzw": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "duration_s": 2.505,
+          "right_q_end": [
+            0.12914587997116153,
+            0.18255537755230955,
+            0.6728272480062193,
+            -1.9878347794590863,
+            -0.1336318141155612,
+            2.12719702182246,
+            -0.7499003996824757
+          ]
+        }
+      ],
+      "rejection": "Rigid clearance violation at 2.467s: {'arms': {'distance': -0.0011862537829980255, 'bodies': ['left_link7', 'right_link6'], 'geoms': ['', '']}}",
+      "geometry_screen_passes": false
+    },
+    {
+      "wrist_world_z_yaw_deg": 90.0,
+      "bear_clearance_above_rim_m": 0.04,
+      "rotation_xyzw": [
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "predicted_rotated_bear_dimensions_xyz_m": [
+        0.31552894266226805,
+        0.1648123712268121,
+        0.18359232086159036
+      ],
+      "predicted_projected_vertices_inside_fraction": 0.12275215011727912,
+      "predicted_footprint_fits_with_2mm_margin": false,
+      "predicted_maximum_outside_rim_distance_m": 0.14481426645586062,
+      "above_tcp_m": [
+        -0.23337112819665956,
+        0.04619790842516399,
+        1.04
+      ],
+      "insert_tcp_m": [
+        -0.23337112819665956,
+        0.04619790842516399,
+        0.9160465832337149
+      ],
+      "robot_route_feasible": false,
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.04
+          ],
+          "rotation_xyzw": [
+            0.9999917572753961,
+            -0.00225064083643145,
+            0.0003573541235369197,
+            -0.003360401035716958
+          ],
+          "duration_s": 2.505,
+          "right_q_end": [
+            0.13357368889691976,
+            0.1982717000974353,
+            0.6693827922727689,
+            -1.9923527243799666,
+            -0.14475712603970975,
+            2.137061423351338,
+            -0.7378730279613746
+          ]
+        },
+        {
+          "name": "rotate_held_teddy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.04
+          ],
+          "rotation_xyzw": [
+            0.7071067811865476,
+            0.7071067811865475,
+            0.0,
+            0.0
+          ],
+          "duration_s": 5.2534858901902535,
+          "right_q_end": [
+            -0.029209735172554756,
+            0.22655233670821023,
+            0.8436144267838405,
+            -1.996747704782588,
+            -0.20049854460048638,
+            2.1395783209969372,
+            -2.2748401711501267
+          ]
+        }
+      ],
+      "rejection": "Joint limit violation in right trajectory at 49.224s",
+      "geometry_screen_passes": false
+    },
+    {
+      "wrist_world_z_yaw_deg": 90.0,
+      "bear_clearance_above_rim_m": 0.08,
+      "rotation_xyzw": [
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "predicted_rotated_bear_dimensions_xyz_m": [
+        0.31552894266226805,
+        0.1648123712268121,
+        0.18359232086159036
+      ],
+      "predicted_projected_vertices_inside_fraction": 0.12275215011727912,
+      "predicted_footprint_fits_with_2mm_margin": false,
+      "predicted_maximum_outside_rim_distance_m": 0.14481426645586062,
+      "above_tcp_m": [
+        -0.23337112819665956,
+        0.04619790842516399,
+        1.0487639167886595
+      ],
+      "insert_tcp_m": [
+        -0.23337112819665956,
+        0.04619790842516399,
+        0.9160465832337149
+      ],
+      "robot_route_feasible": false,
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.0487639167886595
+          ],
+          "rotation_xyzw": [
+            0.9999917572753961,
+            -0.00225064083643145,
+            0.0003573541235369197,
+            -0.003360401035716958
+          ],
+          "duration_s": 2.505,
+          "right_q_end": [
+            0.13095244644932041,
+            0.18673319227150037,
+            0.6719698077313176,
+            -1.9815312316471216,
+            -0.13512092878381934,
+            2.1174665614033787,
+            -0.74436696282569
+          ]
+        },
+        {
+          "name": "rotate_held_teddy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.0487639167886595
+          ],
+          "rotation_xyzw": [
+            0.7071067811865476,
+            0.7071067811865475,
+            0.0,
+            0.0
+          ],
+          "duration_s": 5.270746160336028,
+          "right_q_end": [
+            -0.022289109200184294,
+            0.21083516219127774,
+            0.8356775356318569,
+            -1.986337094084944,
+            -0.18316831788796625,
+            2.121348382622225,
+            -2.2865505160628294
+          ]
+        }
+      ],
+      "rejection": "Joint limit violation in right trajectory at 114.537s",
+      "geometry_screen_passes": false
+    },
+    {
+      "wrist_world_z_yaw_deg": -90.0,
+      "bear_clearance_above_rim_m": 0.04,
+      "rotation_xyzw": [
+        0.7071067811865476,
+        -0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "predicted_rotated_bear_dimensions_xyz_m": [
+        0.31552894266226805,
+        0.16481237122681208,
+        0.18359232086159033
+      ],
+      "predicted_projected_vertices_inside_fraction": 0.20172009382329945,
+      "predicted_footprint_fits_with_2mm_margin": false,
+      "predicted_maximum_outside_rim_distance_m": 0.13992562044273865,
+      "above_tcp_m": [
+        -0.2715949317442197,
+        -0.04858255983388756,
+        1.04
+      ],
+      "insert_tcp_m": [
+        -0.2715949317442197,
+        -0.04858255983388756,
+        0.9160465832337149
+      ],
+      "robot_route_feasible": false,
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.04
+          ],
+          "rotation_xyzw": [
+            0.9999917572753961,
+            -0.00225064083643145,
+            0.0003573541235369197,
+            -0.003360401035716958
+          ],
+          "duration_s": 2.505,
+          "right_q_end": [
+            0.13357368889691976,
+            0.1982717000974353,
+            0.6693827922727689,
+            -1.9923527243799666,
+            -0.14475712603970975,
+            2.137061423351338,
+            -0.7378730279613746
+          ]
+        },
+        {
+          "name": "rotate_held_teddy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.04
+          ],
+          "rotation_xyzw": [
+            0.7071067811865476,
+            -0.7071067811865475,
+            0.0,
+            0.0
+          ],
+          "duration_s": 5.260564284665142,
+          "right_q_end": [
+            0.2654749320931936,
+            0.1770926154625824,
+            0.528726542640032,
+            -1.9994942743596507,
+            -0.10639933996700877,
+            2.150209792386313,
+            0.8019682657905319
+          ]
+        }
+      ],
+      "rejection": "Rigid clearance violation at 2.964s: {'arms': {'distance': -0.0030799784410313466, 'bodies': ['left_link7', 'right_link6'], 'geoms': ['', '']}}",
+      "geometry_screen_passes": false
+    },
+    {
+      "wrist_world_z_yaw_deg": -90.0,
+      "bear_clearance_above_rim_m": 0.08,
+      "rotation_xyzw": [
+        0.7071067811865476,
+        -0.7071067811865475,
+        0.0,
+        0.0
+      ],
+      "predicted_rotated_bear_dimensions_xyz_m": [
+        0.31552894266226805,
+        0.16481237122681208,
+        0.18359232086159033
+      ],
+      "predicted_projected_vertices_inside_fraction": 0.20172009382329945,
+      "predicted_footprint_fits_with_2mm_margin": false,
+      "predicted_maximum_outside_rim_distance_m": 0.13992562044273865,
+      "above_tcp_m": [
+        -0.2715949317442197,
+        -0.04858255983388756,
+        1.0487639167886595
+      ],
+      "insert_tcp_m": [
+        -0.2715949317442197,
+        -0.04858255983388756,
+        0.9160465832337149
+      ],
+      "robot_route_feasible": false,
+      "stages": [
+        {
+          "name": "height_at_current_xy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.0487639167886595
+          ],
+          "rotation_xyzw": [
+            0.9999917572753961,
+            -0.00225064083643145,
+            0.0003573541235369197,
+            -0.003360401035716958
+          ],
+          "duration_s": 2.505,
+          "right_q_end": [
+            0.13095244644932041,
+            0.18673319227150037,
+            0.6719698077313176,
+            -1.9815312316471216,
+            -0.13512092878381934,
+            2.1174665614033787,
+            -0.74436696282569
+          ]
+        },
+        {
+          "name": "rotate_held_teddy",
+          "right_tcp_m": [
+            0.34672814239272765,
+            -0.26288707651145093,
+            1.0487639167886595
+          ],
+          "rotation_xyzw": [
+            0.7071067811865476,
+            -0.7071067811865475,
+            0.0,
+            0.0
+          ],
+          "duration_s": 5.269996896988526,
+          "right_q_end": [
+            0.25545507716451826,
+            0.1671271607128472,
+            0.5391264067280616,
+            -1.9885702020826737,
+            -0.10092229519058764,
+            2.130046422129943,
+            0.7982901781776792
+          ]
+        }
+      ],
+      "rejection": "Rigid clearance violation at 2.983s: {'arms': {'distance': -0.005241512901644563, 'bodies': ['left_link7', 'right_link6'], 'geoms': ['', '']}}",
+      "geometry_screen_passes": false
+    }
+  ],
+  "limitations": [
+    "This is an offline rigid-arm check, not a successful physical insertion or grasp certificate.",
+    "Bear footprint predictions rotate the observed shape rigidly around the hand; real gravity, deformation and slip can change it.",
+    "Rim and held bear observations become stale while the robot moves; observe again before insertion.",
+    "A footprint-fit result assumes downward translation through the sampled XY mouth contour; it does not establish volume containment.",
+    "Sampled rigid clearance does not prove continuous collision freedom; runtime replanning and physical collision checks are required."
+  ],
+  "robot_feasible_candidates": 0,
+  "geometry_screen_candidates": 0
+}

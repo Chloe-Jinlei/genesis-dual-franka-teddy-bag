@@ -1,0 +1,45 @@
+{
+  "kind": "explicit_true_existing_auditor_compatibility",
+  "physical_success": false,
+  "production_modified": false,
+  "auditor_changes_required": false,
+  "checks": {
+    "new_five_line_runner_contract_accepted": true,
+    "explicit_true_does_not_trigger_false_only_policy": true,
+    "historical_true_false_regression_current": true,
+    "original_corrections_auditor_exact_AST_preserved": true
+  },
+  "passed": true,
+  "runner_contract": {
+    "passed": true,
+    "mode": "reviewed_recenter_disabled_extension",
+    "checks": {
+      "begin_guarded_contact_monitor": true,
+      "run_postlift_yaw": true,
+      "run_guarded_contact_trial": true,
+      "observe_physics": true,
+      "execute": true
+    },
+    "scope": "Static complete-method AST comparison; only the exact reviewed five-line recenter extension may be normalized."
+  },
+  "policy_only_test": {
+    "passed": true,
+    "status": "passed",
+    "checks": {
+      "frozen_recenter_enabled_is_strict_bool": true
+    },
+    "recenter_enabled": true,
+    "scope": "Config/record policy only. No successful motion, physical guard, or task completion follows from this check."
+  },
+  "source_sha256": {
+    "run.py": "c63b0f9771a72882b1a5e2829510ad843fb8f1c7780e534cf71a2758bb12a307",
+    "runtime_ipc/audit_guarded_run.py": "1249279eb27c31f1aa64d0e5ed61c395d96b821c720db59b2de8ed740cf7eb86",
+    "runtime_ipc/postlift_yaw_prefix_review.py": "88157290bb54b75cfff90d4b5874fa700f71222fb40b9dcacf18038c3bdefc08"
+  },
+  "scope": [
+    "The AST compatibility rule depends on exact source structure, not on the configured bool; both True and False use the reviewed new source.",
+    "When enabled, separate original audit_corrections still validates maximum two corrections, 30mm per actual/planned endpoint move and 50mm cumulative, fresh acceptance before insert and actual saved endpoint clocks.",
+    "The tiny permitted record above tests only explicit-True policy routing; it is not a complete valid correction execution record or task success.",
+    "No next-run config was edited and no hypothetical correction is marked as actually executed."
+  ]
+}

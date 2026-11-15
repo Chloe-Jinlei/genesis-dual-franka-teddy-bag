@@ -1,0 +1,271 @@
+{
+  "kind": "independent_optional_postlift_auditor_mutation_review",
+  "physical_success": false,
+  "fixture_is_synthetic_not_native": true,
+  "auditor_sha256": "cfffd244a7a8064dc2780a337e17e2b13ab4447849a2834ca10e20700f2771f8",
+  "source_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py": "dde3320d8b13e7370d61079614e0cc6fe7029256de6bd589f48ebe16d099eb9b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_guarded_postlift_yaw_trial.json": "ec538bc763e390473d699c3077f6a83c931aa497c28da85d275a578d4030342a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": "cfffd244a7a8064dc2780a337e17e2b13ab4447849a2834ca10e20700f2771f8"
+  },
+  "fixture": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/postlift-yaw-audit-synthetic-fixture-v2",
+  "check_count": 23,
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "name": "baseline_success",
+      "expected_passed": true,
+      "passed": true,
+      "actual_status": "passed",
+      "actual_passed": true,
+      "failed_checks": [],
+      "error": null,
+      "seconds": 0.6379793849991984
+    },
+    {
+      "name": "interior_curve_position_jump",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "right_cubic_c0_c1_c2_continuity"
+      ],
+      "error": null,
+      "seconds": 0.07793123000010382
+    },
+    {
+      "name": "successful_endpoint_past_reported_run_end_with_truncated_guard",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "reported_run_reaches_claimed_successful_yaw_endpoint"
+      ],
+      "error": null,
+      "seconds": 0.06972591299927444
+    },
+    {
+      "name": "trace_wrong_column_count",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [],
+      "error": "ValueError: Actual joint trace must have 19 finite columns",
+      "seconds": 0.41342810399873997
+    },
+    {
+      "name": "trace_endpoint_disagrees_saved_state",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "actual_trace_joint_values_match_all_saved_yaw_frames"
+      ],
+      "error": null,
+      "seconds": 0.4228267250000499
+    },
+    {
+      "name": "archived_finger_target_changes_grasp",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "right_archived_motor_target_preserves_prior_grasp"
+      ],
+      "error": null,
+      "seconds": 0.0701364790002117
+    },
+    {
+      "name": "configured_not_entered",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "not_entered",
+      "actual_passed": false,
+      "failed_checks": [],
+      "error": null,
+      "seconds": 0.00022748400078853592
+    },
+    {
+      "name": "candidate_not_executed",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "incomplete",
+      "actual_passed": false,
+      "failed_checks": [],
+      "error": null,
+      "seconds": 0.05384735000006913
+    },
+    {
+      "name": "execution_rejected",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "execution_rejected",
+      "actual_passed": false,
+      "failed_checks": [],
+      "error": null,
+      "seconds": 0.3955540170009044
+    },
+    {
+      "name": "fresh_preparation_geometrically_rejected_does_not_erase_yaw_evidence",
+      "expected_passed": true,
+      "passed": true,
+      "actual_status": "passed",
+      "actual_passed": true,
+      "failed_checks": [],
+      "error": null,
+      "seconds": 0.40670647699880647
+    },
+    {
+      "name": "stale_preparation_inner_clock",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "preparation_nested_observation_matches_actual_endpoint"
+      ],
+      "error": null,
+      "seconds": 0.4009900419987389
+    },
+    {
+      "name": "stale_preparation_route_clock",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "accepted_preparation_route_is_fresh_actual_endpoint"
+      ],
+      "error": null,
+      "seconds": 0.40730704399902606
+    },
+    {
+      "name": "stale_preparation_physical_clock",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "preparation_physical_record_matches_saved_geometry"
+      ],
+      "error": null,
+      "seconds": 0.410123747000398
+    },
+    {
+      "name": "wrong_preparation_tcp",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "preparation_nested_observation_matches_actual_endpoint"
+      ],
+      "error": null,
+      "seconds": 0.4055247039996175
+    },
+    {
+      "name": "wrong_preparation_rest_mass_com",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "preparation_com_matches_actual_rest_mass_com"
+      ],
+      "error": null,
+      "seconds": 0.4059221960014838
+    },
+    {
+      "name": "stale_preparation_complete_rotation",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "accepted_preparation_route_is_fresh_actual_endpoint"
+      ],
+      "error": null,
+      "seconds": 0.40863274600087607
+    },
+    {
+      "name": "guard_interior_step_deleted",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "native_guard_covers_every_yaw_step"
+      ],
+      "error": null,
+      "seconds": 0.06466921399987768
+    },
+    {
+      "name": "guard_baseline_reset",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "single_guard_baseline_starts_before_yaw_and_is_never_reset"
+      ],
+      "error": null,
+      "seconds": 0.06268762500076264
+    },
+    {
+      "name": "archived_left_motor_target_changed",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "left_archived_motor_target_preserves_prior_grasp"
+      ],
+      "error": null,
+      "seconds": 0.06274040499920375
+    },
+    {
+      "name": "curve_first_derivative_jump",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "right_cubic_c0_c1_c2_continuity"
+      ],
+      "error": null,
+      "seconds": 0.06158280000090599
+    },
+    {
+      "name": "curve_second_derivative_jump",
+      "expected_passed": false,
+      "passed": true,
+      "actual_status": "failed",
+      "actual_passed": false,
+      "failed_checks": [
+        "right_cubic_c0_c1_c2_continuity"
+      ],
+      "error": null,
+      "seconds": 0.06268893900050898
+    },
+    {
+      "name": "production_source_config_and_auditor_unchanged_during_review",
+      "passed": true
+    },
+    {
+      "name": "synthetic_fixture_unchanged",
+      "passed": true
+    }
+  ],
+  "review_scope": [
+    "Only marked synthetic evidence was mutated; no native state, production source, configuration or GPU activity.",
+    "Archived cubics, source/endpoints, new actual preparation and guard clocks are cross-checked; legitimate subsequent geometric prep rejection does not invalidate completed yaw evidence.",
+    "Rigid/FK reference checks remain sampled. Frozen ideal-grasp arc certificates do not establish native soft deformation, continuous FK safety or bagging success.",
+    "The test supplies reactions.passed=true only to isolate optional-yaw contracts; complete native reaction auditing remains mandatory in production main."
+  ]
+}

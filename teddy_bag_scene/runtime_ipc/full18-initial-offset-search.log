@@ -1,0 +1,27 @@
+grid 150 necessary_screen_survivors 131
+Traceback (most recent call last):
+  File "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full18_initial_offset_search.py", line 79, in <module>
+    result = plan_guarded_contact_trial(rest, state, trial)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/contact_insertion.py", line 549, in plan_guarded_contact_trial
+    try: result=_plan(rest,state,config)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/contact_insertion.py", line 407, in _plan
+    evaluation=_evaluate_offset(envelopes,target-com[:2],polygon,triangles,mouth,policy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/contact_insertion.py", line 273, in _evaluate_offset
+    overlap=convex_polygon_overlap_area(hull,pretriangles=triangles)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/contact_slice_geometry.py", line 326, in convex_polygon_overlap_area
+    hull = _simple_polygon(convex_hull)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/contact_slice_geometry.py", line 93, in _simple_polygon
+    if _segments_intersect(q[i], q[(i+1) % n], q[j], q[(j+1) % n]):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/contact_slice_geometry.py", line 73, in _segments_intersect
+    return _on_segment(c, a, b) or _on_segment(d, a, b) or \
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/contact_slice_geometry.py", line 62, in _on_segment
+    def _on_segment(p, a, b):
+    
+KeyboardInterrupt

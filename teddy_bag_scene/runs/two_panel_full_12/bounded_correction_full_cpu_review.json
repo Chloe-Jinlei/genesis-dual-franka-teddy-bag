@@ -1,0 +1,239 @@
+{
+  "kind": "full12_bounded_three_actual_TCP_corrections_complete_CPU_screen",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "source_or_config_modified": false,
+  "helper_call": "contact_insertion._plan(rest,state,config,correction_offsets=np.array([delta])); selected intentionally omitted so actual delta is evaluated.",
+  "pre_call_recenter_contract": {
+    "original_selected_status": "candidate",
+    "selected_time_s": 29.044999999998506,
+    "actual_time_s": 42.745000000003415,
+    "strictly_newer_time": true,
+    "policy_equals_original_selected": true,
+    "original_full_rotation_error_rad": 0.0005902140598409222,
+    "original_rotation_within_015rad": true,
+    "physical_state_rejections": [],
+    "attempt_index_for_diagnostic": 1,
+    "cumulative_xy_before_m": 0.0
+  },
+  "execution_source_sha256": {
+    "contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "contact_insertion.py": "1e77f1449ff4701479993fe15b45c500ba137f9a873330faf9b1aa1fe5eea742"
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_12/rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_12/transport_teddy.npz": "082e8952283a53d3f3bb74ac4e900f919a058ba1d32a1f683a305c655fee3318",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_12/guarded_contact_candidate.json": "7d36b6085af00be670287b035173fc3fe4d81bc45a06a00588424b30e6da632b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_guarded_detour_trial.json": "0c84f7b587088b66732b0431e6fbff61e0681bb3aa29c511b95e615f85b9819e"
+  },
+  "helper_trajectory_defaults": "(self, start_qs, targets, *, rotations=None, samples=45, duration=2.0, finger_start=None, finger_end=None, max_joint_velocity=0.55, max_joint_acceleration=1.0, clearance_margin=0.008, validate_samples=101)",
+  "policy": {
+    "bottom_clearance_m": 0.01,
+    "endpoint_below_lowest_rim_m": 0.002,
+    "start_above_highest_rim_m": 0.04,
+    "planned_outside_clearance_m": 0.045,
+    "com_boundary_clearance_m": 0.002,
+    "lateral_excursion_fraction_of_mouth_width": 0.8,
+    "minimum_section_envelope_overlap_fraction": 0.4,
+    "maximum_initial_com_offset_m": 0.035,
+    "transport_xy_strategy": "y_then_x",
+    "rim_perimeter_clearance_m": 0.002,
+    "rigid_clearance_m": 0.008,
+    "left_robot_soft_sweep_clearance_m": 0.005,
+    "minimum_insert_duration_s": 6.0,
+    "minimum_tetra_volume_ratio": 0.05,
+    "maximum_cloth_edge_stretch_ratio": 1.15,
+    "maximum_table_penetration_m": 0.002,
+    "maximum_left_designated_handle_distance_m": 0.018,
+    "maximum_right_teddy_distance_m": 0.045,
+    "maximum_tcp_fk_error_m": 0.002,
+    "force_and_torque_runtime_limits": {
+      "maximum_contact_force_N": 8.0,
+      "maximum_wrist_contact_torque_Nm": 0.15
+    },
+    "note": "Lateral/overlap/perimeter are declared trial policies, not physical laws. Explicit lateral/overlap values permit a bounded contact experiment, not a material-feasibility claim. The initial COM search radius does not change the 30 mm individual or 50 mm cumulative correction budget. The 5 mm minimum teddy/left-robot clearance is an engineering preflight allowance, not a physical law. Bottom clearance and lateral trial fraction are configurable; no compression is prescribed."
+  },
+  "rows": [
+    {
+      "actual_TCP_correction_xy_m": [
+        -0.015,
+        0.01
+      ],
+      "distance_m": 0.018027756377319945,
+      "within_30mm_individual_and_50mm_total_from_zero": true,
+      "status": "rejected",
+      "rejections": [
+        "section slab overlap with actual opening below 40 percent"
+      ],
+      "com_boundary_margin_m": 0.00789292572491065,
+      "minimum_section_slab_overlap_fraction": 0.0,
+      "maximum_outside_excursion_bound_m": 0.06947559415646427,
+      "allowed_outside_excursion_m": 0.06949498748479065,
+      "section_guard_rejections": [
+        "section slab overlap with actual opening below 40 percent"
+      ],
+      "robot_attempts": [],
+      "robot_stages": [],
+      "withdraw_after_release": null,
+      "stages_to_execute_names": [],
+      "report_file": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_12/correction_full_cpu_minus015_plus010.json",
+      "wall_seconds": 16.622613534003904,
+      "maximum_required_enclosing_rim_perimeter_m": 0.9036004382408911,
+      "available_rim_perimeter_m": 0.9152328087150292,
+      "perimeter_margin_m": 0.01163237047413812,
+      "minimum_overlap_slab_witness": {
+        "z_interval_m": [
+          1.1621015754261501,
+          1.1627289724607661
+        ],
+        "convex_section_slab_area_m2": 2.682720073878787e-05,
+        "convex_section_slab_perimeter_m": 0.02735147518845169,
+        "opening_overlap_area_m2": 0.0,
+        "opening_overlap_fraction": 0.0,
+        "maximum_outside_excursion_bound_m": 0.009034685101352549,
+        "interior_distance_grid_spacing_m": 0.004,
+        "entire_slab_interior_distance_bound": true,
+        "mouth_and_section_envelope_perimeter_m": 0.8656838844289577
+      },
+      "zero_overlap_slab_count": 1,
+      "all_section_slab_count": 1449,
+      "later_stages_skipped_due_to_geometry_rejection": true,
+      "below_40_percent_overlap_slab_count": 183,
+      "failing_overlap_z_interval_m": [
+        1.1621015754261501,
+        1.2186722994899997
+      ]
+    },
+    {
+      "actual_TCP_correction_xy_m": [
+        -0.01,
+        0.01
+      ],
+      "distance_m": 0.01414213562373095,
+      "within_30mm_individual_and_50mm_total_from_zero": true,
+      "status": "rejected",
+      "rejections": [
+        "section lateral excursion exceeds declared fraction of actual opening minimum width",
+        "section slab overlap with actual opening below 40 percent"
+      ],
+      "com_boundary_margin_m": 0.0030405227199978295,
+      "minimum_section_slab_overlap_fraction": 0.0,
+      "maximum_outside_excursion_bound_m": 0.07398695539647356,
+      "allowed_outside_excursion_m": 0.06949498748479065,
+      "section_guard_rejections": [
+        "section lateral excursion exceeds declared fraction of actual opening minimum width",
+        "section slab overlap with actual opening below 40 percent"
+      ],
+      "robot_attempts": [],
+      "robot_stages": [],
+      "withdraw_after_release": null,
+      "stages_to_execute_names": [],
+      "report_file": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_12/correction_full_cpu_minus010_plus010.json",
+      "wall_seconds": 18.04654914799903,
+      "maximum_required_enclosing_rim_perimeter_m": 0.9093131798098681,
+      "available_rim_perimeter_m": 0.9152328087150292,
+      "perimeter_margin_m": 0.005919628905161067,
+      "minimum_overlap_slab_witness": {
+        "z_interval_m": [
+          1.1621015754261501,
+          1.1627289724607661
+        ],
+        "convex_section_slab_area_m2": 2.682720073878787e-05,
+        "convex_section_slab_perimeter_m": 0.02735147518845169,
+        "opening_overlap_area_m2": 0.0,
+        "opening_overlap_fraction": 0.0,
+        "maximum_outside_excursion_bound_m": 0.013993071365093042,
+        "interior_distance_grid_spacing_m": 0.004,
+        "entire_slab_interior_distance_bound": true,
+        "mouth_and_section_envelope_perimeter_m": 0.8662732032518258
+      },
+      "zero_overlap_slab_count": 2,
+      "all_section_slab_count": 1449,
+      "later_stages_skipped_due_to_geometry_rejection": true,
+      "below_40_percent_overlap_slab_count": 253,
+      "failing_overlap_z_interval_m": [
+        1.1621015754261501,
+        1.2230289373971648
+      ]
+    },
+    {
+      "actual_TCP_correction_xy_m": [
+        -0.01,
+        0.0
+      ],
+      "distance_m": 0.01,
+      "within_30mm_individual_and_50mm_total_from_zero": true,
+      "status": "rejected",
+      "rejections": [
+        "section lateral excursion exceeds declared fraction of actual opening minimum width",
+        "section slab overlap with actual opening below 40 percent"
+      ],
+      "com_boundary_margin_m": 0.005452314649591327,
+      "minimum_section_slab_overlap_fraction": 0.0,
+      "maximum_outside_excursion_bound_m": 0.07437282996292051,
+      "allowed_outside_excursion_m": 0.06949498748479065,
+      "section_guard_rejections": [
+        "section lateral excursion exceeds declared fraction of actual opening minimum width",
+        "section slab overlap with actual opening below 40 percent"
+      ],
+      "robot_attempts": [],
+      "robot_stages": [],
+      "withdraw_after_release": null,
+      "stages_to_execute_names": [],
+      "report_file": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_12/correction_full_cpu_minus010_zero.json",
+      "wall_seconds": 16.882244688000355,
+      "maximum_required_enclosing_rim_perimeter_m": 0.9034118113309216,
+      "available_rim_perimeter_m": 0.9152328087150292,
+      "perimeter_margin_m": 0.011820997384107579,
+      "minimum_overlap_slab_witness": {
+        "z_interval_m": [
+          1.1621015754261501,
+          1.1627289724607661
+        ],
+        "convex_section_slab_area_m2": 2.682720073878787e-05,
+        "convex_section_slab_perimeter_m": 0.02735147518845169,
+        "opening_overlap_area_m2": 0.0,
+        "opening_overlap_fraction": 0.0,
+        "maximum_outside_excursion_bound_m": 0.012705584418286002,
+        "interior_distance_grid_spacing_m": 0.004,
+        "entire_slab_interior_distance_bound": true,
+        "mouth_and_section_envelope_perimeter_m": 0.8662097221469302
+      },
+      "zero_overlap_slab_count": 1,
+      "all_section_slab_count": 1449,
+      "later_stages_skipped_due_to_geometry_rejection": true,
+      "below_40_percent_overlap_slab_count": 234,
+      "failing_overlap_z_interval_m": [
+        1.1621015754261501,
+        1.2215942248010812
+      ]
+    }
+  ],
+  "generating_script": "/tmp/full12_bounded_correction_candidates.py",
+  "limitations": [
+    "Each candidate uses actual frozen observed soft geometry. No physical execution or deformable contact success is certified.",
+    "Source helper runs all-section gates first, then all frozen-body translation/vertical left-robot sweeps, then sequential rigid routes, 11 release points and open-finger withdrawal. A failed earlier gate prevents later stages from running.",
+    "No policy relaxation, source edit, GPU or Genesis Engine.",
+    "Original selected is checked separately for fresh time, unchanged policy and complete original rotation; passing selected into _plan would intentionally select fresh fixed-COM mode and ignore correction_offsets."
+  ],
+  "source_sha256_on_disk_now": {
+    "contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4"
+  },
+  "input_arrays_unchanged": true,
+  "completed": true,
+  "requested_fourth_delegated_to_root": {
+    "correction_xy_m": [
+      -0.015,
+      0.0
+    ],
+    "reason": "Root independently evaluated this point; local process stopped after three completed candidates to avoid duplicate computation."
+  },
+  "passing_count": 0,
+  "strongest_candidate": null,
+  "strongest_candidate_note": "No local candidate passed the all-section geometry gates. Left-robot swept clearance, rigid paths, release and withdrawal were therefore not executed; no strongest executable candidate exists."
+}

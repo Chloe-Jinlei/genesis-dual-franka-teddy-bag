@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-11-13T20:55:40.826280+00:00",
+  "kind": "explicit_deformable_rim_contact_trial_decision",
+  "next_run": "two_panel_full_23",
+  "native_run_started": false,
+  "physical_success": false,
+  "scope": "Fresh native run from original initial assets, with identical full22 physical parameters and motion configuration. Exactly one config addition selects the explicitly more permissive deformable_rim_contact preflight policy; no saved-state injection.",
+  "reason": "A union hull of all current mouth XY positions and each buffered teddy section is sufficient only for a frozen layout allowance; deformable cloth may rearrange the mouth. Nine bounded correction candidates rejected by this conservative union condition. It is not a physical impossibility proof.",
+  "active_perimeter_preflight": "Maximum buffered teddy slab convex perimeter <= same available nonstretch rim arc length. Square buffer retains 2mm clearance. This is translation-invariant size screening, not proof of alignment, deformable passage, nonplanar rim feasibility, or final containment.",
+  "retained_negative_evidence": {
+    "full22_actual_native_result": "Stopped at40.735s before insertion; task incomplete. No insertion/contact outcome established.",
+    "full22_union_perimeter_m": 0.9329884321149986,
+    "available_nonstretch_rim_m": 0.9152328087150292,
+    "old_union_margin_m": -0.01775562339996939,
+    "full_frozen_both_handles_descent": "FAILED: free sewn rear handle intersects frozen teddy during deeper descent. Strict witness is not earliest contact and not an observed native penetration."
+  },
+  "counterfactual_actual_full22_preflight": {
+    "native_execution": false,
+    "buffered_section_perimeter_m": 0.5988709620010368,
+    "original_union_failure_preserved": true,
+    "all_other_original_planner_gates_passed": true,
+    "whole_bear_left_robot_gap_lower_m": 0.045009,
+    "front_held_handle_full_descent_gap_lower_m": 0.0603746979998471,
+    "both_handles_pre_highest_rim_height_gap_lower_m": 0.06403104538793566,
+    "same_actual_xy_and_full_hand_rotation": true
+  },
+  "runtime_requirements": [
+    "No change to soft material, mesh, zero-width U seam, table, arms, force targets or timestep.",
+    "No soft pins, ideal grasps, node repositioning or artificial compression.",
+    "All original finite-state, Jacobian>=0.05, cloth edge<=1.15, table<=2mm, holding, force/torque, rigid-collision and motion checks remain active.",
+    "Front held handle remains held by finite-force friction. Free rear handle may deform in real contact; it is sewn at both ends.",
+    "Fresh native reobservation before descent; recenter remains disabled.",
+    "All teddy vertices and COM inside actual 3D bag after release, withdrawal and settling required, plus complete independent physical audit."
+  ],
+  "reviewed_by_root": true,
+  "source_and_evidence_sha256": {
+    "config_guarded_deformable_rim_trial.json": "79679cc0795a74dbfccfdf97bd90055a65ac4a21dfb208e4770b2a218f6ec82b",
+    "contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "run.py": "c63b0f9771a72882b1a5e2829510ad843fb8f1c7780e534cf71a2758bb12a307",
+    "motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "runtime_ipc/independent-deformable-rim-policy-review.json": "e23dae675bb9aa0ccd5383e6cf93697ce83ae047dd612c87c34e9de7396c9615",
+    "runs/two_panel_full_22/independent-counterfactual-deformable-rim/review.json": "fffa1b77cee38b8cc5a592061fec4a38de51ff37abd362810d28e840ff25cbc4",
+    "runs/two_panel_full_22/independent-perimeter-guard-review.json": "6366f477cd798519ad72af5ef957eae1a07628800f79d98ff52faa6b85e5531f",
+    "runs/two_panel_full_22/independent-perimeter-guard-interpretation.json": "09b45916b1c045d9500d0e2ebff1596c32f569c2a7447ad418342a3d89a85c6a",
+    "runs/two_panel_full_22/independent-executed-prefix-review.json": "69ee04ea1bb0d975e596067587e1a76555ab063e5fda456963e4b2dde3300f65"
+  }
+}

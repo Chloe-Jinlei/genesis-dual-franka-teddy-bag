@@ -1,0 +1,118 @@
+{
+  "scope": "Independent numeric reduction of completed native 0.5N diagonal-load coupons; not material calibration or bag-task success",
+  "parent_report_sha256": "b7c1d58c72dc45c20a99b1e095fe4b23a2b0695622329c06522ea21ee90962e5",
+  "checks": {
+    "native_pair_completed": true,
+    "all_readback_and_independent_geometry_checks": true
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "source_npz_sha256": "f1f17be6d8198750bf1e1118fd59d0af43d4f12c54eabcfd77be228be4a17a00",
+      "checks": {
+        "exact_401_states": true,
+        "exact_400_callback_frames": true,
+        "same_times": true,
+        "all_arrays_finite": true,
+        "clamp_fixed": true,
+        "mu": true,
+        "lambda": true,
+        "rate": true,
+        "bending": true,
+        "radius": true,
+        "mass_6g": true,
+        "force_only_41_to160": true,
+        "force_total_and_direction": true,
+        "load_zero_after_release": true,
+        "stored_principal_matches": true
+      },
+      "peak_principal_extension_pct": 8.990278747770763,
+      "peak_edge_extension_pct": 8.98305323989128,
+      "late_load_window_s": [
+        0.6,
+        0.8
+      ],
+      "late_load_mean_max_principal_extension_pct": 4.482681814471023,
+      "at_unload_max_principal_extension_pct": 4.784582637875223,
+      "peak_tip_displacement_mm": 297.8758689236532,
+      "tip_displacement_at_unload_mm": 107.63584008619951,
+      "after_unload_max_tip_displacement_mm": 297.8758689236532,
+      "after_unload_peak_speed_m_s": 1.4447848654761435,
+      "max_out_of_plane_displacement_m": 0.1999630695227117,
+      "unloaded_before_force_max_displacement_m": 3.0577097658027394e-10,
+      "min_area_ratio": 0.981099342022787,
+      "after_unload_peak_kinetic_energy_J": 0.0010299135682256505,
+      "late_unloaded_window_s": [
+        1.5,
+        2.0
+      ],
+      "late_unloaded_tip_displacement_RMS_mm": 263.29282895027484,
+      "late_unloaded_max_tip_displacement_mm": 297.8758689236532,
+      "final_max_vertex_speed_m_s": 0.3357414165777615,
+      "final_tip_displacement_mm": 297.8758689236532,
+      "note": "Late-load window is a measured averaging window, not proof of static equilibrium; tip amplitude is relative to undeformed rest."
+    },
+    {
+      "name": "candidate",
+      "source_npz_sha256": "86bfb8698f5f538c24947627e8d877b609307ec7892a17310ae60d34c30234c7",
+      "checks": {
+        "exact_401_states": true,
+        "exact_400_callback_frames": true,
+        "same_times": true,
+        "all_arrays_finite": true,
+        "clamp_fixed": true,
+        "mu": true,
+        "lambda": true,
+        "rate": true,
+        "bending": true,
+        "radius": true,
+        "mass_6g": true,
+        "force_only_41_to160": true,
+        "force_total_and_direction": true,
+        "load_zero_after_release": true,
+        "identical_geometry_clamp_mass": true,
+        "stored_principal_matches": true
+      },
+      "peak_principal_extension_pct": 3.3471078259029063,
+      "peak_edge_extension_pct": 3.3452564586061273,
+      "late_load_window_s": [
+        0.6,
+        0.8
+      ],
+      "late_load_mean_max_principal_extension_pct": 1.5946203073451626,
+      "at_unload_max_principal_extension_pct": 1.7306827482290954,
+      "peak_tip_displacement_mm": 315.8646285002504,
+      "tip_displacement_at_unload_mm": 105.53301957833895,
+      "after_unload_max_tip_displacement_mm": 315.8646285002504,
+      "after_unload_peak_speed_m_s": 1.7136766838633972,
+      "max_out_of_plane_displacement_m": 0.19898150483492016,
+      "unloaded_before_force_max_displacement_m": 2.557177896864839e-10,
+      "min_area_ratio": 0.996540437698861,
+      "after_unload_peak_kinetic_energy_J": 0.0009956552725054594,
+      "late_unloaded_window_s": [
+        1.5,
+        2.0
+      ],
+      "late_unloaded_tip_displacement_RMS_mm": 271.1821701266952,
+      "late_unloaded_max_tip_displacement_mm": 315.8646285002504,
+      "final_max_vertex_speed_m_s": 0.2743888925520786,
+      "final_tip_displacement_mm": 315.8646285002504,
+      "note": "Late-load window is a measured averaging window, not proof of static equilibrium; tip amplitude is relative to undeformed rest."
+    }
+  ],
+  "limitations": [
+    "One coarse prescribed-load comparison; no fitted fabric parameters.",
+    "BDF1 has numerical dissipation; recoil is not a physical damping calibration.",
+    "Zero-gravity planar load does not validate bending drape.",
+    "Contact is disabled; no self-contact, grasp, robot, or bag insertion is tested.",
+    "Principal and edge stretch are diagnostics; the full-task 1.15 guard is unchanged."
+  ],
+  "physical_success": false,
+  "ratios_candidate_over_baseline": {
+    "peak_principal_extension_pct": 0.372303008595018,
+    "peak_tip_displacement_mm": 1.0603901203598598,
+    "after_unload_peak_speed_m_s": 1.186112012115131,
+    "after_unload_peak_kinetic_energy_J": 0.966736727452565,
+    "late_unloaded_tip_displacement_RMS_mm": 1.0299641323611983
+  }
+}

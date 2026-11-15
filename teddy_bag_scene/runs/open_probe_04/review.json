@@ -1,0 +1,226 @@
+{
+  "scope": "Independent saved-state audit of open_probe_04 only; no main code edited",
+  "overall": "partial_phase_physical_checks_passed; full_requested_task_incomplete",
+  "validation_report": "validation.json",
+  "validated_simulation_seconds": 2.7049999999999645,
+  "physical_check_summary": {
+    "finite_saved_states": true,
+    "actual_open_bag_topology": true,
+    "no_tetrahedron_inversion": true,
+    "table_penetration_below_2mm": true,
+    "cloth_edge_stretch_below_15_percent": true,
+    "joint_motion_within_configured_limits": true,
+    "motion_sample_interval_at_most_20ms": true,
+    "no_final_sampled_bag_bear_penetration_over_1mm": true
+  },
+  "actual_joint_motion": {
+    "left": {
+      "max_joint_velocity_rad_s": 0.2989991442604065,
+      "max_joint_acceleration_rad_s2": 5.433009393422591,
+      "acceleration_peak_time_s": 0.13500000000000004,
+      "acceleration_peak_joint_one_based": 4,
+      "max_joint_acceleration_during_spread_rad_s2": 1.8632365831479083,
+      "max_step_joint_increment_rad": 0.0014949984021510598,
+      "max_command_tracking_error_rad": 0.010300881691521546,
+      "rms_command_tracking_error_rad": 0.004230874960435367,
+      "max_finite_difference_jerk_rad_s3": 356.241081165364,
+      "jerk_note": "Finite-difference diagnostic, includes contact transient and sampling noise; no jerk pass threshold asserted."
+    },
+    "right": {
+      "max_joint_velocity_rad_s": 0.10803556104295353,
+      "max_joint_acceleration_rad_s2": 4.446949265192753,
+      "acceleration_peak_time_s": 0.13500000000000004,
+      "acceleration_peak_joint_one_based": 3,
+      "max_joint_acceleration_during_spread_rad_s2": 1.4267883488287216,
+      "max_step_joint_increment_rad": 0.00054216761551662,
+      "max_command_tracking_error_rad": 0.007115161244180879,
+      "rms_command_tracking_error_rad": 0.0035320039526109473,
+      "max_finite_difference_jerk_rad_s3": 340.5405768873489,
+      "jerk_note": "Finite-difference diagnostic, includes contact transient and sampling noise; no jerk pass threshold asserted."
+    }
+  },
+  "joint_motion_conclusion_cn": "每5ms实际关节轨迹没有大的位置跳变；最大增量约1.50mrad。闭爪接触期出现约5.43rad/s²加速度瞬态，所以不能声称实际运动全程也受规划器1rad/s²目标上限约束。撑袋期间最大加速度约1.86rad/s²。",
+  "coupling_transform_error": {
+    "maximum_translation": [
+      0.00072551897239357,
+      1.449999999999991,
+      "left_franka",
+      "left_finger"
+    ],
+    "maximum_rotation": [
+      0.04115797969956444,
+      2.499999999999969,
+      "left_franka",
+      "right_finger"
+    ],
+    "gripper_maximum_translation": [
+      0.00072551897239357,
+      1.449999999999991,
+      "left_franka",
+      "left_finger"
+    ],
+    "gripper_maximum_rotation": [
+      0.04115797969956444,
+      2.499999999999969,
+      "left_franka",
+      "right_finger"
+    ],
+    "value_order": "m or rad, simulation time s, entity, link",
+    "maximum_affine_singular_value_deviation": 7.90352194759425e-05
+  },
+  "bag_deformation": {
+    "whole_body_rigid_fit_removed_rms_m": 0.02536474811934924,
+    "whole_body_rigid_fit_removed_max_m": 0.0839371836448682,
+    "best_fit_body_translation_m": [
+      -0.012377014305143846,
+      0.012683098184122008,
+      0.0016634629154602676
+    ],
+    "body_rest_height_m": 0.32000000000000006,
+    "body_final_height_m": 0.3381934557390808,
+    "final_edge_length_ratio_percentiles": {
+      "0": 0.8605765048984788,
+      "1": 0.9739231925741134,
+      "5": 0.9894829415452898,
+      "50": 0.999948196511202,
+      "95": 1.005932401603906,
+      "99": 1.0359093435982298,
+      "100": 1.1235264257252795
+    },
+    "panel_out_of_plane_deformation": {
+      "front": {
+        "rest": {
+          "sampled_vertices": 1170,
+          "best_fit_plane_rms_m": 4.441672655467199e-16,
+          "best_fit_plane_max_residual_m": 4.579669976578765e-16,
+          "height_extent_m": 0.25
+        },
+        "final": {
+          "sampled_vertices": 1170,
+          "best_fit_plane_rms_m": 0.01896064063472291,
+          "best_fit_plane_max_residual_m": 0.053580344460706156,
+          "height_extent_m": 0.268346642362264
+        }
+      },
+      "back": {
+        "rest": {
+          "sampled_vertices": 1170,
+          "best_fit_plane_rms_m": 4.440892098500626e-16,
+          "best_fit_plane_max_residual_m": 4.440892098500626e-16,
+          "height_extent_m": 0.25
+        },
+        "final": {
+          "sampled_vertices": 1170,
+          "best_fit_plane_rms_m": 0.00751597139568672,
+          "best_fit_plane_max_residual_m": 0.022975542423380464,
+          "height_extent_m": 0.24987939691755745
+        }
+      },
+      "left_side": {
+        "rest": {
+          "sampled_vertices": 442,
+          "best_fit_plane_rms_m": 3.608224830031759e-15,
+          "best_fit_plane_max_residual_m": 3.608224830031759e-15,
+          "height_extent_m": 0.25
+        },
+        "final": {
+          "sampled_vertices": 442,
+          "best_fit_plane_rms_m": 0.0018941090784203786,
+          "best_fit_plane_max_residual_m": 0.006565325524484328,
+          "height_extent_m": 0.249861336536778
+        }
+      },
+      "right_side": {
+        "rest": {
+          "sampled_vertices": 442,
+          "best_fit_plane_rms_m": 4.0939474033052647e-16,
+          "best_fit_plane_max_residual_m": 4.0939474033052647e-16,
+          "height_extent_m": 0.25
+        },
+        "final": {
+          "sampled_vertices": 442,
+          "best_fit_plane_rms_m": 0.006559062380954152,
+          "best_fit_plane_max_residual_m": 0.02432117597464161,
+          "height_extent_m": 0.2595471488531794
+        }
+      }
+    },
+    "mouth_states": [
+      {
+        "time_s": 0.0,
+        "mouth_projected_area_m2": 0.08360000000000001,
+        "mouth_projected_dimensions_m": [
+          0.38,
+          0.22
+        ],
+        "mouth_nonplanarity_max_m": 4.440892098500626e-16,
+        "mouth_projected_crossings": 0
+      },
+      {
+        "time_s": 0.2000000000000001,
+        "mouth_projected_area_m2": 0.08368258287872023,
+        "mouth_projected_dimensions_m": [
+          0.3805630605703447,
+          0.22050279527433997
+        ],
+        "mouth_nonplanarity_max_m": 0.00013778493471982154,
+        "mouth_projected_crossings": 0
+      },
+      {
+        "time_s": 2.7049999999999645,
+        "mouth_projected_area_m2": 0.06751063177703685,
+        "mouth_projected_dimensions_m": [
+          0.43790911202214666,
+          0.3006753646191744
+        ],
+        "mouth_nonplanarity_max_m": 0.014004757028267704,
+        "mouth_projected_crossings": 0
+      }
+    ],
+    "mouth_area_change_fraction": -0.19245655769094683
+  },
+  "cloth_appearance_assessment_cn": [
+    "画面中的袋体仍有明显四方箱状外形、直立平整的大块侧壁；但测得局部面外变形，不能称为完全刚体。",
+    "初始袋口已完全展开（0.08360平方米）；动作后袋口投影面积为0.06751平方米，下降约19.25%。该试验证明双手持住及改变袋形，没有证明把半闭袋口撑开。",
+    "双手持续悬持袋带、方盒初始折痕和短暂2.7秒加载均影响外观。仅凭此视频不足以把箱状外观唯一归因于Young模量。",
+    "本次实际壳参数包含运行时shear=20N/m、stretch约1758.24N/m的转换，不能仅看config E=2MPa判断布料刚度。",
+    "建议对比更低弯曲系数、轻微初始褶皱和半闭初始状态。分别改变参数并保持同一网格/运动；粗网格本身可能减少可解析的小褶皱，不应把粗网格造成的变化直接解释为更软。"
+  ],
+  "material_settings": {
+    "config": {
+      "position": [
+        -0.13,
+        0.0,
+        0.742
+      ],
+      "E": 2000000.0,
+      "nu": 0.3,
+      "rho": 450.0,
+      "thickness": 0.0004,
+      "bending_stiffness": 0.0001,
+      "friction_mu": 0.65
+    },
+    "runtime_shell_conversion": {
+      "scope": "Per-scene pre-initialization FEM shell coefficient conversion",
+      "calibrated": false,
+      "shear_stiffness_n_per_m": 20.0,
+      "thickness_semantics": "IPC one-sided radius r; full thickness h=2r",
+      "entities": [
+        {
+          "entity_index": 0,
+          "environment": 0,
+          "previous_shear_coefficient": 769230.7692307691,
+          "new_shear_coefficient": 20.0,
+          "stretch_coefficient": 1758.241758241759,
+          "full_shell_thickness_m": 0.0008,
+          "native_rest_mass_kg": 0.17655418860421906
+        }
+      ]
+    }
+  },
+  "task_success": false,
+  "remaining": "One-hand handoff, teddy grasp/lift, insertion, release and sustained containment were not executed in this run.",
+  "superseded": true,
+  "superseded_reason_cn": "用户已明确改为两片布缝左右与底边、底部只有缝的平底无底宽布袋。本报告保留为旧箱式袋历史实验，不作为新袋模型验收。",
+  "replacement_asset": "two_panel_bag"
+}

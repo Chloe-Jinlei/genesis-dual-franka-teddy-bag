@@ -1,0 +1,38 @@
+{
+  "kind": "optional_yaw_staged_guard_baseline_regression",
+  "physical_success": false,
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "name": "single_guard_from_before_yaw_preserved_through_stages",
+      "passed": true,
+      "audit_passed": true,
+      "failed_checks": []
+    },
+    {
+      "name": "guard_reset_at_postyaw_prep_is_rejected",
+      "passed": true,
+      "audit_passed": false,
+      "failed_checks": [
+        "guard_started_before_optional_yaw_not_reset_at_stages"
+      ]
+    },
+    {
+      "name": "missing_actual_yaw_observation_rejected",
+      "passed": true,
+      "audit_passed": false,
+      "failed_checks": [
+        "guard_started_before_optional_yaw_not_reset_at_stages"
+      ]
+    },
+    {
+      "name": "final_baseline_changed_rejected",
+      "passed": true,
+      "audit_passed": false,
+      "failed_checks": [
+        "single_original_guard_baseline_preserved"
+      ]
+    }
+  ],
+  "auditor_sha256": "cfffd244a7a8064dc2780a337e17e2b13ab4447849a2834ca10e20700f2771f8"
+}

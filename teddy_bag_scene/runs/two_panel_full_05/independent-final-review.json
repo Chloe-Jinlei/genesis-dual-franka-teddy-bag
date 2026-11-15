@@ -1,0 +1,64 @@
+{
+  "independent_conclusion": "Task failed during transport at 31.665 s. Opening the bag, one-left-arm holding, lifting and 90-degree wrist rotation were physically observed; insertion and release were not completed.",
+  "task_success": false,
+  "physics_checks": {
+    "soft_metric_rows": 6334,
+    "dt_s": 0.005,
+    "minimum_tetrahedron_volume_ratio": 0.09508251681599092,
+    "minimum_volume_ratio_time_s": 14.7150000000009,
+    "maximum_bag_edge_stretch_ratio": 1.0286377312225674,
+    "maximum_table_penetration_m": {
+      "bear": 0.0,
+      "bag": 0.0
+    },
+    "actual_joint_motion_within_configured_limits": true
+  },
+  "slip_evidence": {
+    "orientation_end_time_s": 29.815,
+    "orientation_end_material_point_tcp_distance_m": 0.0073607347319321215,
+    "orientation_end_gravity_torque_hand_nm": [
+      0.14283732708743205,
+      7.461161555626585e-05,
+      0.08719786033633248
+    ],
+    "static_weight_n": 2.1468899520311067,
+    "transport_start_transient_force_z_n": -2.5415545656748355,
+    "first_saved_material_drift_over_3mm_s": 30.265,
+    "first_saved_material_drift_over_5mm_s": 31.465,
+    "first_saved_material_drift_over_45mm_s": 31.615,
+    "interpretation": "Transport first induced a few millimetres of lateral material slip while force remained at its 6 N cap and q remained above minimum. The material reference then approached/exceeded the pad half-width. Later rapid loss of contact coincided with fingers reaching minimum opening. Gap alone does not explain the initial drift; contact moment, lateral geometry and delayed squeeze following are contributing hypotheses."
+  },
+  "rigid_contact_evidence": {
+    "saved_native_contact_force_arrays": false,
+    "initial_restored_pair_count": 1253,
+    "offline_transport_actual_joint_samples": 371,
+    "offline_transport_minimum_right_self_distance_m": 0.0216823,
+    "offline_transport_minimum_left_self_distance_m": 0.0241208,
+    "offline_transport_minimum_robot_table_distance_m": 0.160996,
+    "offline_transport_minimum_robot_mount_distance_m": 0.140996,
+    "offline_transport_interarm_distance_lower_bound_m": 0.2,
+    "offline_transport_interarm_query_cap_m": 0.2,
+    "interpretation": "No saved geometry evidence supports a robot/environment or robot/robot collision causing transport loss. Pair presence is not measured force, and offline positive distance does not prove native contact force was exactly zero."
+  },
+  "finger_nonintersection_report": "independent-finger-clearance.json",
+  "neutral_collision_review": {
+    "api": "gs.options.RigidOptions(enable_neutral_collision=True, enable_self_collision=True, enable_adjacent_collision=False)",
+    "reason": "Reference qpos0 is not the actual initialized pose; neutral-overlap filtering permanently removes potentially valid nonadjacent collision pairs. Enabling neutral collisions retains independent adjacent/weld filtering. Opposing central pads have local inner Y=0 and positive measured separation, so no compensating finger geometry change is needed.",
+    "active_source_modified_by_this_review": false
+  },
+  "recommendation": "Keep the low-force head-region following probe bounded; require real lift and orientation retention before another full run. Do not exceed 6 N to mask the upper-arm slip. Reobserve deformed teddy shape after orientation before choosing the transport/insertion pose.",
+  "limitations": [
+    "Full geometry and STC transforms are sampled at about 20 Hz; summary soft checks and actual q are sampled every 5 ms. No continuous-time collision proof is asserted.",
+    "STC projected normal/tangent forces are proxy wrench diagnostics, not individual native contact impulses or a complete force-closure proof.",
+    "The minimum tetrahedral volume ratio .095 is positive but indicates severe local compression; passing the .05 threshold does not establish realistic textile/filling response.",
+    "Coarse mesh results have not established fine-mesh or time-step convergence.",
+    "Cloth stretch, shear, bending and friction are engineering parameters, not calibrated from measured fabric. Teddy uses homogeneous compressible elasticity without a separate skin, polyfill or hysteresis.",
+    "Earlier runs before the rigid-contact fallback omitted delegated robot/table and robot/robot pairs; they cannot establish complete physical environment validity even when planned paths stayed clear."
+  ],
+  "supporting_reports": [
+    "independent-audit.json",
+    "independent-transport-slip.json",
+    "independent-contact-evidence.json",
+    "independent-finger-clearance.json"
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "kind": "independent_cpu_sweep_review",
+  "physical_success": false,
+  "module_sha256": "99a4a3d68442aba22b7667a3f2f4f1f707b686d5fd7ea35b84b4b30fcf9997ea",
+  "analytic_cases": [
+    {
+      "name": "parallel_boxes_6mm_gap",
+      "expected_clear": true,
+      "passed": true,
+      "result": {
+        "status": "clear",
+        "conservative_gap_lower_bound_m": 0.0059999,
+        "raw_separating_projection_gap_m": 0.006,
+        "separating_axis_world": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "numerical_guard_m": 1e-07,
+        "mujoco_convex_signed_distance_diagnostic_m": null,
+        "solid_envelope_intersection_proven": false,
+        "original_surface_distance_computed": false
+      }
+    },
+    {
+      "name": "parallel_boxes_4mm_gap",
+      "expected_clear": false,
+      "passed": true,
+      "result": {
+        "status": "indeterminate",
+        "conservative_gap_lower_bound_m": 0.0039999,
+        "raw_separating_projection_gap_m": 0.004,
+        "separating_axis_world": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "numerical_guard_m": 1e-07,
+        "mujoco_convex_signed_distance_diagnostic_m": 0.0040000006556510925,
+        "solid_envelope_intersection_proven": false,
+        "original_surface_distance_computed": false,
+        "common_interior_ball": {
+          "center_world_m": [
+            0.012,
+            -0.012,
+            -0.012
+          ],
+          "radius_m": -0.002
+        },
+        "reason": "required continuous solid gap was not certified"
+      }
+    },
+    {
+      "name": "nested_solid_no_surface_crossing",
+      "expected_clear": false,
+      "passed": true,
+      "result": {
+        "status": "blocked",
+        "conservative_gap_lower_bound_m": 0.0,
+        "raw_separating_projection_gap_m": 0.0,
+        "separating_axis_world": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "numerical_guard_m": 1e-07,
+        "mujoco_convex_signed_distance_diagnostic_m": 0.0,
+        "solid_envelope_intersection_proven": true,
+        "original_surface_distance_computed": false,
+        "common_interior_ball": {
+          "center_world_m": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "radius_m": 0.005
+        },
+        "reason": "convex solid interiors intersect"
+      }
+    },
+    {
+      "name": "intersecting_long_faces_all_vertices_far",
+      "expected_clear": false,
+      "passed": true,
+      "result": {
+        "status": "blocked",
+        "conservative_gap_lower_bound_m": 0.0,
+        "raw_separating_projection_gap_m": 0.0,
+        "separating_axis_world": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "numerical_guard_m": 1e-07,
+        "mujoco_convex_signed_distance_diagnostic_m": 0.0,
+        "solid_envelope_intersection_proven": true,
+        "original_surface_distance_computed": false,
+        "common_interior_ball": {
+          "center_world_m": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "radius_m": 0.005
+        },
+        "reason": "convex solid interiors intersect"
+      }
+    },
+    {
+      "name": "vertical_start_clear",
+      "expected_clear": true,
+      "passed": true,
+      "result": {
+        "status": "clear",
+        "conservative_gap_lower_bound_m": 0.054999900000000004,
+        "raw_separating_projection_gap_m": 0.05500000000000001,
+        "separating_axis_world": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "numerical_guard_m": 1e-07,
+        "mujoco_convex_signed_distance_diagnostic_m": null,
+        "solid_envelope_intersection_proven": false,
+        "original_surface_distance_computed": false
+      }
+    },
+    {
+      "name": "vertical_end_clear",
+      "expected_clear": true,
+      "passed": true,
+      "result": {
+        "status": "clear",
+        "conservative_gap_lower_bound_m": 0.054999900000000004,
+        "raw_separating_projection_gap_m": 0.05500000000000001,
+        "separating_axis_world": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "numerical_guard_m": 1e-07,
+        "mujoco_convex_signed_distance_diagnostic_m": null,
+        "solid_envelope_intersection_proven": false,
+        "original_surface_distance_computed": false
+      }
+    },
+    {
+      "name": "continuous_sweep_midsegment_blocked",
+      "expected_clear": false,
+      "passed": true,
+      "result": {
+        "status": "blocked",
+        "conservative_gap_lower_bound_m": 0.0,
+        "raw_separating_projection_gap_m": 0.0,
+        "separating_axis_world": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "numerical_guard_m": 1e-07,
+        "mujoco_convex_signed_distance_diagnostic_m": 0.0,
+        "solid_envelope_intersection_proven": true,
+        "original_surface_distance_computed": false,
+        "common_interior_ball": {
+          "center_world_m": [
+            -0.0,
+            -0.0,
+            -0.004999999999999999
+          ],
+          "radius_m": 0.01
+        },
+        "reason": "convex solid interiors intersect"
+      }
+    }
+  ],
+  "actual35_status": "blocked",
+  "actual35_rejections": [
+    "left_hand geom 67: continuous 0.005 m gap not certified"
+  ],
+  "hypothetical85_status": "clear",
+  "hypothetical85_lower_gap_m": 0.00632879227919059,
+  "hypothetical85_all_collision_geometries": 22,
+  "invalid_topology_fails_closed": "indeterminate",
+  "input_arrays_and_planner_qpos_unchanged": true,
+  "static_review": {
+    "every_intermediate_translation_covered": true,
+    "face_edge_and_solid_interior_covered": true,
+    "acceptance_uses_original_vertex_projection_not_mujoco_distance": true,
+    "measured_fingers_preserved_separately": true,
+    "unsupported_geometry_fails_closed": true,
+    "initial_plan_recenter_and_fresh_all_invoke_sweep": true,
+    "candidate_rejected_before_insert_if_sweep_not_clear": true
+  },
+  "limitations": [
+    "5 mm is an explicit engineering preflight allowance, not a physical or hardware safety guarantee.",
+    "Hypothetical 85-degree result uses the old observed teddy; changed dynamics require fresh actual geometry.",
+    "Only a fixed-left-pose frozen-shape vertical translation is certified; transport, later soft deformation, and affine proxy compliance are not.",
+    "All existing real physics, hold, raw force/torque, and final containment gates remain required."
+  ]
+}

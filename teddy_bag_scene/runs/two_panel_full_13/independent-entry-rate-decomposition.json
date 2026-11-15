@@ -1,0 +1,83 @@
+{
+  "kind": "independent_entry_rate_limiting_decomposition",
+  "source_run": "two_panel_full_13",
+  "cases": {
+    "measured_start": {
+      "base_duration_s": 6.0,
+      "peak_before_acceleration": {
+        "time_fraction": 0.162,
+        "path_fraction": 0.032853529564992004,
+        "joint_index_1based": 4,
+        "qdd_rad_s2": -0.13050312210786522,
+        "maximum_qd_rad_s": 0.08461522395696203
+      },
+      "peak_before_speed_rad_s": 0.19865256819073843,
+      "velocity_stretch_factor": 0.5675787662592526,
+      "acceleration_stretch_factor": 0.5108877021574608,
+      "after_limit_duration_s": 6.0120000000000005,
+      "right_q_end": [
+        0.3210791470965537,
+        -0.06684796936177448,
+        -0.5493715167077965,
+        -1.8604285657530517,
+        -0.03634223545003349,
+        1.8028943051480135,
+        -1.8335200410824222
+      ],
+      "end_vs_saved_preflight_max_abs_rad": 0.0
+    },
+    "commanded_start": {
+      "base_duration_s": 6.0120000000000005,
+      "peak_before_acceleration": {
+        "time_fraction": 0.4,
+        "path_fraction": 0.31744000000000006,
+        "joint_index_1based": 1,
+        "qdd_rad_s2": -1.4027662558129823,
+        "maximum_qd_rad_s": 0.1980582411454798
+      },
+      "peak_before_speed_rad_s": 0.19835326656659347,
+      "velocity_stretch_factor": 0.5667236187616956,
+      "acceleration_stretch_factor": 1.6749723913026042,
+      "after_limit_duration_s": 10.09007388454428,
+      "right_q_end": [
+        0.3250948582814072,
+        -0.06701253297850537,
+        -0.5532323674251335,
+        -1.8604261129685364,
+        -0.03665668416708128,
+        1.8028839646069186,
+        -1.8332841904259953
+      ],
+      "end_vs_saved_preflight_max_abs_rad": 0.004015711184853499
+    }
+  },
+  "runtime_peak_decomposition": {
+    "measured_start": {
+      "at_same_runtime_peak_joint_1based": 1,
+      "curve_first_derivative_rad": 0.04483871269753782,
+      "curve_second_derivative_rad": -0.2521968443108028,
+      "spline_curvature_acceleration_rad_s2": -0.02091821505451523,
+      "time_scaling_acceleration_rad_s2": 0.003587097015803022,
+      "neighbor_knot_fractions": [
+        0.2727272727272727,
+        0.29545454545454547,
+        0.3181818181818182,
+        0.34090909090909094
+      ]
+    },
+    "commanded_start": {
+      "at_same_runtime_peak_joint_1based": 1,
+      "curve_first_derivative_rad": 0.1766858152798183,
+      "curve_second_derivative_rad": -17.150339953747626,
+      "spline_curvature_acceleration_rad_s2": -1.4168447507416735,
+      "time_scaling_acceleration_rad_s2": 0.014078494928690972,
+      "neighbor_knot_fractions": [
+        0.2727272727272727,
+        0.29545454545454547,
+        0.3181818181818182,
+        0.34090909090909094
+      ]
+    }
+  },
+  "conclusion": "The Cartesian goal and full orientation policy are unchanged. Limit-rate itself modifies duration only. The commanded-vs-measured seed changes the re-solved redundant joint path curvature enough to activate the acceleration limiter; this is not a deliberate new Cartesian strategy. Scope is planned joint targets, not physical outcomes."
+}

@@ -1,0 +1,273 @@
+{
+  "kind": "bounded_independent_full32_failure_material_interpretation",
+  "physical_success": false,
+  "native_simulation_performed_by_this_review": false,
+  "scope": "Saved immutable full32 failure geometry/forces and bounded full30/full31 comparison only. No production, config, assets, motion, native process or existing report modified.",
+  "evidence_files": {
+    "geometry": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/independent-full32-compression-contact-review.json",
+      "sha256": "63274d3221a25b2324a90d36585f7b4d79b155bd514c84f67022ae5c9be44a35"
+    },
+    "wrench_grip_order": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full32_wrench_grip_order_review_20261115.json",
+      "sha256": "997c7f95532eec662b461799d1f6bbf791b91b7290d51dcb3a6c4a0947eaf803"
+    },
+    "cloth_strain": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full32-partial-cloth-material-comparison.json",
+      "sha256": "d936c5305defa6ef42badbf7a186a43ad915e76c53a6815091355cb1f3fcd0e1"
+    },
+    "full31_contact": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_31/independent-full31-failure-material-summary.json",
+      "sha256": "72fd96ee3410e9a2c1aded33378a99f31b0e899e9988680aa5bd11819daef6cd"
+    },
+    "material_source_review": {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/independent-cotton-linen-material-review.json",
+      "sha256": "503bb97ebca47d4c0f830e882dd2ab3b2219bcf43f14ed02da571fde6d805070"
+    },
+    "friction_source": {
+      "path": "/home/chloe/Desktop/genesis-local/genesis-world/genesis/engine/couplers/ipc_coupler/coupler.py",
+      "sha256": "e663fd3f076c6efdadac32b7c8c8911277fe3ec41081db23a3f8c86c5ca661a3"
+    }
+  },
+  "inputs_still_match_geometry_report": true,
+  "failure": {
+    "time_s": 53.89500000000912,
+    "last_complete_state_s": 53.87000000000911,
+    "minimum_J": 0.04947062748356308,
+    "tet_index": 895,
+    "tet_vertices": [
+      610,
+      1194,
+      653,
+      1150
+    ],
+    "number_of_tets_below_gate": 1,
+    "first_below_gate_s": 53.89500000000912,
+    "location": "right arm/held grasp-side material, from original procedural coordinates; same tet895 as full25 historical grip-region compression",
+    "rest_unscaled_centroid_m": [
+      0.0803497302176127,
+      -0.03430554941627904,
+      0.017890783952186268
+    ],
+    "failed_world_centroid_m": [
+      -0.15758319007136082,
+      0.08240352815789312,
+      0.9105902807489983
+    ],
+    "whole_tet_table_clearance_m": 0.16910668247510252,
+    "actual_q_FK_TCP_m": [
+      -0.15202496390140374,
+      0.10059503150446937,
+      0.9186996283410234
+    ],
+    "planned_release_TCP_z_m": 0.915,
+    "planned_insert_end_s": 55.44862062158239,
+    "release_started": false,
+    "principal_stretches": [
+      1.5306629352635883,
+      0.9454682499462262,
+      0.03418384446240982
+    ],
+    "interpretation": "Positive severe local compression, not negative volume inversion or a table/foot impact. The smallest principal stretch falls to0.03418 while the largest is1.53066."
+  },
+  "direct_contact_evidence": {
+    "whole_failed_tet_to_all_cloth_AABB_distance_lower_bounds_m": {
+      "front_panel": 0.06564390089336153,
+      "back_panel": 0.047606922414116425,
+      "front_handle": 0.17677013484979048,
+      "back_handle": 0.025684605594868265
+    },
+    "conclusion": "The complete bad tetra is strictly separated from every physical cloth triangle at the true failed state. Cloth therefore does not directly press on this tetra; loads through other connected bear regions remain possible.",
+    "last_complete_same_time_native_affine_finger_diagnostic": {
+      "geom_id": 154,
+      "shape": "box",
+      "frame": "same-time saved native IPC affine transform of finger with frozen collision components",
+      "tet11sample_distance_m": 0.0022310661301776493,
+      "tet_sample_index": 0,
+      "tet_sample_m": [
+        -0.15496176201425554,
+        0.08272992937385984,
+        0.9091338796503114
+      ],
+      "rigid_nearest_m": [
+        -0.1544738907002997,
+        0.08093185028160152,
+        0.9103612953240864
+      ],
+      "whole_AABB_lower_m": 0.0,
+      "robot_surface_face_normal": [
+        -0.26141863682699645,
+        0.9652238979338104,
+        -0.001767251248662411
+      ]
+    },
+    "failed_same_time_actual_q_FK_reference_finger_diagnostic": {
+      "geom_id": 154,
+      "shape": "box",
+      "frame": "same-time actual-q FK reference, not saved IPC affine",
+      "tet11sample_distance_m": 0.0013668034756674483,
+      "tet_sample_index": 0,
+      "tet_sample_m": [
+        -0.15633442592840935,
+        0.0811997762955431,
+        0.9091423982374159
+      ],
+      "rigid_nearest_m": [
+        -0.15554467987915144,
+        0.08087231601652159,
+        0.9102088046723371
+      ],
+      "whole_AABB_lower_m": 0.0,
+      "robot_surface_face_normal": [
+        -0.0009272438911198592,
+        -0.0002999956258883139,
+        -0.9999995251105828
+      ]
+    },
+    "limits": [
+      "The11sample finger distances are upper bounds on nearest distance, not complete solid-contact/separation certificates or force attribution.",
+      "Actual native finger affine is available at53.870, not at53.895. The true-failure finger reference uses actual q/FK and is not called exact IPC geometry.",
+      "No pair-specific bear-cloth normal/tangential reaction or bad-tet contact-force record exists in these saved logs."
+    ]
+  },
+  "force_and_grip": {
+    "last_half_second": {
+      "count": 101,
+      "start_time_s": 53.395000000008864,
+      "end_time_s": 53.89500000000912,
+      "min_J": 0.04947062748356311,
+      "peak_force_n": 2.6506880688003274,
+      "peak_torque_nm": 0.14773799866234158,
+      "min_right_opening_reaction_n": 0.7918777544093774
+    },
+    "final_guard": {
+      "net_force_norm_n": 2.5338840480224727,
+      "tcp_torque_norm_nm": 0.14460356015981715,
+      "right_finger_opening_projection_n": [
+        1.9594711738973147,
+        0.7918777544093774
+      ],
+      "right_finger_force_norm_n": [
+        1.9646348077289,
+        1.0078704836374706
+      ],
+      "force_world_n": [
+        -0.6267721726837414,
+        -1.990504011379815,
+        1.4372260758325117
+      ],
+      "right_link_force_world_n": [
+        [
+          -0.5443996962208871,
+          -0.7595876150763748,
+          0.9487680089029423
+        ],
+        [
+          0.5987685367122924,
+          -1.8681277947855357,
+          0.10660539167004555
+        ],
+        [
+          -0.6811410131751466,
+          0.6372113984820956,
+          0.38185267525952393
+        ]
+      ]
+    },
+    "findings": [
+      "Torque remains below0.15Nm, peak0.147738Nm in the last0.5s; the actual stop is the unchanged bear J gate.",
+      "Finger opening sum narrows only36.594 to36.222mm over this window; commanded closing target0m and actuator cap1.8252N remain unchanged.",
+      "The last25ms opening reaction falls from about[2.401,1.210] to[1.959,.792]N. There is no observed stronger command explaining the collapse.",
+      "Existing two-sided reaction/held material gates pass, but those gates do not certify preservation of the same contacted bear material."
+    ]
+  },
+  "comparison": {
+    "profiles": [
+      {
+        "run": 30,
+        "E_Pa": 4000000.0,
+        "body_mu_N_per_m": 50.0,
+        "handle_mu_N_per_m": 250.0,
+        "bend_N_m": 5e-05,
+        "bag_friction": 0.65,
+        "outcome": "full task success recorded in historical report"
+      },
+      {
+        "run": 31,
+        "E_Pa": 20000000.0,
+        "body_mu_N_per_m": 1000.0,
+        "handle_mu_N_per_m": 2000.0,
+        "bend_N_m": 5e-05,
+        "bag_friction": 0.65,
+        "outcome": "stopped during insertion: TCP torque above0.15Nm; no release"
+      },
+      {
+        "run": 32,
+        "E_Pa": 10000000.0,
+        "body_mu_N_per_m": 500.0,
+        "handle_mu_N_per_m": 1000.0,
+        "bend_N_m": 5e-05,
+        "bag_friction": 0.65,
+        "outcome": "stopped during insertion: one tetra J below0.05; no release"
+      }
+    ],
+    "same_material_tet_near_same_height_full30": {
+      "time_s": 53.850000000009096,
+      "actual_TCP_m": [
+        -0.1524026519573028,
+        0.10196451484804749,
+        0.9188547925298692
+      ],
+      "tet895_J": 0.856952600335099,
+      "full32_last_complete_tet895_J": 0.07316050397339469,
+      "full32_last_complete_actual_TCP_m": [
+        -0.15202369096502802,
+        0.10059066016241663,
+        0.9188465634024279
+      ]
+    },
+    "full30_force_rearrangement": "The saved trace has a transient global J minimum followed by recovery and substantial finger narrowing during insertion, before its scheduled release. This is a contact/deformation rearrangement signature, not proven slip and not a matched-shape causal counterfactual.",
+    "cloth_strain_reported_full32": "Held front handle principal extension peak7.4103%; panel prefix peaks1.6224% and1.2559%; rear handle1.0560%. These are deformation locations, not force-source assignments.",
+    "identifiability": "E and both membrane shear coefficients changed together across30/31/32. Geometry, wrenches and these three runs cannot identify longitudinal stiffness versus shear stiffness as the single cause, nor prove friction locking."
+  },
+  "one_material_only_hypothesis": {
+    "status": "Root has independently launched full33 with this one-coefficient change; this review neither launches nor modifies it.",
+    "profile": {
+      "E_Pa": 10000000.0,
+      "body_mu_N_per_m": 500.0,
+      "handle_mu_N_per_m": 1000.0,
+      "bending_N_m": 5e-05,
+      "bag_friction_mu": 0.5
+    },
+    "reason": "Retain the measured lower-extension membrane profile while testing a moderate reduction in cloth tangential restraint. Choosing0.50 rather than0.45 is the smaller isolated contact change; it does not guarantee success.",
+    "native_pair_formula": "sqrt(mu_entity_i * mu_entity_j), same bag entity for body and both handles; ipc_coupler/coupler.py _register_contact_pairs lines684-719.",
+    "old_pairs": {
+      "bag_robot": 0.7433034373659253,
+      "bag_bear": 0.65,
+      "bag_table": 0.65,
+      "bag_self": 0.65,
+      "robot_bear_unchanged": 0.7433034373659253
+    },
+    "candidate_pairs": {
+      "bag_robot": 0.6519202405202649,
+      "bag_bear": 0.570087712549569,
+      "bag_table": 0.570087712549569,
+      "bag_self": 0.5,
+      "robot_bear_unchanged": 0.7433034373659253
+    },
+    "nonself_bag_pair_relative_reduction": 0.1229419806929708,
+    "self_pair_relative_reduction": 0.23076923076923084,
+    "mechanistic_limit": "The bad tetra is not in direct cloth contact, and robot-bear friction remains unchanged. Any improvement would have to arise through changed cloth sliding/folding/restraint elsewhere, not a directly reduced jaw-bear coefficient.",
+    "risks": [
+      "The held left strap also receives the lower bag-robot coefficient, so unintended slip must still fail the original held-material and native force gates.",
+      "Lower friction can increase sliding or motion; this is not added damping, less rebound, or a calibrated cotton-linen coefficient.",
+      "A successful next trial would establish that bounded task result, not near-inextensibility over arbitrary loads.",
+      "All motion, geometry, teddy material, grasp cap, physical thresholds and full final containment/retention acceptance remain required unchanged."
+    ]
+  },
+  "limits": [
+    "Sparse geometric frames bound local interpretation, while saved per-step metrics establish exact failed time.",
+    "Full30 matched height and full31 endpoint have different cloth/bear states and some lateral TCP differences.",
+    "No additional GPU/native experiment, parameter sweep, threshold relaxation or retrospective report reconstruction was performed."
+  ]
+}

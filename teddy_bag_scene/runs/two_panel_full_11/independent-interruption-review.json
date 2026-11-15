@@ -1,0 +1,122 @@
+{
+  "kind": "independent_deliberate_interruption_review",
+  "run": "two_panel_full_11",
+  "classification": "deliberately_superseded_before_transport",
+  "complete_task_success": false,
+  "physical_gate_failure_observed": false,
+  "saved_error": "KeyboardInterrupt: ",
+  "recorded_status": "failed",
+  "operator_signal": "SIGINT",
+  "stop_time_s": 3.3749999999999503,
+  "last_started_phase": "orient_held_bag",
+  "last_phase_incomplete": true,
+  "entered_phases": [
+    "close_both_handles",
+    "drape_under_gravity",
+    "spread_bag",
+    "orient_held_bag"
+  ],
+  "no_teddy_transport_or_insertion_entered": true,
+  "saved_keyboard_interrupt_consistent_with_operator_record": true,
+  "physics_checks_for_recorded_completed_steps": {
+    "integration_samples": 676,
+    "minimum_tetra_volume_ratio": 0.8544771703920034,
+    "maximum_bag_edge_stretch_ratio": 1.0354509351504826,
+    "maximum_bag_table_covered_penetration_m": 0.0,
+    "maximum_bear_table_covered_penetration_m": 0.0,
+    "all_soft_values_finite": true,
+    "minimum_j_above_0p05": true,
+    "table_covered_penetrations_below_2mm": true,
+    "maximum_bag_stretch_below_1p15": true
+  },
+  "held_handle_monitor": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "all_recorded_values_finite": true,
+      "exact_four_individual_fingers_and_two_material_groups": true,
+      "strictly_increasing_fixed_step_times": true,
+      "every_integration_step_from_spread_until_handoff": true,
+      "all_four_opening_reactions_above_0p1n": true,
+      "both_designated_material_groups_within_18mm": true
+    },
+    "samples": 455,
+    "start_s": 1.1049999999999984,
+    "end_s": 3.3749999999999503,
+    "minimum_opening_reactions_n": [
+      8.919715657946028,
+      8.902325447711311,
+      8.882787485822076,
+      8.886731938511705
+    ],
+    "maximum_designated_material_distance_m": [
+      0.0003297275106221622,
+      0.00025812484049787853
+    ],
+    "phases": [
+      {
+        "phase": "spread_bag",
+        "samples": 386,
+        "min_opening_reactions_n": [
+          8.919715657946028,
+          8.902325447711311,
+          8.882787485822076,
+          8.886731938511705
+        ],
+        "max_opening_reactions_n": [
+          8.926034697370048,
+          8.914798144616721,
+          8.91004990192995,
+          8.912826876743848
+        ],
+        "max_designated_material_distance_m": [
+          0.0003297275106221622,
+          0.00025812484049787853
+        ]
+      },
+      {
+        "phase": "orient_held_bag",
+        "samples": 69,
+        "min_opening_reactions_n": [
+          8.919829441375343,
+          8.906496513760247,
+          8.891889304602817,
+          8.890515754633599
+        ],
+        "max_opening_reactions_n": [
+          8.921001136031819,
+          8.908693720240727,
+          8.904044859914697,
+          8.902334263733582
+        ],
+        "max_designated_material_distance_m": [
+          0.00024262977038201126,
+          0.0002266947472535729
+        ]
+      }
+    ],
+    "limitations": [
+      "Reactions are IPC soft-coupling feedback, not contact forces identified by individual material.",
+      "Material proximity and four positive opening-axis reactions support held-handle evidence; they do not prove force closure.",
+      "Checks cover recorded integration states only."
+    ]
+  },
+  "input_hashes": {
+    "declared_count": 27,
+    "all_hashes_match": true,
+    "all_snapshot_files_covered": true,
+    "config_sha256": "8533137cc744f9564ae0bf941ac7e4200d865382b3816a6dc90a3242985824c2",
+    "contact_insertion_sha256": "116cf7bd72e013e61a75824f57244d19077c6a233ed1b58039ea311457710686",
+    "external_model_files_not_in_startup_manifest": 67,
+    "saved_config_semantically_matches_approved_config": true,
+    "approved_config_original_file_sha256": "d3a91438be43760e9ebd1a5b1cd5b1f93c9cf52b3cc05da6fa87a18430b53ed9",
+    "config_hash_note": "run config.json is serialized with different whitespace; semantic contents match the approved config."
+  },
+  "reason": "A separate CPU frozen-shape review found an obstruction on the planned later straight horizontal transport; operator stopped this prefix before any teddy grasp/transport.",
+  "geometric_witness_review": "../two_panel_full_10/independent-horizontal-transport-witness-review.json",
+  "limitations": [
+    "KeyboardInterrupt occurred inside native integration. This audit covers saved completed integration samples only; the interrupted internal state is not certified or a valid restart point.",
+    "This prefix neither validates nor physically fails the proposed transport or insertion.",
+    "Input hashes do not cover installed simulator binaries or startup hashes of external robot mesh dependencies."
+  ]
+}

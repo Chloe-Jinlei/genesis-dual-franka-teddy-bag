@@ -1,0 +1,80 @@
+{
+  "status": "engineering_parameters_not_calibrated_to_a_physical_sample",
+  "validation_status": "completed_native_20_of_20_and_independent_41_of_41_passed",
+  "cloth_bending_stiffness_Nm": 1e-05,
+  "bag_material_parameters": {
+    "E": 10000000.0,
+    "nu": 0.3,
+    "rho": 333.3333333333333,
+    "thickness": 0.0003,
+    "bending_stiffness": 1e-05,
+    "shear_stiffness": 50.0,
+    "handle_shear_stiffness": 350.0,
+    "friction_mu": 0.65
+  },
+  "reference_areal_mass_g_m2": 200.0,
+  "reference_full_thickness_mm": 0.6,
+  "derived_initial_bag_mass_g": 80.05309630840246,
+  "material_description_cn": "相对Full30仅改布袋四项：膜内拉伸输入E=10MPa、弯曲刚度10µN·m、面密度200g/m²、提带剪切系数350N/m。袋身剪切50N/m和摩擦输入0.65保留；熊、袋型、网格、动作、求解设置和验收门未改。目标是易折叠且更抗拉长的棉麻量级材料。提带系数是本场景工程近似，未用真实缝制提带标定。",
+  "reference_basis_cn": "公开实测棉样本约185–197 g/m²及0.61–0.77 mm厚度支持面密度/厚度的量级；另一个175 g/m²棉平纹对照弯曲刚度约10.10 µN·m。200 g/m²、D=10 µN·m和当前E/剪切/摩擦不是同一试样联合测量得到的一组参数。",
+  "damping_limit_cn": "没有新增物理粘性阻尼或纱线迟滞模型；原有隐式积分的数值耗散不等于真实棉麻耗散。低弯曲刚度或低质量均不能保证减少回弹。",
+  "references": [
+    {
+      "id": "cotton_control",
+      "title": "Low Stress Mechanical Properties of Plasma-Treated Cotton Fabric Subjected to Zinc Oxide-Anti-Microbial Treatment",
+      "url": "https://www.mdpi.com/1996-1944/6/1/314",
+      "location": "Section 2.1、Table 2、Table 4（未处理对照）",
+      "values": "175 g/m²棉平纹；G=2.81 gf/(cm·degree)，B=0.103 gf·cm²/cm≈10.10085 µN·m。",
+      "scope": "同一试样支持柔顺剪切与约10 µN·m弯曲量级，但不是当前200 g/m²薄壳的完整参数标定。"
+    },
+    {
+      "id": "cotton_mass",
+      "title": "Sylvie® 3D Drape Tester – New system for measuring fabric drape",
+      "url": "https://www.pt.bme.hu/publikaciok/503_open_TEKSTIL%20Sylvie%203D%20Drape%20Teste-New%20measuring%20system-Jelka_k%C3%A9p-tab.pdf",
+      "location": "Table 1，印刷第7页/PDF第7页",
+      "values": "列举的纯棉试样185.37–197.07 g/m²、厚度0.61–0.77 mm。厚度测量压力0.49 cN/cm²。",
+      "scope": "支持200 g/m²和0.6 mm多孔织物包络的近似量级；该表弯曲列宽度归一化不明，不用于SI弯曲换算。"
+    },
+    {
+      "id": "linen_blends",
+      "title": "Comfort and Handle Behaviour of Linen-Blended Fabrics",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/aut-2007-070104/pdf",
+      "location": "Tables 1–3、5；印刷第34、35、37、39页",
+      "values": "185 g/m²纯亚麻B≈19.123 µN·m；144 g/m²棉麻混纺B≈9.709 µN·m。",
+      "scope": "仅作不同织物的数量级参照；不存在由这些数据测得的200 g/m²、D=10 µN·m完整匹配样本。"
+    },
+    {
+      "id": "native_shear",
+      "title": "libuipc strain-limiting Baraff–Witkin shell native energy",
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.h",
+      "location": "101–129 (energy), 139–143 (shear derivative)",
+      "values": "按静止三角形面积积分；剪切能量密度mu*(Fa·Fb)^2，小角切变表面切线斜率约2mu。",
+      "scope": "mu单位N/m，不能再乘厚度；小角换算不是织物在有限张力/有限角度下的KES标定。"
+    },
+    {
+      "id": "native_bending",
+      "title": "libuipc discrete shell bending, pinned implementation specification",
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/docs/specification/constitutions/discrete_shell_bending.md",
+      "values": "原生D是独立铰链弯曲系数，单位N·m；D与膜内E、mu分别控制。",
+      "scope": "调低D增加易弯折程度，不新增耗散/迟滞。"
+    }
+  ],
+  "not_measured": [
+    "actual canvas warp/weft extension and shear",
+    "bending hysteresis",
+    "cloth and plush friction",
+    "teddy filling compression and recovery"
+  ],
+  "teddy_model": "A homogeneous compressible elastic continuum; no separately resolved textile skin or loose filling fibers.",
+  "selected_run": "two_panel_full_40",
+  "selected_config": "config_cotton_linen_moderate_strap_material.json",
+  "default_config_sha256": "1d3306ca89792bdad8d6b0d9b24926f410866404c2c98d2694758da8a2cce529",
+  "observed_response_cn": "单次完整任务中，持前提带构造长轴局部峰4.7838%→2.3461%，最大主伸长8.5688%→4.6219%；后片局部主伸长峰3.4932%→5.9480%，并非全部区域或方向都改善。原生轴、构造轴均不等于实测纱向。未新增材料阻尼/迟滞，不能据此声称零伸长或已消除回弹。",
+  "validation_reports": {
+    "native": "runs/two_panel_full_40/validation.json",
+    "independent": "runs/two_panel_full_40/independent-gravity-execution-review.json",
+    "material_readback": "runtime_ipc/full40-native-material-readback-review.json",
+    "whole_run_strain": "runtime_ipc/full_40-cloth-material-baseline.json",
+    "native_axis_strain": "runtime_ipc/two_panel_full_40-native-axis-strain-review-v2.json"
+  }
+}

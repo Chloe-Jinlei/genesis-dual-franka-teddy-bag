@@ -1,0 +1,199 @@
+--- motion.py before
++++ motion.py continuous-rate fix
+@@ -8,6 +8,7 @@
+ from __future__ import annotations
+ 
+ from dataclasses import dataclass
++from numbers import Real
+ 
+ import copy
+ import json
+@@ -17,9 +18,10 @@
+ 
+ import mujoco
+ import numpy as np
+-from scipy.optimize import least_squares
++from scipy.optimize import brentq, least_squares
+ from scipy.interpolate import CubicSpline
+ from scipy.spatial.transform import Rotation, Slerp
++from numpy.polynomial import polynomial as polynomial
+ 
+ HERE = Path(__file__).resolve().parent
+ ASSET = HERE.parent / "genesis-world/genesis/assets/xml/franka_emika_panda"
+@@ -256,6 +258,46 @@
+             60*u - 180*u**2 + 120*u**3)
+ 
+ 
++def _positive_finite_scalar(value, name):
++    if isinstance(value, (bool, np.bool_)) or not isinstance(value, Real) \
++            or not np.isfinite(value) or value <= 0:
++        raise ValueError(f"{name} must be a positive finite numeric scalar")
++    return float(value)
++
++
++def _real_polynomial_roots_unit(coefficients):
++    """Isolate real roots on [0,1] using the derivative's monotone intervals.
++
++    Recursion avoids discarding repeated real roots as nearly complex companion
++    roots. Near-zero stationary values are retained as extra candidates; they
++    cannot reduce an extremum. This is floating-point root isolation, not
++    directed-rounding interval arithmetic.
++    """
++    raw = np.asarray(coefficients)
++    if raw.ndim != 1 or np.iscomplexobj(raw):
++        raise ValueError("Rate root coefficients must be a real vector")
++    c = np.trim_zeros(np.asarray(raw, float), "b")
++    if not np.isfinite(c).all():
++        raise ValueError("Nonfinite rate polynomial")
++    if len(c) <= 1:
++        return []
++    c = c / np.max(np.abs(c))
++    if len(c) == 2:
++        root = -c[0] / c[1]
++        return [float(root)] if np.isfinite(root) and 0. <= root <= 1. else []
++    knots = sorted(set([0., 1., *_real_polynomial_roots_unit(polynomial.polyder(c))]))
++    values = np.asarray(polynomial.polyval(knots, c))
++    if not np.isfinite(values).all():
++        raise ValueError("Nonfinite rate root evaluation")
++    zero_tolerance = 64*np.finfo(float).eps*np.sum(np.abs(c))
++    roots = [x for x, y in zip(knots, values) if abs(y) <= zero_tolerance]
++    for lo, hi, flo, fhi in zip(knots[:-1], knots[1:], values[:-1], values[1:]):
++        if flo != 0. and fhi != 0. and np.signbit(flo) != np.signbit(fhi):
++            roots.append(float(brentq(lambda x: polynomial.polyval(x, c), lo, hi,
++                                      xtol=5e-15, rtol=4*np.finfo(float).eps)))
++    return sorted(set(roots))
++
++
+ @dataclass
+ class MotionPlan:
+     """A C2 path with zero velocity/acceleration at both ends.
+@@ -270,8 +312,7 @@
+     finger_end: dict | None = None
+ 
+     def __post_init__(self):
+-        if self.duration <= 0:
+-            raise ValueError("Duration must be positive")
++        self.duration = _positive_finite_scalar(self.duration, "Duration")
+         if self.finger_start is None:
+             self.finger_start = dict.fromkeys(SIDES, .04)
+         if self.finger_end is None:
+@@ -345,14 +386,112 @@
+                         f"limit={bounds[joint, column]:.12f}")
+         return extrema
+ 
++    def continuous_rate_extrema(self):
++        """Per-joint extrema of q(minimum_jerk(t/T)) over every cubic segment.
++
++        Each clock interval is normalized to [0,1] before composition. Its
++        degree <=15 position polynomial is differentiated, and velocity and
++        acceleration are evaluated at both endpoints and all real stationary
++        roots. Both sides of every spline knot are included. No time grid is
++        used to accept a peak; the numerical margin is applied by limit_rate.
++        """
++        duration = _positive_finite_scalar(self.duration, "Duration")
++        if not isinstance(self.curves, dict) or set(self.curves) != set(SIDES):
++            raise ValueError("Rate limits require both arm cubic paths")
++
++        def stable_progress(u):
++            v = u if u <= .5 else 1.-u
++            value = v*v*v*(10.-15.*v+6.*v*v)
++            return value if u <= .5 else 1.-value
++
++        def clock_at(s):
++            if s == 0. or s == 1.:
++                return s
++            target = s if s <= .5 else 1.-s
++            u = brentq(lambda x: stable_progress(x)-target, 0., .5,
++                       xtol=5e-15, rtol=4*np.finfo(float).eps)
++            return u if s <= .5 else 1.-u
++
++        result = {}
++        try:
++            with np.errstate(over="raise", invalid="raise", divide="raise"):
++                for side in SIDES:
++                    curve = self.curves[side]
++                    if np.iscomplexobj(getattr(curve, "x", [])) or np.iscomplexobj(getattr(curve, "c", [])):
++                        raise ValueError("Joint cubic knots and coefficients must be real")
++                    x = np.asarray(getattr(curve, "x", []), float)
++                    c = np.asarray(getattr(curve, "c", []), float)
++                    if x.ndim != 1 or len(x) < 2 or c.shape != (4, len(x)-1, 7) \
++                            or not np.isfinite(x).all() or not np.isfinite(c).all() \
++                            or x[0] != 0. or x[-1] != 1. or np.any(np.diff(x) <= 0.):
++                        raise ValueError("Finite seven-joint cubics must cover [0,1] with increasing knots")
++                    # Discontinuous q/q_s/q_ss cannot be repaired by retiming.
++                    for k, width in enumerate(np.diff(x)[:-1]):
++                        for order in range(3):
++                            local = c[:, k, :].copy()
++                            for _ in range(order):
++                                local = local[:-1]*np.arange(len(local)-1, 0, -1)[:, None]
++                            end = np.zeros(7)
++                            for coefficient in local:
++                                end = end*width+coefficient
++                            start = c[3-order, k+1]*math.factorial(order)
++                            # Short IK intervals amplify roundoff in q_ss;
++                            # both one-sided acceleration extrema are still
++                            # included below. Position/velocity stay tighter.
++                            atol = 1e-8 if order == 2 else 1e-10
++                            if not np.allclose(end, start, rtol=1e-10, atol=atol):
++                                raise ValueError(f"{side} rate path is not C2 at knot {k+1}")
++                    clocks = np.asarray([clock_at(float(s)) for s in x])
++                    if not np.isfinite(clocks).all() or np.any(np.diff(clocks) <= 0.):
++                        raise ValueError("Spline clock intervals are below numerical resolution")
++                    peaks = np.zeros((2, 7)); times = np.zeros((2, 7))
++                    for k, (ua, ub) in enumerate(zip(clocks[:-1], clocks[1:])):
++                        h = ub-ua
++                        # Taylor expansion of s(ua+h*r)-x[k], using factored
++                        # low-order coefficients instead of cancellation near 1.
++                        progress = np.array([stable_progress(ua)-x[k],
++                            30*ua*ua*(1-ua)**2*h,
++                            30*ua*(1-ua)*(1-2*ua)*h*h,
++                            (10-60*ua+60*ua*ua)*h**3,
++                            (-15+30*ua)*h**4, 6*h**5])
++                        q = np.zeros((16, 7))
++                        for degree in range(4):
++                            basis = polynomial.polypow(progress, degree)
++                            q[:len(basis)] += basis[:, None]*c[3-degree, k]
++                        qd = polynomial.polyder(q, axis=0)/(h*duration)
++                        qdd = polynomial.polyder(qd, axis=0)/(h*duration)
++                        qddd = polynomial.polyder(qdd, axis=0)/(h*duration)
++                        if not all(np.isfinite(a).all() for a in (q, qd, qdd, qddd)):
++                            raise ValueError("Nonfinite composed rate polynomial")
++                        for order, (values, stationary) in enumerate(((qd, qdd), (qdd, qddd))):
++                            for joint in range(7):
++                                candidates = np.asarray([0., 1., *_real_polynomial_roots_unit(stationary[:, joint])])
++                                rates = np.abs(polynomial.polyval(candidates, values[:, joint]))
++                                if not np.isfinite(rates).all():
++                                    raise ValueError("Nonfinite continuous rate extrema")
++                                index = int(np.argmax(rates))
++                                if rates[index] > peaks[order, joint]:
++                                    peaks[order, joint] = rates[index]
++                                    times[order, joint] = (ua+h*candidates[index])*duration
++                    result[side] = dict(maximum_velocity_rad_s=peaks[0],
++                        maximum_acceleration_rad_s2=peaks[1],
++                        velocity_peak_time_s=times[0], acceleration_peak_time_s=times[1])
++        except (FloatingPointError, OverflowError) as exc:
++            raise ValueError("Continuous rate calculation exceeded finite numerical range") from exc
++        return result
++
+     def limit_rate(self, max_joint_velocity=.55, max_joint_acceleration=1.0):
+-        if max_joint_velocity <= 0 or max_joint_acceleration <= 0:
+-            raise ValueError("Velocity and acceleration limits must be positive")
+-        points = [self.sample(float(t)) for t in np.linspace(0, self.duration, 501)]
+-        peak_v = max(np.max(np.abs(p["qd"][s])) for p in points for s in SIDES)
+-        peak_a = max(np.max(np.abs(p["qdd"][s])) for p in points for s in SIDES)
+-        self.duration *= max(1., peak_v/max_joint_velocity,
+-                             np.sqrt(peak_a/max_joint_acceleration)) * 1.002
++        max_joint_velocity = _positive_finite_scalar(max_joint_velocity, "Velocity limit")
++        max_joint_acceleration = _positive_finite_scalar(max_joint_acceleration, "Acceleration limit")
++        extrema = self.continuous_rate_extrema()
++        peak_v = max(float(np.max(v["maximum_velocity_rad_s"])) for v in extrema.values())
++        peak_a = max(float(np.max(v["maximum_acceleration_rad_s2"])) for v in extrema.values())
++        # Keep the original 0.2% duration margin. Velocity scales as 1/T and
++        # acceleration as 1/T². This margin covers floating evaluation/root
++        # errors; it is not a directed-rounding interval proof.
++        factor = max(1., peak_v/max_joint_velocity, math.sqrt(peak_a/max_joint_acceleration))*1.002
++        new_duration = _positive_finite_scalar(self.duration*factor, "Retimed duration")
++        self.duration = new_duration
+         return self.duration
+ 
+     def end_q(self):

@@ -1,0 +1,681 @@
+{
+  "scope": "Only current actual full24 transport versus full23 material points involved in first observed front-panel contact. No planning, future frames, synthetic soft mutation or active-run change.",
+  "physical_success": false,
+  "status": "available_checks_passed",
+  "check_count": 18,
+  "checks": {
+    "new_actual_transport_and_fresh_times_match": true,
+    "new_actual_shape_not_full23_reuse": true,
+    "fresh_policy_unchanged_from_initial_and_code": true,
+    "fresh_physical_context_clear": true,
+    "recomputed_minimum_tetra_volume_ratio": true,
+    "recomputed_maximum_bag_edge_stretch_ratio": true,
+    "recomputed_bag_table_penetration_m": true,
+    "recomputed_bear_table_penetration_m": true,
+    "recomputed_left_designated_material_distance_m": true,
+    "recomputed_right_nearest_teddy_distance_m": true,
+    "fresh_actual_COM_matches_restvolume_weighted": true,
+    "original_single_initial_offset": true,
+    "fresh_no_XY_correction_or_extra_stage": true,
+    "fresh_insert_uses_actual_XY": true,
+    "fresh_full_R_from_actual_FK": true,
+    "fresh_original_vertical_clearance_passes": true,
+    "fresh_no_rejections_or_claimed_physical_success": true,
+    "inputs_unchanged": true
+  },
+  "failed_checks": [],
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/config.json": "67ac2548dd28464a2e4a90500b59376a108d57c53e5ccda7e922e459265c66fa",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/transport_teddy.npz": "d09552efe5124180b8cb5a6eea84636be72e8787cba1364b44690a3f8804449e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/guarded_contact_reobserved.json": "cfcae236fb57764122707275377f9d5dc83cd11b97855de5daf2c64a90b85c60",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/guarded_contact_candidate.json": "ee5a6efc267b74dce67d554af4c6bde6349dc860e16feefa0dbc58d28cdfd00b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/orient_teddy_postlift.npz": "53d184548f2444be14a67aa17a2ab9e380a6d5895ccaa03c0eb4f9cad37bf080",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/transport_teddy.npz": "f250dd8134ddf539cb73bbfffb44637f97708af3f9c9ded653f21d9a0e66fdd0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/config.json": "ba490b666b8a543800f114fc5c4889c6c089db130cd47ac100565010555cfc5a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_23/states.npz": "cdac0100ff7d516cd00b551c012b944200fb033d75b4d2cae166b3d9a693b984",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a"
+  },
+  "actual_state_sha256": "d09552efe5124180b8cb5a6eea84636be72e8787cba1364b44690a3f8804449e",
+  "actual_time_s": 38.86500000000143,
+  "actual_physical_recomputed": {
+    "time_s": 38.86500000000143,
+    "minimum_tetra_volume_ratio": 0.4705332464744188,
+    "bag_table_penetration_m": 0.0,
+    "bear_table_penetration_m": 0.0,
+    "maximum_bag_edge_stretch_ratio": 1.0164617991071814,
+    "all_soft_states_finite": 1.0,
+    "left_designated_material_distance_m": 0.0003375232686217924,
+    "right_nearest_teddy_distance_m": 0.0038268276940785512,
+    "tcp_fk_errors_m": {
+      "left": 2.7476618026966064e-16,
+      "right": 4.08865160135725e-16
+    },
+    "actual_rigid_clearances": {
+      "left_self": {
+        "distance": 0.022991640070936244,
+        "bodies": [
+          "left_link5",
+          "left_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "left_table": {
+        "distance": 0.16099593221477013,
+        "bodies": [
+          "left_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ]
+      },
+      "left_mounts": {
+        "distance": 0.14099593221477014,
+        "bodies": [
+          "left_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "left_mount"
+        ]
+      },
+      "right_self": {
+        "distance": 0.022132902333207055,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "right_table": {
+        "distance": 0.16099593221477015,
+        "bodies": [
+          "right_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ]
+      },
+      "right_mounts": {
+        "distance": 0.14099593221477014,
+        "bodies": [
+          "right_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "right_mount"
+        ]
+      },
+      "arms": {
+        "distance": 0.03162308856172442,
+        "bodies": [
+          "left_hand",
+          "right_hand"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      }
+    },
+    "finger_pair_half_opening_approximation_error_m": {
+      "left": 1.7782095346368428e-06,
+      "right": 2.1433590133984604e-07
+    },
+    "contact_force_and_torque_not_in_saved_state": true,
+    "physical_state_rejections": []
+  },
+  "actual_COM_world_m": [
+    -0.1303959127461278,
+    0.07454615127932696,
+    1.290829197887908
+  ],
+  "actual_COM_offset_from_current_mouth_centroid_m": [
+    0.01929871977320266,
+    0.029303155618376105
+  ],
+  "current_actual_COM_minus_original_selected_COM_xy_m": [
+    0.0030773342023812933,
+    -0.0016490526550716478
+  ],
+  "actual_TCP_difference_from_full23_transport_m": [
+    0.01518749556242821,
+    -0.0038753612402043364,
+    7.244230573855148e-06
+  ],
+  "relative_to_TCP_material_shape_difference_from_full23": {
+    "maximum_node_difference_m": 0.004447606284132336,
+    "mean_node_difference_m": 0.0020742083499832964
+  },
+  "vertical_capacity": {
+    "observed_bear_height_m": 0.20552868634914456,
+    "usable_height_below_actual_lowest_rim_m": 0.23966611133160398,
+    "height_margin_m": 0.03413742498245942,
+    "planned_bear_bottom_z_m": 0.75,
+    "planned_bear_top_z_m": 0.9555286863491446,
+    "planned_table_clearance_m": 0.01,
+    "whole_bear_end_below_lowest_rim": true,
+    "bottom_clearance_is_planning_allowance_not_physical_contact_law": true
+  },
+  "section_summary": {
+    "translation_xy_m": [
+      0.0,
+      0.0
+    ],
+    "maximum_outside_excursion_bound_m": 0.08722943327059099,
+    "allowed_outside_excursion_m": 0.10402452121633249,
+    "minimum_section_slab_overlap_fraction": 0.6223148523854848,
+    "maximum_required_enclosing_rim_perimeter_m": 0.9356401808366528,
+    "maximum_buffered_section_envelope_perimeter_m": 0.5999275807990824,
+    "active_rim_perimeter_policy": "deformable_rim_contact",
+    "active_rim_perimeter_criterion": "buffered_section_only",
+    "active_required_enclosing_rim_perimeter_m": 0.5999275807990824,
+    "active_perimeter_margin_m": 0.31530522791594684,
+    "mouth_union_perimeter_rejections": [
+      "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+    ],
+    "mouth_union_perimeter_is_diagnostic_only": true,
+    "rim_perimeter_scope": "The legacy union metric retains all current mouth XY points. The optional section-only criterion allows mouth rearrangement as a bounded contact preflight; it does not establish cloth feasibility, collision freedom, or coupled passage of a nonplanar rim.",
+    "section_perimeter_square_buffer_halfwidth_m": 0.002,
+    "available_rim_perimeter_m": 0.9152328087150292,
+    "interior_distance_initial_grid_spacing_m": 0.004,
+    "interior_distance_refined_grid_spacing_m": 0.001,
+    "interior_distance_refined_slab_count": 0,
+    "perimeter_margin_m": -0.02040737212162358,
+    "section_guard_rejections": [],
+    "center_of_mass_xy_target_m": [
+      -0.1303959127461278,
+      0.07454615127932696
+    ],
+    "com_boundary_distance_m": 0.051959232426889455
+  },
+  "actual_foot_alignment_comparison": [
+    {
+      "label": "full23_original_transport",
+      "actual_time_s": 40.280000000002154,
+      "foot_points": [
+        {
+          "material_node": 66,
+          "actual_world_m": [
+            -0.20038380812862927,
+            0.013643063014758759,
+            1.2369924630538973
+          ],
+          "actual_relative_TCP_m": [
+            -0.0571909109300304,
+            -0.0577559620493967,
+            -0.13254862483757446
+          ],
+          "projected_inside_current_rim": true,
+          "projected_rim_distance_m": 0.010367530227955713,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.2107382167450546,
+            0.014164508344273042
+          ],
+          "rim_to_foot_projected_vector_m": [
+            0.010354408616425337,
+            -0.0005214453295142828
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.1286229990658754,
+          "body_nearest_global_face": 1409,
+          "body_nearest_point_world_m": [
+            -0.21182619982971254,
+            -0.006669189264893039,
+            1.1104999337559702
+          ],
+          "body_face_oriented_normal": [
+            -0.8979585708226433,
+            0.11959323357351954,
+            0.42351843356527635
+          ]
+        },
+        {
+          "material_node": 92,
+          "actual_world_m": [
+            -0.19293206424045795,
+            0.01985379829632902,
+            1.2430908217413366
+          ],
+          "actual_relative_TCP_m": [
+            -0.04973916704185907,
+            -0.05154522676782644,
+            -0.12645026615013522
+          ],
+          "projected_inside_current_rim": true,
+          "projected_rim_distance_m": 0.017497467695447164,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.21040738635553863,
+            0.020733850980768312
+          ],
+          "rim_to_foot_projected_vector_m": [
+            0.017475322115080683,
+            -0.0008800526844392927
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.136419357005293,
+          "body_nearest_global_face": 1409,
+          "body_nearest_point_world_m": [
+            -0.21152615934358654,
+            -0.001223376867268134,
+            1.109598300302282
+          ],
+          "body_face_oriented_normal": [
+            -0.8979585708226433,
+            0.11959323357351954,
+            0.42351843356527635
+          ]
+        },
+        {
+          "material_node": 60,
+          "actual_world_m": [
+            -0.20068985854515475,
+            0.007865791164652651,
+            1.2388285888278177
+          ],
+          "actual_relative_TCP_m": [
+            -0.05749696134655588,
+            -0.06353323389950281,
+            -0.13071249906365412
+          ],
+          "projected_inside_current_rim": true,
+          "projected_rim_distance_m": 0.01035244084379959,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.21102919687522573,
+            0.008386477558458965
+          ],
+          "rim_to_foot_projected_vector_m": [
+            0.010339338330070974,
+            -0.0005206863938063133
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.12948914645929152,
+          "body_nearest_global_face": 1409,
+          "body_nearest_point_world_m": [
+            -0.21215225285046965,
+            -0.012587135891523875,
+            1.1114797358986293
+          ],
+          "body_face_oriented_normal": [
+            -0.8979585708226433,
+            0.11959323357351954,
+            0.42351843356527635
+          ]
+        }
+      ],
+      "full_bear_bbox_min_m": [
+        -0.253002060227117,
+        -0.017766683164006942,
+        1.190515833793177
+      ],
+      "full_bear_bbox_max_m": [
+        -0.034204294179613966,
+        0.17556482442263488,
+        1.3960156764063532
+      ],
+      "whole_bear_minZ_above_highest_rim_m": 0.06860072907428738,
+      "original_first_contact_front_face1407_oriented_normal": [
+        -0.8981426285033033,
+        0.12754019081849693,
+        0.4208008063100149
+      ],
+      "original_face1407_material_world_vertices_m": [
+        [
+          -0.21852251420518184,
+          0.028285563256356894,
+          1.0857764440613318
+        ],
+        [
+          -0.2113747744674319,
+          0.001524297774979096,
+          1.1091433827993615
+        ],
+        [
+          -0.20980724609494905,
+          0.03265091521279593,
+          1.103054918527383
+        ]
+      ]
+    },
+    {
+      "label": "full24_current_actual_transport",
+      "actual_time_s": 38.86500000000143,
+      "foot_points": [
+        {
+          "material_node": 66,
+          "actual_world_m": [
+            -0.18478102028806576,
+            0.008904925242153767,
+            1.2381169162719878
+          ],
+          "actual_relative_TCP_m": [
+            -0.05677561865189509,
+            -0.058618738581797364,
+            -0.1314314158500578
+          ],
+          "projected_inside_current_rim": true,
+          "projected_rim_distance_m": 0.026442518024271867,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.21118939054355668,
+            0.010248331328504633
+          ],
+          "rim_to_foot_projected_vector_m": [
+            0.02640837025549092,
+            -0.0013434060863508658
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.13123120837927407,
+          "body_nearest_global_face": 1409,
+          "body_nearest_point_world_m": [
+            -0.21229206271755738,
+            -0.010444408191562041,
+            1.1112690708318778
+          ],
+          "body_face_oriented_normal": [
+            -0.8984933207330147,
+            0.11896368186345793,
+            0.4225605222872221
+          ]
+        },
+        {
+          "material_node": 92,
+          "actual_world_m": [
+            -0.1774166001737949,
+            0.015292807871067873,
+            1.2441370417540762
+          ],
+          "actual_relative_TCP_m": [
+            -0.04941119853762424,
+            -0.05223085595288325,
+            -0.12541129036796939
+          ],
+          "projected_inside_current_rim": true,
+          "projected_rim_distance_m": 0.033472892836588566,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.21084626624189026,
+            0.01699339054338248
+          ],
+          "rim_to_foot_projected_vector_m": [
+            0.03342966606809536,
+            -0.0017005826723146059
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.13964206874448654,
+          "body_nearest_global_face": 1409,
+          "body_nearest_point_world_m": [
+            -0.21198193590634695,
+            -0.004810783882894373,
+            1.1103424584275234
+          ],
+          "body_face_oriented_normal": [
+            -0.8984933207330147,
+            0.11896368186345793,
+            0.4225605222872221
+          ]
+        },
+        {
+          "material_node": 60,
+          "actual_world_m": [
+            -0.18491950533513216,
+            0.0031191091278496125,
+            1.2399466480721617
+          ],
+          "actual_relative_TCP_m": [
+            -0.05691410369896149,
+            -0.06440455469610151,
+            -0.12960168404988393
+          ],
+          "projected_inside_current_rim": true,
+          "projected_rim_distance_m": 0.026598158881958222,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.2114833154542885,
+            0.004470422512412728
+          ],
+          "rim_to_foot_projected_vector_m": [
+            0.026563810119156345,
+            -0.0013513133845631151
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.13211770470744086,
+          "body_nearest_global_face": 1409,
+          "body_nearest_point_world_m": [
+            -0.2126177563605231,
+            -0.01636081257152833,
+            1.1122421945950685
+          ],
+          "body_face_oriented_normal": [
+            -0.8984933207330147,
+            0.11896368186345793,
+            0.4225605222872221
+          ]
+        }
+      ],
+      "full_bear_bbox_min_m": [
+        -0.23682337880425708,
+        -0.02352174090286196,
+        1.1911667989733299
+      ],
+      "full_bear_bbox_max_m": [
+        -0.021319473484055072,
+        0.1744714138116322,
+        1.3966954853224745
+      ],
+      "whole_bear_minZ_above_highest_rim_m": 0.06917789491424453,
+      "original_first_contact_front_face1407_oriented_normal": [
+        -0.8988183924886939,
+        0.12737092928161203,
+        0.4194068951483499
+      ],
+      "original_face1407_material_world_vertices_m": [
+        [
+          -0.21873726517592984,
+          0.028305689724922947,
+          1.0859426701159345
+        ],
+        [
+          -0.2116330863564816,
+          0.0015262602975776036,
+          1.1093001482870455
+        ],
+        [
+          -0.2100495013783364,
+          0.032656012394718006,
+          1.1032399948229632
+        ]
+      ]
+    },
+    {
+      "label": "full23_first_observed_body_near_contact",
+      "actual_time_s": 43.03000000000356,
+      "foot_points": [
+        {
+          "material_node": 66,
+          "actual_world_m": [
+            -0.20179124240269586,
+            0.010369046445000736,
+            1.097388535268105
+          ],
+          "actual_relative_TCP_m": [
+            -0.05864672794509773,
+            -0.061067763433436686,
+            -0.1299542658942512
+          ],
+          "projected_inside_current_rim": false,
+          "projected_rim_distance_m": 0.004071141021932709,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.1977325052199329,
+            0.010051490620426914
+          ],
+          "rim_to_foot_projected_vector_m": [
+            -0.00405873718276295,
+            0.0003175558245738213
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.0014338903439127984,
+          "body_nearest_global_face": 1407,
+          "body_nearest_point_world_m": [
+            -0.2007626588084809,
+            0.01011711571565181,
+            1.0964217942398622
+          ],
+          "body_face_oriented_normal": [
+            -0.7173376950207639,
+            0.17569734702407874,
+            0.6742084792933102
+          ]
+        },
+        {
+          "material_node": 92,
+          "actual_world_m": [
+            -0.1942856931856667,
+            0.016730240575882387,
+            1.1031496964107608
+          ],
+          "actual_relative_TCP_m": [
+            -0.05114117872806859,
+            -0.05470656930255503,
+            -0.1241931047515954
+          ],
+          "projected_inside_current_rim": true,
+          "projected_rim_distance_m": 0.0029153566904959356,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.19719216744852958,
+            0.016957643285046644
+          ],
+          "rim_to_foot_projected_vector_m": [
+            0.0029064742628628626,
+            -0.00022740270916425664
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.005479581905185501,
+          "body_nearest_global_face": 1407,
+          "body_nearest_point_world_m": [
+            -0.19725517884828325,
+            0.016152283435447043,
+            1.098580895879005
+          ],
+          "body_face_oriented_normal": [
+            -0.7173376950207639,
+            0.17569734702407874,
+            0.6742084792933102
+          ]
+        },
+        {
+          "material_node": 60,
+          "actual_world_m": [
+            -0.2021306834043268,
+            0.004645030517819833,
+            1.0993104810124754
+          ],
+          "actual_relative_TCP_m": [
+            -0.05898616894672867,
+            -0.06679177936061759,
+            -0.12803232014988075
+          ],
+          "projected_inside_current_rim": false,
+          "projected_rim_distance_m": 0.003963064986102603,
+          "closest_projected_rim_edge_material_ids": [
+            761,
+            760
+          ],
+          "closest_projected_rim_xy_m": [
+            -0.19817969297433563,
+            0.004335904805219486
+          ],
+          "rim_to_foot_projected_vector_m": [
+            -0.003950990429991169,
+            0.0003091257126003463
+          ],
+          "exact_node_to_body_triangle_distance_m": 0.0019674818744852014,
+          "body_nearest_global_face": 1407,
+          "body_nearest_point_world_m": [
+            -0.2007193344914884,
+            0.0042993491721548035,
+            1.0979839880498417
+          ],
+          "body_face_oriented_normal": [
+            -0.7173376950207639,
+            0.17569734702407874,
+            0.6742084792933102
+          ]
+        }
+      ],
+      "full_bear_bbox_min_m": [
+        -0.25434513636128636,
+        -0.019826537110150446,
+        1.0487592333877094
+      ],
+      "full_bear_bbox_max_m": [
+        -0.03411838456516257,
+        0.1742535472473688,
+        1.2535834903279706
+      ],
+      "whole_bear_minZ_above_highest_rim_m": -0.07226901181566259,
+      "original_first_contact_front_face1407_oriented_normal": [
+        -0.7173376950207639,
+        0.17569734702407874,
+        0.6742084792933102
+      ],
+      "original_face1407_material_world_vertices_m": [
+        [
+          -0.21010077165146224,
+          0.025525666245538363,
+          1.0824708842749289
+        ],
+        [
+          -0.19874600217583102,
+          -0.0029021933028370943,
+          1.1019602619243127
+        ],
+        [
+          -0.19630419932979226,
+          0.02830692092926559,
+          1.096425236093444
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "Horizontal point inclusion is local alignment evidence, not whole-object body passage or dynamic clearance.",
+    "Full23 first near-contact is an earlier run after lowering, not a matched-time prediction of full24.",
+    "Bag and teddy continue changing after transport; future body contact, rear-handle contact, force/torque and final containment remain native verification tasks.",
+    "Saved force fields are control forces, not a substitute for native IPC contact reaction traces."
+  ]
+}

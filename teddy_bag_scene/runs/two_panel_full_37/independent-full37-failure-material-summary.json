@@ -1,0 +1,468 @@
+{
+  "kind": "bounded_independent_full37_failure_material_summary",
+  "created_utc": "2026-11-15T20:18:28.077107+00:00",
+  "run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37",
+  "physical_success": false,
+  "native_simulation_performed_by_this_review": false,
+  "scope": "Read-only bounded actual failed-state, last complete native-affine frame, grip-wrench trend, and same-phase nearest-height historical comparison. No production, defaults, assets, config, gates, bear, motion, native processes or historical reports changed. Full38 not inspected.",
+  "failure": {
+    "reported_error": "GateFailure: Teddy element excessively compressed or inverted: volume ratio 0.0403",
+    "time_s": 56.270000000010334,
+    "wall_seconds": 3301.614605420007,
+    "last_complete_time_s": 56.250000000010324,
+    "first_metric_J_below_0_05_time_s": 56.270000000010334,
+    "failing_metric_step_count": 1,
+    "minimum_J": 0.04025431005199603,
+    "tet_index": 3255,
+    "tet_vertices": [
+      646,
+      624,
+      645,
+      1175
+    ],
+    "only_tets_below_0_05": [
+      3255
+    ],
+    "same_tet_as_full32_895": false,
+    "full37_failure_tet895_J": 1.0460160309038489,
+    "anatomical_region": "Original procedural +X arm, near the held upper-arm material; geometric material-label proxy, not a force attribution.",
+    "rest_unscaled_centroid_m": [
+      0.08271377627279655,
+      -0.0036346586791780396,
+      0.012901190217752864
+    ],
+    "failed_world_centroid_m": [
+      -0.16496401561391613,
+      0.05713333004316887,
+      0.9487463242265461
+    ],
+    "whole_tet_above_table_m": 0.203108589005496,
+    "principal_stretches": [
+      1.0193612410030573,
+      0.9587545368566115,
+      0.041188581818117936
+    ],
+    "most_compressed_spatial_axis_world": [
+      0.28034060309301634,
+      -0.9587437147269318,
+      0.04711301018877234
+    ],
+    "absolute_dot_with_guard_aim_finger_opening_axis": 0.9986227538746001,
+    "acute_axis_angle_degrees": 3.007414343117976,
+    "rest_mean_ratio_quality": 0.7441708917177413,
+    "interpretation": "Positive but severely flattened local element, not a negative-volume inversion or table impact. The principal collapse is nearly parallel to the finger opening/closing direction; this is consistent with grasp-region compression/rearrangement, but does not prove a specific contact pair or bag-parameter cause."
+  },
+  "executed_phase": {
+    "name": "insert_teddy",
+    "start_s": 39.10000000000155,
+    "duration_s": 22.49819959836136,
+    "elapsed_at_failure_s": 17.170000000008784,
+    "nominal_insert_endpoint_s": 61.59819959836291,
+    "nominal_seconds_remaining": 5.328199598352576,
+    "actual_q_FK_TCP_at_failure_m": [
+      -0.15943015759273074,
+      0.0663795285566628,
+      0.9559656977844146
+    ],
+    "guard_aim_TCP_at_failure_m": [
+      -0.15943009534260594,
+      0.06638049192106273,
+      0.9560639791041303
+    ],
+    "actual_minus_aim_TCP_m": [
+      -6.225012480487457e-08,
+      -9.633643999196195e-07,
+      -9.828131971567622e-05
+    ],
+    "planned_release_TCP_z_m": 0.915,
+    "release_started": false,
+    "actual_failure_vs_last_complete_scope": "failed_soft_state supplies true t56.270 soft geometry; same-time joint_trace supplies actual q/FK. Last complete state/native finger affine is t56.250, 20 ms earlier, and is never reused as the failed native pose."
+  },
+  "direct_contact_geometry": {
+    "whole_bad_tet_to_every_cloth_triangle_AABB_lower_bounds_m": {
+      "front_panel": 0.05267435115528087,
+      "back_panel": 0.02217046692196492,
+      "front_handle": 0.15718941147300594,
+      "back_handle": 0.02217046692196492
+    },
+    "direct_cloth_contact_on_this_tet_excluded_by_geometry": true,
+    "last_complete_native_finger_nearest_11_sample_diagnostic": {
+      "geom_id": 154,
+      "shape": "box",
+      "frame": "same-time saved native IPC affine transform of finger with frozen collision components",
+      "tet11sample_distance_m": 0.0036289756931149777,
+      "tet_sample_index": 2,
+      "tet_sample_m": [
+        -0.16433358454650804,
+        0.056573492742193615,
+        0.9497553037459013
+      ],
+      "rigid_nearest_m": [
+        -0.16338718880791428,
+        0.05307009719336294,
+        0.949759698700318
+      ],
+      "whole_AABB_lower_m": 0.0,
+      "robot_surface_face_normal": [
+        -0.26078866838079917,
+        0.965395154196664,
+        -0.001211072982647386
+      ]
+    },
+    "true_failure_actual_q_FK_finger_nearest_11_sample_diagnostic": {
+      "geom_id": 154,
+      "shape": "box",
+      "frame": "same-time actual-q FK reference, not saved IPC affine",
+      "tet11sample_distance_m": 0.003454955860299493,
+      "tet_sample_index": 2,
+      "tet_sample_m": [
+        -0.1646205308835925,
+        0.057087871910270066,
+        0.9492856107901363
+      ],
+      "rigid_nearest_m": [
+        -0.16372597148495532,
+        0.05375073501448653,
+        0.9492847065070218
+      ],
+      "whole_AABB_lower_m": 0.0,
+      "robot_surface_face_normal": [
+        -0.25892064466479453,
+        0.9658985615793826,
+        0.00026173507013150805
+      ]
+    },
+    "true_failure_actual_q_FK_palm_11_sample_diagnostic": {
+      "geom_id": 150,
+      "shape": "mesh_convex",
+      "frame": "same-time actual-q FK reference, not saved IPC affine",
+      "tet11sample_distance_m": 0.04136907753754353,
+      "tet_sample_index": 0,
+      "tet_sample_m": [
+        -0.16202213479794725,
+        0.05815518641756529,
+        0.9516112929936196
+      ],
+      "rigid_nearest_m": [
+        -0.1612635424073297,
+        0.05834696813530762,
+        0.9929729701074036
+      ],
+      "whole_AABB_lower_m": 0.041267947235175906,
+      "robot_surface_face_normal": [
+        -0.018337184094306225,
+        -0.004635871263222747,
+        -0.9998211121881367
+      ]
+    },
+    "interpretation": "The whole failed tetrahedron is at least22.170 mm from all physical cloth triangles and203.109 mm above the table. Direct cloth pressure or table impact at this element is excluded; transmitted loads through connected teddy material remain possible. Finger distances are 11-sample upper bounds, not exact tetrahedron/solid separation certificates; they do not prove direct finger contact on this element."
+  },
+  "force_and_grip": {
+    "failure_guard": {
+      "net_force_norm_n": 0.6287444911333254,
+      "tcp_torque_norm_nm": 0.01488028854465536,
+      "force_world_n": [
+        -0.052323568927127084,
+        -0.4280796588379676,
+        0.4575256112551534
+      ],
+      "torque_at_aim_tcp_world_nm": [
+        -0.012071329096253067,
+        0.0005651163709906879,
+        0.008682548272793762
+      ],
+      "right_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_link_force_world_n": [
+        [
+          -0.013141754105623437,
+          -0.009869586740855411,
+          0.002015050929577271
+        ],
+        [
+          0.8591584693876694,
+          -2.305447698497487,
+          0.5515429848011337
+        ],
+        [
+          -0.898340284209173,
+          1.887237626400375,
+          -0.09603242447555765
+        ]
+      ],
+      "right_link_torque_at_aim_tcp_world_nm": [
+        [
+          0.0005670713630823996,
+          -0.0010760931171111881,
+          -0.001537132672575526
+        ],
+        [
+          -0.02242868007020561,
+          -0.0031143503496781633,
+          0.023486206871966023
+        ],
+        [
+          0.009790279610870145,
+          0.004755559837780039,
+          -0.013266525926596735
+        ]
+      ],
+      "right_finger_opening_projection_n": [
+        2.4491374638624976,
+        2.05545328659424
+      ],
+      "right_finger_force_norm_n": [
+        2.521396841060777,
+        2.092343984932925
+      ]
+    },
+    "actual_failure_finger_q_m": [
+      0.01108760726425682,
+      0.011068645880983498
+    ],
+    "last_half_second": {
+      "count": 101,
+      "peak_net_force_N": 0.6423861280930171,
+      "peak_TCP_torque_Nm": 0.018893802803460456,
+      "minimum_finger_opening_reaction_N": 1.1559799075976125,
+      "minimum_global_J": 0.04025431005199606,
+      "maximum_cloth_edge_stretch_ratio": 1.018001320960295,
+      "opening_sum_start_m": 0.029133181713489963,
+      "opening_sum_end_m": 0.02215625314524032
+    },
+    "bounded_saved_geometry_trend": [
+      {
+        "time_s": 55.85000000001012,
+        "tet3255_J": 0.6408891236833563,
+        "global_minJ": 0.42065021495902677,
+        "global_worst_tet": 1530,
+        "actual_TCP_z_m": 0.9646986290892917,
+        "finger_opening_sum_m": 0.027422538914747666,
+        "finger_reaction_norms_N": [
+          1.9871865823923833,
+          1.639152902841884
+        ]
+      },
+      {
+        "time_s": 56.05000000001022,
+        "tet3255_J": 0.6384090618678673,
+        "global_minJ": 0.4491303764664622,
+        "global_worst_tet": 1530,
+        "actual_TCP_z_m": 0.9604303901165196,
+        "finger_opening_sum_m": 0.028158236984505265,
+        "finger_reaction_norms_N": [
+          1.9253475453300148,
+          1.518859393233839
+        ]
+      },
+      {
+        "time_s": 56.2000000000103,
+        "tet3255_J": 0.36072370388223085,
+        "global_minJ": 0.36072370388223085,
+        "global_worst_tet": 3255,
+        "actual_TCP_z_m": 0.957359373000578,
+        "finger_opening_sum_m": 0.026316253666548002,
+        "finger_reaction_norms_N": [
+          1.6111786804866166,
+          1.2709633635533284
+        ]
+      },
+      {
+        "time_s": 56.250000000010324,
+        "tet3255_J": 0.1145178283618799,
+        "global_minJ": 0.1145178283618799,
+        "global_worst_tet": 3255,
+        "actual_TCP_z_m": 0.9563593153199824,
+        "finger_opening_sum_m": 0.023213752169544757,
+        "finger_reaction_norms_N": [
+          2.299519070754069,
+          1.8540657589450908
+        ]
+      },
+      {
+        "time_s": 56.270000000010334,
+        "tet3255_J": 0.04025431005199603,
+        "global_minJ": 0.04025431005199603,
+        "global_worst_tet": 3255,
+        "actual_TCP_z_m": 0.9559656977844146,
+        "finger_opening_sum_m": 0.02215625314524032,
+        "finger_reaction_norms_N": [
+          2.521396841060777,
+          2.092343984932925
+        ]
+      }
+    ],
+    "finger_command_unchanged": {
+      "position_target_m": 0.0,
+      "actuator_force_cap_N": 1.8252
+    },
+    "interpretation": "At failure the two finger force norms are2.521 and2.092 N while their vector contributions oppose; net force0.629 N and TCP torque0.01488 Nm do not establish small local grip loading. Finger closure during the final70 ms coincides with element flattening under the unchanged position target/finite actuator cap. Reaction norms need not equal the actuator cap. No aggregate link wrench identifies the failing tetrahedron force or separates cloth normal/frictional loads."
+  },
+  "material_evidence": {
+    "bag_config": {
+      "E": 10000000.0,
+      "nu": 0.3,
+      "rho": 333.3333333333333,
+      "thickness": 0.0003,
+      "bending_stiffness": 1e-05,
+      "shear_stiffness": 50.0,
+      "handle_shear_stiffness": 1000.0,
+      "friction_mu": 0.5
+    },
+    "native_initialization_summary_persisted_at_finish": {
+      "stretch_mean_lambda_N_per_m": 6593.406593406591,
+      "regions": {
+        "body": {
+          "face_count": 2960,
+          "shear_stiffness_n_per_m": 50.0,
+          "all_faces_equal": true
+        },
+        "handle_front": {
+          "face_count": 576,
+          "shear_stiffness_n_per_m": 1000.0,
+          "all_faces_equal": true
+        },
+        "handle_back": {
+          "face_count": 576,
+          "shear_stiffness_n_per_m": 1000.0,
+          "all_faces_equal": true
+        }
+      },
+      "mass_kg": 0.08005309630840247,
+      "full_thickness_m": 0.0006
+    },
+    "readback_limit": "D and friction remain config/source-path evidence; no separately archived numeric edge-D or pair-friction buffer is claimed. Whole-run cloth principal-strain comparison is outside this bounded failure review."
+  },
+  "same_phase_comparison": {
+    "bear_rest_mesh_and_tet_ids_exact_between_30_32_37": true,
+    "full37_reference_last_complete_TCP_m": [
+      -0.15942994134517946,
+      0.06638406762934537,
+      0.9563593153199824
+    ],
+    "comparators": [
+      {
+        "run": 30,
+        "selection": "Nearest saved actual TCP height to Full37 last complete frame, restricted to actual insert_teddy phase; not matched simulation time, material, XY, orientation or soft shape.",
+        "time_s": 51.55000000000792,
+        "actual_q_FK_TCP_m": [
+          -0.15235237925674588,
+          0.10207082872927262,
+          0.9558511576116169
+        ],
+        "delta_TCP_vs_full37_last_complete_m": [
+          0.0070775620884335755,
+          0.035686761099927244,
+          -0.000508157708365542
+        ],
+        "tet3255_J": 0.9739271500293661,
+        "global_minJ": 0.35502484404004125,
+        "global_worst_tet": 3258,
+        "finger_opening_sum_m": 0.03637907642847391,
+        "bag_parameters": {
+          "E": 4000000.0,
+          "rho": 500.0,
+          "bending_stiffness": 5e-05,
+          "shear_stiffness": 50.0,
+          "handle_shear_stiffness": 250.0,
+          "friction_mu": 0.65
+        },
+        "actual_run_status": "completed",
+        "actual_run_error": null,
+        "scope": "Historical run outcome is read only for context; no new full-success audit was performed."
+      },
+      {
+        "run": 32,
+        "selection": "Nearest saved actual TCP height to Full37 last complete frame, restricted to actual insert_teddy phase; not matched simulation time, material, XY, orientation or soft shape.",
+        "time_s": 51.47000000000788,
+        "actual_q_FK_TCP_m": [
+          -0.15172342845879658,
+          0.10086725015727652,
+          0.9566518464769853
+        ],
+        "delta_TCP_vs_full37_last_complete_m": [
+          0.0077065128863828825,
+          0.034483182527931144,
+          0.00029253115700289545
+        ],
+        "tet3255_J": 0.969196806995042,
+        "global_minJ": 0.33672437174405345,
+        "global_worst_tet": 3258,
+        "finger_opening_sum_m": 0.03693583022015129,
+        "bag_parameters": {
+          "E": 10000000.0,
+          "rho": 500.0,
+          "bending_stiffness": 5e-05,
+          "shear_stiffness": 500.0,
+          "handle_shear_stiffness": 1000.0,
+          "friction_mu": 0.65
+        },
+        "actual_run_status": "failed",
+        "actual_run_error": "GateFailure: Teddy element excessively compressed or inverted: volume ratio 0.0495",
+        "scope": "Historical run outcome is read only for context; no new full-success audit was performed."
+      }
+    ],
+    "limits": "Full30 and32 have about35 mm different Y at this height because their actual bag observations and routes differ. Neither equal simulation time nor similar TCP height is a matched contact history; these observations cannot identify E, shear, D, mass or friction as the compression cause."
+  },
+  "bounded_material_only_next_step_assessment": {
+    "status": "Root independently selected Full38; this review neither launches nor changes it.",
+    "proposal_reported_by_root": "Restore original handle mu250 N/m and bag friction.65 from Full37, keeping bodymu50/E10MPa/D10µNm/200gsm and every original motion/geometry/bear/gate.",
+    "rationale": "Removing the uncalibrated4x handle-shear increase and changed friction is a defensible reduction in material assumptions, retaining the independently motivated tensile/bending/areal-mass goals. It is a bounded material comparison, not an established repair of tet3255.",
+    "limits": [
+      "Two coefficients change together, so a later difference will not isolate handle shear from friction.",
+      "Restoring friction can increase tangential restraint at robot, plush, table and self-contact; it may worsen other loads.",
+      "No evidence justifies relaxing the tetrahedron gate, changing the bear, increasing grasp force, or claiming added damping/less rebound.",
+      "A future actual run must independently satisfy all original physical, release, containment and retention conditions."
+    ]
+  },
+  "evidence_files_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/independent-full37-compression-contact-review.json": "74a0b819be60f73e50f544fa5a1a76e18db6d560b099e01e04004171addc4721",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/report.json": "b32bd2dab290d96a2c22ab18c1c18d4493d1a4dfbff37b332c0f587d9bba632e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/failed_soft_state.npz": "5af958b5ce833288196d0ebee7d41204c9f60da8208061db28f001b2b57aa2ea",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/soft_metrics.npy": "93f694a10a87bce6500eac02320b4e1fbd075fd5e8cfc3629fb2c44fe1c30050",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/soft_metrics_columns.json": "79a79a0d00124a20e4bca6f5ad1bcfab6c824d95ee99a2a0d38349d973d34c10",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/states.npz": "3f0002ff28165f558a377e1a0ba470689c18048a3aba91d131aa7bdfd6a3949b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/joint_trace.npy": "02f741be5d7e198393163646c02fceabc97779346fe71f948e9567c0e954d83b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/contact_guard_trace.json": "f2fb39e652a7d620a5cb3f70f037dd32e12d7c8c8e669ec6d19d5ef021545b37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/coupling_trace.json": "3d2294b876a9c3b5f02cf10b57b9cd047764d3e2ae85b8688ce8869387c4a224",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/events.json": "ad6b018aac79180d4b6ac38701bb3a2849d2b464206bbe7d25b2b31abfbb8b42",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/config.json": "c5e48e9132a8f7d5d33f677f3963f026c780d16931cd02d048a219d3434a6164",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/gravity_release_candidate.json": "0d7a39f3941c21cb33305225c09872b3547135acb9794c99d619716031574382",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full37_compression_contact_review.py": "4894e93cbbab2429f3b2e628e97a356a76ee0e9ad9d42e9fab5b658530c3ce05",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_37/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/config.json": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/states.npz": "095a8200b136792a96879a42f64836b039d4a2c5bffaa53e9baebba89d36be46",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/joint_trace.npy": "ce768d214adeea04880deef75abb4548249b1216d3c26a6fff3d77d40b9adeab",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/coupling_trace.json": "c9090a3050b40e2a44221427bf82250f16a27d6fdde69454d1eaf8874fe09b2e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/contact_guard_trace.json": "05d2b135d0faa1fc350fc41280513baef11b14ee0af751c92a6941cbae22040d",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/report.json": "1af946b03aaa68269c591b2641099636922c6958f610c67e277442686bf7c781",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/events.json": "1f3b85b5fa41c5f0d73c6400b3f72570b75baabd3304259cf1148dfbb2bdac48",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/config.json": "0069b4df0d64dc28d65d461dbc38ff7f5235616bb514f006d3c547d493cb82e8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/states.npz": "d52e90ea1eccb97482164f6b65708820b3c9f3682ea79cc01303a0500162b8b8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/joint_trace.npy": "e101269e8685f4ef7443371cf7e7043d9a804c1e6956ca172b7ddff4fc0b5a93",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/coupling_trace.json": "f12c405955bf38595b4852f790d3d82ffe6e0ea182c7d19c6a5811639bd1101d",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/contact_guard_trace.json": "9edee9e8426925fead40c3fce4b317ee9b0c08996df5b4e62afa9a0267d56911",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/report.json": "ca696dc2ee4ff43ea970721c1eb6dde2f5f5cb6a20094cc84c787be818ff963e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/events.json": "2a691fe44b2f1f77d398d8e9520782c263e01319fc8084b4a5d66f65c779512e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_32/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf"
+  },
+  "inputs_unchanged": true,
+  "not_performed": [
+    "No whole-task success audit of failed Full37.",
+    "No new native stepping, planner search or material edit.",
+    "No Full38 monitoring or mutation."
+  ]
+}

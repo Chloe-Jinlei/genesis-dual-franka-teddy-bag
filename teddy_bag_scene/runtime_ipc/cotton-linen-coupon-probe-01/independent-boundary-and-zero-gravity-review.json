@@ -1,0 +1,132 @@
+{
+  "scope": "Read-only interpretation of the already completed baseline/candidate pair; no additional native run",
+  "boundary": "The short edge has one row of fixed vertex positions. It is pinned, not rotationally clamped: slope/normal is free. Rigid rotation about that fixed line preserves membrane metrics and interior dihedrals, so cannot be identified with strain or expected elastic return.",
+  "zero_gravity_evidence": {
+    "configured_gravity": [
+      0,
+      0,
+      0
+    ],
+    "native_mapping_source": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/backends/cuda/finite_element/finite_element_method.cu",
+    "mapping_lines": [
+      121,
+      550,
+      823,
+      833,
+      886,
+      887
+    ],
+    "mapping": "Native h_gravity is filled from scene gravity. Only an explicit pervertex gravity attribute overrides it.",
+    "membrane_base_source": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/constitution/finite_element_constitution.cpp",
+    "setup_has_explicit_vertex_gravity": false,
+    "actual_gpu_gravity_buffer_saved": false,
+    "unforced_0_to_02s_max_drift_m": [
+      3.0577097658027394e-10,
+      2.557177896864839e-10
+    ]
+  },
+  "loaded_out_of_plane_onset": {
+    "baseline": [
+      {
+        "max_abs_z_threshold_m": 1e-08,
+        "first_time_s": 0.20500000000000002,
+        "maxprincipal_at_first": 1.0190135263411262,
+        "minprincipal_at_first": 0.9812238569160746
+      },
+      {
+        "max_abs_z_threshold_m": 1e-06,
+        "first_time_s": 0.20500000000000002,
+        "maxprincipal_at_first": 1.0190135263411262,
+        "minprincipal_at_first": 0.9812238569160746
+      },
+      {
+        "max_abs_z_threshold_m": 0.001,
+        "first_time_s": 0.21,
+        "maxprincipal_at_first": 1.0220369910144151,
+        "minprincipal_at_first": 0.9781647740843019
+      },
+      {
+        "max_abs_z_threshold_m": 0.01,
+        "first_time_s": 0.22,
+        "maxprincipal_at_first": 1.0320567562687508,
+        "minprincipal_at_first": 0.9685583134592052
+      },
+      {
+        "max_abs_z_threshold_m": 0.1,
+        "first_time_s": 0.985,
+        "maxprincipal_at_first": 1.0142031213497067,
+        "minprincipal_at_first": 0.9875156755698504
+      }
+    ],
+    "candidate": [
+      {
+        "max_abs_z_threshold_m": 1e-08,
+        "first_time_s": 0.20500000000000002,
+        "maxprincipal_at_first": 1.0017109374553448,
+        "minprincipal_at_first": 0.9981911423554887
+      },
+      {
+        "max_abs_z_threshold_m": 1e-06,
+        "first_time_s": 0.21,
+        "maxprincipal_at_first": 1.003651278520148,
+        "minprincipal_at_first": 0.9979533367551225
+      },
+      {
+        "max_abs_z_threshold_m": 0.001,
+        "first_time_s": 0.21,
+        "maxprincipal_at_first": 1.003651278520148,
+        "minprincipal_at_first": 0.9979533367551225
+      },
+      {
+        "max_abs_z_threshold_m": 0.01,
+        "first_time_s": 0.22,
+        "maxprincipal_at_first": 1.005677631536876,
+        "minprincipal_at_first": 0.9945759485715482
+      },
+      {
+        "max_abs_z_threshold_m": 0.1,
+        "first_time_s": 0.98,
+        "maxprincipal_at_first": 1.0038302605452383,
+        "minprincipal_at_first": 0.9974238864687917
+      }
+    ]
+  },
+  "unload_to_final": {
+    "baseline": {
+      "at_unload_s": 0.8,
+      "at_final_s": 2.0,
+      "Lx_unload_kg_m2_s": -0.00011082543466528788,
+      "Lx_final_kg_m2_s": -0.00010317738451319157,
+      "final_max_principal_extension_pct": 0.02859750235835179,
+      "final_tip_z_m": -0.19588517911953682,
+      "final_mean_normal": [
+        0.07661929800210562,
+        0.9895098566126277,
+        -0.1224733719635479
+      ]
+    },
+    "candidate": {
+      "at_unload_s": 0.8,
+      "at_final_s": 2.0,
+      "Lx_unload_kg_m2_s": -0.00010424189693798145,
+      "Lx_final_kg_m2_s": -0.0001001011140098996,
+      "final_max_principal_extension_pct": 0.036208154122308045,
+      "final_tip_z_m": -0.19330971613887984,
+      "final_mean_normal": [
+        0.07337386059641561,
+        0.9656962439257013,
+        -0.2490924347485692
+      ]
+    }
+  },
+  "strain_evidence_reliable_scope": "All 401 saved 3D states per case are finite, fixed-edge drift is zero, minimum triangle area ratio is positive, and independent SVD of 3x2 current/rest gradients exactly matches saved metrics. Principal stretch is invariant to global rotation; maximum local extension 8.99027875% versus 3.34710783% is valid for this equal-force fixture. This is not a controlled planar biaxial or measured cotton/linen calibration.",
+  "recoil_conclusion": "Unsupported to claim lower damping or generally lower rebound. Postrelease peak kinetic energy drops only 3.326%; maximum speed increases18.611%; late large tip displacement mostly includes near-rigid hinge rotation. No viscous term was added. Zero gravity provides no gravity-drape evidence.",
+  "mechanism_limit": "Load-triggered compression/wrinkling and numerical perturbation growth are plausible onset mechanisms. The recorded metric and momentum sequence does not uniquely prove the exact instability mechanism, and the contact-disabled probe cannot exclude self-crossing.",
+  "source_files_sha256": {
+    "report.json": "b7c1d58c72dc45c20a99b1e095fe4b23a2b0695622329c06522ea21ee90962e5",
+    "independent-summary.json": "0e3fbb448ea3b7197c62d9f1dfc5036e936b1af38cccd58331addfded5838104",
+    "independent-out-of-plane-onset.json": "3e8a67602d98586b96786f3347e26737a3bae414ace0e573e7f9b6c6465d422a"
+  },
+  "production_modified": false,
+  "physical_task_success": false
+}

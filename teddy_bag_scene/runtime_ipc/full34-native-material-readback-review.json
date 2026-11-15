@@ -1,0 +1,144 @@
+{
+  "kind": "independent_full34_native_material_readback_review",
+  "created_utc": "2026-11-15T18:43:04.669850+00:00",
+  "run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34",
+  "all_checks_passed": true,
+  "checks": {
+    "explicit_full34_report_and_startup_binding": true,
+    "native_process_ended": true,
+    "run_failed_preflight_without_insert_or_release": true,
+    "frozen_manifest_entries_match": true,
+    "sources_assets_identical_successful_full30": true,
+    "reported_bag_inputs_equal_frozen_config": true,
+    "requested_material_values_exact": true,
+    "single_native_cloth_entity_environment_zero": true,
+    "native_stretch_mean_matches_E_and_thickness": true,
+    "native_previous_mu_matches_E_nu": true,
+    "native_all_region_mu_counts_and_uniformity_match": true,
+    "native_mu_mean_matches_weighted_regions": true,
+    "partition_complete_disjoint": true,
+    "native_region_indices_match_independent_asset_groups": true,
+    "native_source_mapping_bijections_and_hash": true,
+    "native_source_identity_geometry_within_tolerance": true,
+    "all_protected_attributes_present_and_unchanged": true,
+    "native_full_thickness_matches_twice_radius": true,
+    "native_rest_mass_matches_independent_geometry": true,
+    "native_mass_and_thickness_equal_full30": true,
+    "default_and_baseline_unchanged": true,
+    "inputs_unchanged": true
+  },
+  "physical_task_success": false,
+  "run_status": "failed",
+  "run_error": "GateFailure: No admissible guarded-contact insertion candidate; see guarded_contact_candidate.json",
+  "stop_time_s": 23.314999999999646,
+  "failure_class": "geometry_preflight_rejection_before_insertion",
+  "preflight_vertical_capacity": {
+    "observed_bear_height_m": 0.15982107543157253,
+    "usable_height_below_actual_lowest_rim_m": 0.11584888457584475,
+    "height_margin_m": -0.04397219085572779,
+    "planned_bear_bottom_z_m": 0.75,
+    "planned_bear_top_z_m": 0.9098210754315725,
+    "planned_table_clearance_m": 0.01,
+    "whole_bear_end_below_lowest_rim": false,
+    "bottom_clearance_is_planning_allowance_not_physical_contact_law": true
+  },
+  "evidence_scope": "Native lambda/mu/mass summaries were read by the pre-initialization conversion callback and persisted in final report.json. This review independently binds and checks that saved evidence, not live-process memory or per-step material buffers.",
+  "resolves_startup_pending_evidence": {
+    "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full34-material-startup-review.json",
+    "sha256": "deb52f4de5494866c2377ab32679afc2168c6c2e155cf51bd5ef8a7a2c8cc7c1",
+    "prior_report_unchanged": true,
+    "resolved": "Native lambda mean, region shear and uniformity, protected-attribute equality, full thickness and mass summaries.",
+    "remaining_evidence_limit": "No numeric per-edge bending array or numeric IPC pair-friction table is archived. D and material friction are frozen/report inputs passed by unchanged scene source, with bending/contact metadata protected across shear conversion."
+  },
+  "measured_native_coefficients": {
+    "stretch_mean_lambda_n_per_m": 6593.406593406591,
+    "region_mu": {
+      "body": {
+        "face_count": 2960,
+        "shear_stiffness_n_per_m": 500.0,
+        "all_faces_equal": true
+      },
+      "handle_front": {
+        "face_count": 576,
+        "shear_stiffness_n_per_m": 1000.0,
+        "all_faces_equal": true
+      },
+      "handle_back": {
+        "face_count": 576,
+        "shear_stiffness_n_per_m": 1000.0,
+        "all_faces_equal": true
+      }
+    },
+    "overall_mu_mean_n_per_m": 640.0778210116731,
+    "full_shell_thickness_m": 0.0006,
+    "native_rest_mass_kg": 0.12007964446260372,
+    "protected_attributes_unchanged": {
+      "triangles.lambda": true,
+      "triangles.strain_rate": true,
+      "vertices.thickness": true,
+      "vertices.volume": true,
+      "vertices.is_fixed": true,
+      "edges.bending_stiffness": true,
+      "geometry_metadata_including_contact_material": true
+    }
+  },
+  "configured_and_source_bound_not_numeric_buffer_readbacks": {
+    "E_pa": 10000000.0,
+    "bending_stiffness_nm": 4e-06,
+    "bag_friction_mu": 0.5,
+    "source_evidence": "Frozen scene.py lines72-76 passes E/nu/rho/thickness/bending_stiffness/friction_mu to FEM.Cloth; frozen physics_config.py preserves native bending and contact metadata while changing only triangle mu."
+  },
+  "independent_expected_values": {
+    "stretch_mean_lambda_n_per_m": 6593.406593406592,
+    "overall_mu_mean_n_per_m": 640.0778210116731,
+    "reference_geometry_density_mass_kg": 0.12007964446260372,
+    "mapping_maximum_error_m": 6.944641773336686e-11
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/report.json": "d8e548803eaedc762902d602e9893bcf0ce82108cd7a74160220d96fcff31cbe",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/config.json": "3bc8dae5538c7a84fe7a0d14c7e7e6e140a10203d9971cf72673701ff1addb26",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/input_sha256.json": "4bf432978be1f06762adbe512c48457ecace27557040dc55c78e6ed17db66027",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full34-material-startup-review.json": "deb52f4de5494866c2377ab32679afc2168c6c2e155cf51bd5ef8a7a2c8cc7c1",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full30-cloth-material-baseline.json": "ec66543e57231e8b544ec110b7fcc9c7f8470ccc049dcb5612dd9452c383d177",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config.json": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/bear_uniform_coarse_s663.mtl": "f3a8a971b017025ea86cecd97cfdeb7e8693aea417e59cffa4786663a13bc18f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/bear_uniform_coarse_s663.obj": "0e4c2bd67b51b741b18530979e4d22fd1d718ff302ea0901bf9356d01c46dacd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/cotton_canvas.png": "c1fa744e76e59d2be819db3dcc63a84724ff7bab886d9570789712bf562dcb2f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/metadata_two_panel_wide_tall_long_handles_coarse.json": "a2bf8c594b888c9189216a952bb05673fb0f20b505e74d331f2461e5fc969c18",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/teddy_fur.png": "355e29a37479403425f30c734475d141313be8880f68b8c638bdb8d04cf561f8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/two_panel_bag_wide_tall_long_handles_coarse.mtl": "51a06ed3a6e284c29a6cb3192bde876bb1c0f4c30e60c9d716b5935878f0f9d3",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets/two_panel_bag_wide_tall_long_handles_coarse.obj": "41b36b030aa3be6947112a39643f519906dc74459f87838ccac8ade1efb9e8f7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/assets_builder.py": "d6adb8a187a31092b21f6edab55145291fda1ba97d221d744b8989847c1e960e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/build_tall_bag.py": "dc57f031b1a972743eff2edb85ac85630321e848dedc579305d51de0fd4b6926",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/build_wide_tall_bag.py": "072735056b4d238622a8443f4ec6f85e1e097a041a8e2b261d1a7ab12d02349c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/contact_grasp.py": "3ac4767bad63047309b1f18583a40c2afc3424ce944e3a85427dedc2f588c4ab",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/gravity_release.py": "3cb7ea9a10390bcb473d353863917d39cc67a05766b2da3bfc38ed28bd26915f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/remesh_bear.py": "feb5f7dccc5fa4e08a4ca02ec6ff2ad4abaa669e7a9c68869104f881d8428a20",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/run.py": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/staged_contact_insertion.py": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/two_panel_builder.py": "0b52fd1d978b8fb9817a6c932e39ab2e316f697144e367d7e7b511562d30f801",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_34/source/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99"
+  },
+  "limitations": [
+    "Correct coefficient installation is not successful insertion or final containment.",
+    "Stopped at23.315s after yaw because the observed whole teddy does not fit below the lowest rim under the existing planning clearance; no insertion/release was executed.",
+    "The recorded rejection is geometric preflight, not evidence of a new material physical-limit violation.",
+    "Lambda is a recorded mean; only region mu uniformity is explicitly archived.",
+    "No damping, low-rebound, calibrated textile behavior or causal attribution is established.",
+    "No production/config/assets/default edits, new native stepping, completed comparator or complete task audit."
+  ]
+}

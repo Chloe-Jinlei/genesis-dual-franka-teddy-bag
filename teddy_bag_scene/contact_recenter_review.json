@@ -1,0 +1,502 @@
+{
+  "kind": "independent bounded recenter contract CPU regression",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "gpu_used": false,
+  "source_sha256": {
+    "contact_insertion.py": "a039d01f13224f02ae97fba6aa39939556dc141861b18434ff2445460079c639",
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89"
+  },
+  "declared_config_sha256": {
+    "config_guarded_recenter_trial.json": "5e0f290fec2f3cb5299c8f30e84a36c2f32e9abe4c00f4df29a974d2ce749fc4"
+  },
+  "method": "Real public recenter/reobserve and internal _plan control flow exercised. _state_context, _mouth, _section_envelopes, _evaluate_offset and planner outputs replaced in-process with explicit synthetic fixtures to isolate contracts. Arbitrary full quaternion used; no dynamics or robot reachability inferred.",
+  "all_requested_regressions_passed": true,
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "name": "attempt_1_accepts_and_preserves_arbitrary_full_original_quaternion",
+      "passed": true,
+      "status": "candidate",
+      "rejections": [],
+      "stages": [
+        "height_at_current_xy",
+        "translate_outside_mouth"
+      ]
+    },
+    {
+      "name": "initial_correction_exposes_exactly_two_preparation_stages",
+      "passed": true
+    },
+    {
+      "name": "provisional_insert_and_withdraw_not_executable",
+      "passed": true
+    },
+    {
+      "name": "fresh_at_selected_xy_exposes_only_insert",
+      "passed": true,
+      "status": "candidate",
+      "rejections": [],
+      "stages": [
+        "insert_candidate"
+      ]
+    },
+    {
+      "name": "attempt_2_accepts_after_actual_first_endpoint",
+      "passed": true,
+      "status": "candidate",
+      "rejections": [],
+      "stages": [
+        "height_at_current_xy",
+        "translate_outside_mouth"
+      ]
+    },
+    {
+      "name": "attempt_2_recomputes_previous_actual_distance",
+      "passed": true,
+      "actual_before": 0.0105,
+      "actual_after": 0.0205
+    },
+    {
+      "name": "reject_attempt_0",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction attempt_index is one-based and must be 1 or 2"
+      ],
+      "stages": []
+    },
+    {
+      "name": "reject_attempt_3",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction attempt_index is one-based and must be 1 or 2"
+      ],
+      "stages": []
+    },
+    {
+      "name": "reject_attempt_4",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction attempt_index is one-based and must be 1 or 2"
+      ],
+      "stages": []
+    },
+    {
+      "name": "reject_attempt_True",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction attempt_index is one-based and must be 1 or 2"
+      ],
+      "stages": []
+    },
+    {
+      "name": "reject_attempt_1.0",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction attempt_index is one-based and must be 1 or 2"
+      ],
+      "stages": []
+    },
+    {
+      "name": "first_cannot_start_at_attempt_2",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "First correction requires attempt_index=1 and cumulative_xy_m=0"
+      ],
+      "stages": []
+    },
+    {
+      "name": "first_rejects_nonzero_cumulative",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "First correction requires attempt_index=1 and cumulative_xy_m=0"
+      ],
+      "stages": []
+    },
+    {
+      "name": "invalid_cumulative_-0.001",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Cumulative TCP XY correction distance must be finite and in [0,0.05] m"
+      ],
+      "stages": []
+    },
+    {
+      "name": "invalid_cumulative_0.05001",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Cumulative TCP XY correction distance must be finite and in [0,0.05] m"
+      ],
+      "stages": []
+    },
+    {
+      "name": "invalid_cumulative_nan",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Cumulative TCP XY correction distance must be finite and in [0,0.05] m"
+      ],
+      "stages": []
+    },
+    {
+      "name": "invalid_cumulative_inf",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Cumulative TCP XY correction distance must be finite and in [0,0.05] m"
+      ],
+      "stages": []
+    },
+    {
+      "name": "second_cannot_change_cumulative_0.0",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction cumulative budget cannot be reset or changed by the caller"
+      ],
+      "stages": []
+    },
+    {
+      "name": "second_cannot_change_cumulative_0.009",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction cumulative budget cannot be reset or changed by the caller"
+      ],
+      "stages": []
+    },
+    {
+      "name": "second_cannot_change_cumulative_0.011",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction cumulative budget cannot be reset or changed by the caller"
+      ],
+      "stages": []
+    },
+    {
+      "name": "second_cannot_reset_attempt_counter",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction attempt counter must continue from the previous candidate"
+      ],
+      "stages": []
+    },
+    {
+      "name": "third_after_two_corrections_rejected",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction attempt_index is one-based and must be 1 or 2"
+      ],
+      "stages": []
+    },
+    {
+      "name": "recenter_requires_new_finite_time_same",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction needs a strictly newer finite actual observation"
+      ],
+      "stages": []
+    },
+    {
+      "name": "recenter_requires_new_finite_time_older",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction needs a strictly newer finite actual observation"
+      ],
+      "stages": []
+    },
+    {
+      "name": "recenter_requires_new_finite_time_nan",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction needs a strictly newer finite actual observation"
+      ],
+      "stages": []
+    },
+    {
+      "name": "recenter_requires_new_finite_time_infinity",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction needs a strictly newer finite actual observation"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_requires_new_finite_time_same",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Fresh check needs finite, strictly newer actual state times"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_requires_new_finite_time_older",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Fresh check needs finite, strictly newer actual state times"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_requires_new_finite_time_nan",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Observed time is nonfinite"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_requires_new_finite_time_infinity",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Observed time is nonfinite"
+      ],
+      "stages": []
+    },
+    {
+      "name": "first_original_rotation_drift_014_accepted",
+      "passed": true,
+      "status": "candidate",
+      "rejections": [],
+      "stages": [
+        "height_at_current_xy",
+        "translate_outside_mouth"
+      ]
+    },
+    {
+      "name": "second_014_more_drift_cannot_accumulate_to_028",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Current hand differs from original trial orientation by over 0.015 rad"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_rejects_028_original_drift_even_if_014_from_previous",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "hand orientation differs from the original trial by over 0.015 rad"
+      ],
+      "stages": []
+    },
+    {
+      "name": "individual_exactly_30mm_accepted",
+      "passed": true,
+      "status": "candidate",
+      "rejections": [],
+      "stages": [
+        "height_at_current_xy",
+        "translate_outside_mouth"
+      ]
+    },
+    {
+      "name": "invalid_offset_over30",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Declare 1\u20138 nonzero finite corrections of at most 30 mm each"
+      ],
+      "stages": []
+    },
+    {
+      "name": "invalid_offset_diagonal_over30",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Declare 1\u20138 nonzero finite corrections of at most 30 mm each"
+      ],
+      "stages": []
+    },
+    {
+      "name": "invalid_offset_zero",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Declare 1\u20138 nonzero finite corrections of at most 30 mm each"
+      ],
+      "stages": []
+    },
+    {
+      "name": "invalid_offset_nan",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Declare 1\u20138 nonzero finite corrections of at most 30 mm each"
+      ],
+      "stages": []
+    },
+    {
+      "name": "cumulative_exactly_50mm_accepted",
+      "passed": true,
+      "status": "candidate",
+      "rejections": [],
+      "stages": [
+        "height_at_current_xy",
+        "translate_outside_mouth"
+      ]
+    },
+    {
+      "name": "actual_first_overshoot_recomputed_before_second_budget",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "No bounded fixed-orientation correction passed every geometry and robot gate"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_requires_selected_xy_within_2mm",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "physical correction has not reached its selected XY target within 2 mm"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_with_1_9mm_tracking_error_uses_actual_insert_xy",
+      "passed": true,
+      "status": "candidate",
+      "rejections": [],
+      "stages": [
+        "insert_candidate"
+      ]
+    },
+    {
+      "name": "next_attempt_requires_previous_xy_within_2mm",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Previous physical correction has not reached its selected XY target"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_rejects_actual_individual_over_30mm_even_within_target_tolerance",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "observed correction exceeds the 30 mm individual or 50 mm cumulative XY budget"
+      ],
+      "stages": []
+    },
+    {
+      "name": "next_attempt_rejects_actual_individual_over_30mm",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Previous actual correction exceeded 30 mm or is nonfinite"
+      ],
+      "stages": []
+    },
+    {
+      "name": "fresh_rejects_actual_total_over_50mm_even_within_target_tolerance",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "observed correction exceeds the 30 mm individual or 50 mm cumulative XY budget"
+      ],
+      "stages": []
+    },
+    {
+      "name": "recenter_rejects_changed_physical_policy",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Do not change contact/physical policy within a correction sequence"
+      ],
+      "stages": []
+    },
+    {
+      "name": "recenter_rejects_rejected_previous",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Correction needs the previous accepted trial candidate"
+      ],
+      "stages": []
+    },
+    {
+      "name": "supplemental_fresh_rejects_nonfinite_saved_cumulative",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Prior correction budget values must be finite and within their bounds"
+      ],
+      "stages": []
+    },
+    {
+      "name": "supplemental_next_rejects_nonfinite_saved_cumulative",
+      "passed": true,
+      "status": "rejected",
+      "rejections": [
+        "Prior correction budget values must be finite and within their bounds"
+      ],
+      "stages": []
+    },
+    {
+      "name": "root_declares_six_valid_recenter_offsets",
+      "passed": true,
+      "offsets": [
+        [
+          -0.015,
+          0.02
+        ],
+        [
+          -0.01,
+          0.02
+        ],
+        [
+          -0.015,
+          0.01
+        ],
+        [
+          -0.01,
+          0.01
+        ],
+        [
+          -0.005,
+          0.02
+        ],
+        [
+          -0.005,
+          0.01
+        ]
+      ]
+    }
+  ],
+  "prior_nan_failures_resolved": true,
+  "previous_review_source_sha256": {
+    "contact_insertion.py": "c85fbbd267d9ed2811977d67c795f551e27259563cfee7f5ed6aee0e43e1f8e3",
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89"
+  },
+  "limitations": [
+    "Synthetic contract tests do not establish collision clearance, soft shape fit, contact feasibility, grasp retention or successful insertion.",
+    "Mock state context retains finite observation time validation but bypasses real mesh/physical gates, which are outside this interface regression.",
+    "No source files changed."
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "kind": "offline_robot_geometry_only",
+  "config": {
+    "seed": 17,
+    "simulation": {
+      "dt": 0.01,
+      "substeps": 1,
+      "precision": "64",
+      "contact_distance": 0.001,
+      "contact_resistance": 10000000.0
+    },
+    "table": {
+      "height": 0.74,
+      "size": [
+        1.7,
+        1.2,
+        0.06
+      ]
+    },
+    "robots": {
+      "left_base": [
+        -0.6,
+        -0.28,
+        0.76
+      ],
+      "right_base": [
+        0.38,
+        0.32,
+        0.76
+      ],
+      "left_yaw": 0.35,
+      "right_yaw": -2.4,
+      "home": [
+        0.0,
+        -0.45,
+        0.0,
+        -2.15,
+        0.0,
+        1.7,
+        0.7854
+      ],
+      "finger_force_limit": 12.0,
+      "finger_kp": 8000.0,
+      "finger_kv": 40.0
+    },
+    "bag": {
+      "position": [
+        -0.13,
+        0.0,
+        0.742
+      ],
+      "E": 400000.0,
+      "nu": 0.3,
+      "rho": 500.0,
+      "thickness": 0.0003,
+      "bending_stiffness": 5e-06,
+      "friction_mu": 0.65,
+      "shear_stiffness": 5.0,
+      "mesh": "two_panel_bag_coarse.obj",
+      "npz_file": "two_panel_bag_coarse.npz",
+      "metadata": "metadata_two_panel_coarse.json",
+      "height_m": 0.34
+    },
+    "bear": {
+      "position": [
+        0.27,
+        -0.25,
+        0.742
+      ],
+      "E": 18000.0,
+      "nu": 0.28,
+      "rho": 100.0,
+      "friction_mu": 0.65
+    },
+    "camera": {
+      "position": [
+        1.75,
+        -2.0,
+        1.9
+      ],
+      "lookat": [
+        -0.05,
+        -0.01,
+        1.02
+      ],
+      "fov": 42
+    },
+    "task": {
+      "open_targets": {
+        "left": [
+          -0.25,
+          -0.13,
+          1.25
+        ],
+        "right": [
+          -0.1,
+          0.13,
+          1.25
+        ]
+      },
+      "bear_grasp_local": [
+        0.08,
+        -0.014,
+        0.034
+      ]
+    }
+  },
+  "explicit_metadata_override": false,
+  "nominal_waypoints_m": {
+    "initial": {
+      "left": [
+        -0.1830567078748633,
+        -0.07629315136179891,
+        1.2023834292652742
+      ],
+      "right": [
+        -0.07694329212513673,
+        0.07629315136179893,
+        1.2023834292652742
+      ]
+    },
+    "open_bag": {
+      "left": [
+        -0.25,
+        -0.13,
+        1.25
+      ],
+      "right": [
+        -0.1,
+        0.13,
+        1.25
+      ]
+    },
+    "right_clear_handle": {
+      "right": [
+        0.12,
+        0.2,
+        1.32
+      ]
+    },
+    "teddy_pregrasp": {
+      "right": [
+        0.35000000000000003,
+        -0.264,
+        0.926
+      ]
+    },
+    "teddy_grasp": {
+      "right": [
+        0.35000000000000003,
+        -0.264,
+        0.776
+      ]
+    },
+    "teddy_lift": {
+      "right": [
+        0.35000000000000003,
+        -0.264,
+        1.37
+      ]
+    },
+    "bag_above": {
+      "right": [
+        -0.1,
+        0.04,
+        1.37
+      ]
+    },
+    "bag_insert": {
+      "right": [
+        -0.1,
+        0.04,
+        1.14
+      ]
+    },
+    "release": {
+      "right": [
+        -0.1,
+        0.04,
+        0.96
+      ]
+    },
+    "right_retreat": {
+      "right": [
+        -0.1,
+        0.04,
+        1.38
+      ]
+    }
+  },
+  "tcp_hand_local_m": [
+    0.0,
+    0.0,
+    0.1029
+  ],
+  "success": true,
+  "limitations": [
+    "MuJoCo convex collision geometry only; no Genesis dynamic validation in this report.",
+    "Soft bag and teddy are not collision obstacles in this preflight: intended frictional contacts require runtime checking.",
+    "The teddy must hang beneath the grasp before insertion; its fit and the unsupported bag mouth must be measured at runtime.",
+    "Nominal grasp locations must be replaced with observed mesh points after settling.",
+    "The local panda_tactile.xml extends each real rubber pad inward by 1.5 mm; thin cloth gripping still requires actual contact/friction verification."
+  ],
+  "initial_q": {
+    "left": [
+      -0.009702715815211382,
+      -0.3080954748731414,
+      0.09942703173384648,
+      -2.1062373453683567,
+      0.030910458710106184,
+      1.7994641485895702,
+      1.2134604515470393
+    ],
+    "right": [
+      0.8615977442164695,
+      -0.2811668485017354,
+      -0.9921394193467707,
+      -1.930781106294919,
+      -0.23919118451730154,
+      1.7684826001088831,
+      -1.6787994793114243
+    ]
+  },
+  "stages": [
+    {
+      "stage": "open_bag",
+      "targets_m": {
+        "left": [
+          -0.25,
+          -0.13,
+          1.25
+        ],
+        "right": [
+          -0.1,
+          0.13,
+          1.25
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.15472607595355153,
+      "peak_joint_acceleration_rad_s2": 0.16346033092438164,
+      "min_rigid_clearance_m": 0.022224177400406542,
+      "max_tcp_path_deviation_m": 8.6294511988476e-11
+    },
+    {
+      "stage": "right_clear_handle",
+      "targets_m": {
+        "right": [
+          0.12,
+          0.2,
+          1.32
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.37979449252957037,
+      "peak_joint_acceleration_rad_s2": 0.5261557090173558,
+      "min_rigid_clearance_m": 0.021633833792278855,
+      "max_tcp_path_deviation_m": 1.845477191072861e-07
+    },
+    {
+      "stage": "teddy_pregrasp",
+      "targets_m": {
+        "right": [
+          0.35000000000000003,
+          -0.264,
+          0.926
+        ]
+      },
+      "duration_s": 5.754257090873955,
+      "peak_joint_velocity_rad_s": 0.5488843439139709,
+      "peak_joint_acceleration_rad_s2": 0.3996140685717986,
+      "min_rigid_clearance_m": 0.02169685247364172,
+      "max_tcp_path_deviation_m": 2.4979570003930807e-08
+    },
+    {
+      "stage": "teddy_grasp",
+      "targets_m": {
+        "right": [
+          0.35000000000000003,
+          -0.264,
+          0.776
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.20313534391660476,
+      "peak_joint_acceleration_rad_s2": 0.2236136193152657,
+      "min_rigid_clearance_m": 0.022578062946514637,
+      "max_tcp_path_deviation_m": 3.405680039917296e-10
+    },
+    {
+      "stage": "teddy_lift",
+      "targets_m": {
+        "right": [
+          0.35000000000000003,
+          -0.264,
+          1.37
+        ]
+      },
+      "duration_s": 5.16422506727004,
+      "peak_joint_velocity_rad_s": 0.5489021956087824,
+      "peak_joint_acceleration_rad_s2": 0.6167539850840685,
+      "min_rigid_clearance_m": 0.021795738376109375,
+      "max_tcp_path_deviation_m": 5.145449188034549e-06
+    },
+    {
+      "stage": "bag_above",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.37
+        ]
+      },
+      "duration_s": 3.576509095431665,
+      "peak_joint_velocity_rad_s": 0.5489021956087816,
+      "peak_joint_acceleration_rad_s2": 0.6715421592616811,
+      "min_rigid_clearance_m": 0.021679915785967268,
+      "max_tcp_path_deviation_m": 7.898618278870809e-07
+    },
+    {
+      "stage": "bag_insert",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.14
+        ]
+      },
+      "duration_s": 11.571897197531522,
+      "peak_joint_velocity_rad_s": 0.1284126405208214,
+      "peak_joint_acceleration_rad_s2": 0.7555139936002977,
+      "min_rigid_clearance_m": 0.02183681124165013,
+      "max_tcp_path_deviation_m": 7.358842918293386e-07
+    },
+    {
+      "stage": "release",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          0.96
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.26798250173178917,
+      "peak_joint_acceleration_rad_s2": 0.2823523427241479,
+      "min_rigid_clearance_m": 0.021875802637600618,
+      "max_tcp_path_deviation_m": 1.8987533997281005e-09
+    },
+    {
+      "stage": "right_retreat",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.38
+        ]
+      },
+      "duration_s": 9.284058574794566,
+      "peak_joint_velocity_rad_s": 0.2447672230583793,
+      "peak_joint_acceleration_rad_s2": 0.9960119680797638,
+      "min_rigid_clearance_m": 0.021839081793603145,
+      "max_tcp_path_deviation_m": 5.910481418201517e-07
+    }
+  ],
+  "initial_clearance": {
+    "left_self": {
+      "distance": 0.022224177400406542,
+      "bodies": [
+        "left_link5",
+        "left_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "left_table": {
+      "distance": 0.1609959322147701,
+      "bodies": [
+        "left_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "table"
+      ]
+    },
+    "left_mounts": {
+      "distance": 0.14099593221477014,
+      "bodies": [
+        "left_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "left_mount"
+      ]
+    },
+    "right_self": {
+      "distance": 0.022526143481521467,
+      "bodies": [
+        "right_link5",
+        "right_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "right_table": {
+      "distance": 0.16099593221477015,
+      "bodies": [
+        "right_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "table"
+      ]
+    },
+    "right_mounts": {
+      "distance": 0.14099593221477014,
+      "bodies": [
+        "right_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "right_mount"
+      ]
+    },
+    "arms": {
+      "distance": 0.05593314564655231,
+      "bodies": [
+        "left_hand",
+        "right_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    }
+  },
+  "total_motion_duration_s": 47.37494702590175,
+  "minimum_rigid_clearance_m": 0.021633833792278855,
+  "dynamic_task_success_verified": false
+}

@@ -1,0 +1,216 @@
+{
+  "status": "failed",
+  "task_passed": false,
+  "physics": {
+    "solver": "Genesis 1.4.3 + libuipc 0.0.29, IPC contact, FEM shell/volume",
+    "bag_vertices": 1604,
+    "bear_vertices": 1279,
+    "bear_tetrahedra": 4648,
+    "no_fixed_soft_vertices": true,
+    "no_soft_grasp_attachments": true,
+    "grasp_model": "finite-force finger PD and IPC friction, no ideal attachment",
+    "robot_soft_contact_links": "all collision links",
+    "other_arm_links_soft_contact": true,
+    "two_way_contact_coupling": true,
+    "material_experimentally_calibrated": false,
+    "bear_material_scope": "homogeneous compressible elastic filling approximation; no separate textile skin",
+    "bag_material_scope": "two cloth panels sewn on three edges; strain-limiting shell with separate effective stretch, shear and bending; no yarn model",
+    "cloth_thickness_convention": "IPC thickness is a radius; physical thickness is twice the configured value",
+    "bag": {
+      "position": [
+        -0.13,
+        0.0,
+        0.742
+      ],
+      "E": 400000.0,
+      "nu": 0.3,
+      "rho": 500.0,
+      "thickness": 0.0003,
+      "bending_stiffness": 5e-06,
+      "friction_mu": 0.65,
+      "shear_stiffness": 5.0,
+      "mesh": "two_panel_bag_coarse.obj",
+      "npz_file": "two_panel_bag_coarse.npz",
+      "metadata": "metadata_two_panel_coarse.json",
+      "height_m": 0.34
+    },
+    "bear": {
+      "position": [
+        0.27,
+        -0.25,
+        0.742
+      ],
+      "E": 18000.0,
+      "nu": 0.28,
+      "rho": 100.0,
+      "friction_mu": 0.65
+    },
+    "simulation": {
+      "dt": 0.005,
+      "substeps": 1,
+      "precision": "64",
+      "contact_distance": 0.001,
+      "contact_resistance": 10000000.0
+    }
+  },
+  "initialization": {
+    "method": "Actual qpos after rigid solver build, before IPC geometry build",
+    "neutral_joint_reference_modified": false,
+    "verified": true,
+    "maximum_initial_ipc_genesis_translation_error_m": 0.0
+  },
+  "initial_cloth_grasp_geometry": {
+    "left": {
+      "position_m": [
+        -0.0530567078748633,
+        -0.07629315136179891,
+        0.4603834292652741
+      ],
+      "quaternion_xyzw": [
+        0.9917919992231684,
+        -0.11062546946148046,
+        0.007107290694437368,
+        -0.06371908821006803
+      ],
+      "quaternion_wxyz": [
+        -0.06371908821006803,
+        0.9917919992231684,
+        -0.11062546946148046,
+        0.007107290694437368
+      ],
+      "rotation_columns_hand_axes_in_world": [
+        [
+          0.9754229838508235,
+          -0.21852917087901963,
+          0.028195816187585036
+        ],
+        [
+          -0.2203406512097934,
+          -0.9674037666082091,
+          0.12481966902973889
+        ],
+        [
+          -3.469446951953614e-18,
+          -0.12796465850842426,
+          -0.9917787284333246
+        ]
+      ],
+      "minimum_initial_finger_q_m": 0.0007807901169674476,
+      "incident_triangle_count": 32,
+      "normal_in_world": [
+        -0.21852917087901963,
+        -0.9674037666082093,
+        -0.12796465850842426
+      ],
+      "cloth_normal_range_in_pad_m": [
+        -0.00028079011696744766,
+        7.243896110076325e-05
+      ],
+      "shell_radius_m": 0.0003,
+      "clearance_m": 0.0002,
+      "max_incident_normal_deviation_deg": 4.077621867034569,
+      "whole_hand_collision_checked": false,
+      "friction_grasp_proven": false
+    },
+    "right": {
+      "position_m": [
+        0.05305670787486328,
+        0.07629315136179893,
+        0.4603834292652742
+      ],
+      "quaternion_xyzw": [
+        0.9917919992231684,
+        -0.11062546946148044,
+        -0.007107290694437374,
+        0.06371908821006807
+      ],
+      "quaternion_wxyz": [
+        0.06371908821006807,
+        0.9917919992231684,
+        -0.11062546946148044,
+        -0.007107290694437374
+      ],
+      "rotation_columns_hand_axes_in_world": [
+        [
+          0.9754229838508235,
+          -0.21852917087901957,
+          -0.028195816187585057
+        ],
+        [
+          -0.2203406512097934,
+          -0.9674037666082091,
+          -0.12481966902973897
+        ],
+        [
+          -1.734723475976807e-18,
+          0.12796465850842434,
+          -0.9917787284333246
+        ]
+      ],
+      "minimum_initial_finger_q_m": 0.0008176319791565345,
+      "incident_triangle_count": 32,
+      "normal_in_world": [
+        -0.21852917087901963,
+        -0.9674037666082094,
+        0.12796465850842437
+      ],
+      "cloth_normal_range_in_pad_m": [
+        -4.9364968283251875e-05,
+        0.0003176319791565346
+      ],
+      "shell_radius_m": 0.0003,
+      "clearance_m": 0.0002,
+      "max_incident_normal_deviation_deg": 3.7386524300872175,
+      "whole_hand_collision_checked": false,
+      "friction_grasp_proven": false
+    }
+  },
+  "shell_conversion": {
+    "scope": "Per-scene pre-initialization FEM shell coefficient conversion",
+    "calibrated": false,
+    "shear_stiffness_n_per_m": 5.0,
+    "thickness_semantics": "IPC one-sided radius r; full thickness h=2r",
+    "entities": [
+      {
+        "entity_index": 0,
+        "environment": 0,
+        "previous_shear_coefficient": 153846.1538461538,
+        "new_shear_coefficient": 5.0,
+        "stretch_coefficient": 263.7362637362638,
+        "full_shell_thickness_m": 0.0006,
+        "native_rest_mass_kg": 0.0911558522094133
+      }
+    ]
+  },
+  "minimum_observed_tetra_volume_ratio": 0.045216081669082094,
+  "teddy_grip_limits": {
+    "force_per_finger_n": 4.0,
+    "target_per_finger_m": 0.032
+  },
+  "error": "GateFailure: Teddy element excessively compressed or inverted: minimum volume ratio 0.0452",
+  "simulated_seconds": 4.004999999999937,
+  "wall_seconds": 150.20004008999967,
+  "events": [
+    {
+      "phase": "grasp_probe_settle",
+      "start": 0.0,
+      "duration": 0.5
+    },
+    {
+      "phase": "teddy_grasp_approach",
+      "start": 0.5000000000000003,
+      "duration": 1.5030000000000001
+    },
+    {
+      "phase": "close_teddy_gripper",
+      "start": 2.0049999999999795,
+      "duration": 1.0
+    },
+    {
+      "phase": "lift_teddy",
+      "start": 3.004999999999958,
+      "duration": 3.0060000000000002
+    }
+  ],
+  "grasp_probe_passed": false
+}

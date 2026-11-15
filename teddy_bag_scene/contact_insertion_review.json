@@ -1,0 +1,224 @@
+{
+  "kind": "Independent synthetic CPU geometry and interface regression",
+  "physical_success": false,
+  "source_sha256": "4f9ecaa624b7cc2fc466deec7684f3a5874e55f78b0583f1ecba24c68be91225",
+  "declared_config_sha256": "964fb42703ebda813d9bd52939f2b3060b10163de4086f71fc31b43647357528",
+  "all_requested_regressions_passed": true,
+  "checks": [
+    {
+      "name": "concave_narrow_neck_still_rejected_after_refinement",
+      "passed": true,
+      "bound_m": 0.03520711678118655,
+      "allowance_m": 0.03
+    },
+    {
+      "name": "flat_convex_mouth_contains_tiny_section",
+      "passed": true,
+      "required_perimeter_m": 0.8
+    },
+    {
+      "name": "sub_grid_thin_bbox_is_covered",
+      "passed": true,
+      "outside_bound_m": 0.00282843712474619
+    },
+    {
+      "name": "adaptive_refinement_without_threshold_relaxation",
+      "passed": true,
+      "bound_m": 0.02920711678118656
+    },
+    {
+      "name": "thin_z_event_intervals_positive_envelopes",
+      "passed": true
+    },
+    {
+      "name": "degenerate_tetra_rejected",
+      "passed": true,
+      "error": "Zero-volume or numerically degenerate tetrahedron"
+    },
+    {
+      "name": "bottom_override_changes_only_bottom",
+      "passed": true
+    },
+    {
+      "name": "declared_lateral_override_changes_only_lateral",
+      "passed": true,
+      "default_fraction": 0.25,
+      "maximum_fraction": 0.35
+    },
+    {
+      "name": "policy_rejects_above_max",
+      "passed": true
+    },
+    {
+      "name": "policy_rejects_negative",
+      "passed": true
+    },
+    {
+      "name": "policy_rejects_NaN",
+      "passed": true
+    },
+    {
+      "name": "policy_rejects_infinity",
+      "passed": true
+    },
+    {
+      "name": "root_config_explicit_policy_and_single_offset",
+      "passed": true,
+      "settings": {
+        "enabled": true,
+        "bottom_clearance_m": 0.01,
+        "max_lateral_excursion_fraction_of_mouth_width": 0.35,
+        "center_offsets_xy_m": [
+          [
+            0.004,
+            0.02
+          ]
+        ]
+      }
+    },
+    {
+      "name": "fresh_rejects_same",
+      "passed": true
+    },
+    {
+      "name": "fresh_rejects_NaN",
+      "passed": true
+    },
+    {
+      "name": "fresh_rejects_negative_infinity",
+      "passed": true
+    },
+    {
+      "name": "initial_exposes_only_two_preparation_stages",
+      "passed": true,
+      "executable_stages": [
+        "height_at_current_xy",
+        "translate_outside_mouth"
+      ]
+    },
+    {
+      "name": "withdraw_separate_from_executable_list",
+      "passed": true,
+      "withdraw_field": "route.withdraw_stage"
+    },
+    {
+      "name": "release_11_samples_preserve_left_and_open_right_to_04",
+      "passed": true,
+      "sample_count": 11
+    },
+    {
+      "name": "withdraw_04_samples_and_joint_extrema_contract",
+      "passed": true,
+      "clearance_samples": 101,
+      "clearance_m": 0.008
+    },
+    {
+      "name": "fresh_exposes_only_vertical_insert",
+      "passed": true,
+      "executable_stages": [
+        "insert_candidate"
+      ]
+    },
+    {
+      "name": "changed_full_wrist_orientation_rejected",
+      "passed": true
+    },
+    {
+      "name": "rejected_previous_result_not_reused",
+      "passed": true
+    },
+    {
+      "name": "offsets_reject_empty",
+      "passed": true,
+      "rejections": [
+        "Contact trial needs 1\u201325 finite COM offsets no farther than 30 mm from area centroid"
+      ]
+    },
+    {
+      "name": "offsets_reject_too_many",
+      "passed": true,
+      "rejections": [
+        "Contact trial needs 1\u201325 finite COM offsets no farther than 30 mm from area centroid"
+      ]
+    },
+    {
+      "name": "offsets_reject_radius_above_max",
+      "passed": true,
+      "rejections": [
+        "Contact trial needs 1\u201325 finite COM offsets no farther than 30 mm from area centroid"
+      ]
+    },
+    {
+      "name": "offsets_reject_nonfinite",
+      "passed": true,
+      "rejections": [
+        "Contact trial needs 1\u201325 finite COM offsets no farther than 30 mm from area centroid"
+      ]
+    },
+    {
+      "name": "25_offsets_and_exact_30mm_radius_accepted",
+      "passed": true
+    },
+    {
+      "name": "initial_opening_fail_fails_closed",
+      "passed": true,
+      "attempts": [
+        {
+          "center_of_mass_xy_target_m": [
+            0.0,
+            0.0
+          ],
+          "rejection": "withdraw_after_release: opening right hand at insert pose leaves only 0.007000 m rigid clearance",
+          "stages_completed": 3
+        }
+      ]
+    },
+    {
+      "name": "fresh_opening_fail_fails_closed",
+      "passed": true,
+      "attempts": [
+        {
+          "center_of_mass_xy_target_m": [
+            0.0025,
+            0.0025
+          ],
+          "rejection": "withdraw_after_release: opening right hand at insert pose leaves only 0.007000 m rigid clearance",
+          "stages_completed": 1
+        }
+      ]
+    },
+    {
+      "name": "initial_withdraw_fail_fails_closed",
+      "passed": true,
+      "attempts": [
+        {
+          "center_of_mass_xy_target_m": [
+            0.0,
+            0.0
+          ],
+          "rejection": "withdraw_after_release: synthetic withdrawal collision",
+          "stages_completed": 3
+        }
+      ]
+    },
+    {
+      "name": "fresh_withdraw_fail_fails_closed",
+      "passed": true,
+      "attempts": [
+        {
+          "center_of_mass_xy_target_m": [
+            0.0025,
+            0.0025
+          ],
+          "rejection": "withdraw_after_release: synthetic withdrawal collision",
+          "stages_completed": 1
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Physical-state and robot-planner dependencies are synthetic mocks for interface tests; these are not trajectory or dynamics validations.",
+    "No actual full06 state or physical route is evaluated; no path scanning was performed.",
+    "Only this review output was updated; runtime source was read-only."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "passed": true,
+  "rows": 6439,
+  "start_time_s": 29.044999999998506,
+  "end_time_s": 61.235000000012874,
+  "checks": {
+    "all_required_raw_values_finite": true,
+    "strictly_increasing_consecutive_steps": true,
+    "timestamps_match_fixed_integration_step": true,
+    "covers_every_step_from_guard_entry_to_run_end": true,
+    "last_time_matches_report": true,
+    "right_hold_flag_agrees_with_release_event": true,
+    "summed_raw_link_force_matches_net_force": true,
+    "stored_force_norms_match_raw_vectors": true,
+    "stored_torque_norms_match_raw_vectors": true,
+    "stored_finger_norms_match_raw_vectors": true,
+    "baseline_differences_are_only_recorded_subtractions": true,
+    "raw_net_force_below_limit": true,
+    "raw_tcp_torque_below_limit": true,
+    "raw_each_right_finger_force_below_limit": true,
+    "left_both_soft_opening_reactions_above_minimum": true,
+    "right_both_soft_opening_reactions_above_minimum_until_release": true,
+    "designated_left_material_within_18mm": true,
+    "right_teddy_vertex_within_45mm_until_release": true,
+    "no_recorded_stop_reason": true
+  },
+  "first_physical_violation": null,
+  "raw_limits": {
+    "max_net_force_n": 8.0,
+    "max_tcp_torque_nm": 0.15,
+    "max_finger_force_n": 8.0,
+    "minimum_left_opening_reaction_n": 0.1
+  },
+  "maximum_net_force_n": 2.3937861944924013,
+  "maximum_tcp_torque_nm": 0.09484535648545127,
+  "maximum_right_finger_force_n": [
+    4.381952977796332,
+    4.789995136567681
+  ],
+  "minimum_right_opening_reaction_until_release_n": [
+    3.426392990413893,
+    3.7675413709946186
+  ],
+  "minimum_left_opening_reaction_n": [
+    8.864578414776807,
+    8.897750837616236
+  ],
+  "maximum_designated_left_material_distance_m": 0.0009932527245620397,
+  "maximum_right_nearest_material_distance_until_release_m": 0.008507676973908964,
+  "maximum_saved_baseline_subtraction_error": 0.0,
+  "scope": "IPC soft-coupling STC feedback; excludes native Genesis rigid-contact force",
+  "limitations": [
+    "Positive finger-axis projections plus material proximity are grip evidence, not force-closure proof.",
+    "Saved per-link origins and aim axes are independently checked by the richer contact trace audit.",
+    "Raw engineering force and moment limits are uncalibrated; baseline subtraction never waives them."
+  ]
+}

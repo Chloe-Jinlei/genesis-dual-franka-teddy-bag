@@ -1,0 +1,2817 @@
+{
+  "kind": "independent_full28_release_failure_review",
+  "physical_task_success": false,
+  "native_simulation_performed_by_reviewer": false,
+  "source_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/config.json": "87c73321ad0389c8f40f536a6b8f41fd7ee933a4aeb949ed45b4a5c891d8f31e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/states.npz": "7b44fc8eff042e56a595e86d6edaa9217c93dc2ed00b80b3bb95ad6277c44033",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/insert_teddy.npz": "547ceca1b8eb7b8cfe20ed571b2c3859db56092a24e1eb13810e8628f752cb64",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/failed_soft_state.npz": "60fbb5defab3b9df7bea29eeb91e0ef6b8498424712ac4deab62be08b82ab9ab",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/soft_metrics.npy": "ed66a081e1ad02f1dff9c3bea73be748ab049358a047b3a0b89e974517d1a4c6",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/joint_trace.npy": "1578c37174e0e76930eba1c7457ef3693c7e980f1327a6640ea488d8242e44dd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/contact_guard_trace.json": "0a98192b611b45824ede60063ea81c703ea2bc6aed05e927d01c11b5bacf78d2",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/coupling_trace.json": "a7362b6c64389fe54dd4e62c98d4a561b60d5d8c53bbdb166a4b47c4cbbcf2d2",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/gravity_release_candidate.json": "7eb9655bbb8cc166c25d589c8e3da732f8786f12d04411de4988661e241a98ff",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/gravity_release_actual_review.json": "8f2bfabbcc83ea06bbccfc65c04e88c94fbbf50a29bc6cd49ec3a5bd0de09c2d",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/events.json": "b3ef441b5d9c922e14cce71a44e43f667ad449a70f0cf1eac39f305cd0c8fbdb",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/report.json": "7dac23038eba6638fee3b95ca932289b7afe7898dafec4463f0bc1a471312998",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/source/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/source/gravity_release.py": "d88f4a7cd34853fb8f07eb34d42e137007cd553f69ddc920a0856a0710c96dee",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_28/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf"
+  },
+  "checks": {
+    "source_material_mapping_exact": true,
+    "true_failure_matches_report_time": true,
+    "true_failure_J_matches_per_step_metric": true,
+    "first_J_below5percent_is_true_failed_endpoint": true,
+    "failure_after_release_intent": true,
+    "no_fabric_stretch_failure": true,
+    "no_soft_table_penetration": true,
+    "all_soft_summary_finite": true,
+    "all_referenced_inputs_unchanged": true
+  },
+  "true_failure_time_s": 48.295000000006254,
+  "last_complete_geometry_time_s": 48.24500000000623,
+  "release_start_time_s": 47.795000000006,
+  "release_intended_duration_s": 0.5,
+  "release_completed_snapshot_exists": false,
+  "initial_actual_release_admission": {
+    "status": "admissible_release",
+    "checks": {
+      "actual_state_has_no_original_preflight_rejection": true,
+      "actual_time_after_candidate": true,
+      "actual_endpoint_within_2mm": true,
+      "actual_full_orientation_retained": true,
+      "actual_joint_trace_matches_endpoint_time": true,
+      "actual_joint_trace_matches_saved_endpoint_joints": true,
+      "actual_right_joint_velocity_below_0_05_rad_s": true,
+      "contact_row_is_current_and_still_holding": true,
+      "both_right_opening_reactions_above_original_0_1N": true,
+      "actual_analysis_body_valid": true,
+      "actual_mass_COM_inside": true,
+      "actual_all_node_fraction_at_least_declared_minimum": true
+    },
+    "actual_time_s": 47.795000000006,
+    "actual_containment": {
+      "mouth_projected_area_m2": 0.030861523612377584,
+      "mouth_projected_crossings": 0,
+      "mouth_projected_dimensions_m": [
+        0.39877268385822073,
+        0.12097481803201487
+      ],
+      "mouth_nonplanarity_max_m": 0.02415498844778791,
+      "virtual_closed_body_valid": true,
+      "bear_vertex_inside_fraction": 0.8103448275862069,
+      "bear_center_of_mass_m": [
+        -0.14349342248278163,
+        0.10523696560300876,
+        1.0202808640875765
+      ],
+      "bear_center_of_mass_inside": true,
+      "all_bear_vertices_inside": false
+    },
+    "actual_endpoint_position_error_m": 5.008579427820158e-05,
+    "actual_orientation_error_rad": 0.00010304535132526464,
+    "actual_right_endpoint_joint_velocity_rad_s": [
+      4.2832505533086545e-07,
+      -1.724959170778201e-05,
+      5.034394678912956e-07,
+      2.094222875114221e-05,
+      1.8504275771371008e-06,
+      8.029554798834382e-07,
+      1.1309513325835395e-06
+    ],
+    "actual_opening_and_withdrawal_preflight": {
+      "minimum_opening_rigid_clearance_m": 0.021701929512127204,
+      "opening_samples": 21,
+      "withdrawal_duration_s": 9.291385737027522,
+      "withdrawal_rigid_samples": 401,
+      "withdrawal_joint_extrema": {
+        "left": {
+          "minimum": [
+            -0.22134624202689882,
+            -0.27268506975301104,
+            0.12671897002508314,
+            -1.5641924775086191,
+            0.14168255682609976,
+            1.3463819243233517,
+            1.271969213231519
+          ],
+          "maximum": [
+            -0.22134624202689882,
+            -0.27268506975301104,
+            0.12671897002508314,
+            -1.5641924775086191,
+            0.14168255682609976,
+            1.3463819243233517,
+            1.271969213231519
+          ],
+          "minimum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "minimum": [
+            -0.04884118804735581,
+            -0.0058557830249823485,
+            -0.3478105402641466,
+            -2.0220131613279,
+            -0.002248117603598338,
+            1.2872501307204118,
+            -2.2517064260979707
+          ],
+          "maximum": [
+            0.0031932137082287793,
+            0.1540007166125928,
+            -0.32657258392679217,
+            -1.142243895184933,
+            0.05376856485514917,
+            2.066037581817352,
+            -2.217841409462509
+          ],
+          "minimum_at_fraction": [
+            1.0,
+            0.40188926956469956,
+            0.0,
+            0.0,
+            0.39828904006489557,
+            1.0,
+            1.0
+          ],
+          "maximum_at_fraction": [
+            0.2656980826336405,
+            1.0,
+            0.4761503412203427,
+            1.0,
+            1.0,
+            0.0,
+            0.39720379087664887
+          ]
+        }
+      },
+      "withdrawal_curve_review": {
+        "minimum_sampled_rigid_clearance_m": 0.021701929512127204,
+        "rigid_sample_count": 401,
+        "maximum_sampled_position_error_m": 3.277298989705669e-07,
+        "maximum_sampled_rotation_error_rad": 8.935435418460134e-07,
+        "continuous_rate_bounds": {
+          "left": {
+            "path_first_derivative_bound": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "path_second_derivative_bound": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "velocity_upper_bound_rad_s": [
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10
+            ],
+            "acceleration_upper_bound_rad_s2": [
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10
+            ]
+          },
+          "right": {
+            "path_first_derivative_bound": [
+              0.2174258283514046,
+              0.6919382835120627,
+              0.16724830444527009,
+              1.7309301435077522,
+              0.2694231771802881,
+              1.0766635098793618,
+              0.12700530243524213
+            ],
+            "path_second_derivative_bound": [
+              10.162804412182751,
+              2.7442376497566867,
+              9.977037679865926,
+              4.648767455987963,
+              1.3081643995945063,
+              2.022869539683514,
+              0.2933348095724569
+            ],
+            "velocity_upper_bound_rad_s": [
+              0.043876493843473134,
+              0.13963302345138803,
+              0.03375067838528283,
+              0.34930139721488573,
+              0.054369549649522037,
+              0.2172705061536681,
+              0.025629647690356375
+            ],
+            "acceleration_upper_bound_rad_s2": [
+              0.4284024394879693,
+              0.15802898082324476,
+              0.4174816948150269,
+              0.3050723853956993,
+              0.07129088017727299,
+              0.15438194986160397,
+              0.020439288105137624
+            ]
+          }
+        },
+        "exact_command_start_preserved": true,
+        "actual_and_commanded_left_checked": true,
+        "continuous_rigid_clearance_certified": false
+      },
+      "scope": "Robot geometry only. Released cloth and teddy remain native dynamic contact."
+    },
+    "commanded_opening_and_withdrawal_preflight": {
+      "minimum_opening_rigid_clearance_m": 0.02170185362639005,
+      "opening_samples": 21,
+      "withdrawal_duration_s": 10.204297681897122,
+      "withdrawal_rigid_samples": 401,
+      "withdrawal_joint_extrema": {
+        "left": {
+          "minimum": [
+            -0.22136014882994928,
+            -0.2727500652649277,
+            0.1266923955840482,
+            -1.564115431691947,
+            0.141677891860779,
+            1.3464022056306204,
+            1.271968239482411
+          ],
+          "maximum": [
+            -0.22136014882994928,
+            -0.2727500652649277,
+            0.1266923955840482,
+            -1.564115431691947,
+            0.141677891860779,
+            1.3464022056306204,
+            1.271968239482411
+          ],
+          "minimum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum_at_fraction": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "minimum": [
+            -0.0506184762471527,
+            -0.005886505801752721,
+            -0.3478042908067062,
+            -2.021966324114712,
+            -0.00223876113334029,
+            1.287433431547837,
+            -2.251491033618249
+          ],
+          "maximum": [
+            0.003366104104683687,
+            0.15378309710766488,
+            -0.3243325073836083,
+            -1.1424274272964121,
+            0.05337807591250798,
+            2.066049820740629,
+            -2.217860018075172
+          ],
+          "minimum_at_fraction": [
+            1.0,
+            0.40191430870262085,
+            0.0,
+            0.0,
+            0.39823535161516777,
+            1.0,
+            1.0
+          ],
+          "maximum_at_fraction": [
+            0.2649657759924626,
+            1.0,
+            0.4761681290127026,
+            1.0,
+            1.0,
+            0.0,
+            0.3970992297590088
+          ]
+        }
+      },
+      "withdrawal_curve_review": {
+        "minimum_sampled_rigid_clearance_m": 0.02170185362639005,
+        "rigid_sample_count": 401,
+        "maximum_sampled_position_error_m": 3.265586180112756e-07,
+        "maximum_sampled_rotation_error_rad": 9.467319088016137e-07,
+        "continuous_rate_bounds": {
+          "left": {
+            "path_first_derivative_bound": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "path_second_derivative_bound": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "velocity_upper_bound_rad_s": [
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10
+            ],
+            "acceleration_upper_bound_rad_s2": [
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10,
+              1e-10
+            ]
+          },
+          "right": {
+            "path_first_derivative_bound": [
+              0.21570379949929255,
+              0.6911195175985113,
+              0.22327639512431396,
+              1.7300814863819534,
+              0.26749961249357584,
+              1.0761399837873227,
+              0.12614809235406418
+            ],
+            "path_second_derivative_bound": [
+              14.395974211515572,
+              2.7406435860596137,
+              14.320872614971673,
+              4.643224032523175,
+              1.2988235724269608,
+              2.019540719834369,
+              0.2917677353479707
+            ],
+            "velocity_upper_bound_rad_s": [
+              0.03963473407867217,
+              0.126990522710498,
+              0.04102616906415913,
+              0.3178957424714707,
+              0.04915201320867749,
+              0.19773653547967934,
+              0.023179221300443906
+            ],
+            "acceleration_upper_bound_rad_s2": [
+              0.4980059840643983,
+              0.1308514128991539,
+              0.4958902293921712,
+              0.25269420958252464,
+              0.0586835864288096,
+              0.1278530695905055,
+              0.01684530105189891
+            ]
+          }
+        },
+        "exact_command_start_preserved": true,
+        "actual_and_commanded_left_checked": true,
+        "continuous_rigid_clearance_certified": false
+      },
+      "scope": "Robot geometry only. Released cloth and teddy remain native dynamic contact."
+    },
+    "physical_success": false,
+    "withdraw_command_q_start": {
+      "left": [
+        -0.22136014882994928,
+        -0.2727500652649277,
+        0.1266923955840482,
+        -1.564115431691947,
+        0.141677891860779,
+        1.3464022056306204,
+        1.271968239482411
+      ],
+      "right": [
+        6.603255515024907e-05,
+        0.047316989815254985,
+        -0.3478042908067062,
+        -2.021966324114712,
+        0.017986986351695367,
+        2.066049820740629,
+        -2.2323372576722234
+      ]
+    },
+    "withdraw_command_q_end": {
+      "left": [
+        -0.22136014882994928,
+        -0.2727500652649277,
+        0.1266923955840482,
+        -1.564115431691947,
+        0.141677891860779,
+        1.3464022056306204,
+        1.271968239482411
+      ],
+      "right": [
+        -0.0506184762471527,
+        0.15378309710766488,
+        -0.34313352702160343,
+        -1.1424274272964121,
+        0.05337807591250798,
+        1.287433431547837,
+        -2.251491033618249
+      ]
+    },
+    "limits": [
+      "Partial node inclusion and COM inclusion are a release policy, not stable support proof.",
+      "The nonplanar mouth analysis cap is not simulated and its valid flag is not a general body-self-intersection certificate.",
+      "All original runtime contact, deformation and holding gates apply until deliberate release.",
+      "Final success still requires the original whole-teddy containment, retention and physical audit."
+    ]
+  },
+  "worst_tetrahedron": {
+    "index": 5221,
+    "vertex_ids": [
+      1383,
+      63,
+      103,
+      64
+    ],
+    "failed_J": 0.016728643251804988,
+    "rest_local_centroid_m": [
+      -0.04343441528180378,
+      -0.09871768261028968,
+      0.01922735511305107
+    ],
+    "rest_unscaled_centroid_m": [
+      -0.06551193858492274,
+      -0.14889544888429815,
+      0.029000535615461644
+    ],
+    "approximate_anatomical_region": "negative-X / left foot, distal negative-Y sole; anatomical name from original teddy asset coordinates",
+    "rest_volume_m3": 1.4940688266429216e-09,
+    "rest_mean_ratio_quality": 0.13498389830533422,
+    "rest_quality_percentile": 2.2785271600437476,
+    "failure_world_vertices_m": [
+      [
+        -0.1206882926135014,
+        0.06953460765637516,
+        0.7444351093453118
+      ],
+      [
+        -0.11833035916593,
+        0.07259908656272109,
+        0.7447951822808595
+      ],
+      [
+        -0.12324736264191079,
+        0.06579320216876447,
+        0.7440115846914596
+      ],
+      [
+        -0.12211813467992423,
+        0.07371195572540994,
+        0.7445392210165073
+      ]
+    ],
+    "all_tets_below5percent": [
+      5218,
+      5219,
+      5220,
+      5221
+    ],
+    "all_bad_tetrahedra_vertices": [
+      [
+        737,
+        63,
+        103,
+        1383
+      ],
+      [
+        737,
+        63,
+        1383,
+        64
+      ],
+      [
+        737,
+        1383,
+        103,
+        64
+      ],
+      [
+        1383,
+        63,
+        103,
+        64
+      ]
+    ],
+    "bad_tets_reference_mass_fraction": 9.369809625484852e-06,
+    "failure_principal_stretches": [
+      0.9554449609619947,
+      0.9092403565417375,
+      0.019256455119547235
+    ]
+  },
+  "full_release_geometry_rows": [
+    {
+      "time_s": 47.795000000006,
+      "geometry_source": "states.npz",
+      "saved_frame_index": 965,
+      "global_minimum_J": 0.3264184584997172,
+      "global_worst_tet": 4253,
+      "failed_material_tet_J": 1.0000794033068585,
+      "failed_material_tet_center_m": [
+        -0.15289332890195953,
+        0.005243725159351729,
+        0.9826540644390498
+      ],
+      "failed_material_tet_principal_stretches": [
+        1.0001082762626796,
+        1.00002852285236,
+        0.9999426089546952
+      ],
+      "minimum_stretch_spatial_axis_world": [
+        0.31603809416174616,
+        0.8836973101699693,
+        -0.3452520630452089
+      ],
+      "minimum_stretch_axis_abs_Z": 0.3452520630452089,
+      "failed_material_tet_z_range_m": [
+        0.9800738957654405,
+        0.9864529587162638
+      ],
+      "bear_z_range_m": [
+        0.9418978106653273,
+        1.1020312744345013
+      ],
+      "bear_minimum_material_vertex_id": 0,
+      "bear_COM_m": [
+        -0.14349342248278163,
+        0.10523696560300876,
+        1.0202808640875765
+      ],
+      "physical_body_rim_z_range_m": [
+        0.9693151684457995,
+        1.1220299631187494
+      ],
+      "bag_z_range_m": [
+        0.7412527608109187,
+        1.4187755429986795
+      ],
+      "actual_saved_right_TCP_m": [
+        -0.13741042629984712,
+        0.1021261954211321,
+        1.084953590349762
+      ],
+      "guard_AIM_right_TCP_reference_m": [
+        -0.13741039588157328,
+        0.10212621343695832,
+        1.0849534957452818
+      ],
+      "actual_finger_joint_half_openings_m": [
+        0.018860995915382428,
+        0.018860152163278097
+      ],
+      "right_finger_reaction_norm_N": [
+        1.8372496063842751,
+        1.833587417449313
+      ],
+      "right_distal_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_distal_link_force_world_N": [
+        [
+          -0.06475495433948138,
+          0.030385762493198992,
+          0.19674086935467971
+        ],
+        [
+          0.24203240112775848,
+          -1.8057510254742715,
+          -0.23700140708890938
+        ],
+        [
+          -0.25266439258065393,
+          1.7837705263515842,
+          -0.3411249499372371
+        ]
+      ],
+      "right_distal_net_force_norm_N": 0.3888556676385635,
+      "right_TCP_torque_norm_Nm": 0.024602266076925297,
+      "containment_original_method": {
+        "mouth_projected_area_m2": 0.030861523612377584,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.39877268385822073,
+          0.12097481803201487
+        ],
+        "mouth_nonplanarity_max_m": 0.02415498844778791,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 0.8103448275862069,
+        "bear_center_of_mass_m": [
+          -0.14349342248278163,
+          0.10523696560300876,
+          1.0202808640875765
+        ],
+        "bear_center_of_mass_inside": true,
+        "all_bear_vertices_inside": false
+      },
+      "failed_tet_to_physical_cloth_11_sample_distances": {
+        "front_panel": {
+          "distance_m": 0.058179059188509546,
+          "tet_sample_index": 7,
+          "tet_sample_world_m": [
+            -0.15261644381295197,
+            0.004268334201535733,
+            0.9835665575960497
+          ],
+          "physical_cloth_point_m": [
+            -0.10908421867902272,
+            -0.028850231326854273,
+            1.0033884878827481
+          ],
+          "source_face_index": 1078,
+          "source_vertex_ids": [
+            553,
+            554,
+            592
+          ],
+          "native_vertex_ids": [
+            553,
+            554,
+            592
+          ],
+          "ordered_cloth_normal_world": [
+            0.8992222465068556,
+            -0.29830610794187706,
+            0.32002002648542655
+          ],
+          "source_material_face_center_m": [
+            0.05768591699373998,
+            -0.06326654824932106,
+            0.2768204218629775
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.25042767569067814,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.04261592461298485
+        },
+        "back_panel": {
+          "distance_m": 0.07021672387489568,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.15388633652110853,
+            0.007723307542744991,
+            0.9800738957654405
+          ],
+          "physical_cloth_point_m": [
+            -0.21382353247977098,
+            0.04392618997913764,
+            0.985296170713485
+          ],
+          "source_face_index": 2592,
+          "source_vertex_ids": [
+            1339,
+            1303,
+            1302
+          ],
+          "native_vertex_ids": [
+            1339,
+            1303,
+            1302
+          ],
+          "ordered_cloth_normal_world": [
+            -0.7737055257145334,
+            0.6335452515990115,
+            -0.00041671950106563594
+          ],
+          "source_material_face_center_m": [
+            -0.17861331471755995,
+            0.03174484686873027,
+            0.3031155300931714
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.24089040106553028,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.0572880504337241
+        },
+        "held_front_handle": {
+          "distance_m": 0.12004935826369639,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.15544317695854798,
+            0.0021215245306339696,
+            0.9864529587162638
+          ],
+          "physical_cloth_point_m": [
+            -0.11727393940673016,
+            0.024546930274165324,
+            1.0980417525150867
+          ],
+          "source_face_index": 3534,
+          "source_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "native_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "ordered_cloth_normal_world": [
+            0.47109603315482984,
+            -0.6380441695332194,
+            -0.6090715600571478
+          ],
+          "source_material_face_center_m": [
+            0.09730716980663841,
+            -0.05940752915143412,
+            0.40191661712483634
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.35804175251508674,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.11630929426430153
+        },
+        "free_back_handle": {
+          "distance_m": 0.06971757894960891,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.15388633652110853,
+            0.007723307542744991,
+            0.9800738957654405
+          ],
+          "physical_cloth_point_m": [
+            -0.18364521000204662,
+            0.06289235036955733,
+            0.9495562455067161
+          ],
+          "source_face_index": 3617,
+          "source_vertex_ids": [
+            1878,
+            1879,
+            1869
+          ],
+          "native_vertex_ids": [
+            1878,
+            1879,
+            1869
+          ],
+          "ordered_cloth_normal_world": [
+            0.9884631943497091,
+            -0.09220783354937005,
+            -0.12015918128924231
+          ],
+          "source_material_face_center_m": [
+            -0.1198617034856699,
+            0.05783174216441526,
+            0.5024022043428137
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.20782247574955148,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.06084453555262373
+        }
+      }
+    },
+    {
+      "time_s": 47.945000000006075,
+      "geometry_source": "states.npz",
+      "saved_frame_index": 968,
+      "global_minimum_J": 0.3146036425867077,
+      "global_worst_tet": 4253,
+      "failed_material_tet_J": 1.0000658413384889,
+      "failed_material_tet_center_m": [
+        -0.15285607827789044,
+        0.005209631274054986,
+        0.9826125908648895
+      ],
+      "failed_material_tet_principal_stretches": [
+        1.0001282644709975,
+        0.999996857750012,
+        0.9999407269368733
+      ],
+      "minimum_stretch_spatial_axis_world": [
+        0.43308784852637217,
+        0.8713242677122605,
+        -0.23071397000288363
+      ],
+      "minimum_stretch_axis_abs_Z": 0.23071397000288363,
+      "failed_material_tet_z_range_m": [
+        0.9800317926756061,
+        0.9864110360085379
+      ],
+      "bear_z_range_m": [
+        0.9418482262385675,
+        1.101991341164527
+      ],
+      "bear_minimum_material_vertex_id": 0,
+      "bear_COM_m": [
+        -0.14348904501030796,
+        0.1052084827217511,
+        1.0202317870051487
+      ],
+      "physical_body_rim_z_range_m": [
+        0.9693140399009486,
+        1.1220270232398037
+      ],
+      "bag_z_range_m": [
+        0.7412527075110074,
+        1.4187730987572675
+      ],
+      "actual_saved_right_TCP_m": [
+        -0.13741056178604663,
+        0.10212674679130491,
+        1.0849536395935782
+      ],
+      "guard_AIM_right_TCP_reference_m": [
+        -0.13741056667132262,
+        0.10212673021532315,
+        1.0849536602149392
+      ],
+      "actual_finger_joint_half_openings_m": [
+        0.018717946241077536,
+        0.01871711797073062
+      ],
+      "right_finger_reaction_norm_N": [
+        1.888100015637234,
+        1.8858901501120968
+      ],
+      "right_distal_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_distal_link_force_world_N": [
+        [
+          -0.06598763920389616,
+          0.034149741098217744,
+          0.18799988314223726
+        ],
+        [
+          0.2540535611135425,
+          -1.8556806317344678,
+          -0.2383859268925437
+        ],
+        [
+          -0.2648204453850033,
+          1.83605280292317,
+          -0.33964966491060555
+        ]
+      ],
+      "right_distal_net_force_norm_N": 0.3977813430026827,
+      "right_TCP_torque_norm_Nm": 0.023414099386339014,
+      "containment_original_method": {
+        "mouth_projected_area_m2": 0.03085218385245877,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.3987815316634864,
+          0.12095252298302851
+        ],
+        "mouth_nonplanarity_max_m": 0.024162123709204408,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 0.8103448275862069,
+        "bear_center_of_mass_m": [
+          -0.14348904501030796,
+          0.1052084827217511,
+          1.0202317870051487
+        ],
+        "bear_center_of_mass_inside": true,
+        "all_bear_vertices_inside": false
+      },
+      "failed_tet_to_physical_cloth_11_sample_distances": {
+        "front_panel": {
+          "distance_m": 0.0581422377580458,
+          "tet_sample_index": 7,
+          "tet_sample_world_m": [
+            -0.15257917962817322,
+            0.004234441789884129,
+            0.9835252965065674
+          ],
+          "physical_cloth_point_m": [
+            -0.10906836464573455,
+            -0.028860534186373448,
+            1.0033255832774213
+          ],
+          "source_face_index": 1078,
+          "source_vertex_ids": [
+            553,
+            554,
+            592
+          ],
+          "native_vertex_ids": [
+            553,
+            554,
+            592
+          ],
+          "ordered_cloth_normal_world": [
+            0.8992106787790352,
+            -0.29845587552690866,
+            0.3199128717841988
+          ],
+          "source_material_face_center_m": [
+            0.05768591699373998,
+            -0.06326654824932106,
+            0.2768204218629775
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.25043727398408155,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.042574712715319527
+        },
+        "back_panel": {
+          "distance_m": 0.07028338822411499,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.15384902476533188,
+            0.007688575274871762,
+            0.9800317926756061
+          ],
+          "physical_cloth_point_m": [
+            -0.21384541394091836,
+            0.043920556838501865,
+            0.9852692976279671
+          ],
+          "source_face_index": 2592,
+          "source_vertex_ids": [
+            1339,
+            1303,
+            1302
+          ],
+          "native_vertex_ids": [
+            1339,
+            1303,
+            1302
+          ],
+          "ordered_cloth_normal_world": [
+            -0.7736250728619548,
+            0.6336435202619747,
+            -0.0003686045951918512
+          ],
+          "source_material_face_center_m": [
+            -0.17861331471755995,
+            0.03174484686873027,
+            0.3031155300931714
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.2408905914354108,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.05735679856660602
+        },
+        "held_front_handle": {
+          "distance_m": 0.12012393221385846,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.15540618174877294,
+            0.002087108249438381,
+            0.9864110360085379
+          ],
+          "physical_cloth_point_m": [
+            -0.11724478405288428,
+            0.024502754764497422,
+            1.0980846927397823
+          ],
+          "source_face_index": 3534,
+          "source_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "native_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "ordered_cloth_normal_world": [
+            0.4707113625399546,
+            -0.6394928207354765,
+            -0.6078484559522737
+          ],
+          "source_material_face_center_m": [
+            0.09730716980663841,
+            -0.05940752915143412,
+            0.40191661712483634
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.3580846927397823,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.11638868413121926
+        },
+        "free_back_handle": {
+          "distance_m": 0.06974147142633251,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.15384902476533188,
+            0.007688575274871762,
+            0.9800317926756061
+          ],
+          "physical_cloth_point_m": [
+            -0.1836499347527223,
+            0.06286756948952768,
+            0.9495185627893359
+          ],
+          "source_face_index": 3617,
+          "source_vertex_ids": [
+            1878,
+            1879,
+            1869
+          ],
+          "native_vertex_ids": [
+            1878,
+            1879,
+            1869
+          ],
+          "ordered_cloth_normal_world": [
+            0.9884506629020777,
+            -0.09225336313663478,
+            -0.12022730138543034
+          ],
+          "source_material_face_center_m": [
+            -0.1198617034856699,
+            0.05783174216441526,
+            0.5024022043428137
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.2078218025753681,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.060864712636139864
+        }
+      },
+      "interval_from_previous_s": 0.15000000000007674,
+      "failed_tet_centroid_secant_velocity_m_s": [
+        0.0002483374937938105,
+        -0.00022729256864483592,
+        -0.000276490494401785
+      ],
+      "bear_COM_secant_velocity_m_s": [
+        2.918314982445941e-05,
+        -0.00018988587505097224,
+        -0.00032718054951809785
+      ],
+      "velocity_scope": "Finite difference over two saved endpoints; not instantaneous contact velocity."
+    },
+    {
+      "time_s": 48.04500000000613,
+      "geometry_source": "states.npz",
+      "saved_frame_index": 970,
+      "global_minimum_J": 0.5028134793443712,
+      "global_worst_tet": 4521,
+      "failed_material_tet_J": 1.0000794472246053,
+      "failed_material_tet_center_m": [
+        -0.15288289631768834,
+        0.005271350058351798,
+        0.9826168052952713
+      ],
+      "failed_material_tet_principal_stretches": [
+        1.000118130218792,
+        1.0000045749867514,
+        0.9999567467860359
+      ],
+      "minimum_stretch_spatial_axis_world": [
+        0.4549990204315231,
+        0.8795149420419908,
+        -0.13938923247951418
+      ],
+      "minimum_stretch_axis_abs_Z": 0.13938923247951418,
+      "failed_material_tet_z_range_m": [
+        0.9800370962938688,
+        0.9864162613142082
+      ],
+      "bear_z_range_m": [
+        0.9418589152385431,
+        1.101849594979265
+      ],
+      "bear_minimum_material_vertex_id": 0,
+      "bear_COM_m": [
+        -0.1434733716912636,
+        0.10527244573900406,
+        1.0202154561381742
+      ],
+      "physical_body_rim_z_range_m": [
+        0.9692954737991776,
+        1.1220169502861868
+      ],
+      "bag_z_range_m": [
+        0.7412526685866634,
+        1.4187722407335983
+      ],
+      "actual_saved_right_TCP_m": [
+        -0.13741010721569197,
+        0.10212617356676502,
+        1.0849530681610968
+      ],
+      "guard_AIM_right_TCP_reference_m": [
+        -0.13741013183060277,
+        0.10212630649353378,
+        1.0849530682237867
+      ],
+      "actual_finger_joint_half_openings_m": [
+        0.020949389335133406,
+        0.02094805143708321
+      ],
+      "right_finger_reaction_norm_N": [
+        1.2229988697216672,
+        1.2256008854821612
+      ],
+      "right_distal_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_distal_link_force_world_N": [
+        [
+          -0.06430295223140672,
+          0.03655421767411259,
+          0.19046980555522364
+        ],
+        [
+          0.12446495663506525,
+          -1.1960516693114116,
+          -0.22292401002963438
+        ],
+        [
+          -0.14043241841238402,
+          1.1617015012064411,
+          -0.36445286176432745
+        ]
+      ],
+      "right_distal_net_force_norm_N": 0.4049486590049133,
+      "right_TCP_torque_norm_Nm": 0.024832154044375908,
+      "containment_original_method": {
+        "mouth_projected_area_m2": 0.030844867964437982,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.3988534703748817,
+          0.12083822260485655
+        ],
+        "mouth_nonplanarity_max_m": 0.02418148583395795,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 0.8110344827586207,
+        "bear_center_of_mass_m": [
+          -0.1434733716912636,
+          0.10527244573900406,
+          1.0202154561381742
+        ],
+        "bear_center_of_mass_inside": true,
+        "all_bear_vertices_inside": false
+      },
+      "failed_tet_to_physical_cloth_11_sample_distances": {
+        "front_panel": {
+          "distance_m": 0.05823007739830714,
+          "tet_sample_index": 7,
+          "tet_sample_world_m": [
+            -0.15260580713247543,
+            0.00429585515882291,
+            0.9835291526756476
+          ],
+          "physical_cloth_point_m": [
+            -0.1090847652239641,
+            -0.028927033052916603,
+            1.0033508711652412
+          ],
+          "source_face_index": 1078,
+          "source_vertex_ids": [
+            553,
+            554,
+            592
+          ],
+          "native_vertex_ids": [
+            553,
+            554,
+            592
+          ],
+          "ordered_cloth_normal_world": [
+            0.8990697941088146,
+            -0.29892947456418595,
+            0.31986665121252245
+          ],
+          "source_material_face_center_m": [
+            0.05768591699373998,
+            -0.06326654824932106,
+            0.2768204218629775
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.25045819380915224,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.04264008009125608
+        },
+        "back_panel": {
+          "distance_m": 0.07022607878492981,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.15387648990944394,
+            0.007751233368270523,
+            0.9800370962938688
+          ],
+          "physical_cloth_point_m": [
+            -0.21384303886605172,
+            0.043919168332013606,
+            0.9852902504130988
+          ],
+          "source_face_index": 2592,
+          "source_vertex_ids": [
+            1339,
+            1303,
+            1302
+          ],
+          "native_vertex_ids": [
+            1339,
+            1303,
+            1302
+          ],
+          "ordered_cloth_normal_world": [
+            -0.7735443870867126,
+            0.6337419561249606,
+            -0.0004628753080109639
+          ],
+          "source_material_face_center_m": [
+            -0.17861331471755995,
+            0.03174484686873027,
+            0.3031155300931714
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.24088133421796853,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.05730253977971625
+        },
+        "held_front_handle": {
+          "distance_m": 0.12012129418303583,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.15543183219967088,
+            0.0021489280833522913,
+            0.9864162613142082
+          ],
+          "physical_cloth_point_m": [
+            -0.11726238264816745,
+            0.024420253216381027,
+            1.0981132018003361
+          ],
+          "source_face_index": 3534,
+          "source_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "native_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "ordered_cloth_normal_world": [
+            0.4710425502676861,
+            -0.6389529646938601,
+            -0.6081595388927489
+          ],
+          "source_material_face_center_m": [
+            0.09730716980663841,
+            -0.05940752915143412,
+            0.40191661712483634
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.3581132018003361,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.11640866066866308
+        },
+        "free_back_handle": {
+          "distance_m": 0.06966352548317191,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.15387648990944394,
+            0.007751233368270523,
+            0.9800370962938688
+          ],
+          "physical_cloth_point_m": [
+            -0.18363399367830494,
+            0.0628656980738285,
+            0.9495429405847732
+          ],
+          "source_face_index": 3617,
+          "source_vertex_ids": [
+            1878,
+            1879,
+            1869
+          ],
+          "native_vertex_ids": [
+            1878,
+            1879,
+            1869
+          ],
+          "ordered_cloth_normal_world": [
+            0.9884416345060946,
+            -0.09211378795800296,
+            -0.12040841018362479
+          ],
+          "source_material_face_center_m": [
+            -0.1198617034856699,
+            0.05783174216441526,
+            0.5024022043428137
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.20779066152548742,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.060792503965982285
+        }
+      },
+      "interval_from_previous_s": 0.10000000000005116,
+      "failed_tet_centroid_secant_velocity_m_s": [
+        -0.00026818039797885264,
+        0.0006171878429678049,
+        4.214430381785992e-05
+      ],
+      "bear_COM_secant_velocity_m_s": [
+        0.00015673319044360066,
+        0.0006396301725293044,
+        -0.0001633086697449268
+      ],
+      "velocity_scope": "Finite difference over two saved endpoints; not instantaneous contact velocity."
+    },
+    {
+      "time_s": 48.09500000000615,
+      "geometry_source": "states.npz",
+      "saved_frame_index": 971,
+      "global_minimum_J": 0.90904159805152,
+      "global_worst_tet": 1846,
+      "failed_material_tet_J": 1.0000112111553858,
+      "failed_material_tet_center_m": [
+        -0.1518482583072388,
+        0.00459108619090153,
+        0.979232861859248
+      ],
+      "failed_material_tet_principal_stretches": [
+        1.0000711332013885,
+        0.9999985884052202,
+        0.9999414937283367
+      ],
+      "minimum_stretch_spatial_axis_world": [
+        -0.6215402606140651,
+        0.4981921397253443,
+        0.6045595887517494
+      ],
+      "minimum_stretch_axis_abs_Z": 0.6045595887517494,
+      "failed_material_tet_z_range_m": [
+        0.9766359127448622,
+        0.9830818797352721
+      ],
+      "bear_z_range_m": [
+        0.9377382554955822,
+        1.0966764728996459
+      ],
+      "bear_minimum_material_vertex_id": 0,
+      "bear_COM_m": [
+        -0.14317779157445779,
+        0.10510785477038845,
+        1.0167143489358825
+      ],
+      "physical_body_rim_z_range_m": [
+        0.9690806761636757,
+        1.1219911329690673
+      ],
+      "bag_z_range_m": [
+        0.7412524778599768,
+        1.4187716761293085
+      ],
+      "actual_saved_right_TCP_m": [
+        -0.13741946003451255,
+        0.10212370410745811,
+        1.0849754665278355
+      ],
+      "guard_AIM_right_TCP_reference_m": [
+        -0.13741732673529752,
+        0.10212437455439546,
+        1.0849698521177433
+      ],
+      "actual_finger_joint_half_openings_m": [
+        0.027969205055910083,
+        0.027969019176115172
+      ],
+      "right_finger_reaction_norm_N": [
+        1.4895291096512085e-12,
+        3.4566803806707747e-14
+      ],
+      "right_distal_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_distal_link_force_world_N": [
+        [
+          -0.06403569094413569,
+          0.04437663476642294,
+          0.18200081818915226
+        ],
+        [
+          -1.528847271185889e-14,
+          -1.4889418137421047e-12,
+          -3.8929505401842254e-14
+        ],
+        [
+          8.904275315698033e-15,
+          -2.94009090612671e-14,
+          -1.584816559999227e-14
+        ]
+      ],
+      "right_distal_net_force_norm_N": 0.19797513290626256,
+      "right_TCP_torque_norm_Nm": 0.021704039171516063,
+      "containment_original_method": {
+        "mouth_projected_area_m2": 0.030741131324701132,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.39937065998601373,
+          0.12040606590848366
+        ],
+        "mouth_nonplanarity_max_m": 0.024189354017911658,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 0.8282758620689655,
+        "bear_center_of_mass_m": [
+          -0.14317779157445779,
+          0.10510785477038845,
+          1.0167143489358825
+        ],
+        "bear_center_of_mass_inside": true,
+        "all_bear_vertices_inside": false
+      },
+      "failed_tet_to_physical_cloth_11_sample_distances": {
+        "front_panel": {
+          "distance_m": 0.05822480240756565,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.15433052573305742,
+            0.0014750983267744404,
+            0.9830818797352721
+          ],
+          "physical_cloth_point_m": [
+            -0.10894529650232196,
+            -0.029193799018378822,
+            1.0028233923091887
+          ],
+          "source_face_index": 1078,
+          "source_vertex_ids": [
+            553,
+            554,
+            592
+          ],
+          "native_vertex_ids": [
+            553,
+            554,
+            592
+          ],
+          "ordered_cloth_normal_world": [
+            0.899068049327007,
+            -0.2989632083339882,
+            0.3198400267977397
+          ],
+          "source_material_face_center_m": [
+            0.05768591699373998,
+            -0.06326654824932106,
+            0.2768204218629775
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.2504725442961915,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.041959830299961136
+        },
+        "back_panel": {
+          "distance_m": 0.07144509465983867,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.15289103972699541,
+            0.007032769041164436,
+            0.9766359127448622
+          ],
+          "physical_cloth_point_m": [
+            -0.21274974454156242,
+            0.04600517503795819,
+            0.9782134360242196
+          ],
+          "source_face_index": 2521,
+          "source_vertex_ids": [
+            1303,
+            1304,
+            1267
+          ],
+          "native_vertex_ids": [
+            1303,
+            1304,
+            1267
+          ],
+          "ordered_cloth_normal_world": [
+            -0.812834549346833,
+            0.5754697146616705,
+            0.09019203343614339
+          ],
+          "source_material_face_center_m": [
+            -0.16683268245974014,
+            0.03724576851157462,
+            0.28898602937207724
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.2234721167159095,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.058737175921057296
+        },
+        "held_front_handle": {
+          "distance_m": 0.12297864015078669,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.15433052573305742,
+            0.0014750983267744404,
+            0.9830818797352721
+          ],
+          "physical_cloth_point_m": [
+            -0.11732592730222033,
+            0.024277310993625692,
+            1.0981230233570427
+          ],
+          "source_face_index": 3534,
+          "source_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "native_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "ordered_cloth_normal_world": [
+            0.4736279202280384,
+            -0.638404779745984,
+            -0.6067255807842161
+          ],
+          "source_material_face_center_m": [
+            0.09730716980663841,
+            -0.05940752915143412,
+            0.40191661712483634
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.3581230233570427,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.11935848139695672
+        },
+        "free_back_handle": {
+          "distance_m": 0.06913013347224929,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.15289103972699541,
+            0.007032769041164436,
+            0.9766359127448622
+          ],
+          "physical_cloth_point_m": [
+            -0.1840672503166218,
+            0.06117899849400685,
+            0.947052047493641
+          ],
+          "source_face_index": 3633,
+          "source_vertex_ids": [
+            1887,
+            1888,
+            1878
+          ],
+          "native_vertex_ids": [
+            1887,
+            1888,
+            1878
+          ],
+          "ordered_cloth_normal_world": [
+            0.9889036595523624,
+            -0.08706999047570105,
+            -0.12036764051233441
+          ],
+          "source_material_face_center_m": [
+            -0.1198617034856699,
+            0.05783174216441526,
+            0.5224022043428137
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.19121088463267055,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.060148139413367364
+        }
+      },
+      "interval_from_previous_s": 0.05000000000002558,
+      "failed_tet_centroid_secant_velocity_m_s": [
+        0.020692760208980105,
+        -0.013605277348998406,
+        -0.06767886872043195
+      ],
+      "bear_COM_secant_velocity_m_s": [
+        0.005911602336113071,
+        -0.0032918193723105262,
+        -0.07002214404579792
+      ],
+      "velocity_scope": "Finite difference over two saved endpoints; not instantaneous contact velocity."
+    },
+    {
+      "time_s": 48.14500000000618,
+      "geometry_source": "states.npz",
+      "saved_frame_index": 972,
+      "global_minimum_J": 0.9061446665711012,
+      "global_worst_tet": 1846,
+      "failed_material_tet_J": 1.0000230391078637,
+      "failed_material_tet_center_m": [
+        -0.1494519387494618,
+        0.006532231491889851,
+        0.948378889107513
+      ],
+      "failed_material_tet_principal_stretches": [
+        1.000237219247088,
+        0.999973771046988,
+        0.9998120946808298
+      ],
+      "minimum_stretch_spatial_axis_world": [
+        -0.32458547393583437,
+        0.3561603862441832,
+        0.8762385801710879
+      ],
+      "minimum_stretch_axis_abs_Z": 0.8762385801710879,
+      "failed_material_tet_z_range_m": [
+        0.9459951297457683,
+        0.9518879339819692
+      ],
+      "bear_z_range_m": [
+        0.9150856493088262,
+        1.0738765244229778
+      ],
+      "bear_minimum_material_vertex_id": 0,
+      "bear_COM_m": [
+        -0.1433678578820616,
+        0.10341208559349188,
+        0.9949660819150582
+      ],
+      "physical_body_rim_z_range_m": [
+        0.9668806320979382,
+        1.1219582612897903
+      ],
+      "bag_z_range_m": [
+        0.7412521211596924,
+        1.418771220627276
+      ],
+      "actual_saved_right_TCP_m": [
+        -0.1374353725865456,
+        0.1021244344590775,
+        1.0850149322789335
+      ],
+      "guard_AIM_right_TCP_reference_m": [
+        -0.13743447635905973,
+        0.10212349232467731,
+        1.0850133982869923
+      ],
+      "actual_finger_joint_half_openings_m": [
+        0.03403130091178137,
+        0.0340312823278242
+      ],
+      "right_finger_reaction_norm_N": [
+        3.9043203026039234e-13,
+        4.009422857212055e-13
+      ],
+      "right_distal_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_distal_link_force_world_N": [
+        [
+          -0.04908497710942398,
+          0.1444088627384056,
+          0.08802938270254863
+        ],
+        [
+          8.484262329108505e-15,
+          1.320406295790376e-13,
+          3.6732881684718685e-13
+        ],
+        [
+          -8.6451081857202e-15,
+          9.089081029797427e-14,
+          3.9040855419314217e-13
+        ]
+      ],
+      "right_distal_net_force_norm_N": 0.17610345491903878,
+      "right_TCP_torque_norm_Nm": 0.015639429973053374,
+      "containment_original_method": {
+        "mouth_projected_area_m2": 0.029356524032136722,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.40264921103150675,
+          0.11897023625542531
+        ],
+        "mouth_nonplanarity_max_m": 0.02440393134882219,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 0.9241379310344827,
+        "bear_center_of_mass_m": [
+          -0.1433678578820616,
+          0.10341208559349188,
+          0.9949660819150582
+        ],
+        "bear_center_of_mass_inside": true,
+        "all_bear_vertices_inside": false
+      },
+      "failed_tet_to_physical_cloth_11_sample_distances": {
+        "front_panel": {
+          "distance_m": 0.06869836051376026,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.15196032305774634,
+            0.0030557500295169326,
+            0.9518879339819692
+          ],
+          "physical_cloth_point_m": [
+            -0.10122099100620353,
+            -0.035453855583312884,
+            0.9776172012818004
+          ],
+          "source_face_index": 1004,
+          "source_vertex_ids": [
+            515,
+            516,
+            554
+          ],
+          "native_vertex_ids": [
+            515,
+            516,
+            554
+          ],
+          "ordered_cloth_normal_world": [
+            0.829079997054102,
+            -0.42157636787808367,
+            0.36728697843987496
+          ],
+          "source_material_face_center_m": [
+            0.05788901932067556,
+            -0.06197006403599736,
+            0.25750762896318957
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.2324180795958728,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.051518390527566335
+        },
+        "back_panel": {
+          "distance_m": 0.07353642410883729,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.1504805637018468,
+            0.009188061520483844,
+            0.9459951297457683
+          ],
+          "physical_cloth_point_m": [
+            -0.21100124238342624,
+            0.05037473836306875,
+            0.9529600973192952
+          ],
+          "source_face_index": 2449,
+          "source_vertex_ids": [
+            1268,
+            1269,
+            1232
+          ],
+          "native_vertex_ids": [
+            1268,
+            1269,
+            1232
+          ],
+          "ordered_cloth_normal_world": [
+            -0.8230027420425838,
+            0.5600853909027006,
+            0.09471452627637193
+          ],
+          "source_material_face_center_m": [
+            -0.1491357043936609,
+            0.04337755865481138,
+            0.2680685370836902
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.1963782543245819,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.06015665503746787
+        },
+        "held_front_handle": {
+          "distance_m": 0.15167387120015938,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.15196032305774634,
+            0.0030557500295169326,
+            0.9518879339819692
+          ],
+          "physical_cloth_point_m": [
+            -0.11705374719899911,
+            0.024192335000654038,
+            1.0979692091079003
+          ],
+          "source_face_index": 3534,
+          "source_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "native_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "ordered_cloth_normal_world": [
+            0.4734398604466386,
+            -0.6563798469441313,
+            -0.587384197153674
+          ],
+          "source_material_face_center_m": [
+            0.09730716980663841,
+            -0.05940752915143412,
+            0.40191661712483634
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.3579692091079003,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.14901917157558606
+        },
+        "free_back_handle": {
+          "distance_m": 0.05776532475110602,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.1504805637018468,
+            0.009188061520483844,
+            0.9459951297457683
+          ],
+          "physical_cloth_point_m": [
+            -0.18708068859930863,
+            0.049344656893856066,
+            0.9263810672111938
+          ],
+          "source_face_index": 3649,
+          "source_vertex_ids": [
+            1896,
+            1897,
+            1887
+          ],
+          "native_vertex_ids": [
+            1896,
+            1897,
+            1887
+          ],
+          "ordered_cloth_normal_world": [
+            0.9901166839322914,
+            -0.10581408855745139,
+            -0.0920452652865905
+          ],
+          "source_material_face_center_m": [
+            -0.1198617034856699,
+            0.05783174216441526,
+            0.5424022043428137
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.1740170119048381,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.04962245598221243
+        }
+      },
+      "interval_from_previous_s": 0.05000000000002558,
+      "failed_tet_centroid_secant_velocity_m_s": [
+        0.04792639115551546,
+        0.03882290601974656,
+        -0.6170794550343834
+      ],
+      "bear_COM_secant_velocity_m_s": [
+        -0.003801326152074456,
+        -0.03391538353791398,
+        -0.43496534041626406
+      ],
+      "velocity_scope": "Finite difference over two saved endpoints; not instantaneous contact velocity."
+    },
+    {
+      "time_s": 48.1950000000062,
+      "geometry_source": "states.npz",
+      "saved_frame_index": 973,
+      "global_minimum_J": 0.9130899213562632,
+      "global_worst_tet": 1846,
+      "failed_material_tet_J": 1.0001335978395036,
+      "failed_material_tet_center_m": [
+        -0.13568866954192427,
+        0.01832188589793244,
+        0.8866554971395633
+      ],
+      "failed_material_tet_principal_stretches": [
+        1.0001445588999607,
+        1.0000219364305365,
+        0.9999671048149017
+      ],
+      "minimum_stretch_spatial_axis_world": [
+        -0.5009838910183086,
+        0.12461246598477116,
+        0.8564384824734055
+      ],
+      "minimum_stretch_axis_abs_Z": 0.8564384824734055,
+      "failed_material_tet_z_range_m": [
+        0.8848849805633501,
+        0.8887410023725517
+      ],
+      "bear_z_range_m": [
+        0.8781103724809102,
+        1.029919186809881
+      ],
+      "bear_minimum_material_vertex_id": 4,
+      "bear_COM_m": [
+        -0.14548590458372176,
+        0.09979102926304848,
+        0.9563407361949894
+      ],
+      "physical_body_rim_z_range_m": [
+        0.9639203541467575,
+        1.1219260526716113
+      ],
+      "bag_z_range_m": [
+        0.7412500759698446,
+        1.4187671093240182
+      ],
+      "actual_saved_right_TCP_m": [
+        -0.13743939524713294,
+        0.10213146929585383,
+        1.0850168839362857
+      ],
+      "guard_AIM_right_TCP_reference_m": [
+        -0.13743921546681792,
+        0.10213158867131551,
+        1.0850167186716138
+      ],
+      "actual_finger_joint_half_openings_m": [
+        0.03803721976053016,
+        0.038037225335354426
+      ],
+      "right_finger_reaction_norm_N": [
+        3.701855649105943e-13,
+        4.0086393325973897e-13
+      ],
+      "right_distal_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_distal_link_force_world_N": [
+        [
+          -0.0803021909624015,
+          0.06136210739720735,
+          0.1462864453017469
+        ],
+        [
+          8.736270121062222e-15,
+          -4.435337138385436e-14,
+          3.6741503575579696e-13
+        ],
+        [
+          -8.897115977673918e-15,
+          9.089081029797427e-14,
+          3.9032242430985943e-13
+        ]
+      ],
+      "right_distal_net_force_norm_N": 0.17780178339048466,
+      "right_TCP_torque_norm_Nm": 0.019436477248664295,
+      "containment_original_method": {
+        "mouth_projected_area_m2": 0.02654584136084841,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.40721795057990895,
+          0.11892100889622045
+        ],
+        "mouth_nonplanarity_max_m": 0.02509096190748398,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 0.9758620689655172,
+        "bear_center_of_mass_m": [
+          -0.14548590458372176,
+          0.09979102926304848,
+          0.9563407361949894
+        ],
+        "bear_center_of_mass_inside": true,
+        "all_bear_vertices_inside": false
+      },
+      "failed_tet_to_physical_cloth_11_sample_distances": {
+        "front_panel": {
+          "distance_m": 0.09550396915554238,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.13825925961170873,
+            0.01387977409414037,
+            0.8887410023725517
+          ],
+          "physical_cloth_point_m": [
+            -0.08757364453620788,
+            -0.05383886186381166,
+            0.9330824377673979
+          ],
+          "source_face_index": 782,
+          "source_vertex_ids": [
+            401,
+            402,
+            440
+          ],
+          "native_vertex_ids": [
+            401,
+            402,
+            440
+          ],
+          "ordered_cloth_normal_world": [
+            0.4451732063338475,
+            -0.7295563486776188,
+            0.5191997211734829
+          ],
+          "source_material_face_center_m": [
+            0.05866950229828566,
+            -0.05670684382731639,
+            0.19956925026382588
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.1787735773450655,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.07780852573656875
+        },
+        "back_panel": {
+          "distance_m": 0.0817872664660103,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.13666629836492034,
+            0.02143701864557881,
+            0.8848849805633501
+          ],
+          "physical_cloth_point_m": [
+            -0.20271460416983095,
+            0.06862844300977804,
+            0.8948723587358861
+          ],
+          "source_face_index": 2308,
+          "source_vertex_ids": [
+            1201,
+            1165,
+            1164
+          ],
+          "native_vertex_ids": [
+            1201,
+            1165,
+            1164
+          ],
+          "ordered_cloth_normal_world": [
+            -0.7776963438987746,
+            0.6216560919513174,
+            0.0934457063020765
+          ],
+          "source_material_face_center_m": [
+            -0.11447940808465767,
+            0.05016430317891868,
+            0.22062522033551205
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.13984579156890886,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.06989341249785916
+        },
+        "held_front_handle": {
+          "distance_m": 0.2098690570761014,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.13825925961170873,
+            0.01387977409414037,
+            0.8887410023725517
+          ],
+          "physical_cloth_point_m": [
+            -0.11744190284237617,
+            0.02267776348201138,
+            1.0973896404171868
+          ],
+          "source_face_index": 3534,
+          "source_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "native_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "ordered_cloth_normal_world": [
+            0.5033351272658616,
+            -0.6455415904324519,
+            -0.5743951642225058
+          ],
+          "source_material_face_center_m": [
+            0.09730716980663841,
+            -0.05940752915143412,
+            0.40191661712483634
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.3573896404171868,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.20919453150555511
+        },
+        "free_back_handle": {
+          "distance_m": 0.05222291487043317,
+          "tet_sample_index": 9,
+          "tet_sample_world_m": [
+            -0.13746277898831455,
+            0.01765839636985959,
+            0.8868129914679509
+          ],
+          "physical_cloth_point_m": [
+            -0.1881826040284148,
+            0.02972072092882358,
+            0.8898514963141448
+          ],
+          "source_face_index": 3681,
+          "source_vertex_ids": [
+            1914,
+            1915,
+            1905
+          ],
+          "native_vertex_ids": [
+            1914,
+            1915,
+            1905
+          ],
+          "ordered_cloth_normal_world": [
+            0.987177428231894,
+            -0.08024515919830616,
+            -0.13799072292984899
+          ],
+          "source_material_face_center_m": [
+            -0.11864820819045453,
+            0.05826392866634774,
+            0.5830728934599664
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.1359557731481159,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.047630838359133704
+        }
+      },
+      "interval_from_previous_s": 0.05000000000002558,
+      "failed_tet_centroid_secant_velocity_m_s": [
+        0.2752653841506099,
+        0.23579308812073113,
+        -1.2344678393583632
+      ],
+      "bear_COM_secant_velocity_m_s": [
+        -0.04236093403318151,
+        -0.07242112660883107,
+        -0.7725069144009811
+      ],
+      "velocity_scope": "Finite difference over two saved endpoints; not instantaneous contact velocity."
+    },
+    {
+      "time_s": 48.24500000000623,
+      "geometry_source": "states.npz",
+      "saved_frame_index": 974,
+      "global_minimum_J": 0.8970632397033055,
+      "global_worst_tet": 1846,
+      "failed_material_tet_J": 1.0001621284375333,
+      "failed_material_tet_center_m": [
+        -0.12481357698959482,
+        0.045060264888484705,
+        0.8059992090126029
+      ],
+      "failed_material_tet_principal_stretches": [
+        1.0001433986803618,
+        1.0000325727326727,
+        0.9999861547900399
+      ],
+      "minimum_stretch_spatial_axis_world": [
+        0.7454575416692486,
+        0.06403667598904217,
+        -0.6634699372968721
+      ],
+      "minimum_stretch_axis_abs_Z": 0.6634699372968721,
+      "failed_material_tet_z_range_m": [
+        0.805397435007891,
+        0.8063454100502013
+      ],
+      "bear_z_range_m": [
+        0.805397435007891,
+        0.9951418129037285
+      ],
+      "bear_minimum_material_vertex_id": 64,
+      "bear_COM_m": [
+        -0.1465761531102139,
+        0.09456730004860557,
+        0.8990983572430864
+      ],
+      "physical_body_rim_z_range_m": [
+        0.961756146967232,
+        1.1220808435520377
+      ],
+      "bag_z_range_m": [
+        0.7412507214366859,
+        1.4187596867186376
+      ],
+      "actual_saved_right_TCP_m": [
+        -0.1374400782788248,
+        0.10212333906639535,
+        1.0850231322001616
+      ],
+      "guard_AIM_right_TCP_reference_m": [
+        -0.1374400930887296,
+        0.10212416676597236,
+        1.085022554540825
+      ],
+      "actual_finger_joint_half_openings_m": [
+        0.03980274248978072,
+        0.039802743345201945
+      ],
+      "right_finger_reaction_norm_N": [
+        2.2850208885027206e-13,
+        1.4846903862668125e-12
+      ],
+      "right_distal_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_distal_link_force_world_N": [
+        [
+          -0.09056327846461583,
+          0.022830326681325685,
+          0.17451321281877852
+        ],
+        [
+          -9.324288302287564e-15,
+          2.2679555935363552e-13,
+          -2.6268546097282145e-14
+        ],
+        [
+          -5.545746554153499e-14,
+          -1.8434727948315674e-13,
+          -1.4721569526161147e-12
+        ]
+      ],
+      "right_distal_net_force_norm_N": 0.19793380881107342,
+      "right_TCP_torque_norm_Nm": 0.02162524649569815,
+      "containment_original_method": {
+        "mouth_projected_area_m2": 0.02446424713497205,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.4056992711673124,
+          0.12252439698331774
+        ],
+        "mouth_nonplanarity_max_m": 0.02590681181859916,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 1.0,
+        "bear_center_of_mass_m": [
+          -0.1465761531102139,
+          0.09456730004860557,
+          0.8990983572430864
+        ],
+        "bear_center_of_mass_inside": true,
+        "all_bear_vertices_inside": true
+      },
+      "failed_tet_to_physical_cloth_11_sample_distances": {
+        "front_panel": {
+          "distance_m": 0.09650202442511674,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.12736101028781124,
+            0.04014106613273829,
+            0.8059522801336733
+          ],
+          "physical_cloth_point_m": [
+            -0.11266419010908985,
+            -0.029956345118173258,
+            0.7412761861676588
+          ],
+          "source_face_index": 38,
+          "source_vertex_ids": [
+            19,
+            20,
+            58
+          ],
+          "native_vertex_ids": [
+            19,
+            20,
+            58
+          ],
+          "ordered_cloth_normal_world": [
+            0.12414087214922356,
+            -0.5920704879593949,
+            -0.7962672799692038
+          ],
+          "source_material_face_center_m": [
+            0.0232300489773558,
+            -0.006467082938399815,
+            0.0064226391711539035
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.0012759664332953058,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.0820502774911676
+        },
+        "back_panel": {
+          "distance_m": 0.05461009605417988,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.12574987737558513,
+            0.048603800468577756,
+            0.805397435007891
+          ],
+          "physical_cloth_point_m": [
+            -0.12743286787176067,
+            0.07001573524166045,
+            0.7551882806303296
+          ],
+          "source_face_index": 1814,
+          "source_vertex_ids": [
+            961,
+            925,
+            924
+          ],
+          "native_vertex_ids": [
+            961,
+            925,
+            924
+          ],
+          "ordered_cloth_normal_world": [
+            -0.0308183031669786,
+            0.39208747686214407,
+            -0.9194115741482625
+          ],
+          "source_material_face_center_m": [
+            0.022444528714584647,
+            0.04007275710294542,
+            0.08347920857950868
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.008719683525264199,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.04565542197306835
+        },
+        "held_front_handle": {
+          "distance_m": 0.29266228210987505,
+          "tet_sample_index": 0,
+          "tet_sample_world_m": [
+            -0.12444317461876961,
+            0.04417369743382447,
+            0.8063454100502013
+          ],
+          "physical_cloth_point_m": [
+            -0.118278685160645,
+            0.022074776579015583,
+            1.098107039015584
+          ],
+          "source_face_index": 3534,
+          "source_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "native_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "ordered_cloth_normal_world": [
+            0.5129410756531493,
+            -0.6097503723293889,
+            -0.6042316909530333
+          ],
+          "source_material_face_center_m": [
+            0.09730716980663841,
+            -0.05940752915143412,
+            0.40191661712483634
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.35810703901558405,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.2922672220933722
+        },
+        "free_back_handle": {
+          "distance_m": 0.04956594660150099,
+          "tet_sample_index": 3,
+          "tet_sample_world_m": [
+            -0.12574987737558513,
+            0.048603800468577756,
+            0.805397435007891
+          ],
+          "physical_cloth_point_m": [
+            -0.13581580446380703,
+            0.07137215662825862,
+            0.7625364722078865
+          ],
+          "source_face_index": 3838,
+          "source_vertex_ids": [
+            2003,
+            1994,
+            1993
+          ],
+          "native_vertex_ids": [
+            2003,
+            1994,
+            1993
+          ],
+          "ordered_cloth_normal_world": [
+            0.2583234392848012,
+            -0.573568998080873,
+            0.7773593796672006
+          ],
+          "source_material_face_center_m": [
+            0.005539089585129913,
+            0.08466519154908536,
+            0.6651126336168636
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.020768553994858996,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.04562616269119
+        }
+      },
+      "interval_from_previous_s": 0.05000000000002558,
+      "failed_tet_centroid_secant_velocity_m_s": [
+        0.2175018510464777,
+        0.5347675798107717,
+        -1.6131257625383817
+      ],
+      "bear_COM_secant_velocity_m_s": [
+        -0.021804970529831717,
+        -0.10447458428880464,
+        -1.144847579037474
+      ],
+      "velocity_scope": "Finite difference over two saved endpoints; not instantaneous contact velocity."
+    },
+    {
+      "time_s": 48.295000000006254,
+      "geometry_source": "failed_soft_state.npz",
+      "saved_frame_index": null,
+      "global_minimum_J": 0.016728643251804988,
+      "global_worst_tet": 5221,
+      "failed_material_tet_J": 0.016728643251804988,
+      "failed_material_tet_center_m": [
+        -0.1210960372753166,
+        0.07040971302831767,
+        0.7444452743335346
+      ],
+      "failed_material_tet_principal_stretches": [
+        0.9554449609619949,
+        0.9092403565417375,
+        0.019256455119547232
+      ],
+      "minimum_stretch_spatial_axis_world": [
+        -0.08288765716857488,
+        -0.04963149307874615,
+        0.9953222348485335
+      ],
+      "minimum_stretch_axis_abs_Z": 0.9953222348485335,
+      "failed_material_tet_z_range_m": [
+        0.7440115846914596,
+        0.7447951822808595
+      ],
+      "bear_z_range_m": [
+        0.7437359847495011,
+        0.9404493436223704
+      ],
+      "bear_minimum_material_vertex_id": 183,
+      "bear_COM_m": [
+        -0.1481331657890885,
+        0.08588456166928932,
+        0.8329294077747049
+      ],
+      "physical_body_rim_z_range_m": [
+        0.9514091420735857,
+        1.1225928268669527
+      ],
+      "bag_z_range_m": [
+        0.7411740393392583,
+        1.4187447395511057
+      ],
+      "actual_saved_right_TCP_m": null,
+      "guard_AIM_right_TCP_reference_m": [
+        -0.13743927773866338,
+        0.10212122104574624,
+        1.085023874545628
+      ],
+      "actual_finger_joint_half_openings_m": [
+        0.04000860258396066,
+        0.04000859308234574
+      ],
+      "right_finger_reaction_norm_N": [
+        1.1647365306779965e-12,
+        1.1126397669849943e-12
+      ],
+      "right_distal_link_names": [
+        "link7",
+        "left_finger",
+        "right_finger"
+      ],
+      "right_distal_link_force_world_N": [
+        [
+          -0.051274960407705836,
+          0.21444828357045348,
+          0.029602114917808214
+        ],
+        [
+          -6.728035374928739e-14,
+          5.338405673708076e-13,
+          1.0330047379002676e-12
+        ],
+        [
+          -3.392273064038579e-14,
+          1.3512175745486383e-13,
+          1.1038834223253067e-12
+        ]
+      ],
+      "right_distal_net_force_norm_N": 0.22247128601047902,
+      "right_TCP_torque_norm_Nm": 0.013057773257276436,
+      "containment_original_method": {
+        "mouth_projected_area_m2": 0.023771277429134853,
+        "mouth_projected_crossings": 0,
+        "mouth_projected_dimensions_m": [
+          0.4027254745616742,
+          0.12380937268107242
+        ],
+        "mouth_nonplanarity_max_m": 0.027729066841460367,
+        "virtual_closed_body_valid": true,
+        "bear_vertex_inside_fraction": 1.0,
+        "bear_center_of_mass_m": [
+          -0.1481331657890885,
+          0.08588456166928932,
+          0.8329294077747049
+        ],
+        "bear_center_of_mass_inside": true,
+        "all_bear_vertices_inside": true
+      },
+      "failed_tet_to_physical_cloth_11_sample_distances": {
+        "front_panel": {
+          "distance_m": 0.09308178150871048,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.12324736264191079,
+            0.06579320216876447,
+            0.7440115846914596
+          ],
+          "physical_cloth_point_m": [
+            -0.10315985483295662,
+            -0.02509036613950608,
+            0.7430697299168554
+          ],
+          "source_face_index": 38,
+          "source_vertex_ids": [
+            19,
+            20,
+            58
+          ],
+          "native_vertex_ids": [
+            19,
+            20,
+            58
+          ],
+          "ordered_cloth_normal_world": [
+            0.1876086444069203,
+            -0.5832773635610776,
+            -0.7903103907333093
+          ],
+          "source_material_face_center_m": [
+            0.0232300489773558,
+            -0.006467082938399815,
+            0.0064226391711539035
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.0020415017377695133,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.0885366034313832
+        },
+        "back_panel": {
+          "distance_m": 0.0028255079719156926,
+          "tet_sample_index": 2,
+          "tet_sample_world_m": [
+            -0.12324736264191079,
+            0.06579320216876447,
+            0.7440115846914596
+          ],
+          "physical_cloth_point_m": [
+            -0.12325552893652596,
+            0.06579749366591361,
+            0.7411860917797637
+          ],
+          "source_face_index": 1814,
+          "source_vertex_ids": [
+            961,
+            925,
+            924
+          ],
+          "native_vertex_ids": [
+            961,
+            925,
+            924
+          ],
+          "ordered_cloth_normal_world": [
+            -0.0028902040611236504,
+            0.0015188409276470478,
+            -0.9999946699071559
+          ],
+          "source_material_face_center_m": [
+            0.022444528714584647,
+            0.04007275710294542,
+            0.08347920857950868
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.0011740393392583037,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.0008223173485570889
+        },
+        "held_front_handle": {
+          "distance_m": 0.3562408681999724,
+          "tet_sample_index": 5,
+          "tet_sample_world_m": [
+            -0.1219678276277061,
+            0.06766390491256982,
+            0.7442233470183857
+          ],
+          "physical_cloth_point_m": [
+            -0.1170916567745984,
+            0.02351344252982267,
+            1.0976841168430878
+          ],
+          "source_face_index": 3534,
+          "source_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "native_vertex_ids": [
+            1831,
+            1832,
+            784
+          ],
+          "ordered_cloth_normal_world": [
+            0.49198639334578576,
+            -0.6549828288962243,
+            -0.5735389111592213
+          ],
+          "source_material_face_center_m": [
+            0.09730716980663841,
+            -0.05940752915143412,
+            0.40191661712483634
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.35768411684308776,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.35527912288345587
+        },
+        "free_back_handle": {
+          "distance_m": 0.0012539780628196002,
+          "tet_sample_index": 1,
+          "tet_sample_world_m": [
+            -0.11833035916593,
+            0.07259908656272109,
+            0.7447951822808595
+          ],
+          "physical_cloth_point_m": [
+            -0.11821195478542147,
+            0.07266168673676314,
+            0.7435483773230096
+          ],
+          "source_face_index": 3844,
+          "source_vertex_ids": [
+            2007,
+            1998,
+            1997
+          ],
+          "native_vertex_ids": [
+            2007,
+            1998,
+            1997
+          ],
+          "ordered_cloth_normal_world": [
+            -0.094423007881242,
+            -0.0499212672838172,
+            0.9942797205291057
+          ],
+          "source_material_face_center_m": [
+            0.025724052029132555,
+            0.08305458334295715,
+            0.6780588740028654
+          ],
+          "minimum_face_vertex_height_above_table_m": 0.002714592613305755,
+          "whole_tet_all_triangles_AABB_lower_bound_m": 0.0
+        }
+      },
+      "interval_from_previous_s": 0.05000000000002558,
+      "failed_tet_centroid_secant_velocity_m_s": [
+        0.0743507942855262,
+        0.5069889627963998,
+        -1.231078693580737
+      ],
+      "bear_COM_secant_velocity_m_s": [
+        -0.031140253577475907,
+        -0.17365476758623624,
+        -1.3233789893669525
+      ],
+      "velocity_scope": "Finite difference over two saved endpoints; not instantaneous contact velocity."
+    }
+  ],
+  "final_50ms_per_step_metrics_columns": [
+    "time_s",
+    "minimum_tetra_volume_ratio",
+    "bag_table_penetration_m",
+    "bear_table_penetration_m",
+    "maximum_bag_edge_stretch_ratio",
+    "all_soft_states_finite"
+  ],
+  "final_50ms_per_step_metrics": [
+    [
+      48.24500000000623,
+      0.8970632397033063,
+      0.0,
+      0.0,
+      1.0241245776979966,
+      1.0
+    ],
+    [
+      48.25000000000623,
+      0.8972206929887453,
+      0.0,
+      0.0,
+      1.0240435652755104,
+      1.0
+    ],
+    [
+      48.255000000006234,
+      0.8882306793023798,
+      0.0,
+      0.0,
+      1.0239795873410302,
+      1.0
+    ],
+    [
+      48.26000000000624,
+      0.8813212932451421,
+      0.0,
+      0.0,
+      1.0239287864778674,
+      1.0
+    ],
+    [
+      48.26500000000624,
+      0.8833788670076586,
+      0.0,
+      0.0,
+      1.0238886138733576,
+      1.0
+    ],
+    [
+      48.27000000000624,
+      0.8855668596027443,
+      0.0,
+      0.0,
+      1.023833745025629,
+      1.0
+    ],
+    [
+      48.275000000006244,
+      0.878919373392668,
+      0.0,
+      0.0,
+      1.0237690871552363,
+      1.0
+    ],
+    [
+      48.28000000000625,
+      0.6961616035106197,
+      0.0,
+      0.0,
+      1.0252991988848144,
+      1.0
+    ],
+    [
+      48.28500000000625,
+      0.3394489895957481,
+      0.0,
+      0.0,
+      1.0362565199127067,
+      1.0
+    ],
+    [
+      48.29000000000625,
+      0.08904085257328449,
+      0.0,
+      0.0,
+      1.0417772481350887,
+      1.0
+    ],
+    [
+      48.295000000006254,
+      0.016728643251805,
+      0.0,
+      0.0,
+      1.038822585323029,
+      1.0
+    ]
+  ],
+  "proposed_lower_release_necessary_geometry_only": {
+    "current_stop_TCP_Z_m": 1.085,
+    "proposed_stop_TCP_Z_m": 0.915,
+    "configuration_height_above_table_m": 0.17500000000000004,
+    "downward_change_m": 0.16999999999999993,
+    "original_full_depth_TCP_Z_m": 0.8900548204655672,
+    "proposed_above_original_full_depth_m": 0.02494517953443287,
+    "original_required_above_full_depth_m": 0.02,
+    "passes_this_one_height_inequality": true,
+    "actual_initial_lowest_bear_point_table_gap_m": 0.2018978106653273,
+    "rigid_translation_counterfactual_lowest_point_table_gap_m": 0.031897810665327375,
+    "translated_shape_potential_energy_to_first_table_contact_J": 0.1263228682829665,
+    "actual_failed_material_centroid_gap_at_release_start_m": 0.2426540644390498,
+    "hypothetical_failed_material_centroid_gap_after_downward_translation_m": 0.07265406443904987,
+    "counterfactual_translation_potential_energy_to_first_table_contact_J": 0.01995773466741778,
+    "scope": "Translation of the actual release-start shape only. Not the result of a newly executed descent, new shape, preflight, or a collision-free/support certificate."
+  },
+  "conclusion": "The first 5% volume gate failure occurs in a distal foot tetrahedron near the table and free back handle / back panel, after finger contact has unloaded. The observed fast descent and near-horizontal flattening support landing impact as the leading mechanism; they do not identify individual cloth/table contact forces or exclude numerical/material discretization effects.",
+  "recommendation": "A lower, deliberately stopped placement before the unchanged release gate is physically motivated. The proposed TCP Z=.915m leaves 24.945mm above the original full-depth target and reduces the rigid-shape nominal unsupported drop from about202mm to about32mm. It needs a new full route and fresh actual endpoint gate; no old frozen trajectory certifies it. Prefer small supported placement over increasing allowed compression or assuming a slower gripper-opening command alone controls fall.",
+  "limitations": [
+    "Failure soft NPZ has no measured robot q/TCP; true-time joint trace and guard reactions are separate records. Guard AIM TCP is a reference, not measured IPC affine geometry.",
+    "The last full coupling transform is at48.245s. It is not used as the48.295s finger pose.",
+    "Cloth nearest values sample four tet vertices, six edge midpoints and its centroid (11 points). They are not exact tet-triangle distance or a penetration certificate. Full tet/triangle AABB gives only a conservative lower bound.",
+    "Bag contact distances are geometry evidence, not pairwise contact forces. No pair-resolved cloth/table forces are saved here.",
+    "Original virtual-cap validity is not a physical body self-intersection/embedding certificate; node inside fraction is not volume fraction or all-tetrahedron containment.",
+    "A small FEM group folding under impact is a material/discretization failure to investigate, not proof that a physical plush would collapse to this degree. Material parameters have not been calibrated.",
+    "The .915m alternative is a necessary-height assessment only; deeper gripper/cloth interaction and fresh grip/containment must be tested under the original gates."
+  ]
+}

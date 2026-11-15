@@ -1,0 +1,4134 @@
+{
+  "kind": "independent_actual_prefix_entry_replanning_review",
+  "passed": true,
+  "checks": {
+    "full_command_prefix_duration_matches": true,
+    "runtime_duration_matches_log_to_print_precision": true,
+    "preflight_duration_reproduced": true,
+    "same_target_and_complete_rotation": true,
+    "runtime_sampled_straight_line_error_within_half_mm": true,
+    "runtime_sampled_rotation_error_below_2mrad": true,
+    "runtime_sampled_rigid_clearance_above_8mm": true
+  },
+  "source_sha256": {
+    "run.py": "732d037b52f9f3b930cdfc6d2b17df907170100367c33bbe14db15e4999c34a6",
+    "motion.py": "d01d154a3b10489fdb560d6b401c738ceec1eaffe3f437c91b6227d077e776cc",
+    "staged_contact_insertion.py": "e4fdfd701cdbe7d60924437a01bca37361b2b0f495557e2c69aced8609960a1e"
+  },
+  "prefix_reconstruction": [
+    {
+      "phase": "spread_bag",
+      "reconstructed_duration_s": 1.9269230769230767,
+      "recorded_duration_s": 1.9269230769230767,
+      "difference_s": 0.0
+    },
+    {
+      "phase": "orient_held_bag",
+      "reconstructed_duration_s": 11.656389349575587,
+      "recorded_duration_s": 11.656389349575587,
+      "difference_s": 0.0
+    },
+    {
+      "phase": "right_clear_handle",
+      "reconstructed_duration_s": 2.612375332616872,
+      "recorded_duration_s": 2.612375332616872,
+      "difference_s": 0.0
+    },
+    {
+      "phase": "teddy_pregrasp",
+      "reconstructed_duration_s": 4.301153324963521,
+      "recorded_duration_s": 4.301153324963521,
+      "difference_s": 0.0
+    },
+    {
+      "phase": "teddy_grasp_approach",
+      "reconstructed_duration_s": 1.5415384615384613,
+      "recorded_duration_s": 1.5415384615384613,
+      "difference_s": 0.0
+    },
+    {
+      "phase": "lift_teddy",
+      "reconstructed_duration_s": 3.9877993678350485,
+      "recorded_duration_s": 3.9877993678350485,
+      "difference_s": 0.0
+    },
+    {
+      "phase": "adjust_teddy_height_contact_trial",
+      "reconstructed_duration_s": 2.51001,
+      "recorded_duration_s": 2.51001,
+      "difference_s": 0.0
+    },
+    {
+      "phase": "transport_teddy_along_y",
+      "reconstructed_duration_s": 5.8777627487339625,
+      "recorded_duration_s": 5.8777627487339625,
+      "difference_s": 0.0
+    },
+    {
+      "phase": "transport_teddy",
+      "reconstructed_duration_s": 5.356557361918168,
+      "recorded_duration_s": 5.356557361918168,
+      "difference_s": 0.0
+    }
+  ],
+  "runtime_duration_s": 10.09007388454428,
+  "preflight_duration_s": 6.0120000000000005,
+  "runtime_recorded_rounded_duration_s": 10.09,
+  "source_command_minus_measured_q_rad": {
+    "left": [
+      -1.3481499903322813e-05,
+      -1.4709957881553493e-05,
+      -5.627963455256957e-05,
+      4.8330789383932427e-05,
+      4.3514548251688545e-05,
+      1.988635458349819e-05,
+      5.562001309300513e-06
+    ],
+    "right": [
+      -7.844826854841447e-06,
+      -0.0002202295620464395,
+      -2.6558385806230156e-05,
+      0.00026598469106908773,
+      -1.574183990216832e-05,
+      0.0001173880388178894,
+      1.3922912458497194e-05
+    ]
+  },
+  "summary": {
+    "runtime_error_from_actual_start_line_m": 0.00023649506020138392,
+    "runtime_preflight_tcp_difference_m": 0.00023649506020111696,
+    "runtime_orientation_error_rad": 3.5181524025635365e-06,
+    "runtime_preflight_joint_max_difference_rad": 0.004728345200789075,
+    "maximum_joint_speed_rad_s": 0.11818269363124546,
+    "maximum_joint_acceleration_rad_s2": 0.49800598403990376,
+    "minimum_rigid_clearance_m": 0.021820207583786243
+  },
+  "limitations": [
+    "This reconstructs issued joint targets, not actual dynamics. Every-step contact/soft/grasp monitors remain authoritative.",
+    "The runtime IK is recomputed from previous commanded q; preflight IK starts from measured q. Thus this is not literally only time scaling of the identical joint spline.",
+    "Cartesian/rotation/rigid errors are sampled at 201 path fractions, not an independent continuous FK bound.",
+    "A slower path does not guarantee reduced quasistatic cloth contact loads or successful passage."
+  ],
+  "samples": [
+    {
+      "fraction": 0.0,
+      "runtime_tcp_m": [
+        -0.09950138607606182,
+        0.06089729936208319,
+        1.369737588632883
+      ],
+      "preflight_tcp_m": [
+        -0.09949607893942522,
+        0.06084579438151186,
+        1.3695068312174516
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023649506020138392,
+      "runtime_preflight_tcp_difference_m": 0.00023649506020111696,
+      "runtime_orientation_error_rad": 7.1296739871188816e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00026598469106908773,
+      "maximum_joint_speed_rad_s": 0.0,
+      "maximum_joint_acceleration_rad_s2": 0.0,
+      "minimum_rigid_clearance_m": 0.02201248058387173
+    },
+    {
+      "fraction": 0.005,
+      "runtime_tcp_m": [
+        -0.09950138607533392,
+        0.060897299302171755,
+        1.3697373716486183
+      ],
+      "preflight_tcp_m": [
+        -0.09949607894472168,
+        0.06084579438502956,
+        1.3695066145199595
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023649477879865888,
+      "runtime_preflight_tcp_difference_m": 0.00023649476643686744,
+      "runtime_orientation_error_rad": 7.137248062459243e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002659835889651241,
+      "maximum_joint_speed_rad_s": 7.063103439330828e-05,
+      "maximum_joint_acceleration_rad_s2": 0.002785942967154571,
+      "minimum_rigid_clearance_m": 0.02201247596503631
+    },
+    {
+      "fraction": 0.01,
+      "runtime_tcp_m": [
+        -0.09950138607024804,
+        0.06089729888636778,
+        1.3697358657972363
+      ],
+      "preflight_tcp_m": [
+        -0.09949607898144748,
+        0.06084579440942041,
+        1.3695051106587501
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023649282582182245,
+      "runtime_preflight_tcp_difference_m": 0.00023649272774213637,
+      "runtime_orientation_error_rad": 7.193254032431412e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002659759405940765,
+      "maximum_joint_speed_rad_s": 0.00027968855241477803,
+      "maximum_joint_acceleration_rad_s2": 0.0054877261891339195,
+      "minimum_rigid_clearance_m": 0.02201244390972839
+    },
+    {
+      "fraction": 0.015,
+      "runtime_tcp_m": [
+        -0.09950138605627819,
+        0.06089729776843259,
+        1.369731817889949
+      ],
+      "preflight_tcp_m": [
+        -0.09949607907989902,
+        0.06084579447480302,
+        1.3695010681012603
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023648757537246887,
+      "runtime_preflight_tcp_difference_m": 0.00023648724750573166,
+      "runtime_orientation_error_rad": 7.3725393190878375e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00026595538200480107,
+      "maximum_joint_speed_rad_s": 0.000622939094242648,
+      "maximum_joint_acceleration_rad_s2": 0.008105801601651808,
+      "minimum_rigid_clearance_m": 0.022012357732562795
+    },
+    {
+      "fraction": 0.02,
+      "runtime_tcp_m": [
+        -0.0995013860281208,
+        0.0608972956121518,
+        1.3697240133008846
+      ],
+      "preflight_tcp_m": [
+        -0.09949607926860184,
+        0.060845794600113426,
+        1.3694932738268095
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023647744968815997,
+      "runtime_preflight_tcp_difference_m": 0.00023647668137470392,
+      "runtime_orientation_error_rad": 7.825102543822171e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00026591574859491374,
+      "maximum_joint_speed_rad_s": 0.0010961660557488805,
+      "maximum_joint_acceleration_rad_s2": 0.0106403901386009,
+      "minimum_rigid_clearance_m": 0.022012191542459474
+    },
+    {
+      "fraction": 0.025,
+      "runtime_tcp_m": [
+        -0.09950138597871977,
+        0.06089729209055677,
+        1.3697112755716798
+      ],
+      "preflight_tcp_m": [
+        -0.0994960795734336,
+        0.060845794802514175,
+        1.3694805529316383
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023646091661964292,
+      "runtime_preflight_tcp_difference_m": 0.00023645943677624585,
+      "runtime_orientation_error_rad": 8.805759882133082e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00026585107687582266,
+      "maximum_joint_speed_rad_s": 0.0016951587313961676,
+      "maximum_joint_acceleration_rad_s2": 0.013091509202426901,
+      "minimum_rigid_clearance_m": 0.02201192020543792
+    },
+    {
+      "fraction": 0.03,
+      "runtime_tcp_m": [
+        -0.09950138589800153,
+        0.06089728688494944,
+        1.3696924660155076
+      ],
+      "preflight_tcp_m": [
+        -0.09949608001648126,
+        0.06084579509662623,
+        1.369461768233368
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023643648650778528,
+      "runtime_preflight_tcp_difference_m": 0.0002364339724480168,
+      "runtime_orientation_error_rad": 1.0615726043051271e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00026575560745945026,
+      "maximum_joint_speed_rad_s": 0.0024157027195530123,
+      "maximum_joint_acceleration_rad_s2": 0.015458999222807222,
+      "minimum_rigid_clearance_m": 0.022011519298018624
+    },
+    {
+      "fraction": 0.035,
+      "runtime_tcp_m": [
+        -0.09950138577139904,
+        0.06089727968377771,
+        1.369666483320696
+      ],
+      "preflight_tcp_m": [
+        -0.09949608061470176,
+        0.06084579549363098,
+        1.369435819875027
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023640270862456563,
+      "runtime_preflight_tcp_difference_m": 0.0002363987979888072,
+      "runtime_orientation_error_rad": 1.3478723973921962e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002656237891069946,
+      "maximum_joint_speed_rad_s": 0.00325357164683036,
+      "maximum_joint_acceleration_rad_s2": 0.017742549401829,
+      "minimum_rigid_clearance_m": 0.022010965052456612
+    },
+    {
+      "fraction": 0.04,
+      "runtime_tcp_m": [
+        -0.09950138557825167,
+        0.060897270181430374,
+        1.3696322631541131
+      ],
+      "preflight_tcp_m": [
+        -0.09949608137847685,
+        0.06084579600029759,
+        1.3694016449288344
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023635816736557652,
+      "runtime_preflight_tcp_difference_m": 0.00023635247341468493,
+      "runtime_orientation_error_rad": 1.7483607635547673e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002654502836763051,
+      "maximum_joint_speed_rad_s": 0.004204520172295302,
+      "maximum_joint_acceleration_rad_s2": 0.019941722716607282,
+      "minimum_rigid_clearance_m": 0.022010234294983715
+    },
+    {
+      "fraction": 0.045,
+      "runtime_tcp_m": [
+        -0.0995013852901902,
+        0.06089725807702243,
+        1.3695887777645308
+      ],
+      "preflight_tcp_m": [
+        -0.09949608231015675,
+        0.060845796618007396,
+        1.3693582169999647
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023630147841875702,
+      "runtime_preflight_tcp_difference_m": 0.0002362936087127228,
+      "runtime_orientation_error_rad": 2.261581423837129e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002652299718195472,
+      "maximum_joint_speed_rad_s": 0.005264278235379135,
+      "maximum_joint_acceleration_rad_s2": 0.022055980226350184,
+      "minimum_rigid_clearance_m": 0.022009304378207653
+    },
+    {
+      "fraction": 0.05,
+      "runtime_tcp_m": [
+        -0.09950138486963392,
+        0.060897243073254746,
+        1.3695350355862121
+      ],
+      "preflight_tcp_m": [
+        -0.09949608340270295,
+        0.060845797341846496,
+        1.3693045458305326
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023623128517055362,
+      "runtime_preflight_tcp_difference_m": 0.00023622086339896927,
+      "runtime_orientation_error_rad": 2.8794640440774593e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00026495795927306,
+      "maximum_joint_speed_rad_s": 0.006428546513130325,
+      "maximum_joint_acceleration_rad_s2": 0.02408470471003891,
+      "minimum_rigid_clearance_m": 0.022008153108773246
+    },
+    {
+      "fraction": 0.055,
+      "runtime_tcp_m": [
+        -0.09950138426852458,
+        0.060897224875447735,
+        1.3694700808429836
+      ],
+      "preflight_tcp_m": [
+        -0.09949608463856022,
+        0.060845798159854345,
+        1.3692396769040798
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023614625562767697,
+      "runtime_preflight_tcp_difference_m": 0.00023613294606404276,
+      "runtime_orientation_error_rad": 3.588462699125929e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002646295835906365,
+      "maximum_joint_speed_rad_s": 0.007692993053318511,
+      "maximum_joint_acceleration_rad_s2": 0.02602722364293177,
+      "minimum_rigid_clearance_m": 0.022006758671364087
+    },
+    {
+      "fraction": 0.06,
+      "runtime_tcp_m": [
+        -0.09950138342745585,
+        0.06089720319083745,
+        1.3693929931530724
+      ],
+      "preflight_tcp_m": [
+        -0.0994960859888864,
+        0.06084579905251694,
+        1.3691626910508456
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023604508015242291,
+      "runtime_preflight_tcp_difference_m": 0.00023602861390502585,
+      "runtime_orientation_error_rad": 4.369336684554751e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002642404211692373,
+      "maximum_joint_speed_rad_s": 0.00905325104991331,
+      "maximum_joint_acceleration_rad_s2": 0.027882831504815492,
+      "minimum_rigid_clearance_m": 0.022005099550081706
+    },
+    {
+      "fraction": 0.065,
+      "runtime_tcp_m": [
+        -0.09950138227532344,
+        0.060897177728245426,
+        1.3693028871349915
+      ],
+      "preflight_tcp_m": [
+        -0.0994960874132737,
+        0.060845799992592764,
+        1.3690727040541175
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002359264703107944,
+      "runtime_preflight_tcp_difference_m": 0.0002359066722361892,
+      "runtime_orientation_error_rad": 5.1967792010357154e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00026378629443124524,
+      "maximum_joint_speed_rad_s": 0.01050491772677162,
+      "maximum_joint_acceleration_rad_s2": 0.029650811400116522,
+      "minimum_rigid_clearance_m": 0.02200315444820875
+    },
+    {
+      "fraction": 0.07,
+      "runtime_tcp_m": [
+        -0.09950138072965695,
+        0.06089714819820865,
+        1.3691989120147443
+      ],
+      "preflight_tcp_m": [
+        -0.09949608886009206,
+        0.0608458009453619,
+        1.3689688662579451
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023578915912737615,
+      "runtime_preflight_tcp_difference_m": 0.00023576597396510036,
+      "runtime_orientation_error_rad": 6.039383558391999e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002632632790096068,
+      "maximum_joint_speed_rad_s": 0.012043554294089046,
+      "maximum_joint_acceleration_rad_s2": 0.031330455959460886,
+      "minimum_rigid_clearance_m": 0.022000902207321985
+    },
+    {
+      "fraction": 0.075,
+      "runtime_tcp_m": [
+        -0.09950137869774468,
+        0.06089711431366557,
+        1.3690802512345868
+      ],
+      "preflight_tcp_m": [
+        -0.09949609026756762,
+        0.06084580186937247,
+        1.3688503621764574
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023563190299494854,
+      "runtime_preflight_tcp_difference_m": 0.00023560541903929247,
+      "runtime_orientation_error_rad": 6.860104571610097e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00026266771080751816,
+      "maximum_joint_speed_rad_s": 0.013664686940415937,
+      "maximum_joint_acceleration_rad_s2": 0.03292108748385156,
+      "minimum_rigid_clearance_m": 0.021998321726680824
+    },
+    {
+      "fraction": 0.08,
+      "runtime_tcp_m": [
+        -0.09950137607866451,
+        0.060897075791262384,
+        1.3689461220635415
+      ],
+      "preflight_tcp_m": [
+        -0.09949609156569418,
+        0.06084580271775081,
+        1.3687164101049936
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023545348545242175,
+      "runtime_preflight_tcp_difference_m": 0.00023542395384621023,
+      "runtime_orientation_error_rad": 7.617264178195649e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002619961927921022,
+      "maximum_joint_speed_rad_s": 0.015363808820908093,
+      "maximum_joint_acceleration_rad_s2": 0.03442207728614535,
+      "minimum_rigid_clearance_m": 0.021995391883781724
+    },
+    {
+      "fraction": 0.085,
+      "runtime_tcp_m": [
+        -0.0995013727662844,
+        0.060897032353329265,
+        1.3687957752097877
+      ],
+      "preflight_tcp_m": [
+        -0.09949609267903892,
+        0.06084580344011307,
+        1.3685662617331695
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023525272295940247,
+      "runtime_preflight_tcp_difference_m": 0.0002352205705714999,
+      "runtime_orientation_error_rad": 8.266120351212431e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00026124560139373365,
+      "maximum_joint_speed_rad_s": 0.017136383000069724,
+      "maximum_joint_acceleration_rad_s2": 0.03583286417979109,
+      "minimum_rigid_clearance_m": 0.021992091456907076
+    },
+    {
+      "fraction": 0.09,
+      "runtime_tcp_m": [
+        -0.0995013686532624,
+        0.060896983730539526,
+        1.3686284944349438
+      ],
+      "preflight_tcp_m": [
+        -0.09949609353045802,
+        0.06084580398508858,
+        1.3683992017599187
+      ],
+      "runtime_error_from_actual_start_line_m": 0.000235028472689196,
+      "runtime_preflight_tcp_difference_m": 0.0002349943064953047,
+      "runtime_orientation_error_rad": 8.76099217865918e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002604130923842263,
+      "maximum_joint_speed_rad_s": 0.018977846304636902,
+      "maximum_joint_acceleration_rad_s2": 0.03715297206168146,
+      "minimum_rigid_clearance_m": 0.02198839905046797
+    },
+    {
+      "fraction": 0.095,
+      "runtime_tcp_m": [
+        -0.09950136363600327,
+        0.06089692966522568,
+        1.3684435961701673
+      ],
+      "preflight_tcp_m": [
+        -0.09949609404568922,
+        0.06084580430343099,
+        1.3682145475104088
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002347796422610598,
+      "runtime_preflight_tcp_difference_m": 0.00023474424324756434,
+      "runtime_orientation_error_rad": 9.057908345377619e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00025949610611686325,
+      "maximum_joint_speed_rad_s": 0.020883614039521048,
+      "maximum_joint_acceleration_rad_s2": 0.038382026534320754,
+      "minimum_rigid_clearance_m": 0.02198429302386696
+    },
+    {
+      "fraction": 0.1,
+      "runtime_tcp_m": [
+        -0.0995013576204719,
+        0.06089686991527557,
+        1.3682404291338295
+      ],
+      "preflight_tcp_m": [
+        -0.09949609415871787,
+        0.06084580435163837,
+        1.3680116485546203
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002345052011541116,
+      "runtime_preflight_tcp_difference_m": 0.00023446950599705313,
+      "runtime_orientation_error_rad": 9.117711411267407e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002584923720119203,
+      "maximum_joint_speed_rad_s": 0.022849085516953565,
+      "maximum_joint_acceleration_rad_s2": 0.039519770512179205,
+      "minimum_rigid_clearance_m": 0.021979751424564656
+    },
+    {
+      "fraction": 0.105,
+      "runtime_tcp_m": [
+        -0.09950135052867225,
+        0.06089680425847206,
+        1.3680183739503786
+      ],
+      "preflight_tcp_m": [
+        -0.0994960938177291,
+        0.06084580409595897,
+        1.367789886327178
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023420419339320248,
+      "runtime_preflight_tcp_difference_m": 0.00023416926259046337,
+      "runtime_orientation_error_rad": 8.909506818900639e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00025739991217532676,
+      "maximum_joint_speed_rad_s": 0.02486965034620866,
+      "maximum_joint_acceleration_rad_s2": 0.04056607875795559,
+      "minimum_rigid_clearance_m": 0.021974751925963255
+    },
+    {
+      "fraction": 0.11,
+      "runtime_tcp_m": [
+        -0.09950134230549913,
+        0.06089673249708136,
+        1.3677768427698147
+      ],
+      "preflight_tcp_m": [
+        -0.09949609299137589,
+        0.06084580351659115,
+        1.367548673747849
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023387575089338987,
+      "runtime_preflight_tcp_difference_m": 0.00023384272265199657,
+      "runtime_orientation_error_rad": 8.414299604778703e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00025621704406120216,
+      "maximum_joint_speed_rad_s": 0.02694069542858636,
+      "maximum_joint_acceleration_rad_s2": 0.04152097129637435,
+      "minimum_rigid_clearance_m": 0.021969271770658525
+    },
+    {
+      "fraction": 0.115,
+      "runtime_tcp_m": [
+        -0.09950133292557309,
+        0.06089665446240293,
+        1.3675152788869895
+      ],
+      "preflight_tcp_m": [
+        -0.09949609167498748,
+        0.06084580261181548,
+        1.3672874548419367
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023351910662458778,
+      "runtime_preflight_tcp_difference_m": 0.00023348913662118686,
+      "runtime_orientation_error_rad": 7.628609070348757e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00025494238207124376,
+      "maximum_joint_speed_rad_s": 0.02905761259976382,
+      "maximum_joint_acceleration_rad_s2": 0.042384625655981584,
+      "minimum_rigid_clearance_m": 0.02196334030712277
+    },
+    {
+      "fraction": 0.12,
+      "runtime_tcp_m": [
+        -0.09950132239954158,
+        0.06089657001892975,
+        1.367233156359743
+      ],
+      "preflight_tcp_m": [
+        -0.09949608989621801,
+        0.060845801401723874,
+        1.3670057043595214
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002331336065441113,
+      "runtime_preflight_tcp_difference_m": 0.00023310779478358904,
+      "runtime_orientation_error_rad": 6.5678072852832e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002535748380199099,
+      "maximum_joint_speed_rad_s": 0.03121580685921268,
+      "maximum_joint_acceleration_rad_s2": 0.04315738789305877,
+      "minimum_rigid_clearance_m": 0.02195708061580611
+    },
+    {
+      "fraction": 0.125,
+      "runtime_tcp_m": [
+        -0.09950131077918865,
+        0.06089647906766806,
+        1.3669299796246432
+      ],
+      "preflight_tcp_m": [
+        -0.09949608771952749,
+        0.06084579993112677,
+        1.3667029273923363
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023271871897772,
+      "runtime_preflight_tcp_difference_m": 0.00023269802626653684,
+      "runtime_orientation_error_rad": 5.268920273891128e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00025211362037347307,
+      "maximum_joint_speed_rad_s": 0.03341070512417291,
+      "maximum_joint_acceleration_rad_s2": 0.04383978235613761,
+      "minimum_rigid_clearance_m": 0.02195051887760842
+    },
+    {
+      "fraction": 0.13,
+      "runtime_tcp_m": [
+        -0.09950129816057994,
+        0.060896381548071116,
+        1.3666052831088635
+      ],
+      "preflight_tcp_m": [
+        -0.09949608524874165,
+        0.060845798271121306,
+        1.3663786589867537
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002322740398864534,
+      "runtime_preflight_tcp_difference_m": 0.00023225919805008047,
+      "runtime_orientation_error_rad": 3.792837107227275e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002505582322114286,
+      "maximum_joint_speed_rad_s": 0.03563776544370197,
+      "maximum_joint_acceleration_rad_s2": 0.04443252015456815,
+      "minimum_rigid_clearance_m": 0.021943680245100666
+    },
+    {
+      "fraction": 0.135,
+      "runtime_tcp_m": [
+        -0.099501284684296,
+        0.060896277437951785,
+        1.3662586308364952
+      ],
+      "preflight_tcp_m": [
+        -0.09949608262680118,
+        0.060845796518727534,
+        1.3660324637511667
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023179929219481712,
+      "runtime_preflight_tcp_difference_m": 0.00023179071399411898,
+      "runtime_orientation_error_rad": 2.227787858339716e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00024890846783831577,
+      "maximum_joint_speed_rad_s": 0.03789248660661085,
+      "maximum_joint_acceleration_rad_s2": 0.04493650630007355,
+      "minimum_rigid_clearance_m": 0.021936593793917544
+    },
+    {
+      "fraction": 0.14,
+      "runtime_tcp_m": [
+        -0.09950127053167196,
+        0.06089616675062315,
+        1.3658896160273533
+      ],
+      "preflight_tcp_m": [
+        -0.09949608003166222,
+        0.060845794793886264,
+        1.3656639354557691
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023129431710368012,
+      "runtime_preflight_tcp_difference_m": 0.00023129201392695878,
+      "runtime_orientation_error_rad": 7.34148112899671e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002471644080062063,
+      "maximum_joint_speed_rad_s": 0.040170418075677776,
+      "maximum_joint_acceleration_rad_s2": 0.04535284549612168,
+      "minimum_rigid_clearance_m": 0.021929292532923243
+    },
+    {
+      "fraction": 0.145,
+      "runtime_tcp_m": [
+        -0.09950125591579642,
+        0.06089604952843092,
+        1.3654978606860957
+      ],
+      "preflight_tcp_m": [
+        -0.09949607766716675,
+        0.06084579323302695,
+        1.365272696622531
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00023075905504590087,
+      "runtime_preflight_tcp_difference_m": 0.00023076257280492675,
+      "runtime_orientation_error_rad": 9.251715240460725e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024532641370744734,
+      "maximum_joint_speed_rad_s": 0.04246717017941763,
+      "maximum_joint_acceleration_rad_s2": 0.045682846556177374,
+      "minimum_rigid_clearance_m": 0.021921813394966697
+    },
+    {
+      "fraction": 0.15,
+      "runtime_tcp_m": [
+        -0.09950124106587205,
+        0.060895925831728974,
+        1.3650830151792896
+      ],
+      "preflight_tcp_m": [
+        -0.09949607574753723,
+        0.060845791978313885,
+        1.364858398102929
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002301935137457684,
+      "runtime_preflight_tcp_difference_m": 0.00023020190000207287,
+      "runtime_orientation_error_rad": 2.0759344268080288e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002433951185059069,
+      "maximum_joint_speed_rad_s": 0.04477842449189117,
+      "maximum_joint_acceleration_rad_s2": 0.045928025438383556,
+      "minimum_rigid_clearance_m": 0.02191419720800926
+    },
+    {
+      "fraction": 0.155,
+      "runtime_tcp_m": [
+        -0.0995012262033779,
+        0.06089579572225515,
+        1.364644757797824
+      ],
+      "preflight_tcp_m": [
+        -0.09949607447401665,
+        0.060845791161583916,
+        1.364420718640794
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002295977205781475,
+      "runtime_preflight_tcp_difference_m": 0.00022960953875237065,
+      "runtime_orientation_error_rad": 2.8966460318161633e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00024137141939362117,
+      "maximum_joint_speed_rad_s": 0.0470999443305785,
+      "maximum_joint_acceleration_rad_s2": 0.04609010689088863,
+      "minimum_rigid_clearance_m": 0.021906488646576183
+    },
+    {
+      "fraction": 0.16,
+      "runtime_tcp_m": [
+        -0.09950121150832664,
+        0.060895659239776447,
+        1.364182794301941
+      ],
+      "preflight_tcp_m": [
+        -0.09949607400200906,
+        0.06084579088189926,
+        1.363959364417489
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022897165628483232,
+      "runtime_preflight_tcp_difference_m": 0.00022898506578971213,
+      "runtime_orientation_error_rad": 3.25618211284793e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00023925646616240748,
+      "maximum_joint_speed_rad_s": 0.04942758530221978,
+      "maximum_joint_acceleration_rad_s2": 0.0461710247088099,
+      "minimum_rigid_clearance_m": 0.02189873616364806
+    },
+    {
+      "fraction": 0.165,
+      "runtime_tcp_m": [
+        -0.09950119707377345,
+        0.06089551637078248,
+        1.3636968574460027
+      ],
+      "preflight_tcp_m": [
+        -0.0994960743969501,
+        0.06084579117556364,
+        1.3634740685764533
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002283151669245007,
+      "runtime_preflight_tcp_difference_m": 0.00022832809124698168,
+      "runtime_orientation_error_rad": 3.098006727335495e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002370516492995467,
+      "maximum_joint_speed_rad_s": 0.05175730582674794,
+      "maximum_joint_acceleration_rad_s2": 0.046172920610648864,
+      "minimum_rigid_clearance_m": 0.021890991903283273
+    },
+    {
+      "fraction": 0.17,
+      "runtime_tcp_m": [
+        -0.0995011828465814,
+        0.06089536700793587,
+        1.3631867064800136
+      ],
+      "preflight_tcp_m": [
+        -0.09949607557700406,
+        0.06084579197736165,
+        1.3629645907240937
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022762785081764702,
+      "runtime_preflight_tcp_difference_m": 0.0002276382588380987,
+      "runtime_orientation_error_rad": 2.4462632247644413e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00023475858641019975,
+      "maximum_joint_speed_rad_s": 0.05408517757000481,
+      "maximum_joint_acceleration_rad_s2": 0.04609814174878206,
+      "minimum_rigid_clearance_m": 0.021883311594429265
+    },
+    {
+      "fraction": 0.17500000000000002,
+      "runtime_tcp_m": [
+        -0.09950116855235203,
+        0.06089521089892484,
+        1.3626521266248834
+      ],
+      "preflight_tcp_m": [
+        -0.09949607724055054,
+        0.060845793071735016,
+        1.3624307164039091
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022690891719780195,
+      "runtime_preflight_tcp_difference_m": 0.00022691524640694376,
+      "runtime_orientation_error_rad": 1.4470165870718134e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002323791072029735,
+      "maximum_joint_speed_rad_s": 0.05640739571683984,
+      "maximum_joint_acceleration_rad_s2": 0.04594923687539238,
+      "minimum_rigid_clearance_m": 0.021875754426541334
+    },
+    {
+      "fraction": 0.18,
+      "runtime_tcp_m": [
+        -0.0995011536023113,
+        0.06089504758331368,
+        1.3620929285183876
+      ],
+      "preflight_tcp_m": [
+        -0.09949607877634015,
+        0.060845794032546245,
+        1.3618722565407617
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022615701324122262,
+      "runtime_preflight_tcp_difference_m": 0.0002261587668677752,
+      "runtime_orientation_error_rad": 4.918456253135564e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023098737517693313,
+      "maximum_joint_speed_rad_s": 0.05872028901743669,
+      "maximum_joint_acceleration_rad_s2": 0.04572895119182823,
+      "minimum_rigid_clearance_m": 0.021868382907791774
+    },
+    {
+      "fraction": 0.185,
+      "runtime_tcp_m": [
+        -0.09950113702363621,
+        0.060894876346636845,
+        1.361508947699887
+      ],
+      "preflight_tcp_m": [
+        -0.0994960792023444,
+        0.060845794184257264,
+        1.3612890469180439
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022537009319096186,
+      "runtime_preflight_tcp_difference_m": 0.00022536857384133124,
+      "runtime_orientation_error_rad": 5.381115620627085e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002316587501369205,
+      "maximum_joint_speed_rad_s": 0.061020274601165436,
+      "maximum_joint_acceleration_rad_s2": 0.04543550825815735,
+      "minimum_rigid_clearance_m": 0.021861262707723282
+    },
+    {
+      "fraction": 0.19,
+      "runtime_tcp_m": [
+        -0.09950111852194116,
+        0.060894696965769324,
+        1.3609000459472975
+      ],
+      "preflight_tcp_m": [
+        -0.0994960783453755,
+        0.06084579343969194,
+        1.3606809493789624
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002245472925547221,
+      "runtime_preflight_tcp_difference_m": 0.0002245445712967049,
+      "runtime_orientation_error_rad": 6.32166442178331e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023233856071527836,
+      "maximum_joint_speed_rad_s": 0.06330356058859198,
+      "maximum_joint_acceleration_rad_s2": 0.04506955224261509,
+      "minimum_rigid_clearance_m": 0.02185446250669165
+    },
+    {
+      "fraction": 0.195,
+      "runtime_tcp_m": [
+        -0.099501098815048,
+        0.06089450993176906,
+        1.3602661114906902
+      ],
+      "preflight_tcp_m": [
+        -0.09949607717722636,
+        0.0608457925236955,
+        1.3600478520315213
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022368957605245309,
+      "runtime_preflight_tcp_difference_m": 0.00022368682172292585,
+      "runtime_orientation_error_rad": 5.773632299691691e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023302306325427569,
+      "maximum_joint_speed_rad_s": 0.06556673491144806,
+      "maximum_joint_acceleration_rad_s2": 0.04463873702865571,
+      "minimum_rigid_clearance_m": 0.021848053807135826
+    },
+    {
+      "fraction": 0.2,
+      "runtime_tcp_m": [
+        -0.09950107849813378,
+        0.06089431564647845,
+        1.3596070568383847
+      ],
+      "preflight_tcp_m": [
+        -0.09949607654139196,
+        0.06084579206005224,
+        1.3593896672324928
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022279779948685186,
+      "runtime_preflight_tcp_difference_m": 0.00022279541907486986,
+      "runtime_orientation_error_rad": 5.3936577443438724e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023370798525469694,
+      "maximum_joint_speed_rad_s": 0.06780660445802215,
+      "maximum_joint_acceleration_rad_s2": 0.04414622178817,
+      "minimum_rigid_clearance_m": 0.021842110702506582
+    },
+    {
+      "fraction": 0.20500000000000002,
+      "runtime_tcp_m": [
+        -0.09950105784707515,
+        0.06089411428118159,
+        1.3589228181164537
+      ],
+      "preflight_tcp_m": [
+        -0.09949607692847473,
+        0.06084579240808887,
+        1.3587063309589433
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022187241355866707,
+      "runtime_preflight_tcp_difference_m": 0.00022187046296475216,
+      "runtime_orientation_error_rad": 4.843345829235333e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023438853565073414,
+      "maximum_joint_speed_rad_s": 0.07002013920579075,
+      "maximum_joint_acceleration_rad_s2": 0.04359531099531437,
+      "minimum_rigid_clearance_m": 0.02183670965709658
+    },
+    {
+      "fraction": 0.21,
+      "runtime_tcp_m": [
+        -0.09950103665078294,
+        0.0608939056558656,
+        1.3582133544681152
+      ],
+      "preflight_tcp_m": [
+        -0.09949607828283394,
+        0.060845793521764516,
+        1.3579978022374823
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00022091323125936058,
+      "runtime_preflight_tcp_difference_m": 0.0002209120345098423,
+      "runtime_orientation_error_rad": 4.340173032689705e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023505937170495428,
+      "maximum_joint_speed_rad_s": 0.0722044792893276,
+      "maximum_joint_acceleration_rad_s2": 0.04298944386771599,
+      "minimum_rigid_clearance_m": 0.021831929275991105
+    },
+    {
+      "fraction": 0.215,
+      "runtime_tcp_m": [
+        -0.09950101406473856,
+        0.06089368913532322,
+        1.3574786474800793
+      ],
+      "preflight_tcp_m": [
+        -0.09949607980744893,
+        0.06084579480735126,
+        1.3572640626256016
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002199192257008052,
+      "runtime_preflight_tcp_difference_m": 0.00021992015214184035,
+      "runtime_orientation_error_rad": 4.096834783888884e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002357147574194446,
+      "maximum_joint_speed_rad_s": 0.07435688505883888,
+      "maximum_joint_acceleration_rad_s2": 0.04232713091219429,
+      "minimum_rigid_clearance_m": 0.021827850065744187
+    },
+    {
+      "fraction": 0.22,
+      "runtime_tcp_m": [
+        -0.09950098997848597,
+        0.06089346463144162,
+        1.356718702396143
+      ],
+      "preflight_tcp_m": [
+        -0.09949608081064,
+        0.060845795709303284,
+        1.3565051179761298
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00021889034672681567,
+      "runtime_preflight_tcp_difference_m": 0.000218894336471024,
+      "runtime_orientation_error_rad": 6.647823937139214e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023635432842729343,
+      "maximum_joint_speed_rad_s": 0.07647439806005857,
+      "maximum_joint_acceleration_rad_s2": 0.0416092295430095,
+      "minimum_rigid_clearance_m": 0.021824554194577506
+    },
+    {
+      "fraction": 0.225,
+      "runtime_tcp_m": [
+        -0.09950096548068613,
+        0.06089323294117183,
+        1.3559335481981545
+      ],
+      "preflight_tcp_m": [
+        -0.0994960813259889,
+        0.06084579617400956,
+        1.3557209983603415
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00021782806742841855,
+      "runtime_preflight_tcp_difference_m": 0.00021783373338447835,
+      "runtime_orientation_error_rad": 9.068473405389427e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023698545545643157,
+      "maximum_joint_speed_rad_s": 0.07855450620313206,
+      "maximum_joint_acceleration_rad_s2": 0.040844897686118244,
+      "minimum_rigid_clearance_m": 0.02182212522796602
+    },
+    {
+      "fraction": 0.23,
+      "runtime_tcp_m": [
+        -0.09950094119927944,
+        0.060892994535388066,
+        1.3551232351792795
+      ],
+      "preflight_tcp_m": [
+        -0.09949608126630155,
+        0.06084579609051496,
+        1.3549117547848826
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00021673309874794557,
+      "runtime_preflight_tcp_difference_m": 0.00021673778941673656,
+      "runtime_orientation_error_rad": 7.91902474432607e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023761801756074646,
+      "maximum_joint_speed_rad_s": 0.08059495924219293,
+      "maximum_joint_acceleration_rad_s2": 0.04003780308306286,
+      "minimum_rigid_clearance_m": 0.02182064784809595
+    },
+    {
+      "fraction": 0.23500000000000001,
+      "runtime_tcp_m": [
+        -0.09950091697071248,
+        0.06089274932352223,
+        1.354287834124002
+      ],
+      "preflight_tcp_m": [
+        -0.0994960802832917,
+        0.06084579520563893,
+        1.3540774581618127
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00021560491420036555,
+      "runtime_preflight_tcp_difference_m": 0.0002156064196598315,
+      "runtime_orientation_error_rad": 4.8689742332169724e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023826425346995528,
+      "maximum_joint_speed_rad_s": 0.08259369384017327,
+      "maximum_joint_acceleration_rad_s2": 0.039191685396588245,
+      "minimum_rigid_clearance_m": 0.021820207583786243
+    },
+    {
+      "fraction": 0.24,
+      "runtime_tcp_m": [
+        -0.09950089163805871,
+        0.060892496513328356,
+        1.3534274356971308
+      ],
+      "preflight_tcp_m": [
+        -0.09949607775446202,
+        0.06084579313187797,
+        1.3532181984823606
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00021444150210442488,
+      "runtime_preflight_tcp_difference_m": 0.0002144401813069629,
+      "runtime_orientation_error_rad": 3.2312083337166096e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002389382354539074,
+      "maximum_joint_speed_rad_s": 0.08454874026375009,
+      "maximum_joint_acceleration_rad_s2": 0.0383021286876265,
+      "minimum_rigid_clearance_m": 0.021820890539081213
+    },
+    {
+      "fraction": 0.245,
+      "runtime_tcp_m": [
+        -0.09950086476010175,
+        0.060892235824016476,
+        1.3525421533387054
+      ],
+      "preflight_tcp_m": [
+        -0.09949607489295069,
+        0.06084579087637669,
+        1.352334087237428
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002132428762749406,
+      "runtime_preflight_tcp_difference_m": 0.00021324065862150685,
+      "runtime_orientation_error_rad": 2.402670620769672e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00023963716815542102,
+      "maximum_joint_speed_rad_s": 0.08645771527927001,
+      "maximum_joint_acceleration_rad_s2": 0.03736979478556918,
+      "minimum_rigid_clearance_m": 0.021822783112083237
+    },
+    {
+      "fraction": 0.25,
+      "runtime_tcp_m": [
+        -0.09950083714853945,
+        0.06089196786111218,
+        1.3516321234026862
+      ],
+      "preflight_tcp_m": [
+        -0.0994960742199639,
+        0.06084579036430781,
+        1.3514252586976196
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00021201168854247622,
+      "runtime_preflight_tcp_difference_m": 0.00021200955851569637,
+      "runtime_orientation_error_rad": 3.1362953538436343e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024033587806440715,
+      "maximum_joint_speed_rad_s": 0.08831886419268664,
+      "maximum_joint_acceleration_rad_s2": 0.03640677944231196,
+      "minimum_rigid_clearance_m": 0.0218259716983488
+    },
+    {
+      "fraction": 0.255,
+      "runtime_tcp_m": [
+        -0.0995008089516922,
+        0.060891692757115375,
+        1.3506975008679005
+      ],
+      "preflight_tcp_m": [
+        -0.09949607638687749,
+        0.06084579207713036,
+        1.3504918670384445
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002107490881903225,
+      "runtime_preflight_tcp_difference_m": 0.00021074757747022553,
+      "runtime_orientation_error_rad": 2.1229413501840602e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024100380383961645,
+      "maximum_joint_speed_rad_s": 0.09013073266524375,
+      "maximum_joint_acceleration_rad_s2": 0.035416793780946504,
+      "minimum_rigid_clearance_m": 0.021830542409608442
+    },
+    {
+      "fraction": 0.26,
+      "runtime_tcp_m": [
+        -0.09950077930382725,
+        0.060891409926965116,
+        1.3497384582657834
+      ],
+      "preflight_tcp_m": [
+        -0.09949607945589613,
+        0.06084579452035668,
+        1.3495340857104796
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00020945399806745056,
+      "runtime_preflight_tcp_difference_m": 0.00020945404090644263,
+      "runtime_orientation_error_rad": 4.45454513172053e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002416057093516527,
+      "maximum_joint_speed_rad_s": 0.09189204590577033,
+      "maximum_joint_acceleration_rad_s2": 0.03440107718312564,
+      "minimum_rigid_clearance_m": 0.021836580801112466
+    },
+    {
+      "fraction": 0.265,
+      "runtime_tcp_m": [
+        -0.09950074763840865,
+        0.06089111903375343,
+        1.3487551866046477
+      ],
+      "preflight_tcp_m": [
+        -0.09949608049657015,
+        0.06084579542458248,
+        1.3485521080822498
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0002081246397230192,
+      "runtime_preflight_tcp_difference_m": 0.00020812711985833084,
+      "runtime_orientation_error_rad": 9.923611535184497e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024211527955213252,
+      "maximum_joint_speed_rad_s": 0.09360109472814794,
+      "maximum_joint_acceleration_rad_s2": 0.03334716469847557,
+      "minimum_rigid_clearance_m": 0.0218441715972483
+    },
+    {
+      "fraction": 0.27,
+      "runtime_tcp_m": [
+        -0.09950071621794668,
+        0.06089082180378081,
+        1.3477478986308489
+      ],
+      "preflight_tcp_m": [
+        -0.09949608028610422,
+        0.060845795297364225,
+        1.3475461482895141
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00020676255094816256,
+      "runtime_preflight_tcp_difference_m": 0.00020676575725398616,
+      "runtime_orientation_error_rad": 1.2778021890615456e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00024254252399053683,
+      "maximum_joint_speed_rad_s": 0.09525648170930255,
+      "maximum_joint_acceleration_rad_s2": 0.0322743564234877,
+      "minimum_rigid_clearance_m": 0.021853398395679804
+    },
+    {
+      "fraction": 0.275,
+      "runtime_tcp_m": [
+        -0.09950068613726669,
+        0.060890519081907256,
+        1.3467168251229158
+      ],
+      "preflight_tcp_m": [
+        -0.09949607975925778,
+        0.0608457948257911,
+        1.3465164370294482
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00020536862232158667,
+      "runtime_preflight_tcp_difference_m": 0.00020537007037801152,
+      "runtime_orientation_error_rad": 8.851001505272095e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024290691863752129,
+      "maximum_joint_speed_rad_s": 0.09685734281766763,
+      "maximum_joint_acceleration_rad_s2": 0.03118618612312478,
+      "minimum_rigid_clearance_m": 0.021864343396974923
+    },
+    {
+      "fraction": 0.28,
+      "runtime_tcp_m": [
+        -0.09950065609033493,
+        0.06089020993803973,
+        1.3456622134768734
+      ],
+      "preflight_tcp_m": [
+        -0.09949607890847983,
+        0.06084579408336929,
+        1.3454632199685028
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00020394187817289065,
+      "runtime_preflight_tcp_difference_m": 0.00020394149924299782,
+      "runtime_orientation_error_rad": 3.015812845927186e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002432315216593095,
+      "maximum_joint_speed_rad_s": 0.09840296616790455,
+      "maximum_joint_acceleration_rad_s2": 0.030081386110452073,
+      "minimum_rigid_clearance_m": 0.02187708715315851
+    },
+    {
+      "fraction": 0.28500000000000003,
+      "runtime_tcp_m": [
+        -0.09950062411363311,
+        0.06088989299389386,
+        1.3445843296550868
+      ],
+      "preflight_tcp_m": [
+        -0.09949607779649511,
+        0.06084579322032451,
+        1.3443867604272244
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00020248208957748795,
+      "runtime_preflight_tcp_difference_m": 0.00020248224323760714,
+      "runtime_orientation_error_rad": 4.420804304009835e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002435322946300611,
+      "maximum_joint_speed_rad_s": 0.0998920483136071,
+      "maximum_joint_acceleration_rad_s2": 0.02894855978834185,
+      "minimum_rigid_clearance_m": 0.021891708279896723
+    },
+    {
+      "fraction": 0.29,
+      "runtime_tcp_m": [
+        -0.09950059087175957,
+        0.06088956888337433,
+        1.343483460424711
+      ],
+      "preflight_tcp_m": [
+        -0.09949607780207091,
+        0.060845793240279424,
+        1.3432873438544548
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00020099295156139458,
+      "runtime_preflight_tcp_difference_m": 0.00020099349207236078,
+      "runtime_orientation_error_rad": 5.743790003819249e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024380341454928456,
+      "maximum_joint_speed_rad_s": 0.10132376132898915,
+      "maximum_joint_acceleration_rad_s2": 0.02780764956674396,
+      "minimum_rigid_clearance_m": 0.02190828313775616
+    },
+    {
+      "fraction": 0.295,
+      "runtime_tcp_m": [
+        -0.09950055626913669,
+        0.060889237713234,
+        1.3423599072976176
+      ],
+      "preflight_tcp_m": [
+        -0.09949607885856714,
+        0.06084579405866652,
+        1.3421652711876815
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001994759245104037,
+      "runtime_preflight_tcp_difference_m": 0.0001994758472062197,
+      "runtime_orientation_error_rad": 2.494825990554454e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024403530607965823,
+      "maximum_joint_speed_rad_s": 0.10269777905940931,
+      "maximum_joint_acceleration_rad_s2": 0.026661882158334135,
+      "minimum_rigid_clearance_m": 0.02192688565991979
+    },
+    {
+      "fraction": 0.3,
+      "runtime_tcp_m": [
+        -0.09950051893340041,
+        0.060888898668620586,
+        1.341213985055412
+      ],
+      "preflight_tcp_m": [
+        -0.09949607899311226,
+        0.060845794196716464,
+        1.3410208573720688
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00019792908097681207,
+      "runtime_preflight_tcp_difference_m": 0.0001979293071815687,
+      "runtime_orientation_error_rad": 1.0684263670674157e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002442178680232693,
+      "maximum_joint_speed_rad_s": 0.1040137104051503,
+      "maximum_joint_acceleration_rad_s2": 0.025499473490998008,
+      "minimum_rigid_clearance_m": 0.021947587145501435
+    },
+    {
+      "fraction": 0.305,
+      "runtime_tcp_m": [
+        -0.09950048081065287,
+        0.0608885530979645,
+        1.3400460250760977
+      ],
+      "preflight_tcp_m": [
+        -0.09949607841881769,
+        0.06084579379827496,
+        1.3398544355214415
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00019635151005800028,
+      "runtime_preflight_tcp_difference_m": 0.00019635247952901787,
+      "runtime_orientation_error_rad": 2.1232364051969496e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002443456664741675,
+      "maximum_joint_speed_rad_s": 0.1052705790378216,
+      "maximum_joint_acceleration_rad_s2": 0.02432647504676687,
+      "minimum_rigid_clearance_m": 0.02197045596306483
+    },
+    {
+      "fraction": 0.31,
+      "runtime_tcp_m": [
+        -0.09950044554630354,
+        0.060888203368248996,
+        1.3388563749121112
+      ],
+      "preflight_tcp_m": [
+        -0.09949607869286656,
+        0.06084579399475389,
+        1.338666355555317
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00019474300330198256,
+      "runtime_preflight_tcp_difference_m": 0.00019474337042791235,
+      "runtime_orientation_error_rad": 1.864101613962235e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00024441732130031646,
+      "maximum_joint_speed_rad_s": 0.10646829453982842,
+      "maximum_joint_acceleration_rad_s2": 0.023154949948107705,
+      "minimum_rigid_clearance_m": 0.021995557336553586
+    },
+    {
+      "fraction": 0.315,
+      "runtime_tcp_m": [
+        -0.09950041410621896,
+        0.06088784989651088,
+        1.3376453949894944
+      ],
+      "preflight_tcp_m": [
+        -0.09949607912385246,
+        0.060845794272633674,
+        1.3374569797937481
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00019310047312069557,
+      "runtime_preflight_tcp_difference_m": 0.00019310037172397542,
+      "runtime_orientation_error_rad": 5.494673859756113e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024443180384333546,
+      "maximum_joint_speed_rad_s": 0.10760696677434116,
+      "maximum_joint_acceleration_rad_s2": 0.021981691460877483,
+      "minimum_rigid_clearance_m": 0.022022953222457498
+    },
+    {
+      "fraction": 0.32,
+      "runtime_tcp_m": [
+        -0.09950038364186105,
+        0.060887490949399166,
+        1.3364134655515414
+      ],
+      "preflight_tcp_m": [
+        -0.09949607878090773,
+        0.06084579397493655,
+        1.3362266855371376
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00019142504242800895,
+      "runtime_preflight_tcp_difference_m": 0.0001914260778677497,
+      "runtime_orientation_error_rad": 3.973492899783432e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002443905318043234,
+      "maximum_joint_speed_rad_s": 0.10868598292058143,
+      "maximum_joint_acceleration_rad_s2": 0.02079461785379215,
+      "minimum_rigid_clearance_m": 0.022052702076602603
+    },
+    {
+      "fraction": 0.325,
+      "runtime_tcp_m": [
+        -0.09950034756434681,
+        0.060887123226285166,
+        1.3351609937076259
+      ],
+      "preflight_tcp_m": [
+        -0.09949607903755524,
+        0.06084579415812255,
+        1.3349758684836053
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001897294333145445,
+      "runtime_preflight_tcp_difference_m": 0.00018973049508403563,
+      "runtime_orientation_error_rad": 4.876182472812345e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0002442999147752173,
+      "maximum_joint_speed_rad_s": 0.10970527723966093,
+      "maximum_joint_acceleration_rad_s2": 0.01961456699309355,
+      "minimum_rigid_clearance_m": 0.02208485858886751
+    },
+    {
+      "fraction": 0.33,
+      "runtime_tcp_m": [
+        -0.0995002972927984,
+        0.06088674197501716,
+        1.3338883985889138
+      ],
+      "preflight_tcp_m": [
+        -0.09949607906497607,
+        0.060845794258839306,
+        1.3337049363534697
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00018802393179579005,
+      "runtime_preflight_tcp_difference_m": 0.0001880236706915421,
+      "runtime_orientation_error_rad": 8.793061226484817e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0002441678518611823,
+      "maximum_joint_speed_rad_s": 0.11066526507631615,
+      "maximum_joint_acceleration_rad_s2": 0.01844256698730776,
+      "minimum_rigid_clearance_m": 0.022119473647223952
+    },
+    {
+      "fraction": 0.335,
+      "runtime_tcp_m": [
+        -0.09950023247425276,
+        0.06088634687442816,
+        1.3325960988230892
+      ],
+      "preflight_tcp_m": [
+        -0.09949607726766009,
+        0.06084579309846995,
+        1.3324143085798665
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00018630606548635493,
+      "runtime_preflight_tcp_difference_m": 0.00018630503755196035,
+      "runtime_orientation_error_rad": 1.2936000702848353e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.00024399202793721347,
+      "maximum_joint_speed_rad_s": 0.11156575078712179,
+      "maximum_joint_acceleration_rad_s2": 0.01725709465730208,
+      "minimum_rigid_clearance_m": 0.022156594167880912
+    },
+    {
+      "fraction": 0.34,
+      "runtime_tcp_m": [
+        -0.0995001834887377,
+        0.060885955445739826,
+        1.3312844915589748
+      ],
+      "preflight_tcp_m": [
+        -0.09949607688660858,
+        0.060845792863016036,
+        1.3311044192883024
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001845439321859096,
+      "runtime_preflight_tcp_difference_m": 0.00018454246096009385,
+      "runtime_orientation_error_rad": 1.7430478106675996e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.00024373142583923937,
+      "maximum_joint_speed_rad_s": 0.11240671671221929,
+      "maximum_joint_acceleration_rad_s2": 0.0163077899001084,
+      "minimum_rigid_clearance_m": 0.02219626279298754
+    },
+    {
+      "fraction": 0.34500000000000003,
+      "runtime_tcp_m": [
+        -0.09950018075417745,
+        0.060885585010883154,
+        1.3299539818448407
+      ],
+      "preflight_tcp_m": [
+        -0.09949607919254734,
+        0.06084579434248885,
+        1.329775714158426
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00018270063603334114,
+      "runtime_preflight_tcp_difference_m": 0.00018270054219592699,
+      "runtime_orientation_error_rad": 5.871026631425756e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00024333328701402895,
+      "maximum_joint_speed_rad_s": 0.1131888107407409,
+      "maximum_joint_acceleration_rad_s2": 0.015656748803735094,
+      "minimum_rigid_clearance_m": 0.022238517963164284
+    },
+    {
+      "fraction": 0.35000000000000003,
+      "runtime_tcp_m": [
+        -0.09950021911634613,
+        0.06088523257000261,
+        1.3286050324457732
+      ],
+      "preflight_tcp_m": [
+        -0.0994960818088541,
+        0.06084579590952236,
+        1.3284286524991618
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00018077815846700675,
+      "runtime_preflight_tcp_difference_m": 0.0001807823361663958,
+      "runtime_orientation_error_rad": 3.937684291096102e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.00024277390838526453,
+      "maximum_joint_speed_rad_s": 0.11391209583549558,
+      "maximum_joint_acceleration_rad_s2": 0.014995712778528937,
+      "minimum_rigid_clearance_m": 0.0222833938541286
+    },
+    {
+      "fraction": 0.355,
+      "runtime_tcp_m": [
+        -0.09950019918638259,
+        0.060884842238055244,
+        1.3272382598219
+      ],
+      "preflight_tcp_m": [
+        -0.09949608200586892,
+        0.06084579604065103,
+        1.3270637140559844
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001789028279101536,
+      "runtime_preflight_tcp_difference_m": 0.00017890718573083708,
+      "runtime_orientation_error_rad": 5.017659754178204e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.00024215404453923305,
+      "maximum_joint_speed_rad_s": 0.11457672437749039,
+      "maximum_joint_acceleration_rad_s2": 0.019684127595218953,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.36,
+      "runtime_tcp_m": [
+        -0.09950003127405559,
+        0.06088436359419288,
+        1.3258542779716904
+      ],
+      "preflight_tcp_m": [
+        -0.09949607852688228,
+        0.060845793939736534,
+        1.3256813843354083
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00017718846712604309,
+      "runtime_preflight_tcp_difference_m": 0.00017718761785734573,
+      "runtime_orientation_error_rad": 1.1817946531061942e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.00024161265055991712,
+      "maximum_joint_speed_rad_s": 0.1151835279256813,
+      "maximum_joint_acceleration_rad_s2": 0.025196602709158498,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.365,
+      "runtime_tcp_m": [
+        -0.09949977259875165,
+        0.06088382920382274,
+        1.3244535016667514
+      ],
+      "preflight_tcp_m": [
+        -0.09949607406325028,
+        0.0608457911284934,
+        1.3242821517040269
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001755652244321541,
+      "runtime_preflight_tcp_difference_m": 0.000175560200687121,
+      "runtime_orientation_error_rad": 1.1908810472988166e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.0002411951564051211,
+      "maximum_joint_speed_rad_s": 0.11573264713515743,
+      "maximum_joint_acceleration_rad_s2": 0.03387690178846116,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.37,
+      "runtime_tcp_m": [
+        -0.09949973454253934,
+        0.06088341498027883,
+        1.3230359940818053
+      ],
+      "preflight_tcp_m": [
+        -0.09949607540748645,
+        0.06084579198794601,
+        1.3228665170104594
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001736453127142323,
+      "runtime_preflight_tcp_difference_m": 0.0001736414597190879,
+      "runtime_orientation_error_rad": 1.1748088736719255e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.00024064662407824282,
+      "maximum_joint_speed_rad_s": 0.11622450666473925,
+      "maximum_joint_acceleration_rad_s2": 0.09175011633768163,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.375,
+      "runtime_tcp_m": [
+        -0.09950008259647584,
+        0.06088321262895761,
+        1.3216020227242387
+      ],
+      "preflight_tcp_m": [
+        -0.09949608048128088,
+        0.060845795139773555,
+        1.3214349985858254
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00017120914760396604,
+      "runtime_preflight_tcp_difference_m": 0.00017121082978473198,
+      "runtime_orientation_error_rad": 7.88044604151171e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.00023964541302147133,
+      "maximum_joint_speed_rad_s": 0.11666004142414811,
+      "maximum_joint_acceleration_rad_s2": 0.06856186535642213,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.38,
+      "runtime_tcp_m": [
+        -0.09950043124643596,
+        0.06088300502471624,
+        1.3201526675311874
+      ],
+      "preflight_tcp_m": [
+        -0.09949608240057532,
+        0.06084579625125235,
+        1.3199881313397408
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00016874190935900672,
+      "runtime_preflight_tcp_difference_m": 0.00016874704020743072,
+      "runtime_orientation_error_rad": 2.786490361720448e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.00041617320648201783,
+      "maximum_joint_speed_rad_s": 0.11703939781390015,
+      "maximum_joint_acceleration_rad_s2": 0.1645809622794886,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.385,
+      "runtime_tcp_m": [
+        -0.09950013767630896,
+        0.060882434434920224,
+        1.3186894226080301
+      ],
+      "preflight_tcp_m": [
+        -0.09949608060480622,
+        0.060845795191633176,
+        1.318526456895671
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001670808581154177,
+      "runtime_preflight_tcp_difference_m": 0.00016708296556669969,
+      "runtime_orientation_error_rad": 1.531856237260916e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.00032202543898440794,
+      "maximum_joint_speed_rad_s": 0.1173633233683055,
+      "maximum_joint_acceleration_rad_s2": 0.4054930139021678,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.39,
+      "runtime_tcp_m": [
+        -0.0994993526457589,
+        0.06088158749065706,
+        1.3172126294486564
+      ],
+      "preflight_tcp_m": [
+        -0.09949607704167006,
+        0.06084579307309703,
+        1.3170505161590766
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00016605256753193955,
+      "runtime_preflight_tcp_difference_m": 0.000166050259165604,
+      "runtime_orientation_error_rad": 2.2613677311720824e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.0007724781793640445,
+      "maximum_joint_speed_rad_s": 0.11763272481270075,
+      "maximum_joint_acceleration_rad_s2": 0.300899964416725,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.395,
+      "runtime_tcp_m": [
+        -0.09949906706682758,
+        0.06088101644188274,
+        1.3157213707967308
+      ],
+      "preflight_tcp_m": [
+        -0.09949607614033659,
+        0.06084579253465375,
+        1.3155608586293637
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001643617549579406,
+      "runtime_preflight_tcp_difference_m": 0.0001643588304735775,
+      "runtime_orientation_error_rad": 3.5181524025635365e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.0025864017055579613,
+      "maximum_joint_speed_rad_s": 0.11784782353765604,
+      "maximum_joint_acceleration_rad_s2": 0.0909123447463338,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.4,
+      "runtime_tcp_m": [
+        -0.09949963397935532,
+        0.06088091230445724,
+        1.3142156571906738
+      ],
+      "preflight_tcp_m": [
+        -0.0994960788511563,
+        0.06084579416853882,
+        1.3140580490579663
+      ],
+      "runtime_error_from_actual_start_line_m": 0.000161512813268618,
+      "runtime_preflight_tcp_difference_m": 0.0001615123707411813,
+      "runtime_orientation_error_rad": 3.5403690541412686e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.00417720887674039,
+      "maximum_joint_speed_rad_s": 0.11800965576580645,
+      "maximum_joint_acceleration_rad_s2": 0.49800598403990376,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.405,
+      "runtime_tcp_m": [
+        -0.09950014740060663,
+        0.06088077351858833,
+        1.3126974154081035
+      ],
+      "preflight_tcp_m": [
+        -0.09949608032933595,
+        0.060845794971877976,
+        1.3125426634297157
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00015870561445426292,
+      "runtime_preflight_tcp_difference_m": 0.00015870795384484546,
+      "runtime_orientation_error_rad": 2.5777553868181075e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.004728345200789075,
+      "maximum_joint_speed_rad_s": 0.11811894364027055,
+      "maximum_joint_acceleration_rad_s2": 0.3057401341658148,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.41000000000000003,
+      "runtime_tcp_m": [
+        -0.09949995539961323,
+        0.06088024264528112,
+        1.3111682384520573
+      ],
+      "preflight_tcp_m": [
+        -0.09949607989663918,
+        0.060845794735364556,
+        1.3110152860243582
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00015682991299304668,
+      "runtime_preflight_tcp_difference_m": 0.00015683151201198285,
+      "runtime_orientation_error_rad": 1.8282394067007134e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.0045183744317734975,
+      "maximum_joint_speed_rad_s": 0.11817623683619939,
+      "maximum_joint_acceleration_rad_s2": 0.04391684327173467,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.41500000000000004,
+      "runtime_tcp_m": [
+        -0.09949943901707825,
+        0.060879531013026365,
+        1.309628146848004
+      ],
+      "preflight_tcp_m": [
+        -0.0994960786534887,
+        0.060845794056349045,
+        1.3094765022533825
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001553889803805685,
+      "runtime_preflight_tcp_difference_m": 0.00015538840808506664,
+      "runtime_orientation_error_rad": 6.586163360525329e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.004206917670558807,
+      "maximum_joint_speed_rad_s": 0.11818269363124546,
+      "maximum_joint_acceleration_rad_s2": 0.12835057106416586,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.42,
+      "runtime_tcp_m": [
+        -0.09949928025604043,
+        0.06087901321500149,
+        1.308076676608448
+      ],
+      "preflight_tcp_m": [
+        -0.09949607802275898,
+        0.06084579365398209,
+        1.3079269030763665
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00015344736744235275,
+      "runtime_preflight_tcp_difference_m": 0.00015344674791100917,
+      "runtime_orientation_error_rad": 1.2620970267179337e-06,
+      "runtime_preflight_joint_max_difference_rad": 0.004166816279228491,
+      "maximum_joint_speed_rad_s": 0.11813875640512904,
+      "maximum_joint_acceleration_rad_s2": 0.0559633613255088,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.425,
+      "runtime_tcp_m": [
+        -0.0994994174858049,
+        0.060878654343734157,
+        1.3065145165867769
+      ],
+      "preflight_tcp_m": [
+        -0.09949607889582167,
+        0.06084579420002156,
+        1.3063670915798211
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00015107993884784857,
+      "runtime_preflight_tcp_difference_m": 0.00015107967402596157,
+      "runtime_orientation_error_rad": 2.7459254599554995e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.00426121689328729,
+      "maximum_joint_speed_rad_s": 0.11804539866777457,
+      "maximum_joint_acceleration_rad_s2": 0.02683456136682461,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.43,
+      "runtime_tcp_m": [
+        -0.09949950535907585,
+        0.060878265218924324,
+        1.3049428118964348
+      ],
+      "preflight_tcp_m": [
+        -0.09949607902260713,
+        0.060845794253680655,
+        1.304797676002005
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00014876294738046735,
+      "runtime_preflight_tcp_difference_m": 0.00014876333962835783,
+      "runtime_orientation_error_rad": 4.6391072274383744e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.004316480208476192,
+      "maximum_joint_speed_rad_s": 0.11790357921225655,
+      "maximum_joint_acceleration_rad_s2": 0.030261870246579923,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.435,
+      "runtime_tcp_m": [
+        -0.09949943159352495,
+        0.06087778568513652,
+        1.3033623619494201
+      ],
+      "preflight_tcp_m": [
+        -0.09949607893061183,
+        0.06084579420156995,
+        1.303219270981829
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001466616170896377,
+      "runtime_preflight_tcp_difference_m": 0.0001466619254460184,
+      "runtime_orientation_error_rad": 3.259411731037226e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.004307140523495567,
+      "maximum_joint_speed_rad_s": 0.11771384794441156,
+      "maximum_joint_acceleration_rad_s2": 0.009871060542527291,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.44,
+      "runtime_tcp_m": [
+        -0.09949931012382356,
+        0.06087727825387153,
+        1.3017736084803495
+      ],
+      "preflight_tcp_m": [
+        -0.09949607901255629,
+        0.060845794275416226,
+        1.3016324952347278
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00014461904437779876,
+      "runtime_preflight_tcp_difference_m": 0.00014461890979152765,
+      "runtime_orientation_error_rad": 7.898063691141734e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0042851996782123924,
+      "maximum_joint_speed_rad_s": 0.11747740811360581,
+      "maximum_joint_acceleration_rad_s2": 0.012877038046501773,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.445,
+      "runtime_tcp_m": [
+        -0.09949924606378521,
+        0.06087679968752158,
+        1.3001770041274512
+      ],
+      "preflight_tcp_m": [
+        -0.09949607867908787,
+        0.06084579405175419,
+        1.3000379720480815
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001424824990494729,
+      "runtime_preflight_tcp_difference_m": 0.00014248263356994687,
+      "runtime_orientation_error_rad": 1.657647315296506e-07,
+      "runtime_preflight_joint_max_difference_rad": 0.004283324849220671,
+      "maximum_joint_speed_rad_s": 0.11719486214849077,
+      "maximum_joint_acceleration_rad_s2": 0.010500592603315876,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.45,
+      "runtime_tcp_m": [
+        -0.09949922093588202,
+        0.06087634012075746,
+        1.2985732096495815
+      ],
+      "preflight_tcp_m": [
+        -0.09949607901170465,
+        0.06084579427910977,
+        1.298436331472381
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00014028037786865472,
+      "runtime_preflight_tcp_difference_m": 0.00014028027488999939,
+      "runtime_orientation_error_rad": 3.546744769296522e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00429199924106749,
+      "maximum_joint_speed_rad_s": 0.11686719458561252,
+      "maximum_joint_acceleration_rad_s2": 0.010784689096239744,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.455,
+      "runtime_tcp_m": [
+        -0.09949918709384735,
+        0.060875873931092235,
+        1.2969629344722786
+      ],
+      "preflight_tcp_m": [
+        -0.09949607887874826,
+        0.060845794179940155,
+        1.2968282060074958
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00013808030948984817,
+      "runtime_preflight_tcp_difference_m": 0.00013808045355227677,
+      "runtime_orientation_error_rad": 5.077407862590619e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004297724475640363,
+      "maximum_joint_speed_rad_s": 0.11649541339913697,
+      "maximum_joint_acceleration_rad_s2": 0.01105483735486277,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.46,
+      "runtime_tcp_m": [
+        -0.09949913458778413,
+        0.060875396174197634,
+        1.2953468355644417
+      ],
+      "preflight_tcp_m": [
+        -0.09949607888514644,
+        0.060845794184692464,
+        1.295214233542446
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00013590023129625295,
+      "runtime_preflight_tcp_difference_m": 0.0001359003728422297,
+      "runtime_orientation_error_rad": 3.132542202116761e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.0042985305967802034,
+      "maximum_joint_speed_rad_s": 0.11608016089067041,
+      "maximum_joint_acceleration_rad_s2": 0.011305440430179637,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.465,
+      "runtime_tcp_m": [
+        -0.09949907807790921,
+        0.06087491489469564,
+        1.2937255304196271
+      ],
+      "preflight_tcp_m": [
+        -0.09949607899818749,
+        0.06084579428095715,
+        1.293595054867602
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00013371949993657372,
+      "runtime_preflight_tcp_difference_m": 0.00013371938640274492,
+      "runtime_orientation_error_rad": 1.1728349148797076e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004298375585719882,
+      "maximum_joint_speed_rad_s": 0.11562263485915357,
+      "maximum_joint_acceleration_rad_s2": 0.011537044608660422,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.47000000000000003,
+      "runtime_tcp_m": [
+        -0.09949902743295266,
+        0.06087443539502098,
+        1.2920996455833107
+      ],
+      "preflight_tcp_m": [
+        -0.0994960787232225,
+        0.060845794107846116,
+        1.291971313298661
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00013152253105954784,
+      "runtime_preflight_tcp_difference_m": 0.00013152259693116527,
+      "runtime_orientation_error_rad": 1.8310842439179748e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004299554091097446,
+      "maximum_joint_speed_rad_s": 0.11512349363224308,
+      "maximum_joint_acceleration_rad_s2": 0.011754156542689157,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.47500000000000003,
+      "runtime_tcp_m": [
+        -0.09949898064795247,
+        0.0608739569066066,
+        1.290469834164734
+      ],
+      "preflight_tcp_m": [
+        -0.09949607903800987,
+        0.060845794307692005,
+        1.290343656168019
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00012931538615885702,
+      "runtime_preflight_tcp_difference_m": 0.00012931526658864492,
+      "runtime_orientation_error_rad": 4.12950882777766e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004301345626414765,
+      "maximum_joint_speed_rad_s": 0.1145837795385627,
+      "maximum_joint_acceleration_rad_s2": 0.011949465068400337,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.48,
+      "runtime_tcp_m": [
+        -0.09949893209612504,
+        0.0608734764988687,
+        1.2888367532461777
+      ],
+      "preflight_tcp_m": [
+        -0.09949607885793073,
+        0.06084579418252217,
+        1.2887127318837241
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00012710515085119598,
+      "runtime_preflight_tcp_difference_m": 0.00012710527113911945,
+      "runtime_orientation_error_rad": 3.453891302173602e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004302860080675985,
+      "maximum_joint_speed_rad_s": 0.11400445198235201,
+      "maximum_joint_acceleration_rad_s2": 0.012130558169357769,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.485,
+      "runtime_tcp_m": [
+        -0.09949888208859116,
+        0.06087299464647216,
+        1.2872010562001512
+      ],
+      "preflight_tcp_m": [
+        -0.0994960789206835,
+        0.06084579422974229,
+        1.2870791920930877
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00012489424819954527,
+      "runtime_preflight_tcp_difference_m": 0.00012489427933648695,
+      "runtime_orientation_error_rad": 1.5201473030902243e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004304063992340068,
+      "maximum_joint_speed_rad_s": 0.11338625923938032,
+      "maximum_joint_acceleration_rad_s2": 0.01263060956389235,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.49,
+      "runtime_tcp_m": [
+        -0.09949883183349376,
+        0.06087251212380181,
+        1.285563393673231
+      ],
+      "preflight_tcp_m": [
+        -0.09949607897621571,
+        0.06084579427023649,
+        1.2854436890675351
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00012268099301669216,
+      "runtime_preflight_tcp_difference_m": 0.0001226809461453209,
+      "runtime_orientation_error_rad": 3.374608565759709e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00430524998113585,
+      "maximum_joint_speed_rad_s": 0.11273035755110361,
+      "maximum_joint_acceleration_rad_s2": 0.013370718492869286,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.495,
+      "runtime_tcp_m": [
+        -0.09949878190980838,
+        0.060872029370743354,
+        1.2839244187018144
+      ],
+      "preflight_tcp_m": [
+        -0.09949607882054098,
+        0.060845794166183395,
+        1.283806876363502
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001204647945284352,
+      "runtime_preflight_tcp_difference_m": 0.00012046490752845011,
+      "runtime_orientation_error_rad": 3.6876296026867524e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004306512781521443,
+      "maximum_joint_speed_rad_s": 0.11203742934148062,
+      "maximum_joint_acceleration_rad_s2": 0.014094981509338602,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.5,
+      "runtime_tcp_m": [
+        -0.09949873262250851,
+        0.06087154681581404,
+        1.2822847877654353
+      ],
+      "preflight_tcp_m": [
+        -0.09949607905381405,
+        0.060845794325645006,
+        1.282169409057882
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001182476459698678,
+      "runtime_preflight_tcp_difference_m": 0.00011824752992522235,
+      "runtime_orientation_error_rad": 2.2103040277264673e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004307703358404635,
+      "maximum_joint_speed_rad_s": 0.11130856531868433,
+      "maximum_joint_acceleration_rad_s2": 0.014795352395545545,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.505,
+      "runtime_tcp_m": [
+        -0.09949868273139405,
+        0.060871063882998136,
+        1.2806451567383985
+      ],
+      "preflight_tcp_m": [
+        -0.09949607881661561,
+        0.06084579418422663,
+        1.2805319414343255
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001160303131059636,
+      "runtime_preflight_tcp_difference_m": 0.00011603035432389223,
+      "runtime_orientation_error_rad": 1.883883407252537e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004308708598002531,
+      "maximum_joint_speed_rad_s": 0.11054463358135706,
+      "maximum_joint_acceleration_rad_s2": 0.015485204816726635,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.51,
+      "runtime_tcp_m": [
+        -0.09949863308491956,
+        0.06087058131445008,
+        1.2790061820249277
+      ],
+      "preflight_tcp_m": [
+        -0.09949607895945604,
+        0.06084579427305503,
+        1.2788951289478074
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00011381441270916168,
+      "runtime_preflight_tcp_difference_m": 0.0001138143528553148,
+      "runtime_orientation_error_rad": 1.9681953713558753e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004309619088791572,
+      "maximum_joint_speed_rad_s": 0.10974649114123623,
+      "maximum_joint_acceleration_rad_s2": 0.016151604117906188,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.515,
+      "runtime_tcp_m": [
+        -0.09949858330439268,
+        0.06087009902935176,
+        1.2773685184212837
+      ],
+      "preflight_tcp_m": [
+        -0.09949607894644268,
+        0.06084579425830208,
+        1.2772596257931765
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00011160016931484042,
+      "runtime_preflight_tcp_difference_m": 0.00011160017097035719,
+      "runtime_orientation_error_rad": 2.27960487792056e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004310567843973212,
+      "maximum_joint_speed_rad_s": 0.10891521494634895,
+      "maximum_joint_acceleration_rad_s2": 0.016801696016605746,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.52,
+      "runtime_tcp_m": [
+        -0.09949853359570175,
+        0.0608696173149771,
+        1.2757328204832978
+      ],
+      "preflight_tcp_m": [
+        -0.09949607887099075,
+        0.06084579421141439,
+        1.2756260858668975
+      ],
+      "runtime_error_from_actual_start_line_m": 0.0001093884331122517,
+      "runtime_preflight_tcp_difference_m": 0.00010938850156615795,
+      "runtime_orientation_error_rad": 2.312365554258234e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004311550315097723,
+      "maximum_joint_speed_rad_s": 0.10805151954590063,
+      "maximum_joint_acceleration_rad_s2": 0.017433902369381814,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.525,
+      "runtime_tcp_m": [
+        -0.09949848425322527,
+        0.06086913653953617,
+        1.274099741900285
+      ],
+      "preflight_tcp_m": [
+        -0.09949607903649858,
+        0.06084579432398166,
+        1.2739951619461571
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00010718037885914016,
+      "runtime_preflight_tcp_difference_m": 0.00010718027290456396,
+      "runtime_orientation_error_rad": 1.9188879347492015e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004312449775806804,
+      "maximum_joint_speed_rad_s": 0.10715649755088102,
+      "maximum_joint_acceleration_rad_s2": 0.018044970100661823,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.53,
+      "runtime_tcp_m": [
+        -0.09949843461816998,
+        0.06086865648250823,
+        1.272469934210068
+      ],
+      "preflight_tcp_m": [
+        -0.09949607883693205,
+        0.06084579420335935,
+        1.2723675045511718
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00010497646634575396,
+      "runtime_preflight_tcp_difference_m": 0.00010497651420547168,
+      "runtime_orientation_error_rad": 1.916255109998459e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0043131989122560666,
+      "maximum_joint_speed_rad_s": 0.10623094474362864,
+      "maximum_joint_acceleration_rad_s2": 0.018642916823453228,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.535,
+      "runtime_tcp_m": [
+        -0.09949838543266987,
+        0.060868177804725566,
+        1.2708440478493466
+      ],
+      "preflight_tcp_m": [
+        -0.0994960790016662,
+        0.06084579430435535,
+        1.270743763221254
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00010277822175321303,
+      "runtime_preflight_tcp_difference_m": 0.00010277814623973949,
+      "runtime_orientation_error_rad": 1.8035108080975787e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004313865649582804,
+      "maximum_joint_speed_rad_s": 0.10527578714765483,
+      "maximum_joint_acceleration_rad_s2": 0.019218643929539748,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.54,
+      "runtime_tcp_m": [
+        -0.0994983361334797,
+        0.06086770032331489,
+        1.2692227298862395
+      ],
+      "preflight_tcp_m": [
+        -0.09949607891813193,
+        0.06084579425699868,
+        1.2691245842509011
+      ],
+      "runtime_error_from_actual_start_line_m": 0.00010058597226827624,
+      "runtime_preflight_tcp_difference_m": 0.00010058596571367254,
+      "runtime_orientation_error_rad": 1.9660140102843803e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0043145294671812495,
+      "maximum_joint_speed_rad_s": 0.10429201557009028,
+      "maximum_joint_acceleration_rad_s2": 0.019779357767586304,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.545,
+      "runtime_tcp_m": [
+        -0.09949828707926718,
+        0.060867224414271864,
+        1.2676066252365854
+      ],
+      "preflight_tcp_m": [
+        -0.09949607889896084,
+        0.06084579424747575,
+        1.267510611774955
+      ],
+      "runtime_error_from_actual_start_line_m": 9.840077179768588e-05,
+      "runtime_preflight_tcp_difference_m": 9.84007770468175e-05,
+      "runtime_orientation_error_rad": 1.9211316138458136e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004315174699532409,
+      "maximum_joint_speed_rad_s": 0.10328037846593308,
+      "maximum_joint_acceleration_rad_s2": 0.02032129927473203,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.55,
+      "runtime_tcp_m": [
+        -0.09949823835342746,
+        0.06086675031150707,
+        1.2659963755970083
+      ],
+      "preflight_tcp_m": [
+        -0.09949607901982453,
+        0.060845794319407606,
+        1.2659024866121296
+      ],
+      "runtime_error_from_actual_start_line_m": 9.622356388201538e-05,
+      "runtime_preflight_tcp_difference_m": 9.622347846569472e-05,
+      "runtime_orientation_error_rad": 1.6627079120724042e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004315731381805021,
+      "maximum_joint_speed_rad_s": 0.10224192794726397,
+      "maximum_joint_acceleration_rad_s2": 0.020844002675731284,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.555,
+      "runtime_tcp_m": [
+        -0.09949818953383475,
+        0.0608662779502236,
+        1.2643926188414418
+      ],
+      "preflight_tcp_m": [
+        -0.09949607886217515,
+        0.06084579422148889,
+        1.2643008457359737
+      ],
+      "runtime_error_from_actual_start_line_m": 9.405493706548675e-05,
+      "runtime_preflight_tcp_difference_m": 9.405498904896074e-05,
+      "runtime_orientation_error_rad": 1.720296332779892e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004316156057043219,
+      "maximum_joint_speed_rad_s": 0.10117743026721122,
+      "maximum_joint_acceleration_rad_s2": 0.0213522852170709,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.56,
+      "runtime_tcp_m": [
+        -0.09949814123573439,
+        0.06086580788134581,
+        1.2627959895149854
+      ],
+      "preflight_tcp_m": [
+        -0.09949607901320699,
+        0.060845794315684744,
+        1.2627063228741806
+      ],
+      "runtime_error_from_actual_start_line_m": 9.189622402649034e-05,
+      "runtime_preflight_tcp_difference_m": 9.189614815342848e-05,
+      "runtime_orientation_error_rad": 1.5640271571594667e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004316457016094288,
+      "maximum_joint_speed_rad_s": 0.10008781767226203,
+      "maximum_joint_acceleration_rad_s2": 0.02183969159905767,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.5650000000000001,
+      "runtime_tcp_m": [
+        -0.09949809293056346,
+        0.060865339958772025,
+        1.2612071170505679
+      ],
+      "preflight_tcp_m": [
+        -0.09949607891733077,
+        0.06084579427944397,
+        1.2611195466630856
+      ],
+      "runtime_error_from_actual_start_line_m": 8.974781014754052e-05,
+      "runtime_preflight_tcp_difference_m": 8.97477720809697e-05,
+      "runtime_orientation_error_rad": 1.6447914589202538e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004316652033497348,
+      "maximum_joint_speed_rad_s": 0.09897402006868192,
+      "maximum_joint_acceleration_rad_s2": 0.022312540064306635,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.5700000000000001,
+      "runtime_tcp_m": [
+        -0.0994980449692388,
+        0.06086487455000619,
+        1.2596266267527154
+      ],
+      "preflight_tcp_m": [
+        -0.09949607891140833,
+        0.060845794283472705,
+        1.2595411415512392
+      ],
+      "runtime_error_from_actual_start_line_m": 8.761078595927017e-05,
+      "runtime_preflight_tcp_difference_m": 8.76107392150742e-05,
+      "runtime_orientation_error_rad": 1.6144675032971625e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004316788552234385,
+      "maximum_joint_speed_rad_s": 0.09783679675602053,
+      "maximum_joint_acceleration_rad_s2": 0.022766947438980244,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.5750000000000001,
+      "runtime_tcp_m": [
+        -0.09949799738826837,
+        0.06086441182842879,
+        1.2580551385901317
+      ],
+      "preflight_tcp_m": [
+        -0.0994960790183893,
+        0.060845794313952456,
+        1.257971726667752
+      ],
+      "runtime_error_from_actual_start_line_m": 8.548597157414558e-05,
+      "runtime_preflight_tcp_difference_m": 8.548590985282915e-05,
+      "runtime_orientation_error_rad": 1.3750019933959508e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004316927365958678,
+      "maximum_joint_speed_rad_s": 0.09667714439524282,
+      "maximum_joint_acceleration_rad_s2": 0.023203043516398812,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.58,
+      "runtime_tcp_m": [
+        -0.0994979498595582,
+        0.060863951779017704,
+        1.2564932668236664
+      ],
+      "preflight_tcp_m": [
+        -0.09949607888613214,
+        0.06084579418880736,
+        1.2564119154977025
+      ],
+      "runtime_error_from_actual_start_line_m": 8.33739372821049e-05,
+      "runtime_preflight_tcp_difference_m": 8.337407786529534e-05,
+      "runtime_orientation_error_rad": 1.29014930709626e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004317089799489304,
+      "maximum_joint_speed_rad_s": 0.0954958236588298,
+      "maximum_joint_acceleration_rad_s2": 0.023624675911918476,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.585,
+      "runtime_tcp_m": [
+        -0.09949790289999219,
+        0.060863494951768335,
+        1.2549416204780452
+      ],
+      "preflight_tcp_m": [
+        -0.09949607900378184,
+        0.06084579428332389,
+        1.2548623162960206
+      ],
+      "runtime_error_from_actual_start_line_m": 8.127603854829634e-05,
+      "runtime_preflight_tcp_difference_m": 8.127603304394514e-05,
+      "runtime_orientation_error_rad": 1.1701247045392991e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004317222526416642,
+      "maximum_joint_speed_rad_s": 0.09429372549612994,
+      "maximum_joint_acceleration_rad_s2": 0.024026783113294287,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.59,
+      "runtime_tcp_m": [
+        -0.09949785608518164,
+        0.06086304133085942,
+        1.253400801643839
+      ],
+      "preflight_tcp_m": [
+        -0.09949607893613668,
+        0.060845794403717436,
+        1.2533235303375974
+      ],
+      "runtime_error_from_actual_start_line_m": 7.919285629735001e-05,
+      "runtime_preflight_tcp_difference_m": 7.919261027929706e-05,
+      "runtime_orientation_error_rad": 1.9037900926190353e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004317272037173137,
+      "maximum_joint_speed_rad_s": 0.09307175258192277,
+      "maximum_joint_acceleration_rad_s2": 0.024413925672698872,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.595,
+      "runtime_tcp_m": [
+        -0.09949780964227281,
+        0.06086259102858707,
+        1.2518714057482063
+      ],
+      "preflight_tcp_m": [
+        -0.09949607889908754,
+        0.060845794470034444,
+        1.2517961522187948
+      ],
+      "runtime_error_from_actual_start_line_m": 7.712503144317573e-05,
+      "runtime_preflight_tcp_difference_m": 7.71246623336173e-05,
+      "runtime_orientation_error_rad": 2.3615301792767122e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004317254640360035,
+      "maximum_joint_speed_rad_s": 0.09183064741410758,
+      "maximum_joint_acceleration_rad_s2": 0.024783963605723776,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.6,
+      "runtime_tcp_m": [
+        -0.09949776372349901,
+        0.06086214404108872,
+        1.250354020984006
+      ],
+      "preflight_tcp_m": [
+        -0.09949607902650275,
+        0.06084579429872048,
+        1.2502807693464557
+      ],
+      "runtime_error_from_actual_start_line_m": 7.507302183348946e-05,
+      "runtime_preflight_tcp_difference_m": 7.507299569941136e-05,
+      "runtime_orientation_error_rad": 9.78971840133533e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.0043172267222011396,
+      "maximum_joint_speed_rad_s": 0.09057134550413874,
+      "maximum_joint_acceleration_rad_s2": 0.025135802027539046,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.605,
+      "runtime_tcp_m": [
+        -0.0994977179341294,
+        0.06086170038327559,
+        1.248849228259813
+      ],
+      "preflight_tcp_m": [
+        -0.09949607890201824,
+        0.06084579374910703,
+        1.248777961897332
+      ],
+      "runtime_error_from_actual_start_line_m": 7.30374557555719e-05,
+      "runtime_preflight_tcp_difference_m": 7.3038358812968e-05,
+      "runtime_orientation_error_rad": 2.373509645144662e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004317219735877287,
+      "maximum_joint_speed_rad_s": 0.08929461807716119,
+      "maximum_joint_acceleration_rad_s2": 0.025474331862572315,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.61,
+      "runtime_tcp_m": [
+        -0.09949767272533827,
+        0.0608612611990463,
+        1.2473576021280315
+      ],
+      "preflight_tcp_m": [
+        -0.09949607895160877,
+        0.060845793810636324,
+        1.2472883037143696
+      ],
+      "runtime_error_from_actual_start_line_m": 7.102069405622145e-05,
+      "runtime_preflight_tcp_difference_m": 7.102147812442847e-05,
+      "runtime_orientation_error_rad": 2.1716638898063004e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004317193480931902,
+      "maximum_joint_speed_rad_s": 0.08800127342142196,
+      "maximum_joint_acceleration_rad_s2": 0.025794616627055865,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.615,
+      "runtime_tcp_m": [
+        -0.09949762795423245,
+        0.06086082708963087,
+        1.245879708063927
+      ],
+      "preflight_tcp_m": [
+        -0.09949607901705924,
+        0.060845794926872074,
+        1.245812359537697
+      ],
+      "runtime_error_from_actual_start_line_m": 6.902416230126502e-05,
+      "runtime_preflight_tcp_difference_m": 6.902310561627279e-05,
+      "runtime_orientation_error_rad": 4.357109741028342e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004317098595666757,
+      "maximum_joint_speed_rad_s": 0.08669220489025693,
+      "maximum_joint_acceleration_rad_s2": 0.026098692002330337,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.62,
+      "runtime_tcp_m": [
+        -0.09949758353982595,
+        0.06086039715950253,
+        1.2444161007109156
+      ],
+      "preflight_tcp_m": [
+        -0.09949607900880639,
+        0.06084579601386256,
+        1.244350683212653
+      ],
+      "runtime_error_from_actual_start_line_m": 6.704682906058324e-05,
+      "runtime_preflight_tcp_difference_m": 6.704406123235047e-05,
+      "runtime_orientation_error_rad": 1.0664325346467129e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004316956183364196,
+      "maximum_joint_speed_rad_s": 0.08536816150324526,
+      "maximum_joint_acceleration_rad_s2": 0.026387322275301106,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.625,
+      "runtime_tcp_m": [
+        -0.09949753963754167,
+        0.060859969719302416,
+        1.24296732472742
+      ],
+      "preflight_tcp_m": [
+        -0.09949607907056277,
+        0.06084579517861561,
+        1.2429038185895924
+      ],
+      "runtime_error_from_actual_start_line_m": 6.508657266503923e-05,
+      "runtime_preflight_tcp_difference_m": 6.508517804659196e-05,
+      "runtime_orientation_error_rad": 5.466641598842535e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004316866902039473,
+      "maximum_joint_speed_rad_s": 0.08402999763630867,
+      "maximum_joint_acceleration_rad_s2": 0.026658525814427007,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.63,
+      "runtime_tcp_m": [
+        -0.09949749575904701,
+        0.06085954417661126,
+        1.2415339171236648
+      ],
+      "preflight_tcp_m": [
+        -0.09949607869714037,
+        0.06084579166626106,
+        1.2414723019606888
+      ],
+      "runtime_error_from_actual_start_line_m": 6.31432369180503e-05,
+      "runtime_preflight_tcp_difference_m": 6.314719244698249e-05,
+      "runtime_orientation_error_rad": 1.3597758177343248e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004316905342368116,
+      "maximum_joint_speed_rad_s": 0.08267850366799503,
+      "maximum_joint_acceleration_rad_s2": 0.026917160377096103,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.635,
+      "runtime_tcp_m": [
+        -0.0994974524403239,
+        0.060859124894624986,
+        1.2401164114296872
+      ],
+      "preflight_tcp_m": [
+        -0.09949607839347449,
+        0.060845789766319845,
+        1.2400566663429688
+      ],
+      "runtime_error_from_actual_start_line_m": 6.122395914906057e-05,
+      "runtime_preflight_tcp_difference_m": 6.123062173980154e-05,
+      "runtime_orientation_error_rad": 2.3284011154797024e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004316889006904245,
+      "maximum_joint_speed_rad_s": 0.08131431010906845,
+      "maximum_joint_acceleration_rad_s2": 0.027160617950901834,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.64,
+      "runtime_tcp_m": [
+        -0.09949741045332386,
+        0.06085871599999922,
+        1.2387153300244038
+      ],
+      "preflight_tcp_m": [
+        -0.09949607890887836,
+        0.06084579352401818,
+        1.2386574335787475
+      ],
+      "runtime_error_from_actual_start_line_m": 5.9334920283406045e-05,
+      "runtime_preflight_tcp_difference_m": 5.9336007750179305e-05,
+      "runtime_orientation_error_rad": 3.6259527513378636e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0043165007272805145,
+      "maximum_joint_speed_rad_s": 0.07993826104669817,
+      "maximum_joint_acceleration_rad_s2": 0.027387199490077157,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.645,
+      "runtime_tcp_m": [
+        -0.09949736951692607,
+        0.060858315975995725,
+        1.2373311773554525
+      ],
+      "preflight_tcp_m": [
+        -0.0994960799566029,
+        0.06084580123769697,
+        1.237275107360073
+      ],
+      "runtime_error_from_actual_start_line_m": 5.7473906966753867e-05,
+      "runtime_preflight_tcp_difference_m": 5.7464128135524656e-05,
+      "runtime_orientation_error_rad": 3.6004065361532595e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004315611119618368,
+      "maximum_joint_speed_rad_s": 0.0785513016618732,
+      "maximum_joint_acceleration_rad_s2": 0.027592724764098076,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.65,
+      "runtime_tcp_m": [
+        -0.0994973283462814,
+        0.06085791482930609,
+        1.2359644372727687
+      ],
+      "preflight_tcp_m": [
+        -0.09949608025450968,
+        0.060845802571892316,
+        1.235910170486308
+      ],
+      "runtime_error_from_actual_start_line_m": 5.562747600937808e-05,
+      "runtime_preflight_tcp_difference_m": 5.561608243574226e-05,
+      "runtime_orientation_error_rad": 4.214627179109398e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004315023011095542,
+      "maximum_joint_speed_rad_s": 0.07715440333966447,
+      "maximum_joint_acceleration_rad_s2": 0.02778178462482316,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.655,
+      "runtime_tcp_m": [
+        -0.09949728620929514,
+        0.06085750979364276,
+        1.2346155917075397
+      ],
+      "preflight_tcp_m": [
+        -0.0994960790601907,
+        0.06084579459892637,
+        1.234563104192893
+      ],
+      "runtime_error_from_actual_start_line_m": 5.37930194331428e-05,
+      "runtime_preflight_tcp_difference_m": 5.3792584897731346e-05,
+      "runtime_orientation_error_rad": 1.844831559429722e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004315794784056803,
+      "maximum_joint_speed_rad_s": 0.07574836095387837,
+      "maximum_joint_acceleration_rad_s2": 0.027955271142311798,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.66,
+      "runtime_tcp_m": [
+        -0.09949724414161472,
+        0.06085710922761843,
+        1.2332851232020534
+      ],
+      "preflight_tcp_m": [
+        -0.09949607739331769,
+        0.06084578573307101,
+        1.233234390739656
+      ],
+      "runtime_error_from_actual_start_line_m": 5.198249398550882e-05,
+      "runtime_preflight_tcp_difference_m": 5.1993899365872515e-05,
+      "runtime_orientation_error_rad": 4.1885881720144726e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.00431859645351218,
+      "maximum_joint_speed_rad_s": 0.07433357109136772,
+      "maximum_joint_acceleration_rad_s2": 0.028128767200836173,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.665,
+      "runtime_tcp_m": [
+        -0.09949720429797813,
+        0.06085672323060348,
+        1.231973503392559
+      ],
+      "preflight_tcp_m": [
+        -0.09949607735806695,
+        0.06084578601255126,
+        1.2319245014164875
+      ],
+      "runtime_error_from_actual_start_line_m": 5.0209504938507605e-05,
+      "runtime_preflight_tcp_difference_m": 5.022037824625206e-05,
+      "runtime_orientation_error_rad": 4.019261995006317e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004322761963855337,
+      "maximum_joint_speed_rad_s": 0.07291042248696504,
+      "maximum_joint_acceleration_rad_s2": 0.028286294965329035,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.67,
+      "runtime_tcp_m": [
+        -0.09949716669455752,
+        0.06085635050680951,
+        1.2306811781275273
+      ],
+      "preflight_tcp_m": [
+        -0.09949607893185837,
+        0.060845793890387696,
+        1.2306338813609279
+      ],
+      "runtime_error_from_actual_start_line_m": 4.8472238326902985e-05,
+      "runtime_preflight_tcp_difference_m": 4.8472770796885635e-05,
+      "runtime_orientation_error_rad": 1.807130583945416e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004327338929596414,
+      "maximum_joint_speed_rad_s": 0.07147973383187214,
+      "maximum_joint_acceleration_rad_s2": 0.02842771937531778,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.675,
+      "runtime_tcp_m": [
+        -0.09949712906056318,
+        0.060855980853258225,
+        1.2294085712270388
+      ],
+      "preflight_tcp_m": [
+        -0.0994960798303826,
+        0.06084579885833412,
+        1.229362953500522
+      ],
+      "runtime_error_from_actual_start_line_m": 4.675805092067049e-05,
+      "runtime_preflight_tcp_difference_m": 4.67520146857551e-05,
+      "runtime_orientation_error_rad": 2.3408913648553954e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004331579773039551,
+      "maximum_joint_speed_rad_s": 0.07004243457734612,
+      "maximum_joint_acceleration_rad_s2": 0.028548181331084645,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.68,
+      "runtime_tcp_m": [
+        -0.09949709096172278,
+        0.06085561158075948,
+        1.2281561013231803
+      ],
+      "preflight_tcp_m": [
+        -0.09949607968865945,
+        0.0608457982808386,
+        1.228112135947715
+      ],
+      "runtime_error_from_actual_start_line_m": 4.506395180812135e-05,
+      "runtime_preflight_tcp_difference_m": 4.505860371067662e-05,
+      "runtime_orientation_error_rad": 2.1140824865999508e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004335387883072528,
+      "maximum_joint_speed_rad_s": 0.06859945548084133,
+      "maximum_joint_acceleration_rad_s2": 0.028653228730351546,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.685,
+      "runtime_tcp_m": [
+        -0.09949705294071605,
+        0.06085524539857778,
+        1.2269241791484793
+      ],
+      "preflight_tcp_m": [
+        -0.09949607912692876,
+        0.06084579501291314,
+        1.226881839072781
+      ],
+      "runtime_error_from_actual_start_line_m": 4.339386244394884e-05,
+      "runtime_preflight_tcp_difference_m": 4.339285785294765e-05,
+      "runtime_orientation_error_rad": 4.138307228827564e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0043388459403790325,
+      "maximum_joint_speed_rad_s": 0.06715155262077097,
+      "maximum_joint_acceleration_rad_s2": 0.028743409993341455,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.6900000000000001,
+      "runtime_tcp_m": [
+        -0.09949701569625542,
+        0.06085488662377963,
+        1.2257132029497892
+      ],
+      "preflight_tcp_m": [
+        -0.09949607887219349,
+        0.06084579340193936,
+        1.2256724607377663
+      ],
+      "runtime_error_from_actual_start_line_m": 4.1753680719952864e-05,
+      "runtime_preflight_tcp_difference_m": 4.175514535103291e-05,
+      "runtime_orientation_error_rad": 6.418534514064018e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0043420588508370495,
+      "maximum_joint_speed_rad_s": 0.06569942047784383,
+      "maximum_joint_acceleration_rad_s2": 0.028821512476248583,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.6950000000000001,
+      "runtime_tcp_m": [
+        -0.09949697960174254,
+        0.06085453638826117,
+        1.224523552868487
+      ],
+      "preflight_tcp_m": [
+        -0.09949607907686642,
+        0.06084579396249208,
+        1.2244843803779135
+      ],
+      "runtime_error_from_actual_start_line_m": 4.014512588163017e-05,
+      "runtime_preflight_tcp_difference_m": 4.014629461247498e-05,
+      "runtime_orientation_error_rad": 6.221427514827474e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004345355706255827,
+      "maximum_joint_speed_rad_s": 0.06424368485621046,
+      "maximum_joint_acceleration_rad_s2": 0.028885645057758372,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.7000000000000001,
+      "runtime_tcp_m": [
+        -0.09949694444767315,
+        0.060854193451154406,
+        1.223355591777891
+      ],
+      "preflight_tcp_m": [
+        -0.09949607925502478,
+        0.060845794707972654,
+        1.2233179601171176
+      ],
+      "runtime_error_from_actual_start_line_m": 3.856711072484805e-05,
+      "runtime_preflight_tcp_difference_m": 3.8567205472082306e-05,
+      "runtime_orientation_error_rad": 1.749870614840501e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004349144811710948,
+      "maximum_joint_speed_rad_s": 0.06278508368194018,
+      "maximum_joint_acceleration_rad_s2": 0.02893514100722159,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.705,
+      "runtime_tcp_m": [
+        -0.09949690961460927,
+        0.06085385622081239,
+        1.2222096671211957
+      ],
+      "preflight_tcp_m": [
+        -0.09949607860728599,
+        0.06084579355948275,
+        1.2221735467996948
+      ],
+      "runtime_error_from_actual_start_line_m": 3.701836255057304e-05,
+      "runtime_preflight_tcp_difference_m": 3.701857244974364e-05,
+      "runtime_orientation_error_rad": 7.261290232813374e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004353768343464737,
+      "maximum_joint_speed_rad_s": 0.06132434519831027,
+      "maximum_joint_acceleration_rad_s2": 0.028970752677223207,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.71,
+      "runtime_tcp_m": [
+        -0.09949687504669681,
+        0.06085352450376463,
+        1.2210861115318774
+      ],
+      "preflight_tcp_m": [
+        -0.0994960773872424,
+        0.06084579099719485,
+        1.2210514729424795
+      ],
+      "runtime_error_from_actual_start_line_m": 3.549881470656231e-05,
+      "runtime_preflight_tcp_difference_m": 3.5500355772105375e-05,
+      "runtime_orientation_error_rad": 2.0436087981216343e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004358706657996536,
+      "maximum_joint_speed_rad_s": 0.0598621425734776,
+      "maximum_joint_acceleration_rad_s2": 0.02899282781524557,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.715,
+      "runtime_tcp_m": [
+        -0.0994968414884278,
+        0.0608531998681381,
+        1.2199852426609443
+      ],
+      "preflight_tcp_m": [
+        -0.09949607705648396,
+        0.06084579016644275,
+        1.219952056383911
+      ],
+      "runtime_error_from_actual_start_line_m": 3.400990596645669e-05,
+      "runtime_preflight_tcp_difference_m": 3.4012012859311556e-05,
+      "runtime_orientation_error_rad": 3.3535410379418097e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00436244591232654,
+      "maximum_joint_speed_rad_s": 0.058399188706411774,
+      "maximum_joint_acceleration_rad_s2": 0.02900055624632806,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.72,
+      "runtime_tcp_m": [
+        -0.09949680931699194,
+        0.06085288344357829,
+        1.2189073615450698
+      ],
+      "preflight_tcp_m": [
+        -0.09949607845978366,
+        0.060845793130080206,
+        1.2188755980388084
+      ],
+      "runtime_error_from_actual_start_line_m": 3.2552866384637185e-05,
+      "runtime_preflight_tcp_difference_m": 3.255344878473721e-05,
+      "runtime_orientation_error_rad": 1.040766704713731e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004363584618934768,
+      "maximum_joint_speed_rad_s": 0.056936204190970646,
+      "maximum_joint_acceleration_rad_s2": 0.028994062000922936,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.725,
+      "runtime_tcp_m": [
+        -0.0994967784185267,
+        0.06085257546255166,
+        1.217852751963038
+      ],
+      "preflight_tcp_m": [
+        -0.09949608149429205,
+        0.060845799993567595,
+        1.2178223811786497
+      ],
+      "runtime_error_from_actual_start_line_m": 3.112837038563579e-05,
+      "runtime_preflight_tcp_difference_m": 3.1125186388231974e-05,
+      "runtime_orientation_error_rad": 6.203986657781642e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004361389004995997,
+      "maximum_joint_speed_rad_s": 0.05547391556111725,
+      "maximum_joint_acceleration_rad_s2": 0.02897287126223538,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.73,
+      "runtime_tcp_m": [
+        -0.09949674783179559,
+        0.06085227354717534,
+        1.2168216791087585
+      ],
+      "preflight_tcp_m": [
+        -0.09949608378314835,
+        0.06084580513589171,
+        1.2167926695923559
+      ],
+      "runtime_error_from_actual_start_line_m": 2.9735244027122886e-05,
+      "runtime_preflight_tcp_difference_m": 2.972933478995876e-05,
+      "runtime_orientation_error_rad": 1.114219182957932e-08,
+      "runtime_preflight_joint_max_difference_rad": 0.004358813461501965,
+      "maximum_joint_speed_rad_s": 0.054013055201248356,
+      "maximum_joint_acceleration_rad_s2": 0.0289375845736089,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.735,
+      "runtime_tcp_m": [
+        -0.09949671695176454,
+        0.06085197614593318,
+        1.2158143908016132
+      ],
+      "preflight_tcp_m": [
+        -0.09949608331680385,
+        0.060845803947267435,
+        1.2157867099941142
+      ],
+      "runtime_error_from_actual_start_line_m": 2.8372804726793908e-05,
+      "runtime_preflight_tcp_difference_m": 2.836766880502919e-05,
+      "runtime_orientation_error_rad": 8.881423208991939e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004360035556235986,
+      "maximum_joint_speed_rad_s": 0.052554325067674615,
+      "maximum_joint_acceleration_rad_s2": 0.02888843187606315,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.74,
+      "runtime_tcp_m": [
+        -0.0994966859978364,
+        0.06085168392359585,
+        1.2148311176452122
+      ],
+      "preflight_tcp_m": [
+        -0.09949607966581633,
+        0.06084579578630994,
+        1.214804732560628
+      ],
+      "runtime_error_from_actual_start_line_m": 2.704171372868654e-05,
+      "runtime_preflight_tcp_difference_m": 2.7040903974109325e-05,
+      "runtime_orientation_error_rad": 1.2176868901279088e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004368663065553502,
+      "maximum_joint_speed_rad_s": 0.05109842351374302,
+      "maximum_joint_acceleration_rad_s2": 0.028825457010542697,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.745,
+      "runtime_tcp_m": [
+        -0.09949665581265943,
+        0.06085139904941959,
+        1.213872072254143
+      ],
+      "preflight_tcp_m": [
+        -0.09949607417873826,
+        0.06084578398949004,
+        1.213846950147917
+      ],
+      "runtime_error_from_actual_start_line_m": 2.5743445184754872e-05,
+      "runtime_preflight_tcp_difference_m": 2.574854204142699e-05,
+      "runtime_orientation_error_rad": 5.894092768290517e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004385903979509664,
+      "maximum_joint_speed_rad_s": 0.04964599659897354,
+      "maximum_joint_acceleration_rad_s2": 0.02875093050994607,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.75,
+      "runtime_tcp_m": [
+        -0.09949662702409853,
+        0.060851122912712004,
+        1.2129374482144426
+      ],
+      "preflight_tcp_m": [
+        -0.09949607061171337,
+        0.06084577653873521,
+        1.2129135577367247
+      ],
+      "runtime_error_from_actual_start_line_m": 2.447913834061577e-05,
+      "runtime_preflight_tcp_difference_m": 2.4487716002746053e-05,
+      "runtime_orientation_error_rad": 8.509413026865784e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00440227029314294,
+      "maximum_joint_speed_rad_s": 0.048197670917113175,
+      "maximum_joint_acceleration_rad_s2": 0.028662565102814685,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.755,
+      "runtime_tcp_m": [
+        -0.09949659971924893,
+        0.06085085563371818,
+        1.2120274193039404
+      ],
+      "preflight_tcp_m": [
+        -0.09949607123316134,
+        0.06084577798373449,
+        1.2120047297520895
+      ],
+      "runtime_error_from_actual_start_line_m": 2.3249107003894623e-05,
+      "runtime_preflight_tcp_difference_m": 2.325677514396821e-05,
+      "runtime_orientation_error_rad": 6.504176736331897e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004405985159819437,
+      "maximum_joint_speed_rad_s": 0.046754161241887665,
+      "maximum_joint_acceleration_rad_s2": 0.028560008464123092,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.76,
+      "runtime_tcp_m": [
+        -0.0994965735834656,
+        0.06085059653880562,
+        1.2111421392432715
+      ],
+      "preflight_tcp_m": [
+        -0.09949607591028996,
+        0.06084578786532627,
+        1.211120619579346
+      ],
+      "runtime_error_from_actual_start_line_m": 2.205308697239623e-05,
+      "runtime_preflight_tcp_difference_m": 2.205599588971303e-05,
+      "runtime_orientation_error_rad": 1.991117013938686e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004387138364100263,
+      "maximum_joint_speed_rad_s": 0.045316183930404874,
+      "maximum_joint_acceleration_rad_s2": 0.02844324096739471,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.765,
+      "runtime_tcp_m": [
+        -0.09949654801412951,
+        0.06085034441708942,
+        1.2102817414788531
+      ],
+      "preflight_tcp_m": [
+        -0.0994960825698581,
+        0.06084580180663935,
+        1.2102613596953864
+      ],
+      "runtime_error_from_actual_start_line_m": 2.089046588057555e-05,
+      "runtime_preflight_tcp_difference_m": 2.0887054492108873e-05,
+      "runtime_orientation_error_rad": 1.6431927183845052e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004338181786849915,
+      "maximum_joint_speed_rad_s": 0.0438844562252881,
+      "maximum_joint_acceleration_rad_s2": 0.028312269514017913,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.77,
+      "runtime_tcp_m": [
+        -0.09949652279228287,
+        0.0608500987938493,
+        1.2094463393339399
+      ],
+      "preflight_tcp_m": [
+        -0.0994960878136769,
+        0.06084581267849378,
+        1.2094270617884286
+      ],
+      "runtime_error_from_actual_start_line_m": 1.976110627078116e-05,
+      "runtime_preflight_tcp_difference_m": 1.975306943657217e-05,
+      "runtime_orientation_error_rad": 2.7705839727035007e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.00426472115238502,
+      "maximum_joint_speed_rad_s": 0.04245969547271827,
+      "maximum_joint_acceleration_rad_s2": 0.028167013032431725,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.775,
+      "runtime_tcp_m": [
+        -0.0994964981341788,
+        0.06084986005711264,
+        1.2086360256204625
+      ],
+      "preflight_tcp_m": [
+        -0.09949608933997516,
+        0.06084581570549638,
+        1.2086178175558402
+      ],
+      "runtime_error_from_actual_start_line_m": 1.8665379308181074e-05,
+      "runtime_preflight_tcp_difference_m": 1.865629947191243e-05,
+      "runtime_orientation_error_rad": 2.4565501264325943e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004182087599124251,
+      "maximum_joint_speed_rad_s": 0.04104262624829787,
+      "maximum_joint_acceleration_rad_s2": 0.028007338694543787,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.78,
+      "runtime_tcp_m": [
+        -0.09949647418425187,
+        0.06084962851906841,
+        1.2078508718482128
+      ],
+      "preflight_tcp_m": [
+        -0.09949608685176956,
+        0.06084581042742638,
+        1.2078336985068179
+      ],
+      "runtime_error_from_actual_start_line_m": 1.7603560851049092e-05,
+      "runtime_preflight_tcp_difference_m": 1.759691748307841e-05,
+      "runtime_orientation_error_rad": 1.495889160106864e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004103573237252189,
+      "maximum_joint_speed_rad_s": 0.039633978582866825,
+      "maximum_joint_acceleration_rad_s2": 0.02783313775883403,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.785,
+      "runtime_tcp_m": [
+        -0.09949645101281993,
+        0.06084940439565288,
+        1.2070909278309776
+      ],
+      "preflight_tcp_m": [
+        -0.09949608163075359,
+        0.060845799668157924,
+        1.2070747551386385
+      ],
+      "runtime_error_from_actual_start_line_m": 1.6575826079754978e-05,
+      "runtime_preflight_tcp_difference_m": 1.6573668300029044e-05,
+      "runtime_orientation_error_rad": 6.043669242537029e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004040155071090568,
+      "maximum_joint_speed_rad_s": 0.03823448858657436,
+      "maximum_joint_acceleration_rad_s2": 0.027644277905307692,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.79,
+      "runtime_tcp_m": [
+        -0.09949642863497284,
+        0.06084918782019098,
+        1.2063562213072672
+      ],
+      "preflight_tcp_m": [
+        -0.09949607607589832,
+        0.06084578844896836,
+        1.2063410161380501
+      ],
+      "runtime_error_from_actual_start_line_m": 1.558226629386034e-05,
+      "runtime_preflight_tcp_difference_m": 1.5584517750935463e-05,
+      "runtime_orientation_error_rad": 6.151729759995949e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004000246880539626,
+      "maximum_joint_speed_rad_s": 0.03684489772500184,
+      "maximum_joint_acceleration_rad_s2": 0.027440738727166524,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.795,
+      "runtime_tcp_m": [
+        -0.09949640705802486,
+        0.06084897881097769,
+        1.205646757571374
+      ],
+      "preflight_tcp_m": [
+        -0.09949607221721468,
+        0.06084578082398714,
+        1.2056324874062392
+      ],
+      "runtime_error_from_actual_start_line_m": 1.4622906416117393e-05,
+      "runtime_preflight_tcp_difference_m": 1.4627947639259287e-05,
+      "runtime_orientation_error_rad": 8.188564224842297e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.003983028840085279,
+      "maximum_joint_speed_rad_s": 0.03546594942582166,
+      "maximum_joint_acceleration_rad_s2": 0.02722227574005961,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.8,
+      "runtime_tcp_m": [
+        -0.099496386290607,
+        0.060848777319933864,
+        1.2049625190840891
+      ],
+      "preflight_tcp_m": [
+        -0.09949607074617933,
+        0.06084577802301341,
+        1.204949151460402
+      ],
+      "runtime_error_from_actual_start_line_m": 1.3697719444937201e-05,
+      "runtime_preflight_tcp_difference_m": 1.3703602203161827e-05,
+      "runtime_orientation_error_rad": 8.487576481465497e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.003981377394026042,
+      "maximum_joint_speed_rad_s": 0.03409840638631022,
+      "maximum_joint_acceleration_rad_s2": 0.026988565466091657,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.805,
+      "runtime_tcp_m": [
+        -0.09949636632250264,
+        0.06084858329632739,
+        1.2043034650718147
+      ],
+      "preflight_tcp_m": [
+        -0.09949607159740606,
+        0.060845779795146784,
+        1.2042909673664555
+      ],
+      "runtime_error_from_actual_start_line_m": 1.2806632200270997e-05,
+      "runtime_preflight_tcp_difference_m": 1.2811679085872047e-05,
+      "runtime_orientation_error_rad": 7.79755636854629e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.003989097957882937,
+      "maximum_joint_speed_rad_s": 0.03274304341266793,
+      "maximum_joint_acceleration_rad_s2": 0.0267393827536599,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.81,
+      "runtime_tcp_m": [
+        -0.09949634712996272,
+        0.060848396688493844,
+        1.2036695311377403
+      ],
+      "preflight_tcp_m": [
+        -0.09949607416821088,
+        0.060845784887622656,
+        1.2036578705151904
+      ],
+      "runtime_error_from_actual_start_line_m": 1.1949529907832183e-05,
+      "runtime_preflight_tcp_difference_m": 1.1952662053359538e-05,
+      "runtime_orientation_error_rad": 6.992197051318739e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004001068082756576,
+      "maximum_joint_speed_rad_s": 0.03140064729886088,
+      "maximum_joint_acceleration_rad_s2": 0.026474477495881103,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.8150000000000001,
+      "runtime_tcp_m": [
+        -0.09949632868092141,
+        0.060848217443484245,
+        1.2030606288726766
+      ],
+      "preflight_tcp_m": [
+        -0.0994960774962026,
+        0.060845791409731904,
+        1.2030497723280797
+      ],
+      "runtime_error_from_actual_start_line_m": 1.1126259999685213e-05,
+      "runtime_preflight_tcp_difference_m": 1.1127142225851005e-05,
+      "runtime_orientation_error_rad": 6.468357562277077e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.0040131398995328915,
+      "maximum_joint_speed_rad_s": 0.03009150698935246,
+      "maximum_joint_acceleration_rad_s2": 0.026193574484059064,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.8200000000000001,
+      "runtime_tcp_m": [
+        -0.09949631094133662,
+        0.06084804550753586,
+        1.202476645466955
+      ],
+      "preflight_tcp_m": [
+        -0.09949608044521889,
+        0.06084579719096725,
+        1.2024665599241222
+      ],
+      "runtime_error_from_actual_start_line_m": 1.033663715464933e-05,
+      "runtime_preflight_tcp_difference_m": 1.033567753400233e-05,
+      "runtime_orientation_error_rad": 6.243234187664538e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.0040221310672640675,
+      "maximum_joint_speed_rad_s": 0.02883003357569472,
+      "maximum_joint_acceleration_rad_s2": 0.02589646675548168,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.8250000000000001,
+      "runtime_tcp_m": [
+        -0.09949629391573334,
+        0.060847880841311736,
+        1.201917443352308
+      ],
+      "preflight_tcp_m": [
+        -0.09949608244358707,
+        0.060845801135052426,
+        1.201908095864779
+      ],
+      "runtime_error_from_actual_start_line_m": 9.58048158281693e-06,
+      "runtime_preflight_tcp_difference_m": 9.578383042076245e-06,
+      "runtime_orientation_error_rad": 6.925570080334436e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004027254061428787,
+      "maximum_joint_speed_rad_s": 0.027577146531303706,
+      "maximum_joint_acceleration_rad_s2": 0.025582784517931976,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.8300000000000001,
+      "runtime_tcp_m": [
+        -0.09949627763394472,
+        0.060847723411485,
+        1.2013828597972676
+      ],
+      "preflight_tcp_m": [
+        -0.09949608353983974,
+        0.06084580331224202,
+        1.2013742176951876
+      ],
+      "runtime_error_from_actual_start_line_m": 8.857605590524517e-06,
+      "runtime_preflight_tcp_difference_m": 8.854963691901781e-06,
+      "runtime_orientation_error_rad": 8.311090001856897e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.0040293989611236425,
+      "maximum_joint_speed_rad_s": 0.026334060316656922,
+      "maximum_joint_acceleration_rad_s2": 0.025252087541610485,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.835,
+      "runtime_tcp_m": [
+        -0.09949626211175842,
+        0.06084757317255303,
+        1.2008727064794702
+      ],
+      "preflight_tcp_m": [
+        -0.09949608384616399,
+        0.060845803929684854,
+        1.200864737402542
+      ],
+      "runtime_error_from_actual_start_line_m": 8.167774902081345e-06,
+      "runtime_preflight_tcp_difference_m": 8.16505885068556e-06,
+      "runtime_orientation_error_rad": 9.431070873078616e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.0040293669784106645,
+      "maximum_joint_speed_rad_s": 0.025102011329198547,
+      "maximum_joint_acceleration_rad_s2": 0.024904004878889382,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.84,
+      "runtime_tcp_m": [
+        -0.0994962473531862,
+        0.06084743006733851,
+        1.2003867690939614
+      ],
+      "preflight_tcp_m": [
+        -0.09949608349946608,
+        0.060845803252186394,
+        1.2003794410171447
+      ],
+      "runtime_error_from_actual_start_line_m": 7.510710110877439e-06,
+      "runtime_preflight_tcp_difference_m": 7.5082678037017956e-06,
+      "runtime_orientation_error_rad": 9.73230953134459e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.00402782131181223,
+      "maximum_joint_speed_rad_s": 0.023882257215362985,
+      "maximum_joint_acceleration_rad_s2": 0.024538140284415283,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.845,
+      "runtime_tcp_m": [
+        -0.09949623335364,
+        0.06084729402796242,
+        1.1999248069623092
+      ],
+      "preflight_tcp_m": [
+        -0.09949608264750127,
+        0.06084580157096467,
+        1.199918088220159
+      ],
+      "runtime_error_from_actual_start_line_m": 6.8860890426670595e-06,
+      "runtime_preflight_tcp_difference_m": 6.884158358952909e-06,
+      "runtime_orientation_error_rad": 9.162888277730119e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004025302389292107,
+      "maximum_joint_speed_rad_s": 0.022676076947948938,
+      "maximum_joint_acceleration_rad_s2": 0.02415407239353956,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.85,
+      "runtime_tcp_m": [
+        -0.09949622010249717,
+        0.060847164976608054,
+        1.1994865526411975
+      ],
+      "preflight_tcp_m": [
+        -0.09949608143795831,
+        0.06084579917949289,
+        1.1994804119523512
+      ],
+      "runtime_error_from_actual_start_line_m": 6.293548552284138e-06,
+      "runtime_preflight_tcp_difference_m": 6.292272174756126e-06,
+      "runtime_orientation_error_rad": 8.097216030145014e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004022242318720282,
+      "maximum_joint_speed_rad_s": 0.021484770897869997,
+      "maximum_joint_acceleration_rad_s2": 0.023751354972624622,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.855,
+      "runtime_tcp_m": [
+        -0.09949620758512523,
+        0.06084704282610137,
+        1.1990717115305662
+      ],
+      "preflight_tcp_m": [
+        -0.09949608001020774,
+        0.060845796355556966,
+        1.1990661180233981
+      ],
+      "runtime_error_from_actual_start_line_m": 5.7326858262319915e-06,
+      "runtime_preflight_tcp_difference_m": 5.732127582089836e-06,
+      "runtime_orientation_error_rad": 7.390562542190828e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004018978503242898,
+      "maximum_joint_speed_rad_s": 0.02030966090065414,
+      "maximum_joint_acceleration_rad_s2": 0.023329517245647923,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.86,
+      "runtime_tcp_m": [
+        -0.09949619578444185,
+        0.06084692748033968,
+        1.1986799614813644
+      ],
+      "preflight_tcp_m": [
+        -0.09949607848941674,
+        0.06084579334867488,
+        1.1986748847214626
+      ],
+      "runtime_error_from_actual_start_line_m": 5.203059263782658e-06,
+      "runtime_preflight_tcp_difference_m": 5.2032205273795614e-06,
+      "runtime_orientation_error_rad": 8.09730916274106e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.00401576638770057,
+      "maximum_joint_speed_rad_s": 0.01915209031804259,
+      "maximum_joint_acceleration_rad_s2": 0.022888064301851894,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.865,
+      "runtime_tcp_m": [
+        -0.09949618468207204,
+        0.06084681883458674,
+        1.1983109524029734
+      ],
+      "preflight_tcp_m": [
+        -0.0994960769827097,
+        0.06084579037205385,
+        1.1983063624227759
+      ],
+      "runtime_error_from_actual_start_line_m": 4.704188998121073e-06,
+      "runtime_preflight_tcp_difference_m": 4.705024181387654e-06,
+      "runtime_orientation_error_rad": 1.0339005798846941e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004012791310986752,
+      "maximum_joint_speed_rad_s": 0.018013424095000383,
+      "maximum_joint_acceleration_rad_s2": 0.02242647758953423,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.87,
+      "runtime_tcp_m": [
+        -0.09949617425916792,
+        0.060846716775654223,
+        1.197964305870347
+      ],
+      "preflight_tcp_m": [
+        -0.09949607557708268,
+        0.060845787598324,
+        1.1979601732010536
+      ],
+      "runtime_error_from_actual_start_line_m": 4.235557107633631e-06,
+      "runtime_preflight_tcp_difference_m": 4.236987627303607e-06,
+      "runtime_orientation_error_rad": 1.3371333590825214e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004010179447897999,
+      "maximum_joint_speed_rad_s": 0.016895048812418236,
+      "maximum_joint_acceleration_rad_s2": 0.021957464584692114,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.875,
+      "runtime_tcp_m": [
+        -0.0994961644969519,
+        0.060846621181996595,
+        1.1976396147309296
+      ],
+      "preflight_tcp_m": [
+        -0.09949607433875483,
+        0.06084578515832205,
+        1.1976359104366208
+      ],
+      "runtime_error_from_actual_start_line_m": 3.796607587263953e-06,
+      "runtime_preflight_tcp_difference_m": 3.7985339818756454e-06,
+      "runtime_orientation_error_rad": 1.6543552254263192e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0040080078325644974,
+      "maximum_joint_speed_rad_s": 0.01579837273573405,
+      "maximum_joint_acceleration_rad_s2": 0.021513254196881843,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.88,
+      "runtime_tcp_m": [
+        -0.09949615537702858,
+        0.06084653192372608,
+        1.1973364427113786
+      ],
+      "preflight_tcp_m": [
+        -0.09949607331368172,
+        0.060845783142270085,
+        1.1973331384251855
+      ],
+      "runtime_error_from_actual_start_line_m": 3.386746106506352e-06,
+      "runtime_preflight_tcp_difference_m": 3.389058174137582e-06,
+      "runtime_orientation_error_rad": 1.9463360947341874e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004006313463873146,
+      "maximum_joint_speed_rad_s": 0.014724825859636827,
+      "maximum_joint_acceleration_rad_s2": 0.021040483596762128,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.885,
+      "runtime_tcp_m": [
+        -0.0994961468815194,
+        0.06084644886257329,
+        1.1970543240241525
+      ],
+      "preflight_tcp_m": [
+        -0.09949607252895226,
+        0.06084578160274964,
+        1.1970513919862107
+      ],
+      "runtime_error_from_actual_start_line_m": 3.0053396192980435e-06,
+      "runtime_preflight_tcp_difference_m": 3.0079246115022732e-06,
+      "runtime_orientation_error_rad": 2.190060266440303e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004005101501334429,
+      "maximum_joint_speed_rad_s": 0.01367585994896307,
+      "maximum_joint_acceleration_rad_s2": 0.0205387208878805,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.89,
+      "runtime_tcp_m": [
+        -0.09949613899305809,
+        0.060846371851798337,
+        1.1967927629739763
+      ],
+      "preflight_tcp_m": [
+        -0.09949607199483636,
+        0.060845780558944865,
+        1.196790176070912
+      ],
+      "runtime_error_from_actual_start_line_m": 2.651715840918886e-06,
+      "runtime_preflight_tcp_difference_m": 2.6544648168470435e-06,
+      "runtime_orientation_error_rad": 2.3727198516819655e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004004352567536673,
+      "maximum_joint_speed_rad_s": 0.012652948575808644,
+      "maximum_joint_acceleration_rad_s2": 0.020007533475880284,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.895,
+      "runtime_tcp_m": [
+        -0.09949613169468646,
+        0.060846300736070856,
+        1.1965512335642368
+      ],
+      "preflight_tcp_m": [
+        -0.09949607170724677,
+        0.06084578000168847,
+        1.196548965369887
+      ],
+      "runtime_error_from_actual_start_line_m": 2.325162646177012e-06,
+      "runtime_preflight_tcp_difference_m": 2.3279751712199895e-06,
+      "runtime_orientation_error_rad": 2.488803942792805e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004004029180601887,
+      "maximum_joint_speed_rad_s": 0.011657587152802545,
+      "maximum_joint_acceleration_rad_s2": 0.01944648814572112,
+      "minimum_rigid_clearance_m": 0.022303322741378907
+    },
+    {
+      "fraction": 0.9,
+      "runtime_tcp_m": [
+        -0.09949612496968145,
+        0.060846235351325995,
+        1.1963291791033106
+      ],
+      "preflight_tcp_m": [
+        -0.09949607165043567,
+        0.06084577989892183,
+        1.1963272039204322
+      ],
+      "runtime_error_from_actual_start_line_m": 2.0249274008174103e-06,
+      "runtime_preflight_tcp_difference_m": 2.027714782069637e-06,
+      "runtime_orientation_error_rad": 2.538380713577446e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004004081346842048,
+      "maximum_joint_speed_rad_s": 0.01069129296239623,
+      "maximum_joint_acceleration_rad_s2": 0.018855151142749424,
+      "minimum_rigid_clearance_m": 0.022300386955770513
+    },
+    {
+      "fraction": 0.905,
+      "runtime_tcp_m": [
+        -0.0994961188013391,
+        0.06084617552460341,
+        1.1961260118108705
+      ],
+      "preflight_tcp_m": [
+        -0.09949607179975449,
+        0.06084578020123294,
+        1.1961243047135988
+      ],
+      "runtime_error_from_actual_start_line_m": 1.7502162572734387e-06,
+      "runtime_preflight_tcp_difference_m": 1.7529035374082114e-06,
+      "runtime_orientation_error_rad": 2.525815969624252e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004004451350053118,
+      "maximum_joint_speed_rad_s": 0.009755605181923543,
+      "maximum_joint_acceleration_rad_s2": 0.018233088259635873,
+      "minimum_rigid_clearance_m": 0.022295025568332228
+    },
+    {
+      "fraction": 0.91,
+      "runtime_tcp_m": [
+        -0.09949611317273967,
+        0.06084612107387872,
+        1.1959411124241681
+      ],
+      "preflight_tcp_m": [
+        -0.09949607212434505,
+        0.060845780847213454,
+        1.1959396493010443
+      ],
+      "runtime_error_from_actual_start_line_m": 1.50019343531893e-06,
+      "runtime_preflight_tcp_difference_m": 1.5027203431652797e-06,
+      "runtime_orientation_error_rad": 2.4586677697025954e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004005077779512478,
+      "maximum_joint_speed_rad_s": 0.008852084904080054,
+      "maximum_joint_acceleration_rad_s2": 0.017579864931331526,
+      "minimum_rigid_clearance_m": 0.022290178923230635
+    },
+    {
+      "fraction": 0.915,
+      "runtime_tcp_m": [
+        -0.09949610806650849,
+        0.060846071807892005,
+        1.1957738298043141
+      ],
+      "preflight_tcp_m": [
+        -0.09949607258964885,
+        0.06084578176842085,
+        1.1957725874017404
+      ],
+      "runtime_error_from_actual_start_line_m": 1.2739804937144777e-06,
+      "runtime_preflight_tcp_difference_m": 1.2763015543190236e-06,
+      "runtime_orientation_error_rad": 2.3466957937285264e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004005898843719657,
+      "maximum_joint_speed_rad_s": 0.007982315152364984,
+      "maximum_joint_acceleration_rad_s2": 0.016895046340301055,
+      "minimum_rigid_clearance_m": 0.02228582089011467
+    },
+    {
+      "fraction": 0.92,
+      "runtime_tcp_m": [
+        -0.09949610346459004,
+        0.06084602752597826,
+        1.1956234805425754
+      ],
+      "preflight_tcp_m": [
+        -0.0994960731596628,
+        0.06084578289381002,
+        1.1956224365085903
+      ],
+      "runtime_error_from_actual_start_line_m": 1.0706556185486314e-06,
+      "runtime_preflight_tcp_difference_m": 1.072739599472006e-06,
+      "runtime_orientation_error_rad": 2.200978017711019e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004006855021182865,
+      "maximum_joint_speed_rad_s": 0.007147900890904561,
+      "maximum_joint_acceleration_rad_s2": 0.016178197534402715,
+      "minimum_rigid_clearance_m": 0.022281925764391645
+    },
+    {
+      "fraction": 0.925,
+      "runtime_tcp_m": [
+        -0.09949609934804268,
+        0.0608459880178996,
+        1.19548934856668
+      ],
+      "preflight_tcp_m": [
+        -0.09949607379887858,
+        0.06084578415351481,
+        1.1954884814950015
+      ],
+      "runtime_error_from_actual_start_line_m": 8.892529253988107e-07,
+      "runtime_preflight_tcp_difference_m": 8.910817823037118e-07,
+      "runtime_orientation_error_rad": 2.033125279597727e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004007891103073535,
+      "maximum_joint_speed_rad_s": 0.006350469027955499,
+      "maximum_joint_acceleration_rad_s2": 0.01542888355985412,
+      "minimum_rigid_clearance_m": 0.022278468176210375
+    },
+    {
+      "fraction": 0.93,
+      "runtime_tcp_m": [
+        -0.09949609569686092,
+        0.06084595306368628,
+        1.1953706847471521
+      ],
+      "preflight_tcp_m": [
+        -0.09949607447387647,
+        0.06084578548194298,
+        1.1953699742214627
+      ],
+      "runtime_error_from_actual_start_line_m": 7.287617858593396e-07,
+      "runtime_preflight_tcp_difference_m": 7.303292483862843e-07,
+      "runtime_orientation_error_rad": 1.8546143346299012e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0040089576853095665,
+      "maximum_joint_speed_rad_s": 0.005591668412271433,
+      "maximum_joint_acceleration_rad_s2": 0.014646669611788546,
+      "minimum_rigid_clearance_m": 0.022275422996319315
+    },
+    {
+      "fraction": 0.935,
+      "runtime_tcp_m": [
+        -0.09949609248982763,
+        0.06084592243348546,
+        1.1952667065036628
+      ],
+      "preflight_tcp_m": [
+        -0.0994960751545614,
+        0.06084578682015932,
+        1.195266133142148
+      ],
+      "runtime_error_from_actual_start_line_m": 5.881261796109127e-07,
+      "runtime_preflight_tcp_difference_m": 5.894360970349576e-07,
+      "runtime_orientation_error_rad": 1.6762058301815244e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004010012169571142,
+      "maximum_joint_speed_rad_s": 0.004873169821373663,
+      "maximum_joint_acceleration_rad_s2": 0.013831121204941026,
+      "minimum_rigid_clearance_m": 0.022272765239465114
+    },
+    {
+      "fraction": 0.9400000000000001,
+      "runtime_tcp_m": [
+        -0.09949608970440371,
+        0.06084589588741517,
+        1.1951765974114186
+      ],
+      "preflight_tcp_m": [
+        -0.09949607581504823,
+        0.06084578811757625,
+        1.1951761429115664
+      ],
+      "runtime_error_from_actual_start_line_m": 4.662440768238661e-07,
+      "runtime_preflight_tcp_difference_m": 4.6730864321674977e-07,
+      "runtime_orientation_error_rad": 1.5074211758831112e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004011019333878596,
+      "maximum_joint_speed_rad_s": 0.004196665940648239,
+      "maximum_joint_acceleration_rad_s2": 0.012981804367007523,
+      "minimum_rigid_clearance_m": 0.022270469966052128
+    },
+    {
+      "fraction": 0.9450000000000001,
+      "runtime_tcp_m": [
+        -0.0994960873166447,
+        0.06084587317543179,
+        1.1950995068075632
+      ],
+      "preflight_tcp_m": [
+        -0.09949607643421406,
+        0.06084578933299456,
+        1.1950991539912883
+      ],
+      "runtime_error_from_actual_start_line_m": 3.619668464367316e-07,
+      "runtime_preflight_tcp_difference_m": 3.6280477585717003e-07,
+      "runtime_orientation_error_rad": 1.3560288528316373e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.0040119515336816125,
+      "maximum_joint_speed_rad_s": 0.0035638713320685507,
+      "maximum_joint_acceleration_rad_s2": 0.012098285857200668,
+      "minimum_rigid_clearance_m": 0.022268512182831726
+    },
+    {
+      "fraction": 0.9500000000000001,
+      "runtime_tcp_m": [
+        -0.09949608530114876,
+        0.06084585403719978,
+        1.195034549397614
+      ],
+      "preflight_tcp_m": [
+        -0.09949607699594906,
+        0.06084579043506337,
+        1.1950342822567348
+      ],
+      "runtime_error_from_actual_start_line_m": 2.7409869188441385e-07,
+      "runtime_preflight_tcp_difference_m": 2.7473342977405055e-07,
+      "runtime_orientation_error_rad": 1.2275172789501968e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004012788593925232,
+      "maximum_joint_speed_rad_s": 0.002976522391198003,
+      "maximum_joint_acceleration_rad_s2": 0.011180133412468478,
+      "minimum_rigid_clearance_m": 0.022266866743441853
+    },
+    {
+      "fraction": 0.9550000000000001,
+      "runtime_tcp_m": [
+        -0.0994960836310349,
+        0.060845838201972216,
+        1.1949808048619106
+      ],
+      "preflight_tcp_m": [
+        -0.09949607748914861,
+        0.060845791402234575,
+        1.194980608604042
+      ],
+      "runtime_error_from_actual_start_line_m": 2.013961035408114e-07,
+      "runtime_preflight_tcp_difference_m": 2.018541285358879e-07,
+      "runtime_orientation_error_rad": 1.1246324720341775e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004013517451312787,
+      "maximum_joint_speed_rad_s": 0.002436377291026394,
+      "maximum_joint_acceleration_rad_s2": 0.010226916023747624,
+      "minimum_rigid_clearance_m": 0.02226550824966169
+    },
+    {
+      "fraction": 0.96,
+      "runtime_tcp_m": [
+        -0.09949608227794061,
+        0.06084582538847552,
+        1.1949373174620894
+      ],
+      "preflight_tcp_m": [
+        -0.09949607790748623,
+        0.06084579222230479,
+        1.1949371785569847
+      ],
+      "runtime_error_from_actual_start_line_m": 1.425673427584489e-07,
+      "runtime_preflight_tcp_difference_m": 1.4287660367874386e-07,
+      "runtime_orientation_error_rad": 1.0471879607741656e-09,
+      "runtime_preflight_joint_max_difference_rad": 0.004014131604007931,
+      "maximum_joint_speed_rad_s": 0.0019452159110623585,
+      "maximum_joint_acceleration_rad_s2": 0.009238204244488495,
+      "minimum_rigid_clearance_m": 0.02226441095430984
+    },
+    {
+      "fraction": 0.965,
+      "runtime_tcp_m": [
+        -0.09949608121203564,
+        0.06084581530479907,
+        1.1949030956475635
+      ],
+      "preflight_tcp_m": [
+        -0.0994960782490246,
+        0.06084579289163492,
+        1.1949030018739664
+      ],
+      "runtime_error_from_actual_start_line_m": 9.627192516346604e-08,
+      "runtime_preflight_tcp_difference_m": 9.646044202981293e-08,
+      "runtime_orientation_error_rad": 9.924333480572322e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004014630423384402,
+      "maximum_joint_speed_rad_s": 0.001504839750005551,
+      "maximum_joint_acceleration_rad_s2": 0.008213570533513388,
+      "minimum_rigid_clearance_m": 0.02226354866676245
+    },
+    {
+      "fraction": 0.97,
+      "runtime_tcp_m": [
+        -0.09949608040205227,
+        0.060845807648290166,
+        1.1948771116620194
+      ],
+      "preflight_tcp_m": [
+        -0.09949607851570454,
+        0.060845793414148065,
+        1.194877052155044
+      ],
+      "runtime_error_from_actual_start_line_m": 6.112012778012463e-08,
+      "runtime_preflight_tcp_difference_m": 6.121477945806102e-08,
+      "runtime_orientation_error_rad": 9.559988514301112e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004015018379213198,
+      "maximum_joint_speed_rad_s": 0.001117071820212283,
+      "maximum_joint_acceleration_rad_s2": 0.0071525896340367285,
+      "minimum_rigid_clearance_m": 0.022262894662121915
+    },
+    {
+      "fraction": 0.975,
+      "runtime_tcp_m": [
+        -0.0994960798153231,
+        0.060845802105447065,
+        1.1948583011499183
+      ],
+      "preflight_tcp_m": [
+        -0.09949607871276588,
+        0.060845793800193365,
+        1.1948582664489893
+      ],
+      "runtime_error_from_actual_start_line_m": 3.5672501671393354e-08,
+      "runtime_preflight_tcp_difference_m": 3.569800199241086e-08,
+      "runtime_orientation_error_rad": 9.331069327583432e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.00401530422598767,
+      "maximum_joint_speed_rad_s": 0.0007837565220983316,
+      "maximum_joint_acceleration_rad_s2": 0.0060548389903985885,
+      "minimum_rigid_clearance_m": 0.02226242159512894
+    },
+    {
+      "fraction": 0.98,
+      "runtime_tcp_m": [
+        -0.09949607941781916,
+        0.06084579835181854,
+        1.1948455627630004
+      ],
+      "preflight_tcp_m": [
+        -0.09949607884813888,
+        0.06084579406536125,
+        1.1948455448603656
+      ],
+      "runtime_error_from_actual_start_line_m": 1.8439393385113032e-08,
+      "runtime_preflight_tcp_difference_m": 1.841745316737443e-08,
+      "runtime_orientation_error_rad": 9.195346210702074e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.0040155001940400115,
+      "maximum_joint_speed_rad_s": 0.0005067594965367361,
+      "maximum_joint_acceleration_rad_s2": 0.004919899203727749,
+      "minimum_rigid_clearance_m": 0.022262101419966988
+    },
+    {
+      "fraction": 0.985,
+      "runtime_tcp_m": [
+        -0.09949607917419313,
+        0.06084579605189806,
+        1.1948377577667857
+      ],
+      "preflight_tcp_m": [
+        -0.09949607893185596,
+        0.06084579422933323,
+        1.1948377501566154
+      ],
+      "runtime_error_from_actual_start_line_m": 7.880498166185479e-09,
+      "runtime_preflight_tcp_difference_m": 7.82912264886838e-09,
+      "runtime_orientation_error_rad": 9.120645011352265e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.00401562122486232,
+      "maximum_joint_speed_rad_s": 0.0002879674532685103,
+      "maximum_joint_acceleration_rad_s2": 0.00374735452734561,
+      "minimum_rigid_clearance_m": 0.022261905317168523
+    },
+    {
+      "fraction": 0.99,
+      "runtime_tcp_m": [
+        -0.099496079047814,
+        0.060845794859021966,
+        1.1948337096470765
+      ],
+      "preflight_tcp_m": [
+        -0.099496078975508,
+        0.06084579431482872,
+        1.1948337073751412
+      ],
+      "runtime_error_from_actual_start_line_m": 2.404658893593411e-09,
+      "runtime_preflight_tcp_difference_m": 2.3373199363858338e-09,
+      "runtime_orientation_error_rad": 9.084569414050258e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004015684285781862,
+      "maximum_joint_speed_rad_s": 0.0001292879733062643,
+      "maximum_joint_acceleration_rad_s2": 0.002536793402262764,
+      "minimum_rigid_clearance_m": 0.022261803628893635
+    },
+    {
+      "fraction": 0.995,
+      "runtime_tcp_m": [
+        -0.09949607900079604,
+        0.0608457944152623,
+        1.1948322037164534
+      ],
+      "preflight_tcp_m": [
+        -0.09949607899178738,
+        0.06084579434671236,
+        1.1948322034303762
+      ],
+      "runtime_error_from_actual_start_line_m": 3.7305764496097207e-10,
+      "runtime_preflight_tcp_difference_m": 2.943134256383654e-10,
+      "runtime_orientation_error_rad": 9.071629378597343e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004015707795062495,
+      "maximum_joint_speed_rad_s": 3.26492833216361e-05,
+      "maximum_joint_acceleration_rad_s2": 0.001287809032581453,
+      "minimum_rigid_clearance_m": 0.022261765803918688
+    },
+    {
+      "fraction": 1.0,
+      "runtime_tcp_m": [
+        -0.09949607899402094,
+        0.060845794351319274,
+        1.1948319867207615
+      ],
+      "preflight_tcp_m": [
+        -0.09949607899413511,
+        0.06084579435131042,
+        1.1948319867208346
+      ],
+      "runtime_error_from_actual_start_line_m": 1.0143966050865047e-10,
+      "runtime_preflight_tcp_difference_m": 1.3583247282864736e-13,
+      "runtime_orientation_error_rad": 9.069790373439632e-10,
+      "runtime_preflight_joint_max_difference_rad": 0.004015711184853499,
+      "maximum_joint_speed_rad_s": 0.0,
+      "maximum_joint_acceleration_rad_s2": 0.0,
+      "minimum_rigid_clearance_m": 0.022261760353734273
+    }
+  ]
+}

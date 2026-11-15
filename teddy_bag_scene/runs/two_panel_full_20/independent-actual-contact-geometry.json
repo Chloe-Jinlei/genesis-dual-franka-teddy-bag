@@ -1,0 +1,236 @@
+{
+  "scope": "Read-only saved real geometry. Sampled proximity is not native contact force or exact onset; outward normal near a seam is ambiguous, so panel-interior and low-region winding are reported separately.",
+  "physical_success": false,
+  "sample_definition": "Every cloth vertex, unique edge midpoint, and face centroid; exact nearest-point query to actual teddy boundary triangles for samples within teddy AABB expanded20mm.",
+  "sample_count": 11121,
+  "source_mapping_maximum_error_m": 6.944641773336686e-11,
+  "phase_geometry": {
+    "transport_teddy": {
+      "time_s": 48.92500000000658,
+      "regions": {
+        "front_panel": {
+          "no_samples_within_expanded_bear_aabb": true
+        },
+        "back_panel": {
+          "no_samples_within_expanded_bear_aabb": true
+        },
+        "front_handle": {
+          "minimum_sample_distance_m": 0.0014252167479319386,
+          "sample_counts_within": {
+            "0.01": 178,
+            "0.005": 110,
+            "0.002": 20,
+            "0.0015": 6
+          },
+          "sample_kind": "edge_midpoint",
+          "sample_index_in_kind": 4896,
+          "cloth_sample_world_m": [
+            -0.13263579470873416,
+            -0.07392412125375152,
+            1.2331218854508674
+          ],
+          "nearest_bear_world_m": [
+            -0.13126912517904804,
+            -0.07378066822561558,
+            1.2334998780485884
+          ],
+          "nearest_bear_rest_coordinate_m": [
+            -0.05017787311982436,
+            -0.12962071174157386,
+            0.05329047765239858
+          ],
+          "nearest_bear_surface_face_index": 815,
+          "native_edge_vertices": [
+            1644,
+            1653
+          ]
+        },
+        "back_handle": {
+          "no_samples_within_expanded_bear_aabb": true
+        }
+      },
+      "low_region": {
+        "minimum_rim_z_m": 0.9917410567605378,
+        "below_lowest_rim_by_2mm_count": 0,
+        "bear_vertex_count": 1450,
+        "scope": "Only points below every rim vertex and the virtual fan cap; cap exists for analysis only. Not whole-body final containment proof."
+      },
+      "source_sha256": "7414872a9425e83dc1934257548affa0de6c7403f4fefe516aa56f8eeb50ca33"
+    },
+    "lower_teddy_to_rim": {
+      "time_s": 58.98500000001172,
+      "regions": {
+        "front_panel": {
+          "minimum_sample_distance_m": 0.001292749848645194,
+          "sample_counts_within": {
+            "0.01": 230,
+            "0.005": 113,
+            "0.002": 18,
+            "0.0015": 6
+          },
+          "sample_kind": "face_centroid",
+          "sample_index_in_kind": 1397,
+          "cloth_sample_world_m": [
+            -0.11735397268894128,
+            -0.07577151086916185,
+            1.0709017011272686
+          ],
+          "nearest_bear_world_m": [
+            -0.11614767397121714,
+            -0.07554697085612375,
+            1.0713086745383584
+          ],
+          "nearest_bear_rest_coordinate_m": [
+            -0.05072081584409899,
+            -0.1208420789164123,
+            0.05480405168665037
+          ],
+          "nearest_bear_surface_face_index": 922,
+          "native_face_index": 1397,
+          "nearest_original_panel_face": 1397,
+          "nearest_panel_face_vertices": [
+            716,
+            755,
+            754
+          ],
+          "bear_point_to_closest_panel_distance_m": 0.0012913675298335827,
+          "signed_outward_normal_separation_m": 0.001291367529833583,
+          "closest_panel_barycentric": [
+            0.3351515299311418,
+            0.33635185643996185,
+            0.3284966136288963
+          ],
+          "nearest_panel_point_near_triangle_edge": false,
+          "near_full17_shared_top_seam_corner": false,
+          "near_panel_interior_check": {
+            "sample_count": 30,
+            "outward_side_count": 30,
+            "inward_side_count": 0,
+            "signed_range_m": [
+              0.001291367529833583,
+              0.0028889626984560345
+            ]
+          }
+        },
+        "back_panel": {
+          "minimum_sample_distance_m": 0.0012889569100050652,
+          "sample_counts_within": {
+            "0.01": 44,
+            "0.005": 10,
+            "0.002": 2,
+            "0.0015": 2
+          },
+          "sample_kind": "edge_midpoint",
+          "sample_index_in_kind": 4514,
+          "cloth_sample_world_m": [
+            -0.1025188471215093,
+            0.16822111951081625,
+            1.005946096357844
+          ],
+          "nearest_bear_world_m": [
+            -0.10175989126383939,
+            0.1684181130161778,
+            1.006969125917927
+          ],
+          "nearest_bear_rest_coordinate_m": [
+            -0.06577600213966553,
+            0.13258165326096916,
+            0.06289755632855443
+          ],
+          "nearest_bear_surface_face_index": 1400,
+          "native_edge_vertices": [
+            1503,
+            1504
+          ],
+          "nearest_original_panel_face": 2931,
+          "nearest_panel_face_vertices": [
+            1503,
+            1504,
+            1467
+          ],
+          "bear_point_to_closest_panel_distance_m": 0.0012888359264500672,
+          "signed_outward_normal_separation_m": 0.0011006146272950152,
+          "closest_panel_barycentric": [
+            0.49903601811115245,
+            0.5009639818888434,
+            4.176651040702907e-15
+          ],
+          "nearest_panel_point_near_triangle_edge": true,
+          "near_full17_shared_top_seam_corner": false,
+          "near_panel_interior_check": {
+            "sample_count": 0,
+            "outward_side_count": 0,
+            "inward_side_count": 0,
+            "signed_range_m": null
+          }
+        },
+        "front_handle": {
+          "minimum_sample_distance_m": 0.001261661597504415,
+          "sample_counts_within": {
+            "0.01": 172,
+            "0.005": 88,
+            "0.002": 16,
+            "0.0015": 3
+          },
+          "sample_kind": "edge_midpoint",
+          "sample_index_in_kind": 4971,
+          "cloth_sample_world_m": [
+            -0.13790553176848724,
+            -0.06637699073352527,
+            1.165361476426173
+          ],
+          "nearest_bear_world_m": [
+            -0.13670240281053736,
+            -0.06612884220718185,
+            1.1656490403426045
+          ],
+          "nearest_bear_rest_coordinate_m": [
+            0.046152177194908495,
+            -0.13026699004237796,
+            0.05461474367305719
+          ],
+          "nearest_bear_surface_face_index": 1368,
+          "native_edge_vertices": [
+            1671,
+            1680
+          ]
+        },
+        "back_handle": {
+          "minimum_sample_distance_m": 0.005235751620894266,
+          "sample_counts_within": {
+            "0.01": 57,
+            "0.005": 0,
+            "0.002": 0,
+            "0.0015": 0
+          },
+          "sample_kind": "vertex",
+          "sample_index_in_kind": 1887,
+          "cloth_sample_world_m": [
+            -0.12990299393476942,
+            0.13467646257170127,
+            1.0371230005174343
+          ],
+          "nearest_bear_world_m": [
+            -0.1263579180969539,
+            0.13495228834860223,
+            1.0409661050542158
+          ],
+          "nearest_bear_rest_coordinate_m": [
+            -0.03546297908442639,
+            0.09081594479451427,
+            0.07874872633605767
+          ],
+          "nearest_bear_surface_face_index": 1366,
+          "source_vertex_index": 1887
+        }
+      },
+      "low_region": {
+        "minimum_rim_z_m": 0.9796656656296568,
+        "below_lowest_rim_by_2mm_count": 0,
+        "bear_vertex_count": 1450,
+        "scope": "Only points below every rim vertex and the virtual fan cap; cap exists for analysis only. Not whole-body final containment proof."
+      },
+      "source_sha256": "a05a490c5491e5c348e677e5d9196335525ffa0040a8b475b2ab83da58321073"
+    }
+  }
+}

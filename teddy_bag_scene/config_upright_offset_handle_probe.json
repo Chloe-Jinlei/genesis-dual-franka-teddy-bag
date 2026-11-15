@@ -1,0 +1,185 @@
+{
+  "seed": 17,
+  "simulation": {
+    "dt": 0.005,
+    "substeps": 1,
+    "precision": "64",
+    "contact_distance": 0.001,
+    "contact_resistance": 10000000.0,
+    "correct_stc_reaction": true
+  },
+  "table": {
+    "height": 0.74,
+    "size": [
+      1.7,
+      1.2,
+      0.06
+    ]
+  },
+  "robots": {
+    "left_base": [
+      -0.6,
+      -0.28,
+      0.76
+    ],
+    "right_base": [
+      0.38,
+      0.32,
+      0.76
+    ],
+    "left_yaw": 0.35,
+    "right_yaw": -2.4,
+    "home": [
+      0.0,
+      -0.45,
+      0.0,
+      -2.15,
+      0.0,
+      1.7,
+      0.7854
+    ],
+    "finger_force_limit": 12.0,
+    "finger_kp": 8000.0,
+    "finger_kv": 200.0
+  },
+  "bag": {
+    "position": [
+      -0.13,
+      0.0,
+      0.742
+    ],
+    "E": 4000000.0,
+    "nu": 0.3,
+    "rho": 500.0,
+    "thickness": 0.0003,
+    "bending_stiffness": 5e-05,
+    "friction_mu": 0.65,
+    "shear_stiffness": 50.0,
+    "mesh": "two_panel_bag_wide_tall_coarse.obj",
+    "npz_file": "two_panel_bag_wide_tall_coarse.npz",
+    "metadata": "metadata_two_panel_wide_tall_coarse.json",
+    "height_m": 0.4,
+    "handle_shear_stiffness": 250.0
+  },
+  "bear": {
+    "position": [
+      0.27,
+      -0.25,
+      0.742
+    ],
+    "E": 18000.0,
+    "nu": 0.28,
+    "rho": 100.0,
+    "friction_mu": 0.65,
+    "mesh": "bear_uniform_coarse_s85.obj",
+    "nobisect": true,
+    "mindihedral": 15,
+    "minratio": 1.3,
+    "maxvolume": 2.4564999999999997e-06
+  },
+  "camera": {
+    "position": [
+      1.75,
+      -2.0,
+      1.9
+    ],
+    "lookat": [
+      -0.05,
+      -0.01,
+      1.02
+    ],
+    "fov": 42
+  },
+  "task": {
+    "open_targets": {
+      "left": [
+        -0.18409751840950164,
+        -0.13,
+        1.26
+      ],
+      "right": [
+        -0.07590248159049842,
+        0.13,
+        1.26
+      ]
+    },
+    "bear_grasp_local": [
+      0.068,
+      -0.011899999999999999,
+      0.028900000000000002
+    ],
+    "bear_finger_target": 0.0,
+    "bear_finger_force_limit": 3.0,
+    "motion_speed_scale": 1.3,
+    "handle_close_seconds": 0.5,
+    "handle_grasps": {
+      "left": {
+        "group": "grasp_front_x_minus",
+        "preferred_approach": [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      },
+      "right": {
+        "group": "grasp_back_x_plus",
+        "preferred_approach": [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      }
+    },
+    "contact_trial": {
+      "enabled": true,
+      "bottom_clearance_m": 0.01,
+      "max_lateral_excursion_fraction_of_mouth_width": 0.8,
+      "center_offsets_xy_m": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -0.02
+        ],
+        [
+          -0.01,
+          -0.025
+        ],
+        [
+          0.005,
+          -0.03
+        ]
+      ],
+      "recenter_offsets_xy_m": [
+        [
+          0,
+          -0.01
+        ],
+        [
+          -0.005,
+          -0.015
+        ],
+        [
+          0.005,
+          -0.02
+        ],
+        [
+          -0.01,
+          -0.02
+        ]
+      ],
+      "left_robot_soft_sweep_clearance_m": 0.005,
+      "minimum_section_envelope_overlap_fraction": 0.4,
+      "maximum_initial_com_offset_m": 0.035,
+      "transport_xy_strategy": "y_then_x",
+      "insertion_strategy": "vertical",
+      "postlift_yaw": {
+        "world_z_degrees": 15.0,
+        "duration_s": 6.0
+      }
+    },
+    "bear_grasp_tracking_radius_m": 0.0272
+  }
+}

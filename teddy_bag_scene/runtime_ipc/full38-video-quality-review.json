@@ -1,0 +1,59 @@
+{
+  "kind": "full38_video_quality_review",
+  "created_utc": "2026-11-15T21:20:05.435880+00:00",
+  "run": "runs/two_panel_full_38",
+  "video_sha256": "5e892191852487f4bb449f7f3ceb037b5dc7d0837d0706e32ef64e61ee0e1755",
+  "ffprobe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 720,
+        "avg_frame_rate": "20/1",
+        "nb_frames": "1946"
+      }
+    ],
+    "format": {
+      "duration": "97.300000",
+      "size": "3097159"
+    }
+  },
+  "complete_decode": {
+    "command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "runs/two_panel_full_38/simulation.mp4",
+      "-f",
+      "null",
+      "-"
+    ],
+    "observed_exit_code": 0,
+    "observed_output": "",
+    "evidence": "Completed by parent tool call after native process exited; no video mutations since."
+  },
+  "visually_inspected_frames": [
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/adjust_teddy_height_contact_trial-detail.png",
+      "sha256": "53eae8da12dcf10a1c1f3602d1d2e847e3576e29aea06f36345f61849ccfca57"
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/transport_teddy-detail.png",
+      "sha256": "37b4c57d689265fdb0dcf49e6f9ce6639ff39281e1d22cb3bb424896c139fd48"
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/insert_teddy-detail.png",
+      "sha256": "0e71b267583e8234d489104a3144555f4893233412c967223f3eec0bd3cd6d8e"
+    },
+    {
+      "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/final_settle-detail.png",
+      "sha256": "96f05349d0c088ba149a59516912bbcbec8e1b018268b0a05d21a5e15500db9c"
+    }
+  ],
+  "visual_observations": "Saved views show the two-panel bag hanging from the left gripper, teddy transport, right hand at insertion, and open right hand withdrawn at final settle. Bear containment is checked numerically by unchanged validators rather than inferred from the opaque bag image.",
+  "simulation_status": "completed",
+  "simulation_time_s": 96.64499999998459,
+  "all_video_checks_passed": true
+}

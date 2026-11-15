@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "checks": {
+    "current_asset_exact_partition": true,
+    "native_handle_coefficients_and_other_properties": true,
+    "default_stays_uniform": true,
+    "permuted_vertices_faces_and_corner_orders": true,
+    "reject_nonunique_vertex_or_face_mapping": true,
+    "reject_body_handle_overlap": true,
+    "reject_invalid_coefficients": true
+  },
+  "native_attribute_report": {
+    "previous_shear_coefficient": 1538461.538461539,
+    "new_shear_coefficient": 88.42794759825327,
+    "new_shear_coefficient_scope": "Mean over all triangles; per-region values are authoritative",
+    "protected_attributes_unchanged": {
+      "triangles.lambda": true,
+      "triangles.strain_rate": true,
+      "vertices.thickness": true,
+      "vertices.volume": true,
+      "vertices.is_fixed": true,
+      "edges.bending_stiffness": true,
+      "geometry_metadata_including_contact_material": true
+    },
+    "region_coefficients": {
+      "body": {
+        "face_count": 2960,
+        "shear_stiffness_n_per_m": 50.0,
+        "all_faces_equal": true
+      },
+      "handle_front": {
+        "face_count": 352,
+        "shear_stiffness_n_per_m": 250.0,
+        "all_faces_equal": true
+      },
+      "handle_back": {
+        "face_count": 352,
+        "shear_stiffness_n_per_m": 250.0,
+        "all_faces_equal": true
+      }
+    }
+  },
+  "mapping": {
+    "source_npz": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/two_panel_bag_wide_tall_coarse.npz",
+    "source_sha256": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "method": "Unique nearest-position vertex bijection, then unordered vertex-triplet face bijection",
+    "maximum_vertex_mapping_error_m": 0.0,
+    "mapping_tolerance_m": 1e-07,
+    "source_vertex_order_matches_native": true,
+    "source_face_order_matches_native": true,
+    "source_translation_m": [
+      -0.13,
+      0.0,
+      0.742
+    ],
+    "vertex_bijection": true,
+    "face_bijection": true,
+    "body_and_handles_disjoint_complete_face_partition": true
+  },
+  "permuted_mapping": {
+    "source_npz": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/assets/two_panel_bag_wide_tall_coarse.npz",
+    "source_sha256": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "method": "Unique nearest-position vertex bijection, then unordered vertex-triplet face bijection",
+    "maximum_vertex_mapping_error_m": 0.0,
+    "mapping_tolerance_m": 1e-07,
+    "source_vertex_order_matches_native": false,
+    "source_face_order_matches_native": false,
+    "source_translation_m": [
+      -0.13,
+      0.0,
+      0.742
+    ],
+    "vertex_bijection": true,
+    "face_bijection": true,
+    "body_and_handles_disjoint_complete_face_partition": true
+  },
+  "source_sha256": {
+    "physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37"
+  },
+  "scope": "Seven CPU-only native geometry checks; no World.init or simulation"
+}

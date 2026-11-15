@@ -1,0 +1,586 @@
+{
+  "kind": "offline_robot_geometry_only",
+  "config": {
+    "seed": 17,
+    "simulation": {
+      "dt": 0.01,
+      "substeps": 1,
+      "precision": "64",
+      "contact_distance": 0.001,
+      "contact_resistance": 10000000.0
+    },
+    "table": {
+      "height": 0.74,
+      "size": [
+        1.7,
+        1.2,
+        0.06
+      ]
+    },
+    "robots": {
+      "left_base": [
+        -0.6,
+        -0.28,
+        0.76
+      ],
+      "right_base": [
+        0.38,
+        0.32,
+        0.76
+      ],
+      "left_yaw": 0.35,
+      "right_yaw": -2.4,
+      "home": [
+        0.0,
+        -0.45,
+        0.0,
+        -2.15,
+        0.0,
+        1.7,
+        0.7854
+      ],
+      "finger_force_limit": 12.0,
+      "finger_kp": 8000.0,
+      "finger_kv": 40.0
+    },
+    "bag": {
+      "position": [
+        -0.13,
+        0.0,
+        0.742
+      ],
+      "E": 400000.0,
+      "nu": 0.3,
+      "rho": 500.0,
+      "thickness": 0.0003,
+      "bending_stiffness": 5e-06,
+      "friction_mu": 0.65,
+      "shear_stiffness": 5.0,
+      "mesh": "two_panel_bag_coarse.obj",
+      "npz_file": "two_panel_bag_coarse.npz",
+      "metadata": "metadata_two_panel_coarse.json",
+      "height_m": 0.34
+    },
+    "bear": {
+      "position": [
+        0.27,
+        -0.25,
+        0.742
+      ],
+      "E": 18000.0,
+      "nu": 0.28,
+      "rho": 100.0,
+      "friction_mu": 0.65
+    },
+    "camera": {
+      "position": [
+        1.75,
+        -2.0,
+        1.9
+      ],
+      "lookat": [
+        -0.05,
+        -0.01,
+        1.02
+      ],
+      "fov": 42
+    },
+    "task": {
+      "open_targets": {
+        "left": [
+          -0.25,
+          -0.13,
+          1.25
+        ],
+        "right": [
+          -0.1,
+          0.13,
+          1.25
+        ]
+      },
+      "bear_grasp_local": [
+        0.08,
+        -0.014,
+        0.034
+      ]
+    }
+  },
+  "explicit_metadata_override": false,
+  "nominal_waypoints_m": {
+    "initial": {
+      "left": [
+        -0.1830567078748633,
+        -0.07629315136179891,
+        1.2023834292652742
+      ],
+      "right": [
+        -0.07694329212513673,
+        0.07629315136179893,
+        1.2023834292652742
+      ]
+    },
+    "open_bag": {
+      "left": [
+        -0.25,
+        -0.13,
+        1.25
+      ],
+      "right": [
+        -0.1,
+        0.13,
+        1.25
+      ]
+    },
+    "right_clear_handle": {
+      "right": [
+        0.12,
+        0.2,
+        1.32
+      ]
+    },
+    "teddy_pregrasp": {
+      "right": [
+        0.35000000000000003,
+        -0.264,
+        0.926
+      ]
+    },
+    "teddy_grasp": {
+      "right": [
+        0.35000000000000003,
+        -0.264,
+        0.776
+      ]
+    },
+    "teddy_lift": {
+      "right": [
+        0.35000000000000003,
+        -0.264,
+        1.37
+      ]
+    },
+    "bag_above": {
+      "right": [
+        -0.1,
+        0.04,
+        1.37
+      ]
+    },
+    "bag_insert": {
+      "right": [
+        -0.1,
+        0.04,
+        1.14
+      ]
+    },
+    "release": {
+      "right": [
+        -0.1,
+        0.04,
+        0.96
+      ]
+    },
+    "right_retreat": {
+      "right": [
+        -0.1,
+        0.04,
+        1.38
+      ]
+    }
+  },
+  "rotation_overrides_xyzw": {
+    "initial": {
+      "left": [
+        0.9917919992231684,
+        -0.11062546946148027,
+        0.00710729069443739,
+        -0.0637190882100683
+      ],
+      "right": [
+        0.9917919992231684,
+        -0.11062546946148023,
+        -0.007107290694437391,
+        0.06371908821006836
+      ]
+    },
+    "open_bag": {
+      "left": [
+        0.9917919992231684,
+        -0.11062546946148027,
+        0.00710729069443739,
+        -0.0637190882100683
+      ],
+      "right": [
+        0.9917919992231684,
+        -0.11062546946148023,
+        -0.007107290694437391,
+        0.06371908821006836
+      ]
+    }
+  },
+  "initial_finger_q_m": 0.001,
+  "tcp_hand_local_m": [
+    0.0,
+    0.0,
+    0.1029
+  ],
+  "success": true,
+  "limitations": [
+    "MuJoCo convex collision geometry only; no Genesis dynamic validation in this report.",
+    "Soft bag and teddy are not collision obstacles in this preflight: intended frictional contacts require runtime checking.",
+    "The teddy must hang beneath the grasp before insertion; its fit and the unsupported bag mouth must be measured at runtime.",
+    "Nominal grasp locations must be replaced with observed mesh points after settling.",
+    "The local panda_tactile.xml extends each real rubber pad inward by 1.5 mm; thin cloth gripping still requires actual contact/friction verification."
+  ],
+  "initial_q": {
+    "left": [
+      -0.04236075187188594,
+      -0.35663673242542415,
+      0.0918504823886278,
+      -2.1717785686198305,
+      0.14380700548546735,
+      1.8881217788639821,
+      1.3624492786735052
+    ],
+    "right": [
+      0.5715257411210138,
+      -0.2783130024708837,
+      -0.7661662223315747,
+      -2.0134128144017778,
+      -0.10629073079941379,
+      1.8999957124041027,
+      -1.5463403568592735
+    ]
+  },
+  "stages": [
+    {
+      "stage": "open_bag",
+      "targets_m": {
+        "left": [
+          -0.25,
+          -0.13,
+          1.25
+        ],
+        "right": [
+          -0.1,
+          0.13,
+          1.25
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.1549264031652518,
+      "peak_joint_acceleration_rad_s2": 0.16394849190839728,
+      "min_rigid_clearance_m": 0.021859381472504824,
+      "max_tcp_path_deviation_m": 2.2148245634428908e-10
+    },
+    {
+      "stage": "right_clear_handle",
+      "targets_m": {
+        "right": [
+          0.12,
+          0.2,
+          1.32
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.36775369930570534,
+      "peak_joint_acceleration_rad_s2": 0.4645229973753533,
+      "min_rigid_clearance_m": 0.021697521795867127,
+      "max_tcp_path_deviation_m": 5.0965956918498815e-09
+    },
+    {
+      "stage": "teddy_pregrasp",
+      "targets_m": {
+        "right": [
+          0.35000000000000003,
+          -0.264,
+          0.926
+        ]
+      },
+      "duration_s": 5.584463979611495,
+      "peak_joint_velocity_rad_s": 0.5488836098645914,
+      "peak_joint_acceleration_rad_s2": 0.42066748410986904,
+      "min_rigid_clearance_m": 0.021648696163082525,
+      "max_tcp_path_deviation_m": 3.027408224431682e-07
+    },
+    {
+      "stage": "teddy_grasp",
+      "targets_m": {
+        "right": [
+          0.35000000000000003,
+          -0.264,
+          0.776
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.2032451858421563,
+      "peak_joint_acceleration_rad_s2": 0.22413485099515038,
+      "min_rigid_clearance_m": 0.022452761200573223,
+      "max_tcp_path_deviation_m": 4.659372794546982e-11
+    },
+    {
+      "stage": "teddy_lift",
+      "targets_m": {
+        "right": [
+          0.35000000000000003,
+          -0.264,
+          1.37
+        ]
+      },
+      "duration_s": 5.163800722064132,
+      "peak_joint_velocity_rad_s": 0.5489021956087825,
+      "peak_joint_acceleration_rad_s2": 0.6166202327799473,
+      "min_rigid_clearance_m": 0.02174360076336467,
+      "max_tcp_path_deviation_m": 5.167265696334062e-06
+    },
+    {
+      "stage": "bag_above",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.37
+        ]
+      },
+      "duration_s": 3.5488501628463363,
+      "peak_joint_velocity_rad_s": 0.5488955813348702,
+      "peak_joint_acceleration_rad_s2": 0.6817329535774217,
+      "min_rigid_clearance_m": 0.02167750596557928,
+      "max_tcp_path_deviation_m": 1.385351252818905e-06
+    },
+    {
+      "stage": "bag_insert",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.14
+        ]
+      },
+      "duration_s": 10.777804968928622,
+      "peak_joint_velocity_rad_s": 0.13782898000592983,
+      "peak_joint_acceleration_rad_s2": 0.7488432380274043,
+      "min_rigid_clearance_m": 0.02184635344597173,
+      "max_tcp_path_deviation_m": 5.557923305363799e-07
+    },
+    {
+      "stage": "release",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          0.96
+        ]
+      },
+      "duration_s": 3.0060000000000002,
+      "peak_joint_velocity_rad_s": 0.2701247184152261,
+      "peak_joint_acceleration_rad_s2": 0.2824670132279834,
+      "min_rigid_clearance_m": 0.021875082663022002,
+      "max_tcp_path_deviation_m": 1.2886824293190227e-09
+    },
+    {
+      "stage": "right_retreat",
+      "targets_m": {
+        "right": [
+          -0.1,
+          0.04,
+          1.38
+        ]
+      },
+      "duration_s": 7.402329528751273,
+      "peak_joint_velocity_rad_s": 0.3069605672879485,
+      "peak_joint_acceleration_rad_s2": 0.7623302731919173,
+      "min_rigid_clearance_m": 0.021846698758706054,
+      "max_tcp_path_deviation_m": 6.515704893075421e-07
+    }
+  ],
+  "initial_clearance": {
+    "left_self": {
+      "distance": 0.021920810402178036,
+      "bodies": [
+        "left_link5",
+        "left_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "left_table": {
+      "distance": 0.16099593221477015,
+      "bodies": [
+        "left_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "table"
+      ]
+    },
+    "left_mounts": {
+      "distance": 0.14099593221477014,
+      "bodies": [
+        "left_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "left_mount"
+      ]
+    },
+    "right_self": {
+      "distance": 0.021873196724721797,
+      "bodies": [
+        "right_link5",
+        "right_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "right_table": {
+      "distance": 0.16099593221477015,
+      "bodies": [
+        "right_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "table"
+      ]
+    },
+    "right_mounts": {
+      "distance": 0.14099593221477014,
+      "bodies": [
+        "right_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "right_mount"
+      ]
+    },
+    "arms": {
+      "distance": 0.031234555636698823,
+      "bodies": [
+        "left_hand",
+        "right_hand"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    }
+  },
+  "total_motion_duration_s": 44.50124936220186,
+  "minimum_rigid_clearance_m": 0.021648696163082525,
+  "dynamic_task_success_verified": false,
+  "orientation_source": "contact_grasp.cloth_grasp_frame on current coarse rest mesh",
+  "cloth_grasp_frames": {
+    "left": {
+      "position_m": [
+        -0.18305670787486333,
+        -0.07629315136179891,
+        1.2023834292652742
+      ],
+      "quaternion_xyzw": [
+        0.9917919992231684,
+        -0.11062546946148027,
+        0.00710729069443739,
+        -0.0637190882100683
+      ],
+      "quaternion_wxyz": [
+        -0.0637190882100683,
+        0.9917919992231684,
+        -0.11062546946148027,
+        0.00710729069443739
+      ],
+      "rotation_columns_hand_axes_in_world": [
+        [
+          0.9754229838508236,
+          -0.21852917087901927,
+          0.02819581618758512
+        ],
+        [
+          -0.2203406512097931,
+          -0.9674037666082093,
+          0.12481966902973944
+        ],
+        [
+          1.734723475976807e-18,
+          -0.12796465850842484,
+          -0.9917787284333245
+        ]
+      ],
+      "minimum_initial_finger_q_m": 0.000780790116967425,
+      "incident_triangle_count": 32,
+      "normal_in_world": [
+        -0.21852917087901927,
+        -0.9674037666082093,
+        -0.12796465850842484
+      ],
+      "cloth_normal_range_in_pad_m": [
+        -0.00028079011696742506,
+        7.243896110078083e-05
+      ],
+      "shell_radius_m": 0.0003,
+      "clearance_m": 0.0002,
+      "max_incident_normal_deviation_deg": 4.077621867034927,
+      "whole_hand_collision_checked": false,
+      "friction_grasp_proven": false
+    },
+    "right": {
+      "position_m": [
+        -0.07694329212513673,
+        0.07629315136179893,
+        1.2023834292652742
+      ],
+      "quaternion_xyzw": [
+        0.9917919992231684,
+        -0.11062546946148023,
+        -0.007107290694437391,
+        0.06371908821006836
+      ],
+      "quaternion_wxyz": [
+        0.06371908821006836,
+        0.9917919992231684,
+        -0.11062546946148023,
+        -0.007107290694437391
+      ],
+      "rotation_columns_hand_axes_in_world": [
+        [
+          0.9754229838508236,
+          -0.21852917087901919,
+          -0.028195816187585127
+        ],
+        [
+          -0.22034065120979301,
+          -0.9674037666082093,
+          -0.12481966902973955
+        ],
+        [
+          3.469446951953614e-18,
+          0.12796465850842495,
+          -0.9917787284333245
+        ]
+      ],
+      "minimum_initial_finger_q_m": 0.0008176319791565327,
+      "incident_triangle_count": 32,
+      "normal_in_world": [
+        -0.21852917087901919,
+        -0.9674037666082093,
+        0.12796465850842492
+      ],
+      "cloth_normal_range_in_pad_m": [
+        -4.9364968283269696e-05,
+        0.0003176319791565328
+      ],
+      "shell_radius_m": 0.0003,
+      "clearance_m": 0.0002,
+      "max_incident_normal_deviation_deg": 3.7386524300877055,
+      "whole_hand_collision_checked": false,
+      "friction_grasp_proven": false
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "scope": "Interpretation and next-step recommendation only; no candidate route accepted and no physics/config changed.",
+  "geometry_report": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/independent-perimeter-guard-review.json",
+  "geometry_report_sha256": "6366f477cd798519ad72af5ef957eae1a07628800f79d98ff52faa6b85e5531f",
+  "verified_stop": "Fresh actual 40.735 s, before insert/release; unique recorded rejection is union perimeter, not a native collision or force/stretch/J stop.",
+  "key_findings_cn": [
+    "原口缘和原预测熊截面需求913.669毫米，距915.233毫米上限仅1.564毫米。换成实际运输后熊而袋不变，需求增15.435毫米；只换实际袋而熊不变，增3.296毫米。新袋新熊合计932.988毫米，超17.756毫米。此分解为几何对照，不是力因果分离。",
+    "实际袋口自身XY凸包周长从860.770降至858.208毫米；熊自身含2毫米buffer的最大截面周长598.871毫米。两者各自的尺度未单独耗尽915.233毫米，因此目前拒绝的是它们当前相对布局的联合包络。",
+    "去除buffer仍超12.674毫米，不能把2毫米安全余量删除当作修复。腕目标误差仅约0.132毫米，姿态误差0.000303弧度；熊相对TCP的24.142毫米局部形变明显大于腕追踪误差。"
+  ],
+  "toy_counterexample_not_native_or_bag_feasibility": {
+    "old_thin_rectangle_perimeter_m": 0.8400000000000001,
+    "teddy_rectangle_perimeter_m": 0.8,
+    "union_perimeter_m": 0.9781449618829485,
+    "meaning": "An inextensible freely reshaping planar loop of the original length can surround the smaller-perimeter rectangle, but cannot simultaneously enclose every old mouth location and the rectangle. Thus union-perimeter failure is not a general physical impossibility theorem. This ignores held attachments/3D panels and is not evidence that full22 can insert."
+  },
+  "bounded_direction_evidence": {
+    "central_difference_step_m": 0.001,
+    "gradient_perimeter_per_xy": [
+      0.5112971942283773,
+      0.45067499449324977
+    ],
+    "linearized_descent_direction": [
+      -0.7501795666433108,
+      -0.6612341626011577
+    ],
+    "linearized_distance_to_zero_margin_m": 0.026051200785039634,
+    "warning": "Not an evaluated candidate. Perimeter is convex in translation; a local linear decrease can be optimistic, so this distance does not certify feasible alignment. The previous negative-Y rigid-clearance problem also remains relevant."
+  },
+  "recommended_next_step_cn": "优先复用现有实际状态复观测和有预算的recenter机制，让所有原section/8mm刚体/5mm熊扫掠/速率/两提带条件先检查同一完整修正及下降路径。只有一条实际状态路线完整通过后，下一配置才可显式开启recenter并列出该有证据偏移；不沿用yaw时仅1.6毫米余量的冻结对齐，也不删除周长门。",
+  "if_no_current_recenter_passes_cn": "停在该失败结论；当前没有已验证的小偏移可直接启动。若改变持袋姿态或抓持点，必须先真实生成并保存新的稳定袋形，再重新检查完整路线，不能虚拟移动袋口后称可行。",
+  "review_boundary": "No claim of whole-body containment, strain feasibility, original nonconvex collision safety, or successful insertion. Unheld rear-strap contact remains a separate declared physical-trial risk.",
+  "physical_success": false
+}

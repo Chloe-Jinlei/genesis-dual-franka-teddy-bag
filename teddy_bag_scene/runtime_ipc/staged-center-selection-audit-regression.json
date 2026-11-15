@@ -1,0 +1,470 @@
+{
+  "kind": "synthetic_staged_adaptive_center_audit_regression",
+  "physical_success": false,
+  "all_checks_passed": true,
+  "case_count": 45,
+  "cases": [
+    {
+      "case": "declared_second_candidate_selected_and_executed",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "audit_status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "case": "invalid_frozen_list_empty",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [],
+      "error": "Frozen config must declare 1\u20138 unique finite nonzero center offsets within its XY budget"
+    },
+    {
+      "case": "invalid_frozen_list_too_many",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [],
+      "error": "Frozen config must declare 1\u20138 unique finite nonzero center offsets within its XY budget"
+    },
+    {
+      "case": "invalid_frozen_list_duplicate",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [],
+      "error": "Frozen config must declare 1\u20138 unique finite nonzero center offsets within its XY budget"
+    },
+    {
+      "case": "invalid_frozen_list_nonfinite",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [],
+      "error": "Frozen config must declare 1\u20138 unique finite nonzero center offsets within its XY budget"
+    },
+    {
+      "case": "invalid_frozen_list_zero",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [],
+      "error": "Frozen config must declare 1\u20138 unique finite nonzero center offsets within its XY budget"
+    },
+    {
+      "case": "invalid_frozen_list_over_budget",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [],
+      "error": "Frozen config must declare 1\u20138 unique finite nonzero center offsets within its XY budget"
+    },
+    {
+      "case": "invalid_frozen_list_wrong_shape",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [],
+      "error": "Frozen config must declare 1\u20138 unique finite nonzero center offsets within its XY budget"
+    },
+    {
+      "case": "selected_offset_not_in_list",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selection_index_and_offsets_match_frozen_list",
+        "center_selected_offset_matches_actual_source_to_target"
+      ],
+      "error": null
+    },
+    {
+      "case": "forged_selected_index",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selection_index_and_offsets_match_frozen_list",
+        "center_chosen_attempt_has_consistent_frozen_remainder",
+        "center_selected_index_maximizes_recorded_score_with_first_index_tie_break"
+      ],
+      "error": null
+    },
+    {
+      "case": "boolean_index_is_not_integer",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selection_index_and_offsets_match_frozen_list",
+        "center_chosen_attempt_has_consistent_frozen_remainder",
+        "center_selected_index_maximizes_recorded_score_with_first_index_tie_break"
+      ],
+      "error": null
+    },
+    {
+      "case": "negative_index",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selection_index_and_offsets_match_frozen_list",
+        "center_chosen_attempt_has_consistent_frozen_remainder",
+        "center_selected_index_maximizes_recorded_score_with_first_index_tie_break"
+      ],
+      "error": null
+    },
+    {
+      "case": "selection_offset_mismatch",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selection_index_and_offsets_match_frozen_list"
+      ],
+      "error": null
+    },
+    {
+      "case": "missing_attempt",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_all_predeclared_attempts_recorded_once_in_order",
+        "center_feasible_scores_reconstruct_from_recorded_margins",
+        "center_chosen_attempt_has_consistent_frozen_remainder",
+        "center_selected_index_maximizes_recorded_score_with_first_index_tie_break"
+      ],
+      "error": null
+    },
+    {
+      "case": "forged_attempt_index",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_all_predeclared_attempts_recorded_once_in_order"
+      ],
+      "error": null
+    },
+    {
+      "case": "undeclared_attempt_offset",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_all_predeclared_attempts_recorded_once_in_order"
+      ],
+      "error": null
+    },
+    {
+      "case": "reordered_attempt_list",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_all_predeclared_attempts_recorded_once_in_order",
+        "center_chosen_attempt_has_consistent_frozen_remainder",
+        "center_selected_index_maximizes_recorded_score_with_first_index_tie_break"
+      ],
+      "error": null
+    },
+    {
+      "case": "changed_checkpoint_policy_list",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_checkpoint_policy_matches_frozen_config"
+      ],
+      "error": null
+    },
+    {
+      "case": "changed_report_rigid_policy",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_reported_policy_matches_frozen_config"
+      ],
+      "error": null
+    },
+    {
+      "case": "changed_checkpoint_target",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_checkpoint_target_matches_selected_stage"
+      ],
+      "error": null
+    },
+    {
+      "case": "stale_selection_observation",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selection_observation_matches_actual_center_source"
+      ],
+      "error": null
+    },
+    {
+      "case": "forged_score",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_feasible_scores_reconstruct_from_recorded_margins",
+        "center_chosen_attempt_has_consistent_frozen_remainder"
+      ],
+      "error": null
+    },
+    {
+      "case": "frozen_remainder_rejected",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_chosen_attempt_has_consistent_frozen_remainder",
+        "center_selected_index_maximizes_recorded_score_with_first_index_tie_break"
+      ],
+      "error": null
+    },
+    {
+      "case": "frozen_remainder_physical_success_forged",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_feasible_scores_reconstruct_from_recorded_margins",
+        "center_chosen_attempt_has_consistent_frozen_remainder"
+      ],
+      "error": null
+    },
+    {
+      "case": "frozen_remainder_policy_tamper",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_feasible_scores_reconstruct_from_recorded_margins",
+        "center_chosen_attempt_has_consistent_frozen_remainder"
+      ],
+      "error": null
+    },
+    {
+      "case": "hypothetical_time_not_fixed_step_endpoint",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_chosen_attempt_has_consistent_frozen_remainder"
+      ],
+      "error": null
+    },
+    {
+      "case": "future_insert_authorized_by_selection",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selection_is_planning_only_and_requires_fresh_insert"
+      ],
+      "error": null
+    },
+    {
+      "case": "planning_labeled_physical_success",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selection_is_planning_only_and_requires_fresh_insert"
+      ],
+      "error": null
+    },
+    {
+      "case": "nonfinite_selected_center_clearance",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_chosen_attempt_has_consistent_frozen_remainder"
+      ],
+      "error": null
+    },
+    {
+      "case": "nonfinite_selected_com_margin",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_chosen_attempt_has_consistent_frozen_remainder"
+      ],
+      "error": null
+    },
+    {
+      "case": "executable_frozen_stage_smuggled_in_attempt",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_all_predeclared_attempts_recorded_once_in_order"
+      ],
+      "error": null
+    },
+    {
+      "case": "contradictory_candidate_rejection",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_feasible_scores_reconstruct_from_recorded_margins",
+        "center_chosen_attempt_has_consistent_frozen_remainder"
+      ],
+      "error": null
+    },
+    {
+      "case": "malformed_attempt_record",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_all_predeclared_attempts_recorded_once_in_order",
+        "center_feasible_scores_reconstruct_from_recorded_margins"
+      ],
+      "error": null
+    },
+    {
+      "case": "insert_checkpoint_changes_prior_declared_policy",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "insert_checkpoint_policy_matches_frozen_config"
+      ],
+      "error": null
+    },
+    {
+      "case": "frozen_config_reordered_but_records_unchanged",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "entry_reported_policy_matches_frozen_config",
+        "entry_checkpoint_policy_matches_frozen_config",
+        "center_reported_policy_matches_frozen_config",
+        "center_checkpoint_policy_matches_frozen_config",
+        "center_selection_index_and_offsets_match_frozen_list",
+        "center_all_predeclared_attempts_recorded_once_in_order",
+        "center_feasible_scores_reconstruct_from_recorded_margins",
+        "center_chosen_attempt_has_consistent_frozen_remainder",
+        "insert_reported_policy_matches_frozen_config",
+        "insert_checkpoint_policy_matches_frozen_config"
+      ],
+      "error": null
+    },
+    {
+      "case": "lower_ranked_candidate_selected",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selected_index_maximizes_recorded_score_with_first_index_tie_break"
+      ],
+      "error": null
+    },
+    {
+      "case": "tie_must_select_first_declared_index",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_selected_index_maximizes_recorded_score_with_first_index_tie_break"
+      ],
+      "error": null
+    },
+    {
+      "case": "actual_executed_offset_wrong_direction_same_norm",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_actual_endpoint_within_2mm",
+        "center_actual_executed_offset_tracks_selected_candidate_within_2mm",
+        "center_actual_tcp_matches_joint_fk",
+        "insert_planned_budget_matches_actual_prior_and_target",
+        "insert_checkpoint_source_matches_actual_state",
+        "insert_strictly_down_at_actual_xy",
+        "insert_runtime_distance_records_match_actual_tcp",
+        "insert_actual_tcp_matches_joint_fk"
+      ],
+      "error": null
+    },
+    {
+      "case": "actual_target_uses_other_declared_candidate",
+      "expected_audit_passed": false,
+      "regression_passed": true,
+      "audit_status": "failed",
+      "failed_checks": [
+        "center_planned_budget_matches_actual_prior_and_target",
+        "center_selected_offset_matches_actual_source_to_target",
+        "center_checkpoint_target_matches_selected_stage",
+        "center_actual_endpoint_within_2mm"
+      ],
+      "error": null
+    },
+    {
+      "case": "rejected_alternative_and_selected_valid_candidate",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "audit_status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "case": "rejected_frozen_alternative_and_selected_valid_candidate",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "audit_status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "case": "wrapper_margin_rejected_alternative_is_not_physical_failure",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "audit_status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "case": "list_only_config_uses_frozen_default_fallback",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "audit_status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "case": "valid_1_candidate_boundary",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "audit_status": "passed",
+      "failed_checks": [],
+      "error": null
+    },
+    {
+      "case": "valid_8_candidate_boundary",
+      "expected_audit_passed": true,
+      "regression_passed": true,
+      "audit_status": "passed",
+      "failed_checks": [],
+      "error": null
+    }
+  ],
+  "legacy_sequence_and_budget_regressions_passed": true,
+  "auditor_sha256": "cfffd244a7a8064dc2780a337e17e2b13ab4447849a2834ca10e20700f2771f8",
+  "scope": "Synthetic saved-evidence tests. Native hand and force auditors are separately tested and mocked here; no physical success or route safety is inferred."
+}

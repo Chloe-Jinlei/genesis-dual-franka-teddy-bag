@@ -1,0 +1,302 @@
+{
+  "kind": "analytic_joint_limit_gate_and_measured_task_prefix_regression",
+  "source_config": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_03/config.json",
+  "tests": {
+    "closed_form_cubic_extrema": true,
+    "reject_upper": "Continuous joint limit violation in left joint1 at path fraction 0.577350269: maximum=0.384900179460, limit=0.380000000000",
+    "reject_lower": "Continuous joint limit violation in left joint1 at path fraction 0.577350269: minimum=-0.384900179460, limit=-0.380000000000",
+    "constant_curve": true
+  },
+  "prefix_stages": [
+    {
+      "name": "spread_bag",
+      "duration_s": 1.9269230769230767,
+      "exact_minimum_joint_limit_margin_rad": 0.5784290871622284,
+      "minimum_rigid_clearance": {
+        "time_s": 0.0,
+        "category": "arms",
+        "distance": 0.0168922661572669,
+        "bodies": [
+          "left_hand",
+          "right_hand"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "end_q": {
+        "left": [
+          -0.1757661116289193,
+          -0.5042694826268563,
+          0.1538615905332038,
+          -2.4933709128377717,
+          -0.20301147905273248,
+          2.568233510691899,
+          1.2567595112309413
+        ],
+        "right": [
+          0.12088534632557928,
+          -0.3599194198579696,
+          -0.43407329120845944,
+          -2.31363059774809,
+          -0.6316854137207452,
+          2.473321126272694,
+          -1.5379118955273465
+        ]
+      }
+    },
+    {
+      "name": "right_clear_handle",
+      "duration_s": 3.0112853514406903,
+      "exact_minimum_joint_limit_margin_rad": 0.5784290871622284,
+      "minimum_rigid_clearance": {
+        "time_s": 2.6198182557534007,
+        "category": "right_self",
+        "distance": 0.021786287823087516,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "end_q": {
+        "left": [
+          -0.1757661116289193,
+          -0.5042694826268563,
+          0.1538615905332038,
+          -2.4933709128377717,
+          -0.20301147905273248,
+          2.568233510691899,
+          1.2567595112309413
+        ],
+        "right": [
+          0.18151351423989404,
+          -0.8235555480913981,
+          -0.2602542369374775,
+          -2.1506741135173524,
+          -0.1947631923236443,
+          1.3483581031252445,
+          -1.6556189152169614
+        ]
+      }
+    },
+    {
+      "name": "teddy_pregrasp",
+      "duration_s": 4.299923173739561,
+      "exact_minimum_joint_limit_margin_rad": 0.5525001083329291,
+      "minimum_rigid_clearance": {
+        "time_s": 1.977964659920198,
+        "category": "right_self",
+        "distance": 0.02171925164947323,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "end_q": {
+        "left": [
+          -0.1757661116289193,
+          -0.5042694826268563,
+          0.1538615905332038,
+          -2.4933709128377717,
+          -0.20301147905273248,
+          2.568233510691899,
+          1.2567595112309413
+        ],
+        "right": [
+          0.5100234508624416,
+          0.34386405867821,
+          0.273456089223848,
+          -2.0861765536776042,
+          -0.13724922368550604,
+          2.4135073321500027,
+          -0.7436737240626843
+        ]
+      }
+    },
+    {
+      "name": "teddy_grasp_approach",
+      "duration_s": 1.5415384615384613,
+      "exact_minimum_joint_limit_margin_rad": 0.5784290871622284,
+      "minimum_rigid_clearance": {
+        "time_s": 1.5415384615384613,
+        "category": "right_table",
+        "distance": 0.022209393762304793,
+        "bodies": [
+          "right_left_finger",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ]
+      },
+      "end_q": {
+        "left": [
+          -0.1757661116289193,
+          -0.5042694826268563,
+          0.1538615905332038,
+          -2.4933709128377717,
+          -0.20301147905273248,
+          2.568233510691899,
+          1.2567595112309413
+        ],
+        "right": [
+          0.5807578656498196,
+          0.6669732547939236,
+          0.17941614366912592,
+          -2.03918591620676,
+          -0.2534005704938796,
+          2.6856057010668115,
+          -0.6638488574353701
+        ]
+      }
+    },
+    {
+      "name": "lift_teddy",
+      "duration_s": 3.9873142189959356,
+      "exact_minimum_joint_limit_margin_rad": 0.5784290871622284,
+      "minimum_rigid_clearance": {
+        "time_s": 3.209787946291728,
+        "category": "right_self",
+        "distance": 0.021656075364509156,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "end_q": {
+        "left": [
+          -0.1757661116289193,
+          -0.5042694826268563,
+          0.1538615905332038,
+          -2.4933709128377717,
+          -0.20301147905273248,
+          2.568233510691899,
+          1.2567595112309413
+        ],
+        "right": [
+          0.543518203507879,
+          0.26576810035849896,
+          0.3173601755892748,
+          -0.985396020906051,
+          -0.08678103919839371,
+          1.239626453389545,
+          -0.7924481150001335
+        ]
+      }
+    }
+  ],
+  "initial_q": {
+    "left": [
+      -0.17289174622072753,
+      -0.4643721358349897,
+      0.2374219376243882,
+      -2.4050828977060705,
+      -0.215506497023198,
+      2.5070528721829324,
+      1.345397341924966
+    ],
+    "right": [
+      0.15867346213401493,
+      -0.2988780306722706,
+      -0.3846226492630986,
+      -2.220588743233196,
+      -0.6003193778694417,
+      2.4141951025594444,
+      -1.4944356746818328
+    ]
+  },
+  "initial_clearance": {
+    "left_self": {
+      "distance": 0.02463933549810141,
+      "bodies": [
+        "left_link5",
+        "left_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "left_table": {
+      "distance": 0.16099593221477015,
+      "bodies": [
+        "left_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "table"
+      ]
+    },
+    "left_mounts": {
+      "distance": 0.14099593221477014,
+      "bodies": [
+        "left_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "left_mount"
+      ]
+    },
+    "right_self": {
+      "distance": 0.02468952946546697,
+      "bodies": [
+        "right_link5",
+        "right_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "right_table": {
+      "distance": 0.16099593221477015,
+      "bodies": [
+        "right_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "table"
+      ]
+    },
+    "right_mounts": {
+      "distance": 0.1409959322147701,
+      "bodies": [
+        "right_link1",
+        "world"
+      ],
+      "geoms": [
+        "",
+        "right_mount"
+      ]
+    },
+    "arms": {
+      "distance": 0.0168922661572669,
+      "bodies": [
+        "left_hand",
+        "right_hand"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    }
+  },
+  "full_prefix_passed": true
+}

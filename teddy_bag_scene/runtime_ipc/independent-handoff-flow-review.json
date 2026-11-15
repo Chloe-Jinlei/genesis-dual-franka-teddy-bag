@@ -1,0 +1,355 @@
+{
+  "kind": "independent_handoff_AST_only_flow_review",
+  "native_execution": false,
+  "physical_success": false,
+  "source_sha256": "0ed42957296a0ad41b4691856042a77ccef9ce3472a0b77f0d78d653f09c38f1",
+  "config_sha256": "007ad02bf4c4bfa626684f1c0a1d86a7d415cd5757a685990348ecc5054050d3",
+  "checks": [
+    {
+      "name": "exact handoff sequence and early return",
+      "passed": true
+    },
+    {
+      "name": "ten second hold",
+      "passed": true
+    },
+    {
+      "name": "right release command opens both native finger targets",
+      "passed": true
+    },
+    {
+      "name": "left hold monitor stays active and right prehandoff contact requirement disabled",
+      "passed": true
+    },
+    {
+      "name": "no full task completion claim",
+      "passed": true
+    },
+    {
+      "name": "open still returns before handoff",
+      "passed": true
+    },
+    {
+      "name": "aborted hold never marks completed",
+      "passed": true
+    },
+    {
+      "name": "handoff success scoped without full task success",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed finite_saved_states",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed per_step_soft_metrics_valid_when_supplied",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed actual_open_bag_topology",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed two_cloth_panels_with_direct_u_seam_and_no_bottom_or_side_panels",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed no_tetrahedron_inversion",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed no_tetrahedron_volume_below_5_percent",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed table_penetration_below_2mm",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed cloth_edge_stretch_below_15_percent",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed no_final_sampled_bag_bear_penetration_over_1mm",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed joint_motion_within_configured_limits",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed motion_sample_interval_at_most_20ms",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed left_gripper_holds_pose_within_15mm_after_handoff",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed named_left_handle_material_within_18mm_after_handoff",
+      "passed": true
+    },
+    {
+      "name": "gate fails closed both_left_fingers_command_clamping_after_handoff",
+      "passed": true
+    },
+    {
+      "name": "incomplete",
+      "passed": true
+    },
+    {
+      "name": "native failure",
+      "passed": true
+    },
+    {
+      "name": "audit failure",
+      "passed": true
+    },
+    {
+      "name": "right finger1 closed",
+      "passed": true
+    },
+    {
+      "name": "right finger2 closed",
+      "passed": true
+    },
+    {
+      "name": "right nonfinite",
+      "passed": true
+    },
+    {
+      "name": "full does not reuse probe success",
+      "passed": true
+    },
+    {
+      "name": "right threshold inclusive",
+      "passed": true
+    },
+    {
+      "name": "removing only handoff guards gives exact prior full21 AST",
+      "passed": true
+    },
+    {
+      "name": "config only initial approach and optional held orientation changes",
+      "passed": true
+    },
+    {
+      "name": "production source stable during audit",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "count": 33,
+  "failures": [],
+  "finish_cases": [
+    {
+      "case": "valid isolated contract",
+      "requested_passed": true,
+      "handoff_passed": true,
+      "status": "completed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate finite_saved_states",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate per_step_soft_metrics_valid_when_supplied",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate actual_open_bag_topology",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate two_cloth_panels_with_direct_u_seam_and_no_bottom_or_side_panels",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate no_tetrahedron_inversion",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate no_tetrahedron_volume_below_5_percent",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate table_penetration_below_2mm",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate cloth_edge_stretch_below_15_percent",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate no_final_sampled_bag_bear_penetration_over_1mm",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate joint_motion_within_configured_limits",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate motion_sample_interval_at_most_20ms",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate left_gripper_holds_pose_within_15mm_after_handoff",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate named_left_handle_material_within_18mm_after_handoff",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "missing gate both_left_fingers_command_clamping_after_handoff",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "incomplete",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "native failure",
+      "requested_passed": false,
+      "handoff_passed": true,
+      "status": "failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "audit failure",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "right finger1 closed",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "right finger2 closed",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "right nonfinite",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "full does not reuse probe success",
+      "requested_passed": false,
+      "handoff_passed": false,
+      "status": "validation_failed",
+      "full_task_passed": false
+    },
+    {
+      "case": "exact threshold",
+      "requested_passed": true,
+      "handoff_passed": true,
+      "status": "completed",
+      "full_task_passed": false
+    }
+  ],
+  "config_diff_from_full21": [
+    {
+      "path": "/task/handle_grasps/left/preferred_approach",
+      "before": [
+        0.573576436351046,
+        0.0,
+        -0.8191520442889918
+      ],
+      "after": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "path": "/task/handle_grasps/right/preferred_approach",
+      "before": [
+        -0.573576436351046,
+        0.0,
+        -0.8191520442889918
+      ],
+      "after": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "path": "/task/left_hold_preferred_approach",
+      "before": [
+        0.9961946980917455,
+        0.0,
+        -0.08715574274765814
+      ],
+      "after": "<missing>"
+    },
+    {
+      "path": "/task/left_hold_rotation_duration_s",
+      "before": 4.0,
+      "after": "<missing>"
+    }
+  ],
+  "scope": [
+    "Production run/finish AST only, synthetic audit output; no physics claim.",
+    "Actual left named-material and PD-clamp checks retain existing saved-frame scope. Physical metrics remain per-step in unchanged observe_physics.",
+    "Right actual fingers are trace columns 17 and 18, tested at final sample."
+  ],
+  "existing_final_contact_gate_in_probe_scope": true
+}

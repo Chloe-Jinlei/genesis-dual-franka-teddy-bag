@@ -1,0 +1,62 @@
+{
+  "kind": "historical_single_center_audit_compatibility",
+  "physical_success": false,
+  "all_unchanged": true,
+  "rows": [
+    {
+      "run": "two_panel_full_16",
+      "prior_status": "incomplete",
+      "new_status": "incomplete",
+      "prior_passed": false,
+      "new_passed": false,
+      "existing_check_changes": {},
+      "previous_explicit_budget_check_renames": {
+        "entry_planned_budget_finite_and_within_30_50mm": "entry_planned_budget_finite_and_within_declared_xy_limits",
+        "entry_actual_xy_within_30_50mm": "entry_actual_xy_within_declared_xy_limits",
+        "center_planned_budget_finite_and_within_30_50mm": "center_planned_budget_finite_and_within_declared_xy_limits",
+        "center_actual_xy_within_30_50mm": "center_actual_xy_within_declared_xy_limits",
+        "insert_planned_budget_finite_and_within_30_50mm": "insert_planned_budget_finite_and_within_declared_xy_limits"
+      },
+      "new_check_values": {
+        "frozen_config_xy_limits_within_allowed_bounds": true,
+        "frozen_config_center_offsets_valid": true,
+        "entry_planned_budget_finite_and_within_declared_xy_limits": true,
+        "entry_checkpoint_budget_matches_frozen_config": true,
+        "entry_actual_xy_within_declared_xy_limits": true,
+        "center_planned_budget_finite_and_within_declared_xy_limits": true,
+        "center_checkpoint_budget_matches_frozen_config": true,
+        "center_actual_xy_within_declared_xy_limits": true,
+        "insert_planned_budget_finite_and_within_declared_xy_limits": true,
+        "insert_checkpoint_budget_matches_frozen_config": true
+      },
+      "prior_incomplete_evidence": [
+        "No actual full-state frame at staged endpoint 63.980000000011195"
+      ],
+      "new_incomplete_evidence": [
+        "No actual full-state frame at staged endpoint 63.980000000011195"
+      ],
+      "unchanged": true
+    },
+    {
+      "run": "two_panel_full_17",
+      "prior_status": "incomplete",
+      "new_status": "incomplete",
+      "prior_passed": false,
+      "new_passed": false,
+      "existing_check_changes": {},
+      "previous_explicit_budget_check_renames": {},
+      "new_check_values": {
+        "frozen_config_center_offsets_valid": true
+      },
+      "prior_incomplete_evidence": [
+        "center rejected before execution"
+      ],
+      "new_incomplete_evidence": [
+        "center rejected before execution"
+      ],
+      "unchanged": true
+    }
+  ],
+  "auditor_sha256": "bf8852d93522c5f17eb21b860ca8ce26ef7fb6819f716d9e76ec709f5bf84a78",
+  "note": "full16 predates the separate explicit-budget implementation, so its old 30/50 check labels map to the declared-limits labels. Values/status/reasons are compared, never converted into physical success."
+}

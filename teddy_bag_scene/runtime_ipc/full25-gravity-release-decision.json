@@ -1,0 +1,60 @@
+{
+  "kind": "fresh_native_gravity_seating_release_trial",
+  "created_utc": "2026-11-13T22:30:54.896817+00:00",
+  "native_run_started": false,
+  "physical_success": false,
+  "config": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_gravity_seating_trial.json",
+  "config_sha256": "a07e36055578a5aeb7bd27262112a6dbbdf88c0db41ecc8a7c578113bf33a861",
+  "only_config_addition_from_full24": {
+    "mode": "gravity_seating",
+    "tcp_height_above_table_m": 0.345,
+    "minimum_inside_vertex_fraction": 0.5,
+    "settle_seconds": 4.0
+  },
+  "source_sha256": {
+    "asset_visual_check.py": "35109a5a1c98056bde6fd599e962ab9b7e5f72512549986693e2aedcc0cdd83a",
+    "assets_builder.py": "d6adb8a187a31092b21f6edab55145291fda1ba97d221d744b8989847c1e960e",
+    "build_tall_bag.py": "dc57f031b1a972743eff2edb85ac85630321e848dedc579305d51de0fd4b6926",
+    "build_wide_tall_bag.py": "072735056b4d238622a8443f4ec6f85e1e097a041a8e2b261d1a7ab12d02349c",
+    "contact_grasp.py": "3ac4767bad63047309b1f18583a40c2afc3424ce944e3a85427dedc2f588c4ab",
+    "contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "gravity_release.py": "d88f4a7cd34853fb8f07eb34d42e137007cd553f69ddc920a0856a0710c96dee",
+    "insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "ipc_probe.py": "24893c56f8cd6497d506c2c9c5a4520f315df53bbb2f2c48c79642e521fcf0a6",
+    "motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "motion_preflight.py": "671e1d1ff7a0d1192fee04ded7cc2399205eaa7a2afd9211cafe15b4813bd43f",
+    "physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "remesh_bear.py": "feb5f7dccc5fa4e08a4ca02ec6ff2ad4abaa669e7a9c68869104f881d8428a20",
+    "run.py": "f774826d687eb6662bd1d4c491382214eac2fce22e554fd0ebdf9bf6fba0a2a6",
+    "scale_bear_asset.py": "a5ab305024338aaaaa1dfeb89a532492996fd392a015aed696d661fa52d26d45",
+    "scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "staged_contact_insertion.py": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b",
+    "staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "two_panel_builder.py": "d915692a9f2ae8a6185520582e1a2db93365c9fde3d433a9c6991097a6aa4188",
+    "validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99"
+  },
+  "evidence_sha256": {
+    "runtime_ipc/independent-gravity-release-review.json": "20f51100ada36de2525b9285c49bce8a549d89f18727e587af4259e78f7a4e33",
+    "runtime_ipc/full25-gravity-release-preflight-final.json": "1295517ba6f537284045cb21d229b67bbea47b727f9b981d799a15cec2412fa7",
+    "runs/two_panel_full_24/independent-contact-loss-window-review.json": "57f85e1fa21fe2a19d36d5d4569387d3ddb6aa596eec2ff697a65ac0fa81bf49",
+    "runs/two_panel_full_24/independent-release-window-containment-review.json": "5491e765fc080d02cfab5a653c69dafe3a08938f5a3789832c1a12ce6b9c32b7",
+    "runs/two_panel_full_24/independent-release-window-interpretation.json": "6621a5619fe1de780d4a330f99e01f2d7b8b07c1f76a0a0841eb679d3a84b469",
+    "runs/two_panel_full_24/independent-late-contact-review/review.json": "df90e752bc14a1bc328f18df6027d0058a0b735a75cc20e1e38e0ab7597e5d0c"
+  },
+  "rationale": "Full24 first recorded actual COM inclusion and over 50 percent node inclusion at TCP1.086432m while both fingers still reacted above2N. It later lost one-sided contact before the original deep endpoint. This new controller deliberately stops at TCP1.085m, checks the actual stopped state, and releases only if its explicit partial-capture conditions pass.",
+  "limits": [
+    "Previous moving-through geometry does not predict the new stopped state or prove stable support. Cloth panels and the free rear handle are in contact with the teddy.",
+    "The original full-depth preflight remains required and unchanged. Partial insertion executes its own exact checked C2 joint curve with zero endpoint velocity/acceleration; no abrupt interruption or soft-state injection.",
+    "Actual release requires valid analysis cap, mass COM inside, at least half of ALL1450 nodes inside, slow actual endpoint, correct pose and original two-sided contact. Partial capture is not physical task success.",
+    "Opening remains the continuous original motor target0 to0.04m over0.5s, so actual unloading may lag the declared release start. No weakening of force, torque, cloth, tetra, table or left-holding limits.",
+    "The original materials, upper-arm3N grasp, -30degree yaw and XY target remain unchanged; the bag remains two sewn cloth panels with zero-width bottom seam.",
+    "The analysis cap is not simulated. Its validity flag does not certify every possible body self-intersection.",
+    "Release and withdrawal use native contact; final complete teddy/COM containment and retention plus physical audits remain mandatory.",
+    "Runs from time zero with original assets. Default desktop candidate is not changed before a complete validated success."
+  ]
+}

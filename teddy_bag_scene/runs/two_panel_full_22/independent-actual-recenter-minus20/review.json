@@ -1,0 +1,100 @@
+{
+  "kind": "one_actual_full22_fixed_minus20mm_xy_recenter",
+  "physical_success": false,
+  "native_execution": false,
+  "actual_source_time_s": 40.73500000000239,
+  "actual_state_source": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/transport_teddy.npz",
+  "original_selected_candidate": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/guarded_contact_candidate.json",
+  "only_config_difference": {
+    "task.contact_trial.recenter_offsets_xy_m": [
+      [
+        -0.02,
+        -0.02
+      ]
+    ]
+  },
+  "runtime_recenter_enabled_unchanged": false,
+  "attempt_index": 1,
+  "cumulative_xy_m_before": 0.0,
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/transport_teddy.npz": "f9bbe6dd8ede9d7834d47f09f620b7e1da5f4f9818808576666af5d58913bd8a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/config.json": "95136a3518a6ce78a8303127d4eb3d52406ba62f895c756c1cae8b3d9ad417e8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/guarded_contact_candidate.json": "917591cb649e1cca15c8bffd0d339ead4847d94a7c667095df531b0310b58a45",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/source/contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py": "c63b0f9771a72882b1a5e2829510ad843fb8f1c7780e534cf71a2758bb12a307",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_guarded_upright_offset_trial.json": "34d29f270144496818569b260185f98ba7f75d9d5c8964b63fbd073d826ec52b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full22_recenter_minus20.py": "e6e649b92484f93a0ab5182db911187fff337792b4860b6f92ba51aeb96802ba"
+  },
+  "status": "bounded_cpu_query_finished",
+  "limitations": [
+    "The saved actual state is queried without native execution. Runtime recenter_enabled remains false in this diagnostic copy; this query alone does not authorize an execution.",
+    "Only returned preparation stages could execute in a separately authorized enabled trial; provisional insert/release/withdraw are frozen-state hypotheses and require a fresh later observation."
+  ],
+  "candidate_status": "rejected",
+  "planning_wall_s": 15.77612054400015,
+  "rejections": [
+    "No bounded fixed-orientation correction passed every geometry and robot gate"
+  ],
+  "all_inputs_unchanged": true,
+  "actual_arrays_unchanged": true,
+  "candidate_sha256": "24623fc8b0902e4e85be275568542e254a20d459ecb9a9b1ceb9cee1d13e262f",
+  "candidates": [
+    {
+      "correction_xy_m": [
+        -0.02,
+        -0.02
+      ],
+      "rejections": [
+        "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+      ],
+      "status": "rejected"
+    }
+  ],
+  "candidate_failures": [
+    {
+      "xy": [
+        -0.02,
+        -0.02
+      ],
+      "rejections": [
+        "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+      ],
+      "attempts": []
+    }
+  ],
+  "selected_sections": {
+    "translation_xy_m": [
+      -0.01999999999999999,
+      -0.020000000000000004
+    ],
+    "maximum_outside_excursion_bound_m": 0.06426351598569394,
+    "allowed_outside_excursion_m": 0.10576165178542812,
+    "minimum_section_slab_overlap_fraction": 0.5149699500087774,
+    "maximum_required_enclosing_rim_perimeter_m": 0.922190460614702,
+    "section_perimeter_square_buffer_halfwidth_m": 0.002,
+    "available_rim_perimeter_m": 0.9152328087150292,
+    "interior_distance_initial_grid_spacing_m": 0.004,
+    "interior_distance_refined_grid_spacing_m": 0.001,
+    "interior_distance_refined_slab_count": 0,
+    "perimeter_margin_m": -0.00695765189967279,
+    "section_guard_rejections": [
+      "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+    ],
+    "center_of_mass_xy_target_m": [
+      -0.1673012938870749,
+      0.061779808910532294
+    ],
+    "com_boundary_distance_m": 0.03972782117038219
+  },
+  "perimeter_deficit_m": 0.00695765189967279,
+  "independent_duplicate_comparison": {
+    "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/independent-actual-recenter-study/minus20-minus20-correction.json",
+    "sha256": "24623fc8b0902e4e85be275568542e254a20d459ecb9a9b1ceb9cee1d13e262f",
+    "entire_candidate_JSON_exactly_equal": true
+  },
+  "robot_401_review_performed": false,
+  "robot_review_not_applicable_reason": "The single correction was rejected at the unchanged geometry gate, with zero robot planning attempts; there is no accepted curve to audit."
+}

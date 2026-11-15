@@ -1,0 +1,35 @@
+{
+  "kind": "explicit_deformable_rim_policy_change_review",
+  "physical_success": false,
+  "production_changed_by_this_task": [
+    "contact_insertion.py"
+  ],
+  "source_sha256": {
+    "contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "runtime_ipc/audit_guarded_run.py": "39b9426b429711c0cf60ffabcfcce8a91819f9de5b6f711273db90d9161fdbab"
+  },
+  "targeted_geometry_policy_regression": {
+    "checks": 37,
+    "passed": true,
+    "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/rim-perimeter-policy-regression.json",
+    "sha256": "163318874f62ef88649e4a074b7dc734aea79ccc78681f9cb5b8162e872f2083"
+  },
+  "frozen_policy_auditor_regression": {
+    "checks": 24,
+    "passed": true,
+    "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/rim-perimeter-audit-regression.json",
+    "sha256": "f28f8a4ec0894286faedc2babefb05017f1bd1a77b4a5615a51b51547bec1c0e"
+  },
+  "independent_review": {
+    "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/independent-deformable-rim-policy-review.json",
+    "sha256": "e23dae675bb9aa0ccd5383e6cf93697ce83ae047dd612c87c34e9de7396c9615"
+  },
+  "behavior": [
+    "Default fixed_mouth_union retains old geometry values and rejection reasons. Both perimeters are always computed/reported.",
+    "Opted deformable_rim_contact uses maximum square-buffered-section perimeter only; all other geometric/robot/native gates stay unchanged. Only vertical insertion supports this opt-in.",
+    "Existing maximum_required_enclosing_rim_perimeter_m and perimeter_margin_m always retain the original union including negative values. Separate explicit active fields carry the selected criterion.",
+    "Fresh full selected policy must equal current policy. Historical old-schema candidate/raw route records are not silently reinterpreted by the new helper; replay with frozen source or create a new preparation.",
+    "Auditor distinguishes exact frozen legacy/new function AST, checks complete policy against frozen config, active/legacy arithmetic, per-slab square Minkowski perimeter and immutable diagnostic failures."
+  ],
+  "validation_scope": "No native task success, cloth feasibility or collision-free passage follows from these checks. Root separately launched full23; this report does not certify that active run."
+}

@@ -1,0 +1,781 @@
+{
+  "kind": "Sequential replan of selected full03 targets using 1 mrad IK margin and analytical joint-limit validation",
+  "all_four_stages_pass": true,
+  "physical_success": false,
+  "source_hashes": {
+    "old_motion": "9c0d60b2775fed4befc08018a5e1c2e6e88d9f7b94a658f213f67b067e9b3184",
+    "new_motion": "87fcebe119ccca3de79f18f490c99d19dd89477cc27f44d7ef0d13660972be64",
+    "asset": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078"
+  },
+  "source_changes_checked": {
+    "IK_JOINT_MARGIN": 0.001,
+    "analytical_joint_validation_called_by_trajectory": true
+  },
+  "start": "full03 lift_teddy actual q for both arms",
+  "finger_q_m": {
+    "left_actual": [
+      0.0011062110068301332,
+      0.0011090786431322956
+    ],
+    "right": [
+      0.024,
+      0.024
+    ]
+  },
+  "planner_parameters": {
+    "samples": 35,
+    "validate_samples": 61,
+    "comparison_samples": 201,
+    "duration_input_s": 2.5,
+    "minimum_clearance_m": 0.008
+  },
+  "sequential_replanning": true,
+  "saved_old_endq_used_as_next_seed": false,
+  "stages": [
+    {
+      "name": "height_at_current_xy",
+      "status": "passed",
+      "target_tcp_m": [
+        0.34983119251102246,
+        -0.2638513115719433,
+        1.369737771530779
+      ],
+      "target_rotation_xyzw": [
+        0.9999999553754492,
+        -2.6454430747113733e-06,
+        3.540929823575234e-05,
+        -0.00029662818952760434
+      ],
+      "start_q_right": [
+        0.5422487850024963,
+        0.266154220101758,
+        0.31908548157877625,
+        -0.9856162330187129,
+        -0.08727733570436746,
+        1.2394981866309167,
+        -0.7921907452651265
+      ],
+      "exact_joint_margins": {
+        "left": {
+          "per_joint_margin_rad": [
+            2.723942826959443,
+            1.2587454902164756,
+            2.7456827588200055,
+            0.5784857499503633,
+            2.6921947954370467,
+            1.1845056025778784,
+            1.6390408946663715
+          ],
+          "worst": {
+            "side": "left",
+            "joint": 4,
+            "margin_rad": 0.5784857499503633,
+            "q_rad": -2.493314250049637,
+            "limit_rad": -3.0718,
+            "path_fraction": 0.0
+          }
+        },
+        "right": {
+          "per_joint_margin_rad": [
+            2.355051214997504,
+            1.496645779898242,
+            2.5782145184212237,
+            0.915816233018713,
+            2.8100226642956327,
+            1.2569981866309168,
+            2.1051092547348738
+          ],
+          "worst": {
+            "side": "right",
+            "joint": 4,
+            "margin_rad": 0.915816233018713,
+            "q_rad": -0.9856162330187129,
+            "limit_rad": -0.0698,
+            "path_fraction": 0.0
+          }
+        }
+      },
+      "minimum_exact_joint_margin": {
+        "side": "left",
+        "joint": 4,
+        "margin_rad": 0.5784857499503633,
+        "q_rad": -2.493314250049637,
+        "limit_rad": -3.0718,
+        "path_fraction": 0.0
+      },
+      "minimum_rigid_clearance_m": 0.022144367660768084,
+      "limiting_rigid_category": "right_self",
+      "rigid_clearances": {
+        "left_self": {
+          "distance": 0.02412022700669924,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        },
+        "left_table": {
+          "distance": 0.16099593221477004,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.0
+        },
+        "left_mounts": {
+          "distance": 0.14099593221477003,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ],
+          "time_s": 0.0
+        },
+        "right_self": {
+          "distance": 0.022144367660768084,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        },
+        "right_table": {
+          "distance": 0.16099593221477015,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.0
+        },
+        "right_mounts": {
+          "distance": 0.14099593221477014,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ],
+          "time_s": 0.0
+        },
+        "arms": {
+          "distance": 0.2,
+          "bodies": [
+            "left_link1",
+            "right_link1"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        }
+      },
+      "duration_s": 2.505,
+      "right_q_end": [
+        0.5422487850024963,
+        0.266154220101758,
+        0.31908548157877625,
+        -0.9856162330187129,
+        -0.08727733570436746,
+        1.2394981866309167,
+        -0.7921907452651265
+      ],
+      "start_jump_rad": 0.0,
+      "max_cartesian_error_m": 2.2887833992611187e-16,
+      "max_rotation_error_rad": 1.0842021724855044e-19,
+      "max_joint_velocity_rad_s": 0.0,
+      "max_joint_acceleration_rad_s2": 0.0,
+      "comparison_to_old": {
+        "old_duration_s": 2.505,
+        "duration_delta_s": 0.0,
+        "old_exact_min_joint_margin_rad": 0.5784857499503633,
+        "old_min_rigid_clearance_m": 0.022144367660768084,
+        "right_endpoint_max_abs_delta_rad": 0.0
+      }
+    },
+    {
+      "name": "rotate_held_teddy",
+      "status": "passed",
+      "target_tcp_m": [
+        0.34983119251102246,
+        -0.2638513115719433,
+        1.369737771530779
+      ],
+      "target_rotation_xyzw": [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.7071067811865475
+      ],
+      "start_q_right": [
+        0.5422487850024963,
+        0.266154220101758,
+        0.31908548157877625,
+        -0.9856162330187129,
+        -0.08727733570436746,
+        1.2394981866309167,
+        -0.7921907452651265
+      ],
+      "exact_joint_margins": {
+        "left": {
+          "per_joint_margin_rad": [
+            2.723942826959443,
+            1.2587454902164756,
+            2.7456827588200055,
+            0.5784857499503633,
+            2.6921947954370467,
+            1.1845056025778784,
+            1.6390408946663715
+          ],
+          "worst": {
+            "side": "left",
+            "joint": 4,
+            "margin_rad": 0.5784857499503633,
+            "q_rad": -2.493314250049637,
+            "limit_rad": -3.0718,
+            "path_fraction": 0.0
+          }
+        },
+        "right": {
+          "per_joint_margin_rad": [
+            1.3612536535618116,
+            1.4000631274440938,
+            2.2564195003040135,
+            0.7014628050375689,
+            2.3609527628212224,
+            0.03943018334044268,
+            1.5625731524856465
+          ],
+          "worst": {
+            "side": "right",
+            "joint": 6,
+            "margin_rad": 0.03943018334044268,
+            "q_rad": 3.7130698166595573,
+            "limit_rad": 3.7525,
+            "path_fraction": 1.0
+          }
+        }
+      },
+      "minimum_exact_joint_margin": {
+        "side": "right",
+        "joint": 6,
+        "margin_rad": 0.03943018334044268,
+        "q_rad": 3.7130698166595573,
+        "limit_rad": 3.7525,
+        "path_fraction": 1.0
+      },
+      "minimum_rigid_clearance_m": 0.021661491929281622,
+      "limiting_rigid_category": "right_self",
+      "rigid_clearances": {
+        "left_self": {
+          "distance": 0.02412022700669924,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        },
+        "left_table": {
+          "distance": 0.16099593221477004,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.0
+        },
+        "left_mounts": {
+          "distance": 0.14099593221477003,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ],
+          "time_s": 0.0
+        },
+        "right_self": {
+          "distance": 0.021661491929281622,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 2.2946102192902913
+        },
+        "right_table": {
+          "distance": 0.16099593221477002,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 2.2946102192902913
+        },
+        "right_mounts": {
+          "distance": 0.14099593221477,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ],
+          "time_s": 7.33000486717732
+        },
+        "arms": {
+          "distance": 0.2,
+          "bodies": [
+            "left_link1",
+            "right_link1"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        }
+      },
+      "duration_s": 12.74783455161273,
+      "right_q_end": [
+        1.5360463464381884,
+        -0.3087243443999432,
+        -0.6408804996959866,
+        -2.3703371949624312,
+        0.16231944458751021,
+        3.7130698166595573,
+        -1.1056688927387683
+      ],
+      "start_jump_rad": 0.0,
+      "max_cartesian_error_m": 4.010564192142349e-05,
+      "max_rotation_error_rad": 0.00015234962892289814,
+      "max_joint_velocity_rad_s": 0.5478895811865416,
+      "max_joint_acceleration_rad_s2": 0.8352511554505642,
+      "comparison_to_old": {
+        "old_duration_s": 12.4621104722741,
+        "duration_delta_s": 0.28572407933863,
+        "old_exact_min_joint_margin_rad": 0.03981293699344013,
+        "old_min_rigid_clearance_m": 0.02166149162292164,
+        "right_endpoint_max_abs_delta_rad": 0.008453798454153283
+      }
+    },
+    {
+      "name": "translate_outside_mouth",
+      "status": "passed",
+      "target_tcp_m": [
+        -0.11807453049534236,
+        0.12992632540207832,
+        1.2693032111811515
+      ],
+      "target_rotation_xyzw": [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.7071067811865475
+      ],
+      "start_q_right": [
+        1.5360463464381884,
+        -0.3087243443999432,
+        -0.6408804996959866,
+        -2.3703371949624312,
+        0.16231944458751021,
+        3.7130698166595573,
+        -1.1056688927387683
+      ],
+      "exact_joint_margins": {
+        "left": {
+          "per_joint_margin_rad": [
+            2.723942826959443,
+            1.2587454902164756,
+            2.7456827588200055,
+            0.5784857499503633,
+            2.6921947954370467,
+            1.1845056025778784,
+            1.6390408946663715
+          ],
+          "worst": {
+            "side": "left",
+            "joint": 4,
+            "margin_rad": 0.5784857499503633,
+            "q_rad": -2.493314250049637,
+            "limit_rad": -3.0718,
+            "path_fraction": 0.0
+          }
+        },
+        "right": {
+          "per_joint_margin_rad": [
+            1.3612536535618116,
+            0.0781062959825074,
+            1.6697953446091565,
+            0.3593701101609996,
+            2.53025111812088,
+            0.03856966950919638,
+            1.1199943066484341
+          ],
+          "worst": {
+            "side": "right",
+            "joint": 6,
+            "margin_rad": 0.03856966950919638,
+            "q_rad": 3.7139303304908036,
+            "limit_rad": 3.7525,
+            "path_fraction": 0.024681420526663434
+          }
+        }
+      },
+      "minimum_exact_joint_margin": {
+        "side": "right",
+        "joint": 6,
+        "margin_rad": 0.03856966950919638,
+        "q_rad": 3.7139303304908036,
+        "limit_rad": 3.7525,
+        "path_fraction": 0.024681420526663434
+      },
+      "minimum_rigid_clearance_m": 0.021710110509524462,
+      "limiting_rigid_category": "right_self",
+      "rigid_clearances": {
+        "left_self": {
+          "distance": 0.02412022700669924,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        },
+        "left_table": {
+          "distance": 0.16099593221477004,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.0
+        },
+        "left_mounts": {
+          "distance": 0.14099593221477003,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ],
+          "time_s": 0.0
+        },
+        "right_self": {
+          "distance": 0.021710110509524462,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 2.4474271349954533
+        },
+        "right_table": {
+          "distance": 0.16099593221477,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 1.468456280997272
+        },
+        "right_mounts": {
+          "distance": 0.14099593221477,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ],
+          "time_s": 0.24474271349954535
+        },
+        "arms": {
+          "distance": 0.1280661046523746,
+          "bodies": [
+            "left_hand",
+            "right_right_finger"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 4.405368842991816
+        }
+      },
+      "duration_s": 6.118567837488634,
+      "right_q_end": [
+        1.119853400182272,
+        -1.6846937040174925,
+        -1.2275046553908435,
+        -2.2898527890758316,
+        -0.33996737067519905,
+        2.5021516152626844,
+        -1.7773056933515659
+      ],
+      "start_jump_rad": 0.0,
+      "max_cartesian_error_m": 2.632261343672263e-07,
+      "max_rotation_error_rad": 5.109038425355692e-07,
+      "max_joint_velocity_rad_s": 0.5489021956087828,
+      "max_joint_acceleration_rad_s2": 0.39485141615099034,
+      "comparison_to_old": {
+        "old_duration_s": 6.157532329317695,
+        "duration_delta_s": -0.03896449182906103,
+        "old_exact_min_joint_margin_rad": 0.038911141447039554,
+        "old_min_rigid_clearance_m": 0.021731416427847164,
+        "right_endpoint_max_abs_delta_rad": 0.008237891459675795
+      }
+    },
+    {
+      "name": "insert_candidate",
+      "status": "passed",
+      "target_tcp_m": [
+        -0.11807453049534236,
+        0.12992632540207832,
+        0.9571539616443488
+      ],
+      "target_rotation_xyzw": [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.7071067811865475
+      ],
+      "start_q_right": [
+        1.119853400182272,
+        -1.6846937040174925,
+        -1.2275046553908435,
+        -2.2898527890758316,
+        -0.33996737067519905,
+        2.5021516152626844,
+        -1.7773056933515659
+      ],
+      "exact_joint_margins": {
+        "left": {
+          "per_joint_margin_rad": [
+            2.723942826959443,
+            1.2587454902164756,
+            2.7456827588200055,
+            0.5784857499503633,
+            2.6921947954370467,
+            1.1845056025778784,
+            1.6390408946663715
+          ],
+          "worst": {
+            "side": "left",
+            "joint": 4,
+            "margin_rad": 0.5784857499503633,
+            "q_rad": -2.493314250049637,
+            "limit_rad": -3.0718,
+            "path_fraction": 0.0
+          }
+        },
+        "right": {
+          "per_joint_margin_rad": [
+            1.777446599817728,
+            0.0009053930926583575,
+            1.0618890204500113,
+            0.675828710011293,
+            2.50373328934736,
+            1.2094989876089062,
+            0.4411803869314088
+          ],
+          "worst": {
+            "side": "right",
+            "joint": 2,
+            "margin_rad": 0.0009053930926583575,
+            "q_rad": -1.7618946069073416,
+            "limit_rad": -1.7628,
+            "path_fraction": 0.6003149548130435
+          }
+        }
+      },
+      "minimum_exact_joint_margin": {
+        "side": "right",
+        "joint": 2,
+        "margin_rad": 0.0009053930926583575,
+        "q_rad": -1.7618946069073416,
+        "limit_rad": -1.7628,
+        "path_fraction": 0.6003149548130435
+      },
+      "minimum_rigid_clearance_m": 0.02412022700669924,
+      "limiting_rigid_category": "left_self",
+      "rigid_clearances": {
+        "left_self": {
+          "distance": 0.02412022700669924,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 0.0
+        },
+        "left_table": {
+          "distance": 0.16099593221477004,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 0.0
+        },
+        "left_mounts": {
+          "distance": 0.14099593221477003,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ],
+          "time_s": 0.0
+        },
+        "right_self": {
+          "distance": 0.02429549509091065,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 7.339498260193863
+        },
+        "right_table": {
+          "distance": 0.11316424213473042,
+          "bodies": [
+            "right_hand",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ],
+          "time_s": 7.339498260193863
+        },
+        "right_mounts": {
+          "distance": 0.14099593221477,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ],
+          "time_s": 1.7981770737474962
+        },
+        "arms": {
+          "distance": 0.15236147093989263,
+          "bodies": [
+            "left_hand",
+            "right_left_finger"
+          ],
+          "geoms": [
+            "",
+            ""
+          ],
+          "time_s": 2.3853369345630053
+        }
+      },
+      "duration_s": 7.339498260193863,
+      "right_q_end": [
+        0.9939550224403609,
+        -1.7564191896924273,
+        -1.8354109795499887,
+        -2.3380006133973668,
+        -0.2349214693163422,
+        2.534292701342544,
+        -2.456119613068591
+      ],
+      "start_jump_rad": 0.0,
+      "max_cartesian_error_m": 1.3311080565644967e-05,
+      "max_rotation_error_rad": 3.0452535536818554e-05,
+      "max_joint_velocity_rad_s": 0.20356182705110715,
+      "max_joint_acceleration_rad_s2": 0.8841239843287051,
+      "comparison_to_old": {
+        "old_duration_s": 7.6680346394675,
+        "duration_delta_s": -0.3285363792736371,
+        "old_exact_min_joint_margin_rad": -3.0001939433921265e-05,
+        "old_min_rigid_clearance_m": 0.02412022700669924,
+        "right_endpoint_max_abs_delta_rad": 0.0035058722252254704
+      }
+    }
+  ],
+  "limitations": [
+    "Only selected stored TCP targets and rotations; no candidate re-selection or soft geometry refresh.",
+    "Static robot geometry and target kinematics do not certify grasp, rotation stability, contact deformation, or insertion.",
+    "Finite 6 N force limit does not change this geometry calculation."
+  ],
+  "real_old_curve_regression": {
+    "test": "Wrap exact old selected insert curve in new MotionPlan and call new validate_joint_limits",
+    "old_endpoint_max_abs_differences_rad": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "old_61_sample_validator_accepted": true,
+    "new_analytical_validator_rejected": true,
+    "error": "Continuous joint limit violation in right joint2 at path fraction 0.668643644: minimum=-1.762830001939, limit=-1.762800000000"
+  }
+}

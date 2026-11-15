@@ -1,0 +1,262 @@
+{
+  "kind": "bounded_full39_proposed_material_mode_review_from_completed_full38",
+  "created_utc": "2026-11-15T21:26:24.624044+00:00",
+  "basis_run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38",
+  "native_run_or_planner_performed": false,
+  "production_or_default_edit_performed": false,
+  "task_success_audit_performed_by_this_review": false,
+  "scope_cn": "仅复核Full38已报告的3个峰值三角面/时刻，将构造方向变形与实际native BW轴的变形分开；未重做整段成功审计，未计算或运行任何新候选。",
+  "main_recommendation_cn": "不优先采用仅E10→20 MPa来降低本轮峰值主伸长：三个热点的主导几何特征是native轴夹角变化，构造方向的3.465%长向伸长不等于native拉伸轴的伸长。若只再做一个有界材料对照，保持Full38的E10 MPa、body mu50、D10 µN·m、200 g/m²、摩擦0.65，单独将提带mu250→500 N/m更直接针对前带局部剪切。该建议是未标定工程对照，不保证减少到某数值或再次通过。",
+  "measured_hotspots": [
+    {
+      "label": "held_handle_max_principal",
+      "time_s": 64.95500000001341,
+      "phase": "insert_teddy",
+      "face_index": 3390,
+      "vertex_indices": [
+        1750,
+        1751,
+        1760
+      ],
+      "native_chart_a_b_extension_percent": [
+        0.6294582339603005,
+        1.3877601386969918
+      ],
+      "construction_width_length_extension_percent": [
+        -1.9712978172601092,
+        2.7001966065264282
+      ],
+      "construction_angle_change_deg": 7.8839409251696395,
+      "principal_stretches": [
+        1.080559699059217,
+        0.934327198474542
+      ],
+      "area_ratio": 1.0095963164064925,
+      "pure_angle_normalized_column_metric_principal_stretches": [
+        1.0696729839477999,
+        0.9250944316188536
+      ],
+      "reconstructed_energy_density_N_m": {
+        "stretch": 3.4576848435837357,
+        "shear": 5.411200404431533,
+        "lambda": 6593.406593406592,
+        "mu": 250.0,
+        "strain_rate_assumed_default": 100.0
+      },
+      "native_chart_rest_orthonormal_error": 1.5893725292693885e-16
+    },
+    {
+      "label": "held_handle_max_construction_length",
+      "time_s": 64.95500000001341,
+      "phase": "insert_teddy",
+      "face_index": 3358,
+      "vertex_indices": [
+        1732,
+        1733,
+        1742
+      ],
+      "native_chart_a_b_extension_percent": [
+        0.9986110561864159,
+        -1.431540824609756
+      ],
+      "construction_width_length_extension_percent": [
+        -4.570367774396744,
+        3.464708834047703
+      ],
+      "construction_angle_change_deg": 3.509216311479747,
+      "principal_stretches": [
+        1.047208304614806,
+        0.9460448322858295
+      ],
+      "area_ratio": 0.9907060049076419,
+      "pure_angle_normalized_column_metric_principal_stretches": [
+        1.0479992020979003,
+        0.9495776284233766
+      ],
+      "reconstructed_energy_density_N_m": {
+        "stretch": 2.665300303804369,
+        "shear": 2.394276754702058,
+        "lambda": 6593.406593406592,
+        "mu": 250.0,
+        "strain_rate_assumed_default": 100.0
+      },
+      "native_chart_rest_orthonormal_error": 2.856106183520807e-16
+    },
+    {
+      "label": "back_panel_max_principal",
+      "time_s": 65.00500000001337,
+      "phase": "insert_teddy",
+      "face_index": 2895,
+      "vertex_indices": [
+        1485,
+        1486,
+        1449
+      ],
+      "native_chart_a_b_extension_percent": [
+        0.31215160811450815,
+        0.30247058791785797
+      ],
+      "construction_width_length_extension_percent": [
+        3.691880447864593,
+        -2.5603306258367486
+      ],
+      "construction_angle_change_deg": 4.740863679526228,
+      "principal_stretches": [
+        1.0538750313130625,
+        0.9495571362502833
+      ],
+      "area_ratio": 1.0007145566993092,
+      "pure_angle_normalized_column_metric_principal_stretches": [
+        1.0506462563632233,
+        0.9466480042708294
+      ],
+      "reconstructed_energy_density_N_m": {
+        "stretch": 0.16286721374783045,
+        "shear": 0.5459797730771454,
+        "lambda": 6593.406593406592,
+        "mu": 50.0,
+        "strain_rate_assumed_default": 100.0
+      },
+      "native_chart_rest_orthonormal_error": 4.442237656648128e-16
+    }
+  ],
+  "native_direction_and_constitutive_mapping": {
+    "method": "Exact pinned source formula: rest normal rotates to world+Z with Rodrigues R, Dm=(R*rest_edges).xy; F=current_edges*inverse(Dm), a=(1,0),b=(0,1). Texture UV and first-edge chart are not used for native energy.",
+    "verified_against_existing_diagnostic": "Reconstructed singular values agree with the archived principal witnesses; construction-long witness reproduces1.03464708834. All three rest native charts are orthonormal within floating-point tolerance.",
+    "construction_direction_limit": "Panel/strip construction coordinates are reproducible geometric directions; neither them nor native chart axes are measured warp/weft yarns. Texture UV is not used.",
+    "native_energy_per_rest_area": "W = lambda * sum_i[(|F a_i|-1)^2 + q*max(|F a_i|-1,0)^3] + mu*(F a dot F b)^2.",
+    "native_lambda_formula": "lambda = E * full_thickness / (1 - nu^2)",
+    "full38_recorded_native_lambda_N_per_m": 6593.406593406591,
+    "E20_only_expected_lambda_N_per_m": 13186.813186813182,
+    "native_a_b": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "q_scope": "q=100 is the unchanged native default assumed in the offline energy reconstruction, not a newly read present-run numeric buffer. It is conservative strain stiffening, not a time damping rate.",
+    "scalar_modes": "The existing adapter overwrites regional mu after initial E conversion; a new E20 configuration would therefore retain final body mu50 and handle mu250. Independent raw D remains10 µN·m.",
+    "fixed_state_only_scaling": "At exactly the same F, doubling E doubles stretch-energy and its gradient, including resistance to native-axis compression; it leaves shear and bending coefficients unchanged. No strain-halving or future equilibrium is implied."
+  },
+  "why_principal_is_not_axial_cn": [
+    "前带主伸长峰8.056%时，两native轴仅伸长0.629%与1.388%，构造夹角改变7.884°。将native两列归一为单位长度、仅保留当时夹角，代数指标仍给出6.967%最大主伸长。",
+    "前带构造长向峰3.465%时，native两轴分别+0.999%和−1.432%；其斜向长轴与native轴不重合。仅保留夹角的指标给4.800%最大主伸长，实际为4.721%。",
+    "后片主伸长峰5.388%时，native两轴各仅约+0.31%；归一列长后的角度指标仍有5.065%最大主伸长。",
+    "上述归一化只是解释C矩阵夹角项的离线代数对照，不是加法应变分解、能量占比归因、新物理状态或未来形变预测。"
+  ],
+  "locality_and_late_shape": {
+    "handle_front": {
+      "maximum_reference_area_fraction_principal_extension_over_5percent": {
+        "fraction": 0.009255898256260726,
+        "time_s": 66.1850000000123
+      },
+      "final_principal_p95": 1.0095734382422354,
+      "final_construction_long_p95": 1.0048638730784665
+    },
+    "panel_back": {
+      "maximum_reference_area_fraction_principal_extension_over_5percent": {
+        "fraction": 0.0008799182711987892,
+        "time_s": 63.15500000001386
+      },
+      "final_principal_p95": 1.005670124466305,
+      "final_construction_long_p95": 1.0015723393469946
+    }
+  },
+  "locality_note_cn": "这些是局部保存帧峰值；最大伸长不是整袋均匀拉长。保存间隔最多约50 ms，组内峰值仍可能漏过步间极值。最终小分位值不取消瞬态局部变形。",
+  "candidate_assessment": {
+    "E20_only": {
+      "status": "Considered but not preferred for these measured dominant angular modes.",
+      "change_from_full38": {
+        "bag.E": {
+          "before": 10000000.0,
+          "after": 20000000.0
+        }
+      },
+      "possible_effect": "It can reduce native directional strain and indirectly change construction strain through coupled equilibrium. The native-axis excursions are not identically zero, so an effect cannot be ruled out.",
+      "limitation": "It does not directly stiffen the dominant shear invariant; higher global membrane reactions can alter drape, grasp, palm load and teddy compression. The saved state cannot predict these changes."
+    },
+    "single_moderate_handle_shear_candidate": {
+      "status": "Readonly recommendation only; not configured or simulated by this review.",
+      "change_from_full38": {
+        "bag.handle_shear_stiffness": {
+          "before": 250.0,
+          "after": 500.0
+        }
+      },
+      "unchanged": {
+        "E": 10000000.0,
+        "rho": 333.3333333333333,
+        "nu": 0.3,
+        "thickness": 0.0003,
+        "bending_stiffness": 1e-05,
+        "shear_stiffness": 50.0,
+        "friction_mu": 0.65
+      },
+      "fixed_state_coefficient_effect": "Twice the native shear energy/gradient in only the two named handle strips at the same F; axial lambda, body mu, D, density and friction unchanged.",
+      "rationale_cn": "将材料改动直接限制在已观测到较大夹角变化的提带，比全局增加E更针对该变形模式；500 N/m是较小的区域剪切对照，并非真实织带标定。",
+      "limits_cn": [
+        "不会直接减少后片native剪切主伸长，因为body mu仍保持柔顺的50 N/m。",
+        "两带都受该现有参数影响；无法只加强已抓住的一小段，也不能声称已模拟缝线、双层或纱线加固。",
+        "提带剪切增大仍会改变载荷传递和实际袋形，可能提高掌/熊/指接触负载；不能从旧成功或冻结数据保证安全通过。",
+        "文献低应变棉对照的G换算只是body量级参照，不能为handle500声称实测依据。",
+        "无新增阻尼或迟滞；不能许诺减少回弹、零伸长或恢复速度改变。"
+      ]
+    }
+  },
+  "required_evaluation_cn": [
+    "若根任务另行选择并运行单一候选，应保持所有原动作、几何、熊、求解器和验收门；不得将本报告视作上线许可或真实执行证明。",
+    "用新实际过程重复同一定义的区域主伸长/构造方向伸长/剪切角统计，同时检查原力矩、抓持、tet J、桌面、全包含和保持条件。",
+    "可以比较材料假说，但接触和折叠历史会变化；结果不是线性材料参数识别。"
+  ],
+  "primary_source_provenance": [
+    {
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.h",
+      "location": "lines29–68 rest chart;101–129 energy",
+      "support": "Native triangle normal to+Z chart and independent axial/shear energy invariants."
+    },
+    {
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.cu",
+      "location": "lines17–28 initialization;57–69 a/b and area weighting;178–203 copied material coefficients",
+      "support": "a=(1,0), b=(0,1), per-triangle rest chart and area integration."
+    },
+    {
+      "url": "https://github.com/spiriMirror/libuipc/blob/ac89e1009c7d8efb72d260790bb5ab31d7460542/src/constitution/strain_limiting_baraff_witkin.cpp",
+      "location": "lines30–55",
+      "support": "Stretch includes full thickness; separate shear coefficient; strain_rate assigned independently."
+    },
+    {
+      "url": "https://www.mdpi.com/1996-1944/6/1/314",
+      "location": "Table2/4 untreated cotton control, as previously verified in the hashed shear reference report",
+      "support": "Measured textile shear and bending are separate properties; not a calibration of the present tape/cloth coefficients."
+    }
+  ],
+  "checks": {
+    "existing_inputs_unchanged": true,
+    "all_three_native_rest_frames_orthonormal": true,
+    "three_selected_witnesses_only": true,
+    "no_native_or_source_mutation": true
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full38-three-peak-native-axis-review.json": "d66e2d1889747221dce574a2b66aedc944c76a1505f372d067de84912a77bf47",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full_38-cloth-material-baseline.json": "5b18feb04461aa1e7f1f1f6b4c5065ece1f9608a44db6c937a85320206c3b101",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/config.json": "24ec28685624319b832f1df9df59301289cc29c79c8e085695b88763f2227768",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/report.json": "4bb67e2dc8b109396fbaa24138dcb04d12c9fdcbfc03ee6e2e712d5ef857aed0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/source/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-shear-reference-review.json": "c2cb064edcae2bc95f5b6b596f49cb472afa3fe7118e618f3ec915cc2f15f4a0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-areal-mass-reference-review.json": "8297fca2227ebd22513ced71550c8454b640bc0e9c89cd2dd29b86cc3aecd720",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full38_native_axis_bounded_review.py": "a618c1d40fed0a10b564a68421fa1634c4dd972845efd6595205edb6476016f6",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config.json": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/README_CN.md": "a664c574789ed7fbeb70152a349072b62882b190b8507746c674809239cdc791",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/material_reference_notes.json": "5e2beac17e485dc29c293a66abc7c8cc013e407118dc7cd8d810cc775c21e143",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/dependency_manifest.json": "ea60d0f01dbd903be4901190956e6018036f2310512b78a442354ffca7157de5",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/states.npz": "130034852095604f2fb51c5b7466bc46e6746ecf59e4075bb0b437fc63282d07",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/source/assets/two_panel_bag_wide_tall_long_handles_coarse.npz": "93738c3475c546e7fa8f519fe17a8d14513f8315b2ef99c9e5cceaf23b81eccf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full30_cloth_material_baseline.py": "2bc32f735837f90f7cb7f44f21616f8194db9985317293cfbe541307ebb44b47"
+  }
+}

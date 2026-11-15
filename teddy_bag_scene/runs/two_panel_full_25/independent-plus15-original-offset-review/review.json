@@ -1,0 +1,66 @@
+{
+  "status": "candidate_frozen_only",
+  "physical_success": false,
+  "native_execution_performed": false,
+  "source_lift_path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_25/lift_teddy.npz",
+  "source_lift_sha256": "d6c5551e7d0209d09b0edfa35cf4707e0f3fe4de5c82738809e77d06a108a047",
+  "source_config_sha256": "eb0c5c897e4e9f406ab2b0f0a5941af58f6b1a8447ef4eef498a7c13ea50d8f5",
+  "source_time_s": 15.880000000001083,
+  "sole_yaw_degrees": 15.0,
+  "sole_COM_offset_xy_m": [
+    0.015,
+    0.03075
+  ],
+  "command_source": "Archived actual full25 postlift first-knot command, cross-checked to saved command_source_poses.",
+  "limitations": [
+    "Only lift source is actual native data. Subsequent states are frozen rigid-grasp hypotheses, not deformation/contact/slip predictions.",
+    "All original helper gates retained. No handle clearance or actual final containment follows.",
+    "Provisional preparation clock uses helper-reported duration and integer dt; native move_guarded may retime/replan from its command source and remeasure fingers.",
+    "No new angles or COM offsets beyond this one candidate."
+  ],
+  "yaw_status": "candidate",
+  "yaw_rejections": [],
+  "hypothetical_yaw_construction": {
+    "formula": "(endFK_R * inverse(actualLiftFK_R)).apply(actualBear - actualLiftTCP) + endFK_TCP",
+    "integer_steps": 1205,
+    "time_increment_s": 6.025,
+    "time_s": 21.90500000000108,
+    "bag_unchanged": true,
+    "no_force_arrays": true
+  },
+  "preparation_status": "candidate",
+  "preparation_rejections": [],
+  "robot_attempts": [
+    {
+      "rejection": null,
+      "stages_completed": 4
+    }
+  ],
+  "preparation_clock": [
+    {
+      "stage": "height_at_current_xy",
+      "reported_duration_s": 2.505,
+      "integer_steps": 501
+    },
+    {
+      "stage": "transport_y_at_current_x",
+      "reported_duration_s": 3.8157400058521165,
+      "integer_steps": 764
+    },
+    {
+      "stage": "translate_outside_mouth",
+      "reported_duration_s": 4.670519939776913,
+      "integer_steps": 935
+    }
+  ],
+  "hypothetical_transport_time_s": 32.90500000000108,
+  "hypothetical_transport_path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_25/independent-plus15-original-offset-review/hypothetical_transport_endpoint.npz",
+  "hypothetical_fresh_status": "candidate",
+  "hypothetical_fresh_rejections": [],
+  "fresh_robot_attempts": [
+    {
+      "rejection": null,
+      "stages_completed": 1
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "independent_explicit_single24_contact_trial_review",
+  "physical_success": false,
+  "source_time_s": 29.044999999998506,
+  "config_sha256": "d3a91438be43760e9ebd1a5b1cd5b1f93c9cf52b3cc05da6fa87a18430b53ed9",
+  "helper_sha256": "116cf7bd72e013e61a75824f57244d19077c6a233ed1b58039ea311457710686",
+  "actual_shape_input": "runs/two_panel_full_10/lift_teddy.npz",
+  "offset_m": [
+    0.024,
+    0.02
+  ],
+  "offset_radius_m": 0.031240998703626618,
+  "COM_inside": true,
+  "COM_boundary_margin_m": 0.013738605340626202,
+  "maximum_outside_excursion_bound_m": 0.06981529855442964,
+  "declared_outside_allowance_m": 0.07189671602775959,
+  "minimum_section_overlap": 0.4205234968212665,
+  "required_rim_perimeter_m": 0.9033873814533013,
+  "available_rim_perimeter_m": 0.9152328087150292,
+  "left_robot_sweep_status": "clear",
+  "left_robot_sweep_gap_lower_bound_m": 0.005896630243818315,
+  "left_robot_geometries_checked": 22,
+  "old_defaults_preserved": true,
+  "invalid_policy_inputs_rejected": true,
+  "old_30mm_recenter_cap_preserved": true,
+  "physical_state_rejections": [],
+  "section_rejections": [],
+  "outside_tcp_m": [
+    -0.09923943862806384,
+    0.05758653401962627,
+    1.369737813607271
+  ],
+  "insert_tcp_m": [
+    -0.09923943862806384,
+    0.05758653401962627,
+    0.9546621543719613
+  ],
+  "limitations": [
+    "These changed lateral/overlap/radius values are explicitly declared trial heuristics, not physical or material success criteria.",
+    "The whole frozen vertical teddy sweep is checked; raise and XY transport are guarded dynamically but have no equivalent frozen-soft-sweep certificate.",
+    "A new actual observation and unchanged raw force/torque, hold, strain, finite volume, table and final containment checks remain mandatory."
+  ],
+  "rigid_route_review": {
+    "ordered_stages": [
+      "height_at_current_xy",
+      "translate_outside_mouth",
+      "insert_geometry_diagnostic",
+      "release_fingers",
+      "withdraw_after_release_geometry_diagnostic"
+    ],
+    "minimum_sampled_rigid_gap_m": 0.021658486618837104,
+    "required_gap_m": 0.008,
+    "sample_count_per_motion_stage": 101,
+    "release_finger_samples": 11,
+    "full_actual_rotation_retained": true,
+    "successive_endpoint_joint_states_chained": true,
+    "actual_left_fingers_individual_in_soft_sweep": true,
+    "rigid_mean_finger_approximation_error_m": {
+      "left": 2.102902417646388e-06,
+      "right": 5.140555947615033e-07
+    },
+    "positive_analytic_joint_limit_margins": true,
+    "reviewed_generator": "/tmp/full10_bounded_robot_review.py"
+  },
+  "unchanged_runtime_physical_sources": {
+    "run.py": true,
+    "scene.py": true,
+    "physics_config.py": true,
+    "contact_guard.py": true,
+    "contact_robot_geometry.py": true,
+    "motion.py": true,
+    "physical_monitor.py": true,
+    "validate.py": true
+  },
+  "no_specific_blocking_bug_found": true,
+  "outside_bound_difference_note": "Adaptive grid refinement depends on the declared policy threshold; the wider-policy recalculation retains a slightly more conservative 69.815mm bound than the old31.455mm-threshold analysis69.473mm. Both remain upper bounds."
+}

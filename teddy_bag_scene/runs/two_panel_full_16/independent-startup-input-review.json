@@ -1,0 +1,81 @@
+{
+  "kind": "full16_frozen_input_startup_review",
+  "scope": "Read-only startup input and static post-run-auditor compatibility review; no physical task success is inferred.",
+  "input_review_passed": true,
+  "checks": {
+    "all_manifest_hashes_match": true,
+    "all_snapshot_files_manifested": true,
+    "expected_launch_and_source_hashes_match": true,
+    "launch_config_equals_frozen_config_semantically": true,
+    "frozen_config_equals_full15_semantically": true,
+    "only_config_and_staged_module_changed_vs_full14": true,
+    "physical_execution_and_final_acceptance_sources_unchanged_vs_full14": true,
+    "only_added_config_key_vs_full14_is_explicit_diagnostic_policy": true,
+    "auditor_does_not_read_section_heuristic_rejection_lists": true,
+    "auditor_requires_accepted_plans": true,
+    "auditor_requires_original_contact_guard": true,
+    "auditor_requires_native_hand_trace": true
+  },
+  "frozen_input_count": 29,
+  "hash_mismatches": [],
+  "all_hashes_match": true,
+  "expected_hashes": {
+    "launch_config": "f86be9f7d13084555d3c903e3ad0c59cd521cc4bc73dc43de945460d4ab48b6e",
+    "source/staged_contact_insertion.py": "569197355503e2c7ed5932a35ca74b9ab9593514f3932cdadf2e9c3680144f2d",
+    "source/run.py": "732d037b52f9f3b930cdfc6d2b17df907170100367c33bbe14db15e4999c34a6"
+  },
+  "observed_hashes": {
+    "launch_config": "f86be9f7d13084555d3c903e3ad0c59cd521cc4bc73dc43de945460d4ab48b6e",
+    "source/staged_contact_insertion.py": "569197355503e2c7ed5932a35ca74b9ab9593514f3932cdadf2e9c3680144f2d",
+    "source/run.py": "732d037b52f9f3b930cdfc6d2b17df907170100367c33bbe14db15e4999c34a6"
+  },
+  "config_snapshot_sha256": "bb96575ca2f5c2ef05d9a5c8151ecef62ca9efdf2db0956bd3f7decca3073c70",
+  "configuration_serialization_note": "The launch config hash differs from run/config.json because run.py serializes the parsed configuration with json.dumps(indent=2), without its source trailing newline. Parsed objects are compared for exact equality.",
+  "full14_to_full16_config_diff": [
+    {
+      "path": "/task/contact_trial/staged/low_phase_section_gate",
+      "before": "<absent>",
+      "after": "diagnostic_only"
+    }
+  ],
+  "full14_to_full16_frozen_input_hash_changes": [
+    {
+      "path": "config.json",
+      "full14": "b9225e4edc8fb2b70b18984a308a1cf8ac1b9a8c6fe4e5b7059f2853ce6b1e58",
+      "full16": "bb96575ca2f5c2ef05d9a5c8151ecef62ca9efdf2db0956bd3f7decca3073c70"
+    },
+    {
+      "path": "source/staged_contact_insertion.py",
+      "full14": "edafa37ebf53d034c8af3a07658fd26ea5584d659073f05d0c7513ccc775420d",
+      "full16": "569197355503e2c7ed5932a35ca74b9ab9593514f3932cdadf2e9c3680144f2d"
+    }
+  ],
+  "critical_sources_unchanged_vs_full14": {
+    "run.py": true,
+    "scene.py": true,
+    "physics_config.py": true,
+    "physical_monitor.py": true,
+    "contact_guard.py": true,
+    "contact_grasp.py": true,
+    "staged_hand_monitor.py": true,
+    "validate.py": true,
+    "motion.py": true,
+    "contact_insertion.py": true,
+    "contact_robot_geometry.py": true,
+    "contact_slice_geometry.py": true
+  },
+  "auditor_static_review": {
+    "path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py",
+    "sha256": "9e382eaf6491545d9be5f07a6733902051ce9efef04704cacc2962721738ca2e",
+    "diagnostic_terms_read_by_staged_audit": [],
+    "observed_behavior": "The staged audit follows candidate/rejected status, actual executed phase order, timestamps, original rotation, bounded displacement, observed endpoints, continuous original contact guard, and native hand-height evidence. It does not turn saved section heuristic violations into physical failures. Final success also requires frozen validate.py task_success, native reaction audit, full sequence completion, no runtime error, richer held-handle and per-link wrench audits, and matching frozen inputs.",
+    "limitation": "Static code review only; no full16 post-run traces yet exist and no GPU execution was performed by this reviewer."
+  },
+  "physical_success": false,
+  "full_task_passed": false,
+  "limitations": [
+    "External robot mesh hashes are measured at this review, not established as startup hashes.",
+    "The input manifest covers scene source/config/copied assets, not installed Genesis/libuipc binaries or all environment dependencies.",
+    "Hash consistency proves recorded inputs match the manifest; it does not prove physical correctness or task success."
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "kind": "independent_translation_and_detour_review",
+  "all_checks_passed": true,
+  "tests": [
+    {
+      "name": "diagonal_start_safe",
+      "passed": true,
+      "status": "clear",
+      "gap_lower_m": 0.07778164593052023
+    },
+    {
+      "name": "diagonal_end_safe",
+      "passed": true,
+      "status": "clear",
+      "gap_lower_m": 0.07778164593052024
+    },
+    {
+      "name": "diagonal_middle_blocked",
+      "passed": true,
+      "status": "blocked",
+      "gap_lower_m": 0.0
+    },
+    {
+      "name": "axis_detour_first_leg_clear",
+      "passed": true,
+      "status": "clear",
+      "gap_lower_m": 0.054999900000000004
+    },
+    {
+      "name": "axis_detour_second_leg_clear",
+      "passed": true,
+      "status": "clear",
+      "gap_lower_m": 0.054999900000000004
+    },
+    {
+      "name": "arbitrarily_rotated_midsegment_blocked",
+      "passed": true,
+      "status": "blocked"
+    },
+    {
+      "name": "vertical_compatibility_crossing",
+      "passed": true,
+      "old_status": "blocked",
+      "new_status": "blocked"
+    },
+    {
+      "name": "vertical_compatibility_clear",
+      "passed": true,
+      "old_status": "clear",
+      "new_status": "clear"
+    },
+    {
+      "name": "vertical_compatibility_no_op",
+      "passed": true,
+      "old_status": "clear",
+      "new_status": "clear"
+    },
+    {
+      "name": "invalid_general_displacement_nan",
+      "passed": true
+    },
+    {
+      "name": "invalid_general_displacement_wrong_shape",
+      "passed": true
+    },
+    {
+      "name": "inputs_unchanged",
+      "passed": true
+    },
+    {
+      "name": "config_only_strategy_change",
+      "passed": true
+    },
+    {
+      "name": "frozen_hash_contact_insertion.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_hash_contact_robot_geometry.py",
+      "passed": true
+    },
+    {
+      "name": "every_candidate_segment_has_clear_all22_certificate",
+      "passed": true
+    },
+    {
+      "name": "initial_insertion_withheld",
+      "passed": true
+    },
+    {
+      "name": "segment_geometry_height_at_current_xy",
+      "passed": true
+    },
+    {
+      "name": "segment_geometry_transport_y_at_current_x",
+      "passed": true
+    },
+    {
+      "name": "segment_geometry_translate_outside_mouth",
+      "passed": true
+    },
+    {
+      "name": "segment_geometry_insert_candidate",
+      "passed": true
+    },
+    {
+      "name": "actual_left_fingers_preserved",
+      "passed": true
+    },
+    {
+      "name": "reported_FK_errors_within_explicit_bounds",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "run.py": "b36bb3c81a2ef1edcd6c0289e9e3590e4926b2780e9f27684ac15eefd27b2ba4",
+    "contact_insertion.py": "1e77f1449ff4701479993fe15b45c500ba137f9a873330faf9b1aa1fe5eea742",
+    "contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126"
+  },
+  "candidate_minimum_frozen_gap_m": 0.005896630243818315,
+  "static_review": {
+    "general_translation_preserves_exact_tet_prism_union": true,
+    "every_clear_geom_requires_all_tetrahedra_or_enclosing_hull_certificate": true,
+    "corrections_remain_two_stages_and_30_50mm_budgets": true,
+    "fresh_insertion_still_required_after_preparation_and_each_correction": true,
+    "raw_physics_and_contact_limits_unchanged": true,
+    "runtime_checks_declared_height_y_x_route": true
+  },
+  "physical_success": false,
+  "limitations": [
+    "The all-segment frozen-shape result is rechecked for saved report consistency here; the full expensive section and route candidate was computed by the planner regression, not repeated in this review.",
+    "Synthetic checks exercise the generic translation core without simulator initialization.",
+    "5 mm is an engineering preflight allowance; frozen geometry and 201 sampled FK checks do not certify dynamic deformation, continuous tracking error or retention.",
+    "Release and withdrawal still use physical guards and rigid route checks; released teddy motion is not a frozen attached sweep.",
+    "Actual execution must pass fresh observed geometry, native forces/torque, both holding requirements, soft deformation, table penetration and final containment."
+  ],
+  "full12_frozen_snapshot_review": {
+    "files": {
+      "run.py": {
+        "sha256": "b36bb3c81a2ef1edcd6c0289e9e3590e4926b2780e9f27684ac15eefd27b2ba4",
+        "matches_audited_source": true,
+        "matches_startup_manifest": true
+      },
+      "contact_insertion.py": {
+        "sha256": "1e77f1449ff4701479993fe15b45c500ba137f9a873330faf9b1aa1fe5eea742",
+        "matches_audited_source": true,
+        "matches_startup_manifest": true
+      },
+      "contact_robot_geometry.py": {
+        "sha256": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+        "matches_audited_source": true,
+        "matches_startup_manifest": true
+      }
+    },
+    "config_matches_approved_semantically": true,
+    "saved_config_matches_manifest": true,
+    "run": "two_panel_full_12"
+  }
+}

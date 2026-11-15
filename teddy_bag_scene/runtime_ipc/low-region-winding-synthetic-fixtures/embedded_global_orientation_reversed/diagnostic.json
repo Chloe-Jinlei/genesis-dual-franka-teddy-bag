@@ -1,0 +1,183 @@
+{
+  "status": "passed_point_diagnostic",
+  "scope": "Pointwise cap-independent low-region winding diagnostic only",
+  "run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/low-region-winding-synthetic-fixtures/embedded_global_orientation_reversed",
+  "state": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/low-region-winding-synthetic-fixtures/embedded_global_orientation_reversed/state.npz",
+  "state_index": null,
+  "time_s": 0.0,
+  "physical_task_success_certified": false,
+  "does_not_replace_original_validator": true,
+  "does_not_certify_physical_body_nonintersection": true,
+  "does_not_replace_final_contact_release_or_stability_checks": true,
+  "continuous_whole_bear_containment_certified": false,
+  "all_bear_vertices_inside_by_guarded_unit_winding": true,
+  "bear_com_inside_by_guarded_unit_winding": true,
+  "all_query_points_inside_by_guarded_unit_winding": true,
+  "thresholds": {
+    "minimum_low_region_height_margin_m": 0.002,
+    "physical_body_near_surface_ambiguity_distance_m": 1e-06,
+    "integer_residual_tolerance": 1e-06,
+    "cap_agreement_tolerance": 1e-08,
+    "tolerance_scope": "Explicit diagnostic numerical guards, not a relaxation of physical contact or penetration limits"
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/low-region-winding-synthetic-fixtures/embedded_global_orientation_reversed/config.json": "f58bb42a50db20bf5be06cd0c4a50568b60eb97f86ba5ffd0c949f6945ab07c4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/low-region-winding-synthetic-fixtures/embedded_global_orientation_reversed/rest.npz": "42756924c5de70cbaa8cb774644ca33b3620c1b8090290e584423a4020c1ece8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/low-region-winding-synthetic-fixtures/embedded_global_orientation_reversed/state.npz": "3c6819b5efc152de248f22ed4211bae456811e6e9247a82165bc922602d2b7d1",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/diagnose_low_region_winding.py": "e92f1c2bb632a8ee9f58ab5f9c37ae2265183df6016ca2960e2f1b9448124c81"
+  },
+  "reasons": [],
+  "original_body_topology": {
+    "actual_open_body_boundary": true,
+    "body_boundary_loop_count": 1,
+    "complete_bag_boundary_loop_count": 1,
+    "nonmanifold_edges": 0,
+    "connected_components": 1,
+    "body_triangle_count": 4,
+    "rim_rest_z": 3.0,
+    "body_face_selection": "geometric body-height separation",
+    "independent_flat_bottom_triangles": 0,
+    "independent_flat_side_triangles": 0,
+    "body_boundary_only_at_top": true,
+    "two_panels_directly_sewn_along_u": true,
+    "analysis_cap_is_not_simulated": true
+  },
+  "height_precondition": {
+    "actual_rim_min_z_m": 3.0,
+    "actual_rim_max_z_m": 6.0,
+    "actual_bear_max_z_m": 1.002,
+    "actual_com_m": [
+      -3.8,
+      0.015,
+      1.0
+    ],
+    "minimum_query_height_gap_m": 1.998,
+    "required_height_gap_m": 0.002,
+    "all_bear_vertices_and_com_at_least_required_margin_below_rim": true,
+    "query_count": 5,
+    "queries_below_rim_with_required_margin": 5
+  },
+  "winding_computed": true,
+  "actual_topology_orientation": {
+    "passed": true,
+    "body_winding_consistent": true,
+    "full_cloth_winding_consistent": true,
+    "body_directed_boundary_matches_rim": true,
+    "minimum_actual_body_triangle_twice_area_m2": 6.082762530298219,
+    "geometric_embedding_not_proven_by_these_flags": true
+  },
+  "actual_spatial_rim": {
+    "vertex_count": 4,
+    "nonadjacent_edge_pair_count": 2,
+    "minimum_current_edge_length_m": 0.8,
+    "minimum_rest_edge_length_m": 2.0,
+    "minimum_nonadjacent_3d_edge_distance_m": 0.7148272825740324,
+    "minimum_nonadjacent_3d_edge_pair": [
+      1,
+      3
+    ],
+    "edge_distance_numerical_guard_m": 1e-08,
+    "required_nonadjacent_3d_edge_separation_m": 0.0006,
+    "minimum_nonadjacent_3d_edge_distance_lower_bound_m": 0.7148272725740323,
+    "passed": true
+  },
+  "projection_diagnostics_only": {
+    "svd_projection_crossings": 1,
+    "xy_projection_crossings": 1,
+    "svd_projected_signed_area_abs_m2": 2.8713013216185383,
+    "svd_plane_max_nonplanarity_m": 0.3978126690630673,
+    "not_used_as_low_region_rejection": true
+  },
+  "cap_winding": {
+    "query_order": "All actual bear vertices in saved order, followed by actual mass COM",
+    "mean_apex_surface": {
+      "is_watertight": true,
+      "is_winding_consistent": true,
+      "cap_apex_m": [
+        0.15,
+        0.09999999999999999,
+        4.5
+      ],
+      "cap_minimum_vertex_z_m": 3.0,
+      "analysis_cap_not_simulated": true
+    },
+    "high_apex_surface": {
+      "is_watertight": true,
+      "is_winding_consistent": true,
+      "cap_apex_m": [
+        0.181,
+        0.07699999999999999,
+        4.65
+      ],
+      "cap_minimum_vertex_z_m": 3.0,
+      "analysis_cap_not_simulated": true
+    },
+    "mean_apex_raw_winding": [
+      -1.0,
+      -0.9999999999999997,
+      -1.0000000000000002,
+      -1.0000000000000022,
+      -1.0000000000000002
+    ],
+    "high_apex_raw_winding": [
+      -1.0,
+      -0.9999999999999997,
+      -1.0000000000000002,
+      -1.0000000000000022,
+      -1.0000000000000002
+    ],
+    "absolute_cap_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "maximum_absolute_cap_difference": 0.0,
+    "caps_agree": true,
+    "per_query_maximum_integer_residual": [
+      0.0,
+      3.3306690738754696e-16,
+      2.220446049250313e-16,
+      2.220446049250313e-15,
+      2.220446049250313e-16
+    ],
+    "maximum_integer_residual": 2.220446049250313e-15,
+    "integer_residual_passed": true,
+    "multiple_winding_query_indices": [],
+    "non_unit_winding_query_indices": [],
+    "raw_all_bear_vertices_have_unit_winding": true,
+    "raw_com_has_unit_winding": true
+  },
+  "physical_cloth_query_distance": {
+    "method": "Exact closest triangle point for each queried bear vertex and COM; no continuous whole-bear certificate",
+    "body_distance_m": [
+      0.007467239890591169,
+      0.0103456072417826,
+      0.007231308140493339,
+      0.011997129492466223,
+      0.009260321191333382
+    ],
+    "full_cloth_distance_m": [
+      0.007467239890591169,
+      0.0103456072417826,
+      0.007231308140493339,
+      0.011997129492466223,
+      0.009260321191333382
+    ],
+    "minimum_body_distance_m": 0.007231308140493339,
+    "minimum_full_cloth_distance_m": 0.007231308140493339,
+    "minimum_body_distance_query_index": 2,
+    "minimum_body_distance_body_face_index": 3,
+    "minimum_body_distance_closest_point_m": [
+      -3.8007204286111893,
+      0.023909685499582525,
+      0.9962939048149173
+    ],
+    "minimum_full_cloth_distance_face_index": 3,
+    "near_physical_body_ambiguity_query_indices": [],
+    "queries_separated_from_body_at_numerical_guard": true,
+    "does_not_replace_cloth_into_teddy_penetration_audit": true
+  }
+}

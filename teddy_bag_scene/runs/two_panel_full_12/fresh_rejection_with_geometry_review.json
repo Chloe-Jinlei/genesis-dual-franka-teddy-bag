@@ -1,0 +1,683 @@
+{
+  "kind": "guarded_contact_trial",
+  "status": "rejected",
+  "route": null,
+  "report": {
+    "kind": "guarded_contact_trial",
+    "physical_success": false,
+    "runtime_execution_performed": false,
+    "policy": {
+      "bottom_clearance_m": 0.01,
+      "endpoint_below_lowest_rim_m": 0.002,
+      "start_above_highest_rim_m": 0.04,
+      "planned_outside_clearance_m": 0.045,
+      "com_boundary_clearance_m": 0.002,
+      "lateral_excursion_fraction_of_mouth_width": 0.8,
+      "minimum_section_envelope_overlap_fraction": 0.4,
+      "maximum_initial_com_offset_m": 0.035,
+      "transport_xy_strategy": "y_then_x",
+      "rim_perimeter_clearance_m": 0.002,
+      "rigid_clearance_m": 0.008,
+      "left_robot_soft_sweep_clearance_m": 0.005,
+      "minimum_insert_duration_s": 6.0,
+      "minimum_tetra_volume_ratio": 0.05,
+      "maximum_cloth_edge_stretch_ratio": 1.15,
+      "maximum_table_penetration_m": 0.002,
+      "maximum_left_designated_handle_distance_m": 0.018,
+      "maximum_right_teddy_distance_m": 0.045,
+      "maximum_tcp_fk_error_m": 0.002,
+      "force_and_torque_runtime_limits": {
+        "maximum_contact_force_N": 8.0,
+        "maximum_wrist_contact_torque_Nm": 0.15
+      },
+      "note": "Lateral/overlap/perimeter are declared trial policies, not physical laws. Explicit lateral/overlap values permit a bounded contact experiment, not a material-feasibility claim. The initial COM search radius does not change the 30 mm individual or 50 mm cumulative correction budget. The 5 mm minimum teddy/left-robot clearance is an engineering preflight allowance, not a physical law. Bottom clearance and lateral trial fraction are configurable; no compression is prescribed."
+    },
+    "geometry_guarantees": [
+      "Uses the ordered actual 3D body rim, not a fitted mouth plane.",
+      "The observed teddy is translated without imposed compression or rotation.",
+      "Thin-slab convex envelopes enclose every horizontal section between tetra vertex-height events.",
+      "Whole observed teddy begins above highest rim by at least 40 mm and ends below lowest rim by 2 mm, with configured table clearance.",
+      "Every preparation and insertion segment's complete frozen-shape teddy translation must clear every left robot collision volume by the declared engineering allowance.",
+      "Robot path retains analytic continuous joint-limit and sampled 8 mm rigid-clearance checks."
+    ],
+    "not_guaranteed": [
+      "Deformable 3D bag interior containment or passage under contact.",
+      "Frictional grasp retention, force/torque, cloth strain or tetrahedron quality during execution.",
+      "A nonplanar rim can contact several teddy heights simultaneously; independent section guards do not certify that coupled contact.",
+      "Cartesian frozen-shape sweep certificates do not predict deformation or prove continuous FK tracking; sampled FK position/orientation errors are reported separately.",
+      "Overlap fraction is a bounded trial heuristic for slab envelopes, not an exact occupied-section or continuous-contact theorem.",
+      "Saved observations lack native contact force/torque; runtime guards and final containment audit are mandatory."
+    ],
+    "rejections": [
+      "No planned COM lies inside actual projected opening with 2 mm margin"
+    ],
+    "observed_time_s": 42.745000000003415,
+    "physical_state": {
+      "time_s": 42.745000000003415,
+      "minimum_tetra_volume_ratio": 0.41481547197068924,
+      "bag_table_penetration_m": 0.0,
+      "bear_table_penetration_m": 0.0,
+      "maximum_bag_edge_stretch_ratio": 1.0501081341798812,
+      "all_soft_states_finite": 1.0,
+      "left_designated_material_distance_m": 0.0007198457287996053,
+      "right_nearest_teddy_distance_m": 0.006473689154595982,
+      "tcp_fk_errors_m": {
+        "left": 4.685680459230494e-16,
+        "right": 5.60978567249119e-16
+      },
+      "actual_rigid_clearances": {
+        "left_self": {
+          "distance": 0.02230322446602715,
+          "bodies": [
+            "left_link5",
+            "left_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        },
+        "left_table": {
+          "distance": 0.16099593221477015,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ]
+        },
+        "left_mounts": {
+          "distance": 0.14099593221477014,
+          "bodies": [
+            "left_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "left_mount"
+          ]
+        },
+        "right_self": {
+          "distance": 0.02203296184873234,
+          "bodies": [
+            "right_link5",
+            "right_link7"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        },
+        "right_table": {
+          "distance": 0.16099593221477015,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "table"
+          ]
+        },
+        "right_mounts": {
+          "distance": 0.1409959322147701,
+          "bodies": [
+            "right_link1",
+            "world"
+          ],
+          "geoms": [
+            "",
+            "right_mount"
+          ]
+        },
+        "arms": {
+          "distance": 0.11394579868738812,
+          "bodies": [
+            "left_hand",
+            "right_left_finger"
+          ],
+          "geoms": [
+            "",
+            ""
+          ]
+        }
+      },
+      "finger_pair_half_opening_approximation_error_m": {
+        "left": 2.1201560536172805e-06,
+        "right": 8.332805934499476e-08
+      },
+      "contact_force_and_torque_not_in_saved_state": true,
+      "physical_state_rejections": []
+    },
+    "mouth": {
+      "topology": {
+        "actual_open_body_boundary": true,
+        "body_boundary_loop_count": 1,
+        "complete_bag_boundary_loop_count": 3,
+        "nonmanifold_edges": 0,
+        "connected_components": 1,
+        "body_triangle_count": 2960,
+        "rim_rest_z": 1.1315683174918918,
+        "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+        "independent_flat_bottom_triangles": 0,
+        "independent_flat_side_triangles": 0,
+        "body_boundary_only_at_top": true,
+        "two_panels_directly_sewn_along_u": true,
+        "analysis_cap_is_not_simulated": true
+      },
+      "ordered_rim_indices": [
+        761,
+        760,
+        1482,
+        1483,
+        1484,
+        1485,
+        1486,
+        1487,
+        1488,
+        1489,
+        1490,
+        1491,
+        1492,
+        1493,
+        1494,
+        1495,
+        1496,
+        1497,
+        1498,
+        1499,
+        1500,
+        1501,
+        1502,
+        1503,
+        1504,
+        1505,
+        1506,
+        1507,
+        1508,
+        1509,
+        1510,
+        1511,
+        1512,
+        1513,
+        1514,
+        1515,
+        1516,
+        1517,
+        797,
+        796,
+        795,
+        794,
+        793,
+        792,
+        791,
+        790,
+        789,
+        788,
+        787,
+        786,
+        785,
+        784,
+        783,
+        782,
+        781,
+        780,
+        779,
+        778,
+        777,
+        776,
+        775,
+        774,
+        773,
+        772,
+        771,
+        770,
+        769,
+        768,
+        767,
+        766,
+        765,
+        764,
+        763,
+        762
+      ],
+      "ordered_rim_world_m": [
+        [
+          -0.1799871652544335,
+          0.033695247519406384,
+          1.0970917578647985
+        ],
+        [
+          -0.18527684988996862,
+          0.06488210345349145,
+          1.0959646361305901
+        ],
+        [
+          -0.17392299766321226,
+          0.09119907977729501,
+          1.0824643812509958
+        ],
+        [
+          -0.16521437781067735,
+          0.1076881842532954,
+          1.0725169664155414
+        ],
+        [
+          -0.15935199044101933,
+          0.12418753329688051,
+          1.0631839342678289
+        ],
+        [
+          -0.15573115471838353,
+          0.14080541266637908,
+          1.0542045004094636
+        ],
+        [
+          -0.15356520243290167,
+          0.15524024152005714,
+          1.0464282182364832
+        ],
+        [
+          -0.1529765921191938,
+          0.1572342690215541,
+          1.0453497924142927
+        ],
+        [
+          -0.15238675011650157,
+          0.15922496443423473,
+          1.0442724640585337
+        ],
+        [
+          -0.1512292212574508,
+          0.16320401711979415,
+          1.0421288932765846
+        ],
+        [
+          -0.15065958833576093,
+          0.16519416623487476,
+          1.0410665643565344
+        ],
+        [
+          -0.15009125614357868,
+          0.16718306091517343,
+          1.0400078203956065
+        ],
+        [
+          -0.14898417344893836,
+          0.17116370809097567,
+          1.0379069192015193
+        ],
+        [
+          -0.14844337737915178,
+          0.17315819491301998,
+          1.0368715201966203
+        ],
+        [
+          -0.14790667258517615,
+          0.1751542450701838,
+          1.0358443943612605
+        ],
+        [
+          -0.14431769959400617,
+          0.18914271174001637,
+          1.0288528754640742
+        ],
+        [
+          -0.1460952260501525,
+          0.20559770789478216,
+          1.021210021088937
+        ],
+        [
+          -0.1496086881981515,
+          0.22186291306559167,
+          1.0139345575896654
+        ],
+        [
+          -0.1511131122189768,
+          0.23832125937057622,
+          1.0065705960641984
+        ],
+        [
+          -0.1422662414438645,
+          0.25264213619458453,
+          1.000079938579035
+        ],
+        [
+          -0.12429388624320203,
+          0.2515047807012358,
+          1.000966110588007
+        ],
+        [
+          -0.11393159180631014,
+          0.23808745727630803,
+          1.007178479434037
+        ],
+        [
+          -0.11028450051623719,
+          0.22179945995871037,
+          1.0141895738463889
+        ],
+        [
+          -0.11010028779545301,
+          0.20505563088790094,
+          1.0212941216936604
+        ],
+        [
+          -0.11152100088869056,
+          0.18827882038324426,
+          1.0284798119966911
+        ],
+        [
+          -0.11327012446516325,
+          0.17356616771850858,
+          1.0348676207698506
+        ],
+        [
+          -0.11353239510168482,
+          0.17145855717327152,
+          1.03579222908165
+        ],
+        [
+          -0.11378952721364347,
+          0.16934740430143277,
+          1.0367107496345385
+        ],
+        [
+          -0.11432209207328517,
+          0.1651236377428143,
+          1.0385731701767948
+        ],
+        [
+          -0.1145768732844848,
+          0.16300708766296992,
+          1.0394994736968357
+        ],
+        [
+          -0.11481727973755067,
+          0.16088876115456785,
+          1.0404256527970068
+        ],
+        [
+          -0.11532684483508408,
+          0.1566487526196827,
+          1.0423089222559767
+        ],
+        [
+          -0.11554486179832475,
+          0.1545254712790662,
+          1.0432408958469994
+        ],
+        [
+          -0.11571452454872688,
+          0.15240577661636026,
+          1.0441715156719567
+        ],
+        [
+          -0.11441602844259642,
+          0.1374950531848179,
+          1.0512683128564029
+        ],
+        [
+          -0.11260019684266404,
+          0.12022405603422304,
+          1.059570853304647
+        ],
+        [
+          -0.11040505532652593,
+          0.10251315813553345,
+          1.0681964973240987
+        ],
+        [
+          -0.10734808038041291,
+          0.08382636197911003,
+          1.0774473066430024
+        ],
+        [
+          -0.10036601153098139,
+          0.05573122537153375,
+          1.0907593160127123
+        ],
+        [
+          -0.09635633295408635,
+          0.024846974114467537,
+          1.0961794750758618
+        ],
+        [
+          -0.09401729506233,
+          0.004241377172259312,
+          1.0991761405412277
+        ],
+        [
+          -0.09196135638783703,
+          -0.015121181072275018,
+          1.1021033466838674
+        ],
+        [
+          -0.09080982488742816,
+          -0.0339857398118756,
+          1.1047216013528773
+        ],
+        [
+          -0.09159458647574806,
+          -0.05027653177200812,
+          1.1061552134135544
+        ],
+        [
+          -0.0922239478103587,
+          -0.0525034052078216,
+          1.1060853399098163
+        ],
+        [
+          -0.09281492001821046,
+          -0.05474479717302308,
+          1.1060055599101077
+        ],
+        [
+          -0.09392925509678611,
+          -0.05924673098890428,
+          1.1058324420334018
+        ],
+        [
+          -0.09445602652753,
+          -0.06150619676082026,
+          1.1057364790020858
+        ],
+        [
+          -0.09490774690627445,
+          -0.0637800735197327,
+          1.1056635729098303
+        ],
+        [
+          -0.0957742264724213,
+          -0.0683220850234398,
+          1.1055508767157056
+        ],
+        [
+          -0.09611413710343411,
+          -0.07060624647912213,
+          1.105521393473044
+        ],
+        [
+          -0.09633032063861037,
+          -0.07290177570649628,
+          1.1055345523348168
+        ],
+        [
+          -0.10109269720352736,
+          -0.08830147194768385,
+          1.1046287100938406
+        ],
+        [
+          -0.1074517745720617,
+          -0.10542179518799426,
+          1.103357034292751
+        ],
+        [
+          -0.11428920135936653,
+          -0.12223939635155023,
+          1.1019317869948373
+        ],
+        [
+          -0.12152153507955318,
+          -0.138793873721023,
+          1.1002464552529085
+        ],
+        [
+          -0.13160387909668417,
+          -0.1536278284025093,
+          1.0980096010944156
+        ],
+        [
+          -0.14922241649627435,
+          -0.14990388011338868,
+          1.0973127378475795
+        ],
+        [
+          -0.15254064541582169,
+          -0.1321449728782664,
+          1.0968890665412434
+        ],
+        [
+          -0.15168805923551124,
+          -0.11407240419930788,
+          1.0956221592129207
+        ],
+        [
+          -0.15024846651791773,
+          -0.09599151828043581,
+          1.0941657902664443
+        ],
+        [
+          -0.14986641207824986,
+          -0.07776518013865472,
+          1.0929669788305467
+        ],
+        [
+          -0.15186889840573764,
+          -0.061792333220737045,
+          1.0926717204420155
+        ],
+        [
+          -0.1526905578665411,
+          -0.05964032383499002,
+          1.0928092620876477
+        ],
+        [
+          -0.1535730836796394,
+          -0.0575117910360351,
+          1.0929615233945809
+        ],
+        [
+          -0.1553282212581321,
+          -0.05324177304223997,
+          1.093272971420696
+        ],
+        [
+          -0.15625918988343213,
+          -0.05112714237685492,
+          1.093440486013663
+        ],
+        [
+          -0.15721859996531454,
+          -0.04902198725046077,
+          1.0936187595555324
+        ],
+        [
+          -0.15908973009130145,
+          -0.044774454452927936,
+          1.0939918187111561
+        ],
+        [
+          -0.16009902440714147,
+          -0.042678395308170525,
+          1.094203890157882
+        ],
+        [
+          -0.1611740528369988,
+          -0.040610261736101494,
+          1.0944401752724382
+        ],
+        [
+          -0.16574947626244785,
+          -0.024701567357500447,
+          1.095245459987923
+        ],
+        [
+          -0.17055616997322354,
+          -0.006047801548117392,
+          1.0959599873980375
+        ],
+        [
+          -0.1751740179994258,
+          0.013230326489079463,
+          1.0965296224863301
+        ]
+      ],
+      "projected_area_m2": 0.02189819382020837,
+      "projected_crossings": 0,
+      "nonadjacent_edge_clearance_m": 0.002066503828306404,
+      "projected_minimum_caliper_width_m": 0.08686873435598831,
+      "rim_z_min_m": 1.000079938579035,
+      "rim_z_max_m": 1.1061552134135544,
+      "fitted_plane_max_nonplanarity_m": 0.029790752419560706,
+      "nonplanarity_is_diagnostic_not_rejection": true,
+      "reference_rim_arc_length_m": 0.9152328087150292,
+      "current_rim_arc_length_m": 0.9170148565809942,
+      "available_nonstretch_rim_perimeter_m": 0.9152328087150292
+    },
+    "observed_center_of_mass_world_m": [
+      -0.09679691811084944,
+      0.059001637811443824,
+      1.2767134999377578
+    ],
+    "observed_right_tcp_world_m": [
+      -0.09925422312178854,
+      0.05753320466348687,
+      1.3695018251148319
+    ],
+    "observed_mouth_area_centroid_xy_m": [
+      -0.13362082789358407,
+      0.03995883920758175
+    ],
+    "vertical_capacity": {
+      "observed_bear_height_m": 0.23926053137915004,
+      "usable_height_below_actual_lowest_rim_m": 0.2480799385790351,
+      "height_margin_m": 0.008819407199885054,
+      "planned_bear_bottom_z_m": 0.75,
+      "planned_bear_top_z_m": 0.98926053137915,
+      "planned_table_clearance_m": 0.01,
+      "whole_bear_end_below_lowest_rim": true,
+      "bottom_clearance_is_planning_allowance_not_physical_contact_law": true
+    },
+    "horizontal_sections": {
+      "vertex_height_event_count": 1450,
+      "slab_envelope_count": 1449,
+      "maximum_event_section_perimeter_m": 0.6933780608929784,
+      "maximum_event_section_area_m2": 0.022432937740379875,
+      "maximum_z_event_spacing_m": 0.00243505278654621
+    },
+    "fresh_rotation_error_rad": 0.0005902140598409222,
+    "observed_clearance_above_highest_rim_m": 0.05594636201259573,
+    "centering_com_checks": [
+      {
+        "center_of_mass_xy_target_m": [
+          -0.09679691811084944,
+          0.059001637811443824
+        ],
+        "projected_inside": false,
+        "boundary_distance_m": 0.004252491360234298,
+        "required_boundary_clearance_m": 0.002,
+        "admissible": false
+      }
+    ],
+    "centering_candidates": [],
+    "robot_centering_attempts": []
+  },
+  "observed_time_s": 42.745000000003415,
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "requires_physical_validation": true,
+  "stages_to_execute": []
+}

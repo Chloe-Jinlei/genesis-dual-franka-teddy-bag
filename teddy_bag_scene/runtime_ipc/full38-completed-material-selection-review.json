@@ -1,0 +1,56 @@
+{
+  "kind": "full38_completed_material_selection_review",
+  "created_utc": "2026-11-15T21:23:14.300520+00:00",
+  "run": "runs/two_panel_full_38",
+  "native_completed": true,
+  "original_validation_passed": true,
+  "original_checks": 20,
+  "independent_execution_passed": true,
+  "independent_checks": 41,
+  "material_readback_checks": 22,
+  "cloth_diagnostic_checks": 13,
+  "adopted_as_default": false,
+  "default_still": "runs/two_panel_full_30/config.json",
+  "reason_cn": "完整装袋通过，但持握提带沿建模长度方向峰值伸长仍约3.46%，主伸长峰值约8.06%，尚不能称近乎不可拉伸。继续仅加强膜内抗拉，弯曲柔软和原动作/几何保持。",
+  "next_candidate": "config_cotton_linen_high_tensile_material.json",
+  "next_candidate_sha256": "9e534244c440cf25a3fab2962d9176c2a6d689c71ef821a734412bd51a28b7ca",
+  "next_candidate_change_vs_full38": [
+    {
+      "field": "bag.E",
+      "before": 10000000.0,
+      "after": 20000000.0
+    }
+  ],
+  "next_candidate_change_vs_full30": [
+    {
+      "field": "bag.E",
+      "before": 4000000.0,
+      "after": 20000000.0
+    },
+    {
+      "field": "bag.bending_stiffness",
+      "before": 5e-05,
+      "after": 1e-05
+    },
+    {
+      "field": "bag.rho",
+      "before": 500.0,
+      "after": 333.3333333333333
+    }
+  ],
+  "next_candidate_launched": false,
+  "limitations": [
+    "Measured construction-long direction is a mesh proxy, not calibrated real warp/weft.",
+    "An E-only increase targets membrane axial resistance; it does not add damping or necessarily suppress shear-related principal stretch.",
+    "A pass at one material state does not prove the next will pass; original gates remain unchanged."
+  ],
+  "completed_evidence": {
+    "runs/two_panel_full_38/config.json": "24ec28685624319b832f1df9df59301289cc29c79c8e085695b88763f2227768",
+    "runs/two_panel_full_38/report.json": "4bb67e2dc8b109396fbaa24138dcb04d12c9fdcbfc03ee6e2e712d5ef857aed0",
+    "runs/two_panel_full_38/validation.json": "33e10eb3f94d95689590bbe49bab6cf10450f2ab27a6efdaf16abbc6bf499441",
+    "runs/two_panel_full_38/independent-gravity-execution-review.json": "df3a4454aa88b55b9428916da320c91cfc5f4e181ff28b4f18ad22422f455e55",
+    "runtime_ipc/full_38-cloth-material-baseline.json": "5b18feb04461aa1e7f1f1f6b4c5065ece1f9608a44db6c937a85320206c3b101",
+    "runtime_ipc/full38-native-material-readback-review.json": "17f714836893481196f42a4472e8de414360612803a1d694ce5d34e7658780c8",
+    "runtime_ipc/full38-video-quality-review.json": "c25ddb430c6211ef76fae8800a0f72cfdc204d7f1aa409dec8dc5b670fa9bf8f"
+  }
+}

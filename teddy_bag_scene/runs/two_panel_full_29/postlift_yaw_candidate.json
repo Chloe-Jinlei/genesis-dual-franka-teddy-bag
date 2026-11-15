@@ -1,0 +1,3036 @@
+{
+  "kind": "guarded_postlift_yaw",
+  "status": "candidate",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "requires_fresh_actual_preparation_after_execution": true,
+  "modifies_soft_points": false,
+  "checks": {
+    "actual_original_physical_gates": true,
+    "lift_above_table_40mm": true,
+    "command_actual_pose_consistent": true,
+    "analytic_joint_limits": true,
+    "continuous_reference_rate_bounds": true,
+    "sampled_all_raw_rigid_checks_finite_and_above_8mm": true,
+    "sampled_actual_reference_fk_tolerances": true,
+    "actual_and_commanded_left_frozen_rotation_above_5mm": true,
+    "returns_exact_checked_plan": true
+  },
+  "rejections": [],
+  "limitations": [
+    "Frozen rigid-grasp rotation does not predict soft deformation, slip, force, or eventual insertion.",
+    "Joint position and rate bounds cover the continuous reference spline; rigid robot clearances and FK errors are sampled.",
+    "The left arm is checked at actual and commanded static poses; motion between these poses or native compliance is not certified.",
+    "Finger geometry uses measured individual fingers for frozen left solids and paired means for robot clearance. The runner retains finite-force grasp motor targets.",
+    "Analytic bounds are evaluated in double precision with explicit padding, not directed-rounding interval arithmetic.",
+    "Native force/torque/grip/deformation/table gates remain mandatory; no task-success claim follows."
+  ],
+  "parameters": {
+    "world_z_degrees": 15.0,
+    "duration_s": 6.0
+  },
+  "observed_time_s": 17.290000000000845,
+  "actual_physical_state": {
+    "time_s": 17.290000000000845,
+    "minimum_tetra_volume_ratio": 0.4494853531499553,
+    "bag_table_penetration_m": 0.0,
+    "bear_table_penetration_m": 0.0,
+    "maximum_bag_edge_stretch_ratio": 1.0196644617189914,
+    "all_soft_states_finite": 1.0,
+    "left_designated_material_distance_m": 0.0008895850916272427,
+    "right_nearest_teddy_distance_m": 0.003362398679461717,
+    "tcp_fk_errors_m": {
+      "left": 6.455782214150334e-16,
+      "right": 6.131407058289218e-16
+    },
+    "actual_rigid_clearances": {
+      "left_self": {
+        "distance": 0.021701913275274477,
+        "bodies": [
+          "left_link5",
+          "left_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "left_table": {
+        "distance": 0.1609959322147701,
+        "bodies": [
+          "left_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ]
+      },
+      "left_mounts": {
+        "distance": 0.14099593221477014,
+        "bodies": [
+          "left_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "left_mount"
+        ]
+      },
+      "right_self": {
+        "distance": 0.022145621854026354,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "right_table": {
+        "distance": 0.16099593221477013,
+        "bodies": [
+          "right_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ]
+      },
+      "right_mounts": {
+        "distance": 0.14099593221477014,
+        "bodies": [
+          "right_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "right_mount"
+        ]
+      },
+      "arms": {
+        "distance": 0.2,
+        "bodies": [
+          "left_link1",
+          "right_link1"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      }
+    },
+    "finger_pair_half_opening_approximation_error_m": {
+      "left": 1.8560875836748543e-06,
+      "right": 1.2380935502168122e-07
+    },
+    "contact_force_and_torque_not_in_saved_state": true,
+    "physical_state_rejections": []
+  },
+  "actual_source_poses": {
+    "left": {
+      "tcp_m": [
+        -0.18409240485995018,
+        -0.12998143660008438,
+        1.3999495140345413
+      ],
+      "rotation_xyzw": [
+        0.993354171320648,
+        -0.09954004058189071,
+        0.005703763822908471,
+        -0.05750424087905818
+      ],
+      "q": [
+        -0.22134693076299494,
+        -0.2726999923117195,
+        0.12671656900938785,
+        -1.5641757487878654,
+        0.14168425532333698,
+        1.346386391843931,
+        1.2719688036636994
+      ]
+    },
+    "right": {
+      "tcp_m": [
+        0.3229549284284453,
+        -0.2592041549446061,
+        1.3699359656399765
+      ],
+      "rotation_xyzw": [
+        0.999999996989583,
+        6.165109442402009e-07,
+        1.7561747889064328e-05,
+        -7.557803231063027e-05
+      ],
+      "q": [
+        0.2589970605841295,
+        0.2853536200179313,
+        0.6449255014631873,
+        -1.0025834094782191,
+        -0.17998116383327284,
+        1.2377736481590296,
+        -0.7897763897688387
+      ]
+    }
+  },
+  "command_source_poses": {
+    "left": {
+      "tcp_m": [
+        -0.18409751840020183,
+        -0.12999999998521616,
+        1.4000000000135688
+      ],
+      "rotation_xyzw": [
+        0.9933512031850033,
+        -0.09955504807661822,
+        0.005765077255593906,
+        -0.05752341625465036
+      ],
+      "q": [
+        -0.22136014882994928,
+        -0.2727500652649277,
+        0.1266923955840482,
+        -1.564115431691947,
+        0.141677891860779,
+        1.3464022056306204,
+        1.271968239482411
+      ],
+      "actual_position_error_m": 5.403315315460083e-05,
+      "actual_rotation_error_rad": 0.00013207674716708177
+    },
+    "right": {
+      "tcp_m": [
+        0.3229651643841794,
+        -0.2591940864416037,
+        1.3699999979740194
+      ],
+      "rotation_xyzw": [
+        1.0,
+        1.8236928633896817e-10,
+        2.2993109639854732e-10,
+        9.048142786662027e-09
+      ],
+      "q": [
+        0.2589910032861056,
+        0.2852766567526334,
+        0.644936458281177,
+        -1.0025353336212162,
+        -0.17997969877943615,
+        1.237811054096943,
+        -0.7897783567147947
+      ],
+      "actual_position_error_m": 6.562232352997709e-05,
+      "actual_rotation_error_rad": 0.00015520558646461803
+    }
+  },
+  "actual_lifted_bear_minimum_z_m": 1.233961036220637,
+  "target_tcp_m": [
+    0.32295492842844536,
+    -0.2592041549446067,
+    1.3699359656399765
+  ],
+  "target_rotation_xyzw": [
+    0.991444777918322,
+    0.13052680306372097,
+    7.546591928364596e-06,
+    -7.722371984780631e-05
+  ],
+  "duration_s": 6.024024000000001,
+  "right_q_end": [
+    0.2400927138091674,
+    0.28963676144874245,
+    0.6731313437883776,
+    -1.002211436574273,
+    -0.18961205199462608,
+    1.236624116686397,
+    -1.0466485072743175
+  ],
+  "left_q_end": [
+    -0.22136014882994928,
+    -0.2727500652649277,
+    0.1266923955840482,
+    -1.564115431691947,
+    0.141677891860779,
+    1.3464022056306204,
+    1.271968239482411
+  ],
+  "robot_preflight": {
+    "rigid_sample_count": 401,
+    "left_poses_checked": [
+      "actual",
+      "commanded"
+    ],
+    "minimum_sampled_rigid_clearance_m": 0.02170185362639005,
+    "worst_rigid_sample": {
+      "time_s": 0.0,
+      "left_pose": "commanded",
+      "category": "left_self",
+      "distance": 0.02170185362639005,
+      "bodies": [
+        "left_link5",
+        "left_link7"
+      ],
+      "geoms": [
+        "",
+        ""
+      ]
+    },
+    "maximum_sampled_tcp_error_m": 6.562232353006212e-05,
+    "maximum_sampled_slerp_error_rad": 0.00015520558646461803,
+    "sampled_peak_velocity_rad_s": 0.0799520868059413,
+    "sampled_peak_acceleration_rad_s2": 0.04087819874691385,
+    "analytic_joint_extrema": {
+      "left": {
+        "minimum": [
+          -0.22136014882994928,
+          -0.2727500652649277,
+          0.1266923955840482,
+          -1.564115431691947,
+          0.141677891860779,
+          1.3464022056306204,
+          1.271968239482411
+        ],
+        "maximum": [
+          -0.22136014882994928,
+          -0.2727500652649277,
+          0.1266923955840482,
+          -1.564115431691947,
+          0.141677891860779,
+          1.3464022056306204,
+          1.271968239482411
+        ],
+        "minimum_at_fraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum_at_fraction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "minimum": [
+          0.2400927138091674,
+          0.2852766567526334,
+          0.644936458281177,
+          -1.0025353336212162,
+          -0.18961205199462608,
+          1.236624116686397,
+          -1.0466485072743175
+        ],
+        "maximum": [
+          0.2589910032861056,
+          0.28963676144874245,
+          0.6731313437883776,
+          -1.002211436574273,
+          -0.17997969877943615,
+          1.237811054096943,
+          -0.7897783567147947
+        ],
+        "minimum_at_fraction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "maximum_at_fraction": [
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "continuous_rate_bounds": {
+      "left": {
+        "path_first_derivative_bound": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "path_second_derivative_bound": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "velocity_upper_bound_rad_s": [
+          1e-10,
+          1e-10,
+          1e-10,
+          1e-10,
+          1e-10,
+          1e-10,
+          1e-10
+        ],
+        "acceleration_upper_bound_rad_s2": [
+          1e-10,
+          1e-10,
+          1e-10,
+          1e-10,
+          1e-10,
+          1e-10,
+          1e-10
+        ]
+      },
+      "right": {
+        "path_first_derivative_bound": [
+          0.01899990375350458,
+          0.00454150175958426,
+          0.028541444337671206,
+          0.0003355614368981562,
+          0.009892496475430737,
+          0.0012414895900429476,
+          0.2569857464873661
+        ],
+        "path_second_derivative_bound": [
+          0.0002202984131442489,
+          0.000372676698420352,
+          0.0007285931059559942,
+          3.537297271823809e-05,
+          0.00053877241140507,
+          0.00011261437154985211,
+          0.00024817659824938353
+        ],
+        "velocity_upper_bound_rad_s": [
+          0.005913791203392198,
+          0.0014135595080004473,
+          0.008883631395813812,
+          0.00010444485224269405,
+          0.0030790766261613554,
+          0.00038641837810289705,
+          0.07998777482729381
+        ],
+        "acceleration_upper_bound_rad_s2": [
+          0.0030441978617891116,
+          0.0007586505575533986,
+          0.00461148533517273,
+          5.681430341397155e-05,
+          0.0016260767640461,
+          0.00020842914175296797,
+          0.040910080609134175
+        ]
+      }
+    },
+    "continuous_rigid_clearance_certified": false,
+    "command_start_exactly_preserved": true,
+    "left_command_constant": true
+  },
+  "frozen_bear_left_rotation_sweep": {
+    "status": "clear",
+    "physical_success": false,
+    "required_gap_m": 0.005,
+    "segment_count": 3,
+    "maximum_xy_vertex_radius_m": 0.1148636258490862,
+    "sagitta_outer_bound_m": 0.00010932472011272098,
+    "left_poses_checked": [
+      "actual",
+      "commanded"
+    ],
+    "per_pose": [
+      {
+        "pose": "actual",
+        "q_left": [
+          -0.22134693076299494,
+          -0.2726999923117195,
+          0.12671656900938785,
+          -1.5641757487878654,
+          0.14168425532333698,
+          1.346386391843931,
+          1.2719688036636994,
+          0.0011083316290031037,
+          0.0011120438041704534
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "per_geom": [
+              {
+                "left_body": "left_link1",
+                "geom_id": 16,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8347417078920135,
+                  "raw_separating_projection_gap_m": 0.8347418078920135,
+                  "separating_axis_world": [
+                    -0.9718502472925376,
+                    0.030183949014890868,
+                    -0.23365792530813081
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8346323831719008
+              },
+              {
+                "left_body": "left_link2",
+                "geom_id": 18,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8444205106050345,
+                  "raw_separating_projection_gap_m": 0.8444206106050345,
+                  "separating_axis_world": [
+                    -0.9718502472925376,
+                    0.030183949014890868,
+                    -0.23365792530813081
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8443111858849218
+              },
+              {
+                "left_body": "left_link3",
+                "geom_id": 23,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8374575183694054,
+                  "raw_separating_projection_gap_m": 0.8374576183694054,
+                  "separating_axis_world": [
+                    -0.9957856542819588,
+                    -0.011075724270977083,
+                    0.09103987619787567
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8373481936492927
+              },
+              {
+                "left_body": "left_link4",
+                "geom_id": 28,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7901858962692425,
+                  "raw_separating_projection_gap_m": 0.7901859962692425,
+                  "separating_axis_world": [
+                    -0.9838421441947142,
+                    0.005307289810361291,
+                    0.17895940316512035
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7900765715491298
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 32,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7288791515073316,
+                  "raw_separating_projection_gap_m": 0.7288792515073316,
+                  "separating_axis_world": [
+                    -0.9498692830404403,
+                    0.05090859386779397,
+                    0.3084747318770924
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7287698267872189
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 33,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.678408632147299,
+                  "raw_separating_projection_gap_m": 0.6784087321472989,
+                  "separating_axis_world": [
+                    -0.9172165311762084,
+                    0.14440064605404268,
+                    0.37129811251373035
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.6782993074271862
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 34,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.5833605160293144,
+                  "raw_separating_projection_gap_m": 0.5833606160293143,
+                  "separating_axis_world": [
+                    -0.8894912667007403,
+                    0.09326977264093265,
+                    0.44733213161433105
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.5832511913092017
+              },
+              {
+                "left_body": "left_link6",
+                "geom_id": 52,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.48778991939928973,
+                  "raw_separating_projection_gap_m": 0.48779001939928973,
+                  "separating_axis_world": [
+                    -0.8717446438732475,
+                    0.12788632519639648,
+                    0.47297607096561073
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.487680594679177
+              },
+              {
+                "left_body": "left_link7",
+                "geom_id": 61,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46704482983447093,
+                  "raw_separating_projection_gap_m": 0.46704492983447093,
+                  "separating_axis_world": [
+                    -0.8894912667007403,
+                    0.09326977264093265,
+                    0.44733213161433105
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4669355051143582
+              },
+              {
+                "left_body": "left_hand",
+                "geom_id": 67,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4655761725093527,
+                  "raw_separating_projection_gap_m": 0.4655762725093527,
+                  "separating_axis_world": [
+                    0.9554609446036668,
+                    -0.16554714174300975,
+                    -0.24431235580254368
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46546684778923997
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 70,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4639580786117112,
+                  "raw_separating_projection_gap_m": 0.4639581786117112,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46384875389159846
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 71,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46339367499136525,
+                  "raw_separating_projection_gap_m": 0.46339377499136525,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46328435027125253
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 72,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46341114828080393,
+                  "raw_separating_projection_gap_m": 0.46341124828080393,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4633018235606912
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 73,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47420615125903764,
+                  "raw_separating_projection_gap_m": 0.47420625125903765,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47409682653892493
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 74,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46530068839528527,
+                  "raw_separating_projection_gap_m": 0.46530078839528527,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46519136367517255
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 75,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47609569137351887,
+                  "raw_separating_projection_gap_m": 0.4760957913735189,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47598636665340616
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 79,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4630532308477469,
+                  "raw_separating_projection_gap_m": 0.4630533308477469,
+                  "separating_axis_world": [
+                    0.9648863930907182,
+                    -0.17501091729335813,
+                    -0.19587094541182312
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4629439061276342
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 80,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4629316680985018,
+                  "raw_separating_projection_gap_m": 0.4629317680985018,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46282234337838907
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 81,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47398877041831555,
+                  "raw_separating_projection_gap_m": 0.47398887041831556,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47387944569820284
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 82,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4631937674400819,
+                  "raw_separating_projection_gap_m": 0.4631938674400819,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4630844427199692
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 83,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47587831053279683,
+                  "raw_separating_projection_gap_m": 0.47587841053279684,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4757689858126841
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 84,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4650833075545631,
+                  "raw_separating_projection_gap_m": 0.4650834075545631,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4649739828344504
+              }
+            ],
+            "minimum_continuous_gap_lower_bound_m": 0.46282234337838907
+          },
+          {
+            "index": 1,
+            "per_geom": [
+              {
+                "left_body": "left_link1",
+                "geom_id": 16,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8402390745419868,
+                  "raw_separating_projection_gap_m": 0.8402391745419867,
+                  "separating_axis_world": [
+                    -0.970782768187429,
+                    -0.05463324016617094,
+                    -0.23365792530812646
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.840129749821874
+              },
+              {
+                "left_body": "left_link2",
+                "geom_id": 18,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8445991647670198,
+                  "raw_separating_projection_gap_m": 0.8445992647670197,
+                  "separating_axis_world": [
+                    -0.970782768187429,
+                    -0.05463324016617094,
+                    -0.23365792530812646
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8444898400469071
+              },
+              {
+                "left_body": "left_link3",
+                "geom_id": 23,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8330346277737,
+                  "raw_separating_projection_gap_m": 0.8330347277736999,
+                  "separating_axis_world": [
+                    -0.9910310762562021,
+                    -0.09782201611267968,
+                    0.0910398761978759
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8329253030535873
+              },
+              {
+                "left_body": "left_link4",
+                "geom_id": 28,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.788067703201499,
+                  "raw_separating_projection_gap_m": 0.7880678032014989,
+                  "separating_axis_world": [
+                    -0.9805608885913879,
+                    -0.08046039885341986,
+                    0.17895940316512138
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7879583784813863
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 32,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7238204559399374,
+                  "raw_separating_projection_gap_m": 0.7238205559399373,
+                  "separating_axis_world": [
+                    0.9338803595200464,
+                    -0.0509001028006108,
+                    -0.35394442167887924
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7237111312198247
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 33,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.67349073135275,
+                  "raw_separating_projection_gap_m": 0.6734908313527499,
+                  "separating_axis_world": [
+                    0.9218399374311004,
+                    -0.13056697651224083,
+                    -0.3649155990108907
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.6733814066326372
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 34,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.5791112985692403,
+                  "raw_separating_projection_gap_m": 0.5791113985692402,
+                  "separating_axis_world": [
+                    -0.8610536184839711,
+                    0.09574900207563831,
+                    0.49941845650434197
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.5790019738491275
+              },
+              {
+                "left_body": "left_link6",
+                "geom_id": 52,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.48412571269089955,
+                  "raw_separating_projection_gap_m": 0.48412581269089955,
+                  "separating_axis_world": [
+                    -0.8610536184839711,
+                    0.09574900207563831,
+                    0.49941845650434197
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.48401638797078683
+              },
+              {
+                "left_body": "left_link7",
+                "geom_id": 61,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46246037400760115,
+                  "raw_separating_projection_gap_m": 0.46246047400760115,
+                  "separating_axis_world": [
+                    -0.9266581421516384,
+                    0.0869049283288836,
+                    0.3657215074564601
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46235104928748844
+              },
+              {
+                "left_body": "left_hand",
+                "geom_id": 67,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46079836016681025,
+                  "raw_separating_projection_gap_m": 0.46079846016681025,
+                  "separating_axis_world": [
+                    0.9554609446036668,
+                    -0.16554714174300975,
+                    -0.24431235580254368
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46068903544669754
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 70,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4588846812087613,
+                  "raw_separating_projection_gap_m": 0.4588847812087613,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4587753564886486
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 71,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4578216244180268,
+                  "raw_separating_projection_gap_m": 0.4578217244180268,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4577122996979141
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 72,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45786262394629496,
+                  "raw_separating_projection_gap_m": 0.45786272394629496,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45775329922618224
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 73,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46858744483142895,
+                  "raw_separating_projection_gap_m": 0.46858754483142895,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46847812011131623
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 74,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4599286081341047,
+                  "raw_separating_projection_gap_m": 0.4599287081341047,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.459819283413992
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 75,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47065342901923857,
+                  "raw_separating_projection_gap_m": 0.47065352901923857,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47054410429912585
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 79,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4566767406194304,
+                  "raw_separating_projection_gap_m": 0.4566768406194304,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4565674158993177
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 80,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45673756610544936,
+                  "raw_separating_projection_gap_m": 0.45673766610544936,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45662824138533664
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 81,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4680773799146064,
+                  "raw_separating_projection_gap_m": 0.4680774799146064,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4679680551944937
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 82,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45735255902947247,
+                  "raw_separating_projection_gap_m": 0.4573526590294725,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45724323430935976
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 83,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4701433641024161,
+                  "raw_separating_projection_gap_m": 0.4701434641024161,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47003403938230337
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 84,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4594185432172821,
+                  "raw_separating_projection_gap_m": 0.4594186432172821,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4593092184971694
+              }
+            ],
+            "minimum_continuous_gap_lower_bound_m": 0.4565674158993177
+          },
+          {
+            "index": 2,
+            "per_geom": [
+              {
+                "left_body": "left_link1",
+                "geom_id": 16,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.839076626795111,
+                  "raw_separating_projection_gap_m": 0.8390767267951109,
+                  "separating_axis_world": [
+                    0.9643354474990812,
+                    0.12839895497011458,
+                    0.23145378169157113
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8389673020749983
+              },
+              {
+                "left_body": "left_link2",
+                "geom_id": 18,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8394115503425575,
+                  "raw_separating_projection_gap_m": 0.8394116503425575,
+                  "separating_axis_world": [
+                    0.9708352547682104,
+                    0.07516895457723734,
+                    0.2276588157021583
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8393022256224448
+              },
+              {
+                "left_body": "left_link3",
+                "geom_id": 23,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8269875963394021,
+                  "raw_separating_projection_gap_m": 0.8269876963394021,
+                  "separating_axis_world": [
+                    -0.9900887494225563,
+                    -0.10704118585564511,
+                    0.09092003518199766
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8268782716192894
+              },
+              {
+                "left_body": "left_link4",
+                "geom_id": 28,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7831564968158352,
+                  "raw_separating_projection_gap_m": 0.7831565968158352,
+                  "separating_axis_world": [
+                    0.9737454300400471,
+                    0.0971697965728075,
+                    -0.20585885482563754
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7830471720957225
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 32,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7185602162102498,
+                  "raw_separating_projection_gap_m": 0.7185603162102497,
+                  "separating_axis_world": [
+                    0.9297117199743293,
+                    -0.04972648530610078,
+                    -0.36491559901088977
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7184508914901371
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 33,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.6673733167009704,
+                  "raw_separating_projection_gap_m": 0.6673734167009704,
+                  "separating_axis_world": [
+                    -0.9225189849546649,
+                    0.17927038872612505,
+                    0.34179065248218665
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.6672639919808577
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 34,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.5740591979425245,
+                  "raw_separating_projection_gap_m": 0.5740592979425244,
+                  "separating_axis_world": [
+                    -0.8533596668172021,
+                    0.05582324263795284,
+                    0.5183252305560844
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.5739498732224118
+              },
+              {
+                "left_body": "left_link6",
+                "geom_id": 52,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47964161586600657,
+                  "raw_separating_projection_gap_m": 0.47964171586600657,
+                  "separating_axis_world": [
+                    -0.8533596668172021,
+                    0.05582324263795284,
+                    0.5183252305560844
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47953229114589385
+              },
+              {
+                "left_body": "left_link7",
+                "geom_id": 61,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.456748938856204,
+                  "raw_separating_projection_gap_m": 0.456749038856204,
+                  "separating_axis_world": [
+                    0.9297117199743293,
+                    -0.04972648530610078,
+                    -0.36491559901088977
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4566396141360913
+              },
+              {
+                "left_body": "left_hand",
+                "geom_id": 67,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4563024591989086,
+                  "raw_separating_projection_gap_m": 0.4563025591989086,
+                  "separating_axis_world": [
+                    0.9554609446036668,
+                    -0.16554714174300975,
+                    -0.24431235580254368
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4561931344787959
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 70,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45349781615395696,
+                  "raw_separating_projection_gap_m": 0.45349791615395696,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45338849143384424
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 71,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45323147700119676,
+                  "raw_separating_projection_gap_m": 0.45323157700119676,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45312215228108405
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 72,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45327755039377593,
+                  "raw_separating_projection_gap_m": 0.45327765039377593,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4531682256736632
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 73,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4639956167134862,
+                  "raw_separating_projection_gap_m": 0.4639957167134862,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4638862919933735
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 74,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4555262392824876,
+                  "raw_separating_projection_gap_m": 0.4555263392824876,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4554169145623749
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 75,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4662443056021978,
+                  "raw_separating_projection_gap_m": 0.4662444056021978,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4661349808820851
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 79,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45364937785278664,
+                  "raw_separating_projection_gap_m": 0.45364947785278664,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4535400531326739
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 80,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45331269134084706,
+                  "raw_separating_projection_gap_m": 0.45331279134084707,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45320336662073435
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 81,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46403382922006253,
+                  "raw_separating_projection_gap_m": 0.46403392922006254,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4639245044999498
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 82,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4533157629003523,
+                  "raw_separating_projection_gap_m": 0.4533158629003523,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4532064381802396
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 83,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46628251810877414,
+                  "raw_separating_projection_gap_m": 0.46628261810877414,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4661731933886614
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 84,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4555644517890639,
+                  "raw_separating_projection_gap_m": 0.4555645517890639,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4554551270689512
+              }
+            ],
+            "minimum_continuous_gap_lower_bound_m": 0.45312215228108405
+          }
+        ]
+      },
+      {
+        "pose": "commanded",
+        "q_left": [
+          -0.22136014882994928,
+          -0.2727500652649277,
+          0.1266923955840482,
+          -1.564115431691947,
+          0.141677891860779,
+          1.3464022056306204,
+          1.271968239482411,
+          0.0011083316290031037,
+          0.0011120438041704534
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "per_geom": [
+              {
+                "left_body": "left_link1",
+                "geom_id": 16,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8347423883436418,
+                  "raw_separating_projection_gap_m": 0.8347424883436417,
+                  "separating_axis_world": [
+                    -0.9718502472925376,
+                    0.030183949014890868,
+                    -0.23365792530813081
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8346330636235291
+              },
+              {
+                "left_body": "left_link2",
+                "geom_id": 18,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8444200482767874,
+                  "raw_separating_projection_gap_m": 0.8444201482767874,
+                  "separating_axis_world": [
+                    -0.9718502472925376,
+                    0.030183949014890868,
+                    -0.23365792530813081
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8443107235566747
+              },
+              {
+                "left_body": "left_link3",
+                "geom_id": 23,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8374726904196191,
+                  "raw_separating_projection_gap_m": 0.8374727904196191,
+                  "separating_axis_world": [
+                    -0.9957856542819588,
+                    -0.011075724270977083,
+                    0.09103987619787567
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8373633656995064
+              },
+              {
+                "left_body": "left_link4",
+                "geom_id": 28,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7902101846087066,
+                  "raw_separating_projection_gap_m": 0.7902102846087066,
+                  "separating_axis_world": [
+                    -0.9838421441947142,
+                    0.005307289810361291,
+                    0.17895940316512035
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7901008598885939
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 32,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7289098749319475,
+                  "raw_separating_projection_gap_m": 0.7289099749319474,
+                  "separating_axis_world": [
+                    -0.9498692830404403,
+                    0.05090859386779397,
+                    0.3084747318770924
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7288005502118348
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 33,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.6784417748100958,
+                  "raw_separating_projection_gap_m": 0.6784418748100958,
+                  "separating_axis_world": [
+                    -0.9172165311762084,
+                    0.14440064605404268,
+                    0.37129811251373035
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.6783324500899831
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 34,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.5834043665807215,
+                  "raw_separating_projection_gap_m": 0.5834044665807214,
+                  "separating_axis_world": [
+                    -0.8894912667007403,
+                    0.09326977264093265,
+                    0.44733213161433105
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.5832950418606088
+              },
+              {
+                "left_body": "left_link6",
+                "geom_id": 52,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4878350479048802,
+                  "raw_separating_projection_gap_m": 0.4878351479048802,
+                  "separating_axis_world": [
+                    -0.8717446438732475,
+                    0.12788632519639648,
+                    0.47297607096561073
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4877257231847675
+              },
+              {
+                "left_body": "left_link7",
+                "geom_id": 61,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46708489426675837,
+                  "raw_separating_projection_gap_m": 0.46708499426675837,
+                  "separating_axis_world": [
+                    -0.8894912667007403,
+                    0.09326977264093265,
+                    0.44733213161433105
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46697556954664565
+              },
+              {
+                "left_body": "left_hand",
+                "geom_id": 67,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4655925929110966,
+                  "raw_separating_projection_gap_m": 0.4655926929110966,
+                  "separating_axis_world": [
+                    0.9554850515379619,
+                    -0.16557627395745894,
+                    -0.244198308327193
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4654832681909839
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 70,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46396941659853486,
+                  "raw_separating_projection_gap_m": 0.46396951659853486,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46386009187842214
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 71,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4634045430003344,
+                  "raw_separating_projection_gap_m": 0.4634046430003344,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4632952182802217
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 72,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46342202308679104,
+                  "raw_separating_projection_gap_m": 0.46342212308679104,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4633126983666783
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 73,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4742167680140616,
+                  "raw_separating_projection_gap_m": 0.4742168680140616,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4741074432939489
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 74,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4653127560546947,
+                  "raw_separating_projection_gap_m": 0.4653128560546947,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.465203431334582
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 75,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47610750098196525,
+                  "raw_separating_projection_gap_m": 0.47610760098196525,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47599817626185253
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 79,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4630641740925177,
+                  "raw_separating_projection_gap_m": 0.4630642740925177,
+                  "separating_axis_world": [
+                    0.9648863930907182,
+                    -0.17501091729335813,
+                    -0.19587094541182312
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.462954849372405
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 80,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46294235638921194,
+                  "raw_separating_projection_gap_m": 0.46294245638921194,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4628330316690992
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 81,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47399930261333223,
+                  "raw_separating_projection_gap_m": 0.47399940261333223,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4738899778932195
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 82,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46320455768606167,
+                  "raw_separating_projection_gap_m": 0.46320465768606167,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46309523296594896
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 83,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4758900355812359,
+                  "raw_separating_projection_gap_m": 0.4758901355812359,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47578071086112317
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 84,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4650952906539653,
+                  "raw_separating_projection_gap_m": 0.4650953906539653,
+                  "separating_axis_world": [
+                    0.9730452317167412,
+                    -0.1393200901839691,
+                    -0.18377401749008013
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4649859659338526
+              }
+            ],
+            "minimum_continuous_gap_lower_bound_m": 0.4628330316690992
+          },
+          {
+            "index": 1,
+            "per_geom": [
+              {
+                "left_body": "left_link1",
+                "geom_id": 16,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8402398226735309,
+                  "raw_separating_projection_gap_m": 0.8402399226735309,
+                  "separating_axis_world": [
+                    -0.970782768187429,
+                    -0.05463324016617094,
+                    -0.23365792530812646
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8401304979534182
+              },
+              {
+                "left_body": "left_link2",
+                "geom_id": 18,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.844598766836856,
+                  "raw_separating_projection_gap_m": 0.8445988668368559,
+                  "separating_axis_world": [
+                    -0.970782768187429,
+                    -0.05463324016617094,
+                    -0.23365792530812646
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8444894421167433
+              },
+              {
+                "left_body": "left_link3",
+                "geom_id": 23,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.833050235382371,
+                  "raw_separating_projection_gap_m": 0.8330503353823709,
+                  "separating_axis_world": [
+                    -0.9910310762562021,
+                    -0.09782201611267968,
+                    0.0910398761978759
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8329409106622583
+              },
+              {
+                "left_body": "left_link4",
+                "geom_id": 28,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7880927458580749,
+                  "raw_separating_projection_gap_m": 0.7880928458580748,
+                  "separating_axis_world": [
+                    -0.9805608885913879,
+                    -0.08046039885341986,
+                    0.17895940316512138
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7879834211379622
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 32,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7238511755525728,
+                  "raw_separating_projection_gap_m": 0.7238512755525728,
+                  "separating_axis_world": [
+                    0.9338803595200464,
+                    -0.0509001028006108,
+                    -0.35394442167887924
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7237418508324601
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 33,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.6735240285979996,
+                  "raw_separating_projection_gap_m": 0.6735241285979996,
+                  "separating_axis_world": [
+                    0.9218399374311004,
+                    -0.13056697651224083,
+                    -0.3649155990108907
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.6734147038778869
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 34,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.57915401576666,
+                  "raw_separating_projection_gap_m": 0.57915411576666,
+                  "separating_axis_world": [
+                    -0.8610536184839711,
+                    0.09574900207563831,
+                    0.49941845650434197
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.5790446910465473
+              },
+              {
+                "left_body": "left_link6",
+                "geom_id": 52,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4841728009287136,
+                  "raw_separating_projection_gap_m": 0.4841729009287136,
+                  "separating_axis_world": [
+                    -0.8610536184839711,
+                    0.09574900207563831,
+                    0.49941845650434197
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4840634762086009
+              },
+              {
+                "left_body": "left_link7",
+                "geom_id": 61,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4624968170522919,
+                  "raw_separating_projection_gap_m": 0.4624969170522919,
+                  "separating_axis_world": [
+                    -0.9266581421516384,
+                    0.0869049283288836,
+                    0.3657215074564601
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4623874923321792
+              },
+              {
+                "left_body": "left_hand",
+                "geom_id": 67,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4608147685642496,
+                  "raw_separating_projection_gap_m": 0.4608148685642496,
+                  "separating_axis_world": [
+                    0.9554850515379619,
+                    -0.16557627395745894,
+                    -0.244198308327193
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46070544384413686
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 70,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4588975664634261,
+                  "raw_separating_projection_gap_m": 0.4588976664634261,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4587882417433134
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 71,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45783404411511247,
+                  "raw_separating_projection_gap_m": 0.4578341441151125,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45772471939499976
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 72,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45787504991988026,
+                  "raw_separating_projection_gap_m": 0.45787514991988026,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45776572519976755
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 73,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46859957730903673,
+                  "raw_separating_projection_gap_m": 0.46859967730903673,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.468490252588924
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 74,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45994224306684567,
+                  "raw_separating_projection_gap_m": 0.45994234306684567,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45983291834673296
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 75,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47066677045600214,
+                  "raw_separating_projection_gap_m": 0.47066687045600214,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4705574457358894
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 79,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4566893347184778,
+                  "raw_separating_projection_gap_m": 0.4566894347184778,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45658000999836507
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 80,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4567498198471743,
+                  "raw_separating_projection_gap_m": 0.4567499198471743,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45664049512706156
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 81,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.468089434307847,
+                  "raw_separating_projection_gap_m": 0.468089534307847,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4679801095877343
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 82,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4573649069186906,
+                  "raw_separating_projection_gap_m": 0.4573650069186906,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45725558219857787
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 83,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.47015662745481246,
+                  "raw_separating_projection_gap_m": 0.47015672745481246,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.47004730273469975
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 84,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.459432100065656,
+                  "raw_separating_projection_gap_m": 0.459432200065656,
+                  "separating_axis_world": [
+                    0.9764679155434929,
+                    -0.09024955765888597,
+                    -0.19587094541182387
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4593227753455433
+              }
+            ],
+            "minimum_continuous_gap_lower_bound_m": 0.45658000999836507
+          },
+          {
+            "index": 2,
+            "per_geom": [
+              {
+                "left_body": "left_link1",
+                "geom_id": 16,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8390770789586662,
+                  "raw_separating_projection_gap_m": 0.8390771789586662,
+                  "separating_axis_world": [
+                    0.9643371446008223,
+                    0.12838620830838798,
+                    0.23145378169156824
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8389677542385535
+              },
+              {
+                "left_body": "left_link2",
+                "geom_id": 18,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8394111846257879,
+                  "raw_separating_projection_gap_m": 0.8394112846257878,
+                  "separating_axis_world": [
+                    0.9708352547682104,
+                    0.07516895457723734,
+                    0.2276588157021583
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8393018599056752
+              },
+              {
+                "left_body": "left_link3",
+                "geom_id": 23,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.8270026698112113,
+                  "raw_separating_projection_gap_m": 0.8270027698112112,
+                  "separating_axis_world": [
+                    -0.9900970934299489,
+                    -0.1070062202501739,
+                    0.09087031643687882
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.8268933450910986
+              },
+              {
+                "left_body": "left_link4",
+                "geom_id": 28,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.783181868569901,
+                  "raw_separating_projection_gap_m": 0.783181968569901,
+                  "separating_axis_world": [
+                    0.9737454300400471,
+                    0.0971697965728075,
+                    -0.20585885482563754
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7830725438497883
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 32,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.7185911124162653,
+                  "raw_separating_projection_gap_m": 0.7185912124162652,
+                  "separating_axis_world": [
+                    0.9297117199743293,
+                    -0.04972648530610078,
+                    -0.36491559901088977
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.7184817876961526
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 33,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.6674064411563628,
+                  "raw_separating_projection_gap_m": 0.6674065411563628,
+                  "separating_axis_world": [
+                    -0.9225177743373693,
+                    0.1792440882853597,
+                    0.3418077132634323
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.6672971164362501
+              },
+              {
+                "left_body": "left_link5",
+                "geom_id": 34,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.5741033246974998,
+                  "raw_separating_projection_gap_m": 0.5741034246974998,
+                  "separating_axis_world": [
+                    -0.8533596668172021,
+                    0.05582324263795284,
+                    0.5183252305560844
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.5739939999773871
+              },
+              {
+                "left_body": "left_link6",
+                "geom_id": 52,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4796905154297532,
+                  "raw_separating_projection_gap_m": 0.4796906154297532,
+                  "separating_axis_world": [
+                    -0.8533596668172021,
+                    0.05582324263795284,
+                    0.5183252305560844
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4795811907096405
+              },
+              {
+                "left_body": "left_link7",
+                "geom_id": 61,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4567862557179951,
+                  "raw_separating_projection_gap_m": 0.4567863557179951,
+                  "separating_axis_world": [
+                    0.9297117199743293,
+                    -0.04972648530610078,
+                    -0.36491559901088977
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45667693099788237
+              },
+              {
+                "left_body": "left_hand",
+                "geom_id": 67,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.456319381597295,
+                  "raw_separating_projection_gap_m": 0.456319481597295,
+                  "separating_axis_world": [
+                    0.9554850515379619,
+                    -0.16557627395745894,
+                    -0.244198308327193
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4562100568771823
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 70,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4535106245829832,
+                  "raw_separating_projection_gap_m": 0.4535107245829832,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4534012998628705
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 71,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45324385035204695,
+                  "raw_separating_projection_gap_m": 0.45324395035204695,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45313452563193424
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 72,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4532898366210004,
+                  "raw_separating_projection_gap_m": 0.4532899366210004,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4531805119008877
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 73,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4640076082362911,
+                  "raw_separating_projection_gap_m": 0.4640077082362911,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4638982835161784
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 74,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45553968924580795,
+                  "raw_separating_projection_gap_m": 0.45553978924580796,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45543036452569524
+              },
+              {
+                "left_body": "left_left_finger",
+                "geom_id": 75,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46625746086109854,
+                  "raw_separating_projection_gap_m": 0.46625756086109854,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4661481361409858
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 79,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4536617994189982,
+                  "raw_separating_projection_gap_m": 0.4536618994189982,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4535524746988855
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 80,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45332491111742507,
+                  "raw_separating_projection_gap_m": 0.45332501111742507,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45321558639731235
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 81,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4640457484839793,
+                  "raw_separating_projection_gap_m": 0.4640458484839793,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46393642376386657
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 82,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.4533279768686886,
+                  "raw_separating_projection_gap_m": 0.4533280768686886,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.4532186521485759
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 83,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.46629560110878676,
+                  "raw_separating_projection_gap_m": 0.46629570110878676,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.46618627638867405
+              },
+              {
+                "left_body": "left_right_finger",
+                "geom_id": 84,
+                "certificate": {
+                  "status": "clear",
+                  "conservative_gap_lower_bound_m": 0.45557782949349607,
+                  "raw_separating_projection_gap_m": 0.45557792949349607,
+                  "separating_axis_world": [
+                    0.9589093524207067,
+                    -0.1738737590345711,
+                    -0.2241891383615384
+                  ],
+                  "numerical_guard_m": 1e-07,
+                  "mujoco_convex_signed_distance_diagnostic_m": null,
+                  "solid_envelope_intersection_proven": false,
+                  "original_surface_distance_computed": false
+                },
+                "continuous_arc_lower_bound_m": 0.45546850477338335
+              }
+            ],
+            "minimum_continuous_gap_lower_bound_m": 0.45313452563193424
+          }
+        ]
+      }
+    ],
+    "scope": "Continuous ideal WORLD-Z rigid frozen-teddy arc about measured fixed TCP, against both static left poses. No dynamic or continuous joint-FK tracking certificate.",
+    "minimum_continuous_gap_lower_bound_m": 0.45312215228108405
+  }
+}

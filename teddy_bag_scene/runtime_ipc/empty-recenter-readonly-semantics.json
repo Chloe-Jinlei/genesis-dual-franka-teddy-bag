@@ -1,0 +1,45 @@
+{
+  "kind": "readonly_existing_empty_correction_list_semantics",
+  "physical_success": false,
+  "production_or_config_written": false,
+  "source_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py": "0ed42957296a0ad41b4691856042a77ccef9ce3472a0b77f0d78d653f09c38f1",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_guarded_run.py": "e2023e4c811ab482c9ab4172846c2229d1c22622fee7fc414267eef670de847a"
+  },
+  "input_source_actual_run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21",
+  "only_in_memory_config_change": {
+    "task.contact_trial.recenter_offsets_xy_m": []
+  },
+  "result": {
+    "kind": "guarded_contact_trial",
+    "status": "rejected",
+    "route": null,
+    "physical_success": false,
+    "runtime_execution_performed": false,
+    "stages_to_execute": [],
+    "report": {
+      "kind": "bounded_guarded_contact_recenter",
+      "rejections": [
+        "Declare 1\u20138 nonzero finite corrections of at most 30 mm each"
+      ],
+      "candidates": [],
+      "physical_success": false,
+      "maximum_correction_xy_m": 0.03,
+      "maximum_cumulative_xy_m": 0.05,
+      "max_attempts": 2,
+      "attempt_index": 1,
+      "keeps_original_full_orientation_within_rad": 0.015,
+      "correction_height_is_body_rim_clearance_not_all_handle_material_clearance": true,
+      "budget_measurement": "planned straight XY corrections, reconciled with new observed endpoint displacements; not per-step actual arc length",
+      "native_contact_force_torque_grasp_and_deformation_gates_must_remain_active": true,
+      "original_rotation_error_rad": 0.00037038561807596214,
+      "observed_time_s": 49.13000000000668,
+      "observed_tcp_xy_m": [
+        -0.12042568632255085,
+        0.03818228260464953
+      ],
+      "cumulative_xy_m_before": 0.0
+    }
+  }
+}

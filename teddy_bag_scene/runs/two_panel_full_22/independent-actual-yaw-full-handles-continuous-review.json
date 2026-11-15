@@ -1,0 +1,573 @@
+{
+  "kind": "complete_frozen_tetra_straight_sweep_vs_selected_handles",
+  "status": "rejected",
+  "physical_success": false,
+  "native_execution": false,
+  "source_scope": "actual_joint_observation",
+  "not_a_joint_native_snapshot": false,
+  "production_edited": false,
+  "selected_handles": [
+    "front",
+    "back"
+  ],
+  "descent_prefix_boundary": null,
+  "source_observed_time_s": 21.904999999999927,
+  "required_euclidean_clearance_m": 0.002,
+  "numerical_guard_m": 1e-07,
+  "tetrahedra": 5486,
+  "handle_triangles": 704,
+  "per_stage_pair_count": 3862144,
+  "source_to_native_max_error_m": 6.944641773336686e-11,
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/orient_teddy_postlift.npz": "e6482ebf7f49db59c85d0133427e5d1dd338ed193eed60d7494594821612c003",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/guarded_contact_candidate.json": "917591cb649e1cca15c8bffd0d339ead4847d94a7c667095df531b0310b58a45",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/config.json": "95136a3518a6ce78a8303127d4eb3d52406ba62f895c756c1cae8b3d9ad417e8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_22/source/assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/continuous_frozen_handles_review.py": "80c4c13075e9257af56bb19fd92ecb15b34bbb22269626c6a8cdca39b9da0034"
+  },
+  "analytic_fixture_tests": {
+    "middle_only_strict_collision": {
+      "conservative_euclidean_projection_gap_lower_m": 0.0,
+      "axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "method": "LP_dual_axis_independently_recomputed",
+      "LP_minimum_linfinity_residual_m": 0.0,
+      "closest_Linfinity_pair": {
+        "barycentric_feasible": true,
+        "tet_barycentric": [
+          0.0,
+          0.8,
+          0.1,
+          0.1
+        ],
+        "triangle_barycentric": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "path_fraction": 0.19999999999999996,
+        "bear_point_world_m": [
+          1.2,
+          0.1,
+          0.1
+        ],
+        "cloth_point_world_m": [
+          1.2,
+          0.1,
+          0.1
+        ],
+        "euclidean_distance_m": 0.0,
+        "linfinity_distance_m": 0.0
+      },
+      "strict_intersection": {
+        "strict_intersection_proven": true,
+        "minimum_interior_face_or_edge_margin_m": 0.029289321881345205,
+        "recomputed_coordinate_residual_m": 6.690187733356917e-16,
+        "path_fraction": 0.25465461869020967,
+        "tet_barycentric": [
+          0.05073059361772885,
+          0.690690762619581,
+          0.1292893218813452,
+          0.1292893218813453
+        ],
+        "triangle_barycentric": [
+          0.4142135623730962,
+          0.292893218813452,
+          0.2928932188134525
+        ],
+        "bear_point_world_m": [
+          1.2000000000000002,
+          0.1292893218813452,
+          0.1292893218813453
+        ],
+        "cloth_point_world_m": [
+          1.2000000000000008,
+          0.12928932188134526,
+          0.12928932188134531
+        ]
+      },
+      "status": "strict_intersection"
+    },
+    "whole_path_separated": {
+      "conservative_euclidean_projection_gap_lower_m": 1.0999999,
+      "axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "method": "direct_face_or_coordinate_separating_axis",
+      "status": "clear"
+    },
+    "separated_but_under2mm": {
+      "conservative_euclidean_projection_gap_lower_m": 0.0002885751345948513,
+      "axis_world": [
+        0.5773502691896258,
+        0.5773502691896258,
+        0.5773502691896258
+      ],
+      "method": "LP_dual_axis_independently_recomputed",
+      "LP_minimum_linfinity_residual_m": 0.00016666666666667607,
+      "closest_Linfinity_pair": {
+        "barycentric_feasible": true,
+        "tet_barycentric": [
+          0.0,
+          0.19983333333333336,
+          0.5998333333333332,
+          0.20033333333333347
+        ],
+        "triangle_barycentric": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "path_fraction": 0.0,
+        "bear_point_world_m": [
+          0.19983333333333336,
+          0.5998333333333332,
+          0.20033333333333347
+        ],
+        "cloth_point_world_m": [
+          0.2,
+          0.6,
+          0.2005
+        ],
+        "euclidean_distance_m": 0.0002886751345947811,
+        "linfinity_distance_m": 0.00016666666666675933
+      },
+      "strict_intersection": {
+        "strict_intersection_proven": false,
+        "LP_status": 2
+      },
+      "status": "within_required_band",
+      "witness_under_euclidean_threshold": {
+        "barycentric_feasible": true,
+        "tet_barycentric": [
+          0.0,
+          0.19983333333333336,
+          0.5998333333333332,
+          0.20033333333333347
+        ],
+        "triangle_barycentric": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "path_fraction": 0.0,
+        "bear_point_world_m": [
+          0.19983333333333336,
+          0.5998333333333332,
+          0.20033333333333347
+        ],
+        "cloth_point_world_m": [
+          0.2,
+          0.6,
+          0.2005
+        ],
+        "euclidean_distance_m": 0.0002886751345947811,
+        "linfinity_distance_m": 0.00016666666666675933
+      },
+      "coordinate_cube_separation_diagnostic": {
+        "0.001": -0.0014434756729740264,
+        "0.002": -0.0031755264805429038
+      }
+    }
+  },
+  "stages": [
+    {
+      "name": "height_at_current_xy",
+      "start_tcp_m": [
+        0.337899599738605,
+        -0.2618298456356101,
+        1.3696688151544678
+      ],
+      "end_tcp_m": [
+        0.337899599738605,
+        -0.2618298456356101,
+        1.3696688151544678
+      ],
+      "displacement_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aabb_certified_pair_count": 3862144,
+      "fine_pair_count": 0,
+      "fine_pairs": [],
+      "minimum_aabb_gap_lower_m": 0.4324842375551246,
+      "minimum_fine_gap_lower_m": null,
+      "minimum_complete_gap_lower_m": 0.4324842375551246,
+      "status": "clear",
+      "processed_pair_count": 3862144,
+      "complete_pair_coverage": true,
+      "wall_s": 0.08176915099829785
+    },
+    {
+      "name": "transport_y_at_current_x",
+      "start_tcp_m": [
+        0.337899599738605,
+        -0.2618298456356101,
+        1.3696688151544678
+      ],
+      "end_tcp_m": [
+        0.337899599738605,
+        0.07524497250123746,
+        1.3696688151544678
+      ],
+      "displacement_m": [
+        0.0,
+        0.3370748181368476,
+        0.0
+      ],
+      "aabb_certified_pair_count": 3862144,
+      "fine_pair_count": 0,
+      "fine_pairs": [],
+      "minimum_aabb_gap_lower_m": 0.3245499824674636,
+      "minimum_fine_gap_lower_m": null,
+      "minimum_complete_gap_lower_m": 0.3245499824674636,
+      "status": "clear",
+      "processed_pair_count": 3862144,
+      "complete_pair_coverage": true,
+      "wall_s": 0.08231646900094347
+    },
+    {
+      "name": "translate_outside_mouth",
+      "start_tcp_m": [
+        0.337899599738605,
+        0.07524497250123746,
+        1.3696688151544678
+      ],
+      "end_tcp_m": [
+        -0.14551091153505175,
+        0.07524497250123746,
+        1.3696688151544678
+      ],
+      "displacement_m": [
+        -0.48341051127365675,
+        0.0,
+        0.0
+      ],
+      "aabb_certified_pair_count": 3862144,
+      "fine_pair_count": 0,
+      "fine_pairs": [],
+      "minimum_aabb_gap_lower_m": 0.010682332470205428,
+      "minimum_fine_gap_lower_m": null,
+      "minimum_complete_gap_lower_m": 0.010682332470205428,
+      "status": "clear",
+      "processed_pair_count": 3862144,
+      "complete_pair_coverage": true,
+      "wall_s": 0.08248927300155628
+    },
+    {
+      "name": "insert_candidate",
+      "start_tcp_m": [
+        -0.14551091153505175,
+        0.07524497250123746,
+        1.3696688151544678
+      ],
+      "end_tcp_m": [
+        -0.14551091153505175,
+        0.07524497250123746,
+        0.9240478603830748
+      ],
+      "displacement_m": [
+        0.0,
+        0.0,
+        -0.44562095477139296
+      ],
+      "aabb_certified_pair_count": 2112045,
+      "fine_pair_count": 3,
+      "fine_pairs": [
+        {
+          "tetrahedron_index": 4,
+          "tet_vertices": [
+            1067,
+            385,
+            1072,
+            1250
+          ],
+          "handle": "back",
+          "source_face_index": 3344,
+          "native_face_index": 3344,
+          "native_vertices": [
+            1726,
+            1717,
+            1716
+          ],
+          "conservative_euclidean_projection_gap_lower_m": 0.0030649794380394643,
+          "axis_world": [
+            -0.9141916056912093,
+            0.4052822573019061,
+            0.0
+          ],
+          "method": "LP_dual_axis_independently_recomputed",
+          "LP_minimum_linfinity_residual_m": 0.0023229557810918633,
+          "closest_Linfinity_pair": {
+            "barycentric_feasible": true,
+            "tet_barycentric": [
+              0.0,
+              0.6255294748032346,
+              0.37447052519676355,
+              0.0
+            ],
+            "triangle_barycentric": [
+              0.9999999999999989,
+              0.0,
+              0.0
+            ],
+            "path_fraction": 0.5292512387574871,
+            "bear_point_world_m": [
+              -0.1406087446369858,
+              0.13798920557322597,
+              1.0604817772265982
+            ],
+            "cloth_point_world_m": [
+              -0.14293170041807773,
+              0.14031216135431795,
+              1.0581588214455078
+            ],
+            "euclidean_distance_m": 0.004023477436586234,
+            "linfinity_distance_m": 0.0023229557810919843
+          },
+          "status": "clear"
+        },
+        {
+          "tetrahedron_index": 77,
+          "tet_vertices": [
+            409,
+            346,
+            410,
+            1067
+          ],
+          "handle": "back",
+          "source_face_index": 3344,
+          "native_face_index": 3344,
+          "native_vertices": [
+            1726,
+            1717,
+            1716
+          ],
+          "conservative_euclidean_projection_gap_lower_m": 0.002104173521276609,
+          "axis_world": [
+            -0.24849006764692247,
+            -0.9686344440916954,
+            0.0
+          ],
+          "method": "LP_dual_axis_independently_recomputed",
+          "LP_minimum_linfinity_residual_m": 0.001728889280416122,
+          "closest_Linfinity_pair": {
+            "barycentric_feasible": true,
+            "tet_barycentric": [
+              0.7138942520059843,
+              0.28610574799401567,
+              0.0,
+              0.0
+            ],
+            "triangle_barycentric": [
+              1.0000000000000002,
+              0.0,
+              0.0
+            ],
+            "path_fraction": 0.5527502744755571,
+            "bear_point_world_m": [
+              -0.14120281113766178,
+              0.14204105063473424,
+              1.059887710725925
+            ],
+            "cloth_point_world_m": [
+              -0.14293170041807793,
+              0.14031216135431815,
+              1.058158821445509
+            ],
+            "euclidean_distance_m": 0.0029945240743418007,
+            "linfinity_distance_m": 0.001728889280416146
+          },
+          "status": "clear"
+        },
+        {
+          "tetrahedron_index": 209,
+          "tet_vertices": [
+            1211,
+            236,
+            280,
+            253
+          ],
+          "handle": "back",
+          "source_face_index": 3344,
+          "native_face_index": 3344,
+          "native_vertices": [
+            1726,
+            1717,
+            1716
+          ],
+          "conservative_euclidean_projection_gap_lower_m": 0.0,
+          "axis_world": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "method": "LP_dual_axis_independently_recomputed",
+          "LP_minimum_linfinity_residual_m": 0.0,
+          "closest_Linfinity_pair": {
+            "barycentric_feasible": true,
+            "tet_barycentric": [
+              0.0,
+              0.1802665675243241,
+              0.8197334324756759,
+              0.0
+            ],
+            "triangle_barycentric": [
+              0.9315808059274168,
+              0.06841919407258368,
+              0.0
+            ],
+            "path_fraction": 0.4693132974621236,
+            "bear_point_world_m": [
+              -0.14419598399674496,
+              0.13977523375687,
+              1.0579938959154
+            ],
+            "cloth_point_world_m": [
+              -0.14419598399674502,
+              0.13977523375687007,
+              1.0579938959154005
+            ],
+            "euclidean_distance_m": 4.509747244882934e-16,
+            "linfinity_distance_m": 4.440892098500626e-16
+          },
+          "strict_intersection": {
+            "strict_intersection_proven": true,
+            "minimum_interior_face_or_edge_margin_m": 6.750243554319226e-05,
+            "recomputed_coordinate_residual_m": 2.7755575615628914e-17,
+            "path_fraction": 0.468601078215389,
+            "tet_barycentric": [
+              0.007033044939475842,
+              0.2104379579015919,
+              0.7717195086742585,
+              0.010809488484673729
+            ],
+            "triangle_barycentric": [
+              0.945550988700122,
+              0.027411802245394253,
+              0.027037209054483737
+            ],
+            "bear_point_world_m": [
+              -0.1439282345476731,
+              0.13983854412851313,
+              1.058075846813473
+            ],
+            "cloth_point_world_m": [
+              -0.1439282345476731,
+              0.1398385441285131,
+              1.058075846813473
+            ]
+          },
+          "status": "strict_intersection"
+        }
+      ],
+      "minimum_aabb_gap_lower_m": 0.002642143582947207,
+      "minimum_fine_gap_lower_m": 0.0,
+      "minimum_complete_gap_lower_m": null,
+      "status": "rejected",
+      "first_failure": {
+        "tetrahedron_index": 209,
+        "tet_vertices": [
+          1211,
+          236,
+          280,
+          253
+        ],
+        "handle": "back",
+        "source_face_index": 3344,
+        "native_face_index": 3344,
+        "native_vertices": [
+          1726,
+          1717,
+          1716
+        ],
+        "conservative_euclidean_projection_gap_lower_m": 0.0,
+        "axis_world": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "method": "LP_dual_axis_independently_recomputed",
+        "LP_minimum_linfinity_residual_m": 0.0,
+        "closest_Linfinity_pair": {
+          "barycentric_feasible": true,
+          "tet_barycentric": [
+            0.0,
+            0.1802665675243241,
+            0.8197334324756759,
+            0.0
+          ],
+          "triangle_barycentric": [
+            0.9315808059274168,
+            0.06841919407258368,
+            0.0
+          ],
+          "path_fraction": 0.4693132974621236,
+          "bear_point_world_m": [
+            -0.14419598399674496,
+            0.13977523375687,
+            1.0579938959154
+          ],
+          "cloth_point_world_m": [
+            -0.14419598399674502,
+            0.13977523375687007,
+            1.0579938959154005
+          ],
+          "euclidean_distance_m": 4.509747244882934e-16,
+          "linfinity_distance_m": 4.440892098500626e-16
+        },
+        "strict_intersection": {
+          "strict_intersection_proven": true,
+          "minimum_interior_face_or_edge_margin_m": 6.750243554319226e-05,
+          "recomputed_coordinate_residual_m": 2.7755575615628914e-17,
+          "path_fraction": 0.468601078215389,
+          "tet_barycentric": [
+            0.007033044939475842,
+            0.2104379579015919,
+            0.7717195086742585,
+            0.010809488484673729
+          ],
+          "triangle_barycentric": [
+            0.945550988700122,
+            0.027411802245394253,
+            0.027037209054483737
+          ],
+          "bear_point_world_m": [
+            -0.1439282345476731,
+            0.13983854412851313,
+            1.058075846813473
+          ],
+          "cloth_point_world_m": [
+            -0.1439282345476731,
+            0.1398385441285131,
+            1.058075846813473
+          ]
+        },
+        "status": "strict_intersection"
+      },
+      "processed_pair_count": 2112048,
+      "complete_pair_coverage": false,
+      "wall_s": 0.04937236200203188
+    }
+  ],
+  "unassessed_remaining_stages": [],
+  "limitations": [
+    "Frozen tetrahedral bear and fixed true handle triangles only. Source is explicitly designated one actual joint native observation with matching planner observation times; its future translation is still hypothetical.",
+    "The continuous certificate covers the declared straight TCP translations of an unchanging bear; not joint-spline FK errors, rotation, soft deformation, compliance, slipping or future cloth motion.",
+    "2mm is this new offline engineering clearance criterion; native material and contact parameters are unchanged.",
+    "LP/QP suggestions never authorize separation: all accepted fine pairs have an independently recomputed separating projection bound. AABB pruning also supplies a recomputed geometric lower bound.",
+    "Reported per-stage minimum is the smallest certified lower bound across all pairs, not an exact global Euclidean closest-distance calculation.",
+    "Cube diagnostics have L-infinity meaning, distinct from Euclidean2mm engineering gate.",
+    "Release and withdrawal robot geometry are covered elsewhere; no new physical task success or containment claim follows.",
+    "A descent-prefix boundary, if selected, is a height condition and does not establish crossing the actual open mouth or containment.",
+    "Numerical guards use double precision, not directed-rounding interval arithmetic."
+  ],
+  "inputs_unchanged": true
+}

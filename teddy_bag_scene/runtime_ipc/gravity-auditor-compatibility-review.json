@@ -1,0 +1,94 @@
+{
+  "kind": "gravity_execution_auditor_compatibility_readiness",
+  "status": "ready_for_actual_saved_evidence",
+  "physical_success": false,
+  "native_execution_performed": false,
+  "approved_source_hashes": {
+    "run.py": "f774826d687eb6662bd1d4c491382214eac2fce22e554fd0ebdf9bf6fba0a2a6",
+    "gravity_release.py": "d88f4a7cd34853fb8f07eb34d42e137007cd553f69ddc920a0856a0710c96dee"
+  },
+  "current_production_sources_match": true,
+  "auditor": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/audit_gravity_execution.py",
+  "auditor_sha256": "9b02f097e99492deaa4293fcc0743a8ce7e442a887a21de9be5e37a64d023334",
+  "regression_report": "runtime_ipc/gravity-execution-audit-regression.json",
+  "regression_sha256": "602f9ee28120de91e75b44a5ce3a5d087d686dd0cd0bf860618eb54bb068f64c",
+  "regression_checks_passed": 96,
+  "legacy_files_unchanged_by_this_task": {
+    "runtime_ipc/audit_guarded_run.py": "39b9426b429711c0cf60ffabcfcce8a91819f9de5b6f711273db90d9161fdbab",
+    "runtime_ipc/postlift_yaw_prefix_review.py": "88157290bb54b75cfff90d4b5874fa700f71222fb40b9dcacf18038c3bdefc08",
+    "validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "run.py": "f774826d687eb6662bd1d4c491382214eac2fce22e554fd0ebdf9bf6fba0a2a6",
+    "gravity_release.py": "d88f4a7cd34853fb8f07eb34d42e137007cd553f69ddc920a0856a0710c96dee"
+  },
+  "compatibility_findings": [
+    {
+      "component": "audit_guarded_run.audit_corrections",
+      "requires_original_full_depth_execution": false,
+      "scope": "Source/start and bounded XY correction checks only."
+    },
+    {
+      "component": "frozen validate.audit_arrays",
+      "requires_original_full_depth_execution": false,
+      "scope": "Original actual final ALL-node/COM/retention, phase order, material/table/contact gates remain unchanged."
+    },
+    {
+      "component": "frozen_runner_yaw_contract reused by yaw prefix/full audit",
+      "legacy_fails_new_reviewed_runner": true,
+      "resolution": "In-memory adapter permits only exact reviewed run/helper SHA256 plus four unchanged full-method ASTs. Existing files are not edited."
+    },
+    {
+      "component": "gravity path and release decision",
+      "legacy_has_no_dedicated_coverage": true,
+      "resolution": "New auditor independently reads checked archived curves, source/end states, all-node/mass-COM capture, native intent/force timing, actual/command opening, final withdrawal/settle and original final validator."
+    }
+  ],
+  "new_audit_checks": [
+    "45-knot cubic archives, command endpoints, C2, continuous analytic reference bounds .35/.5, fixed left command, zero endpoint qd/qdd",
+    "401 original seven-category raw rigid checks, fixed full-R and straight Cartesian reference error, original 8mm threshold",
+    "Actual source/endpoint original material, table, named handle, teddy-grip geometry and raw rigid checks",
+    "Same saved real source, full-depth preflight retained, short target at table+.345 inside original vertical route, original outside withdrawal target",
+    "Fresh all1450-node containment and rest-volume COM, original capvalid, fraction>=.5; all original native right grip conditions remain until explicit release event",
+    "21 original actual/commanded opening samples; same saved withdrawal cubic and event clocks",
+    "Original actual final ALL-node/COM/retention/physics plus full raw reaction, yaw, policy, source and richer traces"
+  ],
+  "actual_historical_smoke": {
+    "run": "two_panel_full_24",
+    "state": "transport_teddy.npz",
+    "passed": true,
+    "minimum_tetra_volume_ratio": 0.47053324647442013,
+    "maximum_cloth_edge_stretch_ratio": 1.0164617991071814,
+    "planning_executed": false
+  },
+  "pending": [
+    "Actual full25 final saved chain must be checked after native termination. Readiness is not execution success."
+  ],
+  "limits": [
+    "No per-integration-step commanded-q log exists. Same-plan evidence is frozen source dataflow, archived curve, events and actual tracking.",
+    "401 rigid/FK and21 opening checks are sampled. Continuous rate bounds concern reference commands.",
+    "Saved soft-sweep metadata are checked; this auditor does not rerun convex separation search.",
+    "The original capvalid flag is not a body embedding/self-intersection proof and all-node containment is not whole-tetrahedron containment.",
+    "The explicit 50% interim rule is not a stable-support proof or replacement for final ALL-node/COM/retention."
+  ],
+  "real_historical_moving_capture_negative_test": {
+    "run": "two_panel_full_24",
+    "time_s": 42.665000000003374,
+    "capture": {
+      "virtual_closed_body_valid": true,
+      "bear_center_of_mass_inside": true,
+      "bear_vertex_inside_fraction": 0.5151724137931034
+    },
+    "maximum_actual_joint_speed_rad_s": 0.2741441923041084,
+    "interim_release_decision": false,
+    "actual_motion_was_not_changed": true
+  },
+  "peer_review": {
+    "path": "runtime_ipc/independent-gravity-execution-auditor-short-review.json",
+    "sha256": "3ae8d5992446585886fa05b4038a0c65cdd6edd9b2ee1c12456e703f4c5f4ea8",
+    "reviewed_previous_auditor_sha256": "e48b9f403b029652fe835254ebe03dc3029ba82f44d0671c734017289f76e9f6",
+    "two_findings_fixed": [
+      "Explicit insert>=6s and withdrawal>=4s independent of rate pass.",
+      "Absent gravity policy requires no gravity candidate/archive/review evidence; historical drape_under_gravity remains legacy."
+    ],
+    "regression_confirmation": true
+  }
+}

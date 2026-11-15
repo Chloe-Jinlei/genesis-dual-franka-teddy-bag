@@ -1,0 +1,85 @@
+{
+  "kind": "full19_single_yaw_rigid_transform_scope_review",
+  "physical_success": false,
+  "runtime_execution_performed": false,
+  "active_runtime_or_configuration_modified": false,
+  "source_time_s": 54.54500000000945,
+  "source_state_sha256": "98a5dd1e688f01f3c0d444fed30b36692cf60da8e6e6f70f17af47655311b955",
+  "parent_report_sha256": "f20788bd7aeb67b83f25e85651c211c6b9d629fa0b1ffe30202bfefec482f676",
+  "insert_archive_sha256": "b1a7aec436dbb66288ea45746696ebf0bbfa7ca1e15f29ef7672ffe835c1c968",
+  "pure_yaw_versus_ideal_actual_fk_to_command_slerp_continuous_duhamel_bound_m": 8.048886357132298e-05,
+  "maximum_final_pure_vs_planned_fk_rigid_grasp_vertex_difference_m": 8.015301321410031e-05,
+  "planned_insert_end_tcp_m": [
+    -0.12028332374009996,
+    -0.001147723699779339,
+    0.9598100283603291
+  ],
+  "planned_insert_end_rotation_xyzw": [
+    0.991445018721539,
+    0.1305246567409551,
+    -4.038333130363403e-06,
+    -0.00029802448742128826
+  ],
+  "pure_yaw_frozen_body_metrics": {
+    "status": "valid",
+    "physical_success": false,
+    "reasons": [],
+    "guards": {
+      "all_queries_at_least_2mm_below_actual_lowest_rim": true,
+      "actual_body_topology_orientation_nondegeneracy": true,
+      "actual_spatial_rim": true,
+      "both_analysis_caps_coherently_closed": true,
+      "raw_winding_and_physical_body_distances_finite": true,
+      "caps_agree_at_every_query": true,
+      "integer_winding_residual_bounded": true,
+      "no_multiple_winding": true,
+      "all_queries_farther_than_1um_from_physical_body": true
+    },
+    "inside_node_count": 1250,
+    "node_count": 1450,
+    "node_inside_fraction": 0.8620689655172413,
+    "com_inside": true,
+    "signed_com_body_distance_m": 0.059434761644014164,
+    "maximum_outside_node_body_distance_m": 0.038995630020684485,
+    "outside_node_count": 200,
+    "minimum_query_body_distance_m": 2.0866789200820326e-05,
+    "maximum_cap_difference": 2.220446049250313e-16,
+    "maximum_integer_residual": 9.188269079783492e-16,
+    "whole_tetrahedral_volume_containment_certified": false,
+    "measure": "Unweighted count of this same frozen mesh's nodes; not a volume, mass, or success fraction"
+  },
+  "planned_final_fk_rigid_grasp_body_metrics": {
+    "status": "valid",
+    "physical_success": false,
+    "reasons": [],
+    "guards": {
+      "all_queries_at_least_2mm_below_actual_lowest_rim": true,
+      "actual_body_topology_orientation_nondegeneracy": true,
+      "actual_spatial_rim": true,
+      "both_analysis_caps_coherently_closed": true,
+      "raw_winding_and_physical_body_distances_finite": true,
+      "caps_agree_at_every_query": true,
+      "integer_winding_residual_bounded": true,
+      "no_multiple_winding": true,
+      "all_queries_farther_than_1um_from_physical_body": true
+    },
+    "inside_node_count": 1250,
+    "node_count": 1450,
+    "node_inside_fraction": 0.8620689655172413,
+    "com_inside": true,
+    "signed_com_body_distance_m": 0.05946011488378174,
+    "maximum_outside_node_body_distance_m": 0.039003416364841774,
+    "outside_node_count": 200,
+    "minimum_query_body_distance_m": 1.738941885000827e-05,
+    "maximum_cap_difference": 2.220446049250313e-16,
+    "maximum_integer_residual": 4.947529504498804e-16,
+    "whole_tetrahedral_volume_containment_certified": false,
+    "measure": "Unweighted count of this same frozen mesh's nodes; not a volume, mass, or success fraction"
+  },
+  "scope": [
+    "The second body query uses exactly the archived hypothetical insert endpoint FK and the actual initial FK frame, leaving actual bag vertices unchanged.",
+    "This is still a frozen rigid-grasp assumption, not a prediction of deformation or retention.",
+    "Duhamel bound compares two ideal fixed-TCP rotations only, and is not a bound for the realized joint spline or native soft body.",
+    "No new yaw angle, offset, trajectory or gate was introduced."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "kind": "observed_validated_environment_snapshot_not_a_clean_install_test",
+  "created_utc": "2026-11-15T23:03:50.465616+00:00",
+  "scope": "Exact installed distribution versions, pinned Genesis source and bundled scene-local native dependencies. No local URLs or credentials are exported.",
+  "python": {
+    "implementation": "CPython",
+    "version": "3.12.15",
+    "abi": "cp312",
+    "platform": "linux",
+    "machine": "x86_64",
+    "libc": [
+      "glibc",
+      "2.39"
+    ]
+  },
+  "source_environment_distribution_count": 156,
+  "lock_distribution_count": 155,
+  "lock_file": "python-packages.lock",
+  "lock_sha256": "8b01a50160b37caf4e4892bb73cf84185fc65ee89fd2cf7ea75f97ebec39c766",
+  "lock_method": "uv pip freeze checked one-for-one against importlib.metadata; excluded only genesis-world editable local URL; retained actual torch distribution version 2.14.0",
+  "uv_version": "uv 0.12.18 (x86_64-unknown-linux-gnu)",
+  "genesis": {
+    "version": "1.4.3",
+    "repository": "https://github.com/Genesis-Embodied-AI/genesis-world.git",
+    "commit": "ffd119c30118ebb9745fc009349efb2112a8cb76",
+    "working_tree_clean": true,
+    "custom_engine_source_changes": false,
+    "source_restore_directory": "genesis-world",
+    "build_system_requires": [
+      "setuptools",
+      "wheel",
+      "cython>=3.0.0",
+      "numpy>=1.26.4"
+    ],
+    "uninitialized_submodules_not_used_by_scene": [
+      "doc",
+      "genesis/ext/LuisaRender",
+      "genesis/ext/ParticleMesher"
+    ],
+    "scene_local_adapters": [
+      "exact STC reaction feedback",
+      "rigid collision fallback",
+      "initial robot pose before IPC geometry creation",
+      "independent regional membrane shear"
+    ]
+  },
+  "torch": {
+    "distribution_metadata_version": "2.14.0",
+    "runtime_version": "2.14.0+cu130",
+    "compiled_cuda": "13.0",
+    "git_version": "08187d9e0fba026dc8217405802ab5381dc88d90",
+    "wheel_metadata": "Wheel-Version: 1.0\nGenerator: scikit-build-core 1.0.3\nRoot-Is-Purelib: false\nTag: cp312-cp312-manylinux_2_28_x86_64",
+    "install_requirement": "torch==2.14.0",
+    "official_index": "https://download.pytorch.org/whl/cu130",
+    "official_installation_reference": "https://pytorch.org/get-started/previous-versions/#v2-14-0",
+    "installation_reference_checked": true,
+    "index_wheel_download_test_performed": false,
+    "verify_after_install": {
+      "torch.__version__": "2.14.0+cu130",
+      "torch.version.cuda": "13.0"
+    },
+    "build_warning": "The installed metadata has no +cu130 suffix; the runtime does. Preserve both facts. Do not substitute another CPU/CUDA build just because metadata version matches."
+  },
+  "native_vendor": {
+    "restore_directory": "teddy_bag_scene/vendor",
+    "distributions": [
+      {
+        "name": "huggingface_hub",
+        "version": "2.4.0",
+        "wheel_metadata": "Wheel-Version: 1.0\nGenerator: setuptools (84.2.1)\nRoot-Is-Purelib: true\nTag: py3-none-any"
+      },
+      {
+        "name": "polyscope",
+        "version": "2.6.1",
+        "wheel_metadata": "Wheel-Version: 1.0\nGenerator: scikit-build-core 0.12.0\nRoot-Is-Purelib: false\nTag: cp312-cp312-manylinux_2_27_x86_64\nTag: cp312-cp312-manylinux_2_28_x86_64"
+      },
+      {
+        "name": "pyuipc",
+        "version": "0.0.29",
+        "wheel_metadata": "Wheel-Version: 1.0\nGenerator: scikit-build-core 1.1.1\nRoot-Is-Purelib: false\nTag: cp312-cp312-manylinux_2_34_x86_64"
+      }
+    ],
+    "pyuipc_compatibility": {
+      "schema_version": 1,
+      "python": {
+        "requires": ">=3.10, <3.15",
+        "abi_tags": [
+          "cp310",
+          "cp311",
+          "cp312",
+          "cp313",
+          "cp314"
+        ]
+      },
+      "wheel": {
+        "cuda_toolkit": "12.8",
+        "requires_system_cuda_toolkit": false,
+        "minimum_driver": {
+          "linux": "525.60.13",
+          "windows": "528.33"
+        },
+        "minimum_ptx_jit_driver": {
+          "linux": "570.124.06",
+          "windows": "572.61"
+        },
+        "cuda_architectures": [
+          "75-real",
+          "80-real",
+          "86-real",
+          "89-real",
+          "120-real",
+          "89-virtual"
+        ],
+        "platform_tokens": [
+          "manylinux",
+          "win_amd64"
+        ]
+      }
+    },
+    "bundled_binary_platform": "CPython 3.12 / Linux x86_64 / glibc >= 2.34",
+    "requires_system_cuda_toolkit_for_pyuipc_wheel": false,
+    "all_dist_info_licenses_and_notice_must_be_preserved": true,
+    "venv_lock_excludes_scene_local_vendor": true,
+    "auxiliary_hub_tooling_note": "The archive preserves the original vendor tree. Optional Hugging Face download/CLI extras are not part of this validated simulation execution and are not claimed fully installed."
+  },
+  "hardware_observed": {
+    "nvidia_smi_name_driver_memory": "NVIDIA GeForce RTX 5070 Laptop GPU, 595.99.02, 8151 MiB"
+  },
+  "rendering": {
+    "headless": "EGL plus an available OpenGL driver",
+    "viewer": "GLX and an accessible display server",
+    "physics_frontend": "Genesis CPU",
+    "contact_backend": "libuipc CUDA"
+  },
+  "validation": {
+    "source_environment_dependency_check": "uv pip check: 156 packages; all installed packages compatible",
+    "exact_lock_metadata_match": true,
+    "no_local_urls_or_credentials_in_lock": true,
+    "clean_machine_install_test_performed": false,
+    "new_full_simulation_from_export_performed": false,
+    "package_wheel_hashes_locked": false,
+    "build_isolation_transitive_dependencies_locked": false
+  },
+  "limits": [
+    "This version snapshot is not a self-contained offline wheelhouse or a hash-locked dependency graph.",
+    "The source machine was validated; installation from package indices on a clean machine has not been tested.",
+    "Genesis editable installation may create an isolated build environment for the requirements recorded above.",
+    "The pyuipc minimum-driver values apply to pyuipc only; the cu130 Torch build also needs a compatible NVIDIA driver."
+  ]
+}

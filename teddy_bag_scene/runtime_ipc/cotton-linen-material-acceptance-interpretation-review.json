@@ -1,0 +1,224 @@
+{
+  "kind": "independent_material_acceptance_interpretation",
+  "created_utc": "2026-11-15T21:57:55.855694+00:00",
+  "scope_cn": "只解释已完成Full30与Full38的材料及验收证据；不读取活动Full40，不新增仿真、动作或数值验收门限。",
+  "evidence_runs": {
+    "30": {
+      "recorded_task_passed": true,
+      "original_checks_passed": 20,
+      "original_check_count": 20,
+      "independent_checks_passed": 41,
+      "independent_check_count": 41,
+      "independent_task_success": true,
+      "actual_duration_s": 76.71000000000272,
+      "geometry_and_config_derived_mass_kg": 0.12007964446260372,
+      "mass_runtime_buffer_checked": false,
+      "per_step_maximum_mesh_edge_extension_percent": 4.794496661056891
+    },
+    "38": {
+      "recorded_task_passed": true,
+      "original_checks_passed": 20,
+      "original_check_count": 20,
+      "independent_checks_passed": 41,
+      "independent_check_count": 41,
+      "independent_task_success": true,
+      "actual_duration_s": 96.64499999998459,
+      "geometry_and_config_derived_mass_kg": 0.08005309630840246,
+      "mass_runtime_buffer_checked": false,
+      "per_step_maximum_mesh_edge_extension_percent": 4.132493255171821
+    }
+  },
+  "parameters": {
+    "full30": {
+      "E": 4000000.0,
+      "rho": 500.0,
+      "thickness": 0.0003,
+      "bending_stiffness": 5e-05,
+      "shear_stiffness": 50.0,
+      "handle_shear_stiffness": 250.0,
+      "friction_mu": 0.65
+    },
+    "full38": {
+      "E": 10000000.0,
+      "rho": 333.3333333333333,
+      "thickness": 0.0003,
+      "bending_stiffness": 1e-05,
+      "shear_stiffness": 50.0,
+      "handle_shear_stiffness": 250.0,
+      "friction_mu": 0.65
+    },
+    "units_cn": "E为有效连续体Pa，rho为kg/m³，thickness字段是IPC半厚度0.3mm；全厚0.6mm。D为Nm，独立body/handle剪切能系数为N/m。300→200g/m²、派生质量120.080→80.053g；并非实物称重或本报告读取质量buffer。"
+  },
+  "measured_comparison": [
+    {
+      "region": "panel_front",
+      "full30": {
+        "saved_principal_peak_percent": 3.5048299041900766,
+        "saved_construction_length_peak_percent": 1.8181564211781964,
+        "saved_principal_peak_phase": "insert_teddy",
+        "final_principal_rest_area_p95_percent": 0.6757884857463647,
+        "final_construction_length_rest_area_p95_percent": 0.22810665762937887,
+        "max_reference_area_fraction_principal_above_5percent": 0.0
+      },
+      "full38": {
+        "saved_principal_peak_percent": 2.8441897129452887,
+        "saved_construction_length_peak_percent": 1.2523506529814155,
+        "saved_principal_peak_phase": "insert_teddy",
+        "final_principal_rest_area_p95_percent": 0.4575458476605121,
+        "final_construction_length_rest_area_p95_percent": 0.19813015105685228,
+        "max_reference_area_fraction_principal_above_5percent": 0.0
+      },
+      "full38_native_chart": {
+        "axis_max_percent": 0.6433350898521706,
+        "max_over_frames_spatial_axis_p95_percent": 0.13987256975498408,
+        "maximum_absolute_axis_angle_change_deg": 4.108314510813159
+      }
+    },
+    {
+      "region": "panel_back",
+      "full30": {
+        "saved_principal_peak_percent": 3.493151448848586,
+        "saved_construction_length_peak_percent": 0.9867191109510509,
+        "saved_principal_peak_phase": "release_teddy",
+        "final_principal_rest_area_p95_percent": 0.8528822298823346,
+        "final_construction_length_rest_area_p95_percent": 0.1874543069466883,
+        "max_reference_area_fraction_principal_above_5percent": 0.0
+      },
+      "full38": {
+        "saved_principal_peak_percent": 5.387503131306226,
+        "saved_construction_length_peak_percent": 0.595787963343053,
+        "saved_principal_peak_phase": "insert_teddy",
+        "final_principal_rest_area_p95_percent": 0.5670124466305104,
+        "final_construction_length_rest_area_p95_percent": 0.15723393469946334,
+        "max_reference_area_fraction_principal_above_5percent": 0.0008799182711987892
+      },
+      "full38_native_chart": {
+        "axis_max_percent": 0.4666840500570535,
+        "max_over_frames_spatial_axis_p95_percent": 0.17910020393216985,
+        "maximum_absolute_axis_angle_change_deg": 5.961349473829642
+      }
+    },
+    {
+      "region": "handle_front",
+      "full30": {
+        "saved_principal_peak_percent": 8.56875252359648,
+        "saved_construction_length_peak_percent": 4.783840060371625,
+        "saved_principal_peak_phase": "insert_teddy",
+        "final_principal_rest_area_p95_percent": 1.7067741286132865,
+        "final_construction_length_rest_area_p95_percent": 0.9999862353661682,
+        "max_reference_area_fraction_principal_above_5percent": 0.006156080932348472
+      },
+      "full38": {
+        "saved_principal_peak_percent": 8.0559699059217,
+        "saved_construction_length_peak_percent": 3.464708834047703,
+        "saved_principal_peak_phase": "insert_teddy",
+        "final_principal_rest_area_p95_percent": 0.9573438242235444,
+        "final_construction_length_rest_area_p95_percent": 0.4863873078466474,
+        "max_reference_area_fraction_principal_above_5percent": 0.009255898256260726
+      },
+      "full38_native_chart": {
+        "axis_max_percent": 1.4920129020013606,
+        "max_over_frames_spatial_axis_p95_percent": 0.7550164998929354,
+        "maximum_absolute_axis_angle_change_deg": 8.29097265423377
+      }
+    },
+    {
+      "region": "handle_back",
+      "full30": {
+        "saved_principal_peak_percent": 2.3721738775357215,
+        "saved_construction_length_peak_percent": 2.0859556962796733,
+        "saved_principal_peak_phase": "close_both_handles",
+        "final_principal_rest_area_p95_percent": 0.4440228577200722,
+        "final_construction_length_rest_area_p95_percent": 0.228723374454054,
+        "max_reference_area_fraction_principal_above_5percent": 0.0
+      },
+      "full38": {
+        "saved_principal_peak_percent": 2.161247618372264,
+        "saved_construction_length_peak_percent": 1.2815075867913972,
+        "saved_principal_peak_phase": "insert_teddy",
+        "final_principal_rest_area_p95_percent": 0.17963824285878172,
+        "final_construction_length_rest_area_p95_percent": 0.04191247296303491,
+        "max_reference_area_fraction_principal_above_5percent": 0.0
+      },
+      "full38_native_chart": {
+        "axis_max_percent": 0.9763099378190754,
+        "max_over_frames_spatial_axis_p95_percent": 0.28143471856270086,
+        "maximum_absolute_axis_angle_change_deg": 1.8936363947478583
+      }
+    }
+  ],
+  "supported_statements_cn": [
+    "Full38在原动作策略、几何和守卫下完成了装袋，原始20项及独立41项检查通过；这证明该次仿真任务完成，不等于材料已与真实棉麻标定。",
+    "Full38采用更容易弯折的参数：D由50降至10µNm；同一网格和曲率下弯曲能/恢复力系数降至原1/5。面密度为200gsm量级，面内拉伸与剪切仍独立建模。",
+    "该次完整运行持握前带构造长轴峰由4.784%降至3.465%，主伸长峰由8.569%降至8.056%；最终持前带主伸长面积p95由1.707%降至0.957%。这些是各自实际运行的观测差异。",
+    "Full38全部区域本构a/b轴局部伸长峰不超过1.492%，同时持前带夹角变化可达8.291°。可称本构轴向伸长较小、存在局部斜向剪切变形。",
+    "Full38并非各部位均改善：后片局部主伸长峰由3.493%升至5.388%；持前带主伸长超过5%的最大面积占比由0.616%升至0.926%。5%仅为既有描述统计分箱，不是新增验收门。"
+  ],
+  "unsupported_statements_cn": [
+    "不能称整袋零伸长、近乎不可伸长、所有方向都小于2%，也不能删除真实主伸长热点只展示a/b轴。用户未指定0%或2%硬指标，本审查也不新增。",
+    "不能把原生a/b轴、构造网格长宽方向或最大主伸长分别冒称实测经纬纱拉伸；原生轴由初始三角形法向转到Z得到，不是织物纱向标定。",
+    "不能称已消除橡胶回弹或新增了棉麻滞回/阻尼：当前是保守弹性能、接触摩擦及原积分器，未辨识材料耗散。native strain_rate是拉伸三次项系数，不是速度阻尼。",
+    "不能把30→38的所有差异归因E：E、D和密度同时变化，观测袋形又改变实际规划时长/接触路径；76.710s与96.645s不是同一加载历史的单变量材料试验。",
+    "不能把较小最终残余形变、视觉皱褶或最终静止单独当作低回弹或真实手感标定。原粗网格无纤维/纱线滑移和细尺度褶皱自由度。"
+  ],
+  "measurement_meanings_cn": {
+    "native_axes": "a/b长度是模型指定两个面内方向；夹角/I6描述其非正交性。两轴长度接近1时，斜向长度仍可显著改变。",
+    "construction_axes": "袋片宽高和带子构造长宽的材料线长度代理，适合描述画面上的长带变长，不能自动等同经纬纱。",
+    "principal": "局部连续体任意方向线伸长的最大值；纯刚体转动或三角片整体弯折不改变它，剪切会改变。",
+    "sampling": "完整保存帧约50ms间隔；主/轴向峰可能漏掉步间瞬时峰。原始逐步网格边守卫是另一种指标。p95按初始三角形面积加权，不是时间或节点比例。"
+  },
+  "primary_material_basis": [
+    {
+      "title": "Sylvie® 3D Drape Tester – New system for measuring fabric drape",
+      "url": "https://www.pt.bme.hu/publikaciok/503_open_TEKSTIL%20Sylvie%203D%20Drape%20Teste-New%20measuring%20system-Jelka_k%C3%A9p-tab.pdf",
+      "location": "Table1, printed page7, PDF page7 (zero-based6)",
+      "support_cn": "实测平纹/斜纹棉约185–197gsm，厚约0.61–0.77mm，支持200gsm及0.6mm包络的量级；该文B表单位未明确每单位宽度，未用于Nm换算。"
+    },
+    {
+      "title": "Low Stress Mechanical Properties of Plasma-Treated Cotton Fabric Subjected to Zinc Oxide-Anti-Microbial Treatment",
+      "url": "https://www.mdpi.com/1996-1944/6/1/314",
+      "location": "Section2.1;Tables2,4",
+      "support_cn": "175gsm棉对照B=.103gf cm²/cm=10.10085µNm；G=2.81gf/(cm degree)。依小角能量约定可对应mu量级78.94N/m，但不是直接拟合。EMT9.14%是500gf/cm指定加载下的试验量，不能拿来当本仿真局部主伸长的通过标准。"
+    },
+    {
+      "title": "Comfort and Handle Behaviour of Linen-Blended Fabrics",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/aut-2007-070104/pdf",
+      "location": {
+        "composition_and_areal_density": "Table1, printed p34/PDF p2",
+        "units": "Table2, printed p35/PDF p3",
+        "thickness": "Table3, printed p37/PDF p5",
+        "bending_values": "Table5, printed p39/PDF p7",
+        "testing_method": "Section2.4: Kawabata evaluation system, KES-FB2 bending"
+      },
+      "support_cn": "185gsm纯麻B约19.12µNm；144gsm棉麻混纺约9.71µNm。支持量级范围，不是同一样本200gsm+D10µNm的联合标定。"
+    }
+  ],
+  "material_selection_after_full40_cn": {
+    "full40_status_in_this_review": "尚未知；未读取活动运行。350是root声明的下一提带剪切系数，未在本审查中验证实际读回。",
+    "if_complete_and_all_original_audits_pass": "先核实际材料读回及仅预定字段变化，再用同一四区域/阶段/面积统计检查提带剪切角、构造长轴、主伸长的峰与分布；若较350的母方案38出现机制一致、并非只挑一个峰的收益，且未将显著变形或受力问题转移到其他区域，可选择350并明确单次仿真证据范围。原全体包含、保持、碰撞/力矩/变形守卫一项也不取消。",
+    "if_complete_but_no_clear_material_benefit": "不能因为编号更晚或任务成功自动升级；保留Full38是有完整任务证据、参数改动更少的基线选择。应如实呈现混合结果而非声称350必然更像棉麻。",
+    "if_failure_or_incomplete": "不采用失败的350配置作已验证默认。保留Full38可复现配置/视频及完整验收证据，明确局部斜向伸长和回弹未标定，不能宣称完全满足字面上的不拉伸。",
+    "whether_to_continue": "当前足以停止盲目搜索并交付最有证据的完成候选；若仍要求消除可见橡胶感，下一变化须由可观察的具体模式和相应织物载荷/卸载参考支持。只有可解释地改善目标模式且不牺牲原物理门才值得单个有界验证；没有这种证据时继续仅凭成功率调系数不增加材料真实性。单次差异不能证明可靠单调趋势，强可靠性声明需重复或标定，非本报告新增必做矩阵。"
+  },
+  "suggested_user_facing_description_cn": "布袋采用约200g/m²棉麻量级的薄壳参数，弯折更柔软；在已完成的测试中，提带沿构造长度方向的峰值伸长有所降低。局部斜向变形仍存在，材料回弹尚未用实物标定，因此目前是柔软、较少轴向拉长的布料近似。",
+  "no_added_acceptance_threshold": true,
+  "no_production_edits": true,
+  "no_new_native_simulation": true,
+  "no_live_full40_read": true,
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full30-cloth-material-baseline.json": "ec66543e57231e8b544ec110b7fcc9c7f8470ccc049dcb5612dd9452c383d177",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full_38-cloth-material-baseline.json": "5b18feb04461aa1e7f1f1f6b4c5065ece1f9608a44db6c937a85320206c3b101",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/two_panel_full_38-native-axis-strain-review-v2.json": "72499a80d4ef229319ba8169e0a19a2f13be14a38178a91a85f1ecc04d0db494",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-areal-mass-reference-review.json": "8297fca2227ebd22513ced71550c8454b640bc0e9c89cd2dd29b86cc3aecd720",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/cotton-linen-shear-reference-review.json": "c2cb064edcae2bc95f5b6b596f49cb472afa3fe7118e618f3ec915cc2f15f4a0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/report.json": "1af946b03aaa68269c591b2641099636922c6958f610c67e277442686bf7c781",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/validation.json": "6e2ac7a2bded1fbd0208a783b80897bddf632e9af35c505be7df6ae03b05fa88",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/independent-gravity-execution-review.json": "52ddda4f2664a7f019ef03f5c28e52dc32913bca055129b6d4c516a2e2e846a7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_30/config.json": "ccc35c9cf2f3b5b715cfa964a6f480a4bf5fb48a7346ebe62758bbbbbd37aa52",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/report.json": "4bb67e2dc8b109396fbaa24138dcb04d12c9fdcbfc03ee6e2e712d5ef857aed0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/validation.json": "33e10eb3f94d95689590bbe49bab6cf10450f2ab27a6efdaf16abbc6bf499441",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/independent-gravity-execution-review.json": "df3a4454aa88b55b9428916da320c91cfc5f4e181ff28b4f18ad22422f455e55",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/config.json": "24ec28685624319b832f1df9df59301289cc29c79c8e085695b88763f2227768"
+  },
+  "protected_inputs_unchanged": true
+}

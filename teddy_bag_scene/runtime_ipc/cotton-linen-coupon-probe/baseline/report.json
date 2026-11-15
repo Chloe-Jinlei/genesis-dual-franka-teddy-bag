@@ -1,0 +1,144 @@
+{
+  "label": "baseline",
+  "status": "failed",
+  "E_Pa": 4000000.0,
+  "requested_mu_N_per_m": 50.0,
+  "density_kg_m3": 500.0,
+  "radius_m": 0.0003,
+  "full_thickness_m": 0.0006,
+  "nu": 0.3,
+  "requested_bending_Nm": 5e-05,
+  "requested_strain_rate": 100.0,
+  "gravity_z_m_s2": 0.0,
+  "native_errors": [
+    {
+      "type": "Exception",
+      "message": "Assertion R.dim() == 3 failed. label_triangle_orient() only works on 3D simplicial complex (tetmesh). /project/src/geometry/label_triangle_orient.cpp(10):\nStack trace (most recent call first):\n#0  0x000078ea9d90533d in uipc::Exception::Exception(std::basic_string_view<char, std::char_traits<char> >) at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/libuipc_core.so\n#1  0x000078ea9de8de3b in uipc::geometry::label_triangle_orient(uipc::geometry::SimplicialComplex&) at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/libuipc_geometry.so\n#2  0x000078ea9e782d56 at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc.cpython-312-x86_64-linux-gnu.so\n#3  0x000078ea9e6a3b46 at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc.cpython-312-x86_64-linux-gnu.so\n#4  0x0000000001807afc in cfunction_vectorcall_FASTCALL_KEYWORDS at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#5  0x0000000001819f8f in _PyEval_EvalFrameDefault at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#6  0x00000000018a1bdd in PyEval_EvalCode at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#7  0x00000000018a370b in builtin_exec at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#8  0x0000000001807afc in cfunction_vectorcall_FASTCALL_KEYWORDS at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#9  0x0000000001819f8f in _PyEval_EvalFrameDefault at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#10 0x00000000018a1bdd in PyEval_EvalCode at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#11 0x00000000018a9c56 in run_mod at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#12 0x000000000195ae01 in PyRun_SimpleStringFlags at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#13 0x0000000001adeed0 in Py_RunMain.warm at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#14 0x000000000198f08e in pymain_main at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#15 0x000000000198eeeb in main at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#16 0x000078eade02a1c9 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16\n#17 0x000078eade02a28a in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3\n#18 0x00000000019b8028 in _start at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12",
+      "traceback": "Traceback (most recent call last):\n  File \"runtime_ipc/cotton_linen_coupon_probe.py\", line 119, in run_case\n    label_triangle_orient(mesh)\nuipc._native.pyuipc.Exception: Assertion R.dim() == 3 failed. label_triangle_orient() only works on 3D simplicial complex (tetmesh). /project/src/geometry/label_triangle_orient.cpp(10):\nStack trace (most recent call first):\n#0  0x000078ea9d90533d in uipc::Exception::Exception(std::basic_string_view<char, std::char_traits<char> >) at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/libuipc_core.so\n#1  0x000078ea9de8de3b in uipc::geometry::label_triangle_orient(uipc::geometry::SimplicialComplex&) at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/libuipc_geometry.so\n#2  0x000078ea9e782d56 at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc.cpython-312-x86_64-linux-gnu.so\n#3  0x000078ea9e6a3b46 at /home/chloe/Desktop/genesis-local/teddy_bag_scene/vendor/uipc/_native/pyuipc.cpython-312-x86_64-linux-gnu.so\n#4  0x0000000001807afc in cfunction_vectorcall_FASTCALL_KEYWORDS at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#5  0x0000000001819f8f in _PyEval_EvalFrameDefault at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#6  0x00000000018a1bdd in PyEval_EvalCode at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#7  0x00000000018a370b in builtin_exec at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#8  0x0000000001807afc in cfunction_vectorcall_FASTCALL_KEYWORDS at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#9  0x0000000001819f8f in _PyEval_EvalFrameDefault at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#10 0x00000000018a1bdd in PyEval_EvalCode at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#11 0x00000000018a9c56 in run_mod at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#12 0x000000000195ae01 in PyRun_SimpleStringFlags at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#13 0x0000000001adeed0 in Py_RunMain.warm at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#14 0x000000000198f08e in pymain_main at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#15 0x000000000198eeeb in main at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n#16 0x000078eade02a1c9 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16\n#17 0x000078eade02a28a in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3\n#18 0x00000000019b8028 in _start at /home/chloe/Desktop/genesis-local/.tools/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12\n"
+    }
+  ],
+  "callback_count": 0,
+  "scene_config": {
+    "cfl": {
+      "enable": 0
+    },
+    "collision_detection": {
+      "method": "info_stackless_bvh"
+    },
+    "contact": {
+      "adaptive": {
+        "init_kappa": 1000000000.0,
+        "kappa_eval_scale": 1e-16,
+        "max_kappa": 100000000000.0,
+        "min_kappa": 100000000.0
+      },
+      "al-ipc": {
+        "alpha_lower_bound": 1e-06,
+        "decay_factor": 0.3,
+        "mu_scale_abd": 100000.0,
+        "mu_scale_diag_norm": 0.1,
+        "mu_scale_fem": 50000000.0,
+        "mu_scale_mode": "per_vertex",
+        "toi_threshold": 0.1
+      },
+      "constitution": "ipc",
+      "d_hat": 0.01,
+      "d_hat_relative": 0.0,
+      "enable": false,
+      "eps_velocity": 0.01,
+      "eps_velocity_relative": 0.0,
+      "friction": {
+        "enable": 1
+      }
+    },
+    "diff_sim": {
+      "enable": 0
+    },
+    "dt": 0.005,
+    "extras": {
+      "debug": {
+        "dump_linear_pcg": 0,
+        "dump_linear_system": 0,
+        "dump_mas_matrices": 0,
+        "dump_surface": 0
+      },
+      "strict_mode": {
+        "enable": true
+      }
+    },
+    "gravity": [
+      [
+        0.0
+      ],
+      [
+        0.0
+      ],
+      [
+        0.0
+      ]
+    ],
+    "integrator": {
+      "type": "bdf1"
+    },
+    "line_search": {
+      "max_iter": 32,
+      "report_energy": 0
+    },
+    "linear_system": {
+      "check_interval": 5,
+      "fem_preconditioner": "diag",
+      "solver": "fused_pcg",
+      "tol_rate": 0.001,
+      "use_cuda_graph": 1
+    },
+    "newton": {
+      "ccd_tol": 1.0,
+      "max_iter": 128,
+      "min_iter": 0,
+      "semi_implicit": {
+        "K_min": 6,
+        "beta_tol": 0.001,
+        "enable": false
+      },
+      "transrate_tol": 0.0001,
+      "use_adaptive_tol": 0,
+      "velocity_tol": 0.0001,
+      "velocity_tol_relative": 0.0
+    },
+    "sanity_check": {
+      "enable": true,
+      "mode": "normal"
+    }
+  },
+  "wall_seconds": 2.864425829000538,
+  "saved_state_count": 0,
+  "completed_simulated_seconds": 0.0,
+  "frame_stats": [],
+  "metric_columns": [
+    "time_s",
+    "tip_dx_m",
+    "tip_dy_m",
+    "tip_dz_m",
+    "max_edge_stretch",
+    "max_principal_stretch",
+    "min_principal_stretch",
+    "max_absolute_material_axis_cosine",
+    "min_triangle_area_ratio",
+    "max_vertex_speed_m_s",
+    "kinetic_energy_J",
+    "max_clamp_error_m",
+    "min_z_m",
+    "force_x_N",
+    "force_y_N",
+    "force_z_N"
+  ],
+  "callback_columns": [
+    "frame",
+    "dt_s",
+    "load_active",
+    "force_x_N",
+    "force_y_N",
+    "force_z_N",
+    "enabled_vertex_count"
+  ]
+}

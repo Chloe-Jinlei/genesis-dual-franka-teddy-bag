@@ -1,0 +1,215 @@
+{
+  "status": "completed",
+  "dt_s": 0.005,
+  "duration_per_coupon_s": 2.0,
+  "dimensions_m": [
+    0.1,
+    0.2
+  ],
+  "nominal_grid_m": 0.01,
+  "force_total_N": 0.5,
+  "force_direction": [
+    0.7071067811865475,
+    0.7071067811865475,
+    0.0
+  ],
+  "load_interval_s": [
+    0.2,
+    0.8
+  ],
+  "gravity_z_m_s2": 0.0,
+  "contact_enabled": false,
+  "added_viscous_damping": false,
+  "production_modified": false,
+  "physical_fabric_calibration": false,
+  "task_success_certified": false,
+  "script_sha256": "07afb7ca70c65c86f3de37c2da6d61478e1fa3e0115b724758b04329f00fdd70",
+  "wall_seconds": 34.22468240998569,
+  "limitations": [
+    "One coarse prescribed-load comparison; no fitted fabric parameters.",
+    "BDF1 has numerical dissipation; recoil is not a physical damping calibration.",
+    "Zero-gravity planar load does not validate bending drape.",
+    "Contact is disabled; no self-contact, grasp, robot, or bag insertion is tested.",
+    "Principal and edge stretch are diagnostics; the full-task 1.15 guard is unchanged."
+  ],
+  "cases": [
+    {
+      "label": "baseline",
+      "status": "completed",
+      "E_Pa": 4000000.0,
+      "requested_mu_N_per_m": 50.0,
+      "density_kg_m3": 500.0,
+      "radius_m": 0.0003,
+      "full_thickness_m": 0.0006,
+      "nu": 0.3,
+      "requested_bending_Nm": 5e-05,
+      "requested_strain_rate": 100.0,
+      "gravity_z_m_s2": 0.0,
+      "native_errors": [],
+      "callback_count": 400,
+      "native_coefficient_checks": {
+        "mu": true,
+        "lambda_": true,
+        "strain_rate": true,
+        "thickness": true,
+        "bending": true,
+        "clamp_count": true
+      },
+      "native_coefficient_unique": {
+        "mu": [
+          50.0
+        ],
+        "lambda": [
+          2637.3626373626375
+        ],
+        "strain_rate": [
+          100.0
+        ],
+        "thickness": [
+          0.0003
+        ],
+        "bending_stiffness": [
+          5e-05
+        ],
+        "is_fixed": [
+          0,
+          1
+        ]
+      },
+      "native_vertex_volume_sum_m3": 1.1999999999999997e-05,
+      "native_volume_times_declared_density_mass_kg": 0.005999999999999998,
+      "wall_seconds": 13.419745168008376,
+      "saved_state_count": 401,
+      "completed_simulated_seconds": 2.0,
+      "metric_columns": [
+        "time_s",
+        "tip_dx_m",
+        "tip_dy_m",
+        "tip_dz_m",
+        "max_edge_stretch",
+        "max_principal_stretch",
+        "min_principal_stretch",
+        "max_absolute_material_axis_cosine",
+        "min_triangle_area_ratio",
+        "max_vertex_speed_m_s",
+        "kinetic_energy_J",
+        "max_clamp_error_m",
+        "min_z_m",
+        "force_x_N",
+        "force_y_N",
+        "force_z_N"
+      ],
+      "callback_columns": [
+        "frame",
+        "dt_s",
+        "load_active",
+        "force_x_N",
+        "force_y_N",
+        "force_z_N",
+        "enabled_vertex_count"
+      ],
+      "max_edge_stretch": 1.0898305323989128,
+      "max_principal_stretch": 1.0899027874777076,
+      "peak_tip_displacement_m": 0.2978758689236532,
+      "final_tip_displacement_m": [
+        0.0023873382792052936,
+        -0.2243954779051241,
+        -0.19588517911953682
+      ],
+      "final_max_vertex_speed_m_s": 0.3357414165777615,
+      "final_kinetic_energy_J": 9.777756499168797e-05,
+      "load_zero_after_release": true,
+      "post_release_peak_speed_m_s": 1.4447848654761435,
+      "post_release_peak_kinetic_energy_J": 0.0010299135682256505
+    },
+    {
+      "label": "candidate",
+      "status": "completed",
+      "E_Pa": 20000000.0,
+      "requested_mu_N_per_m": 1000.0,
+      "density_kg_m3": 500.0,
+      "radius_m": 0.0003,
+      "full_thickness_m": 0.0006,
+      "nu": 0.3,
+      "requested_bending_Nm": 5e-05,
+      "requested_strain_rate": 100.0,
+      "gravity_z_m_s2": 0.0,
+      "native_errors": [],
+      "callback_count": 400,
+      "native_coefficient_checks": {
+        "mu": true,
+        "lambda_": true,
+        "strain_rate": true,
+        "thickness": true,
+        "bending": true,
+        "clamp_count": true
+      },
+      "native_coefficient_unique": {
+        "mu": [
+          1000.0
+        ],
+        "lambda": [
+          13186.813186813186
+        ],
+        "strain_rate": [
+          100.0
+        ],
+        "thickness": [
+          0.0003
+        ],
+        "bending_stiffness": [
+          5e-05
+        ],
+        "is_fixed": [
+          0,
+          1
+        ]
+      },
+      "native_vertex_volume_sum_m3": 1.1999999999999997e-05,
+      "native_volume_times_declared_density_mass_kg": 0.005999999999999998,
+      "wall_seconds": 20.587012705014786,
+      "saved_state_count": 401,
+      "completed_simulated_seconds": 2.0,
+      "metric_columns": [
+        "time_s",
+        "tip_dx_m",
+        "tip_dy_m",
+        "tip_dz_m",
+        "max_edge_stretch",
+        "max_principal_stretch",
+        "min_principal_stretch",
+        "max_absolute_material_axis_cosine",
+        "min_triangle_area_ratio",
+        "max_vertex_speed_m_s",
+        "kinetic_energy_J",
+        "max_clamp_error_m",
+        "min_z_m",
+        "force_x_N",
+        "force_y_N",
+        "force_z_N"
+      ],
+      "callback_columns": [
+        "frame",
+        "dt_s",
+        "load_active",
+        "force_x_N",
+        "force_y_N",
+        "force_z_N",
+        "enabled_vertex_count"
+      ],
+      "max_edge_stretch": 1.0334525645860613,
+      "max_principal_stretch": 1.033471078259029,
+      "peak_tip_displacement_m": 0.3158646285002504,
+      "final_tip_displacement_m": [
+        -0.0008593994994034182,
+        -0.2498020788872809,
+        -0.19330971613887984
+      ],
+      "final_max_vertex_speed_m_s": 0.2743888925520786,
+      "final_kinetic_energy_J": 8.400041645323816e-05,
+      "load_zero_after_release": true,
+      "post_release_peak_speed_m_s": 1.7136766838633972,
+      "post_release_peak_kinetic_energy_J": 0.0009956552725054594
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "kind": "independent_richer_contact_trace_review",
+  "physical_task_success": null,
+  "held_handle_monitor": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "all_recorded_values_finite": true,
+      "exact_four_individual_fingers_and_two_material_groups": true,
+      "strictly_increasing_fixed_step_times": true,
+      "every_integration_step_from_spread_until_handoff": true,
+      "all_four_opening_reactions_above_0p1n": true,
+      "both_designated_material_groups_within_18mm": true
+    },
+    "samples": 2818,
+    "start_s": 1.1049999999999984,
+    "end_s": 15.190000000000975,
+    "minimum_opening_reactions_n": [
+      8.883883969595196,
+      8.87601898459082,
+      8.902316536191357,
+      8.900569662712165
+    ],
+    "maximum_designated_material_distance_m": [
+      0.0006277036505285894,
+      0.0004724912218406937
+    ],
+    "phases": [
+      {
+        "phase": "spread_bag",
+        "samples": 386,
+        "min_opening_reactions_n": [
+          8.947561013671114,
+          8.930656081714096,
+          8.902316536191357,
+          8.900569662712165
+        ],
+        "max_opening_reactions_n": [
+          8.959825925154865,
+          8.944272689052477,
+          8.937850054488187,
+          8.932702507571829
+        ],
+        "max_designated_material_distance_m": [
+          0.00044520422769252146,
+          0.0004661150889345737
+        ]
+      },
+      {
+        "phase": "orient_held_bag",
+        "samples": 2332,
+        "min_opening_reactions_n": [
+          8.883883969595196,
+          8.87601898459082,
+          8.90265748497251,
+          8.908147216763641
+        ],
+        "max_opening_reactions_n": [
+          9.138305428038068,
+          9.164340328450855,
+          8.92980747151672,
+          8.928905294755047
+        ],
+        "max_designated_material_distance_m": [
+          0.000617017959216774,
+          0.0004724912218406937
+        ]
+      },
+      {
+        "phase": "settle_oriented_bag",
+        "samples": 100,
+        "min_opening_reactions_n": [
+          9.062033578127078,
+          9.092113545385317,
+          8.904057301967578,
+          8.926287930961388
+        ],
+        "max_opening_reactions_n": [
+          9.065754308569222,
+          9.096394538992042,
+          8.904276521998028,
+          8.926487526915356
+        ],
+        "max_designated_material_distance_m": [
+          0.0006277036505285894,
+          0.0004547532809942691
+        ]
+      }
+    ],
+    "limitations": [
+      "Reactions are IPC soft-coupling feedback, not contact forces identified by individual material.",
+      "Material proximity and four positive opening-axis reactions support held-handle evidence; they do not prove force closure.",
+      "Checks cover recorded integration states only."
+    ]
+  },
+  "per_link_wrench_reconstruction": {
+    "status": "not_entered",
+    "passed": false,
+    "reason": "No distal-hand guard trace."
+  },
+  "note": "Only independent-task containment, physics, sequencing and force-limit audits can establish simulated task success."
+}

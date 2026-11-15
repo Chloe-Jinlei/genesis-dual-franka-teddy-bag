@@ -1,0 +1,327 @@
+{
+  "actual_stop": "GateFailure: Fresh staged-contact center plan rejected; see staged_contact_center.json",
+  "entry_start_s": 42.80000000000344,
+  "entry_end_s": 52.89500000000861,
+  "entry_guard_rows_including_start": 2020,
+  "entry_physics": {
+    "rows_including_start": 2020,
+    "minimum_tetra_volume_ratio": 0.2635280292927995,
+    "minimum_J_time_s": 50.095000000007175,
+    "max_bag_edge_stretch": 1.0883629501069092,
+    "max_stretch_time_s": 51.890000000008094,
+    "maximum_table_penetration_m": {
+      "bag": 0.0,
+      "bear": 0.0
+    },
+    "all_states_finite": true
+  },
+  "entry_holding": {
+    "left_material_max_distance_m": 0.0008797330000211562,
+    "right_material_max_distance_m": 0.008489544572408326,
+    "right_two_sided_required_every_row": true,
+    "left_minimum_opening_reactions_n": [
+      8.880799771527634,
+      8.890255423380427
+    ],
+    "right_minimum_opening_reactions_n": [
+      3.6416100454240103,
+      3.7770353429912196
+    ],
+    "right_maximum_finger_force_norm_n": [
+      4.335637079146031,
+      4.520307364966654
+    ],
+    "no_raw_guard_stop_reason": true
+  },
+  "entry_raw_wrenches": {
+    "force_world_n": {
+      "first": [
+        0.15668954699777077,
+        0.030970342790102023,
+        -2.109509711447105
+      ],
+      "last": [
+        0.036869962920337174,
+        -0.010290754489178155,
+        -1.2044531922715331
+      ],
+      "maximum_norm": 2.19428046095247,
+      "maximum_time_s": 48.79500000000651,
+      "at_maximum": [
+        0.039986462627739194,
+        -0.008476969744424245,
+        -2.1938997162833713
+      ]
+    },
+    "torque_at_aim_tcp_world_nm": {
+      "first": [
+        -0.005096584784668081,
+        -0.015775211010949954,
+        0.023658014277813118
+      ],
+      "last": [
+        -0.06666320223428002,
+        0.007595487543007155,
+        -0.0043625100455108555
+      ],
+      "maximum_norm": 0.07233547070622444,
+      "maximum_time_s": 52.37000000000834,
+      "at_maximum": [
+        -0.07165059818902703,
+        0.009314377526175597,
+        -0.0034430324926619446
+      ]
+    },
+    "left_all_link_net_force_world_n": {
+      "first": [
+        -0.1014186078104216,
+        0.10271073655984608,
+        -0.44075834888254173
+      ],
+      "last": [
+        0.015667854076178416,
+        0.1040573568303067,
+        -0.7549752315166929
+      ],
+      "maximum_norm": 0.8401941803769768,
+      "maximum_time_s": 48.32000000000627,
+      "at_maximum": [
+        -0.03550550477620801,
+        -0.022796678058032427,
+        -0.8391340365754716
+      ]
+    },
+    "left_all_link_torque_at_aim_tcp_world_nm": {
+      "first": [
+        -0.011176607858194843,
+        0.0035562256623094084,
+        0.00022265607174209306
+      ],
+      "last": [
+        -0.0206566463204106,
+        0.008380472746189874,
+        -0.0033316339908218556
+      ],
+      "maximum_norm": 0.023359103548739955,
+      "maximum_time_s": 51.890000000008094,
+      "at_maximum": [
+        -0.021375855529283228,
+        0.008883380901772741,
+        -0.00313146335536384
+      ]
+    }
+  },
+  "endpoint_native_hand_clearance": {
+    "time_s": 52.89500000000861,
+    "complete_bear_maximum_z_m": 1.222380883430094,
+    "true_palm_measured_q_minimum_z_m": 1.2368604837781707,
+    "conservative_palm_world_vertex_error_bound_m": 8.561809340448082e-08,
+    "native_palm_minimum_z_lower_bound_m": 1.2368603981600772,
+    "exact_saved_native_finger_minimum_z_m": {
+      "left_finger": 1.2504407999890255,
+      "right_finger": 1.250559631507102
+    },
+    "complete_bear_to_native_hand_gap_lower_bound_m": 0.014479514729983212,
+    "endpoint_gap_above_5mm": true,
+    "native_per_step_hand_monitor_rows": 0,
+    "method": "Palm minZ from verified native palm-reference vertices and measured q; subtract delta_p+(max|singular_value-1|+2sin(polar_angle_error/2))*max||local_vertex||. Fingers use saved full native transforms.",
+    "scope": "Endpoint-only independent conservative reconstruction; no every-step hand-height claim because center never began."
+  },
+  "stage_snapshots": [
+    {
+      "phase": "lift_teddy",
+      "time_s": 29.044999999998506,
+      "bear_bounds_world_m": [
+        [
+          0.2890354118010858,
+          -0.4228303522312229,
+          1.165081807951412
+        ],
+        [
+          0.4059721284030791,
+          -0.09617515847914827,
+          1.405700510975229
+        ]
+      ],
+      "bear_center_of_mass_world_m": [
+        0.3416440400030055,
+        -0.26186104497632545,
+        1.2807398502452711
+      ],
+      "tcp_world_m": [
+        0.34983027493652985,
+        -0.2638847720801948,
+        1.3697375893504191
+      ],
+      "bear_com_relative_tcp_m": [
+        -0.008186234933524328,
+        0.0020237271038693327,
+        -0.08899773910514797
+      ],
+      "right_finger_q_m": [
+        0.030841666276327513,
+        0.030840674645539374
+      ],
+      "right_finger_pd_command_force_n": [
+        -4.0,
+        -4.0
+      ],
+      "body_rim_z_range_m": [
+        0.9999687586359088,
+        1.1082731153906908
+      ],
+      "vertex_fraction_below_highest_rim": 0.0,
+      "vertex_fraction_below_lowest_rim": 0.0,
+      "gravity_moment_about_aim_tcp_nm": [
+        -0.00434435424044576,
+        -0.017575167939218955,
+        -0.0
+      ],
+      "right_force_n": [
+        -0.024996068344655176,
+        -0.022252741630811812,
+        -2.1487337104707462
+      ],
+      "right_moment_nm": [
+        -0.009345180442390789,
+        -0.013753350047935283,
+        0.0017644864073325627
+      ],
+      "right_moment_minus_static_gravity_nm": [
+        -0.005000826201945029,
+        0.003821817891283672,
+        0.0017644864073325627
+      ]
+    },
+    {
+      "phase": "transport_teddy",
+      "time_s": 42.80000000000344,
+      "bear_bounds_world_m": [
+        [
+          -0.15720800352927947,
+          -0.0991906915034148,
+          1.1617582527698165
+        ],
+        [
+          -0.03290342923217819,
+          0.22822261878593617,
+          1.4015674318560105
+        ]
+      ],
+      "bear_center_of_mass_world_m": [
+        -0.09861456421764733,
+        0.06241983975480278,
+        1.2767246541732076
+      ],
+      "tcp_world_m": [
+        -0.09949607893942547,
+        0.0608457943815116,
+        1.3695068312174514
+      ],
+      "bear_com_relative_tcp_m": [
+        0.0008815147217781372,
+        0.0015740453732911788,
+        -0.09278217704424385
+      ],
+      "right_finger_q_m": [
+        0.029895700130998,
+        0.02989707683810367
+      ],
+      "right_finger_pd_command_force_n": [
+        -4.0,
+        -4.0
+      ],
+      "body_rim_z_range_m": [
+        1.0006705912772296,
+        1.105731042435518
+      ],
+      "vertex_fraction_below_highest_rim": 0.0,
+      "vertex_fraction_below_lowest_rim": 0.0,
+      "gravity_moment_about_aim_tcp_nm": [
+        -0.0033794383705766803,
+        0.0018928461685201318,
+        0.0
+      ],
+      "right_force_n": [
+        0.15668954699777077,
+        0.030970342790102023,
+        -2.109509711447105
+      ],
+      "right_moment_nm": [
+        -0.005096584784668081,
+        -0.015775211010949954,
+        0.023658014277813118
+      ],
+      "right_moment_minus_static_gravity_nm": [
+        -0.0017171464140914006,
+        -0.017668057179470086,
+        0.023658014277813118
+      ]
+    },
+    {
+      "phase": "lower_teddy_to_rim",
+      "time_s": 52.89500000000861,
+      "bear_bounds_world_m": [
+        [
+          -0.18406297977202166,
+          -0.10596637721331409,
+          0.9817935329633246
+        ],
+        [
+          -0.030815692910419096,
+          0.21003936756438651,
+          1.222380883430094
+        ]
+      ],
+      "bear_center_of_mass_world_m": [
+        -0.10991821474502451,
+        0.049671582076122295,
+        1.09813104274712
+      ],
+      "tcp_world_m": [
+        -0.09946292242107412,
+        0.06085260676193139,
+        1.1947042880597807
+      ],
+      "bear_com_relative_tcp_m": [
+        -0.0104552923239504,
+        -0.011181024685809095,
+        -0.09657324531266065
+      ],
+      "right_finger_q_m": [
+        0.026746718260497317,
+        0.026746443447620567
+      ],
+      "right_finger_pd_command_force_n": [
+        -4.0,
+        -4.0
+      ],
+      "body_rim_z_range_m": [
+        1.0090615824600981,
+        1.0910409531048153
+      ],
+      "vertex_fraction_below_highest_rim": 0.46551724137931033,
+      "vertex_fraction_below_lowest_rim": 0.05586206896551724,
+      "gravity_moment_about_aim_tcp_nm": [
+        0.0240049405068382,
+        -0.022446067548268462,
+        0.0
+      ],
+      "right_force_n": [
+        0.036869962920337174,
+        -0.010290754489178155,
+        -1.2044531922715331
+      ],
+      "right_moment_nm": [
+        -0.06666320223428002,
+        0.007595487543007155,
+        -0.0043625100455108555
+      ],
+      "right_moment_minus_static_gravity_nm": [
+        -0.09066814274111822,
+        0.030041555091275617,
+        -0.0043625100455108555
+      ]
+    }
+  ]
+}

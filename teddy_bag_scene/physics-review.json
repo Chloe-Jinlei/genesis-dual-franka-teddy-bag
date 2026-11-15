@@ -1,0 +1,66 @@
+{
+  "status": "exact_stc_feedback_adapter_under_validation",
+  "scope": "Read-only scene/config/Genesis/pyuipc source audit; no GPU simulation launched by reviewer in this phase.",
+  "runtime_versions": {
+    "genesis-world": "1.4.3",
+    "pyuipc": "0.0.29"
+  },
+  "resolved_findings": [
+    {
+      "issue": "IPC shell thickness is a one-sided radius, while Genesis docstring labels thickness generically",
+      "resolution": "Use radius 0.0004m for full 0.0008m shell; validator uses rest area * rho * 2r."
+    },
+    {
+      "issue": "Changing desc.init_qpos alters the neutral FK reference qpos0 instead of actual initial robot pose",
+      "resolution": "initialize_before_ipc sets actual q after rigid solver build and forward-kinematics before IPC geometry build, preserving qpos0."
+    },
+    {
+      "issue": "Same E for shell stretch/shear yields thickness-independent excessively high shear stiffness",
+      "resolution": "configure_shell_shear changes only this scene native triangle mu to explicitly selected effective shear stiffness 20 N/m; uncalibrated."
+    },
+    {
+      "issue": "FEM velocity returned by Genesis remains stale with IPC",
+      "resolution": "Saved-state audit uses actual position/joint differences rather than get_state().vel."
+    }
+  ],
+  "remaining_limits": [
+    "Two-way soft constraint uses separate affine contact bodies and allows geometric discrepancy; log coupling_diagnostics each captured frame.",
+    "IPC CCD/sanity enabled improves contact handling but does not prove whole sequence successful; fail-closed gates and independent audit remain necessary.",
+    "Homogeneous plush is a compressible elastic effective material; shell is effective isotropic cloth, not separate fabric skin/filling or measured orthotropic weave.",
+    "Robot rigid-rigid contacts are handled by Genesis while IPC handles cloth/body/robot and cloth/body self contact.",
+    "No frame-sampling method proves continuous nonpenetration; full output includes explicit limits.",
+    "Final bag consists of exactly two curved cloth panels with shared U seam, no bottom or side panels; topology audit passed without changing the approved shape."
+  ],
+  "performance_observation": {
+    "run": "open_probe_04",
+    "gpu_utilization_percent": 97,
+    "gpu_memory_mb": 1337,
+    "process_cpu_percent": 107,
+    "inference": "IPC CUDA work dominates; switching Genesis CPU to CUDA alone is unlikely to remove the main cost. No Newton iteration breakdown was recorded because timers were disabled."
+  },
+  "recommended_profiling": "After scene.build, enable uipc.Timer.enable_all(); after 20-40 steps save uipc.Timer.report_as_json().",
+  "independent_validator": "validate.py: actual mouth topology, virtual cap containment, mass, table clearance, tet orientation, cloth stretch, every-step actual joint rates, task event order and post-handoff pose.",
+  "final_geometry_review": "two-panel-independent-review.json",
+  "selected_material_config": "config_two_panel_coarse.json; bag full thickness 0.0006m, E=400000Pa, density=500kg/m3, bending=5e-6Nm, independent shear=5N/m; all are uncalibrated estimates.",
+  "critical_new_findings": [
+    {
+      "issue": "Genesis two-way feedback omits native ABD COM translation-rotation term and uses MJCF rather than IPC mass moments",
+      "evidence_run": "runs/two_panel_grasp_06/coupling_trace.json",
+      "evidence": "At t=.05s left fingers original feedback opening-axis components -2.156/-1.996N; exact STC translation gradients +33.278/+33.264N. Native mass .0313438kg vs MJCF .015kg.",
+      "resolution": "Opt-in scene-local physics_config.install_exact_stc_feedback uses exact STC Gp/GA and rigid-target virtual-work pullback. CPU gradient verification passed; integrated physics validation pending.",
+      "source": "https://github.com/spiriMirror/libuipc/blob/v0.0.29/src/backends/cuda/affine_body/constraints/soft_transform_constraint.cu"
+    },
+    {
+      "issue": "Apparent teddy lift in grasp03 is invalid because tetrahedra invert",
+      "evidence": "grasp03 min volume ratio -1.295, maximum 1.21% reference volume inverted; full task and grasp physics fail.",
+      "resolution": "Finite jaw opening, finite-force control, explicit J>.05 gate, improved tetrahedral quality, and corrected feedback under validation."
+    },
+    {
+      "issue": "Curved handles stretch mainly through model-axis shear and transverse collapse",
+      "evidence": "open01 handle length1.215, transverse minimum.731, worst-edge adjacent triangle area.925, model I5 only1.0106/1.0176 and I6.4495.",
+      "resolution": "Increase independent shear alongside extension stiffness; keep bending separate. Do not loosen the 15% edge stretch audit."
+    }
+  ],
+  "contact_targeting": "contact_grasp.py: incident-triangle surface normals, clipped pad footprint, minimum initial opening, material-point observers without physical attachment.",
+  "independent_deformation_report": "validate.bear_deformation_audit reports first inversion, worst tet location/reference quality, stage volume ratios and weighted stretch statistics."
+}

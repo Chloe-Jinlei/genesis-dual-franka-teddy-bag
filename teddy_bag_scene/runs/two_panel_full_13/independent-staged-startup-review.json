@@ -1,0 +1,33 @@
+{
+  "kind": "independent_staged_trial_preflight_review",
+  "all_recorded_checks_passed": true,
+  "checks": {
+    "live_and_frozen_modules_identical": true,
+    "frozen_modules_match_startup_hashes": true,
+    "native_palm_subset_mapping_smoke_passed": true,
+    "cpu_fail_closed_monitor_checks_passed": true,
+    "runner_19_isolated_flow_checks_passed": true
+  },
+  "source_sha256": {
+    "run.py": "732d037b52f9f3b930cdfc6d2b17df907170100367c33bbe14db15e4999c34a6",
+    "staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "staged_contact_insertion.py": "e4fdfd701cdbe7d60924437a01bca37361b2b0f495557e2c69aced8609960a1e"
+  },
+  "static_review_findings": [
+    "Each stage is planned from a newly saved actual endpoint and checked against the current simulation time.",
+    "Only entry, center, insert are accepted in this order; each accepted result provides one stage, not subsequent permission.",
+    "Complete original wrist quaternion is retained, declared source time and finite stage data are checked, and center is exactly the configured XY move at constant height.",
+    "Actual endpoint XY displacement for every stage is included in the 30 mm individual / 50 mm cumulative budget; helper before/after values are cross-checked.",
+    "Native full-teddy-to-true-palm/fingers height guard begins before low centering and remains active every step through the final insertion endpoint.",
+    "Same ContactGuard object/baseline remains active through release, withdrawal and final settle; only the right two-sided holding lower bound stops at release.",
+    "Left designated material proximity and soft-contact holding evidence, soft-body finite/J/strain/table tests remain active.",
+    "Script sequence completion alone is not successful containment; unchanged frozen validator must independently pass final all-bear containment and penetration checks."
+  ],
+  "known_scope_limits": [
+    "Planning uses observed frozen bear geometry; native contact determines subsequent cloth/soft-body deformation.",
+    "The 1 percent perimeter allowance and 5 mm height/robot margins are declared engineering trial policies, not experimental material or hardware calibration.",
+    "Native height guard samples completed integration states and does not separately certify between-step motion.",
+    "Recorded IPC wrench does not include native Genesis rigid contact forces.",
+    "No full13 outcome is claimed in this startup review."
+  ]
+}

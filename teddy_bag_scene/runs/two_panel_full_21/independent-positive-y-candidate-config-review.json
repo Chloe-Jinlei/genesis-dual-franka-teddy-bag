@@ -1,0 +1,148 @@
+{
+  "kind": "independent_positive_y_candidate_config_and_fallback_review",
+  "utc": "2026-11-13T19:22:57.635570+00:00",
+  "physical_success": false,
+  "native_run_performed": false,
+  "scope": "Configuration and frozen-source control-flow review only. Separate CPU route/continuous-rate/clearance review remains required; no new native outcome inferred.",
+  "checks": {
+    "candidate_sha_matches_declared": true,
+    "only_semantic_change_is_initial_center_offset": true,
+    "all_29_source_assets_equal_full21_frozen": true,
+    "full21_frozen_config_still_matches_its_manifest": true,
+    "derived_policy_identical": true,
+    "correction_list_unchanged": true,
+    "existing_corrections_nonzero_finite_within_30mm": true
+  },
+  "passed": true,
+  "failed_checks": [],
+  "semantic_diff": [
+    {
+      "path": "task.contact_trial.center_offsets_xy_m",
+      "before": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -0.02
+        ],
+        [
+          -0.01,
+          -0.025
+        ],
+        [
+          0.005,
+          -0.03
+        ]
+      ],
+      "after": [
+        [
+          0.0,
+          0.02
+        ]
+      ]
+    }
+  ],
+  "initial_offset_semantics": "COM target offset from freshly measured initial mouth XY area centroid; not a guarantee of fixed +20mm at later observations.",
+  "unchanged_policy": {
+    "bottom_clearance_m": 0.01,
+    "endpoint_below_lowest_rim_m": 0.002,
+    "start_above_highest_rim_m": 0.04,
+    "planned_outside_clearance_m": 0.045,
+    "com_boundary_clearance_m": 0.002,
+    "lateral_excursion_fraction_of_mouth_width": 0.8,
+    "minimum_section_envelope_overlap_fraction": 0.4,
+    "maximum_initial_com_offset_m": 0.035,
+    "transport_xy_strategy": "y_then_x",
+    "rim_perimeter_clearance_m": 0.002,
+    "rigid_clearance_m": 0.008,
+    "left_robot_soft_sweep_clearance_m": 0.005,
+    "minimum_insert_duration_s": 6.0,
+    "minimum_tetra_volume_ratio": 0.05,
+    "maximum_cloth_edge_stretch_ratio": 1.15,
+    "maximum_table_penetration_m": 0.002,
+    "maximum_left_designated_handle_distance_m": 0.018,
+    "maximum_right_teddy_distance_m": 0.045,
+    "maximum_tcp_fk_error_m": 0.002,
+    "force_and_torque_runtime_limits": {
+      "maximum_contact_force_N": 8.0,
+      "maximum_wrist_contact_torque_Nm": 0.15
+    },
+    "note": "Lateral/overlap/perimeter are declared trial policies, not physical laws. Explicit lateral/overlap values permit a bounded contact experiment, not a material-feasibility claim. The initial COM search radius does not change the 30 mm individual or 50 mm cumulative correction budget. The 5 mm minimum teddy/left-robot clearance is an engineering preflight allowance, not a physical law. Bottom clearance and lateral trial fraction are configurable; no compression is prescribed."
+  },
+  "unchanged_physics_keys": [
+    "simulation",
+    "robots",
+    "table",
+    "bag",
+    "bear"
+  ],
+  "unchanged_teddy_grasp": {
+    "force_limit_n": 3.0,
+    "tracking_radius_m": 0.0272
+  },
+  "fallback": {
+    "config_offsets_m": [
+      [
+        0.0,
+        -0.01
+      ],
+      [
+        -0.005,
+        -0.015
+      ],
+      [
+        0.005,
+        -0.02
+      ],
+      [
+        -0.01,
+        -0.02
+      ]
+    ],
+    "norms_m": [
+      0.01,
+      0.015811388300841896,
+      0.020615528128088305,
+      0.022360679774997897
+    ],
+    "max_attempts": 2,
+    "maximum_individual_xy_m": 0.03,
+    "maximum_cumulative_xy_m": 0.05,
+    "anchor": "New actual TCP XY, not moving mouth centroid",
+    "trigger": "Fresh vertical-only reobservation rejected after initial preparation, or after prior bounded correction.",
+    "stop_conditions": "No admissible correction or fresh insertion still rejected after two corrections raises GateFailure before insertion.",
+    "action": "Each accepted correction executes height-at-current-XY plus one fixed-orientation XY translation, then requires strictly newer native observation before insertion.",
+    "selection": "First declared correction passing all existing gates; list order is consequential.",
+    "original_full_rotation_retained": true,
+    "contact_guard_baseline_not_reset": true,
+    "budgets_checked_on_planned_and_measured_endpoint_displacements": true,
+    "full_oscillatory_arc_length_budget_certified": false,
+    "all_original_native_force_grip_soft_and_deformation_gates_retained": true,
+    "two_selected_minus20mm_Y_corrections_can_erase_initial_plus20mm_and_shift_further": true,
+    "maximum_sum_of_declared_two_correction_negative_Y_m": -0.04,
+    "actual_future_correction_execution_known": false,
+    "blocking_issue_from_retaining_this_existing_fallback_found": false,
+    "rationale": "Retaining the pre-existing bounded fallback does not itself weaken physical gates or cause an unconditional move. It changes the interpretation of this experiment: an initial +Y20 proposal with possible fresh-state correction, not a fixed-XY treatment. Any improved or failed outcome must identify whether corrections actually executed.",
+    "required_future_audit_evidence": [
+      "guarded_contact_reobservations actual clocks and saved states",
+      "guarded_contact_corrections selected delta and policy",
+      "recenter_height_* and recenter_teddy_xy_* actual event/endpoints if executed",
+      "planned/actual individual and cumulative displacements",
+      "single uninterrupted guard baseline",
+      "fresh final insert observation and final actual containment"
+    ]
+  },
+  "citations": {
+    "runner": "run.py:590-640",
+    "helper": "contact_insertion.py:571-674"
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_guarded_small_teddy_positive_y_trial.json": "c2b72cff41e53ba02997cf6a26a91543f7580f7f8c4e9882048c1aea0bd1f1de",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/config.json": "ae0686aa5e7f29c0da663d64f1c9fe98c76fa639ac39b29554460fa8a0dc82cf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/input_sha256.json": "627d13cdcdc32e09af6a2bc922886b821c547d9e73fa66469cce5fea0787bf14",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py": "37a8fe37bdd065dfc415273f3a1764a11b113ff6618ad6d8b262eddabe64b3b0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4"
+  }
+}

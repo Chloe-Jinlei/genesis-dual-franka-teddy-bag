@@ -1,0 +1,37 @@
+{
+  "scope": "CPU-only saved actual-joint transport geometry review; metrics transcribed from completed independent calculation, not rerun during report writing",
+  "run": "two_panel_full_05",
+  "time_window_s": [
+    29.815,
+    31.665
+  ],
+  "joint_trace_rows": 371,
+  "joint_interval_s": 0.005,
+  "method": "MuJoCo same-asset convex signed distances at every actual transport joint-trace row, with each actual finger coordinate; FK cross-check against saved TCP. Environment leg exclusion used conservative per-geometry bounding-sphere minimum world Z.",
+  "actual_right_finger_range_m": [
+    0.024001279,
+    0.027615957
+  ],
+  "minimum_distance_m": {
+    "right_self_excluding_adjacent_welded_and_opposing_fingers": 0.021682344,
+    "left_self_excluding_adjacent_welded_and_opposing_fingers": 0.024120841,
+    "between_arms_tool_cap": 0.2,
+    "table": 0.160995932,
+    "mounts": 0.140995932
+  },
+  "closest_right_self_pair": [
+    "right_link5",
+    "right_link7"
+  ],
+  "conservative_all_robot_collision_geometry_sphere_minimum_world_z_m": 0.852811,
+  "maximum_fk_saved_tcp_difference_m": 9.37e-16,
+  "saved_native_rigid_contacts": false,
+  "limitations": [
+    "Saved force_left/right values are control force, not rigid contact force.",
+    "coupling_trace records soft-constraint feedback; rigid pair metadata is not a contact record.",
+    "Geometric positive distances do not prove zero actual Genesis rigid contact force.",
+    "The 0.2 m between-arm result is capped by the distance query range, hence a lower bound.",
+    "Opposing-finger pairs were excluded by Planner; see independent-finger-clearance.json for separate dedicated audit.",
+    "No dynamic success, no causal certainty, and no GPU simulation are claimed."
+  ]
+}

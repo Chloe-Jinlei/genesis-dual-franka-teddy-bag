@@ -1,0 +1,1266 @@
+{
+  "kind": "independent_full24_contact_loss_window_review",
+  "physical_task_success": false,
+  "checks": {
+    "frozen_input_hashes_match": true,
+    "all_frozen_sources_assets_equal_live": true,
+    "unchanged_3N_closed_target": true,
+    "only_reaction_and_stop_guard_checks_fail": true,
+    "first_low_opening_is_unique_final_step": true,
+    "no_release_or_completed_insert": true,
+    "all_window_fingers_and_reactions_finite": true,
+    "window_PD_controls_still_minus_3N": true,
+    "native_joints_and_failed_soft_time_match": true,
+    "actual_saved_TCP_matches_frozen_FK": true,
+    "all_other_soft_gates_pass": true,
+    "final_J_recomputes": true,
+    "original_inputs_unchanged": true
+  },
+  "all_consistency_checks_passed": true,
+  "native_error": "GateFailure: Right fingers lost two-sided soft-contact opening reaction before release",
+  "failure_time_s": 42.79500000000344,
+  "insertion": {
+    "start_s": 38.86500000000143,
+    "planned_duration_s": 6.594945556239851,
+    "integer_step_planned_end_s": 45.46000000000143,
+    "actual_executed_s": 3.9300000000020106,
+    "release_executed": false
+  },
+  "guard_audit": {
+    "status": "failed",
+    "passed": false,
+    "rows": 5384,
+    "start_time_s": 15.880000000001083,
+    "end_time_s": 42.79500000000344,
+    "checks": {
+      "all_required_raw_values_finite": true,
+      "strictly_increasing_consecutive_steps": true,
+      "timestamps_match_fixed_integration_step": true,
+      "covers_every_step_from_guard_entry_to_run_end": true,
+      "last_time_matches_report": true,
+      "right_hold_flag_agrees_with_release_event": true,
+      "summed_raw_link_force_matches_net_force": true,
+      "stored_force_norms_match_raw_vectors": true,
+      "stored_torque_norms_match_raw_vectors": true,
+      "stored_finger_norms_match_raw_vectors": true,
+      "baseline_differences_are_only_recorded_subtractions": true,
+      "raw_net_force_below_limit": true,
+      "raw_tcp_torque_below_limit": true,
+      "raw_each_right_finger_force_below_limit": true,
+      "left_both_soft_opening_reactions_above_minimum": true,
+      "right_both_soft_opening_reactions_above_minimum_until_release": false,
+      "designated_left_material_within_18mm": true,
+      "right_teddy_vertex_within_45mm_until_release": true,
+      "no_recorded_stop_reason": false
+    },
+    "first_physical_violation": {
+      "time_s": 42.79500000000344,
+      "reasons": [
+        "right soft opening reaction before release"
+      ]
+    },
+    "raw_limits": {
+      "max_net_force_n": 8.0,
+      "max_tcp_torque_nm": 0.15,
+      "max_finger_force_n": 8.0,
+      "minimum_left_opening_reaction_n": 0.1
+    },
+    "maximum_net_force_n": 1.6715019572307193,
+    "maximum_tcp_torque_nm": 0.1112808436441487,
+    "maximum_right_finger_force_n": [
+      4.5025788591378,
+      3.5268111297983284
+    ],
+    "minimum_right_opening_reaction_until_release_n": [
+      0.4631731598175326,
+      0.036750549024876136
+    ],
+    "minimum_left_opening_reaction_n": [
+      8.609699845097795,
+      8.88433669099266
+    ],
+    "maximum_designated_left_material_distance_m": 0.0007882390358892018,
+    "maximum_right_nearest_material_distance_until_release_m": 0.009058606500341723,
+    "maximum_saved_baseline_subtraction_error": 0.0,
+    "scope": "IPC soft-coupling STC feedback; excludes native Genesis rigid-contact force",
+    "limitations": [
+      "Positive finger-axis projections plus material proximity are grip evidence, not force-closure proof.",
+      "Saved per-link origins and aim axes are independently checked by the richer contact trace audit.",
+      "Raw engineering force and moment limits are uncalibrated; baseline subtraction never waives them."
+    ]
+  },
+  "window_reaction_timeline": [
+    {
+      "time_s": 42.30000000000319,
+      "actual_finger_half_openings_m": [
+        0.023596588327615013,
+        0.023591423851719383
+      ],
+      "opening_reactions_n": [
+        3.1414021312812377,
+        2.9905078143040664
+      ],
+      "finger_force_norms_n": [
+        3.893807451095065,
+        3.303567369453335
+      ],
+      "net_force_world_n": [
+        -0.1412728739125373,
+        -0.0933786464254105,
+        0.9053480144023669
+      ],
+      "net_force_norm_n": 0.9210497400759949,
+      "TCP_torque_norm_Nm": 0.09120837465006686,
+      "left_all_link_force_world_n": [
+        0.0067089190742879445,
+        0.6846718306469324,
+        -1.7845319542611922
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.0032362558286138984,
+      "stop_reason": null
+    },
+    {
+      "time_s": 42.40000000000324,
+      "actual_finger_half_openings_m": [
+        0.023584136558669064,
+        0.02357968214377688
+      ],
+      "opening_reactions_n": [
+        2.956939563457772,
+        2.8791520473925885
+      ],
+      "finger_force_norms_n": [
+        3.8379060403626712,
+        3.194656939839694
+      ],
+      "net_force_world_n": [
+        -0.1204990893964315,
+        -0.020957409058082188,
+        1.0848696376047227
+      ],
+      "net_force_norm_n": 1.0917423570313645,
+      "TCP_torque_norm_Nm": 0.09436653022141772,
+      "left_all_link_force_world_n": [
+        -0.0007616129810328331,
+        0.8372157238968043,
+        -2.027669781731978
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.003003788840445219,
+      "stop_reason": null
+    },
+    {
+      "time_s": 42.50000000000329,
+      "actual_finger_half_openings_m": [
+        0.02313234200042276,
+        0.023114290278743538
+      ],
+      "opening_reactions_n": [
+        3.2911465133636355,
+        2.8907565160798403
+      ],
+      "finger_force_norms_n": [
+        4.3966105964289435,
+        3.2815335934450798
+      ],
+      "net_force_world_n": [
+        -0.32049722670845937,
+        -0.2781361466541039,
+        1.3588127361223017
+      ],
+      "net_force_norm_n": 1.4235344183586087,
+      "TCP_torque_norm_Nm": 0.10889228675375094,
+      "left_all_link_force_world_n": [
+        0.0485606082790464,
+        0.7193419796598572,
+        -2.0317505692753404
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.0031083862842679073,
+      "stop_reason": null
+    },
+    {
+      "time_s": 42.60000000000334,
+      "actual_finger_half_openings_m": [
+        0.02387843459132749,
+        0.02381203634844799
+      ],
+      "opening_reactions_n": [
+        3.791872867180392,
+        2.5108235686415545
+      ],
+      "finger_force_norms_n": [
+        3.998614794409338,
+        2.6011478639519954
+      ],
+      "net_force_world_n": [
+        -1.1788796748288561,
+        -0.7988684056095017,
+        0.33932808120055546
+      ],
+      "net_force_norm_n": 1.463930177261507,
+      "TCP_torque_norm_Nm": 0.04833886134980919,
+      "left_all_link_force_world_n": [
+        0.5136845808661947,
+        0.8492316824172477,
+        -1.399704022009447
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.0038925424374915496,
+      "stop_reason": null
+    },
+    {
+      "time_s": 42.70000000000339,
+      "actual_finger_half_openings_m": [
+        0.02456166539296027,
+        0.024553387842671172
+      ],
+      "opening_reactions_n": [
+        2.4721343410162353,
+        2.3362982240365806
+      ],
+      "finger_force_norms_n": [
+        2.716607379724074,
+        2.5441709110169444
+      ],
+      "net_force_world_n": [
+        -0.17534930863358444,
+        -0.05555257793429558,
+        -0.05106919087954598
+      ],
+      "net_force_norm_n": 0.1908966506005633,
+      "TCP_torque_norm_Nm": 0.04030960573719544,
+      "left_all_link_force_world_n": [
+        0.3156781931933834,
+        0.8168823310023257,
+        -1.3445129420065463
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.004569828189883447,
+      "stop_reason": null
+    },
+    {
+      "time_s": 42.75000000000342,
+      "actual_finger_half_openings_m": [
+        0.02305537907830929,
+        0.02304389853418646
+      ],
+      "opening_reactions_n": [
+        1.259476693531481,
+        1.1192897431844973
+      ],
+      "finger_force_norms_n": [
+        1.2596832215950002,
+        1.1494314312809673
+      ],
+      "net_force_world_n": [
+        -0.1265397758616521,
+        -0.08907589795787052,
+        0.24507219360158117
+      ],
+      "net_force_norm_n": 0.2898399740353442,
+      "TCP_torque_norm_Nm": 0.00549037405798629,
+      "left_all_link_force_world_n": [
+        0.3026338021273134,
+        0.8145599454254899,
+        -1.3285247114303216
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.008613816854356028,
+      "stop_reason": null
+    },
+    {
+      "time_s": 42.78000000000343,
+      "actual_finger_half_openings_m": [
+        0.0205436233845251,
+        0.020525553178369408
+      ],
+      "opening_reactions_n": [
+        0.92197329316215,
+        0.43958737161854994
+      ],
+      "finger_force_norms_n": [
+        0.9314907194507243,
+        0.5481679379373215
+      ],
+      "net_force_world_n": [
+        -0.40520053034680903,
+        -0.3228730698227543,
+        -0.1803006899743731
+      ],
+      "net_force_norm_n": 0.5485825624419167,
+      "TCP_torque_norm_Nm": 0.014107872997715036,
+      "left_all_link_force_world_n": [
+        0.250962330083607,
+        0.7532997668274461,
+        -1.3128243282182284
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.004313506595556849,
+      "stop_reason": null
+    },
+    {
+      "time_s": 42.79000000000344,
+      "actual_finger_half_openings_m": [
+        0.019310342691797548,
+        0.019290507793955136
+      ],
+      "opening_reactions_n": [
+        0.6711507108415945,
+        0.22084327509552126
+      ],
+      "finger_force_norms_n": [
+        0.674270493163644,
+        0.31779033635745885
+      ],
+      "net_force_world_n": [
+        -0.34576954899661394,
+        -0.32020517698352197,
+        -0.12495953181801922
+      ],
+      "net_force_norm_n": 0.4875477627602746,
+      "TCP_torque_norm_Nm": 0.010700047927141534,
+      "left_all_link_force_world_n": [
+        0.22767153060415435,
+        0.7430403528685812,
+        -1.343425260004453
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.0034254431917914514,
+      "stop_reason": null
+    },
+    {
+      "time_s": 42.79500000000344,
+      "actual_finger_half_openings_m": [
+        0.018607702132264432,
+        0.018587592617769905
+      ],
+      "opening_reactions_n": [
+        0.4631731598175326,
+        0.036750549024876136
+      ],
+      "finger_force_norms_n": [
+        0.4658450871233571,
+        0.09592020859804049
+      ],
+      "net_force_world_n": [
+        -0.29458949508708376,
+        -0.32221304357990843,
+        -0.08945428053619989
+      ],
+      "net_force_norm_n": 0.4456526499135174,
+      "TCP_torque_norm_Nm": 0.005974484590128462,
+      "left_all_link_force_world_n": [
+        0.2173936083532344,
+        0.7394431495124572,
+        -1.361489482759487
+      ],
+      "nearest_bear_vertex_to_TCP_m": 0.004326747603442738,
+      "stop_reason": "Right fingers lost two-sided soft-contact opening reaction before release"
+    }
+  ],
+  "last_raw_reaction": {
+    "time_s": 42.79500000000344,
+    "physics_step": 8559,
+    "force_world_n": [
+      -0.29458949508708376,
+      -0.32221304357990843,
+      -0.08945428053619989
+    ],
+    "torque_at_aim_tcp_world_nm": [
+      -0.003031411801190362,
+      0.0017933132007817104,
+      0.004825871566172096
+    ],
+    "aim_tcp_world_m": [
+      -0.12801331649024045,
+      0.06754797036691017,
+      1.0716275520695762
+    ],
+    "net_force_norm_n": 0.4456526499135174,
+    "tcp_torque_norm_nm": 0.005974484590128462,
+    "right_link_names": [
+      "link7",
+      "left_finger",
+      "right_finger"
+    ],
+    "right_link_force_world_n": [
+      [
+        -3.111630662141924e-13,
+        1.333435156045412e-12,
+        -8.136436251948286e-14
+      ],
+      [
+        -0.24535587638244225,
+        -0.39311980197357865,
+        -0.04763360597126971
+      ],
+      [
+        -0.049233618704330365,
+        0.07090675839233676,
+        -0.0418206745648488
+      ]
+    ],
+    "right_link_torque_at_aim_origin_world_nm": [
+      [
+        1.8992217901454531e-13,
+        -2.9649675489333954e-14,
+        -5.722790975680842e-13
+      ],
+      [
+        -0.02104126472650198,
+        0.012654853936791204,
+        0.003941004682033133
+      ],
+      [
+        0.003578315633621727,
+        0.0023023315773250384,
+        -0.00030899928719523825
+      ]
+    ],
+    "right_link_aim_origin_world_m": [
+      [
+        -0.12809509515656428,
+        0.06737462316984036,
+        1.2815274645588361
+      ],
+      [
+        -0.13768616895256958,
+        0.05078818004186626,
+        1.116109960821545
+      ],
+      [
+        -0.118385056919317,
+        0.08421708218616675,
+        1.1161450881620048
+      ]
+    ],
+    "right_link_torque_at_aim_tcp_world_nm": [
+      [
+        -8.995163926530528e-14,
+        -9.496942972663588e-14,
+        -5.724420833621348e-13
+      ],
+      [
+        -0.0027560197581159677,
+        0.0012800807110410553,
+        0.0036314814833564787
+      ],
+      [
+        -0.00027539204298444257,
+        0.0005132324898356245,
+        0.0011943900833880597
+      ]
+    ],
+    "right_finger_aim_opening_axis_world": [
+      [
+        -0.5000177921047746,
+        -0.8660146531392843,
+        -0.0009100146763013704
+      ],
+      [
+        0.5000177921047746,
+        0.8660146531392845,
+        0.0009100146763013704
+      ]
+    ],
+    "left_link_names": [
+      "link0",
+      "link1",
+      "link2",
+      "link3",
+      "link4",
+      "link5",
+      "link6",
+      "link7",
+      "left_finger",
+      "right_finger"
+    ],
+    "left_link_force_world_n": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        3.9998148534505923e-13,
+        -1.0135422458522154e-13,
+        7.78775865681697e-14
+      ],
+      [
+        -1.559905223772037e-11,
+        1.7585087607657723e-11,
+        1.9423408465108186e-11
+      ],
+      [
+        -7.902971808284146e-11,
+        7.394286449766789e-12,
+        4.834127476282466e-12
+      ],
+      [
+        -8.205557789492725e-11,
+        -3.810505782592567e-12,
+        -5.999711138886159e-11
+      ],
+      [
+        1.636241845759073e-13,
+        -6.648026647548554e-11,
+        -6.544967383036292e-13
+      ],
+      [
+        -8.27887410025417e-13,
+        -7.552926446112794e-12,
+        -8.370289100160511e-13
+      ],
+      [
+        5.333740624181648e-12,
+        2.3383320266929838e-11,
+        -1.7139792631358867e-10
+      ],
+      [
+        -1.6699152190793882,
+        -8.505761247236478,
+        -1.3449622913299943
+      ],
+      [
+        1.8873088276042376,
+        9.245204396778517,
+        -0.016527191220941588
+      ]
+    ],
+    "left_link_torque_at_aim_origin_world_nm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.8815004089670967e-14,
+        -5.811921717101104e-14,
+        5.440304255715882e-15
+      ],
+      [
+        -9.309309615488795e-13,
+        8.060814699112985e-13,
+        6.319101545382074e-13
+      ],
+      [
+        1.0006122794252626e-12,
+        8.162457193914095e-13,
+        3.385190402603036e-12
+      ],
+      [
+        7.120758727487008e-13,
+        -3.1813643615594284e-13,
+        -5.077809438937703e-13
+      ],
+      [
+        9.31403894038122e-13,
+        -3.6633664225060106e-13,
+        5.548155877232837e-12
+      ],
+      [
+        -6.356540206913472e-15,
+        3.5782297286986546e-14,
+        -3.4865964493149346e-13
+      ],
+      [
+        1.3267117438523213e-12,
+        -3.738336985370233e-13,
+        8.762219726369688e-13
+      ],
+      [
+        -0.3617126792551953,
+        0.08266020721711549,
+        -0.007985280910107978
+      ],
+      [
+        0.37129025943280874,
+        -0.07844222132974225,
+        0.005867501811122092
+      ]
+    ],
+    "left_link_aim_origin_world_m": [
+      [
+        -0.6,
+        -0.28,
+        0.76
+      ],
+      [
+        -0.6,
+        -0.28,
+        1.093
+      ],
+      [
+        -0.6,
+        -0.28,
+        1.093
+      ],
+      [
+        -0.7216802275407281,
+        -0.30397642574330364,
+        1.3836459241658352
+      ],
+      [
+        -0.648857818499381,
+        -0.2824739034417944,
+        1.41590717454594
+      ],
+      [
+        -0.27390104399513654,
+        -0.1758569375902524,
+        1.4638914411964201
+      ],
+      [
+        -0.27390104399513654,
+        -0.1758569375902524,
+        1.4638914411964201
+      ],
+      [
+        -0.18886402593246554,
+        -0.15365699261005306,
+        1.4683487948827552
+      ],
+      [
+        -0.18535566133457815,
+        -0.13605140540331162,
+        1.3039220351812988
+      ],
+      [
+        -0.184908201220754,
+        -0.1338401796746333,
+        1.3041838773724304
+      ]
+    ],
+    "left_link_torque_at_left_aim_tcp_world_nm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -4.741325234834894e-14,
+        -9.24685861838004e-14,
+        1.0761753529412864e-13
+      ],
+      [
+        -9.118496412421352e-13,
+        1.1486359947012018e-11,
+        -9.022213246028568e-12
+      ],
+      [
+        -7.561674272423979e-13,
+        -6.368853434727372e-12,
+        -1.43448185921086e-11
+      ],
+      [
+        1.0459215462283714e-11,
+        -4.1005919793634424e-11,
+        -1.1254400625270203e-11
+      ],
+      [
+        1.4526301084499205e-11,
+        -3.9170473673733685e-13,
+        1.1523635080952944e-11
+      ],
+      [
+        1.5732115898931658e-12,
+        -2.0828282402975964e-13,
+        2.913437465516768e-13
+      ],
+      [
+        5.188468400731801e-13,
+        -7.304775378804392e-14,
+        8.921173354357837e-13
+      ],
+      [
+        0.02140645971756766,
+        0.0074133160215694854,
+        -0.007795230812395375
+      ],
+      [
+        -0.038535493905481555,
+        0.005219645437418999,
+        0.006066956364624793
+      ]
+    ],
+    "left_aim_tcp_world_m": [
+      -0.18413059044458963,
+      -0.12992527978532423,
+      1.2598484102430938
+    ],
+    "left_all_link_net_force_world_n": [
+      0.2173936083532344,
+      0.7394431495124572,
+      -1.361489482759487
+    ],
+    "left_all_link_torque_at_aim_tcp_world_nm": [
+      -0.01712903416255175,
+      0.012632961422334568,
+      -0.0017282744695773008
+    ],
+    "left_finger_aim_opening_axis_world": [
+      [
+        -0.1970157670134971,
+        -0.9735981364960844,
+        -0.1152885777492063
+      ],
+      [
+        0.19701576701349707,
+        0.9735981364960846,
+        0.1152885777492063
+      ]
+    ],
+    "right_finger_opening_projection_n": [
+      0.4631731598175326,
+      0.036750549024876136
+    ],
+    "right_finger_force_norm_n": [
+      0.4658450871233571,
+      0.09592020859804049
+    ],
+    "left_finger_opening_projection_n": [
+      8.765251717218232,
+      9.371037972120714
+    ],
+    "left_finger_force_norm_n": [
+      8.771859255539981,
+      9.435889576347074
+    ],
+    "baseline_time_s": 15.880000000001083,
+    "delta_force_world_n": [
+      -0.31570732143344565,
+      -0.31341634792992434,
+      1.2311566478122478
+    ],
+    "delta_torque_at_aim_tcp_world_nm": [
+      0.005493091153752266,
+      0.019696161900292507,
+      0.006022471797914436
+    ],
+    "delta_right_finger_opening_projection_n": [
+      -2.346403094342018,
+      -2.763551869662904
+    ],
+    "delta_right_finger_force_norm_n": [
+      -2.3957057227824334,
+      -2.8632798057643156
+    ],
+    "delta_left_finger_opening_projection_n": [
+      -0.09029164505710696,
+      0.4044975078289106
+    ],
+    "delta_left_finger_force_norm_n": [
+      -0.08559245034062002,
+      0.46711423864249113
+    ],
+    "stop_reason": "Right fingers lost two-sided soft-contact opening reaction before release",
+    "left_designated_material_distance_m": 0.0003299724831783895,
+    "right_nearest_teddy_distance_m": 0.004326747603442738,
+    "right_two_sided_contact_required": true
+  },
+  "original_grasp_ROI": {
+    "count": 63,
+    "indices": [
+      574,
+      586,
+      599,
+      611,
+      624,
+      625,
+      637,
+      638,
+      645,
+      646,
+      648,
+      653,
+      654,
+      658,
+      659,
+      661,
+      662,
+      663,
+      668,
+      671,
+      673,
+      674,
+      722,
+      771,
+      775,
+      823,
+      917,
+      961,
+      982,
+      985,
+      1000,
+      1028,
+      1032,
+      1039,
+      1046,
+      1058,
+      1090,
+      1111,
+      1115,
+      1124,
+      1130,
+      1140,
+      1150,
+      1175,
+      1187,
+      1194,
+      1213,
+      1218,
+      1221,
+      1243,
+      1252,
+      1257,
+      1299,
+      1305,
+      1325,
+      1331,
+      1342,
+      1349,
+      1366,
+      1417,
+      1420,
+      1422,
+      1444
+    ],
+    "reference_world_m": [
+      0.338,
+      -0.2619,
+      0.7709
+    ]
+  },
+  "actual_saved_geometry_timeline": [
+    {
+      "time_s": 42.315000000003195,
+      "TCP_world_m": [
+        -0.12804352302719843,
+        0.06752605026720272,
+        1.1294205767755978
+      ],
+      "FK_saved_TCP_error_m": 7.602444187960931e-16,
+      "mass_COM_world_m": [
+        -0.14483530765043415,
+        0.0597464867949623,
+        1.0589678611930657
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.01128777697078411,
+        0.0012436352795478544,
+        0.004476740037276184
+      ],
+      "nearest_original_ROI_vertex_m": 0.0032391092396155466,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.9601072728028605,
+      "bag_minimum_z_m": 0.7412269165710352,
+      "actual_fingers_m": [
+        0.023565705358641116,
+        0.023557797721580655
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.36500000000322,
+      "TCP_world_m": [
+        -0.1280585205211734,
+        0.06751610716814128,
+        1.1232186856572208
+      ],
+      "FK_saved_TCP_error_m": 3.3766115072321297e-16,
+      "mass_COM_world_m": [
+        -0.14567133064999038,
+        0.05931853033292672,
+        1.0543583887394519
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.011472038907500311,
+        0.0012436747695239827,
+        0.0036096861918769227
+      ],
+      "nearest_original_ROI_vertex_m": 0.0030896217374128294,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.9546555101909505,
+      "bag_minimum_z_m": 0.7412293296610121,
+      "actual_fingers_m": [
+        0.023567842558985804,
+        0.023560190207760425
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.415000000003246,
+      "TCP_world_m": [
+        -0.12806371306995196,
+        0.06752267503378157,
+        1.1170079871832168
+      ],
+      "FK_saved_TCP_error_m": 2.1138016631127878e-16,
+      "mass_COM_world_m": [
+        -0.1487023743405068,
+        0.05681355345472313,
+        1.0479258937092837
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.01181111935367472,
+        0.0012913672090886041,
+        0.0036868322752198453
+      ],
+      "nearest_original_ROI_vertex_m": 0.0029971900250440895,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.9419638688943743,
+      "bag_minimum_z_m": 0.7412366895035893,
+      "actual_fingers_m": [
+        0.023565722436196795,
+        0.023561326090180194
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.46500000000327,
+      "TCP_world_m": [
+        -0.1280655161486176,
+        0.06751899733077525,
+        1.1108208814794227
+      ],
+      "FK_saved_TCP_error_m": 8.331297329690976e-16,
+      "mass_COM_world_m": [
+        -0.14852580537334603,
+        0.05341704044770488,
+        1.0435471498422622
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.011867068562383683,
+        0.0014654064191303104,
+        0.0035419204101231707
+      ],
+      "nearest_original_ROI_vertex_m": 0.003065213311842167,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.9369655663818048,
+      "bag_minimum_z_m": 0.7412329074220496,
+      "actual_fingers_m": [
+        0.0233482214751744,
+        0.023331409219373364
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.5150000000033,
+      "TCP_world_m": [
+        -0.12807753011833015,
+        0.0675002243834183,
+        1.1047015534699736
+      ],
+      "FK_saved_TCP_error_m": 4.85722573273506e-16,
+      "mass_COM_world_m": [
+        -0.14477283110308112,
+        0.05145251550360772,
+        1.0370441289616834
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.011774708982232334,
+        0.001426293155488815,
+        0.0038674913430989844
+      ],
+      "nearest_original_ROI_vertex_m": 0.003135165986253489,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.9337640766594525,
+      "bag_minimum_z_m": 0.7412283231431249,
+      "actual_fingers_m": [
+        0.023071184478448255,
+        0.023051010812412807
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.56500000000332,
+      "TCP_world_m": [
+        -0.12806912760209158,
+        0.06747873320707781,
+        1.0985811885753205
+      ],
+      "FK_saved_TCP_error_m": 3.888257972851056e-16,
+      "mass_COM_world_m": [
+        -0.13844112291284086,
+        0.05260586117591987,
+        1.0273522642554267
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.012005103073110285,
+        0.0016618076987373305,
+        0.004800441356085636
+      ],
+      "nearest_original_ROI_vertex_m": 0.0033856394726392057,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.9349447965724607,
+      "bag_minimum_z_m": 0.7412317472683034,
+      "actual_fingers_m": [
+        0.02328150886617132,
+        0.023231186135896136
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.61500000000335,
+      "TCP_world_m": [
+        -0.1280580568167037,
+        0.06746191459795783,
+        1.0924963095452507
+      ],
+      "FK_saved_TCP_error_m": 5.275385075650455e-16,
+      "mass_COM_world_m": [
+        -0.13080772782048125,
+        0.060130094975255864,
+        1.0213417934749687
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.012338440843648178,
+        0.000991472622241504,
+        0.004282313192172082
+      ],
+      "nearest_original_ROI_vertex_m": 0.0040622150274746815,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.925801357365046,
+      "bag_minimum_z_m": 0.7412339445298329,
+      "actual_fingers_m": [
+        0.024173363942294693,
+        0.024116319030923636
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.665000000003374,
+      "TCP_world_m": [
+        -0.12804167700222818,
+        0.06752571509545678,
+        1.0864319696172609
+      ],
+      "FK_saved_TCP_error_m": 5.222180388738334e-16,
+      "mass_COM_world_m": [
+        -0.12378236267807445,
+        0.06729960326795588,
+        1.014648377160401
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.012016877394024114,
+        0.0003261058489054414,
+        0.004705661368019295
+      ],
+      "nearest_original_ROI_vertex_m": 0.0039589274646536134,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.9134550451211977,
+      "bag_minimum_z_m": 0.7412314138493066,
+      "actual_fingers_m": [
+        0.02478528084870879,
+        0.024760771652337234
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.7150000000034,
+      "TCP_world_m": [
+        -0.1280075585443788,
+        0.06756102198579049,
+        1.080419018320062
+      ],
+      "FK_saved_TCP_error_m": 4.809409384954737e-16,
+      "mass_COM_world_m": [
+        -0.12154290440099866,
+        0.06994583881083313,
+        1.0092626633359
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.012778187269139315,
+        0.00030226394507534783,
+        0.004713991572881529
+      ],
+      "nearest_original_ROI_vertex_m": 0.004920464416344141,
+      "nearest_whole_bear_vertex_index": 1175,
+      "nearest_vertex_in_original_ROI": true,
+      "bear_minimum_z_m": 0.907540274678832,
+      "bag_minimum_z_m": 0.7412330449413205,
+      "actual_fingers_m": [
+        0.02427858486493684,
+        0.02426915158252757
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.765000000003425,
+      "TCP_world_m": [
+        -0.12801458666089222,
+        0.06755392649928926,
+        1.0745472386685482
+      ],
+      "FK_saved_TCP_error_m": 3.188872858294072e-16,
+      "mass_COM_world_m": [
+        -0.12453529774647698,
+        0.06739844627169511,
+        1.0008121969950257
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.021026057188945808,
+        0.0034089117517826484,
+        0.009203910264410328
+      ],
+      "nearest_original_ROI_vertex_m": 0.008543346568299881,
+      "nearest_whole_bear_vertex_index": 649,
+      "nearest_vertex_in_original_ROI": false,
+      "bear_minimum_z_m": 0.9009739890010302,
+      "bag_minimum_z_m": 0.741232739570573,
+      "actual_fingers_m": [
+        0.022010305586509796,
+        0.021997323877548144
+      ],
+      "saved_PD_finger_controls_n": [
+        -3.0,
+        -3.0
+      ]
+    },
+    {
+      "time_s": 42.79500000000344,
+      "TCP_world_m": [
+        -0.12801199803485702,
+        0.06754577296127101,
+        1.0710451925408886
+      ],
+      "mass_COM_world_m": [
+        -0.12659832773926902,
+        0.06471807352869073,
+        0.994333070455628
+      ],
+      "ROI_centroid_hand_local_m": [
+        -0.02795803267893055,
+        0.006974553933546284,
+        0.014724979843897297
+      ],
+      "nearest_original_ROI_vertex_m": 0.012183261945548474,
+      "nearest_whole_bear_vertex_index": 649,
+      "nearest_vertex_in_original_ROI": false,
+      "bear_minimum_z_m": 0.896158538065148,
+      "bag_minimum_z_m": 0.7412328699775317,
+      "actual_fingers_m": [
+        0.018607702132264432,
+        0.018587592617769905
+      ],
+      "robot_scope": "Frozen FK of actual failure-time joint trace; failed_soft_state itself has only soft geometry."
+    }
+  ],
+  "last_80ms_motion": {
+    "from_s": 42.7150000000034,
+    "to_s": 42.79500000000344,
+    "TCP_displacement_m": [
+      -4.439490478208574e-06,
+      -1.5249024519478627e-05,
+      -0.00937382577917334
+    ],
+    "mass_COM_displacement_m": [
+      -0.0050554233382703595,
+      -0.005227765282142402,
+      -0.014929592880272069
+    ],
+    "original_ROI_hand_local_displacement_m": [
+      -0.015179845409791237,
+      0.006672289988470937,
+      0.010010988271015767
+    ]
+  },
+  "soft_summary": {
+    "global_min_J": 0.1257911288980089,
+    "minimum_J_time_s": 42.48500000000328,
+    "final_J": 0.8499174484714088,
+    "global_max_cloth_stretch": 1.0641559650197003,
+    "table_maximum_penetration_m": [
+      0.0,
+      0.0
+    ]
+  },
+  "classification": {
+    "observed": "Progressive loss of two-sided grasp loading; final one-sided unloading crosses the original threshold.",
+    "isolated_numeric_spike_supported": false,
+    "complete_teddy_detachment_proven": false,
+    "temporary_recoverable_unloading_proven": false,
+    "bag_stably_supporting_teddy_proven": false,
+    "evidence": [
+      "Both opening reactions decrease across about0.1s before the last5ms sample crosses0.1N on one finger; only that final sample violates the guard.",
+      "The gripper is still about37.2mm open, one finger retains0.463N opening reaction, and some teddy material remains4.327mm fromTCP. This differs from head02 closed-empty-gripper slip.",
+      "The original63-node grasp ROI moves substantially relative to the hand: in the last80ms its centroid shifts15.18mm in hand-local X and10.01mm in hand-local Z; its nearest vertex is12.183mm fromTCP. The finite ROI is larger than a contact patch, so centroid motion alone does not prove complete pad separation. The whole-teddy nearest vertex switches from original-ROI id1175 to non-ROI id649, so whole-object proximity does not establish original material retention.",
+      "The teddy COM continues downward and the initially compressed soft material recovers volume; neither static bearing nor recovery of bilateral grasp can be inferred after the run stopped.",
+      "The bag bottom is near the table, and the teddy is above it. Bag/table contact can share loads, but recorded per-link forces contain no contact-partner labels and no direct bag-bear or table-bag resultant. The changing left load is not a unique bag-bearing measurement."
+    ]
+  },
+  "limitations": [
+    "The run stopped immediately at the first failing opening sample; no post-failure recovery or stable hold was observed.",
+    "Material ROI motion combines deformation and contact slip; it is not a pure tangential-slip measurement.",
+    "Actual geometry is saved at roughly50ms intervals, ending42.765s, plus soft geometry at42.795s. Joint and reaction traces reach the actual stop.",
+    "No gate, target, force limit, production file, or native state was changed. This report does not substitute for a later complete final-task audit."
+  ],
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/config.json": "67ac2548dd28464a2e4a90500b59376a108d57c53e5ccda7e922e459265c66fa",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/bear_uniform_coarse_s85.mtl": "f3a8a971b017025ea86cecd97cfdeb7e8693aea417e59cffa4786663a13bc18f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/bear_uniform_coarse_s85.obj": "6f86b3349d0d144148a60b3ab2c4ccbd0b42d38b907d8823e70557e1e620c7b6",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/cotton_canvas.png": "c1fa744e76e59d2be819db3dcc63a84724ff7bab886d9570789712bf562dcb2f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/metadata_two_panel_wide_tall_coarse.json": "717b85a19fff38ea75a0f10f8721fbce48d6c011958de8a3b6b246d7dcb0217a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/panda_tactile.xml": "aa331cbc593a52d808cfe70dd2362a0082fec6a43253db884ba0302341af1078",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/teddy_fur.png": "355e29a37479403425f30c734475d141313be8880f68b8c638bdb8d04cf561f8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/two_panel_bag_wide_tall_coarse.mtl": "51a06ed3a6e284c29a6cb3192bde876bb1c0f4c30e60c9d716b5935878f0f9d3",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets/two_panel_bag_wide_tall_coarse.obj": "a047869313d6c5469640724eb84a412c67f71d2d0d07eb492c67880c39cff280",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/assets_builder.py": "d6adb8a187a31092b21f6edab55145291fda1ba97d221d744b8989847c1e960e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/build_tall_bag.py": "dc57f031b1a972743eff2edb85ac85630321e848dedc579305d51de0fd4b6926",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/build_wide_tall_bag.py": "072735056b4d238622a8443f4ec6f85e1e097a041a8e2b261d1a7ab12d02349c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/contact_grasp.py": "3ac4767bad63047309b1f18583a40c2afc3424ce944e3a85427dedc2f588c4ab",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/contact_guard.py": "1658ce9c6e7c2d584ab1bc52b73235477d15b7575fb528296fa22943badc1014",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/contact_insertion.py": "e1454fcf9ab04b31012f168e112e481c33f8cc7cd1e31d78e40fb553838e232a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/contact_slice_geometry.py": "60a3b2f097b030109183838e754d5595d011fda802695a5b5ca1ab386f265e89",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/physical_monitor.py": "70e3cff80072c5a63235ca277de31fb7e22638305367b40a0f9688a8a4526139",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/physics_config.py": "8e5586c5065d969bf7829753eb57306fa4a53a6a02328d05f1a33449efd9dcc7",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/postlift_yaw.py": "0335771a4a9420b823420b541709234defafc584aff57cec76d9a8fa3f6a4b3a",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/remesh_bear.py": "feb5f7dccc5fa4e08a4ca02ec6ff2ad4abaa669e7a9c68869104f881d8428a20",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/run.py": "c63b0f9771a72882b1a5e2829510ad843fb8f1c7780e534cf71a2758bb12a307",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/scene.py": "9c4eb7e3bf184b60bc422bc75dac3a1e06f22f690b56e1f25cb660699f3afe37",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/staged_contact_insertion.py": "75ca3e0cf109a17532cf77bb109b57dd87f5ecb9bb4bb443c4e103ded404626b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/staged_hand_monitor.py": "49e9a3ffb31350ff648fb0a78eeea5ded1f8d21bf90dd3022719d892eefddf28",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/two_panel_builder.py": "d915692a9f2ae8a6185520582e1a2db93365c9fde3d433a9c6991097a6aa4188",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/source/validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/report.json": "6cf1f6813b38956f3126afd5b1f842ff7eedea1b4a4801f8aedae2cec93d958c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/contact_guard_trace.json": "a20d8f08dcb315f60011b44501359f648c2ecaec709a746c92faa416935d70b2",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/joint_trace.npy": "d623c3395c32aeac8396ccb9397c0271c527d63d31b9724378afa166b88b6575",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/soft_metrics.npy": "2465b98adcabe0ec8f4dc204589390154883f10ca18abc3b60c023b2906ecc0b",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/states.npz": "07968852c14767720fdbbc5ae9c08e50a7e01d543cf6d7f01a10579c8b16f594",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_24/failed_soft_state.npz": "d9298d39a41bf3739eb0af15697aafac23e3659c43b4f9516a002ddcc908b408"
+  }
+}

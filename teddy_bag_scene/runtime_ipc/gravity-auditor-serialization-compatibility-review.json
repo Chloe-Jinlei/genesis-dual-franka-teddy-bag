@@ -1,0 +1,66 @@
+{
+  "kind": "gravity_auditor_serialization_only_compatibility_review",
+  "passed": true,
+  "count": 16,
+  "checks": {
+    "actual_old_source_hash_pinned": true,
+    "actual_new_source_hash_pinned": true,
+    "helper_unchanged": true,
+    "exact_text_only_serialization_delta": true,
+    "original_full25_contract_still_accepted": true,
+    "new_contract_requires_serialization_equivalence": true,
+    "original_manifest_matches": true,
+    "original_wrong_manifest_rejected": true,
+    "serialization_only_manifest_matches": true,
+    "serialization_only_wrong_manifest_rejected": true,
+    "changed_control_not_accepted": true,
+    "changed_helper_not_accepted": true,
+    "missing_actual_final_evidence_still_incomplete": true,
+    "original_failed_full25_still_missing_report_incomplete": true,
+    "full25_report_not_reconstructed": true,
+    "production_exact_hashes_unchanged_during_audit": true
+  },
+  "physical_success": false,
+  "native_execution": false,
+  "old_contract": {
+    "passed": true,
+    "mode": "exact_reviewed_gravity_release_extension",
+    "recognized_runner_sha256": "f774826d687eb6662bd1d4c491382214eac2fce22e554fd0ebdf9bf6fba0a2a6",
+    "checks": {
+      "exact_reviewed_gravity_runner_hash": true,
+      "exact_reviewed_gravity_helper_hash": true,
+      "begin_guarded_contact_monitor": true,
+      "run_postlift_yaw": true,
+      "observe_physics": true,
+      "execute": true
+    },
+    "scope": "Only two explicitly reviewed runner hashes and the unchanged helper hash are accepted. The second runner must reduce byte-for-byte to the original by reversing only its exact final report serialization lines. Four original guard/yaw/execute methods remain exact baseline AST. This is source dataflow evidence, not an observed per-step command log."
+  },
+  "new_contract": {
+    "passed": true,
+    "mode": "exact_reviewed_gravity_serialization_only_extension",
+    "recognized_runner_sha256": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+    "checks": {
+      "exact_reviewed_gravity_runner_hash": true,
+      "exact_reviewed_gravity_helper_hash": true,
+      "exact_serialization_only_whole_source_equivalence": true,
+      "begin_guarded_contact_monitor": true,
+      "run_postlift_yaw": true,
+      "observe_physics": true,
+      "execute": true
+    },
+    "scope": "Only two explicitly reviewed runner hashes and the unchanged helper hash are accepted. The second runner must reduce byte-for-byte to the original by reversing only its exact final report serialization lines. Four original guard/yaw/execute methods remain exact baseline AST. This is source dataflow evidence, not an observed per-step command log."
+  },
+  "old_run_sha256": "f774826d687eb6662bd1d4c491382214eac2fce22e554fd0ebdf9bf6fba0a2a6",
+  "new_run_sha256": "3454e304fa9fb95381f843deb53e21e373900bccf235a86ff4891fd405d953f9",
+  "unchanged_helper_sha256": "d88f4a7cd34853fb8f07eb34d42e137007cd553f69ddc920a0856a0710c96dee",
+  "new_auditor_sha256": "c2c0d4b968a6f8ccd58dee1a6a1ce535f69750523209ed66ea39f12c081bab3a",
+  "new_prefix_script_sha256": "7a16a49b209ffc2c5249ef70a0d2ded3aa67581d6efef21f440e4a89f3a7ab87",
+  "script_sha256": "690464d959b1b82b9cd8c33e9247e41eedb16dfdfa5fa7b56cb8c84a7d0c3cea",
+  "scope": "Only final JSON output normalization changed in the explicitly reviewed second runner; no arbitrary AST normalization or control edit is accepted. Original full25 frozen input and missing report remain untouched.",
+  "changes": [
+    "Retain original frozen full25 runner hash.",
+    "Allow exact serialization-only runner hash only after whole-source reversal equality.",
+    "Both candidate/final audit and prefix manifest checks recognize either exact runner plus unchanged gravity helper."
+  ]
+}

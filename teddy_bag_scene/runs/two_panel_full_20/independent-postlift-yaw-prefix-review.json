@@ -1,0 +1,142 @@
+{
+  "kind": "independent_actual_postlift_endpoint_prefix_review",
+  "physical_success": false,
+  "complete_run_audited": false,
+  "complete_native_guard_trace_audited": false,
+  "all_available_endpoint_checks_passed": true,
+  "checks": {
+    "source_independent_soft_and_grasp_limits": true,
+    "source_physical_record_matches_saved_geometry": true,
+    "source_independent_actual_rigid_8mm": true,
+    "source_actual_rigid_record_matches_recomputed_distances": true,
+    "source_actual_joints_fingers_and_tcp_valid": true,
+    "endpoint_independent_soft_and_grasp_limits": true,
+    "endpoint_physical_record_matches_saved_geometry": true,
+    "endpoint_independent_actual_rigid_8mm": true,
+    "endpoint_actual_rigid_record_matches_recomputed_distances": true,
+    "endpoint_actual_joints_fingers_and_tcp_valid": true,
+    "archived_continuous_reference_rates_and_joint_limits": true,
+    "left_archive_matches_report_start_and_end": true,
+    "right_archive_matches_report_start_and_end": true,
+    "independent_original_left_arc_axes_and_sagitta": true,
+    "actual_endpoint_pose_and_time_match_execution": true,
+    "fingers_retain_closed_motor_targets": true
+  },
+  "actual_measurements": {
+    "source": {
+      "time_s": 29.044999999998506,
+      "minimum_tetra_volume_ratio": 0.5419115100672105,
+      "maximum_bag_edge_stretch_ratio": 1.0268207401686802,
+      "bag_table_penetration_m": 0.0,
+      "bear_table_penetration_m": 0.0,
+      "left_designated_material_distance_m": 0.0008949896014445821,
+      "right_nearest_teddy_distance_m": 0.00836406535368416,
+      "all_soft_states_finite": 1.0
+    },
+    "endpoint": {
+      "time_s": 35.06999999999949,
+      "minimum_tetra_volume_ratio": 0.5147794919313993,
+      "maximum_bag_edge_stretch_ratio": 1.0266114317890709,
+      "bag_table_penetration_m": 0.0,
+      "bear_table_penetration_m": 0.0,
+      "left_designated_material_distance_m": 0.001004452127812189,
+      "right_nearest_teddy_distance_m": 0.007747470736691171,
+      "all_soft_states_finite": 1.0
+    }
+  },
+  "actual_endpoint_position_error_m": 0.00027652308772974755,
+  "actual_endpoint_rotation_error_rad": 0.0006146826897430355,
+  "actual_endpoint_time_s": 35.06999999999949,
+  "archived_reference_bounds": {
+    "left": {
+      "minimum": [
+        -1.157928347972202,
+        -0.9029488935435553,
+        0.9411009229135125,
+        -2.770943866192143,
+        -0.25250611142918494,
+        3.7131464594091894,
+        1.6865365922465478
+      ],
+      "maximum": [
+        -1.157928347972202,
+        -0.9029488935435553,
+        0.9411009229135125,
+        -2.770943866192143,
+        -0.25250611142918494,
+        3.7131464594091894,
+        1.6865365922465478
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "acceleration": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "right": {
+      "minimum": [
+        0.5232182917301875,
+        0.2662364015399983,
+        0.3219558163655924,
+        -0.9852410553401318,
+        -0.09512226442510745,
+        1.2389832370115736,
+        -1.0500635477555236
+      ],
+      "maximum": [
+        0.5402446290178139,
+        0.26810016149722954,
+        0.345564637229165,
+        -0.9851240297155633,
+        -0.08815392545429002,
+        1.239470905601275,
+        -0.7917566417728072
+      ],
+      "velocity": [
+        0.005311427995790901,
+        0.0005950862228888197,
+        0.007390703721129987,
+        4.709911299572776e-05,
+        0.0022156363875220266,
+        0.0001529283425620964,
+        0.08041212062783241
+      ],
+      "acceleration": [
+        0.002723628648136793,
+        0.00031664217238310335,
+        0.0038050297261435686,
+        3.363622598366096e-05,
+        0.0011624866320452747,
+        8.25972208903729e-05,
+        0.04111118096039943
+      ]
+    }
+  },
+  "input_sha256": {
+    "config.json": "38e226bb4a928ed9dbbd592cb2118741452d58fdf1a1f25f87c91dce10a8fd34",
+    "rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "lift_teddy.npz": "b297a43257292e53f47d50a080a5b963505364972f4a5dabbcbbf676e039964f",
+    "orient_teddy_postlift.npz": "b6f87267717966cb889827cc35f014978a51071028b212281a9e90743ded02db",
+    "postlift_yaw_candidate.json": "1f099c91c1922a175de517369ae903659b2bc5fdf2ad87f4cfe42d5e5313e3ae",
+    "postlift_yaw_execution.json": "93d52ccd8590ba928d5e873645eb16077358082243d20e38c4f586e4c1c0fc29",
+    "postlift_yaw_plan.npz": "6ce5892361f5733786f97c9a9cf9da0b38d4a3e18f91f05fd57d173b36ff9abf"
+  },
+  "auditor_sha256": "cfffd244a7a8064dc2780a337e17e2b13ab4447849a2834ca10e20700f2771f8",
+  "limitations": [
+    "Only saved source/endpoint geometry and archived reference are checked here. Full guard-force coverage, fresh preparation and the remainder require finished run evidence.",
+    "This is no physical task success or continuous native collision certificate."
+  ]
+}

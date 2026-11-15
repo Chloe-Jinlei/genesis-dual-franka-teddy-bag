@@ -1,0 +1,42 @@
+{
+  "kind": "independent_gravity_execution_auditor_short_review",
+  "physical_success": false,
+  "native_execution_performed": false,
+  "auditor_sha256": "e48b9f403b029652fe835254ebe03dc3029ba82f44d0671c734017289f76e9f6",
+  "api_review": {
+    "frozen_runner_and_helper_exact_hash_contract": true,
+    "no_old_full_depth_endpoint_required_for_actual_partial_insert": true,
+    "configured_missing_or_rejected_release_does_not_pass": true,
+    "final_original_all_node_COM_retention_validator_retained": true,
+    "guard_release_flag_checked_against_intent_event": true,
+    "scope_explicitly_no_independent_per_step_command_log": true
+  },
+  "findings": [
+    {
+      "kind": "contract_gap",
+      "description": "No explicit minimum insert6s/withdraw4s check; archive/event durations are compared to each other and continuous rates, but the source minimum duration should independently be asserted."
+    },
+    {
+      "kind": "reproduced_semantic_gap",
+      "description": "Absent gravity config with a gravity candidate artifact is called passed/not_configured. It does not claim physical_success or independent_task_success, but unexpected execution evidence should prevent the legacy off result.",
+      "actual_result": {
+        "kind": "independent_gravity_release_execution_audit",
+        "status": "not_configured",
+        "passed": true,
+        "physical_success": false,
+        "checks": {},
+        "incomplete_evidence": [],
+        "curve_evidence_scope": "Hash-reviewed same-object source dataflow plus saved curve/event/actual tracking. There is no independent per-step command log.",
+        "failed_checks": [],
+        "limits": [
+          "The original cap validity test is not a general body embedding/self-intersection certificate; all-node count is not whole-tetrahedron or volume containment.",
+          "The 50% interim criterion never replaces original final all-node, COM, released-finger and retention checks.",
+          "401 reference/FK checks are sampled; continuous reference rates concern commands, not every native dynamic velocity.",
+          "Failed or incomplete execution never becomes successful because a planning candidate exists."
+        ]
+      }
+    }
+  ],
+  "production_modified": false,
+  "auditor_unchanged_during_review": true
+}

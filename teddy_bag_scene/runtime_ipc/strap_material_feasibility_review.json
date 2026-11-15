@@ -1,0 +1,110 @@
+{
+  "scope": "Read-only design review plus CPU native geometry/constitution attribute mutation on an isolated in-memory mesh; no runtime source edits, no GPU Engine/World/init, no simulated improvement claim.",
+  "versions": {
+    "genesis_world": "1.4.3",
+    "pyuipc": "0.0.29",
+    "upstream_v0_0_29_tag_commit": "ac89e1009c7d8efb72d260790bb5ab31d7460542"
+  },
+  "reference_run": "runs/two_panel_full_16",
+  "failure_time_s": 61.235000000012874,
+  "mapping": {
+    "vertices": 1896,
+    "source_to_rest_bijection": true,
+    "maximum_vertex_error_m": 6.944641773336686e-11,
+    "source_vertex_order_identical_to_rest": true,
+    "source_faces_to_rest_faces_bijection": true,
+    "faces": 3664,
+    "body_faces": 2960,
+    "front_handle_faces": 352,
+    "back_handle_faces": 352,
+    "front_face_index_range_in_this_asset": [
+      2960,
+      3311
+    ],
+    "back_face_index_range_in_this_asset": [
+      3312,
+      3663
+    ],
+    "body_handle_face_overlap": 0,
+    "native_triangle_topology_view_shape": [
+      3664,
+      3,
+      1
+    ],
+    "implementation_requirement": "Use position bijection plus canonical sorted mapped vertex triplets; reshape native topology to (-1,3); do not assume these index ranges or identity mapping for a future asset."
+  },
+  "native_coefficients": {
+    "body_and_handle_stretch_lambda_n_per_m": 2637.362637362638,
+    "body_and_handle_shear_mu_n_per_m": 50.0,
+    "strain_rate": 100.0,
+    "bending_stiffness_nm": 5e-05,
+    "full_thickness_m": 0.0006,
+    "lambda_formula": "E * (2 * radius) / (1 - nu**2)",
+    "shear_semantics": "Independent effective 2D coefficient, backend multiplies triangle rest area; do not multiply by thickness again."
+  },
+  "failure_faces_native_BW_basis": [
+    {
+      "face": 3172,
+      "vertices": [
+        1628,
+        1629,
+        1638
+      ],
+      "I5u": 0.9908931592306818,
+      "I5v": 0.9831828348184496,
+      "I6": -0.42633657995557306,
+      "material_angle_deg": 115.95176121828544,
+      "maximum_principal_stretch": 1.183496248205893,
+      "stretch_energy_density_n_per_m": 0.9646195873615862,
+      "shear_energy_density_n_per_m": 9.088143970410737
+    },
+    {
+      "face": 3173,
+      "vertices": [
+        1628,
+        1638,
+        1637
+      ],
+      "I5u": 1.009645988326618,
+      "I5v": 1.0068721912098557,
+      "I6": -0.3647384837935976,
+      "material_angle_deg": 111.02579219574001,
+      "maximum_principal_stretch": 1.1753031614775713,
+      "stretch_energy_density_n_per_m": 0.6922512381902742,
+      "shear_energy_density_n_per_m": 6.651708078002622
+    }
+  ],
+  "basis_caution": "Match native Dm2x2 Rodrigues rotation from each rest normal to +Z, followed by XY extraction, not a first-triangle-edge basis or source UV weave. Current native material directions are not validated manufactured webbing yarn directions.",
+  "isolated_native_CPU_check": {
+    "created_geometry_and_constitutions_without_world": true,
+    "selected_handle_faces": 704,
+    "trial_mu_n_per_m": 250.0,
+    "all_2960_body_mu_remain_50": true,
+    "lambda_and_bending_unchanged": true,
+    "does_not_demonstrate_runtime_backend_response": true
+  },
+  "recommendation": {
+    "first_candidate": "Change only both handles mu 50 -> 250 N/m using named source handle groups; preserve all other properties and every physical gate. This is an uncalibrated effective stronger-strap material trial, not measured webbing.",
+    "reason": "Failing edge elongation is dominated by material-axis shear; increasing stretch lambda alone may do little because I5u/I5v stay near one. Uniform body mu would alter the requested floppy bag drape unnecessarily.",
+    "runtime_insertion_point": "Existing configure_shell_shear hook after native FEM creation, before World.init; backend caches per-face coefficients at init.",
+    "do_not_do": [
+      "No separate/disconnected handle entity",
+      "No fixed vertices or attachments",
+      "No global shell rigidity change",
+      "No runtime material edit after build",
+      "No raised stretch acceptance threshold"
+    ],
+    "bending": "Leave 5e-5 N m unchanged initially; membrane shear and bending are independent. If a later calibrated strap bend change is needed, modify only native edges whose two incident triangles are both handle faces, leaving body/strap seam interfaces unchanged and documenting that boundary policy."
+  },
+  "minimal_next_tests": [
+    "CPU adapter tests: exact source/native bijections; both handles selected, body byte-identical; positive finite coefficients; reject mapping or topology mismatch.",
+    "One native short physical build/drape/grasp smoke: startup report confirms 704 handle coefficients and 2960 original body coefficients, no invalid initial contacts, no fixed vertices.",
+    "True full initialization trial with unchanged force/torque/J/table/stretch/grip/final containment gates; stiffness change can alter early grasp, load transfer and passage, so no success assumed from saved-state analysis."
+  ],
+  "primary_sources": [
+    "https://github.com/spiriMirror/libuipc/blob/v0.0.29/src/constitution/strain_limiting_baraff_witkin.cpp",
+    "https://github.com/spiriMirror/libuipc/blob/v0.0.29/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.cu",
+    "https://github.com/spiriMirror/libuipc/blob/v0.0.29/src/backends/cuda/finite_element/constitutions/strain_limiting_baraff_witkin_shell_2d.h",
+    "https://github.com/spiriMirror/libuipc/blob/v0.0.29/src/constitution/discrete_shell_bending.cpp"
+  ]
+}

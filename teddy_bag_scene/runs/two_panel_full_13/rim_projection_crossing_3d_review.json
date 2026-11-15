@@ -1,0 +1,1810 @@
+{
+  "schema": "independent_actual_rim_xy_crossing_3d_review_v1",
+  "run": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_13",
+  "time_s": 52.89500000000861,
+  "method": {
+    "scope": "Saved actual piecewise-linear body-rim boundary only, no GPU, no dynamics, no teddy contact scan",
+    "source": "validate.mouth_structure explicit asset body-face labels; all nonadjacent edge pairs exhaustively checked",
+    "xy": "Analytic 2D segment intersection, retaining original edge Z interpolation; exact constrained segment distance for near/touch diagnostics",
+    "three_dimensional": "Minimum of four endpoint-to-segment constrained quadratics and interior stationary pair; covers segment interiors and endpoints",
+    "3d_intersection_tolerance_m": 1e-08,
+    "xy_touch_tolerance_m": 1e-10,
+    "physical_contact_claim": false
+  },
+  "source_hashes": {
+    "runs/two_panel_full_13/config.json": "a7989077b0aa5b919a43458d7d6d9eb6dcd951d52633cc609111a9197c767a96",
+    "runs/two_panel_full_13/rest.npz": "8d7a7a3605a116e1de1585ea31c894a6d057ae1c72ecb25978db7f6b701b9fae",
+    "runs/two_panel_full_13/lower_teddy_to_rim.npz": "e4e41fc8c7cea2cff90b8ba1e118087bea9a52cc7a77c15691941dd58587cebb",
+    "assets/two_panel_bag_wide_tall_coarse.npz": "e78db0a8a0764ce9638ff7e5fdd0e3752559f04009b8f2129fdf17f4fb1a4e5c",
+    "validate.py": "e077a79f02bef7779e79519f00283ec8da7fc8df53f9cc708386ec40567fad99",
+    "contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4",
+    "insertion_candidates.py": "7cad2de1bf240f5ad37a7e892030e6e62b8e522014b807d3a61ac210ed38594f",
+    "two_panel_builder.py": "d915692a9f2ae8a6185520582e1a2db93365c9fde3d433a9c6991097a6aa4188"
+  },
+  "generator_script": "/tmp/full13_rim_projection_crossing_3d_review.py",
+  "topology": {
+    "actual_open_body_boundary": true,
+    "body_boundary_loop_count": 1,
+    "complete_bag_boundary_loop_count": 3,
+    "nonmanifold_edges": 0,
+    "connected_components": 1,
+    "body_triangle_count": 2960,
+    "rim_rest_z": 1.1315683174918918,
+    "body_face_selection": "explicit physical body-face labels mapped to imported rest mesh",
+    "independent_flat_bottom_triangles": 0,
+    "independent_flat_side_triangles": 0,
+    "body_boundary_only_at_top": true,
+    "two_panels_directly_sewn_along_u": true,
+    "analysis_cap_is_not_simulated": true
+  },
+  "source_mapping_max_error_m": 6.944641773336686e-11,
+  "source_rim_membership_matches_ordered_boundary": true,
+  "source_rim_array_is_membership_only_not_cyclic_order": true,
+  "source_rim_ordering_note": "two_panel_builder.py:92 stores np.unique(front_top + back_top), a sorted membership set. Actual ordered audit loop is validate.mouth_structure -> boundary_loops(body_faces); source rim is used only for membership validation. Treating source rim array as a cycle would produce different edges and is not done by the runtime helper or this audit.",
+  "invalid_sorted_source_rim_as_cycle_edge_set_matches": false,
+  "panel_top_row_edge_set_matches_ordered_boundary": true,
+  "ordered_imported_rim_vertex_ids": [
+    761,
+    760,
+    1482,
+    1483,
+    1484,
+    1485,
+    1486,
+    1487,
+    1488,
+    1489,
+    1490,
+    1491,
+    1492,
+    1493,
+    1494,
+    1495,
+    1496,
+    1497,
+    1498,
+    1499,
+    1500,
+    1501,
+    1502,
+    1503,
+    1504,
+    1505,
+    1506,
+    1507,
+    1508,
+    1509,
+    1510,
+    1511,
+    1512,
+    1513,
+    1514,
+    1515,
+    1516,
+    1517,
+    797,
+    796,
+    795,
+    794,
+    793,
+    792,
+    791,
+    790,
+    789,
+    788,
+    787,
+    786,
+    785,
+    784,
+    783,
+    782,
+    781,
+    780,
+    779,
+    778,
+    777,
+    776,
+    775,
+    774,
+    773,
+    772,
+    771,
+    770,
+    769,
+    768,
+    767,
+    766,
+    765,
+    764,
+    763,
+    762
+  ],
+  "rim_vertex_count": 74,
+  "rim_world_bounds_m": [
+    [
+      -0.18665112338673767,
+      -0.18212491154426624,
+      1.0090615824600981
+    ],
+    [
+      -0.08869420391721101,
+      0.21091067768960875,
+      1.0910409531048153
+    ]
+  ],
+  "rim_height_range_m": 0.08197937064471716,
+  "rim_edge_lengths_3d_m": [
+    0.031775318781016804,
+    0.03172381105117258,
+    0.02102115722161226,
+    0.0197133987589152,
+    0.019184549114006327,
+    0.01651378423950914,
+    0.0023420100646366292,
+    0.002337803382139196,
+    0.0046639479736211315,
+    0.002326073773606908,
+    0.002322590843201321,
+    0.004634069969742159,
+    0.002311343883374299,
+    0.0023086903490681016,
+    0.016055837126785426,
+    0.018192235784496608,
+    0.018141320274920204,
+    0.018081565432600387,
+    0.01804080136962264,
+    0.018032740370115753,
+    0.01805662011994656,
+    0.018099677755934955,
+    0.01818896531289243,
+    0.018300209838705082,
+    0.016121927975267993,
+    0.0023159232574789623,
+    0.0023159803422727943,
+    0.004643664439659441,
+    0.0023262062895534935,
+    0.002327416303976584,
+    0.004670684045955898,
+    0.0023336768716064648,
+    0.0023239149344291394,
+    0.016610988117674644,
+    0.019320007339779798,
+    0.019888100929719037,
+    0.02113058216105908,
+    0.03197051584519831,
+    0.03162364952559599,
+    0.02104640982663387,
+    0.019851116622313852,
+    0.01913688833154163,
+    0.01633506807211127,
+    0.0022814178295033423,
+    0.002297903750566842,
+    0.0045844312303480175,
+    0.002304438520366448,
+    0.0023011158826991523,
+    0.004568921077596264,
+    0.002293161823533517,
+    0.0022919859843842072,
+    0.016063481228821834,
+    0.018243711523550372,
+    0.018169054165236512,
+    0.018117570129638317,
+    0.018072393799388298,
+    0.018033149605127,
+    0.01804234616378605,
+    0.018100650792358335,
+    0.018197176693261582,
+    0.018297936362404496,
+    0.016132592082138013,
+    0.002304830836152693,
+    0.002308924856030617,
+    0.004629968404122229,
+    0.0023228214562171306,
+    0.002329262583848791,
+    0.0046728097751347645,
+    0.00234488820493038,
+    0.00234657966791143,
+    0.016627187850596293,
+    0.01930389141522883,
+    0.01987639964017937,
+    0.02115136310302318
+  ],
+  "rim_edge_lengths_xy_m": [
+    0.03152760623081598,
+    0.028945457694823335,
+    0.01843832203524067,
+    0.018481577215762986,
+    0.017846270446260432,
+    0.015237078100183243,
+    0.002206581745251172,
+    0.0022031576294253416,
+    0.004398045928098826,
+    0.002194030085597278,
+    0.0021922640278767692,
+    0.004377878271090405,
+    0.0021859336073061786,
+    0.002186263889907999,
+    0.015610640331878714,
+    0.017450545419704703,
+    0.017669798118485153,
+    0.017500766976874433,
+    0.01738093237920336,
+    0.018021126659997003,
+    0.017934237316383116,
+    0.017934052089561652,
+    0.01799346796226073,
+    0.018081482976013877,
+    0.015916681782174747,
+    0.0022842739718864215,
+    0.00228506086172931,
+    0.004579721888153545,
+    0.0022915719805009275,
+    0.002292320667185718,
+    0.0045985532722831795,
+    0.0022971822576491477,
+    0.0022901259090715013,
+    0.01635884541079992,
+    0.019054662337018267,
+    0.019674839562721754,
+    0.020944534206773727,
+    0.03183039661942369,
+    0.031407395902051834,
+    0.016473122576132773,
+    0.01859386707898582,
+    0.012604158315175628,
+    0.013226324862103171,
+    0.0022527403740531696,
+    0.002277894647825686,
+    0.0045409599269509516,
+    0.002291435250618186,
+    0.0022868599222066817,
+    0.004526355508309287,
+    0.002278863103290838,
+    0.0022757483292578967,
+    0.016061243358340707,
+    0.01819261508003791,
+    0.018065282507474495,
+    0.01796956090078082,
+    0.017857166420431746,
+    0.01778275164499344,
+    0.018040252830529947,
+    0.018027069068136403,
+    0.018117866617546368,
+    0.01820185343480073,
+    0.016013155293881923,
+    0.0022824798482678262,
+    0.002287291376655486,
+    0.004583589586867387,
+    0.0022982272208246592,
+    0.002303152925116239,
+    0.004613097952964028,
+    0.002315624439135988,
+    0.0023189002993753826,
+    0.016611353473438388,
+    0.019289249642636355,
+    0.01981920190751571,
+    0.021086009438236086
+  ],
+  "pair_counts": {
+    "all_pairs": 2701,
+    "topologically_adjacent_excluded_from_self_crossing": 74,
+    "nonadjacent": 2627
+  },
+  "helper_mouth_result": {
+    "accepted": false,
+    "error_type": "ValueError",
+    "error": "Vertical rim projection is self-crossed, touching or closed"
+  },
+  "helper_proper_crossings": 2,
+  "analytic_proper_crossings_count": 2,
+  "nonadjacent_projected_touch_or_overlap_count": 0,
+  "helper_endpoint_distance_m": 0.000424408765188146,
+  "helper_endpoint_distance_witness": [
+    0.000424408765188146,
+    [
+      3,
+      34
+    ]
+  ],
+  "helper_near_threshold_m": 0.0006,
+  "nonadjacent_pairs_with_exact_xy_gap_below_threshold": 3,
+  "all_projected_proper_crossings": [
+    {
+      "edge_indices": [
+        2,
+        35
+      ],
+      "edge_a": {
+        "edge_index": 2,
+        "imported_vertex_ids": [
+          1482,
+          1483
+        ],
+        "source_vertex_ids": [
+          1482,
+          1483
+        ],
+        "endpoints_world_m": [
+          [
+            -0.14455120253700843,
+            0.04702606711015961,
+            1.0701270544000678
+          ],
+          [
+            -0.13121140454810218,
+            0.05975483410034426,
+            1.0600316429938645
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            -0.1893413144332556,
+            0.02583053581657974,
+            0.3967515629538226
+          ],
+          [
+            -0.17130880829675507,
+            0.03635937538887899,
+            0.3946986568155788
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "edge_b": {
+        "edge_index": 35,
+        "imported_vertex_ids": [
+          1515,
+          1516
+        ],
+        "source_vertex_ids": [
+          1515,
+          1516
+        ],
+        "endpoints_world_m": [
+          [
+            -0.13265901504107527,
+            0.06649186208433966,
+            1.0316753194224781
+          ],
+          [
+            -0.14048583598708675,
+            0.04844081818937566,
+            1.0345800133429885
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            0.1532763021602546,
+            0.04418331517944962,
+            0.3928600476448565
+          ],
+          [
+            0.1713088082967551,
+            0.03635937538887899,
+            0.39469865681557875
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "minimum_3d_distance_m": 0.027526993841189507,
+      "closest_3d_parameters": [
+        1.0,
+        0.4870514146780052
+      ],
+      "closest_3d_points_m": [
+        [
+          -0.13121140454810218,
+          0.05975483410034426,
+          1.0600316429938645
+        ],
+        [
+          -0.1364710792552616,
+          0.05770007561888267,
+          1.0330900547056694
+        ]
+      ],
+      "minimum_xy_distance_m": 3.925231146709438e-17,
+      "helper_proper_crossing": true,
+      "genuine_3d_intersection_within_tolerance": false,
+      "helper_endpoint_to_opposite_edge_distance_m": 0.0017829501990193233,
+      "projected_intersection_kind": "proper_interior",
+      "projected_intersection_parameters": [
+        0.4413858825904415,
+        0.767129978881309
+      ],
+      "projected_intersection_xy_m": [
+        -0.13866320402809684,
+        0.05264436516241035
+      ],
+      "interpolated_edge_points_at_xy_crossing_m": [
+        [
+          -0.13866320402809684,
+          0.05264436516241034,
+          1.0656710823264273
+        ],
+        [
+          -0.13866320402809684,
+          0.05264436516241035,
+          1.0339035972083759
+        ]
+      ],
+      "xy_intersection_residual_m": 6.938893903907228e-18,
+      "edge_z_at_xy_intersection_m": [
+        1.0656710823264273,
+        1.0339035972083759
+      ],
+      "signed_z_difference_at_xy_intersection_m": 0.031767485118051386,
+      "absolute_z_difference_at_xy_intersection_m": 0.031767485118051386
+    },
+    {
+      "edge_indices": [
+        3,
+        34
+      ],
+      "edge_a": {
+        "edge_index": 3,
+        "imported_vertex_ids": [
+          1483,
+          1484
+        ],
+        "source_vertex_ids": [
+          1483,
+          1484
+        ],
+        "endpoints_world_m": [
+          [
+            -0.13121140454810218,
+            0.05975483410034426,
+            1.0600316429938645
+          ],
+          [
+            -0.12928997805616885,
+            0.07813625995957255,
+            1.0531723868938352
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            -0.17130880829675507,
+            0.03635937538887899,
+            0.3946986568155788
+          ],
+          [
+            -0.15327630216025456,
+            0.04418331517944962,
+            0.39286004764485655
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "edge_b": {
+        "edge_index": 34,
+        "imported_vertex_ids": [
+          1514,
+          1515
+        ],
+        "source_vertex_ids": [
+          1514,
+          1515
+        ],
+        "endpoints_world_m": [
+          [
+            -0.12672559030748917,
+            0.08459917076643406,
+            1.0284843122411382
+          ],
+          [
+            -0.13265901504107527,
+            0.06649186208433966,
+            1.0316753194224781
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            0.13524379602375397,
+            0.05045752030345552,
+            0.39120649561502063
+          ],
+          [
+            0.1532763021602546,
+            0.04418331517944962,
+            0.3928600476448565
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "minimum_3d_distance_m": 0.023206614269166422,
+      "closest_3d_parameters": [
+        1.0,
+        0.5653427343151853
+      ],
+      "closest_3d_points_m": [
+        [
+          -0.12928997805616885,
+          0.07813625995957255,
+          1.0531723868938352
+        ],
+        [
+          -0.13008000887022808,
+          0.07436233536500972,
+          1.0302883249662562
+        ]
+      ],
+      "minimum_xy_distance_m": 0.0,
+      "helper_proper_crossing": true,
+      "genuine_3d_intersection_within_tolerance": false,
+      "helper_endpoint_to_opposite_edge_distance_m": 0.000424408765188146,
+      "projected_intersection_kind": "proper_interior",
+      "projected_intersection_parameters": [
+        0.8911182827459472,
+        0.46745279315652066
+      ],
+      "projected_intersection_xy_m": [
+        -0.12949918627218798,
+        0.07613485874644171
+      ],
+      "interpolated_edge_points_at_xy_crossing_m": [
+        [
+          -0.12949918627218798,
+          0.07613485874644171,
+          1.0539192344770918
+        ],
+        [
+          -0.12949918627218798,
+          0.07613485874644171,
+          1.029975957461038
+        ]
+      ],
+      "xy_intersection_residual_m": 0.0,
+      "edge_z_at_xy_intersection_m": [
+        1.0539192344770918,
+        1.029975957461038
+      ],
+      "signed_z_difference_at_xy_intersection_m": 0.0239432770160537,
+      "absolute_z_difference_at_xy_intersection_m": 0.0239432770160537
+    }
+  ],
+  "all_nonadjacent_projected_touches_or_overlaps": [],
+  "all_nonadjacent_pairs_with_xy_gap_below_threshold": [
+    {
+      "edge_indices": [
+        2,
+        35
+      ],
+      "edge_a": {
+        "edge_index": 2,
+        "imported_vertex_ids": [
+          1482,
+          1483
+        ],
+        "source_vertex_ids": [
+          1482,
+          1483
+        ],
+        "endpoints_world_m": [
+          [
+            -0.14455120253700843,
+            0.04702606711015961,
+            1.0701270544000678
+          ],
+          [
+            -0.13121140454810218,
+            0.05975483410034426,
+            1.0600316429938645
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            -0.1893413144332556,
+            0.02583053581657974,
+            0.3967515629538226
+          ],
+          [
+            -0.17130880829675507,
+            0.03635937538887899,
+            0.3946986568155788
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "edge_b": {
+        "edge_index": 35,
+        "imported_vertex_ids": [
+          1515,
+          1516
+        ],
+        "source_vertex_ids": [
+          1515,
+          1516
+        ],
+        "endpoints_world_m": [
+          [
+            -0.13265901504107527,
+            0.06649186208433966,
+            1.0316753194224781
+          ],
+          [
+            -0.14048583598708675,
+            0.04844081818937566,
+            1.0345800133429885
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            0.1532763021602546,
+            0.04418331517944962,
+            0.3928600476448565
+          ],
+          [
+            0.1713088082967551,
+            0.03635937538887899,
+            0.39469865681557875
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "minimum_3d_distance_m": 0.027526993841189507,
+      "closest_3d_parameters": [
+        1.0,
+        0.4870514146780052
+      ],
+      "closest_3d_points_m": [
+        [
+          -0.13121140454810218,
+          0.05975483410034426,
+          1.0600316429938645
+        ],
+        [
+          -0.1364710792552616,
+          0.05770007561888267,
+          1.0330900547056694
+        ]
+      ],
+      "minimum_xy_distance_m": 3.925231146709438e-17,
+      "helper_proper_crossing": true,
+      "genuine_3d_intersection_within_tolerance": false,
+      "helper_endpoint_to_opposite_edge_distance_m": 0.0017829501990193233,
+      "projected_intersection_kind": "proper_interior",
+      "projected_intersection_parameters": [
+        0.4413858825904415,
+        0.767129978881309
+      ],
+      "projected_intersection_xy_m": [
+        -0.13866320402809684,
+        0.05264436516241035
+      ],
+      "interpolated_edge_points_at_xy_crossing_m": [
+        [
+          -0.13866320402809684,
+          0.05264436516241034,
+          1.0656710823264273
+        ],
+        [
+          -0.13866320402809684,
+          0.05264436516241035,
+          1.0339035972083759
+        ]
+      ],
+      "xy_intersection_residual_m": 6.938893903907228e-18,
+      "edge_z_at_xy_intersection_m": [
+        1.0656710823264273,
+        1.0339035972083759
+      ],
+      "signed_z_difference_at_xy_intersection_m": 0.031767485118051386,
+      "absolute_z_difference_at_xy_intersection_m": 0.031767485118051386
+    },
+    {
+      "edge_indices": [
+        3,
+        34
+      ],
+      "edge_a": {
+        "edge_index": 3,
+        "imported_vertex_ids": [
+          1483,
+          1484
+        ],
+        "source_vertex_ids": [
+          1483,
+          1484
+        ],
+        "endpoints_world_m": [
+          [
+            -0.13121140454810218,
+            0.05975483410034426,
+            1.0600316429938645
+          ],
+          [
+            -0.12928997805616885,
+            0.07813625995957255,
+            1.0531723868938352
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            -0.17130880829675507,
+            0.03635937538887899,
+            0.3946986568155788
+          ],
+          [
+            -0.15327630216025456,
+            0.04418331517944962,
+            0.39286004764485655
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "edge_b": {
+        "edge_index": 34,
+        "imported_vertex_ids": [
+          1514,
+          1515
+        ],
+        "source_vertex_ids": [
+          1514,
+          1515
+        ],
+        "endpoints_world_m": [
+          [
+            -0.12672559030748917,
+            0.08459917076643406,
+            1.0284843122411382
+          ],
+          [
+            -0.13265901504107527,
+            0.06649186208433966,
+            1.0316753194224781
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            0.13524379602375397,
+            0.05045752030345552,
+            0.39120649561502063
+          ],
+          [
+            0.1532763021602546,
+            0.04418331517944962,
+            0.3928600476448565
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "minimum_3d_distance_m": 0.023206614269166422,
+      "closest_3d_parameters": [
+        1.0,
+        0.5653427343151853
+      ],
+      "closest_3d_points_m": [
+        [
+          -0.12928997805616885,
+          0.07813625995957255,
+          1.0531723868938352
+        ],
+        [
+          -0.13008000887022808,
+          0.07436233536500972,
+          1.0302883249662562
+        ]
+      ],
+      "minimum_xy_distance_m": 0.0,
+      "helper_proper_crossing": true,
+      "genuine_3d_intersection_within_tolerance": false,
+      "helper_endpoint_to_opposite_edge_distance_m": 0.000424408765188146,
+      "projected_intersection_kind": "proper_interior",
+      "projected_intersection_parameters": [
+        0.8911182827459472,
+        0.46745279315652066
+      ],
+      "projected_intersection_xy_m": [
+        -0.12949918627218798,
+        0.07613485874644171
+      ],
+      "interpolated_edge_points_at_xy_crossing_m": [
+        [
+          -0.12949918627218798,
+          0.07613485874644171,
+          1.0539192344770918
+        ],
+        [
+          -0.12949918627218798,
+          0.07613485874644171,
+          1.029975957461038
+        ]
+      ],
+      "xy_intersection_residual_m": 0.0,
+      "edge_z_at_xy_intersection_m": [
+        1.0539192344770918,
+        1.029975957461038
+      ],
+      "signed_z_difference_at_xy_intersection_m": 0.0239432770160537,
+      "absolute_z_difference_at_xy_intersection_m": 0.0239432770160537
+    },
+    {
+      "edge_indices": [
+        4,
+        34
+      ],
+      "edge_a": {
+        "edge_index": 4,
+        "imported_vertex_ids": [
+          1484,
+          1485
+        ],
+        "source_vertex_ids": [
+          1484,
+          1485
+        ],
+        "endpoints_world_m": [
+          [
+            -0.12928997805616885,
+            0.07813625995957255,
+            1.0531723868938352
+          ],
+          [
+            -0.12958112247667228,
+            0.09598015537978498,
+            1.0461326741250745
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            -0.15327630216025456,
+            0.04418331517944962,
+            0.39286004764485655
+          ],
+          [
+            -0.135243796023754,
+            0.050457520303455516,
+            0.39120649561502063
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "edge_b": {
+        "edge_index": 34,
+        "imported_vertex_ids": [
+          1514,
+          1515
+        ],
+        "source_vertex_ids": [
+          1514,
+          1515
+        ],
+        "endpoints_world_m": [
+          [
+            -0.12672559030748917,
+            0.08459917076643406,
+            1.0284843122411382
+          ],
+          [
+            -0.13265901504107527,
+            0.06649186208433966,
+            1.0316753194224781
+          ]
+        ],
+        "source_rest_endpoints_m": [
+          [
+            0.13524379602375397,
+            0.05045752030345552,
+            0.39120649561502063
+          ],
+          [
+            0.1532763021602546,
+            0.04418331517944962,
+            0.3928600476448565
+          ]
+        ],
+        "source_groups_touching_either_endpoint": []
+      },
+      "minimum_3d_distance_m": 0.020782162990616377,
+      "closest_3d_parameters": [
+        0.783524687675296,
+        0.0
+      ],
+      "closest_3d_points_m": [
+        [
+          -0.1295180968973122,
+          0.09211739254560514,
+          1.0476565981453683
+        ],
+        [
+          -0.12672559030748917,
+          0.08459917076643406,
+          1.0284843122411382
+        ]
+      ],
+      "minimum_xy_distance_m": 0.00042440876518814823,
+      "helper_proper_crossing": false,
+      "genuine_3d_intersection_within_tolerance": false,
+      "helper_endpoint_to_opposite_edge_distance_m": 0.000424408765188146
+    }
+  ],
+  "minimum_nonadjacent_3d_pair": {
+    "edge_indices": [
+      42,
+      44
+    ],
+    "edge_a": {
+      "edge_index": 42,
+      "imported_vertex_ids": [
+        793,
+        792
+      ],
+      "source_vertex_ids": [
+        793,
+        792
+      ],
+      "endpoints_world_m": [
+        [
+          -0.12075548262343523,
+          -0.058308240074593176,
+          1.0785111118862007
+        ],
+        [
+          -0.1115508685206953,
+          -0.06780617398558296,
+          1.0880974970006545
+        ]
+      ],
+      "source_rest_endpoints_m": [
+        [
+          0.13524379602375397,
+          -0.05045752030345552,
+          0.39120649561502063
+        ],
+        [
+          0.11946535315431607,
+          -0.05501804991397063,
+          0.3899087693778456
+        ]
+      ],
+      "source_groups_touching_either_endpoint": [
+        "handle_front",
+        "handle_front_root_right"
+      ]
+    },
+    "edge_b": {
+      "edge_index": 44,
+      "imported_vertex_ids": [
+        791,
+        790
+      ],
+      "source_vertex_ids": [
+        791,
+        790
+      ],
+      "endpoints_world_m": [
+        [
+          -0.11155805891230453,
+          -0.0700589028843095,
+          1.0884580911213588
+        ],
+        [
+          -0.1115746464431861,
+          -0.0723367371364912,
+          1.088760676018993
+        ]
+      ],
+      "source_rest_endpoints_m": [
+        [
+          0.11721128988725345,
+          -0.05560873067421752,
+          0.38973487167170984
+        ],
+        [
+          0.11495722662019091,
+          -0.056185181253428106,
+          0.38956391667190016
+        ]
+      ],
+      "source_groups_touching_either_endpoint": [
+        "handle_front",
+        "handle_front_root_right"
+      ]
+    },
+    "minimum_3d_distance_m": 0.0022814178295033423,
+    "closest_3d_parameters": [
+      1.0,
+      0.0
+    ],
+    "closest_3d_points_m": [
+      [
+        -0.1115508685206953,
+        -0.06780617398558296,
+        1.0880974970006545
+      ],
+      [
+        -0.11155805891230453,
+        -0.0700589028843095,
+        1.0884580911213588
+      ]
+    ],
+    "minimum_xy_distance_m": 0.0022527403740531696,
+    "helper_proper_crossing": false,
+    "genuine_3d_intersection_within_tolerance": false,
+    "helper_endpoint_to_opposite_edge_distance_m": 0.0022527403740531696
+  },
+  "nonadjacent_genuine_3d_intersection_pairs_within_tolerance": [],
+  "adjacent_topology_special_cases": [
+    {
+      "edge_indices": [
+        0,
+        1
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 760,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        0,
+        73
+      ],
+      "wrap_around": true,
+      "shared_imported_vertex_id": 761,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        1,
+        2
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1482,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        2,
+        3
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1483,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        3,
+        4
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1484,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        4,
+        5
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1485,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        5,
+        6
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1486,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        6,
+        7
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1487,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        7,
+        8
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1488,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        8,
+        9
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1489,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        9,
+        10
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1490,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        10,
+        11
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1491,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        11,
+        12
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1492,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        12,
+        13
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1493,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        13,
+        14
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1494,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        14,
+        15
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1495,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        15,
+        16
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1496,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        16,
+        17
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1497,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        17,
+        18
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1498,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        18,
+        19
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1499,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        19,
+        20
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1500,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        20,
+        21
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1501,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        21,
+        22
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1502,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        22,
+        23
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1503,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        23,
+        24
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1504,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        24,
+        25
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1505,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        25,
+        26
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1506,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        26,
+        27
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1507,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        27,
+        28
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1508,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        28,
+        29
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1509,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        29,
+        30
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1510,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        30,
+        31
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1511,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        31,
+        32
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1512,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        32,
+        33
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1513,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        33,
+        34
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1514,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        34,
+        35
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1515,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        35,
+        36
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1516,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        36,
+        37
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 1517,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        37,
+        38
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 797,
+      "minimum_3d_distance_m": 7.589415207398531e-19,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        38,
+        39
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 796,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        39,
+        40
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 795,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        40,
+        41
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 794,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        41,
+        42
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 793,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        42,
+        43
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 792,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        43,
+        44
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 791,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        44,
+        45
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 790,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        45,
+        46
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 789,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        46,
+        47
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 788,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        47,
+        48
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 787,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        48,
+        49
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 786,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        49,
+        50
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 785,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        50,
+        51
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 784,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        51,
+        52
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 783,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        52,
+        53
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 782,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        53,
+        54
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 781,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        54,
+        55
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 780,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        55,
+        56
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 779,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        56,
+        57
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 778,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        57,
+        58
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 777,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        58,
+        59
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 776,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        59,
+        60
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 775,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        60,
+        61
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 774,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        61,
+        62
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 773,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        62,
+        63
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 772,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        63,
+        64
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 771,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        64,
+        65
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 770,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        65,
+        66
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 769,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        66,
+        67
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 768,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        67,
+        68
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 767,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        68,
+        69
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 766,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        69,
+        70
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 765,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        70,
+        71
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 764,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        71,
+        72
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 763,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    },
+    {
+      "edge_indices": [
+        72,
+        73
+      ],
+      "wrap_around": false,
+      "shared_imported_vertex_id": 762,
+      "minimum_3d_distance_m": 0.0,
+      "projected_collinear_overlap_beyond_shared_endpoint": false
+    }
+  ],
+  "minimum_3d_pair_topology_note": "Edges 42 and 44 are separated by intervening edge 43; the closest points are its endpoints 792 and 791, so this minimum equals the length of that short connecting rim edge, not a distant fold intersection.",
+  "conclusion": "Exactly two actual XY interior crossings have 23.94-31.77 mm vertical separation. All nonadjacent piecewise-linear rim segments have positive 3D separation; no centerline self-intersection within 1e-8 m. The projected polygon remains invalid for the present _mouth contract.",
+  "distance_selftests": [
+    {
+      "name": "interior_cross",
+      "expected_m": 0,
+      "actual_m": 0.0,
+      "passed": true
+    },
+    {
+      "name": "skew_same_xy",
+      "expected_m": 0.02,
+      "actual_m": 0.02,
+      "passed": true
+    },
+    {
+      "name": "parallel_overlap",
+      "expected_m": 0.03,
+      "actual_m": 0.03,
+      "passed": true
+    },
+    {
+      "name": "disjoint_endpoints",
+      "expected_m": 1.4142135623730951,
+      "actual_m": 1.4142135623730951,
+      "passed": true
+    },
+    {
+      "name": "point_segment",
+      "expected_m": 1,
+      "actual_m": 1.0,
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Piecewise-linear centerline separation is not native cloth collision force or cloth-thickness separation.",
+    "No 3D rim self-crossing does not by itself establish a valid projected polygon or authorize insertion.",
+    "Single saved frame; this does not certify earlier motion, all body-surface triangles, or a simulated cap."
+  ]
+}

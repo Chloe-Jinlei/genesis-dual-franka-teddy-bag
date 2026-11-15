@@ -1,0 +1,54 @@
+{
+  "kind": "independent_positive_y20_completed_review_summary",
+  "physical_success": false,
+  "native_run_recommended_as_collision_free_route": false,
+  "production_modified_by_this_review": false,
+  "conclusion": "PositiveY20 improves the frozen transport-end distance but only delays front-handle intersection; no new native trial was started.",
+  "minimal_config_diff_if_a_future_guarded_experiment_is_chosen": {
+    "task.contact_trial.center_offsets_xy_m": [
+      [
+        0.0,
+        0.02
+      ]
+    ]
+  },
+  "original_zero_preparation_runner_durations_match_actual_full21_events_exactly": true,
+  "raw401_geometry": {
+    "both_offsets_all_original_rigid_categories_finite_and_above_8mm": true,
+    "both_actual_and_commanded_left_whole_bear_sweeps_above_5mm": true,
+    "scope": "Frozen ideal translation; robot/FK sampled, physical forces and evolving shapes unknown."
+  },
+  "native_retiming": {
+    "all_eight_runner_proxy_durations_reproduce_original501_retimer": true,
+    "six_preparation_reference_curves_continuous_rate_bounds_pass": true,
+    "positive_y20_provisional_insert_peak_acceleration_rad_s2": 0.5241907840760406,
+    "zero_provisional_insert_peak_acceleration_rad_s2": 0.5242450661659817,
+    "maximum_allowed_rad_s2": 0.5,
+    "witness": "right joint2,path fraction19/44; direct archived PPoly/MotionPlan.sample evaluation; fourth stage only provisional,fresh actual insertion must be replanned and independently checked."
+  },
+  "frontstrap": {
+    "zero_transport_end_sampled_distance_mm": 1.1678784124828965,
+    "positive_y20_transport_end_sampled_distance_mm": 13.85318419660214,
+    "positive_y20_at20mm_descent_sampled_distance_mm": 1.2908234130676417,
+    "positive_y20_at25mm_descent_sampled_distance_mm": 0.03187619504751999,
+    "positive_y20_at25mm_proper_static_edge_triangle_crossings": 6,
+    "positive_y20_witness_front_material_edge": [
+      1644,
+      1653
+    ],
+    "zero_at5mm_crossings": 8,
+    "scope": "All distances/crossings use actual35.060s bear+cloth held frozen and only0/+20mm offsets,not native later geometry."
+  },
+  "risks": [
+    "20mm positiveY shifts the foot contact to another segment of the same front strap,not around the whole strap.",
+    "The unchanged correction policy can later move negativeY; any such route requires fresh actual shape/contact guards.",
+    "Preparation feasibility does not establish whole teddy containment,release,retention,or safe insertion.",
+    "The parent explicitly chose not to launchY20 and delegated the independent rate fix separately."
+  ],
+  "evidence_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/independent-positive-y20-route-review/review.json": "c4cb4687eddf789ec613ef2c6d2dc981b5ef5860d3a1e172b90c70a2fb1a7862",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/independent-positive-y20-route-review/frontstrap-distances.json": "6b740437ace78f7d155267f3a28b3e4511c1e089cc64ef0ebb7ac5d49c0eb92c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/independent-positive-y20-route-review/frontstrap-static-intersection-witnesses.json": "d9bdf8d99a44b4f1eb219f5e31a684421d2e6308f9566189756e19afcd29be98",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/independent-positive-y20-route-review/independent-continuous-rates.json": "105f5e0009bfc1e6c02a67dc9aa335fff1738634b56d5f00bc19bc879303e910"
+  }
+}

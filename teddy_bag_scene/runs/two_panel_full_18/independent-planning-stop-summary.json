@@ -1,0 +1,419 @@
+{
+  "kind": "independent_full18_planning_stop_summary",
+  "created_utc": "2026-11-13T16:37:21.364065+00:00",
+  "physical_task_success": false,
+  "runtime_status": "failed",
+  "simulation_end_s": 29.044999999998506,
+  "last_completed_phase": "lift_teddy",
+  "stop_classification": "Initial guarded-contact preparation geometric rejection before transport; no observed executed-prefix soft-state gate failure.",
+  "runtime_error": "GateFailure: No admissible guarded-contact insertion candidate; see guarded_contact_candidate.json",
+  "executed_phases": [
+    "close_both_handles",
+    "drape_under_gravity",
+    "spread_bag",
+    "orient_held_bag",
+    "settle_oriented_bag",
+    "release_right_handle",
+    "right_clear_handle",
+    "teddy_pregrasp",
+    "teddy_grasp_approach",
+    "close_teddy_gripper",
+    "lift_teddy"
+  ],
+  "not_executed": [
+    "transport",
+    "lower_teddy_to_rim",
+    "center_teddy_at_rim",
+    "insert_teddy",
+    "release_teddy",
+    "withdraw",
+    "final_hold"
+  ],
+  "planning_rejection": {
+    "only_declared_com_offset_xy_m": [
+      [
+        0.024,
+        0.02
+      ]
+    ],
+    "rejections": [
+      "section lateral excursion exceeds declared fraction of actual opening minimum width",
+      "section slab overlap with actual opening below 40 percent"
+    ],
+    "maximum_lateral_excursion_m": 0.06645384501958033,
+    "allowed_lateral_excursion_m": 0.06199373381572976,
+    "excess_m": 0.004460111203850578,
+    "minimum_section_slab_overlap_fraction": 0.360928343779832,
+    "required_overlap_fraction": 0.4,
+    "mouth_minimum_caliper_width_m": 0.0774921672696622,
+    "com_boundary_clearance_m": 0.007854514692269792,
+    "com_check_passed": true,
+    "physical_state_rejections": [],
+    "robot_centering_attempts_count": 0,
+    "staged_center_config_was_never_executed": true
+  },
+  "actual_soft_summary": {
+    "provided": true,
+    "valid": true,
+    "columns": [
+      "time_s",
+      "minimum_tetra_volume_ratio",
+      "bag_table_penetration_m",
+      "bear_table_penetration_m",
+      "maximum_bag_edge_stretch_ratio",
+      "all_soft_states_finite"
+    ],
+    "sampling_scope": "Soft summary at each recorded integration step; full geometry at saved frames.",
+    "rows": 5810,
+    "maximum_interval_s": 0.005000000000000782,
+    "expected_integration_interval_s": 0.005,
+    "covers_all_saved_frame_timestamps": true,
+    "covers_all_joint_trace_timestamps": true,
+    "matches_independent_saved_frame_recomputation": true,
+    "maximum_shared_frame_absolute_error_by_metric": [
+      3.4416913763379853e-15,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "minimum_tetrahedron_volume_ratio": 0.23257960452763715,
+    "maximum_table_penetration_m": {
+      "bag": 0.0,
+      "bear": 0.0
+    },
+    "maximum_bag_edge_stretch_ratio": 1.0305556291367688,
+    "worst_volume_ratio_time_s": 26.649999999998983,
+    "errors": []
+  },
+  "actual_joint_motion": {
+    "left": {
+      "maximum_joint_velocity_rad_s": 0.24952965210171385,
+      "maximum_joint_acceleration_rad_s2": 0.16245280174587462,
+      "per_joint_peak_velocity_rad_s": [
+        0.24952965210171385,
+        0.0789027559962392,
+        0.19595963471905264,
+        0.09701235374831185,
+        0.08994945785350694,
+        0.226295395163163,
+        0.11619883210630633
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.09471560285162184,
+        0.08398558657347799,
+        0.12381862459989401,
+        0.16245280174587462,
+        0.1087909774824255,
+        0.10057355965500614,
+        0.12939519080674966
+      ],
+      "within_configured_limits": true
+    },
+    "right": {
+      "maximum_joint_velocity_rad_s": 0.7139732703418353,
+      "maximum_joint_acceleration_rad_s2": 1.0455164128972356,
+      "per_joint_peak_velocity_rad_s": [
+        0.1593531568785984,
+        0.7139732703418353,
+        0.304059431084279,
+        0.7138193051739563,
+        0.26698146180509497,
+        0.7138216055082296,
+        0.3827540170753565
+      ],
+      "per_joint_peak_acceleration_rad_s2": [
+        0.8210420867500758,
+        0.8532035690764701,
+        1.042073439890808,
+        1.0455164128972356,
+        0.6259534238939679,
+        0.8743108788623388,
+        0.4902032562285825
+      ],
+      "within_configured_limits": true
+    }
+  },
+  "actual_joint_motion_limits": {
+    "velocity_rad_s": 1.5,
+    "acceleration_rad_s2": 10.0,
+    "source": "config.validation or conservative audit defaults; not robot manufacturer limits"
+  },
+  "left_hold": {
+    "applicable": true,
+    "passed": true,
+    "material_group_retained": true,
+    "both_fingers_command_clamping": true,
+    "distance_limit_m": 0.018,
+    "pd_clamping_threshold_n": -0.1,
+    "distance_definition": "Nearest vertex belonging to the exact configured left grasp material group",
+    "sampling_scope": "Every saved full-geometry frame after right-handle release starts",
+    "force_evidence_scope": "Saved get_dofs_control_force PD values; not native contact force",
+    "errors": [],
+    "material_group": "grasp_front_center",
+    "source_npz": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/assets/two_panel_bag_wide_tall_coarse.npz",
+    "first_checked_time_s": 15.190000000000975,
+    "last_checked_time_s": 29.044999999998506,
+    "checked_frames": 280,
+    "source_to_rest_maximum_mapping_error_m": 6.944641773336686e-11,
+    "mapped_material_vertex_indices": [
+      1608,
+      1609,
+      1610,
+      1611,
+      1612,
+      1613,
+      1614,
+      1615,
+      1616
+    ],
+    "source_vertex_order_identical_to_rest": true,
+    "metadata_file": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_18/source/assets/metadata_two_panel_wide_tall_coarse.json",
+    "maximum_nearest_group_distance_m": 0.0008985729917426842,
+    "maximum_group_centroid_distance_m": 0.0008971292297590385,
+    "maximum_farthest_group_vertex_distance_m": 0.013413314066276787,
+    "first_material_distance_violation_s": null,
+    "finger_pd_minimum_n": [
+      -9.073936062875621,
+      -9.082672761339747
+    ],
+    "finger_pd_maximum_n": [
+      -8.947956509419624,
+      -9.004618779877596
+    ],
+    "first_pd_clamping_violation_s": null
+  },
+  "left_tcp_max_after_handoff_m": 4.403392579057994e-05,
+  "held_handle_native_reactions": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "all_recorded_values_finite": true,
+      "exact_four_individual_fingers_and_two_material_groups": true,
+      "strictly_increasing_fixed_step_times": true,
+      "every_integration_step_from_spread_until_handoff": true,
+      "all_four_opening_reactions_above_0p1n": true,
+      "both_designated_material_groups_within_18mm": true
+    },
+    "samples": 2818,
+    "start_s": 1.1049999999999984,
+    "end_s": 15.190000000000975,
+    "minimum_opening_reactions_n": [
+      8.883883969595196,
+      8.87601898459082,
+      8.902316536191357,
+      8.900569662712165
+    ],
+    "maximum_designated_material_distance_m": [
+      0.0006277036505285894,
+      0.0004724912218406937
+    ],
+    "phases": [
+      {
+        "phase": "spread_bag",
+        "samples": 386,
+        "min_opening_reactions_n": [
+          8.947561013671114,
+          8.930656081714096,
+          8.902316536191357,
+          8.900569662712165
+        ],
+        "max_opening_reactions_n": [
+          8.959825925154865,
+          8.944272689052477,
+          8.937850054488187,
+          8.932702507571829
+        ],
+        "max_designated_material_distance_m": [
+          0.00044520422769252146,
+          0.0004661150889345737
+        ]
+      },
+      {
+        "phase": "orient_held_bag",
+        "samples": 2332,
+        "min_opening_reactions_n": [
+          8.883883969595196,
+          8.87601898459082,
+          8.90265748497251,
+          8.908147216763641
+        ],
+        "max_opening_reactions_n": [
+          9.138305428038068,
+          9.164340328450855,
+          8.92980747151672,
+          8.928905294755047
+        ],
+        "max_designated_material_distance_m": [
+          0.000617017959216774,
+          0.0004724912218406937
+        ]
+      },
+      {
+        "phase": "settle_oriented_bag",
+        "samples": 100,
+        "min_opening_reactions_n": [
+          9.062033578127078,
+          9.092113545385317,
+          8.904057301967578,
+          8.926287930961388
+        ],
+        "max_opening_reactions_n": [
+          9.065754308569222,
+          9.096394538992042,
+          8.904276521998028,
+          8.926487526915356
+        ],
+        "max_designated_material_distance_m": [
+          0.0006277036505285894,
+          0.0004547532809942691
+        ]
+      }
+    ],
+    "limitations": [
+      "Reactions are IPC soft-coupling feedback, not contact forces identified by individual material.",
+      "Material proximity and four positive opening-axis reactions support held-handle evidence; they do not prove force closure.",
+      "Checks cover recorded integration states only."
+    ]
+  },
+  "guarded_contact_force_torque": {
+    "status": "not_entered",
+    "native_distal_force_max_n": null,
+    "native_tcp_torque_max_nm": null,
+    "right_finger_contact_max_n": null,
+    "reason": "Initial candidate rejected before contact_guard_trace; unavailable values are not zero and are not passed checks.",
+    "right_nearest_bear_distance_at_lift_endpoint_m": 0.008350287631954292
+  },
+  "native_low_hand_height_monitor": {
+    "status": "not_entered",
+    "reason": "No center or insert executed."
+  },
+  "coupling_diagnostics": {
+    "rows": 590,
+    "maximum_translation_error_m": 0.0014626532464914487,
+    "maximum_rotation_error_rad": 0.006580044389559985,
+    "maximum_affine_deviation": 6.233005753308873e-06,
+    "scope": "Saved diagnostics only; not a separate force-limit record."
+  },
+  "final_containment": {
+    "mouth_projected_area_m2": 0.02209069017143846,
+    "mouth_projected_crossings": 0,
+    "mouth_projected_dimensions_m": [
+      0.42409335173695384,
+      0.08165768235314184
+    ],
+    "mouth_nonplanarity_max_m": 0.025360368291898822,
+    "virtual_closed_body_valid": true,
+    "bear_vertex_inside_fraction": 0.0,
+    "bear_center_of_mass_m": [
+      0.34164683304228,
+      -0.26190191653411593,
+      1.2807240017744754
+    ],
+    "bear_center_of_mass_inside": false,
+    "all_bear_vertices_inside": false
+  },
+  "final_contact_samples": {
+    "method": "Discrete bag vertex, edge-midpoint and triangle-centroid winding/distance samples",
+    "sample_count": 11121,
+    "near_bear_samples": 0,
+    "inside_samples": 0,
+    "penetration_over_tolerance": 0,
+    "maximum_sampled_penetration_m": 0.0,
+    "tolerance_m": 0.001,
+    "continuous_collision_guarantee": false
+  },
+  "independent_audit_statuses": {
+    "runtime_status": "failed",
+    "geometry_and_soft_audit_status": "incomplete",
+    "guard_reaction_status": "not_entered",
+    "correction_sequence_status": "not_applicable_staged_trial",
+    "staged_sequence_status": "not_entered",
+    "staged_native_hand_height_status": "not_entered",
+    "held_handle_monitor_status": "passed",
+    "per_link_wrench_reconstruction_status": "not_entered"
+  },
+  "failed_final_checks": [
+    "bear_fully_inside_bag_final",
+    "bear_remains_inside_during_final_hold_samples",
+    "requested_phases_recorded_in_order",
+    "right_fingers_open_after_release",
+    "controller_explicitly_reports_task_complete"
+  ],
+  "failed_guard_checks": [],
+  "failed_staged_checks": [],
+  "failure_interpretation": "The five final false checks reflect an incomplete task, not an observed tear, collision or force/torque violation. Force guard and staged low-hand checks were not entered.",
+  "inputs": {
+    "manifest_matches": true,
+    "all_28_frozen_source_asset_hashes_equal_full17": true,
+    "all_initial_snapshot_arrays_identical_to_full17": true
+  },
+  "prefix_shape_comparison": {
+    "kind": "independent_full17_full18_matching_phase_shape_comparison",
+    "physical_success": false,
+    "scope": "Euclidean displacement between corresponding saved vertices; not a cause determination. Future center change was never executed in full18.",
+    "rows": [
+      {
+        "phase": "initial",
+        "full18_time_s": 0.0,
+        "time_difference_s": 0.0,
+        "maximum_bag_vertex_difference_m": 0.0,
+        "maximum_rim_vertex_difference_m": 0.0,
+        "maximum_bear_vertex_difference_m": 0.0,
+        "maximum_joint_difference": 0.0
+      },
+      {
+        "phase": "spread_bag",
+        "full18_time_s": 3.0299999999999576,
+        "time_difference_s": 0.0,
+        "maximum_bag_vertex_difference_m": 0.005509825427154364,
+        "maximum_rim_vertex_difference_m": 0.0026583325880136155,
+        "maximum_bear_vertex_difference_m": 3.425686456226821e-07,
+        "maximum_joint_difference": 1.384355464206788e-06
+      },
+      {
+        "phase": "settle_oriented_bag",
+        "full18_time_s": 15.190000000000975,
+        "time_difference_s": 0.0,
+        "maximum_bag_vertex_difference_m": 0.02040958564598093,
+        "maximum_rim_vertex_difference_m": 0.006567317430492326,
+        "maximum_bear_vertex_difference_m": 1.7525306025462694e-07,
+        "maximum_joint_difference": 1.6510893277033034e-06
+      },
+      {
+        "phase": "right_clear_handle",
+        "full18_time_s": 18.205000000000663,
+        "time_difference_s": 0.0,
+        "maximum_bag_vertex_difference_m": 0.03831391128296327,
+        "maximum_rim_vertex_difference_m": 0.029174018889107114,
+        "maximum_bear_vertex_difference_m": 2.0139171372690737e-07,
+        "maximum_joint_difference": 2.7195621719044993e-06
+      },
+      {
+        "phase": "teddy_grasp_approach",
+        "full18_time_s": 24.0549999999995,
+        "time_difference_s": 0.0,
+        "maximum_bag_vertex_difference_m": 0.03819352823077606,
+        "maximum_rim_vertex_difference_m": 0.028580907698128828,
+        "maximum_bear_vertex_difference_m": 1.1060934320862988e-05,
+        "maximum_joint_difference": 0.0013681050213014134
+      },
+      {
+        "phase": "lift_teddy",
+        "full18_time_s": 29.044999999998506,
+        "time_difference_s": 0.0,
+        "maximum_bag_vertex_difference_m": 0.038248178281267475,
+        "maximum_rim_vertex_difference_m": 0.028049607067504933,
+        "maximum_bear_vertex_difference_m": 0.00012867217415143893,
+        "maximum_joint_difference": 0.0017428871534803103
+      }
+    ]
+  },
+  "limitations": [
+    "No specific cause of observed between-run cloth shape differences has been established.",
+    "No full18 center-motion physics was executed; full17-based frozen candidate proof is not a full18 physical success.",
+    "Geometry sample and every-step summary audits do not certify continuous nonpenetration.",
+    "Effective material values remain uncalibrated."
+  ],
+  "runtime_and_independent_validation_numerics_and_checks_agree": true,
+  "validation_path_difference": "Independent audit resolves held-material assets from frozen source/assets; runtime report used live asset paths. Frozen bytes agree."
+}

@@ -1,0 +1,545 @@
+{
+  "kind": "independent_richer_contact_trace_review",
+  "physical_task_success": null,
+  "held_handle_monitor": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "all_recorded_values_finite": true,
+      "exact_four_individual_fingers_and_two_material_groups": true,
+      "strictly_increasing_fixed_step_times": true,
+      "every_integration_step_from_spread_until_handoff": true,
+      "all_four_opening_reactions_above_0p1n": true,
+      "both_designated_material_groups_within_18mm": true
+    },
+    "samples": 2818,
+    "start_s": 1.1049999999999984,
+    "end_s": 15.190000000000975,
+    "minimum_opening_reactions_n": [
+      8.890056439614732,
+      8.91392142349387,
+      8.900598112033354,
+      8.900125284607462
+    ],
+    "maximum_designated_material_distance_m": [
+      0.000545404776660428,
+      0.0004580959986086437
+    ],
+    "phases": [
+      {
+        "phase": "spread_bag",
+        "samples": 386,
+        "min_opening_reactions_n": [
+          8.945079652015139,
+          8.927655305025706,
+          8.902034103818536,
+          8.900125284607462
+        ],
+        "max_opening_reactions_n": [
+          8.95809494839691,
+          8.941993468972713,
+          8.93762769266097,
+          8.932349910822731
+        ],
+        "max_designated_material_distance_m": [
+          0.00039675589876840263,
+          0.00045671590845574656
+        ]
+      },
+      {
+        "phase": "orient_held_bag",
+        "samples": 2332,
+        "min_opening_reactions_n": [
+          8.890056439614732,
+          8.91392142349387,
+          8.900598112033354,
+          8.911107500116389
+        ],
+        "max_opening_reactions_n": [
+          9.149146819497924,
+          9.174254813596836,
+          8.926462571585656,
+          8.927975703824552
+        ],
+        "max_designated_material_distance_m": [
+          0.0005348645701622117,
+          0.0004580959986086437
+        ]
+      },
+      {
+        "phase": "settle_oriented_bag",
+        "samples": 100,
+        "min_opening_reactions_n": [
+          9.069505687599845,
+          9.105966510708607,
+          8.901258419754058,
+          8.92164211682014
+        ],
+        "max_opening_reactions_n": [
+          9.072679884804524,
+          9.109509237485657,
+          8.901839961383203,
+          8.922125814719431
+        ],
+        "max_designated_material_distance_m": [
+          0.000545404776660428,
+          0.0004111711111036868
+        ]
+      }
+    ],
+    "limitations": [
+      "Reactions are IPC soft-coupling feedback, not contact forces identified by individual material.",
+      "Material proximity and four positive opening-axis reactions support held-handle evidence; they do not prove force closure.",
+      "Checks cover recorded integration states only."
+    ]
+  },
+  "per_link_wrench_reconstruction": {
+    "status": "passed",
+    "passed": true,
+    "checks": {
+      "right_per_link_shifted_moment_reconstructs": true,
+      "right_total_shifted_moment_reconstructs": true,
+      "right_total_force_reconstructs": true,
+      "right_finger_axis_projection_reconstructs": true,
+      "left_per_link_shifted_moment_reconstructs": true,
+      "left_total_shifted_moment_reconstructs": true,
+      "left_total_force_reconstructs": true,
+      "left_finger_axis_projection_reconstructs": true,
+      "left_finger_force_norm_reconstructs": true,
+      "stable_left_link_mapping": true,
+      "stable_right_link_mapping": true,
+      "raw_geometry_and_wrenches_finite": true,
+      "opening_axes_unit_length": true
+    },
+    "reconstruction_max_absolute_errors": {
+      "right_per_link_shifted_moment": 0.0,
+      "right_total_shifted_moment": 0.0,
+      "right_total_force": 0.0,
+      "right_finger_axis_projection": 0.0,
+      "left_per_link_shifted_moment": 0.0,
+      "left_total_shifted_moment": 0.0,
+      "left_total_force": 0.0,
+      "left_finger_axis_projection": 0.0,
+      "left_finger_force_norm": 0.0
+    },
+    "samples": 8147,
+    "left_link_diagnostics": [
+      {
+        "link": "link0",
+        "max_raw_force_n": 0.0,
+        "peak_time_s": 29.034999999998508,
+        "force_at_peak_world_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_torque_at_left_tcp_nm": 0.0,
+        "first_force_world_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "last_force_world_n": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "link": "link1",
+        "max_raw_force_n": 0.00013113266395912103,
+        "peak_time_s": 60.76000000001263,
+        "force_at_peak_world_n": [
+          -9.06508008161432e-05,
+          9.475340557682289e-05,
+          4.241107597643337e-11
+        ],
+        "max_torque_at_left_tcp_nm": 7.684878314155084e-05,
+        "first_force_world_n": [
+          -4.9275885662909224e-08,
+          5.147208654217889e-08,
+          -1.1575649905557516e-12
+        ],
+        "last_force_world_n": [
+          4.430005010699274e-07,
+          -4.631109080193949e-07,
+          1.8987615249469824e-12
+        ]
+      },
+      {
+        "link": "link2",
+        "max_raw_force_n": 0.00026585781847108066,
+        "peak_time_s": 60.765000000012634,
+        "force_at_peak_world_n": [
+          0.000256363094795751,
+          7.007310428194956e-05,
+          -6.935656078402085e-06
+        ],
+        "max_torque_at_left_tcp_nm": 0.00012241140266481865,
+        "first_force_world_n": [
+          1.9484357366787627e-07,
+          -1.9940386182731585e-08,
+          9.783450948871823e-08
+        ],
+        "last_force_world_n": [
+          -1.9021569999033854e-06,
+          3.3565782349009376e-07,
+          -1.1561348679105767e-06
+        ]
+      },
+      {
+        "link": "link3",
+        "max_raw_force_n": 0.0007725248796101982,
+        "peak_time_s": 60.765000000012634,
+        "force_at_peak_world_n": [
+          0.0007095766264705147,
+          0.00022690434650684906,
+          0.0002044752266651746
+        ],
+        "max_torque_at_left_tcp_nm": 0.0002791430578602953,
+        "first_force_world_n": [
+          4.983120947109485e-07,
+          3.648764669029291e-08,
+          2.761670198469927e-07
+        ],
+        "last_force_world_n": [
+          -4.858832214173684e-06,
+          1.7911729080725974e-08,
+          -3.089168285994627e-06
+        ]
+      },
+      {
+        "link": "link4",
+        "max_raw_force_n": 0.0007386844234634443,
+        "peak_time_s": 60.765000000012634,
+        "force_at_peak_world_n": [
+          0.00041145993254260936,
+          -0.0003883463274405239,
+          0.00047491318295348454
+        ],
+        "max_torque_at_left_tcp_nm": 0.0003151854568542251,
+        "first_force_world_n": [
+          6.180385828667503e-07,
+          -1.7917759343016314e-07,
+          1.309349236182079e-07
+        ],
+        "last_force_world_n": [
+          -6.560595758085318e-06,
+          2.2116497141858444e-06,
+          -8.432239724215585e-07
+        ]
+      },
+      {
+        "link": "link5",
+        "max_raw_force_n": 0.002279985414509592,
+        "peak_time_s": 60.690000000012596,
+        "force_at_peak_world_n": [
+          0.0007940720661340809,
+          -0.0004534846640167615,
+          0.002088572408049008
+        ],
+        "max_torque_at_left_tcp_nm": 0.0005538767104303707,
+        "first_force_world_n": [
+          1.9595721204614724e-07,
+          -5.619244778571956e-07,
+          -3.9210938836143344e-07
+        ],
+        "last_force_world_n": [
+          -1.1997000340796908e-06,
+          5.9856776244287175e-06,
+          6.5458255746343556e-06
+        ]
+      },
+      {
+        "link": "link6",
+        "max_raw_force_n": 0.0020664289357204824,
+        "peak_time_s": 60.690000000012596,
+        "force_at_peak_world_n": [
+          0.000150054843258401,
+          -0.0007449620766778232,
+          0.0019216252482493685
+        ],
+        "max_torque_at_left_tcp_nm": 0.0004408605791142242,
+        "first_force_world_n": [
+          1.9865505043727414e-07,
+          -5.204738042799708e-07,
+          -4.40146794420457e-07
+        ],
+        "last_force_world_n": [
+          -1.9037572777424624e-07,
+          6.3467717542434624e-06,
+          6.94169854848086e-06
+        ]
+      },
+      {
+        "link": "link7",
+        "max_raw_force_n": 0.00251621671004934,
+        "peak_time_s": 60.690000000012596,
+        "force_at_peak_world_n": [
+          0.00012831362718325348,
+          -0.0008649813001344241,
+          0.0023593832870960926
+        ],
+        "max_torque_at_left_tcp_nm": 0.0002389396130351527,
+        "first_force_world_n": [
+          2.3395650484081224e-07,
+          -6.676199528062849e-07,
+          -6.037311005723261e-07
+        ],
+        "last_force_world_n": [
+          -5.769715746050907e-07,
+          6.559858288666242e-06,
+          6.932337963952758e-06
+        ]
+      },
+      {
+        "link": "left_finger",
+        "max_raw_force_n": 8.975999291197311,
+        "peak_time_s": 45.21500000000468,
+        "force_at_peak_world_n": [
+          -0.029870957572486614,
+          -8.975204859961174,
+          -0.11562319489478703
+        ],
+        "max_torque_at_left_tcp_nm": 0.04419556453613149,
+        "first_force_world_n": [
+          0.0025932140899743122,
+          -8.943784533573341,
+          -0.12379830664147073
+        ],
+        "last_force_world_n": [
+          -0.04542201227097964,
+          -8.90636101253401,
+          -0.18307668956367334
+        ]
+      },
+      {
+        "link": "right_finger",
+        "max_raw_force_n": 9.283195461093303,
+        "peak_time_s": 57.31000000001087,
+        "force_at_peak_world_n": [
+          -0.08816797920961805,
+          9.204117275885718,
+          -1.2058895256396671
+        ],
+        "max_torque_at_left_tcp_nm": 0.045476660844820584,
+        "first_force_world_n": [
+          0.06973800990863221,
+          9.085883034579616,
+          -0.3925655545871807
+        ],
+        "last_force_world_n": [
+          -0.042192798685451796,
+          8.972287631548959,
+          -0.17591208932237457
+        ]
+      }
+    ],
+    "phase_palm_diagnostics": [
+      {
+        "phase": "lift_teddy",
+        "sample_count": 1,
+        "left_palm_force_norm_min_max_n": [
+          9.300232735478544e-07,
+          9.300232735478544e-07
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            2.3395650484081224e-07,
+            -6.676199528062849e-07,
+            -6.037311005723261e-07
+          ],
+          [
+            2.3395650484081224e-07,
+            -6.676199528062849e-07,
+            -6.037311005723261e-07
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 8.191409495767166e-08,
+        "right_palm_force_norm_max_n": 0.0011576958751666516
+      },
+      {
+        "phase": "orient_teddy_postlift",
+        "sample_count": 1206,
+        "left_palm_force_norm_min_max_n": [
+          3.968542840491435e-13,
+          0.00045727035815128946
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            2.3395650484081224e-07,
+            -6.676199528062849e-07,
+            -6.037311005723261e-07
+          ],
+          [
+            2.4001694476896457e-08,
+            -2.2326085091843183e-07,
+            3.3451110306974996e-07
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 3.9272971127408245e-05,
+        "right_palm_force_norm_max_n": 0.007499420564097359
+      },
+      {
+        "phase": "adjust_teddy_height_contact_trial",
+        "sample_count": 504,
+        "left_palm_force_norm_min_max_n": [
+          5.382217707986611e-11,
+          0.0012073416082641589
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            2.4001694476896457e-08,
+            -2.2326085091843183e-07,
+            3.3451110306974996e-07
+          ],
+          [
+            -4.7461834480257935e-06,
+            4.8965982114060294e-05,
+            -9.214655876010731e-05
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 0.00011363563308286724,
+        "right_palm_force_norm_max_n": 0.005283524873011358
+      },
+      {
+        "phase": "transport_teddy_along_y",
+        "sample_count": 1114,
+        "left_palm_force_norm_min_max_n": [
+          3.4413642629333793e-13,
+          0.00046528910958222185
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            -4.7461834480257935e-06,
+            4.8965982114060294e-05,
+            -9.214655876010731e-05
+          ],
+          [
+            8.51163318117047e-08,
+            -1.7506305751229596e-08,
+            -1.1008643380594335e-06
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 4.4039039643479644e-05,
+        "right_palm_force_norm_max_n": 0.02972578386103744
+      },
+      {
+        "phase": "transport_teddy",
+        "sample_count": 1199,
+        "left_palm_force_norm_min_max_n": [
+          9.057252252551479e-13,
+          0.0006535718080783951
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            8.51163318117047e-08,
+            -1.7506305751229596e-08,
+            -1.1008643380594335e-06
+          ],
+          [
+            -4.581979441915821e-06,
+            1.6054862699625013e-05,
+            -1.1808378091098983e-05
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 6.017609495448503e-05,
+        "right_palm_force_norm_max_n": 0.017733983973990376
+      },
+      {
+        "phase": "insert_teddy",
+        "sample_count": 2287,
+        "left_palm_force_norm_min_max_n": [
+          2.436455431075113e-13,
+          0.0007745726297567458
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            -4.581979441915821e-06,
+            1.6054862699625013e-05,
+            -1.1808378091098983e-05
+          ],
+          [
+            -4.05184375521084e-05,
+            0.00021153378175772124,
+            -9.353479207062934e-05
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 7.194946530211991e-05,
+        "right_palm_force_norm_max_n": 0.4656452390484051
+      },
+      {
+        "phase": "release_teddy",
+        "sample_count": 101,
+        "left_palm_force_norm_min_max_n": [
+          5.919839964623948e-12,
+          0.00251621671004934
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            -4.05184375521084e-05,
+            0.00021153378175772124,
+            -9.353479207062934e-05
+          ],
+          [
+            -1.7988759813359335e-13,
+            3.083568798355015e-12,
+            1.0667481248363296e-11
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 0.0002389396130351527,
+        "right_palm_force_norm_max_n": 0.3896087076146827
+      },
+      {
+        "phase": "withdraw_right_arm",
+        "sample_count": 1342,
+        "left_palm_force_norm_min_max_n": [
+          4.1815495215747e-13,
+          0.00025292402760927724
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            -1.7988759813359335e-13,
+            3.083568798355015e-12,
+            1.0667481248363296e-11
+          ],
+          [
+            -1.788544596363132e-06,
+            6.973105143898715e-06,
+            -1.6265356460647675e-05
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 2.399865565050693e-05,
+        "right_palm_force_norm_max_n": 0.3810869851507047
+      },
+      {
+        "phase": "final_settle",
+        "sample_count": 401,
+        "left_palm_force_norm_min_max_n": [
+          6.495052601448469e-09,
+          0.00012703022943088513
+        ],
+        "left_palm_force_world_first_last_n": [
+          [
+            -1.788544596363132e-06,
+            6.973105143898715e-06,
+            -1.6265356460647675e-05
+          ],
+          [
+            -5.769715746050907e-07,
+            6.559858288666242e-06,
+            6.932337963952758e-06
+          ]
+        ],
+        "left_palm_torque_at_left_tcp_norm_max_nm": 1.20127641656644e-05,
+        "right_palm_force_norm_max_n": 0.0005432973491954856
+      }
+    ],
+    "limitations": [
+      "Exact algebraic reconstruction checks stored reaction geometry, not independent native solver pair forces.",
+      "Left link7 contains the welded palm. Its nonzero reaction alone cannot identify teddy versus cloth contact.",
+      "No new force or torque limits are imposed by these diagnostic summaries."
+    ]
+  },
+  "note": "Only independent-task containment, physics, sequencing and force-limit audits can establish simulated task success."
+}

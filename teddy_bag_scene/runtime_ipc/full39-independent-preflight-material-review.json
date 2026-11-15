@@ -1,0 +1,267 @@
+{
+  "kind": "independent_same_phase_preflight_COM_geometry_review",
+  "created_utc": "2026-11-15T21:49:35.738985+00:00",
+  "scope": "Only immutable completed Full38/failed Full39 inputs; no new candidate planning, native simulation or production changes.",
+  "observations": {
+    "38": {
+      "run_path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38",
+      "saved_state": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/orient_teddy_postlift.npz",
+      "actual_source_time_s": 23.314999999999646,
+      "phase": "orient_teddy_postlift endpoint, initial guarded-contact preflight",
+      "run_status": "completed",
+      "candidate_status": "candidate",
+      "rejections": [],
+      "declared_com_offsets_m": [
+        [
+          -0.01,
+          0.03075
+        ]
+      ],
+      "mouth_area_centroid_xy_m": [
+        -0.17948734936053404,
+        0.06545760771204152
+      ],
+      "mouth_projected_area_m2": 0.03149131438341407,
+      "mouth_convex_hull_area_m2_diagnostic": 0.03484131769172029,
+      "actual_polygon_to_hull_area_ratio": 0.9038496954119989,
+      "recorded_projected_crossings": 0,
+      "recorded_minimum_caliper_width_m": 0.11984268580102829,
+      "rim_z_range_m": [
+        0.9500843595364501,
+        1.124517850096338
+      ],
+      "actual_rim_point_count": 74,
+      "vertical_capacity": {
+        "observed_bear_height_m": 0.15982061285482563,
+        "usable_height_below_actual_lowest_rim_m": 0.1980843595364501,
+        "height_margin_m": 0.038263746681624466,
+        "planned_bear_bottom_z_m": 0.75,
+        "planned_bear_top_z_m": 0.9098206128548256,
+        "planned_table_clearance_m": 0.01,
+        "whole_bear_end_below_lowest_rim": true,
+        "bottom_clearance_is_planning_allowance_not_physical_contact_law": true
+      },
+      "independent_declared_COM_test": {
+        "inside": true,
+        "boundary_distance_m": 0.042985757797381105,
+        "signed_inside_distance_m": 0.042985757797381105,
+        "nearest_ordered_edge": [
+          3,
+          4
+        ],
+        "nearest_boundary_xy_m": [
+          -0.23207609919798716,
+          0.09037890625305875
+        ],
+        "horizontal_line_x_intersections_m": [
+          -0.2329084981854764,
+          -0.1308364055426488
+        ],
+        "target_xy_m": [
+          -0.18948734936053405,
+          0.09620760771204152
+        ],
+        "signed_margin_after_required_2mm_m": 0.0409857577973811,
+        "nearest_native_rim_nodes": [
+          1483,
+          1484
+        ],
+        "inside_convex_hull_diagnostic_only": true,
+        "horizontal_open_interval_width_at_target_y_m": 0.1020720926428276
+      },
+      "number_section_candidates_evaluated": 1,
+      "number_robot_attempts_evaluated": 1,
+      "observed_physical_state": {
+        "minimum_tetra_volume_ratio": 0.5354862045802017,
+        "maximum_bag_edge_stretch_ratio": 1.007423934221918,
+        "bag_table_penetration_m": 0.0,
+        "bear_table_penetration_m": 0.0,
+        "physical_state_rejections": []
+      },
+      "policy": {
+        "bottom_clearance_m": 0.01,
+        "endpoint_below_lowest_rim_m": 0.002,
+        "start_above_highest_rim_m": 0.04,
+        "planned_outside_clearance_m": 0.045,
+        "com_boundary_clearance_m": 0.002,
+        "lateral_excursion_fraction_of_mouth_width": 0.8,
+        "minimum_section_envelope_overlap_fraction": 0.4,
+        "maximum_initial_com_offset_m": 0.035,
+        "transport_xy_strategy": "y_then_x",
+        "rim_perimeter_policy": "deformable_rim_contact",
+        "rim_perimeter_criterion": "buffered_section_only",
+        "rim_perimeter_clearance_m": 0.002,
+        "rigid_clearance_m": 0.008,
+        "left_robot_soft_sweep_clearance_m": 0.005,
+        "minimum_insert_duration_s": 6.0,
+        "minimum_tetra_volume_ratio": 0.05,
+        "maximum_cloth_edge_stretch_ratio": 1.15,
+        "maximum_table_penetration_m": 0.002,
+        "maximum_left_designated_handle_distance_m": 0.018,
+        "maximum_right_teddy_distance_m": 0.045,
+        "maximum_tcp_fk_error_m": 0.002,
+        "force_and_torque_runtime_limits": {
+          "maximum_contact_force_N": 8.0,
+          "maximum_wrist_contact_torque_Nm": 0.15
+        },
+        "note": "Lateral/overlap/perimeter are declared trial policies, not physical laws. Explicit lateral/overlap values permit a bounded contact experiment, not a material-feasibility claim. The initial COM search radius does not change the 30 mm individual or 50 mm cumulative correction budget. The 5 mm minimum teddy/left-robot clearance is an engineering preflight allowance, not a physical law. Bottom clearance and lateral trial fraction are configurable; no compression is prescribed."
+      }
+    },
+    "39": {
+      "run_path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_39",
+      "saved_state": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_39/orient_teddy_postlift.npz",
+      "actual_source_time_s": 23.314999999999646,
+      "phase": "orient_teddy_postlift endpoint, initial guarded-contact preflight",
+      "run_status": "failed",
+      "candidate_status": "rejected",
+      "rejections": [
+        "No planned COM lies inside actual projected opening with 2 mm margin"
+      ],
+      "declared_com_offsets_m": [
+        [
+          -0.01,
+          0.03075
+        ]
+      ],
+      "mouth_area_centroid_xy_m": [
+        -0.1556540348518454,
+        0.026306257211476367
+      ],
+      "mouth_projected_area_m2": 0.01551389977244002,
+      "mouth_convex_hull_area_m2_diagnostic": 0.024683299294992397,
+      "actual_polygon_to_hull_area_ratio": 0.62851807560375,
+      "recorded_projected_crossings": 0,
+      "recorded_minimum_caliper_width_m": 0.09383709238581887,
+      "rim_z_range_m": [
+        0.9649179561813883,
+        1.1229500586165915
+      ],
+      "actual_rim_point_count": 74,
+      "vertical_capacity": {
+        "observed_bear_height_m": 0.15981942495882495,
+        "usable_height_below_actual_lowest_rim_m": 0.2129179561813883,
+        "height_margin_m": 0.05309853122256336,
+        "planned_bear_bottom_z_m": 0.75,
+        "planned_bear_top_z_m": 0.909819424958825,
+        "planned_table_clearance_m": 0.01,
+        "whole_bear_end_below_lowest_rim": true,
+        "bottom_clearance_is_planning_allowance_not_physical_contact_law": true
+      },
+      "independent_declared_COM_test": {
+        "inside": false,
+        "boundary_distance_m": 0.008635943697249973,
+        "signed_inside_distance_m": -0.008635943697249973,
+        "nearest_ordered_edge": [
+          2,
+          3
+        ],
+        "nearest_boundary_xy_m": [
+          -0.15818555157334438,
+          0.05272021280893364
+        ],
+        "horizontal_line_x_intersections_m": [
+          -0.15672597636964894,
+          -0.11510785034236666
+        ],
+        "target_xy_m": [
+          -0.1656540348518454,
+          0.05705625721147636
+        ],
+        "signed_margin_after_required_2mm_m": -0.010635943697249973,
+        "nearest_native_rim_nodes": [
+          1482,
+          1483
+        ],
+        "inside_convex_hull_diagnostic_only": true,
+        "horizontal_open_interval_width_at_target_y_m": 0.04161812602728228
+      },
+      "number_section_candidates_evaluated": 0,
+      "number_robot_attempts_evaluated": 0,
+      "observed_physical_state": {
+        "minimum_tetra_volume_ratio": 0.5351548330106747,
+        "maximum_bag_edge_stretch_ratio": 1.0095218167047089,
+        "bag_table_penetration_m": 0.0,
+        "bear_table_penetration_m": 0.0,
+        "physical_state_rejections": []
+      },
+      "policy": {
+        "bottom_clearance_m": 0.01,
+        "endpoint_below_lowest_rim_m": 0.002,
+        "start_above_highest_rim_m": 0.04,
+        "planned_outside_clearance_m": 0.045,
+        "com_boundary_clearance_m": 0.002,
+        "lateral_excursion_fraction_of_mouth_width": 0.8,
+        "minimum_section_envelope_overlap_fraction": 0.4,
+        "maximum_initial_com_offset_m": 0.035,
+        "transport_xy_strategy": "y_then_x",
+        "rim_perimeter_policy": "deformable_rim_contact",
+        "rim_perimeter_criterion": "buffered_section_only",
+        "rim_perimeter_clearance_m": 0.002,
+        "rigid_clearance_m": 0.008,
+        "left_robot_soft_sweep_clearance_m": 0.005,
+        "minimum_insert_duration_s": 6.0,
+        "minimum_tetra_volume_ratio": 0.05,
+        "maximum_cloth_edge_stretch_ratio": 1.15,
+        "maximum_table_penetration_m": 0.002,
+        "maximum_left_designated_handle_distance_m": 0.018,
+        "maximum_right_teddy_distance_m": 0.045,
+        "maximum_tcp_fk_error_m": 0.002,
+        "force_and_torque_runtime_limits": {
+          "maximum_contact_force_N": 8.0,
+          "maximum_wrist_contact_torque_Nm": 0.15
+        },
+        "note": "Lateral/overlap/perimeter are declared trial policies, not physical laws. Explicit lateral/overlap values permit a bounded contact experiment, not a material-feasibility claim. The initial COM search radius does not change the 30 mm individual or 50 mm cumulative correction budget. The 5 mm minimum teddy/left-robot clearance is an engineering preflight allowance, not a physical law. Bottom clearance and lateral trial fraction are configurable; no compression is prescribed."
+      }
+    }
+  },
+  "config_differences": [
+    {
+      "path": "/bag/handle_shear_stiffness",
+      "full38": 250.0,
+      "full39": 500.0
+    }
+  ],
+  "nonconfig_frozen_manifest_differences": [],
+  "independent_checks_passed": true,
+  "interpretation_zh": [
+    "Full39\u7684\u552f\u4e00\u9884\u58f0\u660eCOM\u5019\u9009\u5728\u5b9e\u9645\u6709\u5e8f\u53e3\u7f18\u7684\u4e16\u754cXY\u6295\u5f71\u59168.636\u6beb\u7c73\uff1b\u5b83\u5728\u51f8\u5305\u5185\u4e0d\u6784\u6210\u901a\u8fc7\u4f9d\u636e\u3002Full38\u76f8\u540c\u76f8\u5bf9\u504f\u79fb\u5728\u5b9e\u9645\u6295\u5f71\u518542.986\u6beb\u7c73\u3002",
+    "\u4e24\u6b21\u540c\u4e3a23.315\u79d2\u7684\u5b9e\u9645\u8f6c\u8155\u672b\u6001\uff1b\u7edd\u5bf9COM\u76ee\u6807\u5404\u81ea\u4f9d\u8d56\u672c\u8f6e\u5b9e\u9645\u888b\u53e3\u9762\u79ef\u8d28\u5fc3\uff0c\u4e0d\u80fd\u628a\u76f8\u540c\u504f\u79fb\u8bef\u79f0\u76f8\u540c\u4e16\u754c\u5750\u6807\u3002",
+    "Full39\u9ad8\u5ea6\u4f59\u91cf\u4e3a\u6b6353.099\u6beb\u7c73\uff0c\u4e0d\u662f\u6700\u4f4e\u53e3\u7f18\u9ad8\u5ea6\u62d2\u7edd\u3002\u672a\u6267\u884c\u8fd0\u8f93\u6216\u63d2\u5165\uff0c\u4e5f\u672a\u8fdb\u5165section\u5019\u9009\u6216\u673a\u5668\u4eba\u8def\u5f84\u5c1d\u8bd5\u3002",
+    "\u8be5\u62d2\u7edd\u9650\u5b9a\u4e8e\u552f\u4e00\u58f0\u660e\u504f\u79fb[-10,+30.75]\u6beb\u7c73\uff1b35\u6beb\u7c73\u53ea\u7ea6\u675f\u504f\u79fb\u534a\u5f84\uff0c\u7a0b\u5e8f\u6ca1\u6709\u641c\u7d22\u6574\u7247\u533a\u57df\u3002\u5b83\u4e0d\u8bc1\u660e\u6240\u6709\u6293\u59ff/\u4f4d\u7f6e\u7269\u7406\u65e0\u89e3\uff0c\u4ea6\u4e0d\u6388\u6743\u7ed5\u8fc7\u539f\u95e8\u3002",
+    "\u533a\u57df\u9762\u79ef\u4e0e\u51f9\u9677\u662f\u5b9e\u9645\u89c2\u6d4b\u5dee\u5f02\uff0c\u5355\u6b2138/39\u6bd4\u8f83\u4e0d\u80fd\u7ed9\u51fa\u63d0\u5e26\u526a\u5207\u521a\u5ea6\u5230\u888b\u53e3\u5f62\u72b6\u7684\u5355\u8c03\u6216\u72ec\u7acb\u56e0\u679c\u5173\u7cfb\u3002"
+  ],
+  "bounded_next_material_hypothesis": {
+    "proposed_handle_shear_N_per_m": 350.0,
+    "relative_to_completed_full38_factor": 1.4,
+    "unchanged": "Full38 other material values, bag/teddy geometry, control, solver and all acceptance gates",
+    "basis_zh": "\u5728\u5df2\u901a\u8fc7\u7684250\u4e0e\u88ab\u62d2\u7edd\u7684500\u4e4b\u95f4\uff0c\u4ec5\u4f5c\u4e00\u6b21\u8f83\u5c0f\u63d0\u5e26\u6297\u526a\u521a\u5ea6\u589e\u91cf\uff1b\u6b64\u524dFull38\u5168\u5e27\u663e\u793a\u63d0\u5e26\u5939\u89d2\u53d8\u5f62\u660e\u663e\uff0c\u6545\u6b64\u533a\u57df\u53c2\u6570\u65b9\u5411\u6709\u673a\u5236\u4f9d\u636e\u3002",
+    "not_established_zh": "350\u672a\u7ecf\u7ec7\u7269\u6807\u5b9a\uff0c\u4e0d\u80fd\u4fdd\u8bc1\u888b\u53e3\u66f4\u5bbd\u3001COM\u95e8\u901a\u8fc7\u3001\u4e3b\u4f38\u957f\u4e0b\u964d\u6216\u5168\u6d41\u7a0b\u6210\u529f\uff1b\u5fc5\u987b\u91cd\u65b0\u4ece\u539f\u751f\u521d\u6001\u89c2\u5bdf\u53ca\u4fdd\u7559\u539f\u6700\u7ec8\u9a8c\u6536\u3002"
+  },
+  "source_contract": {
+    "COM_guard": "source/contact_insertion.py:434-447, actual ordered rim XY polygon, point inside AND >=2mm boundary distance",
+    "target": "source/contact_insertion.py:380-396, actual polygon area centroid + declared offsets",
+    "point_predicate": "source/insertion_candidates.py:21-36, ray crossing + nearest segment distance",
+    "body_boundary": "source/validate.py:101-157, body opening boundary excluding handle loops",
+    "independent_review": "Separate child read-only source inspection confirmed unchanged contracts; no production import or native initialization used."
+  },
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/config.json": "24ec28685624319b832f1df9df59301289cc29c79c8e085695b88763f2227768",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/report.json": "4bb67e2dc8b109396fbaa24138dcb04d12c9fdcbfc03ee6e2e712d5ef857aed0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/guarded_contact_candidate.json": "e83aca259b18358b400c690300df4bb2794c58d9b5ddfe8c7abb9f64bcee1ea4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/orient_teddy_postlift.npz": "9d5c2cb18ce07a71ea4cecb73abf3ffa4949dc173ed2bcefcaae8f097ba18bc0",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_38/input_sha256.json": "3dd396105db5836383264fa6dd4fc81d8610f70282321729b9a2e33a80cb45dc",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full38-launch.json": "2a1e83add60d56b67ed312ed66f209ea04c47039ffb711b4ff8f6181384951eb",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_39/config.json": "1fe378a10e110c223c6f5d53a9478794b159c65e037cd5836cb90c7043be5c82",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_39/report.json": "d8e36197bb424a28d22e68bdb2f3d16b7c49ac0900b00dbeadac690eb979fcc4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_39/guarded_contact_candidate.json": "5009ac48627a65d67611ffc92d75dc033759ce034a2e47b026ff48cf74e11b94",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_39/orient_teddy_postlift.npz": "f0e73b7ab2995a691df1483a36c7f6085dd41883adee3d758378a96e8e4c28ec",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_39/rest.npz": "1d29a43084f224a72184fdd7c67614d67edf90c90535addced9b9e0cf29a1086",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_39/input_sha256.json": "bb24c1969a52bb55678cf870689e972589a67ea9035cae98013fbb87289e010e",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full39-launch.json": "43d2013592cc1db58462a189331db53badbd4c18b8e0d51797f2454bb4cf6aa1",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/full39_preflight_comparison_review.py": "635ddc24e0419b9ce5aef218e26e8ba4c34dfd177f3d0ba178f0c3d488f4b158"
+  },
+  "all_protected_inputs_unchanged": true,
+  "future_physical_success_claim": false,
+  "new_simulation_performed": false
+}

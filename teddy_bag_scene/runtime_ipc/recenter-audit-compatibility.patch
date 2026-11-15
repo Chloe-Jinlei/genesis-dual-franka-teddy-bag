@@ -1,0 +1,135 @@
+--- runtime_ipc/recenter-before-audit_guarded_run.py
++++ runtime_ipc/audit_guarded_run.py
+@@ -123,6 +123,76 @@
+                  if "right_link_aim_origin_world_m" in rows[0] else
+                  "Link origins and aim axes are absent, so reference shifting and opening projections cannot be independently reconstructed from these rows."),
+                 "Raw engineering force and moment limits are uncalibrated; baseline subtraction never waives them."]}
++
++
++def frozen_runner_yaw_contract(path, baseline_path):
++    """Recognize the exact legacy methods or only the reviewed five-line extension.
++
++    Parse frozen source as data. Never import or execute either runner. Removing
++    anything except the precise entry bool check and post-save rejection guard
++    is forbidden; the remaining complete method must equal the legacy AST.
++    """
++    names=("begin_guarded_contact_monitor","run_postlift_yaw",
++           "run_guarded_contact_trial","observe_physics","execute")
++    def methods(p):
++        found={}
++        for node in ast.walk(ast.parse(Path(p).read_text())):
++            if isinstance(node,(ast.FunctionDef,ast.AsyncFunctionDef)) and node.name in names:
++                if node.name in found:raise ValueError("Duplicate runner contract method: "+node.name)
++                found[node.name]=node
++        return found
++    dump=lambda node:ast.dump(node,include_attributes=False)
++    current=methods(path);baseline=methods(baseline_path)
++    checks={name:name in current and name in baseline and dump(current[name])==dump(baseline[name]) for name in names}
++    mode="legacy_exact" if all(checks.values()) else "unrecognized"
++    name="run_guarded_contact_trial"
++    if not checks[name] and name in current and name in baseline:
++        prefix=ast.parse('''recenter_enabled=self.config.get("task",{}).get("contact_trial",{}).get("recenter_enabled",True)
++if type(recenter_enabled) is not bool:
++    raise GateFailure("contact_trial.recenter_enabled must be a boolean")
++''').body
++        stop=ast.parse('''if not recenter_enabled:
++    raise GateFailure("Fresh contact insertion rejected and recentering is disabled; see "+filename)
++''').body[0]
++        accepted=ast.parse('''if fresh["status"]=="candidate":
++    break
++''').body[0]
++        method=current[name]
++        matches=[]
++        for node in ast.walk(method):
++            if isinstance(node,ast.For):
++                for index,item in enumerate(node.body):
++                    if dump(item)==dump(stop):matches.append((node,index))
++        if len(method.body)>=2 and all(dump(a)==dump(b) for a,b in zip(method.body[:2],prefix)) and len(matches)==1:
++            loop,index=matches[0]
++            if index>0 and dump(loop.body[index-1])==dump(accepted):
++                del loop.body[index]
++                del method.body[:2]
++                checks[name]=dump(method)==dump(baseline[name])
++                if all(checks.values()):mode="reviewed_recenter_disabled_extension"
++    return {"passed":all(checks.values()),"mode":mode,"checks":checks,
++            "scope":"Static complete-method AST comparison; only the exact reviewed five-line recenter extension may be normalized."}
++
++
++def audit_recenter_policy(config, report):
++    """Cross-check the frozen config's explicit off switch without invoking plans."""
++    checks={};result={"passed":False,"status":"failed","checks":checks}
++    try:
++        enabled=config.get("task",{}).get("contact_trial",{}).get("recenter_enabled",True)
++        checks["frozen_recenter_enabled_is_strict_bool"]=type(enabled) is bool
++        result["recenter_enabled"]=enabled if type(enabled) is bool else None
++        if not checks["frozen_recenter_enabled_is_strict_bool"]:return result
++        if not enabled:
++            corrections=report.get("guarded_contact_corrections",[])
++            events=report.get("events",[])
++            checks["disabled_has_no_correction_records"]=isinstance(corrections,list) and not corrections
++            checks["disabled_has_no_recenter_phase"]=isinstance(events,list) and all(
++                isinstance(e,dict) and isinstance(e.get("phase"),str) and not e["phase"].startswith("recenter_") for e in events)
++        result.update(passed=all(checks.values()),status="passed" if all(checks.values()) else "failed")
++    except (TypeError,AttributeError,KeyError) as error:
++        result["error"]=type(error).__name__+": "+str(error)
++    result["scope"]="Config/record policy only. No successful motion, physical guard, or task completion follows from this check."
++    return result
+ 
+ 
+ def audit_corrections(report, states, dt):
+@@ -1017,6 +1087,8 @@
+     reactions = audit_reactions(run, report, trace)
+     (run / "independent-guard-reactions.json").write_text(json.dumps(reactions, indent=2))
+     yaw=audit_postlift_yaw(run,report,states,trace,config,reactions)
++    recenter_policy=audit_recenter_policy(config,report)
++    (run / "independent-recenter-policy-review.json").write_text(json.dumps(recenter_policy,indent=2,allow_nan=False))
+     if yaw["required"] or yaw["status"]!="not_configured":
+         (run / "independent-postlift-yaw-sequence.json").write_text(json.dumps(yaw,indent=2,default=_json_scalar,allow_nan=False))
+     staged=config.get("task",{}).get("contact_trial",{}).get("insertion_strategy")=="lower_then_center"
+@@ -1047,13 +1119,15 @@
+                     richer["per_link_wrench_reconstruction"]["passed"])
+     if input_audit is not None:
+         passed=bool(passed and input_audit["all_declared_hashes_match"] and input_audit["all_snapshot_files_in_manifest"])
+-    passed=bool(passed and yaw["passed"])
++    passed=bool(passed and yaw["passed"] and recenter_policy["passed"])
+     result = {"run": str(run), "independent_task_success": passed,
+         "runtime_status": report["status"], "runtime_error": report.get("error"),
+         "sequence_completed": bool(report.get("sequence_completed", False)),
+         "geometry_and_soft_audit_status": audit["status"],
+         "guard_reaction_status": reactions["status"],
+         "correction_sequence_status":"not_applicable_staged_trial" if staged else corrections["status"],
++        "recenter_policy_status":recenter_policy["status"],
++        "failed_recenter_policy_checks":[k for k,v in recenter_policy["checks"].items() if not v],
+         "staged_sequence_status":corrections["status"] if staged else "not_applicable",
+         "staged_native_hand_height_status":corrections.get("native_hand_height_audit",{}).get("status","not_entered") if staged else "not_applicable",
+         "richer_contact_evidence_required":richer_required,
+--- runtime_ipc/recenter-before-postlift_yaw_prefix_review.py
++++ runtime_ipc/postlift_yaw_prefix_review.py
+@@ -142,13 +142,11 @@
+ check("unique_yaw_immediately_follows_lift", len(lift) == len(yaw) == 1 and yaw[0][0] == lift[0][0] + 1 and abs(lift[0][1]["start"] + np.ceil(lift[0][1]["duration"] / dt) * dt - observed) <= 1e-8 and abs(yaw[0][1]["start"] - observed) <= 1e-8 and abs(yaw[0][1]["duration"] - duration) <= 1e-12)
+ 
+ # Static contract evidence is explicitly separate from actual trace coverage.
+-def methods(path):
+-    return {node.name: ast.dump(node, include_attributes=False) for node in ast.walk(ast.parse(path.read_text())) if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))}
+-current_methods = methods(run / "source/run.py")
+-audited_methods = methods(root / "runs/two_panel_full_20/source/run.py")
+-contract_names = ["begin_guarded_contact_monitor", "run_postlift_yaw", "run_guarded_contact_trial", "observe_physics", "execute"]
+-contract = {name: current_methods.get(name) is not None and current_methods[name] == audited_methods.get(name) for name in contract_names}
+-check("frozen_runner_yaw_baseline_and_sampling_contract_matches_audited_full20", all(contract.values()))
++runner_contract = audit.frozen_runner_yaw_contract(run / "source/run.py", root / "runs/two_panel_full_20/source/run.py")
++contract = runner_contract["checks"]
++check("frozen_runner_yaw_baseline_and_sampling_contract_matches_audited_full20", runner_contract["passed"])
++recenter_policy = audit.audit_recenter_policy(cfg, {"events": events})
++check("frozen_recenter_policy_and_available_events", recenter_policy["passed"])
+ check("immutable_prefix_inputs_unchanged_during_review", all(sha(run / name) == digest for name, digest in hashes.items()))
+ result = dict(kind="independent_actual_postlift_yaw_prefix_review", status="incomplete_pending_native_trace", passed=False,
+     frozen_angle_policy=frozen_policy,
+@@ -158,7 +156,7 @@
+     observed_time_s=observed, planned_duration_s=duration, actual_step_count=steps, actual_endpoint_time_s=float(end["time"]),
+     independent_reference_metrics=dict(minimum_sampled_rigid_clearance_m=rigid_min, maximum_sampled_tcp_error_m=pmax, maximum_sampled_slerp_error_rad=rmax),
+     archived_reference_bounds={side:{key:value.tolist() for key,value in b.items()} for side,b in bounds.items()},
+-    continuous_single_baseline=dict(frozen_source_contract_checks=contract, execution_declares_no_reset=True,
++    continuous_single_baseline=dict(frozen_source_contract_checks=contract, frozen_source_contract_mode=runner_contract["mode"], execution_declares_no_reset=True,
+         actual_baseline_record_verified=False, every_step_coverage_verified=False, native_force_torque_grip_audit_passed=None,
+         status="pending_saved_native_baseline_and_complete_guard_trace"),
+     pending=["Actual baseline before yaw, equality with final baseline, and every yaw integration step need final report and contact_guard_trace.json.",

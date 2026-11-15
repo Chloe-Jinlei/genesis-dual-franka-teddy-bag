@@ -1,0 +1,12 @@
+--- runtime_ipc/report-serialization-before-run.py	2026-11-13 18:03:52.567321600 -0500
++++ run.py	2026-11-13 18:03:52.598720375 -0500
+@@ -910,7 +910,8 @@
+         self.report["requested_task_passed"]=bool(scope_passed)
+         if not error and not scope_passed:
+             self.report["status"]="validation_failed"
+-        (self.out/"report.json").write_text(json.dumps(self.report,indent=2))
++        from contact_insertion import _serial
++        (self.out/"report.json").write_text(json.dumps(_serial(self.report),indent=2,allow_nan=False))
+         (self.out/"coupling_trace.json").write_text(json.dumps(self.coupling_trace,indent=2))
+         print("OUTPUT "+str(self.out),flush=True)
+ 

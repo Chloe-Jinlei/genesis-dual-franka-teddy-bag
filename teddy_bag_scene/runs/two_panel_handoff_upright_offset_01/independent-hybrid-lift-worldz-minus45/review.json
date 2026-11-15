@@ -1,0 +1,227 @@
+{
+  "kind": "one_hybrid_worldZ_minus45_from_actual_pre_yaw_lift",
+  "physical_success": false,
+  "native_execution": false,
+  "not_a_joint_native_snapshot": true,
+  "current_production_yaw_policy_admissible": false,
+  "sources": {
+    "actual_bag_and_left_path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/settle_handoff.npz",
+    "actual_bag_and_left_time_s": 14.975000000000941,
+    "actual_bear_and_right_path": "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/lift_teddy.npz",
+    "actual_bear_and_right_time_s": 29.034999999998508,
+    "uses_postyaw_bear": false
+  },
+  "total_world_z_rotation_degrees": -45.0,
+  "rotation_formula": "target_full_R = R_worldZ(-45deg) * actual_lift_FK_R; bear_nominal = R_worldZ(-45deg)*(actual_lift_bear-measured_TCP)+measured_TCP",
+  "actual_source_full_R_xyzw": [
+    0.9999999837951634,
+    3.470604935940092e-06,
+    2.8410370159954403e-05,
+    -0.00017773710547179216
+  ],
+  "target_full_R_xyzw": [
+    0.9238808456829792,
+    -0.38268021974290156,
+    9.42648050824327e-05,
+    -0.00015333549594561457
+  ],
+  "relative_target_rotvec_rad": [
+    4.519848440257411e-20,
+    -2.781445194004561e-20,
+    -0.7853981633974484
+  ],
+  "source_actual_bear_dimensions_m": [
+    0.09552530414223293,
+    0.2762783149273452,
+    0.2045818506534114
+  ],
+  "ideal_rotated_dimensions_m": [
+    0.23940414812780353,
+    0.17095847992852678,
+    0.2045818506534114
+  ],
+  "z_height_invariant_error_m": 0.0,
+  "selected_only_initial_com_offset_m": [
+    0.0,
+    0.0
+  ],
+  "no_inherited_force_arrays": true,
+  "input_sha256": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/settle_handoff.npz": "08dc4fa46304fff51c031d078c435af47c47660ab554fe52fdcfabebcf8509cd",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/config.json": "60c2d441055adc02edda6738a8e50dc59fac9bc92b36e9cdd991f644a4df98c8",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/lift_teddy.npz": "d29be047bb21f880af87c65855d68c55ff047aea703498b1a6f1ca9e41a1fb40",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/rest.npz": "4c5b50ea0d9acf78a898b91844d6381bf86ad081eaee8ef77c38133985635de4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_full_21/config.json": "ae0686aa5e7f29c0da663d64f1c9fe98c76fa639ac39b29554460fa8a0dc82cf",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/postlift_yaw.py": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/contact_insertion.py": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runs/two_panel_handoff_upright_offset_01/source/contact_robot_geometry.py": "4951a68795461fdee4869c3a6c009675269db2d76779671d4e5458f98595d126",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/runtime_ipc/handoff_hybrid_lift_worldz_minus45.py": "b9afec7b25975f7cb73a9053bdcc7f3ee8f640bc9a2da50efcdf7f55d841d7b7"
+  },
+  "production_sha256_before": {
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/run.py": "0ed42957296a0ad41b4691856042a77ccef9ce3472a0b77f0d78d653f09c38f1",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/motion.py": "544d6bed1aedfe1603db860af0cd4d230641714827ff23ef27c93d0a12e32a31",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/postlift_yaw.py": "dfd8c08c8d63516cdbd6c58e466b1497114a4ec58a2390fa77906d7cd0f5928c",
+    "/home/chloe/Desktop/genesis-local/teddy_bag_scene/config_upright_offset_handle_probe.json": "7e7107757322ebfdb0431de2561262ef05cd44643568c690b1a3ea378974047c"
+  },
+  "status": "rejected_initial_context_or_section",
+  "limitations": [
+    "Different native observations are composed only for hypothetical geometry; their simultaneous physical reachability is unproven.",
+    "The production helper only permits |yaw|<=15deg. This diagnostic clones it in memory and changes only its magnitude bound to45deg; no production source,policy orconfig is changed.",
+    "The actual measured q values serve as hypothetical command starts. This is not an archived real command stream.",
+    "All other original physical,8mm sampled rigid,5mm whole-teddy arc,continuous position/rate,FK and finger gates remain in force.",
+    "Only one pose and unique COM offset[0,0] will be evaluated; no parameter grid."
+  ],
+  "hybrid_context_rejections": [],
+  "hybrid_context_numeric_metrics": {
+    "time_s": 29.034999999998508,
+    "minimum_tetra_volume_ratio": 0.4443326045346786,
+    "bag_table_penetration_m": 0.0,
+    "bear_table_penetration_m": 0.0,
+    "maximum_bag_edge_stretch_ratio": 1.0167151573254185,
+    "all_soft_states_finite": 1.0,
+    "left_designated_material_distance_m": 0.0007995834751260332,
+    "right_nearest_teddy_distance_m": 0.00578416082354719,
+    "tcp_fk_errors_m": {
+      "left": 2.9504581591051765e-16,
+      "right": 4.1910000110727263e-16
+    },
+    "actual_rigid_clearances": {
+      "left_self": {
+        "distance": 0.022991624493272397,
+        "bodies": [
+          "left_link5",
+          "left_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "left_table": {
+        "distance": 0.16099593221477002,
+        "bodies": [
+          "left_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ]
+      },
+      "left_mounts": {
+        "distance": 0.14099593221477003,
+        "bodies": [
+          "left_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "left_mount"
+        ]
+      },
+      "right_self": {
+        "distance": 0.02218697786154436,
+        "bodies": [
+          "right_link5",
+          "right_link7"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      },
+      "right_table": {
+        "distance": 0.16099593221477018,
+        "bodies": [
+          "right_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "table"
+        ]
+      },
+      "right_mounts": {
+        "distance": 0.14099593221477016,
+        "bodies": [
+          "right_link1",
+          "world"
+        ],
+        "geoms": [
+          "",
+          "right_mount"
+        ]
+      },
+      "arms": {
+        "distance": 0.2,
+        "bodies": [
+          "left_link1",
+          "right_link1"
+        ],
+        "geoms": [
+          "",
+          ""
+        ]
+      }
+    },
+    "finger_pair_half_opening_approximation_error_m": {
+      "left": 1.8884315999266078e-06,
+      "right": 2.0538173297821039e-07
+    },
+    "contact_force_and_torque_not_in_saved_state": true,
+    "physical_state_rejections": []
+  },
+  "mouth": {
+    "rim_z_min_m": 0.9973948165443303,
+    "rim_z_max_m": 1.123665010395742,
+    "projected_area_m2": 0.0385294712787695
+  },
+  "original_height_margin_m": 0.04081296589091887,
+  "initial_nominal_rotated_section_screen": {
+    "target_com_xy_m": [
+      -0.14791252553979467,
+      0.045301612255315094
+    ],
+    "actual_rotated_mass_com_m": [
+      0.33300810833071826,
+      -0.2494755190798202,
+      1.2966588234334504
+    ],
+    "translation_xy_m": [
+      -0.4809206338705129,
+      0.2947771313351353
+    ],
+    "com_projected_inside": true,
+    "com_boundary_distance_m": 0.05830305792870771,
+    "section_event_count": 1450,
+    "slab_count": 1449,
+    "evaluation": {
+      "translation_xy_m": [
+        -0.4809206338705129,
+        0.2947771313351353
+      ],
+      "maximum_outside_excursion_bound_m": 0.054143265991092725,
+      "allowed_outside_excursion_m": 0.11060003699012265,
+      "minimum_section_slab_overlap_fraction": 0.7276236068007476,
+      "maximum_required_enclosing_rim_perimeter_m": 0.9176557138786925,
+      "section_perimeter_square_buffer_halfwidth_m": 0.002,
+      "available_rim_perimeter_m": 0.9152328087150292,
+      "interior_distance_initial_grid_spacing_m": 0.004,
+      "interior_distance_refined_grid_spacing_m": 0.001,
+      "interior_distance_refined_slab_count": 0,
+      "perimeter_margin_m": -0.0024229051636632803,
+      "section_guard_rejections": [
+        "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+      ]
+    }
+  },
+  "initial_rejections": [
+    "mouth-plus-section perimeter with clearance exceeds available nonstretch rim length"
+  ],
+  "rotation_path_assessed": false,
+  "route_assessed": false,
+  "inputs_unchanged": true,
+  "production_unchanged": true
+}

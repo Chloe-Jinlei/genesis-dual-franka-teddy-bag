@@ -1,0 +1,82 @@
+{
+  "kind": "independent_diagnostic_contract_checks",
+  "synthetic_only": true,
+  "no_native_run": true,
+  "no_active_sibling_read": true,
+  "script_sha256": "abee73726ba319d15d1fe218993f7f81e11dbef064f18aa7024b55e9eae59b1d",
+  "cases": [
+    {
+      "case": "valid_complete",
+      "expected_accept": true,
+      "actual_accept": true,
+      "passed": true,
+      "error": null
+    },
+    {
+      "case": "existing_output",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Refusing to overwrite /tmp/completed_native_axis_contract_ego1iovt/diagnostic.json"
+    },
+    {
+      "case": "active_pid",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Refusing run with existing launch PID 359909; active or reused PID"
+    },
+    {
+      "case": "missing_states",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Incomplete run input files"
+    },
+    {
+      "case": "failed_status",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Refusing failed, interrupted or incomplete run"
+    },
+    {
+      "case": "recorded_error",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Refusing failed, interrupted or incomplete run"
+    },
+    {
+      "case": "gap_over_dt",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Event durations and following starts are discontinuous beyond one native step"
+    },
+    {
+      "case": "overlapping_events",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Event durations and following starts are discontinuous beyond one native step"
+    },
+    {
+      "case": "missing_time_zero",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Event sequence lacks time-zero phase"
+    },
+    {
+      "case": "validation_time_mismatch",
+      "expected_accept": false,
+      "actual_accept": false,
+      "passed": true,
+      "error": "Validation and report final times disagree"
+    }
+  ],
+  "all_passed": true,
+  "full38_v1_v2_all_region_phase_values_identical": true,
+  "full38_v2_report_sha256": "72499a80d4ef229319ba8169e0a19a2f13be14a38178a91a85f1ecc04d0db494"
+}

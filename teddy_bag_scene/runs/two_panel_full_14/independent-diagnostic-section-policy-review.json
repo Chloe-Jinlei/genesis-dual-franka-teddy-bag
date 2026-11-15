@@ -1,0 +1,26 @@
+{
+  "kind": "independent_low_section_diagnostic_policy_boundary_review",
+  "status": "no_blocking_static_issue_found",
+  "source_sha256": "569197355503e2c7ed5932a35ca74b9ab9593514f3932cdadf2e9c3680144f2d",
+  "config_sha256": "f86be9f7d13084555d3c903e3ad0c59cd521cc4bc73dc43de945460d4ab48b6e",
+  "config_only_adds_explicit_low_phase_section_gate": true,
+  "unchanged_files": {
+    "run.py": true,
+    "scene.py": true,
+    "validate.py": true,
+    "physical_monitor.py": true,
+    "physics_config.py": true,
+    "contact_guard.py": true,
+    "staged_hand_monitor.py": true,
+    "contact_robot_geometry.py": true,
+    "contact_insertion.py": true
+  },
+  "findings": [
+    "The default and initial entry retain strict section gating. Only explicitly configured low center/insert phases make section thresholds nonblocking diagnostics.",
+    "Raw section measurements, original violation lists and their role are preserved; diagnostic perimeter values are renamed to avoid describing them as material strain permissions.",
+    "COM inclusion with 2 mm contact-envelope margin, actual 3D rim separation and topology, complete original rotation, fresh actual observations, 30/50 mm XY budgets, 5 mm teddy/left robot sweep, 8 mm rigid route, actual native hand-height monitor and physical contact/grip/strain/volume/table guards are unchanged.",
+    "Run, native feedback, material, solver and final containment validator bytes are unchanged. No task success is inferred from a planned candidate."
+  ],
+  "physical_scope": "This can permit side-panel contact during centering or insertion. It does not prove free aperture or passage; native contact must resolve deformation and unchanged final validation must establish full containment. No new frozen-cloth zero-overlap rule or higher physical limit was introduced.",
+  "full14_result": "Stopped before center solely by the strict frozen section lateral heuristic; independent physical traces passed, but insertion/release and final successful containment did not occur."
+}

@@ -1,0 +1,75 @@
+{
+  "status": "failed",
+  "task_passed": false,
+  "physics": {
+    "solver": "Genesis 1.4.3 + libuipc 0.0.29, IPC contact, FEM shell/volume",
+    "bag_vertices": 6591,
+    "bear_vertices": 1279,
+    "bear_tetrahedra": 4648,
+    "no_fixed_soft_vertices": true,
+    "no_soft_grasp_attachments": true,
+    "grasp_model": "finite-force finger PD and IPC friction, no ideal attachment",
+    "robot_soft_contact_links": [
+      "hand",
+      "left_finger",
+      "right_finger"
+    ],
+    "other_arm_links_soft_contact": false,
+    "two_way_contact_coupling": true,
+    "material_experimentally_calibrated": false,
+    "bear_material_scope": "homogeneous compressible elastic filling approximation; no separate textile skin",
+    "bag_material_scope": "isotropic strain-limiting shell; no yarn model",
+    "cloth_thickness_convention": "IPC thickness is a radius; physical thickness is twice the configured value",
+    "bag": {
+      "position": [
+        -0.13,
+        0.0,
+        0.742
+      ],
+      "E": 2000000.0,
+      "nu": 0.3,
+      "rho": 450.0,
+      "thickness": 0.0004,
+      "bending_stiffness": 0.0001,
+      "friction_mu": 0.65
+    },
+    "bear": {
+      "position": [
+        0.27,
+        -0.25,
+        0.742
+      ],
+      "E": 18000.0,
+      "nu": 0.28,
+      "rho": 100.0,
+      "friction_mu": 0.65
+    },
+    "simulation": {
+      "dt": 0.005,
+      "substeps": 1,
+      "precision": "64",
+      "contact_distance": 0.001,
+      "contact_resistance": 10000000.0
+    }
+  },
+  "initial_handle_proximity": {
+    "left": {
+      "near_vertices": 0,
+      "nearest_m": 0.38952043416676035
+    },
+    "right": {
+      "near_vertices": 0,
+      "nearest_m": 0.2983497943122189
+    }
+  },
+  "error": "GateFailure: Handle slipped away before physical closure",
+  "simulated_seconds": 0.2000000000000001,
+  "wall_seconds": 10.562900938002713,
+  "events": [
+    {
+      "phase": "close_both_handles",
+      "start": 0.0,
+      "duration": 0.2
+    }
+  ]
+}

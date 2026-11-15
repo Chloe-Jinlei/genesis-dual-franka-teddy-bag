@@ -1,0 +1,1789 @@
+{
+  "runtime_source_sha256": "e47528a30643fc1aef92a11f1f04b674192b61f68b7f8c4e1331e87cd367c879",
+  "scope": "CPU stub verifies control flow, not physical simulation",
+  "results": {
+    "immediate_accept": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830562036192,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830562036192,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        },
+        {
+          "op": "move",
+          "label": "insert_teddy",
+          "guard_id": 138830562036192,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "hold",
+          "label": "release_teddy",
+          "guard_id": 138830562036192,
+          "must_hold_teddy": false
+        },
+        {
+          "op": "move",
+          "label": "withdraw_right_arm",
+          "guard_id": 138830562036192,
+          "must_hold_teddy": false
+        },
+        {
+          "op": "hold",
+          "label": "final_settle",
+          "guard_id": 138830562036192,
+          "must_hold_teddy": false
+        }
+      ],
+      "error": null,
+      "fresh_calls": 1,
+      "correction_calls": [],
+      "single_guard_and_single_baseline": true,
+      "completed": true,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "candidate",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [],
+        "guarded_contact_reobserved": {
+          "status": "candidate",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "sequence_completed": true
+      }
+    },
+    "one_correction": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830599427456,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830599427456,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        },
+        {
+          "op": "move",
+          "label": "recenter_height_1",
+          "guard_id": 138830599427456,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "recenter_teddy_xy_1",
+          "guard_id": 138830599427456,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 4.0,
+          "selected": "correction_1"
+        },
+        {
+          "op": "move",
+          "label": "insert_teddy",
+          "guard_id": 138830599427456,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "hold",
+          "label": "release_teddy",
+          "guard_id": 138830599427456,
+          "must_hold_teddy": false
+        },
+        {
+          "op": "move",
+          "label": "withdraw_right_arm",
+          "guard_id": 138830599427456,
+          "must_hold_teddy": false
+        },
+        {
+          "op": "hold",
+          "label": "final_settle",
+          "guard_id": 138830599427456,
+          "must_hold_teddy": false
+        }
+      ],
+      "error": null,
+      "fresh_calls": 2,
+      "correction_calls": [
+        {
+          "attempt": 1,
+          "previous_distance": 0.0
+        }
+      ],
+      "single_guard_and_single_baseline": true,
+      "completed": true,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "status": "candidate",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [
+          {
+            "status": "candidate",
+            "id": "correction_1",
+            "observed_time_s": 2.0,
+            "correction_distance_m": 0.025,
+            "cumulative_xy_m_after": 0.025,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  0.025,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          }
+        ],
+        "guarded_contact_reobserved": {
+          "status": "candidate",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "sequence_completed": true
+      }
+    },
+    "two_corrections": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        },
+        {
+          "op": "move",
+          "label": "recenter_height_1",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "recenter_teddy_xy_1",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 4.0,
+          "selected": "correction_1"
+        },
+        {
+          "op": "move",
+          "label": "recenter_height_2",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "recenter_teddy_xy_2",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 6.0,
+          "selected": "correction_2"
+        },
+        {
+          "op": "move",
+          "label": "insert_teddy",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "hold",
+          "label": "release_teddy",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": false
+        },
+        {
+          "op": "move",
+          "label": "withdraw_right_arm",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": false
+        },
+        {
+          "op": "hold",
+          "label": "final_settle",
+          "guard_id": 138830601915616,
+          "must_hold_teddy": false
+        }
+      ],
+      "error": null,
+      "fresh_calls": 3,
+      "correction_calls": [
+        {
+          "attempt": 1,
+          "previous_distance": 0.0
+        },
+        {
+          "attempt": 2,
+          "previous_distance": 0.025
+        }
+      ],
+      "single_guard_and_single_baseline": true,
+      "completed": true,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "status": "candidate",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [
+          {
+            "status": "candidate",
+            "id": "correction_1",
+            "observed_time_s": 2.0,
+            "correction_distance_m": 0.025,
+            "cumulative_xy_m_after": 0.025,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  0.025,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          },
+          {
+            "status": "candidate",
+            "id": "correction_2",
+            "observed_time_s": 4.0,
+            "correction_distance_m": 0.025,
+            "cumulative_xy_m_after": 0.05,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  0.025,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          }
+        ],
+        "guarded_contact_reobserved": {
+          "status": "candidate",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "sequence_completed": true
+      }
+    },
+    "exhausted_budget": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830599427024,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830599427024,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        },
+        {
+          "op": "move",
+          "label": "recenter_height_1",
+          "guard_id": 138830599427024,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "recenter_teddy_xy_1",
+          "guard_id": 138830599427024,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 4.0,
+          "selected": "correction_1"
+        },
+        {
+          "op": "move",
+          "label": "recenter_height_2",
+          "guard_id": 138830599427024,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "recenter_teddy_xy_2",
+          "guard_id": 138830599427024,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 6.0,
+          "selected": "correction_2"
+        }
+      ],
+      "error": "Fresh contact insertion remains rejected after two measured XY corrections",
+      "fresh_calls": 3,
+      "correction_calls": [
+        {
+          "attempt": 1,
+          "previous_distance": 0.0
+        },
+        {
+          "attempt": 2,
+          "previous_distance": 0.025
+        }
+      ],
+      "single_guard_and_single_baseline": true,
+      "completed": false,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [
+          {
+            "status": "candidate",
+            "id": "correction_1",
+            "observed_time_s": 2.0,
+            "correction_distance_m": 0.025,
+            "cumulative_xy_m_after": 0.025,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  0.025,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          },
+          {
+            "status": "candidate",
+            "id": "correction_2",
+            "observed_time_s": 4.0,
+            "correction_distance_m": 0.025,
+            "cumulative_xy_m_after": 0.05,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  0.025,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          }
+        ],
+        "guarded_contact_reobserved": {
+          "status": "rejected",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "single_over_30mm": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830600434800,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830600434800,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        }
+      ],
+      "error": "Contact correction violated the bounded XY travel budget",
+      "fresh_calls": 1,
+      "correction_calls": [
+        {
+          "attempt": 1,
+          "previous_distance": 0.0
+        }
+      ],
+      "single_guard_and_single_baseline": true,
+      "completed": false,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [
+          {
+            "status": "candidate",
+            "id": "correction_1",
+            "observed_time_s": 2.0,
+            "correction_distance_m": 0.031,
+            "cumulative_xy_m_after": 0.031,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  0.031,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          }
+        ],
+        "guarded_contact_reobserved": {
+          "status": "rejected",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "total_over_50mm": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830557654496,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830557654496,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        }
+      ],
+      "error": "Contact correction violated the bounded XY travel budget",
+      "fresh_calls": 1,
+      "correction_calls": [
+        {
+          "attempt": 1,
+          "previous_distance": 0.0
+        }
+      ],
+      "single_guard_and_single_baseline": true,
+      "completed": false,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [
+          {
+            "status": "candidate",
+            "id": "correction_1",
+            "observed_time_s": 2.0,
+            "correction_distance_m": 0.025,
+            "cumulative_xy_m_after": 0.051,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  0.025,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          }
+        ],
+        "guarded_contact_reobserved": {
+          "status": "rejected",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "negative_distance": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830557654592,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830557654592,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        }
+      ],
+      "error": "Contact correction violated the bounded XY travel budget",
+      "fresh_calls": 1,
+      "correction_calls": [
+        {
+          "attempt": 1,
+          "previous_distance": 0.0
+        }
+      ],
+      "single_guard_and_single_baseline": true,
+      "completed": false,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [
+          {
+            "status": "candidate",
+            "id": "correction_1",
+            "observed_time_s": 2.0,
+            "correction_distance_m": -0.001,
+            "cumulative_xy_m_after": -0.001,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  -0.001,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          }
+        ],
+        "guarded_contact_reobserved": {
+          "status": "rejected",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "nan_distance": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830612625984,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830612625984,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        }
+      ],
+      "error": "Contact correction violated the bounded XY travel budget",
+      "fresh_calls": 1,
+      "correction_calls": [
+        {
+          "attempt": 1,
+          "previous_distance": 0.0
+        }
+      ],
+      "single_guard_and_single_baseline": true,
+      "completed": false,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [
+          {
+            "status": "candidate",
+            "id": "correction_1",
+            "observed_time_s": 2.0,
+            "correction_distance_m": NaN,
+            "cumulative_xy_m_after": NaN,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  NaN,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          }
+        ],
+        "guarded_contact_reobserved": {
+          "status": "rejected",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "correction_rejected": {
+      "logs": [
+        {
+          "op": "move",
+          "label": "adjust_teddy_height_contact_trial",
+          "guard_id": 138830557651568,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "move",
+          "label": "transport_teddy",
+          "guard_id": 138830557651568,
+          "must_hold_teddy": true
+        },
+        {
+          "op": "fresh",
+          "time": 2.0,
+          "selected": "initial"
+        }
+      ],
+      "error": "No admissible small XY correction from the actual observed state",
+      "fresh_calls": 1,
+      "correction_calls": [
+        {
+          "attempt": 1,
+          "previous_distance": 0.0
+        }
+      ],
+      "single_guard_and_single_baseline": true,
+      "completed": false,
+      "report": {
+        "guarded_contact_candidate": {
+          "status": "candidate",
+          "id": "initial",
+          "stages_to_execute": [
+            {
+              "name": "height_at_current_xy",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            {
+              "name": "translate_outside_mouth",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            }
+          ],
+          "observed_time_s": 0.0
+        },
+        "contact_guard_baseline": {
+          "time_s": 0.0
+        },
+        "guarded_contact_reobservations": [
+          {
+            "status": "rejected",
+            "insert_stage": {
+              "name": "insert",
+              "right_tcp_m": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_xyzw": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration_s": 1.0
+            },
+            "outside_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "guarded_contact_corrections": [
+          {
+            "status": "rejected",
+            "id": "correction_1",
+            "observed_time_s": 2.0,
+            "correction_distance_m": 0.025,
+            "cumulative_xy_m_after": 0.025,
+            "stages_to_execute": [
+              {
+                "name": "height_at_current_xy",
+                "right_tcp_m": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              },
+              {
+                "name": "translate_outside_mouth",
+                "right_tcp_m": [
+                  0.025,
+                  0.0,
+                  1.0
+                ],
+                "rotation_xyzw": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration_s": 1.0
+              }
+            ]
+          }
+        ],
+        "guarded_contact_reobserved": {
+          "status": "rejected",
+          "insert_stage": {
+            "name": "insert",
+            "right_tcp_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_xyzw": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "duration_s": 1.0
+          },
+          "outside_tcp_m": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "metadata_only_budget_counterexample": {
+      "controller_accepted_inconsistent_stage_target": true,
+      "declared_distance_m": 0.01,
+      "supplied_stage_target_xy_m": [
+        0.08,
+        0.0
+      ],
+      "interpretation": "Controller checks returned distance metadata; helper must derive it from stage geometry, or controller should cross-check actual target displacement."
+    }
+  }
+}

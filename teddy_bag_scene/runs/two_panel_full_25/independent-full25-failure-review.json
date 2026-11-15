@@ -1,0 +1,354 @@
+{
+  "kind": "independent_full25_failure_review",
+  "task_success": false,
+  "physical_success": false,
+  "native_run_completed_successfully": false,
+  "native_execution_performed_by_review": false,
+  "production_modified_by_review": false,
+  "summary": "Actual insertion stopped before the planned release endpoint because one held-arm tetrahedron collapsed below the unchanged5% volume limit. A separate serialization error then prevented report.json/coupling_trace.json; this report preserves that missing evidence.",
+  "files_not_fabricated": [
+    "report.json",
+    "coupling_trace.json"
+  ],
+  "missing_runtime_files": [
+    "report.json",
+    "coupling_trace.json",
+    "gravity_release_actual_review.json",
+    "gravity_withdraw_plan.npz",
+    "insert_teddy.npz"
+  ],
+  "failure": {
+    "actual_time_s": 49.05500000000664,
+    "first_per_step_J_below_0p05_time_s": 49.05500000000664,
+    "true_failed_soft_J": 0.04359766664914001,
+    "last_complete_time_s": 49.01500000000662,
+    "last_complete_J": 0.10141496387854652,
+    "last_complete_actual_TCP_m": [
+      -0.13054723579340352,
+      0.07172406617307402,
+      1.1015328018147654
+    ],
+    "failed_soft_has_no_measured_q_or_TCP": true,
+    "failure_same_time_joint_trace_exists": true,
+    "failure_joint_FK_reference_TCP_m": [
+      -0.13054486021903453,
+      0.07172205547828878,
+      1.1008223322641004
+    ],
+    "failure_guard_AIM_reference_TCP_m": [
+      -0.13054481892566577,
+      0.0717224508113244,
+      1.1009109173056018
+    ],
+    "tetra_below_0p05_count": 1,
+    "tetrahedron": {
+      "id": 895,
+      "vertex_ids": [
+        610,
+        1194,
+        653,
+        1150
+      ],
+      "rest_local_scaled_center_m": [
+        0.06829727068497082,
+        -0.029159717003837182,
+        0.01520716635935826
+      ],
+      "rest_unscaled_center_m": [
+        0.08034973021761274,
+        -0.03430554941627904,
+        0.017890783952186188
+      ],
+      "anatomical_region_approximate": "right_arm",
+      "rest_volume_m3": 7.758014467247504e-08,
+      "rest_mean_ratio_quality": 0.4764227534869177,
+      "distance_to_initial_grasp_local_m": 0.022033608284232058,
+      "grasp_ROI_radius_m": 0.0272,
+      "actual_failed_center_m": [
+        -0.14964092027858833,
+        0.05952308597621221,
+        1.093477554522862
+      ],
+      "failed_J": 0.04359766664913999
+    },
+    "failure_principal_stretches": [
+      1.5537322002070628,
+      0.9574731464160096,
+      0.02930626535439103
+    ],
+    "shape_interpretation": "Positive but extreme local flattening: one principal stretch2.9306% while the other two are155.37%/95.75%; rest mean-ratio quality0.4764 is not a near-zero initial sliver."
+  },
+  "execution_boundary": {
+    "actual_insert_source_time_s": 39.265000000001635,
+    "archived_reference_duration_s": 12.190853330687576,
+    "expected_fixed_step_endpoint_s": 51.460000000001635,
+    "failure_before_endpoint_s": 2.404999999994992,
+    "actual_execution_time_before_failure_s": 9.790000000005008,
+    "last_complete_actual_max_joint_speed_rad_s": 0.04089319201170522,
+    "failure_actual_max_joint_speed_rad_s": 0.041494356146000035,
+    "failure_reference_max_joint_speed_rad_s": 0.041013618570591936,
+    "release_event_absent": true,
+    "actual_release_review_absent": true,
+    "curve_is_still_moving_at_failure": true,
+    "event_file_limit": "events.json was last persisted at transport end; archived candidate and exact source identify the interrupted insert. No missing execution event is fabricated."
+  },
+  "bounded_raw_native_reactions": {
+    "source": "contact_guard_trace.json, actual bounded interval only; no fabricated full report",
+    "time_range_s": [
+      48.65500000000644,
+      49.05500000000664
+    ],
+    "row_count": 81,
+    "checks": {
+      "last_guard_matches_true_failed_soft_time": true,
+      "last_actual_joint_time_matches_failure": true,
+      "consecutive_dt_in_bounded_window": true,
+      "all_read_wrenches_finite": true,
+      "summed_link_forces_match_net": true,
+      "summed_link_TCP_torques_match_net": true,
+      "raw_force_norm_under8N": true,
+      "raw_each_right_finger_force_under8N": true,
+      "raw_TCP_torque_under0p15Nm": true,
+      "both_opening_reactions_over0p1N": true,
+      "right_grip_still_required_every_row": true,
+      "no_force_guard_stop_reason": true
+    },
+    "all_bounded_force_checks_pass": true,
+    "maximum_net_distal_force_n": 1.420102070740068,
+    "maximum_TCP_torque_nm": 0.019369117902987756,
+    "minimum_opening_reaction_by_finger_n": [
+      2.286186050885977,
+      1.5321503041196662
+    ],
+    "final_opening_reaction_n": [
+      2.7858168591243366,
+      1.5829430522477022
+    ],
+    "final_net_force_n": [
+      -1.2551216300581154,
+      -0.6643293242499739,
+      -0.005112144565780057
+    ],
+    "final_TCP_torque_nm": 0.019369117902987756,
+    "actual_failure_is_soft_J_gate_not_force_or_grip_gate": true
+  },
+  "last_complete_containment": {
+    "time_s": 49.01500000000662,
+    "original_cap_valid": true,
+    "original_cap_inside_count": 747,
+    "original_cap_inside_fraction_not_volume": 0.5151724137931034,
+    "original_cap_COM_inside": false,
+    "COM_world_m": [
+      -0.12338002893775511,
+      0.06985975074013585,
+      1.0282548562805187
+    ],
+    "COM_mean_high_cap_raw_winding": [
+      -6.361109362927033e-16,
+      1.0
+    ],
+    "rim_minmaxZ_m": [
+      0.978374547593162,
+      1.1244105396420265
+    ],
+    "bear_minmaxZ_m": [
+      0.9292288415476441,
+      1.1265328405794481
+    ],
+    "strict_low_node_count": 187,
+    "strict_low_unit_count": 187,
+    "strict_low_zero_count": 0,
+    "strict_low_unknown_count": 0,
+    "outside_regions_original_cap": {
+      "torso": 89,
+      "head": 318,
+      "left_ear": 68,
+      "right_ear": 72,
+      "left_arm": 0,
+      "right_arm": 139,
+      "left_foot": 0,
+      "right_foot": 0,
+      "muzzle": 16,
+      "nose": 1
+    }
+  },
+  "true_failed_soft_containment": {
+    "time_s": 49.05500000000664,
+    "original_cap_valid": true,
+    "original_cap_inside_count": 751,
+    "original_cap_inside_fraction_not_volume": 0.5179310344827586,
+    "original_cap_COM_inside": false,
+    "COM_world_m": [
+      -0.12526236568445703,
+      0.06926166428607902,
+      1.026324046782117
+    ],
+    "COM_mean_high_cap_raw_winding": [
+      1.0601848938211723e-15,
+      0.9999999999999999
+    ],
+    "rim_minmaxZ_m": [
+      0.9779713058136948,
+      1.1242999372008877
+    ],
+    "bear_minmaxZ_m": [
+      0.9277884469607751,
+      1.1242555014489717
+    ],
+    "strict_low_node_count": 207,
+    "strict_low_unit_count": 207,
+    "strict_low_zero_count": 0,
+    "strict_low_unknown_count": 0,
+    "outside_regions_original_cap": {
+      "torso": 84,
+      "head": 318,
+      "left_ear": 68,
+      "right_ear": 72,
+      "left_arm": 0,
+      "right_arm": 139,
+      "left_foot": 0,
+      "right_foot": 0,
+      "muzzle": 17,
+      "nose": 1
+    }
+  },
+  "contact_evidence": {
+    "peer_report": "independent-full25-late-contact-review/review.json",
+    "peer_report_sha256": "f3cb6278640c6b976473cd231cd052dff6d1c2c5d6f2c5f8a8ca1e375ffe2c85",
+    "failed_tet_cloth_gap_lower_m": 0.04541231586082834,
+    "direct_cloth_on_failed_tet_excluded": true,
+    "reference_nearest_jaw_components": {
+      "right_hand": {
+        "geom_id": 150,
+        "geom_type": "mesh_convex",
+        "sample_min_distance_m": 0.040205621331442856,
+        "query_index": 1,
+        "query_point_m": [
+          -0.14788240446284542,
+          0.06421988065137815,
+          1.0977514014036187
+        ],
+        "nearest_point_m": [
+          -0.14721986029341638,
+          0.06380249868109147,
+          1.1379493965546434
+        ]
+      },
+      "right_left_finger": {
+        "geom_id": 154,
+        "geom_type": "box",
+        "sample_min_distance_m": 0.0007954637160149491,
+        "query_index": 0,
+        "query_point_m": [
+          -0.14930519195686362,
+          0.05723953153228926,
+          1.0921557023849895
+        ],
+        "nearest_point_m": [
+          -0.14916573060793864,
+          0.056471202254483994,
+          1.0923073044183518
+        ]
+      },
+      "right_right_finger": {
+        "geom_id": 163,
+        "geom_type": "box",
+        "sample_min_distance_m": 0.03774729473379386,
+        "query_index": 1,
+        "query_point_m": [
+          -0.14788240446284542,
+          0.06421988065137815,
+          1.0977514014036187
+        ],
+        "nearest_point_m": [
+          -0.1266667912510026,
+          0.095440952050109,
+          1.0977781685613592
+        ]
+      }
+    },
+    "interpretation": "Direct cloth compression of tet895 is excluded by45.4mm whole-tet/all-cloth separation at failure. Its material position near the held right-arm patch, sustained opposing finger forces and sub-mm FK-reference left-finger-pad proximity support local gripping compression while remote foot/head cloth contact constrains the body. The actual late IPC affine finger surface was not saved, so exact pad indentation and unique causality are not proven.",
+    "remote_contacts": "Five actual saved shapes show right-foot/front-panel and head-or-muzzle/back-panel gaps about1.25\u20131.27mm and free-rear-strap/head about1.37\u20131.49mm; held front strap remains separated. These near distances are not force-closure or topological-hook proofs."
+  },
+  "earlier_release_assessment": {
+    "status": "COM_projection_and25_percent_count_not_sufficiently_supported",
+    "scope": "Only15 declared actual observations; no new stop/release or arbitrary scan.",
+    "at_1p14m": {
+      "time_s": 47.515000000005855,
+      "actual_TCP_m": [
+        -0.13044852049171998,
+        0.0717658930485304,
+        1.1403285031996235
+      ],
+      "node_inside_fraction": 0.3793103448275862,
+      "COM_XY_inside_margin_m": 0.01530319856665865,
+      "strict_low_nodes": 195,
+      "strict_low_inside": 128,
+      "strict_low_outside": 67,
+      "strict_low_outside_regions": {
+        "torso": 0,
+        "head": 21,
+        "left_ear": 46,
+        "right_ear": 0,
+        "left_arm": 0,
+        "right_arm": 0,
+        "left_foot": 0,
+        "right_foot": 0,
+        "muzzle": 0,
+        "nose": 0
+      },
+      "silhouette_overlap_fraction": 0.5418705811794601,
+      "maximum_node_projection_outside_m": 0.09467048713518182
+    },
+    "at_1p125m": {
+      "time_s": 48.01500000000611,
+      "actual_TCP_m": [
+        -0.13048388138348302,
+        0.0717273014571231,
+        1.1248315130468443
+      ],
+      "node_inside_fraction": 0.4282758620689655,
+      "COM_XY_inside_margin_m": 0.016988125947887157,
+      "strict_low_nodes": 187,
+      "strict_low_inside": 142,
+      "strict_low_outside": 45
+    },
+    "earliest_in_selected_samples_all_strict_low_nodes_unit": {
+      "time_s": 48.91500000000657,
+      "TCP_m": [
+        -0.130539925302002,
+        0.07172100692005982,
+        1.1033701517267036
+      ],
+      "low_node_count": 182,
+      "seconds_before_failure": 0.14000000000007162,
+      "original_cap_COM_inside": false
+    },
+    "conclusion": "At1.14m and1.125m dozens of head/ear nodes are already below every rim point minus2mm yet outside the physical-body degree region. Positive horizontal COM margin therefore does not establish lower-body capture. The first selected all-low-unit sample is only0.14s before failure, still original COM-outside; it does not justify dropping from1.14m."
+  },
+  "physical_next_step_recommendation": {
+    "preferred": "Improve long-axis alignment with the actual bag opening before another descent, keeping current grasp/materials and all existing release/final gates. The separately authorized world-Z+25degree replacement is a concrete candidate to test under the original geometry/IK/rate/soft-sweep and native gates; this report does not certify its route.",
+    "why": "Significant head/ear projection outside and low-region outside nodes reveal orientation/capture error, while the robot continues to squeeze a locally trapped grasp patch during remote cloth contact. Smaller net force/torque or slower motion alone does not bound local FEM collapse.",
+    "not_recommended_from_this_evidence": "Do not lower the J limit, declare success frompartial capture, or replace3D release capture with only COM projection/25percent nodes. Do not blindly weaken the grip without a fresh retention check.",
+    "future_controller_option_only_if_alignment_remains_obstructed": "A distinct compliant unloading/release controller would need an explicitly checked actual capture/contact state and a fresh bounded native trial; it is not established by these moving-through frames."
+  },
+  "evidence": {
+    "geometry_data": "independent-full25-failure-geometry-data.json",
+    "geometry_sha256": "6d43bfeda9876471fcce7ecc83eb7d67c4eec4d8db8f1fdcff17a9fb7a5d7f0a",
+    "geometry_inputs_unchanged": true,
+    "contact_inputs_unchanged": true,
+    "script_sha256": "24b5823502fc97e0f0f2038ea614fcaa6b77917efc0b0c4f2fd46908ad38b453"
+  },
+  "limitations": [
+    "Original valid cap is not an embedding/self-intersection certificate; invalid cap means unknown, never measured zero.",
+    "Low-region integer/cap agreement assumes an embedded physical body for inside interpretation. Body self-intersection is not certified here.",
+    "Projected COM/footprint capture does not imply three-dimensional containment, stable support, or a collision-free drop.",
+    "Node fractions are not volume fractions or whole-tetrahedron containment.",
+    "Failure soft state has no measured robotTCP/q. Matching actualjointtrace permits FK reference only; guardAIM is commanded reference, not actual native affine pose.",
+    "Different deliberately stopped/released trajectories alter contact dynamics; these actual moving samples cannot certify a new stop or release.",
+    "Mean/highcap disagree for COM above the lowest rim, so original COM-outside is the existing validator result rather than a cap-independent physical theorem. Low-region evidence is stronger but still assumes embedded bag body.",
+    "Global force and torque sums can remain small while opposing contact forces create high local strain.",
+    "Late native IPC affine robot geometry is unavailable because coupling_trace was not written.",
+    "The independent full execution auditor remains incomplete due missing report.json; no partial file reconstruction can make native task success true."
+  ]
+}

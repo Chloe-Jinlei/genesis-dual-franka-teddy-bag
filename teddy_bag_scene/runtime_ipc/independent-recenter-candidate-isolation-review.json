@@ -1,0 +1,78 @@
+{
+  "kind": "independent_recenter_candidate_error_isolation_review",
+  "all_checks_passed": true,
+  "tests": [
+    {
+      "name": "candidate_value_error_then_pass",
+      "passed": true,
+      "plan_calls": 2
+    },
+    {
+      "name": "ordinary_rejection_then_pass",
+      "passed": true,
+      "plan_calls": 2
+    },
+    {
+      "name": "all_candidate_errors_rejected_after_full_search",
+      "passed": true
+    },
+    {
+      "name": "invalid_global_policy",
+      "passed": true,
+      "plan_calls": 0
+    },
+    {
+      "name": "invalid_global_state",
+      "passed": true,
+      "plan_calls": 0
+    },
+    {
+      "name": "physical_reasons",
+      "passed": true,
+      "plan_calls": 0
+    },
+    {
+      "name": "global_mouth_failure",
+      "passed": true,
+      "plan_calls": 0
+    },
+    {
+      "name": "changed_policy",
+      "passed": true,
+      "plan_calls": 0
+    },
+    {
+      "name": "invalid_offset",
+      "passed": true,
+      "plan_calls": 0
+    },
+    {
+      "name": "stale_observation",
+      "passed": true,
+      "plan_calls": 0
+    },
+    {
+      "name": "bad_counter",
+      "passed": true,
+      "plan_calls": 0
+    },
+    {
+      "name": "candidate_key_error_not_swallowed_as_candidate_infeasibility",
+      "passed": true
+    },
+    {
+      "name": "candidate_type_error_not_swallowed_as_candidate_infeasibility",
+      "passed": true
+    }
+  ],
+  "source_sha256": "0ed8541c84546a6e13e941bf16c722a826708f92de05335d01c5bfc708e2fcd4",
+  "static_review": {
+    "state_policy_and_global_mouth_validated_before_candidates": true,
+    "candidate_value_error_only_continues_local_search": true,
+    "all_candidates_rejected_returns_no_executable_stages": true,
+    "ordinary_no_com_infeasibility_keeps_mouth_physical_and_com_checks": true,
+    "budget_counter_original_rotation_and_fresh_observation_contract_unchanged": true
+  },
+  "scope": "AST-executed control flow with deterministic stubs; no GPU, no Genesis initialization, no runtime file modifications.",
+  "physical_success": false
+}
