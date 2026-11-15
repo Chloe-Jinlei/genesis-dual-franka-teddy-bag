@@ -36,7 +36,7 @@ uv pip check --python .venv/bin/python
 .venv/bin/python - <<'PYVERIFY'
 import importlib.metadata as md
 import torch
-assert md.version('torch') == '2.14.0'
+assert md.version('torch').split('+', 1)[0] == '2.14.0'
 assert torch.__version__ == '2.14.0+cu130'
 assert torch.version.cuda == '13.0'
 assert md.version('genesis-world') == '1.4.3'
