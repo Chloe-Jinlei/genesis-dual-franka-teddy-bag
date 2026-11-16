@@ -1,0 +1,386 @@
+{
+  "status": "rendered_unstepped_initial_state",
+  "renderer": "Native Genesis camera RGB output",
+  "simulation_time_before_s": 0.0,
+  "simulation_time_after_s": 0.0,
+  "simulation_steps_before": [
+    0
+  ],
+  "simulation_steps_after": [
+    0
+  ],
+  "physics_steps_executed_by_this_helper": 0,
+  "physical_entity_mutations_by_this_helper": 0,
+  "image_postprocessing": "None; lossless PNG encoding only",
+  "images": [
+    {
+      "file": "initial_01_oblique.png",
+      "sha256": "da1fcaa8c9235a274eca6cfb498243c920e78f947065cd3ea7f259dcfcc7926a",
+      "width_px": 1600,
+      "height_px": 1200,
+      "camera": {
+        "model": "pinhole",
+        "position_m": [
+          1.9,
+          -2.25,
+          1.95
+        ],
+        "lookat_m": [
+          0.0,
+          0.0,
+          0.96
+        ],
+        "up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "vertical_fov_degrees": 42.0
+      }
+    },
+    {
+      "file": "initial_02_front_close.png",
+      "sha256": "cb72b870742bd4c6e2d5fc7cf0dcd9378b36e1fc1cda0ff34dd4aa06207f4d00",
+      "width_px": 1600,
+      "height_px": 1200,
+      "camera": {
+        "model": "pinhole",
+        "position_m": [
+          0.15,
+          -1.8,
+          1.65
+        ],
+        "lookat_m": [
+          -0.03,
+          0.0,
+          1.08
+        ],
+        "up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "vertical_fov_degrees": 42.0
+      }
+    },
+    {
+      "file": "initial_03_top.png",
+      "sha256": "ccaf346813f210e3d5d609e7242882c456481476fb4412da2c4d9547e0326111",
+      "width_px": 1600,
+      "height_px": 1200,
+      "camera": {
+        "model": "pinhole",
+        "position_m": [
+          0.0,
+          0.0,
+          3.15
+        ],
+        "lookat_m": [
+          0.0,
+          0.0,
+          0.74
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "vertical_fov_degrees": 42.0
+      }
+    },
+    {
+      "file": "initial_04_opposite_front.png",
+      "sha256": "c6f20e82a688c578c666e4b941b2a2472f089608c6d891649765a92779351824",
+      "width_px": 1600,
+      "height_px": 1200,
+      "camera": {
+        "model": "pinhole",
+        "position_m": [
+          0.0,
+          2.4,
+          1.85
+        ],
+        "lookat_m": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "vertical_fov_degrees": 42.0
+      }
+    }
+  ],
+  "config_sha256_canonical_json": "a67f888deeffedbbcb14d26bcd2f5ab1fc89a4016f342c7b7be4ca27b290ca84",
+  "config": {
+    "seed": 17,
+    "simulation": {
+      "dt": 0.005,
+      "substeps": 1,
+      "precision": "64",
+      "contact_distance": 0.001,
+      "contact_resistance": 10000000.0,
+      "correct_stc_reaction": true
+    },
+    "table": {
+      "height": 0.74,
+      "size": [
+        1.7,
+        1.2,
+        0.06
+      ]
+    },
+    "robots": {
+      "left_base": [
+        -0.6,
+        -0.28,
+        0.76
+      ],
+      "right_base": [
+        0.38,
+        0.32,
+        0.76
+      ],
+      "left_yaw": 0.35,
+      "right_yaw": -2.4,
+      "home": [
+        0.0,
+        -0.45,
+        0.0,
+        -2.15,
+        0.0,
+        1.7,
+        0.7854
+      ],
+      "finger_force_limit": 12.0,
+      "finger_kp": 8000.0,
+      "finger_kv": 200.0
+    },
+    "bag": {
+      "position": [
+        -0.13,
+        0.05,
+        0.742
+      ],
+      "E": 10000000.0,
+      "nu": 0.3,
+      "rho": 333.3333333333333,
+      "thickness": 0.0003,
+      "bending_stiffness": 1e-05,
+      "friction_mu": 0.65,
+      "shear_stiffness": 50.0,
+      "mesh": "flat_two_panel_bag_coarse.obj",
+      "npz_file": "flat_two_panel_bag_offset40_coarse.npz",
+      "metadata": "metadata_flat_two_panel_bag_offset40_coarse.json",
+      "height_m": 0.4,
+      "handle_shear_stiffness": 350.0
+    },
+    "bear": {
+      "position": [
+        0.27,
+        -0.25,
+        0.742
+      ],
+      "E": 18000.0,
+      "nu": 0.28,
+      "rho": 100.0,
+      "friction_mu": 0.65,
+      "mesh": "bear_uniform_coarse_s663.obj",
+      "nobisect": true,
+      "mindihedral": 15,
+      "minratio": 1.3,
+      "maxvolume": 1.1657369879999996e-06
+    },
+    "camera": {
+      "position": [
+        1.75,
+        -2.0,
+        1.9
+      ],
+      "lookat": [
+        -0.05,
+        -0.01,
+        1.02
+      ],
+      "fov": 42
+    },
+    "task": {
+      "open_targets": {
+        "left": [
+          -0.18409751840950164,
+          -0.13,
+          1.4
+        ],
+        "right": [
+          -0.07590248159049842,
+          0.13,
+          1.4
+        ]
+      },
+      "bear_grasp_local": [
+        0.053040000000000004,
+        -0.009281999999999999,
+        0.022542000000000003
+      ],
+      "bear_finger_target": 0.0,
+      "bear_finger_force_limit": 1.8252,
+      "motion_speed_scale": 1.3,
+      "handle_close_seconds": 0.5,
+      "handle_grasps": {
+        "left": {
+          "group": "grasp_front_x_minus40",
+          "preferred_approach": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        "right": {
+          "group": "grasp_back_x_plus",
+          "preferred_approach": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        }
+      },
+      "contact_trial": {
+        "enabled": true,
+        "bottom_clearance_m": 0.01,
+        "max_lateral_excursion_fraction_of_mouth_width": 0.8,
+        "center_offsets_xy_m": [
+          [
+            0.01,
+            0.03075
+          ],
+          [
+            0.02,
+            0.025
+          ]
+        ],
+        "left_robot_soft_sweep_clearance_m": 0.005,
+        "minimum_section_envelope_overlap_fraction": 0.4,
+        "maximum_initial_com_offset_m": 0.035,
+        "transport_xy_strategy": "y_then_x",
+        "insertion_strategy": "vertical",
+        "postlift_yaw": {
+          "world_z_degrees": 15.0,
+          "duration_s": 6.0
+        },
+        "recenter_enabled": true,
+        "rim_perimeter_policy": "deformable_rim_contact",
+        "gravity_release": {
+          "mode": "gravity_seating",
+          "tcp_height_above_table_m": 0.175,
+          "minimum_inside_vertex_fraction": 0.5,
+          "settle_seconds": 4.0
+        }
+      },
+      "bear_grasp_tracking_radius_m": 0.021216,
+      "flat_start": {
+        "enabled": true,
+        "initial_q": {
+          "left": [
+            0.5532546820025727,
+            0.9601400965521673,
+            0.05379125952810974,
+            -1.3491185559014027,
+            0.01934080181275369,
+            2.3464170152689063,
+            1.3518350829108872,
+            0.04,
+            0.04
+          ],
+          "right": [
+            0.0,
+            -0.45,
+            0.0,
+            -2.15,
+            0.0,
+            1.7,
+            0.7854,
+            0.04,
+            0.04
+          ]
+        },
+        "initial_fingers": {
+          "left": 0.04,
+          "right": 0.04
+        },
+        "initial_rotations_xyzw": {
+          "left": [
+            0.983825585454251,
+            0.17575805974175945,
+            -0.006082739237659246,
+            -0.034048819726665375
+          ],
+          "right": [
+            -0.36235688231051083,
+            0.9320394250471418,
+            -1.11022354407648e-16,
+            -5.551104734087169e-17
+          ]
+        },
+        "left_pregrasp_tcp_m": [
+          -0.1707081037136613,
+          0.3249435695524395,
+          0.803512171273583
+        ],
+        "left_grasp_tcp_m": [
+          -0.1707081037136613,
+          0.3249435695524395,
+          0.763512171273583
+        ],
+        "left_grasp_rotation_xyzw": [
+          0.983825585454251,
+          0.17575805974175945,
+          -0.006082739237659246,
+          -0.034048819726665375
+        ],
+        "approach_duration_s": 1.2024,
+        "initial_settle_seconds": 0.3,
+        "handle_close_seconds": 0.35,
+        "lift_targets": [
+          {
+            "tcp_m": [
+              -0.13,
+              0.15,
+              1.05
+            ],
+            "rotation_xyzw": [
+              0.9996878681787815,
+              -0.002249948848585226,
+              -5.6000113764595725e-05,
+              0.02488173648138712
+            ],
+            "duration_s": 4.008
+          },
+          {
+            "tcp_m": [
+              -0.18409751840950164,
+              -0.13,
+              1.46
+            ],
+            "rotation_xyzw": [
+              0.9720641973783519,
+              -0.002158789804707637,
+              -0.0006364215686806931,
+              -0.23470434757231615
+            ],
+            "duration_s": 5.01
+          }
+        ],
+        "settle_seconds": 1.0,
+        "grasp_tangent_offset_hand_m": [
+          0.0,
+          0.0,
+          -0.008
+        ]
+      },
+      "bear_lift_height_m": 1.33
+    }
+  }
+}
